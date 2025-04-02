@@ -1,0 +1,95 @@
+.fruitCard-wrapper {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    background-color: gray;
+    min-height: 400px;
+    max-width: 25vw;
+    min-width: 600px;
+    background-color: rgb(15, 46, 62);
+    border: 1px solid rgb(66, 184, 243);
+}
+
+.title-fruit {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: 4em;
+    font-style: normal;
+    margin: 0;
+    line-height: 0.9em;
+    margin-top: 20px;
+
+}
+
+.fruitCard-wrapper>div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px 30px;
+}
+
+.fruitCard-wrapper>img {
+    object-fit: cover;
+    max-width: 40%;
+    border-radius: inherit;
+
+}
+
+.info-wrapper {
+    max-width: 50%;
+}
+
+
+.fruit-img {
+    height: 100px;
+    object-fit: contain;
+}
+
+.fruit-tags {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 20px;
+    font-size: 0.8em;
+}
+
+.fruit-tags>p {
+    padding: 5px 20px;
+    border-radius: 35px;
+    background-color: rgb(130, 151, 162);
+}
+
+.bold-tag {
+    font-weight: 600;
+}
+
+
+
+@media only screen and (max-width: 2100px) {
+
+    .fruitCard-wrapper {
+        max-width: 43vw;
+
+    }
+
+
+}
+
+
+
+@media only screen and (max-width: 1400px) {
+    .fruitCard-wrapper {
+        max-width: 100%;
+
+    }
+
+    .fruitCard-wrapper>img {
+        object-fit: cover;
+        width: 40%;
+        border-radius: inherit;
+    }
+
+}
