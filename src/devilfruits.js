@@ -198,7 +198,128 @@ const allFruits = [
         about: "The Mane Mane no Mi is a Paramecia-type Devil Fruit that allows the user to turn themselves into a physical double of anyone they touch, making the user an Imitating Human"
     },
 
+    {
+        id: 14,
+        img: {
+            user: 'https://i.postimg.cc/Gmkt0Yc2/Sabo-Anime-Infobox.webp',
+            fruit: 'https://i.postimg.cc/cHS0R12b/flameflamefruit.png'
+        },
+        name: 'Flame-Flame Fruit',
+        user: 'Portgas D. Ace / Sabo',
+        previousUser: 'Portgas D. Ace',
+        rarity: 5,
+        power: 9,
+        type: 'Logia',
+        about: "The Mera Mera no Mi is a Logia-type Devil Fruit that allows the user to create, control, and transform into fire at will."
+    },
 
+    {
+        id: 15,
+        img: {
+            user: 'https://i.postimg.cc/rsDwwVHZ/daz-bonez-5c56fffc682f7p.jpg',
+            fruit: 'https://i.postimg.cc/t4BSb9hV/Supa-Supa-no-Mi-Infobox.png'
+        },
+        name: 'Dice-Dice Fruit',
+        user: 'Daz Bonez',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Paramecia',
+        about: "The Supa Supa no Mi is a Paramecia-type Devil Fruit that enables the user's body to gain characteristics of a steel blade to attack opponents with, making the user a Full-Body Bladed Human."
+    },
+
+
+    {
+        id: 16,
+        img: {
+            user: 'https://i.postimg.cc/1t1sG0fS/Pell-Anime-Infobox.webp',
+            fruit: 'https://i.postimg.cc/7LVTdL7p/Supa-Supa-no-Mi-Infobox.png'
+        },
+        name: 'Tweet-Tweet Fruit',
+        user: 'Pell',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Zoan',
+        about: "The Tori Tori no Mi, Model: Falcon is a Zoan-type Devil Fruit that allows its user to transform into a falcon hybrid and a full falcon at will. It was eaten by Pell, and according to him, it is one of the only five types of flying powers ever discovered."
+    },
+
+    {
+        id: 17,
+        img: {
+            user: 'https://i.postimg.cc/6qWPNcHB/Yamato-Anime-Infobox.webp',
+            fruit: 'https://i.postimg.cc/SNjQpfYS/qweqew.png'
+        },
+        name: 'Dog-Dog Fruit, Model: Okuchi',
+        user: 'Yamato',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Mythical Zoan',
+        about: "The Inu Inu no Mi, Model: Okuchi no Makami is a Mythical Zoan-type Devil Fruit that allows the user to transform into a hybrid and full version of an ancient wolf deity at will."
+    },
+
+    {
+        id: 18,
+        img: {
+            user: 'https://i.postimg.cc/bJCjMwbv/b287798-qpmo-QUPvyr-QE.png',
+            fruit: 'https://i.postimg.cc/0jqZvLSJ/d4304e25-4945-44f6-9482-8b51b8eeb0cb.png'
+        },
+        name: 'Mutt-Mutt Fruit',
+        user: 'Lassoo',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Zoan',
+        about: "The Inu Inu no Mi, Model: Dachshund is a Zoan-type Devil Fruit that allows its user to transform into a dachshund hybrid and a full dachshund at will."
+    },
+
+
+    {
+        id: 19,
+        img: {
+            user: 'https://i.postimg.cc/t4bn9975/Mogu-Mogu-no-Mi-Infobox.webp',
+            fruit: 'https://i.postimg.cc/CKBRN52w/Mogu-Mogu-8359.png'
+        },
+        name: 'Mole-Mole Fruit',
+        user: 'Drophy',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Zoan',
+        about: "The Mogu Mogu no Mi is a Zoan-type Devil Fruit that allows its user to transform into a mole hybrid and a full mole at will, making the user a Mole Human."
+    },
+
+
+    {
+        id: 20,
+        img: {
+            user: 'https://i.postimg.cc/hPqgZrCJ/Toge-Toge-no-Mi-Infobox.webp',
+            fruit: 'https://i.postimg.cc/15JF9fVK/spike-fruit.png'
+        },
+        name: 'Spike-Spike Fruit',
+        user: 'Zala',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Paramecia',
+        about: "The Toge Toge no Mi is a Paramecia-type Devil Fruit that allows the user to grow spikes on any part of their body, and turn any body part entirely into a spike, making the user a Spike Human."
+    },
+
+    {
+        id: 20,
+        img: {
+            user: 'https://i.postimg.cc/fWgG9vdt/Chaka.webp',
+            fruit: 'https://i.postimg.cc/VNSwWdYY/jackal.png'
+        },
+        name: 'Dog-Dog Fruit, Model: Jackal',
+        user: 'Chaka',
+        previousUser: 'Unkown',
+        rarity: 5,
+        power: 9,
+        type: 'Zoan',
+        about: "The Inu Inu no Mi, Model: Jackal[1] is a Zoan-type Devil Fruit that allows its user to transform into a jackal hybrid and a full jackal at will."
+    },
 
 
 

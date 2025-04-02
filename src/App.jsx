@@ -26,7 +26,7 @@ function App() {
             <header>
                 <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
                 <p>This is a temporary repository containing a list of <strong>One Piece fruits and their users</strong>. Updates will be made soon.</p>
-                <small>Information mostly collected from <a href='https://onepiece.fandom.com/' target="_blank">onepiece.fandom.com</a></small>
+                <small>Some of the images are fan-made and not real official depictions, also information mostly collected from <a href='https://onepiece.fandom.com/' target="_blank">onepiece.fandom.com</a></small>
             </header>
             <main>
                 {fruitsDisplayed}
