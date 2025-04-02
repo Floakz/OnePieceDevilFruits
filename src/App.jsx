@@ -18,7 +18,7 @@ function App() {
         })
 
     function loadMore() {
-        setFruitsShown(currentValue => currentValue + 3)
+        setFruitsShown(currentValue => currentValue + 6)
     }
 
     return (
