@@ -1860,10 +1860,6 @@ const allFruits = [
 
 
 
-
-
-
-
 ]
 
 export default allFruits

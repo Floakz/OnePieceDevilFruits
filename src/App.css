@@ -86,3 +86,34 @@ footer {
 #footer-logo-img {
     width: 40px;
 }
+
+
+/*! Phone responsive adaptation */
+
+@media (max-width: 480px) {
+
+    #root {
+        max-width: 100%;
+        padding: 0;
+    }
+
+
+    header {
+        height: 60vh;
+        border-radius: 50px;
+        padding: 15px;
+        margin: 0;
+    }
+
+
+
+    h1 {
+        font-size: 4em;
+    }
+
+    main {
+        width: 98vw;
+    }
+
+
+}
