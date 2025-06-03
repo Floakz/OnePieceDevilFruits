@@ -339,7 +339,7 @@ const allFruits = [
     {
         id: 22,
         img: {
-            user: 'https://www.gamescooper.com/wp-content/uploads/2023/10/Bellamy_talking_with_his_crew1-1.jpg',
+            user: 'https://i.postimg.cc/qR2Frgpm/Bellamy-Pre-Timeskip-Portrait.webp',
             fruit: 'https://i.postimg.cc/zvJysjzy/qweqweqwe.png'
         },
         name: 'Spring-Spring Fruit',
