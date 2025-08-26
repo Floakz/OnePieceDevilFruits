@@ -39,7 +39,7 @@ function App() {
                 <button onClick={() => (setCategoryDisplayed('all'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "all" ? "#041822ff" : "#205879" }}>all</button>
                 <button onClick={() => (setCategoryDisplayed('Logia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Logia" ? "#041822ff" : "#205879" }}>Logia</button>
                 <button onClick={() => (setCategoryDisplayed('Zoan'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Zoan" ? "#041822ff" : "#205879" }}>Zoan</button>
-                <button onClick={() => (setCategoryDisplayed('Paramecia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paremecia</button>
+                <button onClick={() => (setCategoryDisplayed('Paramecia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paramecia</button>
             </div>
             <main>
                 {fruitsDisplayed}
