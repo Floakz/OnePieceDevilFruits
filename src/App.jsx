@@ -1,21 +1,30 @@
-
 import './App.css';
-import allFruits from './devilfruits.js';
 import FruitCard from './Components/FruitCard.jsx'
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
+import { listFruits } from "./lib/fruitsApi";
 
 function App() {
 
+    let [categoryDisplayed, setCategoryDisplayed] = useState('all')
 
     let [fruitsShown, setFruitsShown] = useState(6)
 
+    const [fruits, setFruits] = useState([]);
 
-    const fruitsDisplayed = allFruits
-        .filter((_, index) => index < fruitsShown)
-        .map((fruit) => {
-            return (<FruitCard {...fruit} key={fruit.id} />)
-        })
+    useEffect(() => {
+        listFruits().then(setFruits);
+    }, []);
+
+
+    function changeCategory() {
+
+    }
+
+
+    const fruitsDisplayed = fruits
+        .filter(fruit => categoryDisplayed === "all" || fruit.type === categoryDisplayed || (categoryDisplayed === 'Zoan' ? fruit.type.includes("Zoan") : null))
+        .slice(0, fruitsShown)
+        .map(fruit => <FruitCard {...fruit} key={fruit.id} />);
 
     function loadMore() {
         setFruitsShown(currentValue => currentValue + 6)
@@ -25,13 +34,17 @@ function App() {
         <>
             <header>
                 <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
-                <p>This is a temporary repository containing a list of <strong>One Piece fruits and their users</strong>. Updates will be made soon.</p>
-                <small>Some of the images are fan-made and not real official depictions, also information mostly collected from <a href='https://onepiece.fandom.com/' target="_blank">onepiece.fandom.com</a></small>
             </header>
+            <div className='menuWrapper'>
+                <button onClick={() => (setCategoryDisplayed('all'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "all" ? "#041822ff" : "#205879" }}>all</button>
+                <button onClick={() => (setCategoryDisplayed('Logia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Logia" ? "#041822ff" : "#205879" }}>Logia</button>
+                <button onClick={() => (setCategoryDisplayed('Zoan'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Zoan" ? "#041822ff" : "#205879" }}>Zoan</button>
+                <button onClick={() => (setCategoryDisplayed('Paramecia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paremecia</button>
+            </div>
             <main>
                 {fruitsDisplayed}
             </main>
-            <button onClick={loadMore} className='load-button'>load more</button>
+            {fruitsShown > fruitsDisplayed.length ? null : <button onClick={loadMore} className='load-button'>load more</button>}
             <footer>
                 <img id='footer-logo-img' src="https://i.postimg.cc/y65WWj1g/FRUIT-1.png" alt="logo" />
                 <a href="#hero-title">back to the top</a>
