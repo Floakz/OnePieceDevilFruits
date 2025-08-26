@@ -5,7 +5,7 @@ export default function FruitCard(props) {
 
         <div className='fruitCard-wrapper'>
 
-            <img src={props.img.user} alt={`${props.user} picture`} />
+            <img src={props.img.user} className="user-img" alt={`${props.user} picture`} />
 
             <div className='info-wrapper'>
                 <div>
