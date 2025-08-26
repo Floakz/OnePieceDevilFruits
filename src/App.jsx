@@ -16,18 +16,20 @@ function App() {
     }, []);
 
 
-    function changeCategory() {
+    const filtered = fruits.filter(fruit =>
+        categoryDisplayed === "all" ||
+        (categoryDisplayed === "Zoan"
+            ? fruit.type.includes("Zoan")
+            : fruit.type === categoryDisplayed)
+    );
 
-    }
 
+    const visible = filtered.slice(0, fruitsShown);
 
-    const fruitsDisplayed = fruits
-        .filter(fruit => categoryDisplayed === "all" || fruit.type === categoryDisplayed || (categoryDisplayed === 'Zoan' ? fruit.type.includes("Zoan") : null))
-        .slice(0, fruitsShown)
-        .map(fruit => <FruitCard {...fruit} key={fruit.id} />);
+    const hasMore = visible.length < filtered.length;
 
     function loadMore() {
-        setFruitsShown(currentValue => currentValue + 6)
+        setFruitsShown(v => Math.min(v + 6, filtered.length));
     }
 
     return (
@@ -42,9 +44,12 @@ function App() {
                 <button onClick={() => (setCategoryDisplayed('Paramecia'), setFruitsShown(6))} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paramecia</button>
             </div>
             <main>
-                {fruitsDisplayed}
+                {visible.map(fruit => <FruitCard {...fruit} key={fruit.id} />)}
             </main>
-            {fruitsShown > fruitsDisplayed.length ? null : <button onClick={loadMore} className='load-button'>load more</button>}
+
+            {hasMore && (
+                <button onClick={loadMore} className='load-button'>load more</button>
+            )}
             <footer>
                 <img id='footer-logo-img' src="https://i.postimg.cc/y65WWj1g/FRUIT-1.png" alt="logo" />
                 <a href="#hero-title">back to the top</a>
