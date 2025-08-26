@@ -138,5 +138,9 @@ footer {
         width: 98vw;
     }
 
+    .menuWrapper {
+        flex-wrap: wrap;
+    }
+
 
 }
