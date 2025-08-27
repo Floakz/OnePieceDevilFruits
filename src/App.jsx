@@ -21,16 +21,6 @@ function App() {
     }
 
 
-
-    function findWhiteBeard() {
-        const found = fruits.filter(f => f.user === 'Edward Newgate');
-        console.log(found)
-    }
-
-
-
-
-
     function getRandFruit() {
         if (!fruits.length) return;
 
