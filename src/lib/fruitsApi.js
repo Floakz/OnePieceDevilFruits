@@ -8,8 +8,8 @@ const col = collection(db, 'fruits');
 
 export async function listFruits({ limitTo = 100 } = {}) {
     const q = query(col, orderBy('name'), limit(limitTo));
-    const snap = await getDocs(q);
-    return snap.docs.map(d => ({ id: d.id, ...d.data() }));
+    const snap = await getDocs(collection(db, 'fruits'));
+    return snap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
 }
 
 export async function getFruit(id) {

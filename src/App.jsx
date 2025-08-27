@@ -5,6 +5,7 @@ import { listFruits } from "./lib/fruitsApi";
 
 function App() {
 
+
     let [categoryDisplayed, setCategoryDisplayed] = useState('all')
 
     let [fruitsShown, setFruitsShown] = useState(6)
@@ -18,6 +19,17 @@ function App() {
     function genRandom(max) {
         return Math.floor(Math.random() * max);
     }
+
+
+
+    function findWhiteBeard() {
+        const found = fruits.filter(f => f.user === 'Edward Newgate');
+        console.log(found)
+    }
+
+
+
+
 
     function getRandFruit() {
         if (!fruits.length) return;
@@ -73,6 +85,7 @@ function App() {
 
     return (
         <>
+            {findWhiteBeard()}
             <header>
                 <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
             </header>
