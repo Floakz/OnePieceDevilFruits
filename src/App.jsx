@@ -75,7 +75,6 @@ function App() {
 
     return (
         <>
-            {findWhiteBeard()}
             <header>
                 <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
             </header>
