@@ -110,6 +110,87 @@ footer {
     background-color: #032234;
 }
 
+.randomWrapper {
+    position: relative;
+    border: 1px solid rgb(0, 225, 255);
+    width: 85%;
+    border-radius: 20px;
+    padding: 20px 50px 40px 50px;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.randomWrapper>h2 {
+    font-size: 3em;
+    line-height: 0.5em;
+    margin-bottom: 0;
+}
+
+.randomWrapper>h2:nth-of-type(2) {
+    color: rgb(0, 225, 255);
+    ;
+}
+
+
+.randomWrapper>h3 {
+    font-size: 3.3em;
+    line-height: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.randomWrapper>span {
+    font-size: 1.4em;
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #4f768d;
+}
+
+
+.randomWrapper>button {
+    border: none;
+    padding: 15px 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 225, 255);
+    background-color: #205879;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.randomWrapper>button:hover {
+    border: none;
+    padding: 15px 50px;
+    border-radius: 10px;
+    border: 1px solid rgb(0, 225, 255);
+    background-color: #082f45;
+}
+
+.randomWrapper>.imageWrapper {
+    position: relative;
+}
+
+.randomWrapper>.imageWrapper>img:nth-of-type(1) {
+    height: 300px;
+}
+
+.randomWrapper>.imageWrapper>img:nth-of-type(2) {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 1000px;
+    translate: 70px;
+    border: 1px solid rgb(0, 225, 255);
+    object-position: top center;
+}
+
 
 /*! Phone responsive adaptation */
 
@@ -141,6 +222,57 @@ footer {
     .menuWrapper {
         flex-wrap: wrap;
     }
+
+
+    .randomWrapper {
+        padding: 10px;
+        padding-bottom: 40px;
+    }
+
+    .randomWrapper>h2 {
+        font-size: 2.5em;
+        line-height: 1em;
+        margin-bottom: 0;
+    }
+
+    .randomWrapper>h2:nth-of-type(1) {
+        padding: 0 10px;
+    }
+
+
+    .randomWrapper>h2:nth-of-type(2) {
+        margin-top: 80px;
+    }
+
+    .randomWrapper>h3 {
+        font-size: 2.5em;
+        line-height: 1.2em;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .randomWrapper>.imageWrapper>img:nth-of-type(2) {
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 1000px;
+        translate: 0 80px;
+        border: 1px solid rgb(0, 225, 255);
+        object-position: top center;
+    }
+
+
+    .randomWrapper>span {
+        font-size: 1em;
+        width: 80%;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #4f768d;
+    }
+
 
 
 }
