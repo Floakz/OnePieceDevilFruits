@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import styles from './FruitBattle.module.css'
+import { useRef } from 'react'
 
 export default function FruitBattle({ fruits }) {
 
@@ -7,6 +8,24 @@ export default function FruitBattle({ fruits }) {
 
     let [gameMenu, setGameMenu] = useState(true)
     let [isGameOver, setIsGameOver] = useState(false)
+
+    const finishTimeoutRef = useRef(null);
+    const animRefs = useRef(Array.from({ length: 7 }, () => ({ interval: null, timeout: null })));
+
+    function clearFinishTimeout() {
+        if (finishTimeoutRef.current) {
+            clearTimeout(finishTimeoutRef.current);
+            finishTimeoutRef.current = null;
+        }
+    }
+    function clearAllAnimations() {
+        animRefs.current.forEach((t, i) => {
+            if (t.interval) clearInterval(t.interval);
+            if (t.timeout) clearTimeout(t.timeout);
+            animRefs.current[i] = { interval: null, timeout: null };
+        });
+    }
+
 
     // DEVIL FRUIT TEAMS
 
@@ -50,10 +69,12 @@ export default function FruitBattle({ fruits }) {
 
 
     function newGame() {
-        getRandomEnemyCrew()
-        setAllyCrew([null, null, null, null, null, null, null])
-        setGameMenu(false)
-        setIsGameOver(false)
+        clearFinishTimeout();
+        clearAllAnimations();
+        getRandomEnemyCrew();
+        setAllyCrew([null, null, null, null, null, null, null]);
+        setIsGameOver(false);
+        setGameMenu(false);
     }
 
 
@@ -74,14 +95,15 @@ export default function FruitBattle({ fruits }) {
     }
 
     useEffect(() => {
-        const filled = allyCrew.filter(i => i !== null && i !== undefined).length;
+        const filled = allyCrew.filter(i => i != null).length;
+        clearFinishTimeout();
         if (filled === 7) {
-
-            setTimeout(() => {
-                setIsGameOver(true)
-            }, 3200);
-
-        };
+            finishTimeoutRef.current = setTimeout(() => {
+                setIsGameOver(true);
+                finishTimeoutRef.current = null;
+            }, 1000);
+        }
+        return clearFinishTimeout;
     }, [allyCrew]);
 
     return (
@@ -124,7 +146,7 @@ export default function FruitBattle({ fruits }) {
                     <div className={styles.fruitLineWrapper}>
 
                         {allyCrew.map((member, idx) => {
-                            return member ?
+                            return member !== null ?
                                 (<div key={idx} className={`${styles.fruitWrapper} ${styles.ally}`}>
                                     <img className={styles.userImg} src={fruits[member].img.user} alt={`image of ${fruits[member].user} fruit`} />
                                     <img src={fruits[member].img.fruit} alt={`image of ${fruits[member].name} fruit`} />
