@@ -4,9 +4,9 @@
     border-radius: 15px;
     background-color: gray;
     min-height: 400px;
-    max-height: 850px;
+    max-height: 650px;
     max-width: 25vw;
-    min-width: 600px;
+    min-width: 800px;
     background-color: rgb(15, 46, 62);
     border: 1px solid rgb(66, 184, 243);
 }
@@ -116,6 +116,13 @@
 
 
 @media only screen and (max-width: 480px) {
+
+    .fruitCard-wrapper {
+        min-height: 100px;
+        max-height: 850px;
+        min-width: 100%;
+    }
+
 
     .fruit-img {
         height: 100px;

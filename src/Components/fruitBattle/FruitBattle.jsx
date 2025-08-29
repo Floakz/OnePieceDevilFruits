@@ -27,11 +27,9 @@ export default function FruitBattle({ fruits }) {
     function getAllyMember(slotIdx) {
         if (!fruits?.length) return;
 
-        // pool de frutas para animar
         const pool = Array.from({ length: 7 }, () => Math.floor(Math.random() * fruits.length));
         let p = 0;
 
-        // roda o slot mostrando itens do pool
         const interval = setInterval(() => {
             p = (p + 1) % pool.length;
             const previewFruitIndex = pool[p];
@@ -40,7 +38,7 @@ export default function FruitBattle({ fruits }) {
             );
         }, 200);
 
-        // para ao fim de 2.5s e fixa um fruto final
+
         setTimeout(() => {
             clearInterval(interval);
             const finalFruitIndex = pool[Math.floor(Math.random() * pool.length)];
