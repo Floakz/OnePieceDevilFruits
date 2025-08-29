@@ -78,7 +78,6 @@ footer {
     align-items: center;
     padding: 30px 50px;
     border-top: 1px solid #0f2e3e;
-    ;
     margin-top: 100px;
 }
 
@@ -191,6 +190,12 @@ footer {
     object-position: top center;
 }
 
+
+@media (max-width: 1050px) {
+    .fruitBattleMenuItem {
+        display: none;
+    }
+}
 
 /*! Phone responsive adaptation */
 

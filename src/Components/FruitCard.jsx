@@ -15,7 +15,10 @@ export default function FruitCard(props) {
                 <p>{props.about}</p>
                 <div className='fruit-tags'>
                     <p>User: <span className='bold-tag'>{props.user}</span></p>
-                    <p>Type:<span className='bold-tag'> {props.type}</span></p>
+                    <div>
+                        <p>Type:<span className='bold-tag'> {props.type}</span></p>
+                        <p>Power:<span className='bold-tag'> {props.power}</span></p>
+                    </div>
                 </div>
             </div>
         </div>

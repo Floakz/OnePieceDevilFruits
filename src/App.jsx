@@ -2,6 +2,7 @@ import './App.css';
 import FruitCard from './Components/FruitCard.jsx'
 import { useState, useEffect } from 'react'
 import { listFruits } from "./lib/fruitsApi";
+import FruitBattle from './Components/fruitBattle/FruitBattle.jsx';
 
 function App() {
 
@@ -75,6 +76,7 @@ function App() {
 
     return (
         <>
+
             <header>
                 <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
             </header>
@@ -84,8 +86,11 @@ function App() {
                 <button onClick={() => (setCategoryDisplayed('Zoan'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Zoan" ? "#041822ff" : "#205879" }}>Zoan</button>
                 <button onClick={() => (setCategoryDisplayed('Paramecia'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paramecia</button>
                 <button onClick={() => (setCategoryDisplayed('Random'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Random" ? "#041822ff" : "#205879" }} >Random</button>
+                <button className={'fruitBattleMenuItem'} onClick={() => (setCategoryDisplayed('FruitBattle'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "FruitBattle" ? "#041822ff" : "#205879" }} >Fruit Battle</button>
             </div>
             <main>
+                {categoryDisplayed === 'FruitBattle' && <FruitBattle fruits={fruits} />}
+
                 {visible.map(fruit => <FruitCard {...fruit} key={fruit.id} />)}
                 {categoryDisplayed === 'Random' &&
                     <div className='randomWrapper'>
