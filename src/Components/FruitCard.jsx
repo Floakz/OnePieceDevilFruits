@@ -4,23 +4,32 @@ export default function FruitCard(props) {
     return (
 
         <div className='fruitCard-wrapper'>
-
-            <img src={props.img.user} className="user-img" alt={`${props.user} picture`} />
-
             <div className='info-wrapper'>
                 <div>
-                    <img className='fruit-img' src={props.img.fruit} alt={`${props.name} picture`} />
-                    <h2 className="title-fruit">{props.name}</h2>
+                    <img className='fruitImg' src={props.img.fruit} alt={`${props.name} picture`} />
+                    <h2 className="titleFruit">{props.name}</h2>
                 </div>
-                <p>{props.about}</p>
-                <div className='fruit-tags'>
-                    <p>User: <span className='bold-tag'>{props.user}</span></p>
+                <p className='aboutSection'>{props.about}</p>
+                <div className='fruitTags'>
                     <div>
-                        <p>Type:<span className='bold-tag'> {props.type}</span></p>
-                        <p>Power:<span className='bold-tag'> {props.power}</span></p>
+                        <img className='icon' src="https://i.ibb.co/1tzwX47Z/user-icon.png" alt="user-icon" />
+                        <p className='tag'>{props.user}</p>
+                    </div>
+                    <div>
+                        <img className='icon' src="https://i.ibb.co/BKysPs26/fruit-icon.png" alt="fruit-icon" />
+                        <p className='tag'> {props.type}</p>
+                    </div>
+                    <div>
+                        <img className='icon' src="https://i.ibb.co/60RgVc5D/power-icon.png" alt="power-icon" />
+                        <p className='tag'> {props.power}</p>
                     </div>
                 </div>
             </div>
+
+            <img src={props.img.user} className="userImg" alt={`${props.user} picture`} />
+
+
         </div>
     )
 }
+

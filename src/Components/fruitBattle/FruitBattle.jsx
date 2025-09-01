@@ -110,19 +110,22 @@ export default function FruitBattle({ fruits }) {
         <div className={styles.battleWrapper}>
 
             {isGameOver && <div className={styles.gameOverMenuWrapper}>
-                <span> {getAllyPower() > getEnemyPower() ? 'You won the battle!' : 'You got defeated'}</span>
-                <button onClick={() => newGame()} className={styles.newFightButton}>New fight</button>
+                <span className={styles.resultMessage}> {getAllyPower() > getEnemyPower() ? 'Victory! Your crew dominates the seas!' : 'You got defeated! Try another crew combo.'}</span>
+                <button onClick={() => newGame()} className={styles.newFightButton}>New Challenge</button>
             </div>}
 
             {gameMenu &&
-                <h2>Fight devil fruit crews</h2>
+                <div className={styles.titleMenu}>
+                    <h2 className={styles.menuTitle}>Build Your Devil<br /> Fruit Crew</h2>
+                    <span>Face random enemy crews and prove your team is the strongest on the seas!</span>
+                </div>
             }
 
             {!gameMenu && <>
                 <div className={styles.sideWrapper} >
                     <div className={`${styles.headerInfo} ${styles.enemy}`}>
-                        <h3>Enemie crew</h3>
-                        <span>Crew power: <b>{getEnemyPower()}</b></span>
+                        <h3>Enemy Crew</h3>
+                        <span>Total Power: <b>{getEnemyPower()}</b></span>
                     </div>
                     <div className={styles.fruitLineWrapper}>
 
@@ -130,7 +133,7 @@ export default function FruitBattle({ fruits }) {
                             return (<div key={idx} className={`${styles.fruitWrapper} ${styles.enemy}`}>
                                 <img className={styles.userImg} src={fruits[member].img.user} alt={`image of ${fruits[member].user} fruit`} />
                                 <img src={fruits[member].img.fruit} alt={`image of ${fruits[member].name} fruit`} />
-                                <span>{fruits[member].name}</span>
+                                <span className={styles.fruitNameCard}>{fruits[member].name}</span>
                             </div>)
 
                         })}
@@ -150,15 +153,15 @@ export default function FruitBattle({ fruits }) {
                                 (<div key={idx} className={`${styles.fruitWrapper} ${styles.ally}`}>
                                     <img className={styles.userImg} src={fruits[member].img.user} alt={`image of ${fruits[member].user} fruit`} />
                                     <img src={fruits[member].img.fruit} alt={`image of ${fruits[member].name} fruit`} />
-                                    <span>{fruits[member].name}</span>
+                                    <span className={styles.fruitNameCard}>{fruits[member].name}</span>
                                 </div>)
-                                : (<div onClick={() => getAllyMember(idx)} className={`${styles.fruitWrapper} ${styles.empty}`}>get member</div>)
+                                : (<div onClick={() => getAllyMember(idx)} className={`${styles.fruitWrapper} ${styles.empty}`}>Recruit<br /> Member</div>)
                         })}
                     </div>
 
                     <div className={`${styles.headerInfo} ${styles.ally}`}>
                         <h3>Your crew</h3>
-                        <span>Crew power: <b>{getAllyPower() || 0}</b></span>
+                        <span>Total Power: <b>{getAllyPower() || 0}</b></span>
                     </div>
                 </div>
             </>}
@@ -166,7 +169,7 @@ export default function FruitBattle({ fruits }) {
 
 
 
-            {gameMenu && <button onClick={() => newGame()} className={styles.newFightButton}>New fight</button>}
+            {gameMenu && <button onClick={() => newGame()} className={styles.newFightButton}>Start Battle</button>}
         </div>
     )
 }
