@@ -1,7 +1,7 @@
 import './App.css';
 import FruitCard from './Components/FruitCard.jsx'
 import { useState, useEffect } from 'react'
-import { listFruits } from "./lib/fruitsApi";
+import { listFruitsPage, getRandomFruits } from "./lib/fruitsApi";
 import FruitBattle from './Components/fruitBattle/FruitBattle.jsx';
 
 function App() {
@@ -9,26 +9,37 @@ function App() {
 
     let [categoryDisplayed, setCategoryDisplayed] = useState('all')
 
-    let [fruitsShown, setFruitsShown] = useState(6)
-    let [loading, setLoading] = useState(false)
-    let [fruitIndex, setFruitIndex] = useState(2)
 
     const [fruits, setFruits] = useState([]);
+    const [cursor, setCursor] = useState(null);
+    const [hasMore, setHasMore] = useState(true);
 
-    let [randomFruit, setRandomFruit] = useState([])
+    const [loading, setLoading] = useState(false);
+    const [fruitIndex, setFruitIndex] = useState(2);
+    const [randomFruit, setRandomFruit] = useState([]);
+
+
+
+
+
+
 
     function genRandom(max) {
         return Math.floor(Math.random() * max);
     }
 
-
-    function getRandFruit() {
-        if (!fruits.length) return;
-
+    async function loadRandom() {
         setLoading(true);
+        const randoms = await getRandomFruits(10);
+        spinRoulette(randoms);  // <-- use the list you just fetched
+    }
 
-        const pool = Array.from({ length: 20 }, () => fruits[genRandom(fruits.length)]);
-        setRandomFruit(pool);
+    function spinRoulette(list) {
+        if (!list?.length) { setLoading(false); return; }
+
+        // build a “spinning” pool from that list
+        const pool = Array.from({ length: 20 }, () => list[genRandom(list.length)]);
+        setRandomFruit(pool);        // UI reads from randomFruit[fruitIndex]
         setFruitIndex(0);
 
         let i = 0;
@@ -37,25 +48,41 @@ function App() {
             setFruitIndex(i);
         }, 200);
 
-
         setTimeout(() => {
             clearInterval(interval);
             setFruitIndex(genRandom(pool.length));
             setLoading(false);
         }, 2500);
     }
-
     function resetEverything() {
-        setFruitsShown(6)
-        setRandomFruit([])
-        setLoading(false)
+        setRandomFruit([]);
+        setLoading(false);
+        (async () => {
+            const { items, nextCursor } = await listFruitsPage({ pageSize: 12 });
+            setFruits(items);
+            setCursor(nextCursor);
+            setHasMore(!!nextCursor);
+        })();
     }
 
 
+    async function loadCategory(cat) {
+        const { items, nextCursor } = await listFruitsPage({ pageSize: 12, category: cat });
+        setFruits(items);
+        setCursor(nextCursor);
+        setHasMore(!!nextCursor);
+    }
+
 
     useEffect(() => {
-        listFruits().then(setFruits);
+        (async () => {
+            const { items, nextCursor } = await listFruitsPage({ pageSize: 12 });
+            setFruits(items);
+            setCursor(nextCursor);
+            setHasMore(!!nextCursor);
+        })();
     }, []);
+
 
 
     const filtered = fruits.filter(fruit =>
@@ -66,12 +93,15 @@ function App() {
     );
 
 
-    const visible = filtered.slice(0, fruitsShown);
+    const visible = filtered;
 
-    const hasMore = visible.length < filtered.length;
 
-    function loadMore() {
-        setFruitsShown(v => Math.min(v + 6, filtered.length));
+    async function loadMore() {
+        if (!cursor) return;
+        const { items, nextCursor } = await listFruitsPage({ pageSize: 12, cursor, category: categoryDisplayed });
+        setFruits(prev => [...prev, ...items]);
+        setCursor(nextCursor);
+        setHasMore(!!nextCursor);
     }
 
     return (
@@ -95,21 +125,21 @@ function App() {
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Paramecia" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("Paramecia"), resetEverything())}
+                            onClick={() => { setCategoryDisplayed("Paramecia"); loadCategory("Paramecia"); }}
                         >
                             PARAMECIA
                         </span>
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Logia" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("Logia"), resetEverything())}
+                            onClick={() => { setCategoryDisplayed("Logia"); loadCategory("Logia"); }}
                         >
                             LOGIA
                         </span>
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Zoan" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("Zoan"), resetEverything())}
+                            onClick={() => { setCategoryDisplayed("Zoan"); loadCategory("Zoan"); }}
                         >
                             ZOAN
                         </span>
@@ -143,7 +173,8 @@ function App() {
 
             {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') && <div className='mainFull'>
 
-                {categoryDisplayed === 'FruitBattle' && <FruitBattle fruits={fruits} />}
+                {categoryDisplayed === 'FruitBattle' && <FruitBattle />}
+
 
                 {categoryDisplayed === 'Random' &&
                     <div className='randomWrapper'>
@@ -161,13 +192,13 @@ function App() {
                             </div>
                             {randomFruit.length === 0 && <span>Click 'Get fruit' to find out. Good Luck!</span>}
                             {randomFruit.length > 0 && <span className='aboutFruitRandom'>{`${randomFruit[fruitIndex].about}`}</span>}
-                            <button className='getFruitButton' onClick={() => getRandFruit()}>{randomFruit.length < 1 ? 'Get fruit' : 'Get new fruit'}</button>
+                            <button className='getFruitButton' onClick={() => loadRandom()}>{randomFruit.length < 1 ? 'Get fruit' : 'Get new fruit'}</button>
                         </>}
                     </div>}
 
             </div>}
 
-            {hasMore && (<button onClick={loadMore} className='loadButton'>load more</button>)}
+            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') || (<button onClick={loadMore} className='loadButton'>load more</button>)}
 
 
             <footer>
@@ -187,49 +218,3 @@ export default App
 
 
 
-// return (
-//     <>
-
-//         <header>
-//             <h1 className='title-page' id='hero-title'>List of Devil Fruits<br /> & it's Users</h1>
-//         </header>
-//         <div className='menuWrapper'>
-//             <button onClick={() => (setCategoryDisplayed('all'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "all" ? "#041822ff" : "#205879" }}>all</button>
-//             <button onClick={() => (setCategoryDisplayed('Logia'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Logia" ? "#041822ff" : "#205879" }}>Logia</button>
-//             <button onClick={() => (setCategoryDisplayed('Zoan'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Zoan" ? "#041822ff" : "#205879" }}>Zoan</button>
-//             <button onClick={() => (setCategoryDisplayed('Paramecia'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Paramecia" ? "#041822ff" : "#205879" }} >Paramecia</button>
-//             <button onClick={() => (setCategoryDisplayed('Random'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "Random" ? "#041822ff" : "#205879" }} >Random</button>
-//             <button className={'fruitBattleMenuItem'} onClick={() => (setCategoryDisplayed('FruitBattle'), resetEverything())} style={{ backgroundColor: categoryDisplayed === "FruitBattle" ? "#041822ff" : "#205879" }} >Fruit Battle</button>
-//         </div>
-//         <main>
-//             {categoryDisplayed === 'FruitBattle' && <FruitBattle fruits={fruits} />}
-
-//             {visible.map(fruit => <FruitCard {...fruit} key={fruit.id} />)}
-//             {categoryDisplayed === 'Random' &&
-//                 <div className='randomWrapper'>
-//                     <h2>What fruit would you get?</h2>
-//                     {randomFruit.length > 0 && randomFruit[fruitIndex] && (
-//                         <div className='imageWrapper'>
-//                             <img src={randomFruit[fruitIndex].img.fruit} alt="Random Fruit" />
-//                             <img src={randomFruit[fruitIndex].img.user} alt="Random User" />
-//                         </div>
-//                     )}
-//                     {!loading && <>
-//                         {randomFruit.length > 0 && <h2>{`Congratulations!`}</h2>}
-//                         {randomFruit.length > 0 && <h3>{`You got the ${randomFruit[fruitIndex].name}`}</h3>}
-//                         {randomFruit.length === 0 && <span>Click 'Get fruit' to find out. Good Luck!</span>}
-//                         {randomFruit.length > 0 && <span>{`${randomFruit[fruitIndex].about}`}</span>}
-//                         <button onClick={() => getRandFruit()}>{randomFruit.length < 1 ? 'Get fruit' : 'Get new fruit'}</button>
-//                     </>}
-//                 </div>}
-//         </main>
-
-//         {hasMore && (
-//             <button onClick={loadMore} className='load-button'>load more</button>
-//         )}
-//         <footer>
-//             <img id='footer-logo-img' src="https://i.postimg.cc/y65WWj1g/FRUIT-1.png" alt="logo" />
-//             <a href="#hero-title">back to the top</a>
-//         </footer>
-//     </>
-// )

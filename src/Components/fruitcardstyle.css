@@ -58,8 +58,14 @@
     gap: 20px;
 }
 
+.fruitTags>div {
+    width: 33%;
+}
+
 .icon {
     height: 20px;
+    width: 20px;
+    object-fit: contain;
 }
 
 .tag {

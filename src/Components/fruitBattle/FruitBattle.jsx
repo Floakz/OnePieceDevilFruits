@@ -1,175 +1,132 @@
-import { useEffect, useState } from 'react'
-import styles from './FruitBattle.module.css'
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react';
+import styles from './FruitBattle.module.css';
+import { getRandomFruits } from "../../lib/fruitsApi";
 
-export default function FruitBattle({ fruits }) {
+export default function FruitBattle() {
+    const [gameMenu, setGameMenu] = useState(true);
+    const [isGameOver, setIsGameOver] = useState(false);
 
+    // store OBJECTS here, not indexes
+    const [enemyCrew, setEnemyCrew] = useState([]);
+    const [allyCrew, setAllyCrew] = useState([null, null, null, null, null, null, null]);
+    const [allyPool, setAllyPool] = useState([]);
 
+    const spinningRef = useRef(Array(7).fill(false));
 
-    let [gameMenu, setGameMenu] = useState(true)
-    let [isGameOver, setIsGameOver] = useState(false)
-
-    const finishTimeoutRef = useRef(null);
-    const animRefs = useRef(Array.from({ length: 7 }, () => ({ interval: null, timeout: null })));
-
-    function clearFinishTimeout() {
-        if (finishTimeoutRef.current) {
-            clearTimeout(finishTimeoutRef.current);
-            finishTimeoutRef.current = null;
-        }
-    }
-    function clearAllAnimations() {
-        animRefs.current.forEach((t, i) => {
-            if (t.interval) clearInterval(t.interval);
-            if (t.timeout) clearTimeout(t.timeout);
-            animRefs.current[i] = { interval: null, timeout: null };
-        });
+    function getPower(team) {
+        return team.reduce((sum, f) => (f ? sum + (f.power || 0) : sum), 0);
     }
 
+    async function newGame() {
+        setIsGameOver(false);
+        setGameMenu(false);
 
-    // DEVIL FRUIT TEAMS
-
-    let [enemyCrew, setEnemyCrew] = useState([])
-
-    let [allyCrew, setAllyCrew] = useState([null, null, null, null, null, null, null])
-
-    function getRandomEnemyCrew() {
-        const crew = []
-        for (let i = 0; i < 7; i++) {
-            let crewMember = Math.floor(Math.random() * fruits.length)
-            crew.push(crewMember)
-        }
-        setEnemyCrew(crew)
-        return
+        const pool = await getRandomFruits(20); // 20 random OBJECTS from DB
+        setEnemyCrew(pool.slice(0, 7));         // 7 for enemy (OBJECTS)
+        setAllyCrew([null, null, null, null, null, null, null]);
+        setAllyPool(pool.slice(7));             // 13 available for player (OBJECTS)
     }
 
     function getAllyMember(slotIdx) {
-        if (!fruits?.length) return;
+        if (!allyPool.length || spinningRef.current[slotIdx]) return;
+        spinningRef.current[slotIdx] = true;
 
-        const pool = Array.from({ length: 7 }, () => Math.floor(Math.random() * fruits.length));
+        const previewIdxs = Array.from(
+            { length: Math.min(7, allyPool.length) },
+            () => Math.floor(Math.random() * allyPool.length)
+        );
+
         let p = 0;
-
         const interval = setInterval(() => {
-            p = (p + 1) % pool.length;
-            const previewFruitIndex = pool[p];
-            setAllyCrew(prev =>
-                prev.map((m, i) => (i === slotIdx ? previewFruitIndex : m))
-            );
+            p = (p + 1) % previewIdxs.length;
+            const previewFruit = allyPool[previewIdxs[p]]; // OBJECT
+            setAllyCrew(prev => prev.map((m, i) => (i === slotIdx ? previewFruit : m)));
         }, 200);
-
 
         setTimeout(() => {
             clearInterval(interval);
-            const finalFruitIndex = pool[Math.floor(Math.random() * pool.length)];
-            setAllyCrew(prev =>
-                prev.map((m, i) => (i === slotIdx ? finalFruitIndex : m))
-            );
+            const choiceIdx = previewIdxs[Math.floor(Math.random() * previewIdxs.length)];
+            const chosen = allyPool[choiceIdx]; // OBJECT
+
+            setAllyCrew(prev => prev.map((m, i) => (i === slotIdx ? chosen : m)));
+            setAllyPool(prev => prev.filter((_, i) => i !== choiceIdx)); // remove chosen from pool
+            spinningRef.current[slotIdx] = false;
         }, 2500);
     }
 
-
-    function newGame() {
-        clearFinishTimeout();
-        clearAllAnimations();
-        getRandomEnemyCrew();
-        setAllyCrew([null, null, null, null, null, null, null]);
-        setIsGameOver(false);
-        setGameMenu(false);
-    }
-
-
-    function getEnemyPower() {
-        return enemyCrew.reduce((sum, i) => {
-            const f = fruits?.[i];
-            return f ? sum + (f.power || 0) : sum;
-        }, 0);
-    }
-
-
-
-    function getAllyPower() {
-        return allyCrew.reduce((sum, i) => {
-            const f = fruits?.[i];
-            return f ? sum + (f.power || 0) : sum;
-        }, 0);
-    }
-
     useEffect(() => {
-        const filled = allyCrew.filter(i => i != null).length;
-        clearFinishTimeout();
-        if (filled === 7) {
-            finishTimeoutRef.current = setTimeout(() => {
-                setIsGameOver(true);
-                finishTimeoutRef.current = null;
-            }, 1000);
+        const filled = allyCrew.filter(Boolean).length;
+        if (filled === 7 && !isGameOver) {
+            const t = setTimeout(() => setIsGameOver(true), 800);
+            return () => clearTimeout(t);
         }
-        return clearFinishTimeout;
-    }, [allyCrew]);
+    }, [allyCrew, isGameOver]);
 
     return (
         <div className={styles.battleWrapper}>
+            {isGameOver && (
+                <div className={styles.gameOverMenuWrapper}>
+                    <span className={styles.resultMessage}>
+                        {getPower(allyCrew) > getPower(enemyCrew)
+                            ? 'Victory! Your crew dominates the seas!'
+                            : 'You got defeated! Try another crew combo.'}
+                    </span>
+                    <button onClick={newGame} className={styles.newFightButton}>New Challenge</button>
+                </div>
+            )}
 
-            {isGameOver && <div className={styles.gameOverMenuWrapper}>
-                <span className={styles.resultMessage}> {getAllyPower() > getEnemyPower() ? 'Victory! Your crew dominates the seas!' : 'You got defeated! Try another crew combo.'}</span>
-                <button onClick={() => newGame()} className={styles.newFightButton}>New Challenge</button>
-            </div>}
-
-            {gameMenu &&
+            {gameMenu && (
                 <div className={styles.titleMenu}>
                     <h2 className={styles.menuTitle}>Build Your Devil<br /> Fruit Crew</h2>
                     <span>Face random enemy crews and prove your team is the strongest on the seas!</span>
+                    <button onClick={newGame} className={styles.newFightButton}>Start Battle</button>
                 </div>
-            }
+            )}
 
-            {!gameMenu && <>
-                <div className={styles.sideWrapper} >
-                    <div className={`${styles.headerInfo} ${styles.enemy}`}>
-                        <h3>Enemy Crew</h3>
-                        <span>Total Power: <b>{getEnemyPower()}</b></span>
-                    </div>
-                    <div className={styles.fruitLineWrapper}>
-
-                        {enemyCrew.map((member, idx) => {
-                            return (<div key={idx} className={`${styles.fruitWrapper} ${styles.enemy}`}>
-                                <img className={styles.userImg} src={fruits[member].img.user} alt={`image of ${fruits[member].user} fruit`} />
-                                <img src={fruits[member].img.fruit} alt={`image of ${fruits[member].name} fruit`} />
-                                <span className={styles.fruitNameCard}>{fruits[member].name}</span>
-                            </div>)
-
-                        })}
-
-                    </div>
-
-                </div>
-
-                <div className={styles.sideWrapper}>
-
-
-
-                    <div className={styles.fruitLineWrapper}>
-
-                        {allyCrew.map((member, idx) => {
-                            return member !== null ?
-                                (<div key={idx} className={`${styles.fruitWrapper} ${styles.ally}`}>
-                                    <img className={styles.userImg} src={fruits[member].img.user} alt={`image of ${fruits[member].user} fruit`} />
-                                    <img src={fruits[member].img.fruit} alt={`image of ${fruits[member].name} fruit`} />
-                                    <span className={styles.fruitNameCard}>{fruits[member].name}</span>
-                                </div>)
-                                : (<div onClick={() => getAllyMember(idx)} className={`${styles.fruitWrapper} ${styles.empty}`}>Recruit<br /> Member</div>)
-                        })}
+            {!gameMenu && (
+                <>
+                    {/* Enemy side */}
+                    <div className={styles.sideWrapper}>
+                        <div className={`${styles.headerInfo} ${styles.enemy}`}>
+                            <h3>Enemy Crew</h3>
+                            <span>Total Power: <b>{getPower(enemyCrew)}</b></span>
+                        </div>
+                        <div className={styles.fruitLineWrapper}>
+                            {enemyCrew.map((f, idx) => (
+                                <div key={idx} className={`${styles.fruitWrapper} ${styles.enemy}`}>
+                                    <img className={styles.userImg} src={f.img.user} alt={`image of ${f.user} fruit`} />
+                                    <img src={f.img.fruit} alt={`image of ${f.name} fruit`} />
+                                    <span className={styles.fruitNameCard}>{f.name}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
-                    <div className={`${styles.headerInfo} ${styles.ally}`}>
-                        <h3>Your crew</h3>
-                        <span>Total Power: <b>{getAllyPower() || 0}</b></span>
+                    {/* Ally side */}
+                    <div className={styles.sideWrapper}>
+                        <div className={styles.fruitLineWrapper}>
+                            {allyCrew.map((f, idx) =>
+                                f ? (
+                                    <div key={idx} className={`${styles.fruitWrapper} ${styles.ally}`}>
+                                        <img className={styles.userImg} src={f.img.user} alt={`image of ${f.user} fruit`} />
+                                        <img src={f.img.fruit} alt={`image of ${f.name} fruit`} />
+                                        <span className={styles.fruitNameCard}>{f.name}</span>
+                                    </div>
+                                ) : (
+                                    <div key={idx} onClick={() => getAllyMember(idx)} className={`${styles.fruitWrapper} ${styles.empty}`}>
+                                        Recruit<br /> Member
+                                    </div>
+                                )
+                            )}
+                        </div>
+
+                        <div className={`${styles.headerInfo} ${styles.ally}`}>
+                            <h3>Your crew</h3>
+                            <span>Total Power: <b>{getPower(allyCrew) || 0}</b></span>
+                        </div>
                     </div>
-                </div>
-            </>}
-
-
-
-
-            {gameMenu && <button onClick={() => newGame()} className={styles.newFightButton}>Start Battle</button>}
+                </>
+            )}
         </div>
-    )
+    );
 }
