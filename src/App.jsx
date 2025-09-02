@@ -20,7 +20,14 @@ function App() {
 
 
 
-
+    useEffect(() => {
+        (async () => {
+            const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: 'all' });
+            setFruits(items);
+            setCursor(nextCursor);
+            setHasMore(hasMore);
+        })();
+    }, []);
 
 
 
@@ -54,23 +61,23 @@ function App() {
             setLoading(false);
         }, 2500);
     }
-    function resetEverything() {
+
+
+    async function resetEverything() {
         setRandomFruit([]);
         setLoading(false);
-        (async () => {
-            const { items, nextCursor } = await listFruitsPage({ pageSize: 12 });
-            setFruits(items);
-            setCursor(nextCursor);
-            setHasMore(!!nextCursor);
-        })();
+        const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: 'all' });
+        setFruits(items);
+        setCursor(nextCursor);
+        setHasMore(hasMore);
     }
 
 
     async function loadCategory(cat) {
-        const { items, nextCursor } = await listFruitsPage({ pageSize: 12, category: cat });
+        const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: cat });
         setFruits(items);
         setCursor(nextCursor);
-        setHasMore(!!nextCursor);
+        setHasMore(hasMore);
     }
 
 
@@ -85,24 +92,21 @@ function App() {
 
 
 
-    const filtered = fruits.filter(fruit =>
-        categoryDisplayed === "all" ||
-        (categoryDisplayed === "Zoan"
-            ? fruit.type.includes("Zoan")
-            : fruit.type === categoryDisplayed)
-    );
-
-
-    const visible = filtered;
+    const visible = fruits;
 
 
     async function loadMore() {
         if (!cursor) return;
-        const { items, nextCursor } = await listFruitsPage({ pageSize: 12, cursor, category: categoryDisplayed });
+        const { items, nextCursor, hasMore } = await listFruitsPage({
+            pageSize: 12,
+            cursor,
+            category: categoryDisplayed
+        });
         setFruits(prev => [...prev, ...items]);
         setCursor(nextCursor);
-        setHasMore(!!nextCursor);
+        setHasMore(hasMore);
     }
+
 
     return (
         <>
@@ -198,8 +202,11 @@ function App() {
 
             </div>}
 
-            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') || (<button onClick={loadMore} className='loadButton'>load more</button>)}
-
+            {categoryDisplayed !== 'FruitBattle' &&
+                categoryDisplayed !== 'Random' &&
+                hasMore && (
+                    <button onClick={loadMore} className='loadButton'>load more</button>
+                )}
 
             <footer>
                 <h3>ONE PIECE DEVIL FRUITS . com</h3>

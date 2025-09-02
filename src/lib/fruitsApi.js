@@ -7,6 +7,9 @@ import { db } from './firebase';
 
 const col = collection(db, 'fruits');
 
+const ZOAN_TYPES = ['Zoan', 'Mythical Zoan', 'Ancient Zoan', 'Artificial Zoan'];
+
+
 export async function listFruits({ limitTo = 100 } = {}) {
     const q = query(col, orderBy('name'), limit(limitTo));
     const snap = await getDocs(q); // <- usar a query!
@@ -19,20 +22,28 @@ export async function getFruit(id) {
 }
 
 export async function listFruitsPage({ pageSize = 12, cursor = null, category = "all" } = {}) {
-    const baseConstraints =
-        category === "all"
-            ? [orderBy("name"), limit(pageSize)]
-            : [where("type", "==", category), limit(pageSize)]; // sem orderBy => sem índice composto
+    const constraints = [];
 
-    const q = cursor
-        ? query(col, ...baseConstraints, startAfter(cursor))
-        : query(col, ...baseConstraints);
+    if (category !== "all" && category !== "Random" && category !== "FruitBattle") {
+        if (category === "Zoan") {
+            constraints.push(where("type", "in", ZOAN_TYPES));   // OR entre os subtipos
+        } else {
+            constraints.push(where("type", "==", category));
+        }
+    }
 
-    const snap = await getDocs(q);
-    const items = snap.docs.map(d => ({ id: d.id, ...d.data() }));
-    const nextCursor = snap.docs.length ? snap.docs[snap.docs.length - 1] : null;
+    if (cursor) constraints.push(startAfter(cursor));
+    constraints.push(limit(pageSize + 1)); // N+1 para detetar se há mais
 
-    return { items, nextCursor };
+    const snap = await getDocs(query(col, ...constraints));
+    const docs = snap.docs;
+
+    const hasMore = docs.length > pageSize;
+    const pageDocs = hasMore ? docs.slice(0, pageSize) : docs;
+    const items = pageDocs.map(d => ({ id: d.id, ...d.data() }));
+    const nextCursor = hasMore ? pageDocs[pageDocs.length - 1] : null;
+
+    return { items, nextCursor, hasMore };
 }
 
 export async function getRandomFruits(count = 20) {
