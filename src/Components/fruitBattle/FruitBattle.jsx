@@ -21,7 +21,7 @@ export default function FruitBattle() {
         setIsGameOver(false);
         setGameMenu(false);
 
-        const pool = await getRandomFruits(20); // 20 random OBJECTS from DB
+        const pool = await getRandomFruits(40); // 40 random OBJECTS from DB
         setEnemyCrew(pool.slice(0, 7));         // 7 for enemy (OBJECTS)
         setAllyCrew([null, null, null, null, null, null, null]);
         setAllyPool(pool.slice(7));             // 13 available for player (OBJECTS)

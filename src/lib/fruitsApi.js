@@ -46,7 +46,7 @@ export async function listFruitsPage({ pageSize = 12, cursor = null, category = 
     return { items, nextCursor, hasMore };
 }
 
-export async function getRandomFruits(count = 20) {
+export async function getRandomFruits(count = 40) {
     const snap = await getDocs(collection(db, "fruits"));
     const all = snap.docs.map(d => ({ id: d.id, ...d.data() }));
 
