@@ -1,0 +1,19 @@
+.errorWrapper {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.errorWrapper>h2 {
+    font-size: 2em;
+}
+
+.errorWrapper>span {
+    font-size: 0.9em;
+    color: rgb(157, 195, 237);
+}
