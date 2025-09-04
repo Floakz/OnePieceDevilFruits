@@ -1,52 +1,72 @@
-import './App.css';
-import FruitCard from './Components/FruitCard.jsx'
-import { useState, useEffect } from 'react'
-import { listFruitsPage, getRandomFruits } from "./lib/fruitsApi";
-import FruitBattle from './Components/fruitBattle/FruitBattle.jsx';
+import "./App.css";
+import FruitCard from "./Components/FruitCard.jsx";
+import { useEffect, useMemo, useState } from "react";
+import { fetchAllFruitsOnce, filterByCategoryLocal, paginateLocal } from "./lib/fruitsApi";
+import FruitBattle from "./Components/fruitBattle/FruitBattle.jsx";
+
+const PAGE_SIZE = 12;
 
 function App() {
+    const [categoryDisplayed, setCategoryDisplayed] = useState("all");
 
+    // holds the WHOLE DB (one-time fetch, cached in localStorage by fruitsApi)
+    const [allFruits, setAllFruits] = useState([]);
 
-    let [categoryDisplayed, setCategoryDisplayed] = useState('all')
+    // local pagination cursor (index, not Firestore cursor)
+    const [cursorIndex, setCursorIndex] = useState(0);
+    const [hasMore, setHasMore] = useState(false);
 
-
-    const [fruits, setFruits] = useState([]);
-    const [cursor, setCursor] = useState(null);
-    const [hasMore, setHasMore] = useState(true);
-
+    // Random tab state
     const [loading, setLoading] = useState(false);
-    const [fruitIndex, setFruitIndex] = useState(2);
+    const [fruitIndex, setFruitIndex] = useState(0);
     const [randomFruit, setRandomFruit] = useState([]);
 
-
-
+    // 1) Fetch EVERYTHING once (from cache if available)
     useEffect(() => {
         (async () => {
-            const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: 'all' });
-            setFruits(items);
-            setCursor(nextCursor);
-            setHasMore(hasMore);
+            const data = await fetchAllFruitsOnce();
+            setAllFruits(data);
         })();
     }, []);
 
+    // 2) Filter locally by category (Zoan includes subtypes via fruitsApi helper)
+    const filtered = useMemo(
+        () => filterByCategoryLocal(allFruits, categoryDisplayed),
+        [allFruits, categoryDisplayed]
+    );
 
+    // 3) Local pagination (N+1 logic is internal to paginateLocal)
+    const page = useMemo(
+        () => paginateLocal(filtered, PAGE_SIZE, cursorIndex),
+        [filtered, cursorIndex]
+    );
+    const visible = page.items;
 
-    function genRandom(max) {
-        return Math.floor(Math.random() * max);
+    useEffect(() => setHasMore(page.hasMore), [page.hasMore]);
+
+    // --- Tab switching ---
+    function changeCategory(cat) {
+        setCategoryDisplayed(cat);
+        setCursorIndex(0);     // reset local pagination
+        setRandomFruit([]);    // clear Random tab visuals if any
+        setLoading(false);
     }
+
+    function loadMore() {
+        if (!page.hasMore) return;
+        setCursorIndex(page.nextCursorIndex ?? 0);
+    }
+
+    // ---- Random tab (uses local full array) ----
+    function genRandom(max) { return Math.floor(Math.random() * max); }
 
     async function loadRandom() {
         setLoading(true);
-        const randoms = await getRandomFruits(10);
-        spinRoulette(randoms);  // <-- use the list you just fetched
-    }
+        const list = allFruits;
+        if (!list.length) { setLoading(false); return; }
 
-    function spinRoulette(list) {
-        if (!list?.length) { setLoading(false); return; }
-
-        // build a “spinning” pool from that list
         const pool = Array.from({ length: 20 }, () => list[genRandom(list.length)]);
-        setRandomFruit(pool);        // UI reads from randomFruit[fruitIndex]
+        setRandomFruit(pool);
         setFruitIndex(0);
 
         let i = 0;
@@ -62,88 +82,44 @@ function App() {
         }, 2500);
     }
 
-
-    async function resetEverything() {
-        setRandomFruit([]);
-        setLoading(false);
-        const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: 'all' });
-        setFruits(items);
-        setCursor(nextCursor);
-        setHasMore(hasMore);
-    }
-
-
-    async function loadCategory(cat) {
-        const { items, nextCursor, hasMore } = await listFruitsPage({ pageSize: 12, category: cat });
-        setFruits(items);
-        setCursor(nextCursor);
-        setHasMore(hasMore);
-    }
-
-
-    useEffect(() => {
-        (async () => {
-            const { items, nextCursor } = await listFruitsPage({ pageSize: 12 });
-            setFruits(items);
-            setCursor(nextCursor);
-            setHasMore(!!nextCursor);
-        })();
-    }, []);
-
-
-
-    const visible = fruits;
-
-
-    async function loadMore() {
-        if (!cursor) return;
-        const { items, nextCursor, hasMore } = await listFruitsPage({
-            pageSize: 12,
-            cursor,
-            category: categoryDisplayed
-        });
-        setFruits(prev => [...prev, ...items]);
-        setCursor(nextCursor);
-        setHasMore(hasMore);
-    }
-
-
     return (
         <>
             <header>
-                <small className='headerDisclouser' id='hero-title'>Fan-made page | Opinions ahead, handle with care.</small>
+                <small className='headerDisclouser' id='hero-title'>
+                    Fan-made page | Opinions ahead, handle with care.
+                </small>
             </header>
 
             <nav>
                 <h1> Devil Fruits <br /> <span className='colorYellow'>Uncovered</span></h1>
-                <small className='pageSubTitle' >Discover the powers and the USERS who wield them</small>
+                <small className='pageSubTitle'>Discover the powers and the USERS who wield them</small>
                 <div className='navSection'>
-                    <img src="https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png" alt="Onepiecedevilfruits.com logo" />
+                    <img src='https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png' alt='Onepiecedevilfruits.com logo' />
                     <div className='menuWrapper'>
                         <span
                             className={`menuOption ${categoryDisplayed === "all" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("all"), resetEverything())}
+                            onClick={() => changeCategory("all")}
                         >
                             All
                         </span>
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Paramecia" ? "isActive" : ""}`}
-                            onClick={() => { setCategoryDisplayed("Paramecia"); loadCategory("Paramecia"); }}
+                            onClick={() => changeCategory("Paramecia")}
                         >
                             PARAMECIA
                         </span>
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Logia" ? "isActive" : ""}`}
-                            onClick={() => { setCategoryDisplayed("Logia"); loadCategory("Logia"); }}
+                            onClick={() => changeCategory("Logia")}
                         >
                             LOGIA
                         </span>
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Zoan" ? "isActive" : ""}`}
-                            onClick={() => { setCategoryDisplayed("Zoan"); loadCategory("Zoan"); }}
+                            onClick={() => changeCategory("Zoan")}
                         >
                             ZOAN
                         </span>
@@ -152,55 +128,62 @@ function App() {
 
                         <span
                             className={`menuOption ${categoryDisplayed === "Random" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("Random"), resetEverything())}
+                            onClick={() => changeCategory("Random")}
                         >
                             RANDOM
                         </span>
 
                         <span
                             className={`fruitBattleMenuItem menuOption ${categoryDisplayed === "FruitBattle" ? "isActive" : ""}`}
-                            onClick={() => (setCategoryDisplayed("FruitBattle"), resetEverything())}
+                            onClick={() => changeCategory("FruitBattle")}
                         >
                             FRUIT BATTLE
                         </span>
                     </div>
-
                 </div>
             </nav>
 
-            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') ||
+            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') || (
                 <main>
-
                     {visible.map(fruit => <FruitCard {...fruit} key={fruit.id} />)}
+                </main>
+            )}
 
-                </main>}
+            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') && (
+                <div className='mainFull'>
 
-            {(categoryDisplayed === 'FruitBattle' || categoryDisplayed === 'Random') && <div className='mainFull'>
+                    {categoryDisplayed === 'FruitBattle' && <FruitBattle />}
 
-                {categoryDisplayed === 'FruitBattle' && <FruitBattle />}
-
-
-                {categoryDisplayed === 'Random' &&
-                    <div className='randomWrapper'>
-                        <h2>What fruit would you get?</h2>
-                        {randomFruit.length > 0 && randomFruit[fruitIndex] && (
-                            <div className='imageWrapper'>
-                                <img src={randomFruit[fruitIndex].img.fruit} alt="Random Fruit" />
-                                <img src={randomFruit[fruitIndex].img.user} alt="Random User" />
-                            </div>
-                        )}
-                        {!loading && <>
-                            <div>
-                                {randomFruit.length > 0 && <h2 className='randomCongrats'>{`Congratulations!`}</h2>}
-                                {randomFruit.length > 0 && <h3 className='nameFruitRandom'>{`You got the ${randomFruit[fruitIndex].name}`}</h3>}
-                            </div>
-                            {randomFruit.length === 0 && <span>Click 'Get fruit' to find out. Good Luck!</span>}
-                            {randomFruit.length > 0 && <span className='aboutFruitRandom'>{`${randomFruit[fruitIndex].about}`}</span>}
-                            <button className='getFruitButton' onClick={() => loadRandom()}>{randomFruit.length < 1 ? 'Get fruit' : 'Get new fruit'}</button>
-                        </>}
-                    </div>}
-
-            </div>}
+                    {categoryDisplayed === 'Random' && (
+                        <div className='randomWrapper'>
+                            <h2>What fruit would you get?</h2>
+                            {randomFruit.length > 0 && randomFruit[fruitIndex] && (
+                                <div className='imageWrapper'>
+                                    <img src={randomFruit[fruitIndex].img.fruit} alt='Random Fruit' />
+                                    <img src={randomFruit[fruitIndex].img.user} alt='Random User' />
+                                </div>
+                            )}
+                            {!loading && (
+                                <>
+                                    <div>
+                                        {randomFruit.length > 0 && <h2 className='randomCongrats'>Congratulations!</h2>}
+                                        {randomFruit.length > 0 && (
+                                            <h3 className='nameFruitRandom'>You got the {randomFruit[fruitIndex].name}</h3>
+                                        )}
+                                    </div>
+                                    {randomFruit.length === 0 && <span>Click 'Get fruit' to find out. Good Luck!</span>}
+                                    {randomFruit.length > 0 && (
+                                        <span className='aboutFruitRandom'>{randomFruit[fruitIndex].about}</span>
+                                    )}
+                                    <button className='getFruitButton' onClick={loadRandom}>
+                                        {randomFruit.length < 1 ? 'Get fruit' : 'Get new fruit'}
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                    )}
+                </div>
+            )}
 
             {categoryDisplayed !== 'FruitBattle' &&
                 categoryDisplayed !== 'Random' &&
@@ -210,19 +193,13 @@ function App() {
 
             <footer>
                 <h3>ONE PIECE DEVIL FRUITS . com</h3>
-                <span className='emailFooter'>Anything missing or wrong?<br /><span> info@onepiecedevilfruits.com</span></span>
-                <a href="#hero-title">back to the top</a>
+                <span className='emailFooter'>
+                    Anything missing or wrong?<br /><span> info@onepiecedevilfruits.com</span>
+                </span>
+                <a href='#hero-title'>back to the top</a>
             </footer>
         </>
-    )
+    );
 }
 
-export default App
-
-
-
-
-
-
-
-
+export default App;
