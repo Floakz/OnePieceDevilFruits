@@ -2,7 +2,9 @@
 import { useEffect, useState } from "react";
 import Header from "../../Components/header/Header";
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
-import styles from './games.module.css'
+import Footer from "../../Components/footer/footer";
+import Seo from '../../Components/Seo'
+
 
 function genRandom(max) { return Math.floor(Math.random() * max); }
 
@@ -41,6 +43,13 @@ export default function RandomFruitPage() {
 
     return (
         <>
+            <Seo
+                title="Random Devil Fruit Generator – Which Fruit Will You Get?"
+                description="Click to discover your random Devil Fruit! Instantly reveal one of the mysterious One Piece Devil Fruits with user, ability and image."
+                canonical="https://onepiecedevilfruits.com/random-fruit"
+                image="https://onepiecedevilfruits.com/assets/random-fruit-preview.jpg"
+            />
+
             <Header />
             <div className="mainFull randomWrapper">
                 <h2>What fruit would you get?</h2>
@@ -67,6 +76,7 @@ export default function RandomFruitPage() {
                     </>
                 )}
             </div>
+            <Footer />
         </>
     );
 }

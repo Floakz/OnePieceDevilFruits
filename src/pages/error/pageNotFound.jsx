@@ -1,6 +1,7 @@
 import Header from "../../Components/header/Header";
 import styles from './error.module.css'
 import Seo from "../../Components/Seo";
+import Footer from "../../Components/footer/footer";
 
 export default function PageNotFound() {
 
@@ -13,6 +14,7 @@ export default function PageNotFound() {
                 <h2>Your Log Pose seems to be broken!</h2>
                 <span>The page you’re looking for might be lost at sea.</span>
             </div>
+            <Footer />
         </>
     )
 }

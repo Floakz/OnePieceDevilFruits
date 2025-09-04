@@ -4,6 +4,7 @@ import { fetchAllFruitsOnce, filterByCategoryLocal, paginateLocal } from "../../
 import FruitCard from "../../../Components/FruitCard.jsx";
 import Header from "../../../Components/header/Header.jsx";
 import Seo from "../../../Components/Seo.jsx";
+import Footer from "../../../Components/footer/footer.jsx";
 
 const PAGE_SIZE = 12;
 
@@ -50,6 +51,7 @@ export default function LogiaFruits() {
                     load more
                 </button>
             )}
+            <Footer />
         </>
     );
 }

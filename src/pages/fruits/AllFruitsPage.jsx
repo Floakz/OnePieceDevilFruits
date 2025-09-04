@@ -4,7 +4,7 @@ import { fetchAllFruitsOnce, filterByCategoryLocal } from "../../lib/fruitsApi.j
 import FruitCard from "../../Components/FruitCard.jsx";
 import Header from "../../Components/header/Header.jsx";
 import Seo from '../../Components/Seo.jsx'
-
+import Footer from "../../Components/footer/footer.jsx";
 
 const PAGE_SIZE = 12;
 
@@ -50,6 +50,8 @@ export default function AllFruitsPage() {
                     load more
                 </button>
             )}
+
+            <Footer />
         </>
     );
 }

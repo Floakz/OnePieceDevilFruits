@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import Header from "../../Components/header/Header";
 import FruitBattle from "../../Components/fruitBattle/FruitBattle"; // <-- the game component
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
-
+import Footer from "../../Components/footer/footer";
+import Seo from "../../Components/Seo";
 
 // optional: small responsive gate
 function useViewportWidth() {
@@ -26,6 +27,15 @@ export default function FruitBattlePage() {
 
     return (
         <>
+
+            <Seo
+                title="Devil Fruit Battle – Build Your Crew & Fight!"
+                description="Choose your crew and face a random enemy team in the ultimate Devil Fruit Battle! Compare powers, abilities and see who dominates the seas."
+                canonical="https://onepiecedevilfruits.com/fruit-battle"
+                image="https://onepiecedevilfruits.com/assets/fruit-battle-preview.jpg"
+            />
+
+
             <Header />
 
             {width < 800 ? (
@@ -40,6 +50,8 @@ export default function FruitBattlePage() {
                     <FruitBattle fruits={allFruits} />
                 </div>
             )}
+
+            <Footer />
         </>
     );
 }
