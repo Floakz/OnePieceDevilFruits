@@ -60,7 +60,7 @@ export default function Header() {
                             to="/random-fruit"
                             className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
                         >
-                            RANDOM
+                            FRUIT FINDER
                         </NavLink>
 
                         <NavLink
