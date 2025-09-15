@@ -95,8 +95,8 @@
 }
 
 .fruitWrapper>img:last-of-type {
-    max-width: 100px;
-    max-height: 120px;
+    max-width: 90px;
+    max-height: 100px;
 }
 
 .fruitWrapper>span {
