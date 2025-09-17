@@ -453,7 +453,7 @@
 
     .crewCard {
         height: 200px;
-        width: 200px;
+        width: 100%;
         padding-bottom: 10px;
     }
 
@@ -472,4 +472,10 @@
         width: 100%;
         margin: 40px 0;
     }
+
+    .crewCard>span {
+        margin: 0 10px;
+        text-align: center;
+    }
+
 }
