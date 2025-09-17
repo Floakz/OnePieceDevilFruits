@@ -17,16 +17,16 @@ export default function GrandRun() {
     const [discartedFruits, setDiscartedFruits] = useState(0);
 
     const bountyTiers = [
-        { min: 0, max: 246, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
-        { min: 247, max: 339, ranking: 9, label: "Bounty Hunter", bounty: "50,000", message: 'Grandma is impressed, Marines not so much' },
-        { min: 340, max: 432, ranking: 8, label: "Pirate", bounty: "250,000", message: 'Famous for breaking bar stools' },
-        { min: 433, max: 525, ranking: 7, label: "Rising Star", bounty: "1,000,000", message: 'Tiny headline in the morning paper' },
-        { min: 526, max: 618, ranking: 6, label: "New Generation", bounty: "20,000,000", message: 'Marines start to sweat' },
+        { min: 0, max: 300, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
+        { min: 301, max: 420, ranking: 9, label: "Bounty Hunter", bounty: "50,000", message: 'Grandma is impressed, Marines not so much' },
+        { min: 421, max: 500, ranking: 8, label: "Pirate", bounty: "250,000", message: 'Famous for breaking bar stools' },
+        { min: 501, max: 545, ranking: 7, label: "Rising Star", bounty: "1,000,000", message: 'Tiny headline in the morning paper' },
+        { min: 546, max: 618, ranking: 6, label: "New Generation", bounty: "20,000,000", message: 'Marines start to sweat' },
         { min: 619, max: 711, ranking: 5, label: "Supernova", bounty: "100,000,000", message: 'Cipher Pol puts you on the “keep an eye” list' },
         { min: 712, max: 804, ranking: 4, label: "Warlord", bounty: "250,000,000", message: 'They tried to recruit you but you’re too chaotic' },
         { min: 805, max: 897, ranking: 3, label: "Local Emperor", bounty: "500,000,000", message: 'Half an ocean bends the knee' },
         { min: 898, max: 930, ranking: 2, label: "Yonkou", bounty: "1,500,000,000", message: 'World Government pretends not to panic' },
-        { min: 931, max: 1084, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
+        { min: 931, max: 1284, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
     ];
 
     useEffect(() => {
