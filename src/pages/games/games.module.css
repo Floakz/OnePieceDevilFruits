@@ -82,9 +82,6 @@
     margin: auto;
 }
 
-.resultWrapper>div>h3 {
-    font-size: 2em;
-}
 
 
 .resultWrapper img {
@@ -127,6 +124,248 @@
 }
 
 
+.grandRunWrapper {
+    display: flex;
+    text-align: right;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(255, 209, 44);
+    min-height: 50vh;
+    border-radius: 20px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: auto;
+}
+
+.crewWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 60%;
+}
+
+.crewCard {
+    height: 270px;
+    width: 100%;
+    max-width: 220px;
+    border-radius: 10px;
+    transition: opacity 0.2s ease-in-out;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    padding-bottom: 20px;
+    border: 1px solid rgba(255, 255, 0, 0);
+}
+
+.emptyCard:hover {
+    border: 1px solid yellow;
+    opacity: 1;
+}
+
+.emptyCard {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.activeMember {
+    border: 1px solid rgb(51, 251, 255);
+    opacity: 1;
+}
+
+.smallNote {
+    font-size: 0.7em;
+    color: rgb(34, 101, 187);
+}
+
+.crewCard>span {
+    font-size: 0.8em;
+    background-color: yellow;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 7px;
+    font-weight: 600;
+}
+
+.tutorialWerapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.fruitBoxWrapper {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    border: 1px solid rgb(208, 208, 208);
+    transition: all 0.2s ease-in-out;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgb(53, 86, 207);
+    padding: 10px;
+}
+
+
+
+.fruitBoxHover:hover {
+    cursor: pointer;
+    background-color: rgb(18, 46, 147);
+    border: 1px solid rgb(255, 239, 13);
+}
+
+.tutorialWerapper>span {
+    font-size: 1.2em
+}
+
+.tutorialWerapper>h2 {
+    font-size: 4em;
+    line-height: 1em;
+}
+
+
+
+.fruitSelectorWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    gap: 40px;
+    width: 40%;
+    padding: 20px;
+    border: 1px solid yellow;
+    background-color: rgb(34, 78, 156);
+    border-radius: 20px;
+}
+
+
+.fruitTitleName {
+    margin-top: 20px;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.optionFruitWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.optionFruitWrapper>img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.mediumNote {
+    font-size: 0.7em;
+}
+
+.resultWrapper {
+    width: 50%;
+    height: 100%;
+}
+
+.resultHeader {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    width: 40%;
+}
+
+.resultHeader>span {
+    font-size: 0.8em;
+}
+
+
+.resultHeader>span:nth-of-type(2) {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.resultHeader>span:nth-of-type(3) {
+    color: rgb(251, 255, 0);
+}
+
+.resultHeader>h3 {
+    text-transform: uppercase;
+    font-size: 3em;
+    line-height: 1em;
+}
+
+.levelConterWrapper {
+    position: relative;
+    min-height: 200px;
+    align-items: center;
+}
+
+
+
+.levelBarTop {
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    background-color: rgb(212, 197, 31);
+    height: 50%;
+    width: 20%;
+    z-index: 1000;
+}
+
+.levelBarBot {
+    border-radius: 10px 10px 0 0;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    background-color: rgb(25, 48, 116);
+    width: 20%;
+}
+
+.discardButton {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgb(59, 154, 255);
+    opacity: 0.5;
+}
+
+.discardButton:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.discardButtonDisabled {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: rgb(59, 154, 255);
+    opacity: 0.5;
+}
+
+.runTryAgainButton {
+    width: fit-content;
+    background-color: yellow;
+    padding: 10px 20px;
+    border-radius: 7px;
+    color: black;
+    border: none;
+    font-weight: 600;
+    margin: auto;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.runTryAgainButton:hover {
+    background-color: rgb(255, 204, 0);
+}
+
 @media (max-width: 850px) {
 
 
@@ -160,6 +399,7 @@
         justify-content: center;
         text-align: center;
         gap: 20px;
+        width: 100%;
         padding: 10px;
         line-height: 2em;
     }
@@ -198,4 +438,38 @@
     }
 
 
+    .grandRunWrapper {
+        flex-direction: column;
+    }
+
+
+    .crewWrapper {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .crewCard {
+        height: 200px;
+        width: 200px;
+        padding-bottom: 10px;
+    }
+
+    .tutorialWerapper {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .fruitSelectorWrapper {
+
+        width: 100%;
+
+    }
+
+    .resultHeader {
+        width: 100%;
+        margin: 40px 0;
+    }
 }

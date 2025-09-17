@@ -69,6 +69,14 @@ export default function Header() {
                         >
                             FRUIT BATTLE
                         </NavLink>
+
+
+                        <NavLink
+                            to="/grand-run"
+                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                        >
+                            GRAND RUN
+                        </NavLink>
                     </div>
                 </div>
             </nav>

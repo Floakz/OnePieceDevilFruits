@@ -118,7 +118,6 @@ export default function RandomFruitPage() {
 
     const current = pool[fruitIndex];
 
-    console.log(currentQuestion)
 
     return (
         <>

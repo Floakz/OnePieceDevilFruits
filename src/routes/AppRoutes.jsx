@@ -8,6 +8,7 @@ import ZoanFruits from "../pages/fruits/zoan/ZoanFruits.jsx";
 import RandomFruitPage from "../pages/games/RandomFruitPage.jsx";
 import FruitBattlePage from "../pages/games/FruitBattlePage.jsx";
 import PageNotFound from "../pages/error/pageNotFound.jsx";
+import GrandRun from "../pages/games/GrandRun.jsx";
 
 export default function AppRoutes() {
     return (
@@ -23,6 +24,7 @@ export default function AppRoutes() {
             {/* Jogos */}
             <Route path="/random-fruit" element={<RandomFruitPage />} />
             <Route path="/fruit-battle" element={<FruitBattlePage />} />
+            <Route path="/grand-run" element={<GrandRun />} />
 
             {/* Redirecionar aliases antigos, se existirem */}
             <Route path="/fruits" element={<Navigate to="/" replace />} />
