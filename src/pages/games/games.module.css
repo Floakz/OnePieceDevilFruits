@@ -197,6 +197,8 @@
 .tutorialWerapper {
     display: flex;
     flex-direction: column;
+    text-align: center;
+    width: 40%;
     gap: 20px;
 }
 
@@ -237,7 +239,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    gap: 40px;
+    gap: 20px;
     width: 40%;
     padding: 20px;
     border: 1px solid yellow;
@@ -335,13 +337,20 @@
     border-radius: 10px;
     background-color: rgb(255, 247, 2);
     color: black;
-    opacity: 0.5;
+    opacity: 1;
+}
+
+.runAboutFruit {
+    font-size: 0.8em;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
 }
 
 .discardButton:hover {
     background-color: rgb(255, 150, 2);
     cursor: pointer;
-    opacity: 1;
+    opacity: 0.9;
 }
 
 .discardButtonDisabled {

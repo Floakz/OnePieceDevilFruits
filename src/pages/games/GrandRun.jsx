@@ -151,6 +151,7 @@ export default function GrandRun() {
                             <div>
                                 <span>NEW FRUIT</span>
                                 <h3 className={styles.fruitTitleName}>{fruitDrafted.name}</h3>
+                                <p className={styles.runAboutFruit}>{fruitDrafted.about}</p>
                             </div>
                             <div className={styles.optionFruitWrapper}>
                                 <img src={fruitDrafted.img.fruit} alt="image of a devil fruit" />
