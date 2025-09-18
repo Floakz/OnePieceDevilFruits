@@ -1,6 +1,8 @@
 import './fruitcardstyle.css'
 
 export default function FruitCard(props) {
+
+
     return (
 
         <div className='fruitCard-wrapper'>
@@ -13,7 +15,7 @@ export default function FruitCard(props) {
                 <div className='fruitTags'>
                     <div>
                         <img className='icon' src="https://i.ibb.co/1tzwX47Z/user-icon.png" alt="user-icon" />
-                        <p className='tag'>{props.user}</p>
+                        <p className='tag'>{props.user || props.submitedBy}</p>
                     </div>
                     <div>
                         <img className='icon' src="https://i.ibb.co/BKysPs26/fruit-icon.png" alt="fruit-icon" />
@@ -26,7 +28,8 @@ export default function FruitCard(props) {
                 </div>
             </div>
 
-            <img src={props.img.user} className="userImg" alt={`${props.user} picture`} />
+            {props.img.user && <img src={props.img.user} className="userImg" alt={`${props.user} picture`} />}
+
 
 
         </div>

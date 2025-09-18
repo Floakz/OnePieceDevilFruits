@@ -1,5 +1,5 @@
 // pages/games/FruitBattlePage.jsx
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Header from "../../Components/header/Header";
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
 import Footer from "../../Components/footer/footer";
@@ -14,7 +14,8 @@ export default function GrandRun() {
     const [fruitDrafted, setFruitDrafted] = useState();
     const [gameStep, setGameStep] = useState(1);
     const [resultMessage, setResultMessage] = useState();
-    const [discartedFruits, setDiscartedFruits] = useState(0);
+    const [discardedFruits, setDiscardedFruits] = useState(0);
+    const intervalRef = useRef(null);
 
     const bountyTiers = [
         { min: 0, max: 300, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
@@ -33,7 +34,11 @@ export default function GrandRun() {
         (async () => setAllFruits(await fetchAllFruitsOnce()))();
         getRandomCrew()
         setGameStep(1)
-        setDiscartedFruits(0)
+        setDiscardedFruits(0)
+    }, []);
+
+    useEffect(() => {
+        return () => clearInterval(intervalRef.current);
     }, []);
 
     useEffect(() => {
@@ -43,6 +48,17 @@ export default function GrandRun() {
             setGameStep(2);
         }
     }, [crew]);
+
+    function rollFruit(times = 3, delay = 100) {
+        let count = 0;
+        clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            getRandomFruit();
+            count++;
+            if (count >= times) clearInterval(intervalRef.current);
+        }, delay);
+    }
+
 
     function getRandomFruit() {
         const randNum = Math.floor(Math.random() * allFruits.length)
@@ -54,7 +70,7 @@ export default function GrandRun() {
         getRandomCrew()
         setResultMessage('')
         setGameStep(1);
-        setDiscartedFruits(0)
+        setDiscardedFruits(0)
     }
 
     function getPowerLevel() {
@@ -93,9 +109,8 @@ export default function GrandRun() {
     }
 
     function discardFruit() {
-        setDiscartedFruits(1)
-        getRandomFruit()
-        return
+        setDiscardedFruits(1)
+        rollFruit()
     }
 
     function addFruit(crewmate, idx) {
@@ -106,7 +121,18 @@ export default function GrandRun() {
             });
             return nextCrew;
         })
-        getRandomCrew()
+        rollFruit()
+    }
+
+
+    function rollCrew(times = 3, delay = 150) {
+        let count = 0;
+        clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            getRandomCrew();
+            count++;
+            if (count >= times) clearInterval(intervalRef.current);
+        }, delay);
     }
 
     function addMemberToCrew(crewmate, idx) {
@@ -117,8 +143,7 @@ export default function GrandRun() {
             });
             return nextCrew;
         })
-
-        getRandomCrew()
+        rollCrew()
     }
 
     return (
@@ -139,7 +164,7 @@ export default function GrandRun() {
 
                     <div className={styles.crewWrapper}>
                         {crew.map((crewmate, idx) =>
-                            <div onClick={gameStep === 1 && !crewmate.used ? () => addMemberToCrew(crewmate, idx) : undefined} className={`${crewmate.used ? styles.activeMember : styles.emptyCard} ${styles.crewCard}`} style={{ backgroundImage: `url('${crewmate.img}') ` }}>
+                            <div key={idx} onClick={gameStep === 1 && !crewmate.used ? () => addMemberToCrew(crewmate, idx) : undefined} className={`${crewmate.used ? styles.activeMember : styles.emptyCard} ${styles.crewCard}`} style={{ backgroundImage: `url('${crewmate.img}') ` }}>
                                 {gameStep === 1 && <span>{crewmate.name}</span>}
                                 {gameStep !== 1 ? crewmate.fruit ? <div className={styles.fruitBoxWrapper} style={{ backgroundImage: `url('${crewmate.fruit.img.fruit}')` }}></div> : <div onClick={!crewmate.fruit ? () => addFruit(crewmate, idx) : undefined} className={`${styles.fruitBoxWrapper} ${styles.fruitBoxHover}`}></div> : null}
                             </div>
@@ -154,17 +179,26 @@ export default function GrandRun() {
                                 <p className={styles.runAboutFruit}>{fruitDrafted.about}</p>
                             </div>
                             <div className={styles.optionFruitWrapper}>
-                                <img src={fruitDrafted.img.fruit} alt="image of a devil fruit" />
+                                {fruitDrafted?.img?.fruit && (
+                                    <img src={fruitDrafted.img.fruit} alt="image of a devil fruit" />
+                                )}
+                                <div>
+                                    {fruitDrafted?.img?.user && (
+                                        <img src={fruitDrafted.img.user} alt="image of a devil fruit user" />
+                                    )}
+
+                                    <p>previous user</p>
+                                </div>
                             </div>
-                            <span className={styles.mediumNote}>(click on the user to assign it)</span>
+                            <span className={styles.mediumNote}>(click on the crewmate you want to assign this fruit to)</span>
 
                             <span
                                 onClick={() => {
-                                    if (discartedFruits < 1) discardFruit();
+                                    if (discardedFruits < 1 && fruitDrafted) discardFruit();
                                 }}
-                                className={discartedFruits >= 1 ? styles.discardButtonDisabled : styles.discardButton}
+                                className={discardedFruits >= 1 ? styles.discardButtonDisabled : styles.discardButton}
                             >
-                                {`Discard fruit ${discartedFruits}/1`}
+                                {`Discard fruit ${discardedFruits}/1`}
                             </span>                        </div>}
 
 

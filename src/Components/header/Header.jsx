@@ -57,6 +57,15 @@ export default function Header() {
                         <span>|</span>
 
                         <NavLink
+                            to="/community"
+                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                        >
+                            COMMUNITY
+                        </NavLink>
+
+                        <span>|</span>
+
+                        <NavLink
                             to="/random-fruit"
                             className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
                         >
