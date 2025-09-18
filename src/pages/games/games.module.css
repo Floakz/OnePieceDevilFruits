@@ -524,4 +524,8 @@
         text-align: center;
     }
 
+    .optionFruitWrapper>div {
+        right: -5%;
+    }
+
 }

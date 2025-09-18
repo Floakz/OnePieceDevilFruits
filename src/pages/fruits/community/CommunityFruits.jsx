@@ -19,10 +19,14 @@ export default function CommunityFruits() {
     return (
         <>
             <Seo
-                title="Logia Devil Fruits – Complete List & Users"
-                description="All Logia fruits with users, abilities and images."
-                canonical="https://onepiecedevilfruits.com/logia"
+                title="Community Devil Fruits – Fan-Made One Piece Ideas (Submit Yours)"
+                description="Explore community-made Devil Fruits with names, powers, and art. Browse fan creations and submit your own One Piece Devil Fruit idea."
+                canonical="https://onepiecedevilfruits.com/fruits/community"
+                ogTitle="Community Devil Fruits"
+                ogDescription="Fan-made One Piece Devil Fruits. Get inspired and submit yours."
+                ogType="website"
             />
+
 
             <Header />
             <h2 className="communityTitle">This section of fruits are made by the community</h2>
