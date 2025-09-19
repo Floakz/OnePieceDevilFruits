@@ -506,12 +506,11 @@
     .tutorialWerapper {
         text-align: center;
         margin: 40px 0;
+        width: 100%;
     }
 
     .fruitSelectorWrapper {
-
         width: 100%;
-
     }
 
     .resultHeader {
@@ -525,7 +524,7 @@
     }
 
     .optionFruitWrapper>div {
-        right: -5%;
+        right: 8%;
     }
 
 }
