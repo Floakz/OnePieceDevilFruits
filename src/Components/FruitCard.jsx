@@ -8,7 +8,7 @@ export default function FruitCard(props) {
         <div className='fruitCard-wrapper'>
             <div className='info-wrapper'>
                 <div>
-                    <img className='fruitImg' src={props.img.fruit} alt={`${props.name} picture`} />
+                    <img className='fruitImg' src={props.img.fruit || 'https://i.postimg.cc/Sxp09zGS/unkown.png'} alt={`${props.name} picture`} />
                     <h2 className="titleFruit">{props.name}</h2>
                 </div>
                 <p className='aboutSection'>{props.about}</p>
