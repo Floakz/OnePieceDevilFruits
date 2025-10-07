@@ -7,6 +7,13 @@
     font-family: "Poppins", sans-serif;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
 header {
     background-color: #F8DE3C;
     height: 35px;
@@ -33,7 +40,7 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 100px 0 50px 0;
+    padding: 10px 0 50px 0;
     gap: 30px;
 }
 
@@ -50,11 +57,13 @@ h1 {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 50px;
 }
 
 .navSection {
     width: 90VW;
-    margin-top: 80px;
+    margin-top: 30px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -66,6 +75,7 @@ h1 {
 }
 
 .navSection>img {
+    cursor: pointer;
     height: 30px;
 }
 

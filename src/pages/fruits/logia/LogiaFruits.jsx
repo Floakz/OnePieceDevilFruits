@@ -44,7 +44,7 @@ export default function LogiaFruits() {
 
             <Header />
             <main>
-                {visible.map(f => <FruitCard key={f.id} {...f} />)}
+                {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>
             {hasMore && (
                 <button className="loadButton" onClick={loadMore}>

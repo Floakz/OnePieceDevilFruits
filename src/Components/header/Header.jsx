@@ -1,8 +1,14 @@
 // Header.jsx
 import "../../App.css"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function Header() {
+
+    const navigate = useNavigate()
+    const { id } = useParams();
+
+
     return (
         <>
             <header>
@@ -12,15 +18,9 @@ export default function Header() {
             </header>
 
             <nav>
-                <h1>
-                    Devil Fruits <br /> <span className="colorYellow">Uncovered</span>
-                </h1>
-                <small className="pageSubTitle">
-                    Discover the powers and the USERS who wield them
-                </small>
-
                 <div className="navSection">
                     <img
+                        onClick={() => navigate('/')}
                         src="https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png"
                         alt="Onepiecedevilfruits.com logo"
                     />
@@ -88,6 +88,15 @@ export default function Header() {
                         </NavLink>
                     </div>
                 </div>
+
+                {!id &&
+                    <>
+                        <h1>
+                            Devil Fruits <br /> <span className="colorYellow">Uncovered</span>
+                        </h1>
+                        <small className="pageSubTitle">
+                            Discover the powers and the USERS who wield them
+                        </small></>}
             </nav>
         </>
     );

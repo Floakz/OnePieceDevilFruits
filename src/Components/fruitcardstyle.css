@@ -6,8 +6,19 @@
     height: 100%;
     border-radius: 17px;
     border: 1px solid #1869ff;
-
 }
+
+.cardClickable {
+    cursor: pointer;
+}
+
+
+
+.cardClickable:hover {
+    border: 1px solid #ffec18;
+    opacity: 0.8;
+}
+
 
 .info-wrapper {
     position: relative;

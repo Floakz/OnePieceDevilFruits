@@ -1,0 +1,376 @@
+.pageDetailWrapper {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+    min-height: 50vh;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.titleWrapper {
+    border-radius: 10px;
+    border: 1px solid #ffd416;
+    /* background-color: hsla(209, 100%, 25%, 0.844); */
+    text-align: center;
+    width: 100%;
+    padding: 80px 20px 50px 20px;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.pageTitle {
+    font-size: 3em;
+    text-transform: uppercase;
+    line-height: 1.1em;
+}
+
+
+.sectionDetailWrapper {
+    border-radius: 10px;
+    border: 1px solid #16b5ff00;
+    text-align: center;
+    width: 100%;
+}
+
+.sectionTitle {
+    text-align: left;
+    display: block;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+
+.gridDiv2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.wrapper1x2 {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.InfoWrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 60%;
+    justify-content: center;
+    padding: 40px 40px 40px 0;
+    box-sizing: border-box;
+}
+
+.imgBox {
+    width: 35%;
+    max-height: 400px;
+    aspect-ratio: 4 / 5;
+    border: 2px solid #f7ff16;
+    border-radius: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.userImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+}
+
+.text {
+    font-size: 0.9em;
+    text-align: left;
+}
+
+.gridDiv2x2 p {
+    color: rgb(134, 172, 203);
+    font-size: 0.9em;
+}
+
+.gridDiv2x2 span {
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+    font-size: 1em;
+}
+
+
+.spanTag {
+    padding: 2px 5px;
+    margin-left: 5px;
+    border-radius: 5px;
+    background-color: rgb(61, 145, 240);
+    font-weight: 600;
+}
+
+
+.sectionWrapper {
+    width: 100%;
+    margin: 40px 0 0 0;
+}
+
+.wrapper1x3 {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.wrapper1x3>div {
+    background-color: hsla(235, 100%, 7%, 0.25);
+    padding: 40px;
+    border-radius: 10px;
+    width: 100%;
+}
+
+
+
+.sectionOutline {
+    border-radius: 10px;
+    padding: 40px;
+    border: 1px solid #f7ff16;
+}
+
+
+.wrapper4x4 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.statWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.statCopyWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    font-size: 0.9em;
+}
+
+
+.spacer20px {
+    height: 20px;
+}
+
+.statBarWrapper {
+    position: relative;
+    align-content: center;
+    width: 100%;
+}
+
+.statBarWrapper>div {
+    background-color: #4d78a5;
+    height: 20px;
+    width: 100%;
+    border-radius: 1000px;
+}
+
+.statBarWrapper>div:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    background-color: rgb(234, 255, 0);
+    z-index: 200000;
+}
+
+.rarityStarWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.carrosselWrapper {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 600px;
+}
+
+.carrosselImg {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.carroComands {
+    position: absolute;
+    padding: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+
+.carroComands>svg {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    color: rgb(87, 62, 0);
+    background-color: rgb(255, 241, 45);
+}
+
+.carroComands>svg:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+
+
+.otherFruitsWrapper {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+
+.otherFruitsSingle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    padding: 20px;
+    line-height: 1.5em;
+    font-size: 0.7em;
+    text-align: center;
+    align-content: center;
+    border-radius: 10px;
+
+    background-position: top;
+    background-size: cover;
+
+    border: 1px solid rgb(99, 99, 255);
+    height: 200px;
+    width: 200px;
+}
+
+
+
+.otherFruitsSingle:hover {
+    opacity: 0.8;
+    background-color: hsla(40, 100%, 7%, 0.632);
+    background-blend-mode: multiply;
+    border: 1px solid yellow;
+}
+
+.otherfruitImg {
+    object-fit: contain;
+    width: 80px;
+    height: 80px;
+}
+
+
+
+@media (max-width: 850px) {
+
+    .wrapper1x2 {
+        flex-direction: column;
+    }
+
+    .InfoWrapper {
+        flex: 0 0 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+
+
+    .imgBox {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .wrapper1x3 {
+        flex-direction: column;
+    }
+
+    .wrapper4x4 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+
+
+    .sectionOutline {
+        padding: 20px;
+    }
+
+
+    .carrosselWrapper {
+        height: 300px;
+    }
+
+
+
+    .otherFruitsWrapper {
+        margin-top: 40px;
+        display: flex;
+        gap: 16px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 8px;
+        scroll-snap-type: x proximity;
+    }
+
+
+    .otherFruitsSingle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        cursor: pointer;
+        padding: 20px;
+        text-align: center;
+        border-radius: 10px;
+        background-position: top;
+        background-size: cover;
+
+        border: 1px solid rgb(99, 99, 255);
+
+
+        height: 220px;
+        width: 200px;
+        /* tamanho “visível” */
+        min-width: 200px;
+        /* impede encolher */
+        flex: 0 0 200px;
+        /* bloqueia a largura no flex */
+        scroll-snap-align: start;
+        /* opcional: encaixa ao scroll */
+    }
+
+
+    .otherfruitImg {
+        object-fit: contain;
+        width: 80px;
+        height: 80px;
+    }
+
+
+
+}

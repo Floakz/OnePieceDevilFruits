@@ -7,6 +7,7 @@ import ParameciaFruits from "../pages/fruits/paramecia/ParameciaFruits.jsx";
 import LogiaFruits from "../pages/fruits/logia/LogiaFruits.jsx";
 import ZoanFruits from "../pages/fruits/zoan/ZoanFruits.jsx";
 import CommunityFruits from "../pages/fruits/community/CommunityFruits.jsx";
+import ExpandedFruit from "../pages/fruits/expanded/ExpandedFruit.jsx";
 
 import RandomFruitPage from "../pages/games/RandomFruitPage.jsx";
 import FruitBattlePage from "../pages/games/FruitBattlePage.jsx";
@@ -61,6 +62,9 @@ export default function AppRoutes() {
                 <Route path="/logia" element={<LogiaFruits />} />
                 <Route path="/zoan" element={<ZoanFruits />} />
                 <Route path="/community" element={<CommunityFruits />} />
+
+                {/* Fruit Expanded */}
+                <Route path="/fruit/:id" element={<ExpandedFruit />} />
 
                 {/* Jogos */}
                 <Route path="/random-fruit" element={<RandomFruitPage />} />

@@ -1,11 +1,14 @@
+import { useNavigate } from 'react-router'
 import './fruitcardstyle.css'
+
 
 export default function FruitCard(props) {
 
+    const navigate = useNavigate()
 
     return (
 
-        <div className='fruitCard-wrapper'>
+        <div onClick={() => props.clickable ? navigate(`/fruit/${props.id}`) : null} className={`fruitCard-wrapper ${props.clickable ? 'cardClickable' : ''}`}>
             <div className='info-wrapper'>
                 <div>
                     <img className='fruitImg' src={props.img.fruit || 'https://i.postimg.cc/Sxp09zGS/unkown.png'} alt={`${props.name} picture`} />

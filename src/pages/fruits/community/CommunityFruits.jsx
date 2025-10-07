@@ -34,7 +34,7 @@ export default function CommunityFruits() {
 
             <main>
                 {visibleFruits.map((fruit, idx) => (
-                    <FruitCard key={fruit.id ?? idx} {...fruit} />
+                    <FruitCard key={fruit.id ?? idx} {...fruit} clickable={false} />
                 ))}
             </main>
 
