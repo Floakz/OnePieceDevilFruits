@@ -128,7 +128,7 @@ export default function RandomFruitPage() {
                 image="https://onepiecedevilfruits.com/assets/random-fruit-preview.jpg"
             />
 
-            <Header />
+            <Header headerShown={false} />
 
             <div className="mainFull randomWrapper">
                 {/* QUIZ EM CURSO */}

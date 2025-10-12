@@ -43,7 +43,7 @@ export default function ZoanFruits() {
                 canonical="https://onepiecedevilfruits.com/zoan"
             />
 
-            <Header />
+            <Header headerShown={true} />
             <main>
                 {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>

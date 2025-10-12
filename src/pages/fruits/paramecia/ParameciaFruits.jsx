@@ -42,7 +42,7 @@ export default function ParameciaFruits() {
                 canonical="https://onepiecedevilfruits.com/paramecia"
             />
 
-            <Header />
+            <Header headerShown={true} />
             <main>
                 {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>

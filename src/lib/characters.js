@@ -16,7 +16,7 @@ const characters = [
     { name: "Eustass Kid", power: 90, tag: "none", img: "https://i.ibb.co/7NYbMnRz/Eustass-Kid-Anime-Post-Timeskip-Infobox.webp" },
     { name: "Law", power: 92, tag: "doctor", img: "https://i.ibb.co/5gWh13H0/Trafalgar-D-Water-Law-Anime-Post-Timeskip-Infobox.webp" },
     { name: "Luffy", power: 95, tag: "none", img: "https://i.ibb.co/b5TR59pN/Monkey-D-Luffy-Anime-Post-Timeskip-Infobox.webp" },
-    { name: "Roronoa Zoro", power: 90, tag: "swordsman", img: "https://i.ibb.co/84dmmVgb/is-zoro-the-hottest-character-in-one-piece-v0-b5ejaz77fece1.webp" },
+    { name: "Roronoa Zoro", power: 90, tag: "swordsman", img: "https://i.ibb.co/s9sQRGrf/294-C69-BF-16-A8-4978-8701-43-EBDC0-C425-F.webp" },
     { name: "Sabo", power: 91, tag: "none", img: "https://i.ibb.co/QvWfGT5j/Sabo-Anime-Infobox.webp" },
     { name: "Yamato", power: 90, tag: "none", img: "https://i.ibb.co/0pQfGm60/Yamato-Anime-Infobox.webp" },
     { name: "Ace", power: 89, tag: "none", img: "https://i.ibb.co/QvrRcrpK/Portgas-D-Ace-Anime-Infobox.webp" },

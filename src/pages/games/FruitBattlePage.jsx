@@ -36,7 +36,7 @@ export default function FruitBattlePage() {
             />
 
 
-            <Header />
+            <Header headerShown={false} />
 
             {width < 800 ? (
                 <div style={{ padding: "2rem", textAlign: "center" }}>

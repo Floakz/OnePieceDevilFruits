@@ -13,6 +13,7 @@ import RandomFruitPage from "../pages/games/RandomFruitPage.jsx";
 import FruitBattlePage from "../pages/games/FruitBattlePage.jsx";
 import PageNotFound from "../pages/error/pageNotFound.jsx";
 import GrandRun from "../pages/games/GrandRun.jsx";
+import DailyFight from "../pages/games/dailyFight/dailyFight.jsx";
 
 
 function ClarityTracker() {
@@ -70,6 +71,7 @@ export default function AppRoutes() {
                 <Route path="/random-fruit" element={<RandomFruitPage />} />
                 <Route path="/fruit-battle" element={<FruitBattlePage />} />
                 <Route path="/grand-run" element={<GrandRun />} />
+                <Route path="/daily-fight" element={<DailyFight />} />
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

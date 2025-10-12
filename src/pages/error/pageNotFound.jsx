@@ -9,7 +9,7 @@ export default function PageNotFound() {
         <>
             <Seo title="Page not found" noindex canonical="https://onepiecedevilfruits.com/404" />
 
-            <Header />
+            <Header headerShown={false} />
             <div className={styles.errorWrapper}>
                 <h2>Your Log Pose seems to be broken!</h2>
                 <span>The page you’re looking for might be lost at sea.</span>

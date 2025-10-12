@@ -157,7 +157,7 @@ export default function GrandRun() {
 
 
 
-            <Header />
+            <Header headerShown={false} />
             <div className="mainFull">
 
                 <div className={styles.grandRunWrapper}>

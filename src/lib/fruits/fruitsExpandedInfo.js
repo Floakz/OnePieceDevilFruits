@@ -1239,7 +1239,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 92, "defense": 75, "utility": 70 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/YshymH9/mixcollage-24-mar-2024-09-03-pm-4112.jpg',
+            'https://i.ibb.co/Cp86Mnth/maxresdefault.jpg',
+            'https://i.ibb.co/VW0gpjjq/Neko-Neko-no-Mi-Model-Saber-Tiger-Beast-Form.webp',
+        ]
     },
     {
         "id": "48dfcd51-08fd-45ea-b5d7-33912aac00bd",
@@ -1376,7 +1380,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 60, "defense": 60, "utility": 50 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/7dFW8w4k/Baron-Tamago-One-Piece.webp',
+            'https://i.ibb.co/3yqgMKyK/Viscount-Hiyoko.webp',
+            'https://i.ibb.co/5g85C0cY/Baron-Tamago-s-Final-Form-1.webp',
+        ]
     },
     {
         "id": "52eb0032-1919-4198-9da8-54df0eb61804",
@@ -1575,7 +1583,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 70, "defense": 55, "utility": 85 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/fzvV9Bj3/Book-Operator.webp',
+            'https://i.ibb.co/zWJjKwnX/Big-Mom-Shows-Vinsmokes-Her-Collection.webp',
+            'https://i.ibb.co/9kRb7B4c/charlotte-mont-d-or-one-piece.jpg',
+        ]
     },
     {
         "id": "5d3bff23-ad5b-49d0-bebf-7a7fd34ae17a",
@@ -1629,7 +1641,10 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 55, "defense": 75, "utility": 30 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/bj6zW0dM/EUVufhluy-RL5d-TUMpv-IVa-RF9x-SJLc-UYwisubnvzx-SHQb9kv-HAH7i2b-XNOqga-Jbq-U3o-Xver-SDnk5r-MDSXLCGKPw.webp',
+            'https://i.ibb.co/yB8ZZmgW/Orochi-Grabs-Komurasaki.webp',
+        ]
     },
     {
         "id": "5e9f6018-f711-4f0e-8a8d-f10924a7f2f9",
@@ -1710,7 +1725,10 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 60, "defense": 85, "utility": 60 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/wtp6Pt0/Kira-Kira-no-Mi-Infobox.webp',
+            'https://i.ibb.co/ZrFW5Qc/Brilliant-Punk.webp',
+        ]
     },
     {
         "id": "5f0e9472-ea27-4a59-a343-6196a352c27d",
@@ -1822,7 +1840,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 60, "defense": 60, "utility": 50 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/Fq5PSNMF/kaku-in-giraffe-form.jpg',
+            'https://i.ibb.co/gbxS669R/Zoro-vs-Giraffe-Kaku.webp',
+            'https://i.ibb.co/j9RDghtH/Rankyaku-Kiri-Shigure.webp',
+        ]
     },
     {
         "id": "674fb365-cefe-479b-8578-9854c22f91a9",
@@ -2023,7 +2045,10 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 20, "defense": 25, "utility": 66 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/ZRy9FBXk/coras-calm-calm-df-possibilities-what-do-you-think-its-v0-mbw6xj2tl9xc1.webp',
+            'https://i.ibb.co/3ynwxwSF/Calm-Calm-Fruit-Anime-Infobox.webp',
+        ]
     },
     {
         "id": "72c37a8f-6077-4603-bed3-42cf6dd732da",
@@ -2234,7 +2259,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 70, "defense": 55, "utility": 75 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/0R57wg1p/Wara-Wara-no-Mi-Infobox.webp',
+            'https://i.ibb.co/bgQXFD3K/Goma-no-So-Anime.webp',
+            'https://i.ibb.co/j9hp2q85/Straw-Man-s-Card.webp',
+        ]
     },
     {
         "id": "7e5063c3-429c-4bba-bfbe-f09968c901c0",
@@ -3382,7 +3411,11 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 78, "defense": 60, "utility": 80 },
         "trivia": [],
-        "images": []
+        "images": [
+            'https://i.ibb.co/KzhFBVR8/Lucci-Using-Tail.webp',
+            'https://i.ibb.co/ZRHf43Y0/b8a47968-acbb-4ec6-bd4e-295492c2dda3.webp',
+            'https://i.ibb.co/PZkv6F4p/Seimei-Kikan-Kami-e-Bushin.webp',
+        ]
     },
     {
         "id": "e69de64b-ebf0-44fd-8eeb-36b8de6cdfcf",

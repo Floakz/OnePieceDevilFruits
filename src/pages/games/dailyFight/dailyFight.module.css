@@ -1,0 +1,279 @@
+.dailyFightWrapper {
+    max-width: 1450px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.titleWrapper>h1 {
+    font-size: 4em;
+}
+
+
+.titleWrapper>h4 {
+    font-size: 1.4em;
+}
+
+.fruitName {
+    border-bottom: 2px solid rgb(178, 178, 0);
+    color: rgb(255, 204, 0);
+    transition: all 0.2s ease-in-out;
+}
+
+.fruitName:hover {
+    border-bottom: 2px solid rgb(0, 92, 178);
+    color: rgb(0, 21, 255);
+}
+
+.fruitImage {
+    width: 150px;
+    height: 150px;
+    aspect-ratio: 1/ 1;
+    object-fit: contain;
+    margin: 0 auto 100px auto;
+}
+
+.titleWrapper {
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.fightWrapper {
+    border: 2px solid rgb(255, 196, 0);
+    position: relative;
+    display: flex;
+    width: 100%;
+    border-radius: 12px;
+    height: 600px;
+}
+
+.vsWrapper {
+    position: absolute;
+    font-size: 2em;
+    font-weight: 600;
+    top: 50%;
+    right: 50%;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 213, 0);
+    padding: 20px;
+    aspect-ratio: 1/1;
+    border-radius: 100000px;
+    border: 1px solid rgb(255, 196, 0);
+    translate: 50% -50%;
+    z-index: 2;
+}
+
+.leftOptionWrapper {
+    cursor: pointer;
+    border-radius: 10px 0 0 10px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 37, 185, 0.342);
+    border-right: 2px solid rgb(255, 196, 0);
+    ;
+}
+
+.rightOptionWrapper {
+    cursor: pointer;
+    border-radius: 0px 10px 10px 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 37, 185, 0.342);
+}
+
+
+.leftOptionWrapper,
+.rightOptionWrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: 420px;
+    padding: 40px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    transition: all 0.2s ease-in-out;
+    color: white;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.cardCaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    z-index: 1;
+}
+
+
+
+.leftOptionWrapper::after,
+.rightOptionWrapper::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 80%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: -1;
+}
+
+.leftOptionWrapper>h5,
+.rightOptionWrapper>h5 {
+    font-size: 1.4em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+}
+
+.leftOptionWrapper:hover,
+.rightOptionWrapper:hover {
+    background-blend-mode: soft-light;
+}
+
+.extraInfo {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+
+.previouButton {
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: rgb(1, 1, 109);
+    font-weight: 700;
+    background-color: rgb(255, 213, 0);
+    border: 1px solid rgb(255, 213, 0);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.previouButton:hover {
+    background-color: rgba(255, 213, 0, 0);
+    color: white;
+}
+
+
+
+.resulWrapperOverlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+}
+
+
+.OnePieceSpan {
+    color: rgb(255, 221, 0);
+}
+
+.LeftresultsWrapper {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+
+.RightresultsWrapper {
+    width: 100%;
+}
+
+.LeftresultsBar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 103, 212, 0.5);
+    border-radius: 10px;
+}
+
+
+.RightresultsBar {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(244, 179, 0, 0.5);
+    border-radius: 10px;
+}
+
+.LeftresultsBar,
+.RightresultsBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5em;
+    font-weight: 700;
+}
+
+
+@media (max-width: 850px) {
+
+    .fightWrapper {
+        flex-direction: column;
+        height: fit-content;
+    }
+
+    .titleWrapper>h1 {
+        text-transform: uppercase;
+        line-height: 1em;
+    }
+
+    .resulWrapperOverlay {
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .LeftresultsWrapper {
+        height: 100%;
+    }
+
+
+    .RightresultsWrapper {
+        height: 100%;
+    }
+
+    .leftOptionWrapper {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .rightOptionWrapper {
+        border-radius: 0 0 10px 10px;
+
+    }
+
+    .LeftresultsBar {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .RightresultsBar {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .vsWrapper {
+        padding: 0px 10px;
+        font-size: 1.5em;
+        align-content: center;
+    }
+
+
+    .cardCaption {
+        padding: 60px;
+    }
+
+
+
+    .extraInfo {
+        flex-direction: column;
+    }
+
+
+}

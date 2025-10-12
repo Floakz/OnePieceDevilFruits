@@ -1,12 +1,13 @@
 // Header.jsx
 import "../../App.css"
 import { NavLink, useNavigate } from "react-router-dom";
-import { useParams } from "react-router-dom";
 
-export default function Header() {
+
+export default function Header({ headerShown }) {
 
     const navigate = useNavigate()
-    const { id } = useParams();
+
+
 
 
     return (
@@ -86,10 +87,17 @@ export default function Header() {
                         >
                             GRAND RUN
                         </NavLink>
+
+                        <NavLink
+                            to="/daily-fight"
+                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                        >
+                            Daily Fight
+                        </NavLink>
                     </div>
                 </div>
 
-                {!id &&
+                {headerShown &&
                     <>
                         <h1>
                             Devil Fruits <br /> <span className="colorYellow">Uncovered</span>

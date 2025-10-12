@@ -96,7 +96,7 @@ export default function ExpandedFruit() {
             />
 
 
-            <Header />
+            <Header headerShown={false} />
             {status === 'loading' && <div className={styles.pageDetailWrapper}><h2>Loading… 🏴‍☠️</h2></div>}
             {status === 'error' && <div className={styles.pageDetailWrapper}><h2>Ups. Something went Wrong</h2></div>}
             {status === 'notfound' && <div className={styles.pageDetailWrapper}><h2>Fruit not found</h2></div>}

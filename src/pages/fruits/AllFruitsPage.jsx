@@ -41,7 +41,7 @@ export default function AllFruitsPage() {
                 description="Browse every known Devil Fruit by type, user and powers."
                 canonical="https://onepiecedevilfruits.com/"
             />
-            <Header />
+            <Header headerShown={true} />
             <main>
                 {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>
