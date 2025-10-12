@@ -266,7 +266,13 @@
 
 
     .cardCaption {
-        padding: 60px;
+        padding: 40px;
+    }
+
+    .fruitImage {
+        width: 100px;
+        height: 100px;
+
     }
 
 
