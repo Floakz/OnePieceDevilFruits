@@ -28,9 +28,9 @@ export default function CommunityFruits() {
             />
 
 
-            <Header headerShown={true} />
-            <h2 className="communityTitle">This section of fruits are made by the community</h2>
-            <span className="communitySubTitle">if you have any cool fruit ideias send it us via email.</span>
+            <Header headerShown={false} />
+            <h1 className="communityTitle">Community-made Devil Fruits.</h1>
+            <span className="communitySubTitle">Got one in mind? Drop us an email </span>
 
             <main>
                 {visibleFruits.map((fruit, idx) => (

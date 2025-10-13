@@ -37,12 +37,22 @@ export default function AllFruitsPage() {
     return (
         <>
             <Seo
-                title="All Devil Fruits – Types, Users & Powers"
-                description="Browse every known Devil Fruit by type, user and powers."
+                title="All Devil Fruits – Complete List, Types, Users & Powers"
+                description="Explore every Devil Fruit in One Piece: Paramecia, Zoan and Logia. See users, abilities, first appearances and more. Updated regularly."
                 canonical="https://onepiecedevilfruits.com/"
             />
             <Header headerShown={true} />
             <main>
+
+                {/* Section to improve SEO reach and assitive tech friendly */}
+                <section className="semanticsSection" aria-labelledby="intro">
+                    <h2 id="intro" className="visually-hidden">About this list</h2>
+                    <p className="pageIntro">
+                        This is the complete, fan-made catalog of One Piece Devil Fruits. Filter by type,
+                        discover users, abilities and first appearances, and dive into each fruit’s page.
+                    </p>
+                </section>
+
                 {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>
             {hasMore && (

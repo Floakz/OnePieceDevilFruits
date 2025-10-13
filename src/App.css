@@ -304,6 +304,28 @@ a {
     text-decoration: none;
 }
 
+
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    /* prevent line breaks */
+}
+
+.semanticsSection {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
 @media (max-width: 1700px) {
 
     main {
