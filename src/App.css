@@ -174,7 +174,7 @@ footer {
     justify-content: space-between;
 }
 
-footer>a {
+footer>div>a {
     text-align: center;
     border: none;
     padding: 10px 15px;
@@ -190,7 +190,7 @@ footer>a {
     text-decoration: none;
 }
 
-footer>a:hover {
+footer>div>a:hover {
     background-color: #051e4b;
 }
 
@@ -315,6 +315,63 @@ a {
     /* prevent line breaks */
 }
 
+.footer-button-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-btn {
+    cursor: pointer;
+    font-weight: 800;
+    padding: 10px 15px;
+    border: 1px solid rgb(99, 99, 251);
+    border-radius: 7px;
+    text-align: center;
+    align-content: center;
+    color: rgb(205, 205, 255);
+    font-size: 0.8em;
+    transition: all 0.2s ease-in-out;
+}
+
+.footer-btn:hover {
+    background-color: rgba(54, 118, 255, 0.457);
+}
+
+
+.special-thanks-warpper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.special-thanks-box {
+    padding: 20px;
+    position: absolute;
+    width: 300px;
+    height: fit-content;
+    bottom: 120%;
+    right: 50%;
+    translate: 50%;
+    background-color: rgb(0, 13, 56);
+    border: 1px solid rgb(91, 91, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 0.8em;
+}
+
+.special-thanks-box>h4 {
+    color: rgb(91, 91, 255);
+}
+
+.special-thanks-box>div {
+    display: flex;
+    max-width: inherit;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .semanticsSection {
     position: absolute;
     top: 0;
@@ -356,6 +413,23 @@ a {
 
 
 @media (max-width: 850px) {
+
+    .special-thanks-box {
+        width: 100%;
+    }
+
+    .special-thanks-box>div {
+        justify-content: center;
+    }
+
+
+    .footer-button-wrapper {
+        flex-direction: column;
+    }
+
+    .footer-btn {
+        width: 100%;
+    }
 
     .navSection>img {
         display: none;
