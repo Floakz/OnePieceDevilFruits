@@ -1,7 +1,7 @@
 // Header.jsx
 import "../../App.css"
 import { NavLink, useNavigate } from "react-router-dom";
-
+import SearchBar from "../searchBar/searchBar";
 
 export default function Header({ headerShown }) {
 
@@ -104,7 +104,9 @@ export default function Header({ headerShown }) {
                         </h1>
                         <small className="pageSubTitle">
                             Discover the powers and the USERS who wield them
-                        </small></>}
+                        </small>
+                        <SearchBar />
+                    </>}
             </nav>
         </>
     );

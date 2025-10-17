@@ -1,0 +1,102 @@
+.searchBarWrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    height: 50px;
+
+    border-radius: 50px;
+    border: 1px solid #0ae2ff;
+    background: #ffffff;
+    box-shadow: 20px 10px 60px #000747,
+        -20px -10px 60px #0aebff;
+    transition: all 0.2s ease-in-out;
+}
+
+.searchBarWrapper:hover {
+    box-shadow: 20px 20px 60px #000747,
+        -20px -20px 60px #0aebff;
+}
+
+
+.searchButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: inherit;
+    border: none;
+    outline: none;
+    width: 70px;
+    background-color: rgb(255, 217, 0);
+    color: black;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.searchButton:hover {
+    background-color: rgb(4, 134, 255);
+}
+
+.inputBar {
+    border-radius: inherit;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    color: black;
+    padding-left: 20px;
+    font-weight: 600;
+}
+
+.inputBar:active,
+.inputBar:focus {
+    border: none;
+    outline: none;
+}
+
+
+.resultsWrapper {
+    position: absolute;
+    top: 120%;
+    display: flex;
+    padding: 5px;
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(255, 221, 0);
+    border-radius: 10px;
+    z-index: 999999999999999999999;
+}
+
+
+.searchResult {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    color: black;
+    font-size: 0.9em;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: inherit;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+.searchResult:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.searchResultEmpty {
+    color: black;
+    padding: 10px;
+}
+
+
+@media (max-width: 850px) {
+    .searchBarWrapper {
+        width: 90%;
+    }
+
+}
