@@ -3833,6 +3833,32 @@ const fruitsExpandedInfo = [
         "ratings": { "attack": 60, "defense": 55, "utility": 60 },
         "trivia": [],
         "images": []
+    },
+    {
+        "id": "93e9dfa7-40d9-405d-bba0-37da07d0254c",
+        "name": "Strong-Strong Fruit",
+        "firstAppearance": "Episode 1093",
+        "abilities": [
+            "A Paramecia fruit that fills the user with overwhelming physical power. Muscles swell, bones harden, and every strike carries monstrous force capable of crushing steel and stone alike. Strength beyond reason but not without its limits."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Grants immense raw physical strength and lifting power",
+            "Enhances durability and resistance to blunt damage",
+            "Great for hand-to-hand combat and melee dominance",
+            "Can launch powerful shockwaves through punches",
+            "Allows user to overpower most natural obstacles easily"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Relies purely on physical power — ineffective at range",
+            "Overuse leads to muscle strain and fatigue",
+            "Power may damage surroundings uncontrollably",
+            "Difficult to fight strategically against faster or evasive enemies"
+        ],
+        "ratings": { "attack": 85, "defense": 75, "utility": 60 },
+        "trivia": [],
+        "images": []
     }
 ]
 
