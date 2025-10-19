@@ -3859,7 +3859,33 @@ const fruitsExpandedInfo = [
         "ratings": { "attack": 85, "defense": 75, "utility": 60 },
         "trivia": [],
         "images": []
-    }
+    },
+    {
+        "id": "124f8eea-223f-4de1-a6e3-5c727179a5a6",
+        "name": "Warp-Warp Fruit",
+        "firstAppearance": "Episode 1093",
+        "abilities": [
+            "A Paramecia fruit that grants the power to teleport instantly across short or long distances. With a single thought, the user can relocate themselves or others, bending space itself in an instant. Perfect for assassins, snipers, and those who never wish to miss a shot or take one."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Allows instantaneous teleportation of the user and others",
+            "Excellent for ambushes, escape, and strategic repositioning",
+            "Negates terrain disadvantages entirely",
+            "Can transport allies or cargo during battle",
+            "Makes long-range attacks or rescues almost impossible to counter"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Requires clear mental focus to choose destinations accurately",
+            "Limited by the user’s knowledge or visibility of the target location",
+            "Can disorient allies if used recklessly",
+            "No offensive capability by itself — depends on user's skill or weapon"
+        ],
+        "ratings": { "attack": 20, "defense": 55, "utility": 95 },
+        "trivia": [],
+        "images": []
+    },
 ]
 
 
