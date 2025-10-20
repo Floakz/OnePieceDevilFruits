@@ -56,7 +56,7 @@ export default function Store() {
                                             <div style={{ backgroundImage: `url(${product.img})` }} className={styles.productImageWrapper}></div>
                                             <div className={styles.productDescriptionWrapper}>
                                                 <h2>{product.name}</h2>
-                                                <span className={styles.productDescription}>A realistic Mera Mera no Mi for your Devil Fruit shelf.</span>
+                                                {/* <span className={styles.productDescription}>A realistic Mera Mera no Mi for your Devil Fruit shelf.</span> */}
                                                 <button className={styles.viewStoreButton}>view on on store</button>
 
                                             </div>
