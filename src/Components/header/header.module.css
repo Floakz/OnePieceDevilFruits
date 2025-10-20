@@ -93,7 +93,7 @@
         padding: 10px;
         bottom: 20px;
         right: 20px;
-        z-index: 1100;
+        z-index: 9999100;
         background-color: #ffcd07;
         color: #022668;
         border-radius: 7px;
