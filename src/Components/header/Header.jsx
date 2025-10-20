@@ -16,6 +16,51 @@ function useViewportWidth() {
 }
 
 
+function useScrollLock(isLocked) {
+    useEffect(() => {
+        const html = document.documentElement;
+        const body = document.body;
+
+        const lock = () => {
+            const scrollY = window.scrollY || window.pageYOffset;
+            body.dataset.scrollY = String(scrollY);
+
+            // Prevent background scroll & keep visual position
+            body.style.position = "fixed";
+            body.style.top = `-${scrollY}px`;
+            body.style.left = "0";
+            body.style.right = "0";
+            body.style.width = "100%";
+            body.style.overflow = "hidden";
+
+            // Tame overscroll/bounce on mobile
+            html.style.overscrollBehavior = "contain";
+        };
+
+        const unlock = () => {
+            const y = parseInt(body.dataset.scrollY || "0", 10);
+
+            body.style.position = "";
+            body.style.top = "";
+            body.style.left = "";
+            body.style.right = "";
+            body.style.width = "";
+            body.style.overflow = "";
+            html.style.overscrollBehavior = "";
+
+            // Restore previous scroll position
+            window.scrollTo(0, y);
+            delete body.dataset.scrollY;
+        };
+
+        if (isLocked) lock();
+        else unlock();
+
+        return () => unlock(); // cleanup on unmount
+    }, [isLocked]);
+}
+
+
 export default function Header({ headerShown, headerTitle }) {
 
     let [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -45,10 +90,11 @@ export default function Header({ headerShown, headerTitle }) {
         location.pathname.startsWith("/zoan") ||
         location.pathname.startsWith("/community")
 
-    useEffect(() => {
-        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
-        return () => { document.body.style.overflow = ''; };
-    }, [isMobileMenuOpen]);
+
+
+    useScrollLock(isMobileMenuOpen);
+
+
 
     useEffect(() => {
         setIsMobileMenuOpen(false);
@@ -239,6 +285,14 @@ export default function Header({ headerShown, headerTitle }) {
                                 className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
                             >
                                 Daily Fight
+                            </NavLink>
+
+                            <NavLink
+                                to="/treasure-chest"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                Treasure Chest
                             </NavLink>
 
                         </div>}

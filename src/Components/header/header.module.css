@@ -70,15 +70,19 @@
     .fullPageMenu {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+        gap: 10px;
         padding: 40px;
         position: fixed;
+        inset: 0;
         top: 0;
         right: 0;
         z-index: 1000;
         width: 100vw;
         height: 100vh;
         background-color: #ffcd07;
+        touch-action: none;
+        -webkit-overflow-scrolling: auto;
     }
 
     .mobileMenuButton {
@@ -96,10 +100,9 @@
     }
 
     .dropdownItem {
-
+        font-size: 1.3em;
         font-weight: 600;
         text-align: center;
-        font-size: 2em;
         padding: 10px;
         border-radius: 10px;
     }
