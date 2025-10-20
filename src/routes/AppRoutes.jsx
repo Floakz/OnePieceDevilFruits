@@ -15,6 +15,9 @@ import PageNotFound from "../pages/error/pageNotFound.jsx";
 import GrandRun from "../pages/games/GrandRun.jsx";
 import DailyFight from "../pages/games/dailyFight/dailyFight.jsx";
 
+import Store from "../pages/store/store.jsx";
+
+import ScrollToTop from "../Components/ScrollToTop.jsx";
 
 function ClarityTracker() {
     const location = useLocation();
@@ -54,6 +57,7 @@ export default function AppRoutes() {
     return (
         <>
             <ClarityTracker />
+            <ScrollToTop />
             <Routes>
                 {/* Home = All */}
                 <Route path="/" element={<AllFruitsPage />} />
@@ -66,6 +70,10 @@ export default function AppRoutes() {
 
                 {/* Fruit Expanded */}
                 <Route path="/fruit/:id" element={<ExpandedFruit />} />
+
+
+                {/* Store */}
+                <Route path="/treasure-chest" element={<Store />} />
 
                 {/* Jogos */}
                 <Route path="/random-fruit" element={<RandomFruitPage />} />

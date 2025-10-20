@@ -41,7 +41,7 @@ export default function AllFruitsPage() {
                 description="Explore every Devil Fruit in One Piece: Paramecia, Zoan and Logia. See users, abilities, first appearances and more. Updated regularly."
                 canonical="https://onepiecedevilfruits.com/"
             />
-            <Header headerShown={true} allFruits={all} />
+            <Header headerShown={true} />
             <main>
 
                 {/* Section to improve SEO reach and assitive tech friendly */}

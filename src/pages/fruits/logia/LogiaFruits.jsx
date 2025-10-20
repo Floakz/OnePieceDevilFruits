@@ -42,7 +42,7 @@ export default function LogiaFruits() {
                 canonical="https://onepiecedevilfruits.com/logia"
             />
 
-            <Header headerShown={true} />
+            <Header headerShown={true} headerTitle={'Logia Fruits'} />
             <main>
                 {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
             </main>

@@ -42,7 +42,7 @@ export default function FruitBattlePage() {
                 <div style={{ padding: "2rem", textAlign: "center" }}>
                     <h2>Fruit Battle (desktop only for now)</h2>
                     <p>We’re working on a mobile version 👷‍♀️</p>
-                    <p>Meanwhile, try the <b>Random Fruit</b> or browse fruits by category.</p>
+                    <p>Meanwhile, try the Grand Run or browse fruits by category.</p>
                 </div>
             ) : (
                 <div className="mainFull">

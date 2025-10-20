@@ -130,7 +130,9 @@ export default function RandomFruitPage() {
 
             <Header headerShown={false} />
 
+
             <div className="mainFull randomWrapper">
+
                 {/* QUIZ EM CURSO */}
                 {isStarted && !isLoading && !isDone && quizzQuestions[currentQuestion] && (
                     <div className={styles.quizzWrapper}>

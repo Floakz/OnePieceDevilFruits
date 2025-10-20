@@ -1,14 +1,58 @@
 // Header.jsx
 import "../../App.css"
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import SearchBar from "../searchBar/searchBar";
+import styles from './header.module.css'
+import { useState, useEffect } from "react";
 
-export default function Header({ headerShown }) {
+function useViewportWidth() {
+    const [w, setW] = useState(() => window.innerWidth);
+    useEffect(() => {
+        const onResize = () => setW(window.innerWidth);
+        window.addEventListener("resize", onResize);
+        return () => window.removeEventListener("resize", onResize);
+    }, []);
+    return w;
+}
+
+
+export default function Header({ headerShown, headerTitle }) {
+
+    let [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
     const navigate = useNavigate()
 
+    const width = useViewportWidth();
 
+    const menuIcon = <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"><path fill="currentColor" d="M1 3h14v3H1zm0 4h14v3H1zm0 4h14v3H1z" /></svg>
+    const closeIcon = <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 16 16"><path fill="currentColor" d="m3.5 2.086l4.5 4.5l4.5-4.5L13.914 3.5L9.414 8l4.5 4.5l-1.414 1.414l-4.5-4.5l-4.5 4.5L2.086 12.5l4.5-4.5l-4.5-4.5z" /></svg>
 
+    const arrowDownIco = <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" className="bi bi-caret-down-fill" viewBox="0 0 16 16">
+        <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z" />
+    </svg>
+
+    const location = useLocation();
+
+    const isMiniGamesActive =
+        location.pathname.startsWith("/random-fruit") ||
+        location.pathname.startsWith("/fruit-battle") ||
+        location.pathname.startsWith("/grand-run");
+
+    const isDevilFruitsActive =
+        location.pathname === "/" ||
+        location.pathname.startsWith("/paramecia") ||
+        location.pathname.startsWith("/logia") ||
+        location.pathname.startsWith("/zoan") ||
+        location.pathname.startsWith("/community")
+
+    useEffect(() => {
+        document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+        return () => { document.body.style.overflow = ''; };
+    }, [isMobileMenuOpen]);
+
+    useEffect(() => {
+        setIsMobileMenuOpen(false);
+    }, [location.pathname]);
 
     return (
         <>
@@ -19,89 +63,197 @@ export default function Header({ headerShown }) {
             </header>
 
             <nav>
-                <div className="navSection">
-                    <img
-                        onClick={() => navigate('/')}
-                        src="https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png"
-                        alt="Onepiecedevilfruits.com logo"
-                    />
 
-                    <div className="menuWrapper">
-                        <NavLink
-                            to="/"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            All
-                        </NavLink>
+                {width > 900 ?
 
-                        <NavLink
-                            to="/paramecia"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            PARAMECIA
-                        </NavLink>
+                    <div className="navSection">
+                        <img
+                            onClick={() => navigate('/')}
+                            src="https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png"
+                            alt="Onepiecedevilfruits.com logo"
+                        />
 
-                        <NavLink
-                            to="/logia"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            LOGIA
-                        </NavLink>
+                        <div className="menuWrapper">
 
-                        <NavLink
-                            to="/zoan"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            ZOAN
-                        </NavLink>
+                            <div className={`menuOption ${isDevilFruitsActive ? "isActive" : ""} ${styles.OptionWrapper}`}>
+                                <span tabIndex={0}>Devil fruits {arrowDownIco}</span>
 
-                        <span>|</span>
+                                <div className={styles.menuItemDropdownWrapper}>
+                                    <NavLink
+                                        to="/"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        All Fruits
+                                    </NavLink>
 
-                        <NavLink
-                            to="/community"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            COMMUNITY
-                        </NavLink>
+                                    <NavLink
+                                        to="/paramecia"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        PARAMECIA
+                                    </NavLink>
 
-                        <span>|</span>
+                                    <NavLink
+                                        to="/logia"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        LOGIA
+                                    </NavLink>
 
-                        <NavLink
-                            to="/random-fruit"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            FRUIT FINDER
-                        </NavLink>
-
-                        <NavLink
-                            to="/fruit-battle"
-                            className={({ isActive }) => `fruitBattleMenuItem menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            FRUIT BATTLE
-                        </NavLink>
+                                    <NavLink
+                                        to="/zoan"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        ZOAN
+                                    </NavLink>
 
 
-                        <NavLink
-                            to="/grand-run"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            GRAND RUN
-                        </NavLink>
+                                    <NavLink
+                                        to="/community"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        COMMUNITY
+                                    </NavLink>
 
-                        <NavLink
-                            to="/daily-fight"
-                            className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                        >
-                            Daily Fight
-                        </NavLink>
+                                </div>
+
+                            </div>
+
+
+                            <div className={`menuOption ${isMiniGamesActive ? "isActive" : ""} ${styles.OptionWrapper}`}>
+                                <span>Pirate Games {arrowDownIco}</span>
+
+                                <div className={styles.menuItemDropdownWrapper}>
+
+                                    <NavLink
+                                        to="/random-fruit"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        FRUIT FINDER
+                                    </NavLink>
+
+                                    <NavLink
+                                        to="/fruit-battle"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        FRUIT BATTLE
+                                    </NavLink>
+
+
+                                    <NavLink
+                                        to="/grand-run"
+                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                                    >
+                                        GRAND RUN
+                                    </NavLink>
+
+                                </div>
+
+                            </div>
+
+
+                            <NavLink
+                                to="/daily-fight"
+                                className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                            >
+                                Daily Fight
+                            </NavLink>
+
+
+                            <NavLink
+                                to="/treasure-chest"
+                                className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                            >
+                                Treasure Chest
+                            </NavLink>
+
+
+                        </div>
                     </div>
-                </div>
+
+                    :
+                    <>
+                        {isMobileMenuOpen && <div className={styles.fullPageMenu}>
+
+                            <NavLink
+                                to="/"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                All Fruits
+                            </NavLink>
+
+                            <NavLink
+                                to="/paramecia"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                PARAMECIA
+                            </NavLink>
+
+                            <NavLink
+                                to="/logia"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                LOGIA
+                            </NavLink>
+
+                            <NavLink
+                                to="/zoan"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                ZOAN
+                            </NavLink>
+
+
+                            <NavLink
+                                to="/community"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                COMMUNITY
+                            </NavLink>
+
+                            <NavLink
+                                to="/random-fruit"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                FRUIT FINDER
+                            </NavLink>
+
+
+                            <NavLink
+                                to="/grand-run"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                GRAND RUN
+                            </NavLink>
+
+                            <NavLink
+                                to="/daily-fight"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                Daily Fight
+                            </NavLink>
+
+                        </div>}
+                        <div onClick={() => setIsMobileMenuOpen(prev => !prev)} className={styles.mobileMenuButton}>
+                            {isMobileMenuOpen ? closeIcon : menuIcon}
+                        </div>
+                    </>
+                }
 
                 {headerShown &&
                     <>
-                        <h1>
-                            Devil Fruits <br /> <span className="colorYellow">Uncovered</span>
-                        </h1>
+
+                        {headerTitle ? <h1>{headerTitle}</h1> : <h1>Devil Fruits <br /><span className="colorYellow">Uncovered</span> </h1>}
+
+
                         <small className="pageSubTitle">
                             Discover the powers and the USERS who wield them
                         </small>

@@ -195,6 +195,11 @@
     border-radius: 10px;
 }
 
+.navButtonWrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
 
 .RightresultsBar {
     width: 100%;
@@ -275,6 +280,9 @@
 
     }
 
+    .navButtonWrapper {
+        flex-direction: column;
+    }
 
 
     .extraInfo {

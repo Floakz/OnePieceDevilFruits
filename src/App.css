@@ -87,6 +87,9 @@ h1 {
 
 
 .menuOption {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 0.75em;
     font-weight: 700;
     color: white;
@@ -106,6 +109,8 @@ h1 {
     max-width: 800px;
     margin: 50px auto 30px auto;
 }
+
+
 
 .communitySubTitle {
     width: 90%;

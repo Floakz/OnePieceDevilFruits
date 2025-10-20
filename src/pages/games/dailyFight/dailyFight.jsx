@@ -8,11 +8,15 @@ import characters from '../../../lib/characters'
 import { doc, getDoc, setDoc, onSnapshot, serverTimestamp, collection } from "firebase/firestore";
 import { db, auth } from '../../../lib/firebase'
 import { onAuthStateChanged } from "firebase/auth";
+import Seo from '../../../Components/Seo'
 
 
 export default function DailyFight() {
 
     const navigate = useNavigate()
+    const START_DATE = "2025-10-11";
+    const today = todayIdUTC()
+    const [currentDate, setCurrentDate] = useState(todayIdUTC());
 
     let [allFruits, setAllFruits] = useState()
     let [voteCount, setVoteCount] = useState({ left: 0, leftPct: 0, right: 0, rightPct: 0 });
@@ -135,7 +139,7 @@ export default function DailyFight() {
 
 
     async function handleVote(side) {
-        const fightId = todayIdUTC();
+        const fightId = currentDate;
         const userId = auth.currentUser?.uid;
         if (!userId) return console.warn("User not signed in yet.");
 
@@ -179,6 +183,23 @@ export default function DailyFight() {
     })
 
 
+    function goToPreviousFight() {
+
+
+        const prev = new Date(currentDate);
+        prev.setUTCDate(prev.getUTCDate() - 1);
+        const prevDate = prev.toISOString().slice(0, 10);
+
+        if (prevDate < START_DATE) return;
+
+        if (prevDate < START_DATE) {
+            console.log("No older fights available.");
+            return;
+        }
+
+        setCurrentDate(prevDate);
+        setUserVoted(false);
+    }
 
 
 
@@ -201,23 +222,20 @@ export default function DailyFight() {
     useEffect(() => {
         if (!allFruits) return;
 
-        // wait until the auth user exists
         const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
-            if (!user) return;
-            const fightId = todayIdUTC();
-            const voteRef = doc(db, "fights", fightId, "votes", user.uid);
+            if (!user) { setUserVoted(false); return; }
+
+            const voteRef = doc(db, "fights", currentDate, "votes", user.uid);
             const existing = await getDoc(voteRef);
-            if (existing.exists()) setUserVoted(true);
+
+            setUserVoted(!!existing.exists());
         });
 
-        const id = todayIdUTC();
-        const ref = doc(db, "fights", id);
 
-        // 1) live listener (updates UI if votes change later)
+        const ref = doc(db, "fights", currentDate);
         const unsubFight = onSnapshot(ref, (snap) => {
             if (!snap.exists()) return;
             const data = snap.data();
-
             setLeftOption({
                 user: data.left.charName,
                 userImage: data.left.charImg,
@@ -236,24 +254,23 @@ export default function DailyFight() {
             });
         });
 
-        // 2) ensure today's fight exists (first visitor creates it)
-        createTodayFightIfMissing(allFruits, characters).catch(console.error);
+        // Only create if currentDate === today
+        if (currentDate === todayIdUTC()) {
+            createTodayFightIfMissing(allFruits, characters).catch(console.error);
+        }
+
+        const stopVotes = listenVoteCounts(currentDate, setVoteCount);
 
         return () => {
             unsubFight();
             unsubscribeAuth();
+            stopVotes && stopVotes();
         };
-    }, [allFruits]);
+    }, [allFruits, currentDate]);
 
 
 
 
-
-    useEffect(() => {
-        const id = todayIdUTC();
-        const stop = listenVoteCounts(id, setVoteCount);
-        return () => stop && stop();
-    }, []);
 
     function getRandomCharacter(chars, excludeNames = new Set()) {
         const pool = (chars || []).filter(c => c.power >= 74 && !excludeNames.has(c.name));
@@ -292,7 +309,16 @@ export default function DailyFight() {
 
     return (
         <>
+
+            <Seo
+                title="Daily One Piece Matchup – Vote Your Winner in Today's 1v1 Battle!"
+                description="Who wins today's One Piece 1v1 fight? Vote between two random characters and their Devil Fruits. New battles every day — join the fight and see which side wins!"
+                canonical="https://onepiecedevilfruits.com/daily-fight"
+            />
+
             <Header headerShown={false} />
+
+
             <div className="mainFull">
                 <div className={styles.dailyFightWrapper}>
 
@@ -353,8 +379,21 @@ export default function DailyFight() {
                     </div>
 
                     <div className={styles.extraInfo}>
-                        <span>Fight of the day: <b>{todayIdUTC()}</b></span>
-                        {/* <button className={styles.previouButton}>Vote on previous fight</button> */}
+                        <span>Fight of the day: <b>{currentDate}</b></span>
+                        <div className={styles.navButtonWrapper}>
+                            {currentDate !== today && (
+                                <button
+                                    onClick={() => {
+                                        setUserVoted(false);
+                                        setCurrentDate(today);
+                                    }}
+                                    className={styles.previouButton}
+                                >
+                                    Vote on today
+                                </button>
+                            )}
+                            {currentDate !== "2025-10-11" && <button onClick={goToPreviousFight} className={styles.previouButton}>Vote on previous fight</button>}
+                        </div>
                     </div>
                 </div>
             </div>

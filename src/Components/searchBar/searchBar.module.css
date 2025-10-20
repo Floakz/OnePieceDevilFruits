@@ -83,7 +83,7 @@
 
 
 .searchResult:hover {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .searchResultEmpty {
@@ -93,6 +93,7 @@
 
 
 @media (max-width: 850px) {
+
     .searchBarWrapper {
         width: 90%;
     }
