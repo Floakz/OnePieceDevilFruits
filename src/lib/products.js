@@ -27,7 +27,7 @@ const products = [
         name: 'Thousand Sunny Model Ship',
         link: 'https://amzn.to/4nhgvW2',
         img: 'https://i.ibb.co/sJDyY0K2/sunny-model.webp',
-        descriprion: ''
+        descriprion: 'Thousand Sunny'
     },
     {
         name: 'Brotherhood II Set of 3',

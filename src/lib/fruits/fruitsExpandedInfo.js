@@ -3886,6 +3886,36 @@ const fruitsExpandedInfo = [
         "trivia": [],
         "images": []
     },
+    {
+        "id": "3f719c1c-2dbe-4480-bcfc-5a6b660d068b",
+        "name": "Isle-Isle Fruit",
+        "firstAppearance": "Episode 1113",
+        "abilities": [
+            "A Paramecia fruit that allows its user to fuse with and command the land itself. Mountains shift, trees obey, and entire islands move as extensions of the user’s will. A power fit for a tyrant the boundary between flesh and earth becomes meaningless."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Grants total control over the terrain of any island the user inhabits",
+            "Can manipulate earth, stone, and vegetation to form massive attacks or defenses",
+            "Perfect for large-scale battles or territorial domination",
+            "Allows the user to merge with the island for stealth or regeneration",
+            "Can reshape geography — creating traps, barriers, or even new landforms"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Powers are limited to the island or terrain the user is connected to",
+            "Slow reaction time compared to smaller, mobile opponents",
+            "Immense energy required for large-scale manipulation",
+            "Vulnerable if forced to separate from the island body"
+        ],
+        "ratings": { "attack": 91, "defense": 84, "utility": 74 },
+        "trivia": [],
+        "images": [
+            'https://i.ibb.co/JRB6T9VN/picsart-24-10-11-10-07-54-956.jpg',
+            'https://i.ibb.co/HTK7Kqd9/Avalo-Pizarro-face-manifest.webp',
+            'https://i.ibb.co/tTsMr76Z/Avalo-pizzaro-equipage-barbe-noire-one-piece-1024x576.png',
+        ]
+    },
 ]
 
 
