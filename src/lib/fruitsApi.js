@@ -9,7 +9,7 @@ import { db } from './firebase';
 const col = collection(db, 'fruits');
 
 // ---- CONFIG DE CACHE ----
-const CACHE_KEY = 'fruits_cache_v5';
+const CACHE_KEY = 'fruits_cache_v6';
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
 function readCache() {
