@@ -3944,6 +3944,32 @@ const fruitsExpandedInfo = [
             'https://i.ibb.co/tT4f4bxJ/Shiku-Shiku-no-Mi-Infobox.webp',
         ]
     },
+    {
+        "id": "f219231d-eecd-492a-a8f9-b3f491d6bc0b",
+        "name": "Glug-Glug Fruit",
+        "firstAppearance": "Episode 1121",
+        "abilities": [
+            "A Paramecia fruit that turns its user into a Liquor Human, allowing them to generate, control, and weaponize alcohol. The user’s very body becomes a living distillery capable of producing potent liquor, exhaling fumes, and igniting them in explosive flames. A drunkard’s dream and a sailor’s nightmare."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Enables the creation and manipulation of alcohol directly from the body",
+            "Liquor can be expelled as flammable vapor or liquid fuel",
+            "User can ignite alcohol to produce devastating bursts of fire",
+            "Potential to intoxicate or disorient enemies through fumes",
+            "Liquor density and potency can be adjusted for different effects"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Overuse of alcohol-based attacks risks self-ignition or loss of control",
+            "User may become genuinely intoxicated, impairing focus and coordination",
+            "Alcohol evaporates quickly in dry or windy conditions",
+            "Flame-based counterattacks can neutralize or backfire the user’s own techniques"
+        ],
+        "ratings": { "attack": 88, "defense": 60, "utility": 65 },
+        "trivia": [],
+        "images": []
+    },
 ]
 
 
