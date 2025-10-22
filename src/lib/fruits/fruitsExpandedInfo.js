@@ -3916,6 +3916,34 @@ const fruitsExpandedInfo = [
             'https://i.ibb.co/tTsMr76Z/Avalo-pizzaro-equipage-barbe-noire-one-piece-1024x576.png',
         ]
     },
+    {
+        "id": "3e8cf042-7e01-47ea-a3db-81bdb3b904df",
+        "name": "Sick-Sick Fruit",
+        "firstAppearance": "Episode 1093",
+        "abilities": [
+            "A Paramecia fruit that grants the power to conjure and spread supernatural diseases at will. The user becomes a living plague, able to infect anyone nearby with bizarre and unpredictable illnesses from fevers that twist the body to curses that alter one’s very form. A single breath may doom a crowd."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Allows the user to generate and spread a wide variety of diseases",
+            "Infections can alter targets’ bodies or abilities in unpredictable ways",
+            "Diseases can spread through physical contact or air transmission",
+            "Perfect for area control, ambushes, and mass disruption",
+            "User can detect when their illness is cured or countered"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Strong Haki can resist or nullify the diseases",
+            "Antibodies spread quickly once a cure is triggered",
+            "Diseases may be ineffective against immune or resistant opponents",
+            "Limited control over how contagion spreads once released"
+        ],
+        "ratings": { "attack": 82, "defense": 46, "utility": 74 },
+        "trivia": [],
+        "images": [
+            'https://i.ibb.co/tT4f4bxJ/Shiku-Shiku-no-Mi-Infobox.webp',
+        ]
+    },
 ]
 
 
