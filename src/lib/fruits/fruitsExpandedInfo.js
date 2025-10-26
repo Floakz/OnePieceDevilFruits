@@ -3970,6 +3970,34 @@ const fruitsExpandedInfo = [
         "trivia": [],
         "images": []
     },
+    {
+        "id": "9a6812d5-e9cb-4721-a381-3e3dd58d348b",
+        "name": "Glorp-Glorp Fruit",
+        "firstAppearance": "Episode 1090",
+        "abilities": [
+            "A Paramecia fruit that allows the user to produce and control clay at will. The user becomes a Clay Human, capable of shaping, molding, and animating clay into powerful constructs. From towering golems to precision-crafted weapons, everything the user imagines can take form in earth and mud."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Allows generation and manipulation of clay from the user’s body",
+            "Can create golems and constructs that act independently in combat",
+            "User can freely adjust clay’s hardness, from soft mud to solid stone",
+            "Highly versatile, can form weapons, armor, or terrain advantages",
+            "Created golems can regenerate or reform after damage"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone",
+            "Water-based attacks may weaken or dissolve clay constructs",
+            "Requires focus and creativity to maintain multiple golems simultaneously",
+            "Fragile when wet or against extreme heat"
+        ],
+        "ratings": { "attack": 85, "defense": 80, "utility": 92 },
+        "trivia": [],
+        "images": [
+            'https://i.ibb.co/35jcChPc/Nyudo-Gunyo.webp',
+            'https://i.ibb.co/d4w8hbrS/Golem-Gunyo-Gunyo.webp'
+        ]
+    },
 ]
 
 
