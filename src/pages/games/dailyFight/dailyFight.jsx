@@ -157,7 +157,7 @@ export default function DailyFight() {
 
         setUserVoted(true)
 
-        // (optional) UX cache so you can grey out buttons immediately
+
         localStorage.setItem(`voted-${fightId}`, side);
     }
 
