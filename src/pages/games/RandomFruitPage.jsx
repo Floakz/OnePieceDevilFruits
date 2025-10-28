@@ -174,8 +174,6 @@ export default function RandomFruitPage() {
                             {pick ? (
                                 <>
                                     <h3>The seas whisper your name… <br />the {pick.name} has chosen you. </h3>
-                                    <p>Your profile:</p>
-                                    <p>{perc.logia}% Logia • {perc.paramecia}% Paramecia • {perc.zoan}% Zoan</p>
                                     <img src={pick.img.fruit} alt={pick.name} />
                                     <p className={styles.aboutText}>{pick.about}</p>
                                 </>

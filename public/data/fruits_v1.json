@@ -1,0 +1,1878 @@
+[
+  {
+    "id": "0254da49-ff50-432d-97b2-1cebb7dcaa9e",
+    "img": {
+      "fruit": "https://i.postimg.cc/WpkHTxhj/asdadsads.webp",
+      "user": "https://i.postimg.cc/xjhtZ5R7/Kurozumi-Tama-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Millet-Millet Fruit",
+    "type": "Paramecia",
+    "user": "Kurozumi Tama",
+    "power": 20,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user create chewy dango from their cheeks. These sweet dumplings carry a strange charm, taming wild animals and even part-animal beings with a single bite. Cute to look at, dangerous in effect."
+  },
+  {
+    "id": "03b1c5ed-d71d-45ee-8853-84dc7aad7ae8",
+    "previousUser": "Unknown",
+    "name": "Barrier-Barrier Fruit",
+    "type": "Paramecia",
+    "user": "Bartolomeo",
+    "power": 65,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/kXPDXyhf/Bartolomeo-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/JjVkwTDF/mirror-mirror-fruit.webp"
+    },
+    "about": "A Paramecia fruit that lets the user conjure nearly unbreakable barriers at will. These invisible walls can shield, trap, or smash opponents, turning the eater into a true Barrier Human. Simple power, brutal results."
+  },
+  {
+    "id": "04586c2e-4407-46d1-986b-96b38a2fe264",
+    "previousUser": "Unknown",
+    "name": "Puff-Puff Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Daifuku",
+    "power": 15,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/SNRrvkyr/Charlotte-Daifuku-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/7NbVp7Mr/puffpuff.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to release a mighty genie from their own body. This living spirit can fight, defend, and grant devastating attacks, turning the eater into a walking magic lamp."
+  },
+  {
+    "id": "09569647-1e01-41c9-b6d1-2d4fb62b54d8",
+    "previousUser": "Unknown",
+    "name": "Time-Time Fruit",
+    "type": "Paramecia",
+    "user": "Kouzuki Toki",
+    "rarity": 5,
+    "power": 90,
+    "img": {
+      "user": "https://i.postimg.cc/63fqsMJX/Kozuki-Toki-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/9HLkvsjx/Chat-GPT-Image-Sep-1-2025-03-14-43-PM.webp"
+    },
+    "about": "A Paramecia fruit that grants the power to leap forward through time. The user can propel themselves or others into the future, skipping danger entirely while leaving the present behind."
+  },
+  {
+    "id": "0b8f22e3-2841-4e2e-a330-cef2746b4490",
+    "name": "Dragon-Dragon Fruit, Model: Brachiosaurus",
+    "power": 75,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Ancient Zoan",
+    "user": "Queen",
+    "img": {
+      "fruit": "https://i.ibb.co/mCnsgy4K/Dragon-Dragon-Fruit-Model-Brachiosaurus.webp",
+      "user": "https://i.ibb.co/20qqytHj/925f150fef26379ad374edb3ee98ee62.webp"
+    },
+    "about": "An Ancient Zoan fruit that lets the user shift between a towering brachiosaurus hybrid and a full colossal dinosaur. With immense strength, crushing weight, and a neck that reaches the heavens, this power turns its eater into a living relic of prehistoric might."
+  },
+  {
+    "id": "0c454f3d-1ca0-4b22-a631-5de7dd1f8b4b",
+    "previousUser": "Unknown",
+    "name": "Sand-Sand Fruit",
+    "type": "Logia",
+    "user": "Crocodile",
+    "power": 85,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.ibb.co/hJLbTbkR/Crocodile-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/h1HnbVKZ/sandsandfruit-68d263a18edbf.webp"
+    },
+    "about": "A Logia fruit that grants total mastery over sand. The user can create, control, and even become swirling grains of desert, slicing foes with razor winds or draining all moisture in reach, embodying the relentless power of a Sand Human."
+  },
+  {
+    "id": "0cb67738-3d08-4038-9895-37701cafab51",
+    "img": {
+      "fruit": "https://i.postimg.cc/RhPK1sqd/Gocha-Gocha-no-Mi.webp",
+      "user": "https://i.postimg.cc/gJ8gDWPD/Charlotte-Newshi-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Pile-Pile Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Newshi",
+    "power": 25,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user fuse their body with others, blending minds, limbs, and abilities into a single chaotic form. Each merge creates unpredictable combinations, making the eater a living patchwork of power."
+  },
+  {
+    "id": "124f8eea-223f-4de1-a6e3-5c727179a5a6",
+    "about": "A Paramecia fruit that grants the power to teleport instantly across short or long distances. With a single thought, the user can relocate themselves or others, bending space itself in an instant. Perfect for assassins, snipers, and those who never wish to miss a shot or take one.",
+    "img": {
+      "fruit": "https://i.ibb.co/zhjsLM1W/warp-warp-fruit.webp",
+      "user": "https://i.ibb.co/v6P84FBM/Van-Augur-Anime-Post-Timeskip-Infobox.webp"
+    },
+    "name": "Warp-Warp Fruit",
+    "power": 81,
+    "previousUser": "Unknown",
+    "rarity": 4,
+    "type": "Paramecia",
+    "user": "Van Augur"
+  },
+  {
+    "id": "12708145-c2bd-480f-be4a-74aaa4f8f8ea",
+    "previousUser": "Unknown",
+    "name": "Op-Op Fruit",
+    "type": "Paramecia",
+    "user": "Trafalgar D. Water Law",
+    "rarity": 5,
+    "power": 98,
+    "img": {
+      "user": "https://i.postimg.cc/6p8gP37D/Trafalgar-D-Water-Law-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/4Zcytypt/op-opfruit-68d263ccb79b6.webp"
+    },
+    "about": "A Paramecia fruit that creates a spherical “Room” where the user can cut, swap, and rearrange anything—bodies, objects, even themselves—without causing harm. Inside this domain they become a surgeon of reality, a true Free-Modification Human."
+  },
+  {
+    "id": "187e7b71-39b6-491a-b052-90ac350a2643",
+    "previousUser": "Unknown",
+    "name": "Human-Human Fruit",
+    "type": "Zoan",
+    "user": "Tony Tony Chopper",
+    "power": 30,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/YCkXpxxL/Tony-Tony-Chopper.webp",
+      "fruit": "https://i.ibb.co/Y7k4mTLw/humahumafruit-68d263f909e9c.webp"
+    },
+    "about": "A Zoan fruit that grants the power to shift into a human or a human hybrid at will. Whether beast or object, the eater gains human form, mind, and surprising strength, embodying the essence of humanity itself."
+  },
+  {
+    "id": "1a96a89c-39dd-4076-a4a7-d72fbf90dd43",
+    "previousUser": "Unknown",
+    "name": "Bird-Bird Fruit, Model: Albatross",
+    "type": "Zoan",
+    "user": "Morgans",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/N0fxqttb/Morgans-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/j9QK7JYJ/Bird-Bird-Fruit-Model-Albatross.webp"
+    },
+    "about": "A Zoan fruit that lets the user take the form of a soaring albatross or a swift bird-human hybrid. With unmatched wingspan and endless stamina, the eater commands the skies with ocean-crossing speed."
+  },
+  {
+    "id": "1b73363a-5490-4abc-aa86-e528a3f10d23",
+    "img": {
+      "fruit": "https://i.postimg.cc/gjmY2g0z/Kure-Kure-no-Mi-29.webp",
+      "user": "https://i.postimg.cc/TYKsWrWf/Charlotte-Opera-29.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Cream-Cream Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Opera",
+    "power": 35,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user whip up and control endless cream. Smooth or deadly thick, this sweet weapon can smother foes, trap targets, or harden into barriers, turning the eater into a true Cream Human."
+  },
+  {
+    "id": "1c853f73-073f-4bae-be90-901ce31c9ca5",
+    "previousUser": "Kurozumi Higurashi",
+    "name": "Clone-Clone Fruit",
+    "type": "Paramecia",
+    "user": "Bentham",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/Dzmj4w4q/Bentham-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/VYbGWhwr/ushi-ushi-no-mi-model-bison-infobox-68d264172a5ba.webp"
+    },
+    "about": "A Paramecia fruit that lets the user copy anyone they touch, perfectly mimicking their appearance and voice. With a single tap they can become a flawless double, making the eater a master of disguise and the ultimate Imitating Human."
+  },
+  {
+    "id": "2422873d-5104-4b79-bb48-a64e7fda415c",
+    "previousUser": "Unknown",
+    "name": "Heal-Heal Fruit",
+    "type": "Paramecia",
+    "user": "Mansherry",
+    "power": 60,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/3x70yhC8/Mansherry-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/1fMTZBML/heal-heal-fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to produce healing liquid from their own body—tears, sweat, or even blood. A single drop can mend wounds or cure injuries, turning the eater into a living fountain of recovery."
+  },
+  {
+    "id": "25c7ba78-4e3c-40f1-9bef-2b9e2af8dbd4",
+    "img": {
+      "fruit": "https://i.postimg.cc/WpGvpdH5/jukojuko.webp",
+      "user": "https://i.postimg.cc/K4hSf2jr/Shinobu-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Ripe-Ripe Fruit",
+    "type": "Paramecia",
+    "user": "Shinobu",
+    "power": 35,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user age anything they touch, speeding it to ripeness or rot. From instant maturity to sudden decay, this power grants total control over the flow of time in whatever they handle."
+  },
+  {
+    "id": "27264f75-a52c-4e6b-9bc0-0e8736284228",
+    "previousUser": "Unknown",
+    "name": "Rumble-Rumble Fruit",
+    "type": "Logia",
+    "user": "Enel",
+    "rarity": 5,
+    "power": 97,
+    "img": {
+      "user": "https://i.postimg.cc/qvF90JJK/Enel-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/qL4JyX35/38fb1bc3-c64e-416f-bfd5-bfe23ebfc12c-68d26454c3691.webp"
+    },
+    "about": "A Logia fruit that grants control over pure lightning. The user can generate storms, travel as electricity, and strike with instant, devastating force, earning the title of Lightning Human—one of the rare powers deemed nearly invincible."
+  },
+  {
+    "id": "2742128e-2699-4211-9c71-7bfcd584a371",
+    "previousUser": "Unknown",
+    "name": "Dragon-Dragon Fruit, Allosaurus Model",
+    "type": "Ancient Zoan",
+    "user": "X Drake",
+    "power": 80,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.postimg.cc/jjRhnqVD/X-Drake-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.postimg.cc/v8XhyLd2/Dragon-Dragon-Fruit-Allosaurus-Model.webp"
+    },
+    "about": "An Ancient Zoan fruit that lets the user become a ferocious allosaurus or a powerful dino-human hybrid. With savage jaws, crushing strength, and predatory speed, this power revives the deadly hunter of a lost age."
+  },
+  {
+    "id": "291a5934-0eab-4691-9fd8-a64b41624c09",
+    "previousUser": "Unknown",
+    "name": "Turtle-Turtle Fruit",
+    "type": "Zoan",
+    "user": "Pekoms",
+    "power": 45,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/dt2zjNxg/Pekoms.webp",
+      "fruit": "https://i.ibb.co/67NKyN7f/Turtle-Turtle-Fruit.webp"
+    },
+    "about": "A Zoan fruit that allows the user to transform into a sturdy turtle or a turtle-human hybrid at will. Its power grants a near-impenetrable shell and patient endurance, making the eater a living fortress."
+  },
+  {
+    "id": "2bbd9b25-5ce1-46a1-99c4-f0a2f913f557",
+    "previousUser": "Unknown",
+    "name": "Dog-Dog Fruit, Model: Okuchi",
+    "type": "Mythical Zoan",
+    "user": "Yamato",
+    "power": 70,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/6qWPNcHB/Yamato-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/zVLm11rN/yamato-fruit-68d2648f43ea8.webp"
+    },
+    "about": "A Mythical Zoan fruit that grants the power to become a hybrid or full form of the legendary wolf deity. The user gains divine strength, keen senses, and an icy presence worthy of a sacred guardian of the mountains."
+  },
+  {
+    "id": "2d65532f-1068-4d5c-ba8a-a4babdd27ec0",
+    "previousUser": "Unknown",
+    "name": "Garb-Garb Fruit",
+    "type": "Paramecia",
+    "user": "Kin'emon",
+    "power": 25,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/LsJZZ8kT/Kin-emon-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/6x47vsg/Garb-Garb-Fruit.webp"
+    },
+    "about": "A Paramecia fruit that lets the user conjure clothing and accessories from almost anything, from leaves to stones. By picturing the design in their mind, they can dress themselves or others instantly, becoming a living fashion workshop."
+  },
+  {
+    "id": "2d8d7116-a89f-4cbf-9893-6e1156045a7e",
+    "previousUser": "Unknown",
+    "name": "Door-Door Fruit",
+    "type": "Paramecia",
+    "user": "Blueno",
+    "power": 55,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/PxQ1jMGR/Blueno-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/DPjNDwwx/door-door-fruit-68d264ad03efc.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to open doors through any surface, even their own body. From a hand-sized hatch to a full-body gateway, these passages stay open to anyone until sealed, making the eater a true Door Human."
+  },
+  {
+    "id": "2e586e6d-aa53-4600-8210-aba727e82b7a",
+    "previousUser": "Unknown",
+    "name": "Mole-Mole Fruit",
+    "type": "Zoan",
+    "user": "Drophy",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/t4bn9975/Mogu-Mogu-no-Mi-Infobox.webp",
+      "fruit": "https://i.ibb.co/Ps5555Nq/mole-mole-fruit.webp"
+    },
+    "about": "A Zoan fruit that lets the user shift into a mole or a mole-human hybrid at will. With powerful claws and an instinct for tunneling, the eater becomes a stealthy Mole Human, able to dig and strike from beneath the earth."
+  },
+  {
+    "id": "2edc9c8c-3638-42f9-b10f-036edd5cef5d",
+    "img": {
+      "fruit": "https://i.postimg.cc/Yq6J7TjZ/kaido-fruit.webp",
+      "user": "https://i.postimg.cc/ncp34rcS/20220109-kaido-poderes-e-tecnicas-do-kaido.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Fish-Fish Fruit, Model: Azure Dragon",
+    "type": "Mythical Zoan",
+    "user": "Kaidou",
+    "rarity": 5,
+    "power": 98,
+    "about": "A Mythical Zoan fruit that grants the power to become a mighty Azure Dragon in full or hybrid form. Counted among the strongest of all Devil Fruits and once prized as a World Noble treasure, it bestows colossal strength, storm-breathing fury, and the majesty of a living legend."
+  },
+  {
+    "id": "306f5af1-9c4d-4c3f-88c2-79dec50f93c9",
+    "previousUser": "Unknown",
+    "name": "Jacket-Jacket Fruit",
+    "type": "Paramecia",
+    "user": "Kelly Funk",
+    "power": 20,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/RFr8DhMw/Kelly-Funk-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/Tx4Fqt8h/jacker-Fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to transform into a living jacket that others can wear. Once donned, the wearer’s body becomes the user’s to control, turning the eater into a sneaky and unpredictable Jacket Human."
+  },
+  {
+    "id": "3455ae44-758e-40b5-9866-ae39f81121de",
+    "img": {
+      "fruit": "https://i.ibb.co/RpWh5GPq/brainbrainfruit.webp",
+      "user": "https://i.ibb.co/cctjLLC1/Vegapunk-Anime-Infobox.webp"
+    },
+    "name": "Brain-Brain Fruit",
+    "power": 78,
+    "previousUser": "Unknown",
+    "rarity": 4,
+    "type": "Paramecia",
+    "user": "Vegapunk",
+    "about": "A Paramecia fruit that lets the user’s brain grow without limit, storing endless knowledge and memories. This boundless intellect turns the eater into a true Brains Human, capable of mastering any skill or secret."
+  },
+  {
+    "id": "34d9afbd-a50a-4879-9422-401c7735bf5b",
+    "img": {
+      "fruit": "https://i.postimg.cc/bN3SLJ81/Icicle-fruit.webp",
+      "user": "https://i.postimg.cc/GhYSsWC0/One-Piece-Kuzan-Cropped.avif"
+    },
+    "previousUser": "Unknown",
+    "name": "Ice-Ice Fruit",
+    "type": "Logia",
+    "user": "Kuzan",
+    "rarity": 5,
+    "power": 95,
+    "about": "A Logia fruit that grants the power to create, control, and become ice. The user can freeze oceans, shape icy weapons, and turn their own body into living frost, earning the title of Freezing Human."
+  },
+  {
+    "id": "36bf8750-7186-48b0-92e2-fccf726aa1a4",
+    "previousUser": "Unknown",
+    "name": "Slow-Slow Fruit",
+    "type": "Paramecia",
+    "user": "Foxy",
+    "power": 70,
+    "rarity": 3,
+    "about": "A Paramecia fruit that lets the user fire special beams that drastically slow anything they hit. These shimmering rays suspend movement for precious seconds, making the eater a time-twisting Noroma Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/NgGynbHv/slow-slow-fruit.webp",
+      "user": "https://i.ibb.co/Q3dWHVM8/Foxy-Anime-Pre-Timeskip-Infobox.webp"
+    }
+  },
+  {
+    "id": "3a970a68-15dd-456c-98df-6d4ec2effad7",
+    "previousUser": "Unknown",
+    "name": "Cook-Cook Fruit",
+    "type": "Paramecia",
+    "user": "Streusen",
+    "power": 15,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/MHHQd7CY/Streusen-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/6cP4TR7n/food-fruit-68d264f768c13.webp"
+    },
+    "about": "A Paramecia fruit that lets the user transform objects into edible food at will. From weapons to walls, anything touched can become a feast, turning the eater into a walking banquet of endless possibilities."
+  },
+  {
+    "id": "3b24d864-ae46-4146-a1f7-6380076a0534",
+    "previousUser": "Unknown",
+    "name": "Swim-Swim Fruit",
+    "type": "Paramecia",
+    "user": "Senor Pink",
+    "power": 55,
+    "rarity": 2,
+    "about": "A Paramecia fruit that allows the user to “swim” through solid ground or walls as if they were water. This power makes the eater a Free-Swimming Human, able to glide through earth and stone with ease.",
+    "img": {
+      "fruit": "https://i.ibb.co/VPP7tDg/sw-imsw-imfruit-68d26510dc481.webp",
+      "user": "https://i.ibb.co/zWWxkg0Q/Senor-Pink-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "3e6cecd7-2a21-4429-a0ea-472655935312",
+    "previousUser": "Unknown",
+    "name": "String-String Fruit",
+    "type": "Paramecia",
+    "user": "Donquixote Doflamingo",
+    "rarity": 5,
+    "power": 90,
+    "about": "A Paramecia fruit that grants the ability to create and control razor-sharp strings. These threads can slice, bind, or even control others like puppets, making the eater a deadly and versatile String Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/8Lwfz9b0/stringfruit-68d2652bbbc0b.webp",
+      "user": "https://i.ibb.co/Jj4TZTRd/Donquixote-Doflamingo-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "3e70324a-3104-45fc-a4aa-7fc6c317fcf3",
+    "about": "A swift Zoan-type fruit that lets its user become a nimble jackal or a sharp-fanged hybrid, gaining heightened senses, blistering speed, and relentless hunting instincts perfect for desert battles and sudden ambushes.",
+    "name": "Dog-Dog Fruit, Model: Jackal",
+    "power": 55,
+    "previousUser": "Unknown",
+    "rarity": 2,
+    "type": "Zoan",
+    "user": "Chaka",
+    "img": {
+      "fruit": "https://i.ibb.co/7xr3SJNj/jackal-68d2f12fe5aa1.webp",
+      "user": "https://i.ibb.co/1JnQTGBZ/Chaka-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "3e8cf042-7e01-47ea-a3db-81bdb3b904df",
+    "about": "A Paramecia fruit that grants the power to conjure and spread supernatural diseases at will. The user becomes a living plague, able to infect anyone nearby with bizarre and unpredictable illnesses from fevers that twist the body to curses that alter one’s very form. A single breath may doom a crowd.",
+    "img": {
+      "fruit": "https://i.ibb.co/ztXWrQf/sick-sick-fruit.webp",
+      "user": "https://i.ibb.co/JwQcrdfX/Doc-Q-Anime-Infobox.webp"
+    },
+    "name": "Sick-Sick Fruit",
+    "power": 85,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Paramecia",
+    "user": "Doc Q"
+  },
+  {
+    "id": "3f719c1c-2dbe-4480-bcfc-5a6b660d068b",
+    "about": "A Paramecia fruit that allows its user to fuse with and command the land itself. Mountains shift, trees obey, and entire islands move as extensions of the user’s will. A power fit for a tyrant the boundary between flesh and earth becomes meaningless.",
+    "img": {
+      "fruit": "https://i.ibb.co/LK3kngj/island-island-fruit.webp",
+      "user": "https://i.ibb.co/N6bsGGR4/Avalo-Pizarro-Anime-Pre-Timeskip-Infobox.webp"
+    },
+    "name": "Isle-Isle Fruit",
+    "power": "87",
+    "previousUser": "Unknown",
+    "rarity": "5",
+    "type": "Paramecia",
+    "user": "Avalo Pizarro"
+  },
+  {
+    "id": "4144b2d1-c577-473f-b61c-2daec88aac73",
+    "previousUser": "Unknown",
+    "name": "Dog-Dog Fruit, Model Tanuki",
+    "type": "Zoan",
+    "user": "Bunbuku",
+    "power": 30,
+    "rarity": 2,
+    "img": {
+      "fruit": "https://i.postimg.cc/rw7LfxHN/Inu-Inu-no-Mi-Model-Bake-Danuki.webp",
+      "user": "https://i.ibb.co/tpbSNvxy/images-68d265576644d.webp"
+    },
+    "about": "A Zoan fruit that allows the user to become a playful tanuki or a tanuki-human hybrid at will. With nimble movements and natural trickster charm, the eater gains the sly adaptability of this legendary raccoon-dog."
+  },
+  {
+    "id": "416a57b4-f1a4-41ce-85f8-f31761b2b17f",
+    "img": {
+      "fruit": "https://i.postimg.cc/52zLfng9/Tsuchigumo-Fruit.webp",
+      "user": "https://i.postimg.cc/Wp79vb3Y/Black-Maria-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Spider-Spider Fruit",
+    "type": "Ancient Zoan",
+    "user": "Black Maria",
+    "power": 65,
+    "rarity": 3,
+    "about": "An Ancient Zoan fruit that lets the user transform into a Rosamygale grauvogeli, an extinct giant spider, or a human-spider hybrid. This power grants venomous fangs, powerful webs, and the eerie hunting skills of a prehistoric predator."
+  },
+  {
+    "id": "42b0f3ff-8dea-4a66-bcff-d4801f87a60e",
+    "previousUser": "Unknown",
+    "name": "Dice-Dice Fruit",
+    "type": "Paramecia",
+    "user": "Daz Bonez",
+    "power": 50,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/rsDwwVHZ/daz-bonez-5c56fffc682f7p.jpg",
+      "fruit": "https://i.ibb.co/1Gmwb591/supa-supa-no-mi-infobox-68d265754be41.webp"
+    },
+    "about": "A Paramecia fruit that turns the user’s body into living steel blades. Limbs can fold into swords or launch slicing attacks, making the eater a walking arsenal and a deadly Full-Body Bladed Human."
+  },
+  {
+    "id": "43dfb53e-510b-48eb-aa9e-77bbc03e0e0a",
+    "previousUser": "Unknown",
+    "name": "Rust-Rust Fruit",
+    "type": "Paramecia",
+    "user": "Shu",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/vTWSxZqN/Shu-Portrait.webp",
+      "fruit": "https://i.ibb.co/VWMByskn/rust-rust-fruit.webp"
+    },
+    "about": "A Paramecia fruit that gives the user the power to corrode metal with a touch. Weapons, armor, and machines crumble to rust in seconds, turning the eater into a relentless Rust Human."
+  },
+  {
+    "id": "446ad5e8-ae7c-4f9d-b6a8-44d4f7e88ff1",
+    "previousUser": "Unknown",
+    "name": "Pump-Pump Fruit",
+    "type": "Paramecia",
+    "user": "Belo Betty",
+    "power": 25,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/BbGPTWq2/Belo-Betty-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/ZpWWXnJG/pump-pump-fruit.webp"
+    },
+    "about": "A Paramecia fruit that lets the user rouse hidden strength in others. With a word or a touch, they can ignite courage and draw out latent power, turning ordinary allies into fearless fighters."
+  },
+  {
+    "id": "47f53322-9283-429e-8410-9c303159c041",
+    "img": {
+      "fruit": "https://i.postimg.cc/9QWmGmyW/susu.webp",
+      "user": "https://i.postimg.cc/vmF1FFVk/Karasu-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Soot-Soot Fruit",
+    "type": "Logia",
+    "user": "Karasu",
+    "power": 40,
+    "rarity": 4,
+    "about": "A Logia fruit that grants control over soot. The user can generate thick clouds of black dust, shape it into weapons, or dissolve into drifting ash, becoming a stealthy and suffocating Soot Human."
+  },
+  {
+    "id": "488246a5-5153-416d-bdb7-a1aafc252f57",
+    "previousUser": "Unknown",
+    "name": "Dark-Dark Fruit",
+    "type": "Logia",
+    "user": "Marshall D. Teach",
+    "rarity": 5,
+    "power": 99,
+    "img": {
+      "user": "https://i.postimg.cc/g0t6fbzn/qweqwe.webp",
+      "fruit": "https://i.ibb.co/23y4mT1S/dark-dark-fruit-68d2a2e311a02.webp"
+    },
+    "about": "A Logia fruit that grants the power to create, control, and become pure darkness. Its gravity-like pull can swallow attacks, crush foes, and drag everything into a black void, earning it the title of Darkness Human and the most feared ability among all Devil Fruits."
+  },
+  {
+    "id": "48a16313-828e-4ae5-b0d3-522a47fad3fd",
+    "name": "Cat-Cat Fruit, Saber-Toothed Tiger Model",
+    "power": 72,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Ancient Zoan",
+    "user": "Who's-Who",
+    "img": {
+      "user": "https://i.ibb.co/Hp7sRKNc/Who-s-Who-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/93w0pHDK/Cat-Cat-Fruit.webp"
+    },
+    "about": "An Ancient Zoan fruit that lets the user transform into a saber-toothed tiger or a fierce tiger-human hybrid at will. With massive fangs, explosive speed, and primal strength, the eater becomes a predator from the age of giants."
+  },
+  {
+    "id": "48dfcd51-08fd-45ea-b5d7-33912aac00bd",
+    "previousUser": "Unknown",
+    "name": "Wash-Wash Fruit",
+    "type": "Paramecia",
+    "user": "Tsuru",
+    "power": 30,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.ibb.co/sJPg4KXk/Tsuru.webp",
+      "fruit": "https://i.ibb.co/9Hpgn9qB/washwashfruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to wash and hang people or objects as if they were laundry. Victims are scrubbed clean and left hanging, weakened and helpless, making the eater a playful yet dangerous Laundry Human."
+  },
+  {
+    "id": "4a4af37d-bd12-4366-9f51-a4cfb7cef101",
+    "previousUser": "Unknown",
+    "name": "Bubble-Bubble Fruit",
+    "type": "Paramecia",
+    "user": "Kalifa",
+    "power": 35,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/sDF7XcRx/Kalifa-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/B5xgDt9j/soap-soap-fruit-68d2a30ca67e6.webp"
+    },
+    "about": "A Paramecia fruit that lets the user create and control soap and bubbles that cleanse more than dirt. These slick suds can wash away strength and abilities, turning the eater into a deceptively dangerous Soap Human."
+  },
+  {
+    "id": "4d196de2-9830-4ced-bd48-1633972d9de9",
+    "previousUser": "Unknown",
+    "name": "Stone-Stone Fruit",
+    "type": "Paramecia",
+    "user": "Pica",
+    "power": 65,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/jdZHHC8g/Pica-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/zhDzjY3Q/stone-stone-fruit-68d2a3318076e.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to merge with and control stone. They can shape walls, create weapons, or move through solid rock itself, becoming a formidable Stone Assimilation Human."
+  },
+  {
+    "id": "4f1a1050-5eb8-4ec7-b8f6-8628cf19d34f",
+    "about": "A colossal Paramecia-type fruit that grants the power to massively increase one’s size at will, turning the user into a towering giant capable of crushing foes and reshaping the battlefield with every monumental move.",
+    "img": {
+      "fruit": "https://i.ibb.co/46Jzw5b/huge-huge-fruit.webp",
+      "user": "https://i.postimg.cc/CKBqcJBp/Sanjuan-Wolf-Anime-Post-Timeskip-Infobox.webp"
+    },
+    "name": "Huge-Huge Fruit",
+    "power": 75,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Paramecia",
+    "user": "Sanjuan Wolf"
+  },
+  {
+    "id": "4f1b1298-3fc0-495b-9345-9112d1daa4b2",
+    "previousUser": "Unknown",
+    "name": "Dog-Dog Fruit, Model: Nine Tailed Fox",
+    "type": "Mythical Zoan",
+    "user": "Catarina Devon",
+    "rarity": 5,
+    "power": 90,
+    "img": {
+      "user": "https://i.postimg.cc/63LzGxRG/Catarina-Devon-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/zTz9wqHB/ninetailfox-fruit.webp"
+    },
+    "about": "A Mythical Zoan fruit that grants the power to become a nine-tailed fox. The user can shift into a full fox or a cunning hybrid, gaining illusionary tricks and supernatural charm worthy of legend."
+  },
+  {
+    "id": "5214641d-1bbf-4440-b3ce-7c85d1e758aa",
+    "previousUser": "Unknown",
+    "name": "Egg-Egg Fruit",
+    "type": "Zoan",
+    "user": "Tamago",
+    "power": 25,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/CLtVcrCN/Tamago-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/tMZmk2QX/egg-egg-68d2a34ce9db5.webp"
+    },
+    "about": "A Zoan fruit that gives the user the body of an egg. When the shell is cracked, they regenerate into a stronger form each time, gradually taking on more chicken-like traits and hatching new power with every break."
+  },
+  {
+    "id": "52eb0032-1919-4198-9da8-54df0eb61804",
+    "previousUser": "Unknown",
+    "name": "Kilo-Kilo fruit",
+    "type": "Paramecia",
+    "user": "Mikita",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://upload.wikimedia.org/wikipedia/fi/3/3b/Miss_Valentine.png",
+      "fruit": "https://i.ibb.co/BVkSzPHJ/kilo-kilo-fruit-68d2a3769432c.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to shift their body weight anywhere between 1 and 10,000 kilograms without changing their size. This power grants crushing force or feather-light agility at will."
+  },
+  {
+    "id": "566d7c09-6866-4455-b85b-d3a05609c671",
+    "name": "Gum-Gum Fruit",
+    "user": "Monkey D. Luffy",
+    "rarity": 5,
+    "power": 90,
+    "img": {
+      "user": "https://img.assinaja.com/upl/lojas/mundosinfinitos/imagens/foto-one-piece.png",
+      "fruit": "https://i.ibb.co/DP9drJpC/gum-gum-fruit-68d2a3961c044.webp"
+    },
+    "type": "Mythical Zoan",
+    "previousUser": "Joy Boy",
+    "about": "Once believed to be a simple Paramecia granting a rubber body, this Mythical Zoan: Model Nika holds a far greater secret. It transforms its user into the legendary Sun God, giving them not just elasticity, but the power of freedom itself, to fight, to move, and to smile without limits."
+  },
+  {
+    "id": "575c590d-f740-445a-ac87-4778953eea3e",
+    "previousUser": "Unknown",
+    "name": "Snake-Snake Fruit, Model: King Cobra",
+    "type": "Zoan",
+    "user": "Boa Marigold",
+    "power": 75,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/CxyxMzyV/Hebi-Hebi-no-Mi-Modelo-Cobra.webp",
+      "fruit": "https://i.ibb.co/sJjs4rhv/king-cobra-fruit.webp"
+    },
+    "about": "A Zoan fruit that lets the user transform into a king cobra or a cobra-human hybrid at will. This power grants deadly fangs, swift strikes, and the ability to produce and spit potent venom, making the eater a living serpent of lethal precision."
+  },
+  {
+    "id": "58056cae-2074-4f51-b3d9-2f0183650396",
+    "previousUser": "Unknown",
+    "name": "Human-Human Fruit, Model: Buddha",
+    "type": "Mythical Zoan",
+    "user": "Sengoku",
+    "rarity": 5,
+    "power": 95,
+    "img": {
+      "user": "https://i.postimg.cc/t4L0xCFt/Sengoku-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/3m0TZshW/buda-fruit.webp"
+    },
+    "about": "A Mythical Zoan fruit that allows the user to transform into a towering golden Buddha. This form grants immense size, overwhelming strength, and a radiant shockwave power worthy of divine force."
+  },
+  {
+    "id": "58b34368-c259-4b42-9a18-f3387b440e08",
+    "previousUser": "Unknown",
+    "name": "Mark-Mark Fruit",
+    "type": "Paramecia",
+    "user": "Vander Decken IX",
+    "power": 25,
+    "rarity": 1,
+    "about": "A Paramecia fruit that grants perfect aim. Once the user marks a target, any attack or object they launch will unerringly find its mark, striking with flawless precision from any distance.",
+    "img": {
+      "fruit": "https://i.ibb.co/DfgxsPd6/target-fruit.webp",
+      "user": "https://i.ibb.co/CrSKLvh/Vander-Decken-IX-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "5ae785ae-edd9-436e-ae59-cea5cd6ede18",
+    "previousUser": "Unknown",
+    "name": "Revive-Revive Fruit",
+    "type": "Paramecia",
+    "user": "Brook",
+    "power": 85,
+    "rarity": 4,
+    "img": {
+      "user": "https://images.alphacoders.com/138/1381546.png",
+      "fruit": "https://i.ibb.co/pBV3ympB/revive-fruit-68d2a3b7ded31.webp"
+    },
+    "about": "A Paramecia fruit that empowers the user’s soul to return after death. This second life unlocks a range of spirit-based abilities, making the eater a true Reviving Human with power over the realm between life and afterlife."
+  },
+  {
+    "id": "5c0847a6-6f5c-4976-801c-872e2b6b29ca",
+    "previousUser": "Unknown",
+    "name": "Book-Book Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Mont-d'Or",
+    "power": 60,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/FKRCNNZD/Charlotte-Mont-d-Or-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/spD280Bk/book-book-fruit.webp"
+    },
+    "about": "A Paramecia fruit that grants control over books. The user can command pages to fly, trap foes within stories, or wield tomes as weapons, becoming a cunning and dangerous Book Human."
+  },
+  {
+    "id": "5d3bff23-ad5b-49d0-bebf-7a7fd34ae17a",
+    "previousUser": "Unknown",
+    "name": "Horm-Horm Fruit",
+    "type": "Paramecia",
+    "user": "Emporio Ivankov",
+    "power": 70,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/qv1P1vs3/Emporio-Ivankov.jpg",
+      "fruit": "https://i.ibb.co/pv8PXs0x/horm-horm-fruit.webp"
+    },
+    "about": "Paramecia fruit that allows the user to produce powerful hormones capable of reshaping the body. With a single injection they can change appearance, gender, or physical condition, making the eater a versatile Hormone Controlling Human."
+  },
+  {
+    "id": "5e05b819-8698-4e3e-a56a-90d14517a694",
+    "previousUser": "Unknown",
+    "name": "Snake-Snake Fruit, Model: Yamata-no-Orochi",
+    "type": "Mythical Zoan",
+    "user": "Kurozumi Orochi",
+    "rarity": 5,
+    "power": 80,
+    "about": "A Mythical Zoan fruit that lets the user become the legendary eight-headed serpent of Japanese myth. In hybrid or full form, they gain multiple snapping jaws, immense strength, and a terror worthy of ancient dragons.",
+    "img": {
+      "fruit": "https://i.ibb.co/V0pNbCHM/yuki-68d2a3da086cd.webp",
+      "user": "https://i.ibb.co/YFWxjCJv/what-are-your-thoughts-on-kurozumi-orochi-would-you-v0-mbipeyp18nnd1.webp"
+    }
+  },
+  {
+    "id": "5e9f6018-f711-4f0e-8a8d-f10924a7f2f9",
+    "previousUser": "Unknown",
+    "name": "Art-Art Fruit",
+    "type": "Paramecia",
+    "user": "Giolla",
+    "power": 30,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/QdLp5DCF/Giolla-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/XfVHkWSb/art-art-fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to transform people or objects into living abstract art. With a touch, reality twists into surreal shapes and colors, making the eater a true Art Human."
+  },
+  {
+    "id": "5eaf9ec7-2079-4ec3-8f31-3b6b37dc037a",
+    "previousUser": "Unknown",
+    "name": "Lick-Lick Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Perospero",
+    "power": 15,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/59HSM8mw/Charlotte-Perospero-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/YsYXf3y/lick-lick-fruit.webp"
+    },
+    "about": "A Paramecia fruit that grants the power to create and control candy. The user can mold syrup into weapons or traps, sealing foes in sticky sweetness and becoming a dangerously deceptive Candy Human."
+  },
+  {
+    "id": "5f07dd73-36ad-40f5-b38b-488d55a53908",
+    "previousUser": "Unknown",
+    "name": "Twinkle-Twinkle Fruit",
+    "type": "Paramecia",
+    "user": "Jozu",
+    "power": 20,
+    "rarity": 1,
+    "about": "A Paramecia fruit that allows the user to turn their body into dazzling diamond. This power grants unmatched durability and piercing strength, making the eater as brilliant as they are nearly indestructible.",
+    "img": {
+      "user": "https://i.ibb.co/fzywsp2P/Jozu-Burning-Will.webp",
+      "fruit": "https://i.ibb.co/vvvmjqvq/Gira-Gira-no-Mi.webp"
+    }
+  },
+  {
+    "id": "5f0e9472-ea27-4a59-a343-6196a352c27d",
+    "previousUser": "Unknown",
+    "name": "Spring-Spring Fruit",
+    "type": "Paramecia",
+    "user": "Bellamy",
+    "power": 50,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.ibb.co/B5GNRc3p/Bellamy-Anime-Pre-Ellipse-Infobox.webp",
+      "fruit": "https://i.ibb.co/Q7fSs4dR/spring-spring-fruit-68d2a3fac12a7.webp"
+    },
+    "about": "A Paramecia fruit that lets the user turn their limbs into powerful springs. This ability gives explosive bouncing speed and devastating recoil attacks, making the eater a relentless Spring Human."
+  },
+  {
+    "id": "5ff126e1-a851-4209-b1f7-0045dd779336",
+    "previousUser": "Unknown",
+    "name": "Wax-Wax Fruit",
+    "type": "Paramecia",
+    "user": "Galdino",
+    "power": 55,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/xC1R0zMR/ImageMr3.webp",
+      "fruit": "https://i.ibb.co/BHL5485k/wax-wax-fruit-68d2a4153ea89.webp"
+    },
+    "about": "A Paramecia fruit that lets the user produce and shape endless streams of candle wax. This wax can harden into armor, weapons, or traps, turning the eater into a versatile and dangerous Candle Human."
+  },
+  {
+    "id": "64f8a634-b44b-4937-8bdb-94a135372056",
+    "previousUser": "Unknown",
+    "name": "Pocket-Pocket Fruit",
+    "type": "Paramecia",
+    "user": "Blamenco",
+    "power": 65,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/wv0KG5sg/Blamenco-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/ks7VTyzH/pocket-pocket-fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to form pockets anywhere on their body. These living compartments can store items of any size, turning the eater into a walking vault of limitless storage."
+  },
+  {
+    "id": "66399f13-ab58-43e0-ad8d-5793068b5e8b",
+    "previousUser": "Unknown",
+    "name": "Ox-Ox Fruit, Model: Giraffe",
+    "type": "Zoan",
+    "user": "Kaku",
+    "power": 65,
+    "rarity": 3,
+    "about": "A Zoan fruit that lets the user transform into a giraffe or a giraffe-human hybrid at will. This power grants towering height, crushing kicks, and surprising agility, making the eater a formidable Giraffe Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/7drSpj93/giraffe-fruit-68d2a4318e343.webp",
+      "user": "https://i.ibb.co/pjwbNPRC/Kaku-Anime-Pre-Timeskip-Infobox.webp"
+    }
+  },
+  {
+    "id": "674fb365-cefe-479b-8578-9854c22f91a9",
+    "previousUser": "Unknown",
+    "name": "Age-Age Fruit",
+    "type": "Paramecia",
+    "user": "Jewelry Bonney",
+    "power": 75,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.postimg.cc/PJVsLVV7/Jewelry-Bonney-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/WWqN9wyD/time-time-fruit.webp"
+    },
+    "about": "A Paramecia fruit that grants control over age itself. The user can age people or objects forward or backward at will, making the eater a formidable Age Manipulation Human."
+  },
+  {
+    "id": "677f28c4-858d-47c0-ba56-f835f785f2ab",
+    "previousUser": "Unknown",
+    "name": "Bis-Bis Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Cracker",
+    "power": 70,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/FHv6RTWt/Charlotte-Cracker-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/1Y64m6TV/biscut-friut-68d2a44c57b82.webp"
+    },
+    "about": "A Paramecia fruit that lets the user create and control biscuits at will. These crunchy constructs can form shields, weapons, or entire armies, making the eater a crafty and durable Biscuit Human."
+  },
+  {
+    "id": "68f5d3b9-6c32-4e54-bdb0-a14a59467942",
+    "previousUser": "Unknown",
+    "name": "Mutt-Mutt Fruit",
+    "type": "Zoan",
+    "user": "Lassoo",
+    "power": 35,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/bJCjMwbv/b287798-qpmo-QUPvyr-QE.png",
+      "fruit": "https://i.ibb.co/ywyF665/mutmut-fruit-68d2a4642f534.webp"
+    },
+    "about": "A Zoan fruit that allows the user to transform into a dachshund or a dachshund-human hybrid at will. This power grants sharp senses, surprising speed, and the loyal tenacity of the long-bodied hound."
+  },
+  {
+    "id": "6a3ec262-9076-470a-ab62-f9fa857793b3",
+    "previousUser": "Unknown",
+    "name": "Berry-Berry Fruit",
+    "type": "Paramecia",
+    "user": "Very Good",
+    "power": 15,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user split their body into dozens of round berry-like balls. These detachable pieces can move independently, making the eater a tricky and unpredictable Grape Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/xSkKzYtf/berry-berry-fruit-68d2a48363971.webp",
+      "user": "https://i.ibb.co/4Bwb65n/Very-Good-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "6d764087-9053-49aa-9634-8c4ad169f39b",
+    "previousUser": "Unknown",
+    "name": "Eleph-Eleph Fruit Ancient Zoan Model Mammoth",
+    "type": "Ancient Zoan",
+    "user": "Jack",
+    "power": 85,
+    "rarity": 4,
+    "about": "An Ancient Zoan fruit that allows the user to transform into a towering mammoth or a mammoth-human hybrid. This power grants immense strength, crushing tusks, and the unstoppable might of an Ice Age giant.",
+    "img": {
+      "fruit": "https://i.ibb.co/mrLtLjwc/Eleph-Eleph-Fruit-MAMMOTH.webp",
+      "user": "https://i.ibb.co/cXb5rg2n/Jack-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "6fec0f58-d375-4979-b193-6a9dd77cde92",
+    "previousUser": "Unknown",
+    "name": "Venom-Venom Fruit",
+    "type": "Paramecia",
+    "user": "Magellan",
+    "rarity": 5,
+    "power": 93,
+    "about": "A Paramecia fruit that grants the user complete mastery over poison. They can generate deadly toxins of every kind while remaining immune themselves, making the eater a lethal and untouchable Poison Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/84x5GGJr/poison-fruit-68d2a49c81374.webp",
+      "user": "https://i.ibb.co/tpqmdqRk/Magellan-Anime-Pre-Timeskip-Infobox.webp"
+    }
+  },
+  {
+    "id": "704c8868-a280-4015-8c9e-a1314ce55518",
+    "previousUser": "Unknown",
+    "name": "Calm-Calm Fruit",
+    "type": "Paramecia",
+    "user": "Donquixote Rosinante",
+    "power": 25,
+    "rarity": 1,
+    "about": "A Paramecia fruit that allows the user to create a soundproof field and erase all noise within it. This power grants absolute silence, turning the eater into a stealthy and formidable Soundless Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/JRQd9Nfw/calm-calm-fruit.webp",
+      "user": "https://i.ibb.co/j9WHm1ZV/Donquixote-Rosinante-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "72c37a8f-6077-4603-bed3-42cf6dd732da",
+    "previousUser": "Unknown",
+    "name": "Glint-Glint Fruit",
+    "type": "Logia",
+    "user": "Borsalino",
+    "rarity": 5,
+    "power": 98,
+    "img": {
+      "user": "https://criticalhits.com.br/wp-content/uploads/2022/12/880b1-16707165590366-1920.jpg",
+      "fruit": "https://i.ibb.co/d4BH3s9F/glint-glint-fruit-68d2ee1fe05f6.webp"
+    },
+    "about": "A Logia fruit that grants the power to create, control, and become light. The user can move at light speed and bounce across reflective surfaces, making them a dazzlingly fast and unstoppable Light Human."
+  },
+  {
+    "id": "74d84e97-88df-41eb-ae99-6ed20dfc15f1",
+    "previousUser": "Unknown",
+    "name": "Bird-Bird Fruit, Model: Phoenix",
+    "type": "Mythical Zoan",
+    "user": "Marco",
+    "rarity": 5,
+    "power": 98,
+    "about": "A Mythical Zoan fruit that allows the user to become a radiant phoenix or a phoenix-human hybrid at will. This power grants blazing flight, blue healing flames, and the legendary rebirth of the immortal bird.",
+    "img": {
+      "user": "https://i.ibb.co/dsnw2V3j/Marco-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/nFSYdX2/Phoenix-Fruit.webp"
+    }
+  },
+  {
+    "id": "779186d4-bfeb-4f81-983e-1ce2c3c8f3ea",
+    "previousUser": "Unknown",
+    "name": "Ton-Ton Fruit",
+    "type": "Paramecia",
+    "user": "Machvise",
+    "power": 65,
+    "rarity": 3,
+    "about": "A Paramecia fruit that allows the user to massively increase their body weight without changing size. This ability grants earth-shaking strength and crushing power, turning the eater into a formidable Super Weight Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/bRNzpBWh/ton-ton-fruit.webp",
+      "user": "https://i.ibb.co/VWN7tfcb/Machvise-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "7793d8c6-005b-41b6-94eb-d45c260ef71c",
+    "previousUser": "Unknown",
+    "name": "Mochi-Mochi Fruit",
+    "type": "Special Paramecia",
+    "user": "Charlotte Katakuri",
+    "rarity": 5,
+    "power": 95,
+    "about": "A Special Paramecia fruit that grants the ability to create, control, and become mochi. Sticky yet devastating, this power lets the eater trap foes, reshape attacks, and strike with the strength of a living mochi powerhouse.",
+    "img": {
+      "user": "https://i.ibb.co/5xRdjX0C/Charlotte-Katakuri-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/yFL7BKGp/monchi-fruit.webp"
+    }
+  },
+  {
+    "id": "7891d9ff-5621-415d-90e5-07429ab84e1a",
+    "previousUser": "Unknown",
+    "name": "Munch-Munch Fruit",
+    "type": "Paramecia",
+    "user": "Wapol",
+    "power": 60,
+    "rarity": 3,
+    "about": "A Paramecia fruit that allows the user to eat anything, no matter how inedible, and later recreate the consumed materials from their own body. This power turns the eater into a living factory of endless appetite and invention.",
+    "img": {
+      "fruit": "https://i.ibb.co/k6W4V40q/baku-baku-no-mi-infobox-68d2ee4a7fbd7.webp",
+      "user": "https://i.ibb.co/wZBPqLBz/Wapol-Anime-Post-Timeskip-Infobox.webp"
+    }
+  },
+  {
+    "id": "7982c730-2937-4a9d-9371-cc22f1c90a52",
+    "previousUser": "Unknown",
+    "name": "Mag-Mag Fruit",
+    "type": "Logia",
+    "user": "Sakazuki",
+    "rarity": 5,
+    "power": 98,
+    "img": {
+      "user": "https://i.postimg.cc/CxTFDNGQ/Sakazuki-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/BdDryFB/magnu-fruit-68d2ee66d7e26.webp"
+    },
+    "about": "A Logia fruit that grants the power to create, control, and become magma. The user can unleash searing heat and molten destruction, embodying the unstoppable force of a Magma Human."
+  },
+  {
+    "id": "7bb1c20b-fe30-4344-822c-0aa016408bce",
+    "previousUser": "Unknown",
+    "name": "Straw-Straw Fruit",
+    "type": "Paramecia",
+    "user": "Basil Hawkinse",
+    "power": 40,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/RZGzHF38/Basil-Hawkins-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/0RR2ZrJC/straw-straw-fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to create and control straw imbued with damage-redirecting properties. This power lets the eater weave traps, shields, and deadly constructs, turning simple straw into a weapon of cunning defense."
+  },
+  {
+    "id": "7e5063c3-429c-4bba-bfbe-f09968c901c0",
+    "previousUser": "Unknown",
+    "name": "Hobby-Hobby Fruit",
+    "type": "Paramecia",
+    "user": "Sugar",
+    "rarity": 5,
+    "power": 95,
+    "img": {
+      "user": "https://i.postimg.cc/hGTGVzwK/Sugar-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/231C2BcQ/hobi-fruit-68d2ee7f234a3.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to turn living beings into toys and erase all memories of their existence. As a twisted bonus, the eater also gains eternal youth, making this power both playful and terrifying."
+  },
+  {
+    "id": "7ec9e5ec-8b23-482d-9e15-2712445622ba",
+    "previousUser": "Unknown",
+    "name": "Sew-Sew Fruit",
+    "type": "Paramecia",
+    "user": "Leo",
+    "power": 30,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/s2NQsQ8z/d4eef76691946be414d40767eafa2106.jpg",
+      "fruit": "https://i.ibb.co/PzMFdLF4/stich-fruit-68d2ee9deaafe.webp"
+    },
+    "about": "A Paramecia fruit that gives the user the power to stitch or un-stitch anything as if reality were fabric. From mending wounds to tearing objects apart, this ability makes the eater a master of seamless creation and undoing."
+  },
+  {
+    "id": "80a9b2ad-0669-4063-92db-e49fc1ac1e29",
+    "previousUser": "Unknown",
+    "name": "Snow-Snow Fruit",
+    "type": "Logia",
+    "user": "Monet",
+    "power": 70,
+    "rarity": 3,
+    "img": {
+      "user": "https://pm1.aminoapps.com/6284/f308a4877dddd6f914fc9519d4f1925e4f9f9d71_00.jpg",
+      "fruit": "https://i.ibb.co/7xnkznj5/snow-snow-fruit.webp"
+    },
+    "about": "A Logia fruit that grants the power to create, control, and become snow. The user can summon blizzards, sculpt icy landscapes, and vanish into drifting flakes, becoming a graceful yet deadly Snow Human."
+  },
+  {
+    "id": "82bb0e96-11f4-41ab-bcc3-766e449b7903",
+    "previousUser": "Unknown",
+    "name": "Bomb-Bomb fruit",
+    "type": "Paramecia",
+    "user": "Gem",
+    "power": 55,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.ytimg.com/vi/j5erACa2vRU/maxresdefault.jpg",
+      "fruit": "https://i.ibb.co/ZzCK2x3V/bomb-bomb-fruit-68d2eec1c1565.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to detonate any part of their body—limbs, hair, even a sneeze. Each blast leaves them unharmed, turning the eater into a living arsenal and a fearsome Bomb Human."
+  },
+  {
+    "id": "85cbd3c9-dd95-44a5-9a44-970919c80ef4",
+    "previousUser": "Unknown",
+    "name": "Smooth-Smooth Fruit",
+    "type": "Paramecia",
+    "user": "Alvida",
+    "power": 20,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.ytimg.com/vi/lMKAu4rSpT0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLB4k9lVIPvS86NYWRjil6h9c9sKFw",
+      "fruit": "https://i.ibb.co/GvtqtDqq/moku-moku-no-mi-infobox-68d2eed8c91ad.webp"
+    },
+    "about": "A Paramecia fruit that makes the user’s body perfectly smooth and slippery. Attacks and objects slide off harmlessly, and any excess fat simply slips away, leaving the eater slim, slick, and nearly untouchable."
+  },
+  {
+    "id": "874f56a5-ca00-46ac-9458-c6339c41c459",
+    "img": {
+      "fruit": "https://i.postimg.cc/Cxqr1SnN/Wring-8402-copy.webp",
+      "user": "https://i.postimg.cc/J4BGY2Bg/Charlotte-Smoothie-Anime-Infobox.webp"
+    },
+    "previousUser": "Unknown",
+    "name": "Wring-Wring Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Smoothie",
+    "power": 30,
+    "rarity": 1,
+    "about": "A Paramecia fruit that lets the user wring liquid out of anything—living or not—and absorb it into themselves or their weapons. This draining power makes the eater a dangerous and unstoppable Dehydration Human."
+  },
+  {
+    "id": "8d4c1aa7-e798-412b-85c7-2e7302970c9a",
+    "previousUser": "Unknown",
+    "name": "Magnet-Magnet Fruit",
+    "type": "Paramecia",
+    "user": "Eustass Kid",
+    "rarity": 5,
+    "power": 92,
+    "img": {
+      "user": "https://i.postimg.cc/CKHYx5Fz/Eustass-Kid-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/5xSnt2Dy/magnet-magnet-fruit-68d2eef7e0949.webp"
+    },
+    "about": "A Paramecia fruit that grants the power to generate magnetic forces and command metal. The user can pull, repel, and reshape metallic objects at will, wielding magnetic might as a living magnet master."
+  },
+  {
+    "id": "93620d09-4531-4026-b7a9-40aa4bac80f1",
+    "name": "Tremor-Tremor Fruit",
+    "previousUser": "Edward Newgate",
+    "rarity": 5,
+    "type": "Paramecia",
+    "power": 100,
+    "img": {
+      "user": "https://i.ibb.co/RpSc5cdr/Edward-Newgate-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/hJdFtGnw/treemor-fruit-68d2ef153f8f6.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to generate massive vibrations and quakes. Its earth-shattering power can crack seas, topple islands, and threaten the world itself, earning the eater the fearsome title of Tremor Human.",
+    "user": "Marshall D. Teach"
+  },
+  {
+    "id": "93e3a3b9-ac96-41bc-a098-7a12283c3ca5",
+    "previousUser": "Unknown",
+    "name": "Clear-Clear Fruit",
+    "type": "Paramecia",
+    "user": "Shiryu",
+    "power": 55,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/1RC02zcc/Shiryu-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/NgvZrsyd/transparent-fruit-68d2ef31a1811.webp"
+    },
+    "about": "A Paramecia fruit that grants the power of invisibility. The user can render themselves and anything they touch unseen, turning the eater into a stealthy and elusive Clear Human."
+  },
+  {
+    "id": "93e9dfa7-40d9-405d-bba0-37da07d0254c",
+    "about": "A Paramecia fruit that fills the user with overwhelming physical power. Muscles swell, bones harden, and every strike carries monstrous force capable of crushing steel and stone alike. Strength beyond reason but not without its limits.",
+    "name": "Strong-Strong Fruit",
+    "power": 85,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Paramecia",
+    "user": "Jesus Burgess",
+    "img": {
+      "user": "https://i.ibb.co/zTzqrg7p/Jesus-Burgess-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/NnVzBGSZ/strong-strong-fruit.webp"
+    }
+  },
+  {
+    "id": "9611ddc5-980c-4cca-8cfd-02a981f8a8b0",
+    "previousUser": "Unknown",
+    "name": "Float-Float Fruit",
+    "type": "Paramecia",
+    "user": "Shiki",
+    "power": 75,
+    "rarity": 4,
+    "img": {
+      "user": "https://criticalhits.com.br/wp-content/uploads/2023/12/shiki-from-one-piece.jpg",
+      "fruit": "https://i.ibb.co/v7RsdH2/float-float-fruit.webp"
+    },
+    "about": "A Paramecia fruit that allows the user to levitate themselves and lift non-living objects into the air. With this floating power, the eater can glide, hurl debris, and command the skies with ease."
+  },
+  {
+    "id": "9a29b4d8-d5aa-4ea6-bc7e-6b57b54da74b",
+    "previousUser": "Unknown",
+    "name": "Bug-Bug Fruit, Model: Hornet",
+    "type": "Zoan",
+    "user": "Bian",
+    "power": 55,
+    "rarity": 2,
+    "about": "A Zoan fruit that lets the user transform into a hornet or a hornet-human hybrid at will. This power grants swift flight, venomous stingers, and the relentless aggression of a giant wasp.",
+    "img": {
+      "fruit": "https://i.postimg.cc/QdPD2xy0/Insect-Insect-Fruit-Model-Bee.webp",
+      "user": "https://i.ibb.co/tptyQXhH/Bian-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "9a6812d5-e9cb-4721-a381-3e3dd58d348b",
+    "about": "A Paramecia fruit that allows the user to produce and control clay at will. The user becomes a Clay Human, capable of shaping, molding, and animating clay into powerful constructs. From towering golems to precision-crafted weapons, everything the user imagines can take form in earth and mud.",
+    "img": {
+      "fruit": "https://i.ibb.co/4RTm5jWV/glurp-fruit.webp",
+      "user": "https://i.ibb.co/k2Xqj1Qs/Prince-Grus-Anime-Infobox.webp"
+    },
+    "name": "Glorp-Glorp Fruit",
+    "power": 88,
+    "previousUser": "Unknown",
+    "rarity": 4,
+    "type": "Paramecia (unconfirmed)",
+    "user": "Prince Grus"
+  },
+  {
+    "id": "9d062568-5641-44d2-a550-e00443282a53",
+    "previousUser": "Unknown",
+    "name": "Dragon-Dragon Fruit, Model: Spinosaurus",
+    "type": "Ancient Zoan",
+    "user": "Page One",
+    "power": 82,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.postimg.cc/15MrpZtp/Page-One-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/1G2L3bTS/Dragon-Dragon-Fruit.webp"
+    },
+    "about": "An Ancient Zoan fruit that allows the user to transform into a spinosaurus or a spinosaurus-human hybrid at will. This power grants massive strength, a sail-like back for aquatic agility, and the ferocity of a primeval apex predator."
+  },
+  {
+    "id": "a1fdacfb-3924-4aeb-b973-819207bed1b8",
+    "previousUser": "Unknown",
+    "name": "Push-Push Fruit",
+    "type": "Paramecia",
+    "user": "Morley",
+    "power": 50,
+    "rarity": 2,
+    "about": "A Paramecia fruit that allows the user to push, pull, and mold the ground like soft clay. With this power, the eater can reshape terrain, raise walls, or crush foes beneath shifting earth.",
+    "img": {
+      "fruit": "https://i.ibb.co/zTTX6wdT/push-push-fruit.webp",
+      "user": "https://i.ibb.co/V6ybDTr/Morley-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "a207bfb2-00be-49a9-9653-34e08d8af057",
+    "previousUser": "Unknown",
+    "name": "Soul-Soul Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Linlin",
+    "rarity": 5,
+    "power": 98,
+    "img": {
+      "user": "https://i.postimg.cc/dQzWXRCv/Charlotte-Linlin-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/cSJSfNPJ/soru-soru-fruit-68d2ef54ea637.webp"
+    },
+    "about": "A Paramecia fruit that grants control over souls. The user can extract life spans, animate objects with fragments of spirit, and command living homies, making them a true master of souls."
+  },
+  {
+    "id": "a3c643da-69e8-4ad3-bedb-7fa6a42b86dd",
+    "previousUser": "Unknown",
+    "type": "Logia",
+    "user": "Caribou",
+    "power": 78,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.ibb.co/mrqx52Nd/Caribou-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/XZXBx9w5/numa-numa-68d2ef708c3e4.webp"
+    },
+    "about": "A Logia fruit that grants the power to create, control, and become mud. The user can form bottomless swamps that trap anything inside, making the eater a deadly and inescapable Swamp Human.",
+    "name": "Swamp-Swamp Fruit"
+  },
+  {
+    "id": "a7bc5584-ca5e-48aa-8fef-ab6dedb935da",
+    "previousUser": "Unknown",
+    "name": "Arms-Arms Fruit",
+    "type": "Paramecia",
+    "user": "Baby 5",
+    "power": 45,
+    "rarity": 2,
+    "about": "A Paramecia fruit that allows the user to transform any part of their body into weapons. Swords, guns, or cannons can emerge at will, turning the eater into a living arsenal and a true Full-Body Weapon Human.",
+    "img": {
+      "fruit": "https://i.ibb.co/1YPp5sRt/arms-arms-fruit.webp",
+      "user": "https://i.ibb.co/1t0TX8JC/Baby-5-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "a90cf2bf-bd90-4fac-ae0f-cf33b9949b3d",
+    "previousUser": "Unknown",
+    "name": "Heat-Heat Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Oven",
+    "power": 65,
+    "rarity": 3,
+    "about": "A scorching Paramecia-type fruit that lets its user radiate intense heat from every inch of their body, turning them into a living furnace capable of searing opponents, melting metal, and igniting the battlefield with blistering waves of high temperature.",
+    "img": {
+      "fruit": "https://i.ibb.co/6RCYZtTP/heat-heat-fruit.webp",
+      "user": "https://i.ibb.co/KpFrjSpx/Charlotte-Oven-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "ad19a434-a616-477f-8e7f-b6296acb276d",
+    "previousUser": "Unknown",
+    "name": "Ripple-Ripple Fruit",
+    "type": "Paramecia",
+    "user": "Diamante",
+    "power": 35,
+    "rarity": 1,
+    "about": "A playful Paramecia-type fruit that grants its user the power to make their body and anything they touch flatten and flutter like fabric, turning solid steel into rippling flags and letting once-rigid objects dance and wave in the air like banners in a storm.",
+    "img": {
+      "fruit": "https://i.ibb.co/8gvdFVHS/hira-hira-fruit-68d2ef8c51d2b.webp",
+      "user": "https://i.ibb.co/Wv2Zsn1W/Diamante-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "af3cce82-03b5-47b5-8943-a5e8ac5f69e3",
+    "previousUser": "Unknown",
+    "name": "Butter-Butter Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Galette",
+    "power": 20,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/3N3psDrv/62b22-16672268331874.avif",
+      "fruit": "https://i.ibb.co/yFqdPhzL/butter-butter-fruit.webp"
+    },
+    "about": "A quirky Paramecia-type fruit that lets its user produce and manipulate limitless butter, coating surfaces in slippery slicks, shaping creamy constructs, and turning any battlefield into a greasy, golden trap of their own making."
+  },
+  {
+    "id": "aff9b6c2-49b4-4e46-b30c-a26aecd0f156",
+    "previousUser": "Unknown",
+    "name": "Press-Press Fruit",
+    "type": "Paramecia",
+    "user": "Issho",
+    "rarity": 2,
+    "power": 87,
+    "about": "A formidable Paramecia-type fruit that gives its user command over gravity itself, letting them summon crushing forces from the heavens, pin foes to the ground, or hurl massive objects with the irresistible pull of the stars.",
+    "img": {
+      "fruit": "https://i.ibb.co/jvc3zHfQ/press-press-fruit-68d2efa9a98b5.webp",
+      "user": "https://i.ibb.co/WpDHHznS/Issho-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "b0c79594-e20a-4fc7-990e-f8d11d64473c",
+    "previousUser": "Unknown",
+    "name": "Bind-Bind Fruit",
+    "type": "Paramecia",
+    "user": "Hina",
+    "power": 40,
+    "rarity": 2,
+    "about": "A restraining Paramecia-type fruit that lets its user conjure iron shackles from their own body, instantly snaring enemies in unbreakable chains and locking down even the most slippery opponents with a single touch.",
+    "img": {
+      "fruit": "https://i.ibb.co/Fkw698JR/bind-bind-68d2efcb304c2.webp",
+      "user": "https://i.ibb.co/d49bxW9G/Hina-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "b19d720c-6991-4445-872b-3580a019c394",
+    "img": {
+      "fruit": "https://i.ibb.co/RThppMXN/paw-fruit.webp",
+      "user": "https://i.ibb.co/SwLmCk32/548202.webp"
+    },
+    "name": "Paw-Paw Fruit",
+    "power": 83,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Paramecia",
+    "user": "Bartholomew Kuma",
+    "about": "A mysterious Paramecia-type fruit that manifests paw pads on the user’s palms, granting the power to repel anything they touch—be it enemies, objects, pain, or even the very air—sending targets hurtling away at blinding speed or deflecting attacks with effortless force."
+  },
+  {
+    "id": "b7225b59-d0ad-41d6-87b9-7af9887b43da",
+    "previousUser": "Unknown",
+    "name": "Love-Love Fruit",
+    "type": "Paramecia",
+    "user": "Boa Hancock",
+    "rarity": 5,
+    "power": 90,
+    "img": {
+      "user": "https://i.postimg.cc/wvgfc5SQ/how-strong-is-boa-hancock-v0-6liup9grad9b1.jpg",
+      "fruit": "https://i.ibb.co/5CZZn5p/love-love-fruit-68d2f007bab0a.webp"
+    },
+    "about": "A bewitching Paramecia-type fruit that weaponizes love itself, allowing the user to turn anyone overcome by desire or adoration into lifeless stone statues with a single enchanting glance or seductive gesture."
+  },
+  {
+    "id": "b7a64514-0ee0-4cae-8905-71db75fd23f9",
+    "previousUser": "Unknown",
+    "name": "Spike-Spike Fruit",
+    "type": "Paramecia",
+    "user": "Zala",
+    "power": 53,
+    "rarity": 2,
+    "about": "A vicious Paramecia-type fruit that lets its user sprout razor-sharp spikes from any part of their body or transform entire limbs into deadly lances, turning every movement into a brutal weapon of piercing power.",
+    "img": {
+      "fruit": "https://i.ibb.co/dwK7LW2g/spike-fruit-68d2f023275a0.webp",
+      "user": "https://i.ibb.co/PGC6rnrd/Zala-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "b9028226-e1d6-4332-81cb-630227c88e08",
+    "name": "Human-Human Fruit Model Onyudo",
+    "power": 70,
+    "previousUser": "Unknown",
+    "rarity": 4,
+    "type": "Mythical Zoan",
+    "user": "Onimaru",
+    "img": {
+      "user": "https://i.ibb.co/0jY09LNt/Onimaru.webp",
+      "fruit": "https://i.ibb.co/YBGGH7c3/human-Onyudo-fruit.webp"
+    },
+    "about": "A rare Mythical Zoan-type fruit that grants the power to become an enormous monk-like yokai, letting the user shift between human, hybrid, and full oni priest forms to wield supernatural strength and an eerie, otherworldly presence."
+  },
+  {
+    "id": "bdd6eafe-3186-4448-b32d-1a2a8ac4f7f0",
+    "previousUser": "Unknown",
+    "name": "Snip-Snip Fruit",
+    "type": "Paramecia",
+    "user": "Inazuma",
+    "power": 27,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/QCk8CZRJ/Fem-inazuma.webp",
+      "fruit": "https://i.ibb.co/DgsryqrM/Snip-Snip-fruit.webp"
+    },
+    "about": "A crafty Paramecia-type fruit that lets its user morph their body into giant scissors, slicing through metal, stone, or even entire ships as effortlessly as cutting a sheet of paper."
+  },
+  {
+    "id": "be06e960-fff8-4625-ba8a-3353262f5719",
+    "previousUser": "Unknown",
+    "name": "Gas-Gas Fruit",
+    "type": "Logia",
+    "user": "Caesar Clown",
+    "rarity": 5,
+    "power": 89,
+    "img": {
+      "user": "https://i.postimg.cc/9fcV9RY5/Caesar-Clown-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/p646LZcv/gas-fruit-68d2f043ddf10.webp"
+    },
+    "about": "A volatile Logia-type fruit that allows its user to generate, manipulate, and become gas itself, drifting through the air, suffocating foes, or igniting explosive mixtures with deadly precision."
+  },
+  {
+    "id": "bfa3a75e-25a1-4462-b964-cc5a93864a33",
+    "name": "Dragon-Dragon Fruit, Pteranodon Model",
+    "power": 80,
+    "previousUser": "Unknown",
+    "rarity": 3,
+    "type": "Ancient Zoan",
+    "user": "King",
+    "img": {
+      "user": "https://i.ibb.co/NgQptxfP/King-at-Age-19.webp",
+      "fruit": "https://i.ibb.co/ZRb3Lvrr/dragon-dragon-fruit-pteranodon-model-68d2f05fdc6e9.webp"
+    },
+    "about": "A fierce Ancient Zoan-type fruit that empowers its user to become a mighty pteranodon or a towering hybrid, granting powerful wings for high-speed flight and devastating aerial attacks from the prehistoric skies."
+  },
+  {
+    "id": "c2bf5737-535a-4037-a348-5ef97fe8ce6b",
+    "previousUser": "Unknown",
+    "name": "Hollow-Hollow Fruit",
+    "type": "Paramecia",
+    "user": "Perona",
+    "power": 81,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.postimg.cc/TwfWsz4D/Perona-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/G4nhLT9p/horo-horo-68d2f07a6999f.webp"
+    },
+    "about": "A spooky Paramecia-type fruit that lets its user summon eerie, floating ghosts capable of passing through walls, exploding on contact, or draining the willpower of anyone unlucky enough to face their chilling touch."
+  },
+  {
+    "id": "c40cd64d-f137-4ba2-b717-768a10bc5771",
+    "previousUser": "Unknown",
+    "name": "Mutt-Mutt Fruit Wolf Model",
+    "type": "Zoan",
+    "user": "Jabra",
+    "power": 74,
+    "rarity": 3,
+    "about": "A feral Zoan-type fruit that grants the power to become a full wolf or a fearsome wolf-human hybrid, heightening senses, speed, and savage strength for relentless hunts.",
+    "img": {
+      "fruit": "https://i.ibb.co/mrd2nxXR/mut-mut-fruit-68d2f097baeea.webp",
+      "user": "https://i.ibb.co/rGsbk11x/Jabra-Anime-Pre-Timeskip-Infobox.webp"
+    }
+  },
+  {
+    "id": "c462d6ed-9894-40f6-baaf-97fbf26df2b6",
+    "previousUser": "Unknown",
+    "name": "Tone-Tone Fruit",
+    "type": "Paramecia",
+    "user": "Scratchmen Apoo",
+    "power": 34,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/nVs7S9p4/Scratchmen-Apoo-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/23ZzYKcX/tone-tone-fruit.webp"
+    },
+    "about": "A resonant Paramecia-type fruit that lets its user turn body parts into musical instruments, unleashing soundwaves that can shatter objects, disorient foes, or manipulate emotions with devastating symphonies of noise."
+  },
+  {
+    "id": "c73a54d2-4024-41ac-a2ce-e178901daec7",
+    "previousUser": "Unknown",
+    "name": "Scroll-Scroll Jutsu",
+    "type": "Paramecia",
+    "user": "Raizo",
+    "power": 44,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/BZKrhLRv/Raizo-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/PRC1rzv/scroll-scrol-fruit.webp"
+    },
+    "about": "A versatile Paramecia-type fruit that enables its user to conjure and command mystical scrolls capable of sealing objects, unleashing stored attacks, or bringing drawn creations to life with a flick of the wrist."
+  },
+  {
+    "id": "cbc8ff69-2426-41c1-8144-bbf8ad11493f",
+    "img": {
+      "fruit": "https://i.postimg.cc/j2ZKx0K6/flower-flower-fruit.gif",
+      "user": "https://geekdama.com.br/wp-content/uploads/2023/05/one-piece-nico-robin-postcover.jpg"
+    },
+    "previousUser": "Unknown",
+    "name": "Flower-Flower fruit",
+    "type": "Paramecia",
+    "user": "Nico Robin",
+    "power": 57,
+    "rarity": 2,
+    "about": "A remarkable Paramecia-type fruit that lets its user bloom extra limbs or entire body parts from any surface, summoning hands, eyes, or even full duplicates surrounded by swirling petal-like flares to overwhelm foes or perform impossible feats."
+  },
+  {
+    "id": "d16638d1-7d68-488c-8fef-07b8b14d6869",
+    "previousUser": "Unknown",
+    "name": "Wheel-Wheel Fruit",
+    "type": "Paramecia",
+    "user": "Sharinguru",
+    "power": 43,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/vmsQGNKv/Sharinguru-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/ch3XrzKy/wheel-wheel-fruit.webp"
+    },
+    "about": "A zany Paramecia-type fruit that grants the user the ability to spin their arms, legs, or even entire body like high-speed wheels, turning every charge or kick into a whirling burst of unstoppable momentum."
+  },
+  {
+    "id": "d6e38a32-8746-4550-b349-8f149e3568b8",
+    "previousUser": "Unknown",
+    "name": "Bug-Bug Fruit, Model: Rhinoceros beetle",
+    "type": "Zoan",
+    "user": "Kabu",
+    "power": 61,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/RVXbYsDR/Kabu-as-a-Pirate.webp",
+      "fruit": "https://i.ibb.co/xKNvJWqH/Rhinoceros-bettle-fruit.webp"
+    },
+    "about": "A sturdy Zoan-type fruit that lets its user become a rhinoceros beetle or a fearsome hybrid, gaining strength, armored durability, and the ability to launch horned charges."
+  },
+  {
+    "id": "d787a3dc-58e7-493a-a957-35832211b014",
+    "previousUser": "Unknown",
+    "name": "Memo-Memo Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Pudding",
+    "power": 56,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/0569fKT2/Charlotte-Pudding-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/yv6Rq2b/memo-memo-fruit.webp"
+    },
+    "about": "A curious Paramecia-type fruit that allows its user to extract memories as tangible strips of film, editing, erasing, or rewriting the past of others like a living reel of human experience."
+  },
+  {
+    "id": "d8443a3c-1413-4c59-8f49-fd379307f774",
+    "previousUser": "Unknown",
+    "name": "Stick-Stick Fruit",
+    "type": "Paramecia",
+    "user": "Trebol",
+    "power": 26,
+    "rarity": 1,
+    "about": "A sticky Paramecia-type fruit that lets its user generate and manipulate endless streams of thick mucus, trapping foes in gooey restraints, coating surfaces in slippery slime, and turning any battlefield into a revolting quagmire.",
+    "img": {
+      "fruit": "https://i.ibb.co/R49hYfQX/stick-stick-fruit-68d2f0dd76f5c.webp",
+      "user": "https://i.ibb.co/CTGGhrx/Trebol-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "db872681-57fc-40e0-9666-beea21ba23a5",
+    "previousUser": "Unknown",
+    "name": "Chop-Chop Fruit",
+    "type": "Paramecia",
+    "user": "Buggy",
+    "power": 52,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.ibb.co/0jYbDD5G/Buggy-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/DDbmq0pX/chop-chop-fruit-68d2f0f75bf09.webp"
+    },
+    "about": "A chaotic Paramecia-type fruit that allows its user to separate their body into independent floating pieces, freely controlling each part in midair while remaining completely immune to slashing attacks."
+  },
+  {
+    "id": "db98e40b-2313-4acd-82e2-599f6694f100",
+    "previousUser": "Portgas D. Ace",
+    "name": "Flame-Flame Fruit",
+    "type": "Logia",
+    "rarity": 5,
+    "power": 96,
+    "img": {
+      "user": "https://i.postimg.cc/Gmkt0Yc2/Sabo-Anime-Infobox.webp",
+      "fruit": "https://i.ibb.co/q3V1zWNX/flameflamefruit-68d2f117ba9cd.webp"
+    },
+    "about": "A blazing Logia-type fruit that grants its user total mastery over fire, allowing them to generate searing flames, hurl blazing projectiles, and become a living inferno immune to the very heat they unleash.",
+    "user": "Sabo"
+  },
+  {
+    "id": "e334692a-8ae3-449c-a61e-df45b8876e38",
+    "previousUser": "Unknown",
+    "name": "Cat-Cat Fruit Leopard Model",
+    "type": "Zoan",
+    "user": "Rob Lucci",
+    "power": 78,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/sxydBsN2/Rob-Lucci-Anime-Pre-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/gG1sgLL/neko-neko-fruit-68d2f14ed9528.webp"
+    },
+    "about": "A fierce Zoan-type fruit that grants the power to become a full leopard or a lethal leopard-human hybrid, unleashing explosive speed, razor claws, and predatory strength for lightning-fast attacks."
+  },
+  {
+    "id": "e69de64b-ebf0-44fd-8eeb-36b8de6cdfcf",
+    "previousUser": "Unknown",
+    "name": "Mirror-Mirror Fruit",
+    "type": "Paramecia",
+    "user": "Charlotte Brûlée",
+    "power": 81,
+    "rarity": 4,
+    "img": {
+      "user": "https://i.postimg.cc/vTLRmCdK/Mira-Mira-no-Mi-Infobox.webp",
+      "fruit": "https://i.ibb.co/C5QTxscH/mirror-mirror-fruit.webp"
+    },
+    "about": "A dazzling Paramecia-type fruit that enables its user to conjure mirrors capable of reflecting attacks, bending light, or copying appearances, turning any confrontation into a maze of deceptive reflections."
+  },
+  {
+    "id": "e7711afb-1d99-44c5-9125-d8fc965e6fdc",
+    "previousUser": "Unknown",
+    "name": "Plume-Plume Fruit",
+    "type": "Logia",
+    "user": "Smoker",
+    "power": 60,
+    "rarity": 4,
+    "img": {
+      "user": "https://staticg.sportskeeda.com/editor/2023/05/ca5cb-16833681547269-1920.jpg?w=640",
+      "fruit": "https://i.ibb.co/Df4wQxgM/moku-moku-no-mi-infobox-68d2f16be2dac.webp"
+    },
+    "about": "A drifting Logia-type fruit that grants the power to create, manipulate, and become smoke itself, allowing the user to suffocate foes, obscure vision, and glide through the air as an untouchable haze."
+  },
+  {
+    "id": "e8c164dd-0863-4a0d-bd03-3a056ef31b9c",
+    "previousUser": "Unknown",
+    "name": "Castle-Castle Fruit",
+    "type": "Paramecia",
+    "user": "Capone Bege",
+    "power": 65,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/nrFT8H28/Capone-Bege-Anime-Post-Timeskip-Infobox.webp",
+      "fruit": "https://i.ibb.co/JwJt8hNK/castle-castle-fruit.webp"
+    },
+    "about": "A grand Paramecia-type fruit that turns its user into a living fortress, complete with towering walls, hidden chambers, and the ability to house allies or trap enemies inside their own colossal castle body."
+  },
+  {
+    "id": "e8f68a37-2da5-4660-b0cf-67dee06b1983",
+    "previousUser": "Unknown",
+    "name": "Horse-Horse Fruit",
+    "type": "Zoan",
+    "user": "Pierre",
+    "power": 26,
+    "rarity": 2,
+    "img": {
+      "user": "https://i.postimg.cc/mrnNGhhY/Uma-Uma-no-Mi-Infobox.webp",
+      "fruit": "https://i.ibb.co/GfrbPKr4/uma-uma-68d2f1884973e.webp"
+    },
+    "about": "A sturdy Zoan-type fruit that allows its user to become a full horse or a powerful horse-human hybrid, gaining explosive speed, tireless endurance, and charging strength fit for a battlefield stampede."
+  },
+  {
+    "id": "f112d87f-4810-4c75-9d5d-a88f60f8bd74",
+    "previousUser": "Unknown",
+    "name": "Pop-Pop Fruit",
+    "type": "Paramecia",
+    "user": "Gladius",
+    "power": 38,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/jjKcdym5/cf010d73bef41af3b7c5020513fda57f.jpg",
+      "fruit": "https://i.ibb.co/S4MRkDk7/bomfruit-68d2f19fceec4.webp"
+    },
+    "about": "A volatile Paramecia-type fruit that lets its user inflate and rupture their own body or any non-living object they touch, triggering powerful explosions that shred enemies and terrain alike with puncturing blasts."
+  },
+  {
+    "id": "f174fa3c-6486-49e0-9650-d19692fc15c1",
+    "previousUser": "Unknown",
+    "name": "Glare-Glare Fruit",
+    "type": "Paramecia",
+    "user": "Viola",
+    "power": 25,
+    "rarity": 1,
+    "img": {
+      "user": "https://i.postimg.cc/7Y1LsrXG/Violagostosademais.webp",
+      "fruit": "https://i.ibb.co/bj7hQKqn/glare-glare-fruit.webp"
+    },
+    "about": "A piercing Paramecia-type fruit that grants the user x-ray vision and the ability to read minds, seeing through walls, lies, and even the deepest thoughts of others with unsettling clarity."
+  },
+  {
+    "id": "f219231d-eecd-492a-a8f9-b3f491d6bc0b",
+    "about": "A Paramecia fruit that turns its user into a Liquor Human, allowing them to generate, control, and weaponize alcohol. The user’s very body becomes a living distillery capable of producing potent liquor, exhaling fumes, and igniting them in explosive flames. A drunkard’s dream and a sailor’s nightmare.",
+    "img": {
+      "fruit": "https://i.ibb.co/3831tdk/glurp-glurp-fruit.webp",
+      "user": "https://i.ibb.co/04h7WrY/Vasco-Shot-Anime-Pre-Timeskip-Infobox.webp"
+    },
+    "name": "Glug-Glug Fruit",
+    "power": 78,
+    "previousUser": "Unknown",
+    "rarity": 2,
+    "type": "Paramecia",
+    "user": "Vasco Shot"
+  },
+  {
+    "id": "f338b67f-4239-4bd7-8eef-0e75d06843da",
+    "previousUser": "Unknown",
+    "name": "Snake-Snake Fruit: Model Anaconda",
+    "type": "Zoan",
+    "user": "Boa Sandersonia",
+    "power": 67,
+    "rarity": 3,
+    "img": {
+      "user": "https://i.postimg.cc/kXH71DMb/Hebi-Hebi-no-Mi-Model-Anaconda-Infobox.webp",
+      "fruit": "https://i.ibb.co/LDc21PMd/Snake-Snake-Fruit-Model-Anaconda.webp"
+    },
+    "about": "A constricting Zoan-type fruit that allows its user to become a massive anaconda or a muscular hybrid, delivering bone-crushing coils, lightning-fast strikes, and a predator’s relentless grip."
+  },
+  {
+    "id": "f377c5a7-1a05-4bc4-8c8a-3b356ae5250b",
+    "img": {
+      "fruit": "https://i.ibb.co/jkH2ZVZm/GARLAND1.webp",
+      "user": "https://i.ibb.co/JgpTPJ6/Poderes-e-t-cnicas-do-Ryokugyu-Aramaki-em-One-Piece.png"
+    },
+    "name": "Woods-Woods Fruit",
+    "power": 96,
+    "previousUser": "Unknown",
+    "rarity": 4,
+    "type": "Logia",
+    "user": "Aramaki",
+    "about": "A vibrant Logia-type fruit that lets its user generate, command, and become living vegetation, sprouting towering trees, twisting vines, and sprawling forests to entangle enemies or reshape the battlefield in an instant."
+  },
+  {
+    "id": "f483ef8b-474e-406d-8c47-d55e4c714b73",
+    "previousUser": "Unknown",
+    "name": "Shadow-Shadow Fruit",
+    "type": "Paramecia",
+    "user": "Gecko Moria",
+    "rarity": 5,
+    "power": 86,
+    "about": "A sinister Paramecia-type fruit that grants mastery over shadows, allowing the user to steal and manipulate them as solid entities, animate corpses into obedient zombies, or wield their own darkness as a deadly weapon of stealth and terror.",
+    "img": {
+      "fruit": "https://i.ibb.co/gLkjSSSD/shadow-fruit-68d2f1bee1b57.webp",
+      "user": "https://i.ibb.co/Kp86hWqN/Gecko-Moria-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "f4b17f70-5793-469e-b8b5-7426dd80ff1b",
+    "previousUser": "Unknown",
+    "name": "Tweet-Tweet Fruit",
+    "type": "Zoan",
+    "user": "Pell",
+    "power": 20,
+    "rarity": 1,
+    "about": "A rare Zoan-type fruit that allows its user to become a swift falcon or a keen-eyed hybrid, soaring through the skies with incredible speed and precision as one of the world’s few true flying powers.",
+    "img": {
+      "fruit": "https://i.ibb.co/qHHtQdx/tweet-tweet-fruit.webp",
+      "user": "https://i.ibb.co/7ddQ4Z7T/Pell-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "f608df14-a72e-4292-83c0-30b7a90cdd60",
+    "previousUser": "Unknown",
+    "type": "Paramecia",
+    "user": "Buffalo",
+    "power": 40,
+    "rarity": 2,
+    "about": "A whirlwind Paramecia-type fruit that lets its user spin body parts or even clothing into high-speed propellers, creating powerful winds, rapid flight, and dizzying attacks that turn every limb into a roaring engine of rotation.",
+    "name": "Spin-Spin Fruit",
+    "img": {
+      "fruit": "https://i.ibb.co/k6qWKGdt/guro-guro-nomi.webp",
+      "user": "https://i.ibb.co/G3sPtpVw/Buffalo-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "f87f2740-cfbe-4d48-b399-e2fbf9f405f9",
+    "previousUser": "Unknown",
+    "name": "Ox-Ox Fruit",
+    "type": "Zoan",
+    "user": "Dalton",
+    "power": 45,
+    "rarity": 2,
+    "about": "A rugged Zoan-type fruit that grants the power to become a mighty bison or a hulking hybrid, combining brute strength, thick hide, and unstoppable charging force for devastating frontal assaults.",
+    "img": {
+      "fruit": "https://i.ibb.co/gMzSSGVW/ox-oxfruit-68d2f1e0b9fb0.webp",
+      "user": "https://i.ibb.co/vCXytwYb/Dalton-Anime-Infobox.webp"
+    }
+  },
+  {
+    "id": "f9d2f630-bb40-49e7-9f05-b239c76f2aa6",
+    "previousUser": "Unknown",
+    "name": "Eleph-Eleph Fruit",
+    "type": "Zoan",
+    "user": "Funkfreed",
+    "power": 55,
+    "rarity": 2,
+    "about": "A colossal Zoan-type fruit that allows its user to transform into a massive elephant or a powerful elephant-human hybrid, gaining towering strength, impenetrable hide, and earth-shaking might with every thunderous step.",
+    "img": {
+      "fruit": "https://i.ibb.co/6crFfZpK/eleph-eleph-fruit.webp",
+      "user": "https://i.ibb.co/S7XsLBrt/Zou-Zou-no-Mi-Infobox.webp"
+    }
+  },
+  {
+    "id": "fe1e3ad4-2a92-422a-84e6-f4754aeacc51",
+    "previousUser": "Unknown",
+    "name": "Brush-Brush Fruit",
+    "type": "Paramecia",
+    "user": "Kurozumi Kanjuro",
+    "power": 25,
+    "rarity": 1,
+    "about": "A creative Paramecia-type fruit that lets its user produce magical ink and bring their brushstrokes to life, transforming painted images into tangible, three-dimensional creations limited only by their imagination.",
+    "img": {
+      "fruit": "https://i.ibb.co/0jtWqW7F/brush-fruit-68d2f1f89f72b.webp",
+      "user": "https://i.ibb.co/Qjj76kp0/Kanjuro-Anime-Infobox.webp"
+    }
+  }
+]
