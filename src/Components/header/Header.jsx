@@ -80,8 +80,8 @@ export default function Header({ headerShown, headerTitle }) {
 
     const isMiniGamesActive =
         location.pathname.startsWith("/random-fruit") ||
-        location.pathname.startsWith("/fruit-battle") ||
-        location.pathname.startsWith("/grand-run");
+        location.pathname.startsWith("/fruit-battle")
+
 
     const isDevilFruitsActive =
         location.pathname === "/" ||
@@ -186,16 +186,18 @@ export default function Header({ headerShown, headerTitle }) {
                                     </NavLink>
 
 
-                                    <NavLink
-                                        to="/grand-run"
-                                        className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
-                                    >
-                                        GRAND RUN
-                                    </NavLink>
+
 
                                 </div>
 
                             </div>
+
+                            <NavLink
+                                to="/grand-run"
+                                className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                            >
+                                GRAND RUN
+                            </NavLink>
 
 
                             <NavLink
