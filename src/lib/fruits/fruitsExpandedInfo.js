@@ -1586,7 +1586,6 @@ const fruitsExpandedInfo = [
         "images": [
             'https://i.ibb.co/fzvV9Bj3/Book-Operator.webp',
             'https://i.ibb.co/zWJjKwnX/Big-Mom-Shows-Vinsmokes-Her-Collection.webp',
-            'https://i.ibb.co/9kRb7B4c/charlotte-mont-d-or-one-piece.jpg',
         ]
     },
     {
@@ -2293,7 +2292,6 @@ const fruitsExpandedInfo = [
         "images": [
             'https://i.ibb.co/Z32xbRB/Sugar-Little-Black-Bears.webp',
             'https://i.ibb.co/LhrNxLN8/Atamawari-Ningyo.webp',
-            'https://i.ibb.co/BVxyyp0V/b5e0d3a02d6ad56b428975227d8658406abcca0er1-738-501v2-hq.jpg',
         ]
     },
     {
@@ -3326,7 +3324,6 @@ const fruitsExpandedInfo = [
         "trivia": [],
         "images": [
             'https://i.ibb.co/M5J1sBPv/cf4ca-16697226949766.webp',
-            'https://i.ibb.co/GQQgs3NR/138d9ad5fdc693858dad84cc89b63c920fdc40fc-hq.gif',
             'https://i.ibb.co/LzkTRnPy/Gomu-Gomu-no-Jet-Migawari.webp',
         ]
     },
@@ -3443,7 +3440,6 @@ const fruitsExpandedInfo = [
         "trivia": [],
         "images": [
             'https://i.ibb.co/mCVnrZ99/Br3-Fe-and-Her-Siblings-Attack-the-Sunny.webp',
-            'https://i.ibb.co/zTmf9WVf/Mira-Mira-no-Mi.jpg',
             'https://i.ibb.co/GfpSsLnt/Mirro-World-Infobox.webp',
         ]
     },

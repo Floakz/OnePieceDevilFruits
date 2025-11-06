@@ -2,7 +2,7 @@ import styles from './dailyFight.module.css'
 import Header from '../../../Components/header/Header'
 import Footer from '../../../Components/footer/footer'
 import { fetchAllFruitsOnce } from '../../../lib/fruitsApi'
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import characters from '../../../lib/characters'
 import { doc, getDoc, setDoc, onSnapshot, serverTimestamp, collection } from "firebase/firestore";
@@ -10,9 +10,7 @@ import { db, auth } from '../../../lib/firebase'
 import { onAuthStateChanged } from "firebase/auth";
 import Seo from '../../../Components/Seo'
 
-
 export default function DailyFight() {
-
     const navigate = useNavigate()
     const START_DATE = "2025-10-11";
     const today = todayIdUTC()
@@ -26,8 +24,32 @@ export default function DailyFight() {
         return new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
     }
 
+    const fruitImgLocation = '/images/fruits';
+    const characterImgLocation = '/images/nonFruitCharacters'; // NOTE: matches your characters.js imgLocation
 
+    // ---- Helpers to guarantee local images (works for both old & new fights) ----
+    const charImgByName = useMemo(() => {
+        const map = new Map();
+        for (const c of characters) map.set(c.name, c.img);
+        return map;
+    }, []);
 
+    const fileFromUrl = (url) => {
+        try { return new URL(url).pathname.split('/').pop(); } catch { return null; }
+    };
+
+    const forceLocalCharImg = (charName, fallbackMaybeExternal) => {
+        // 1) Prefer the source of truth from your characters list (already local)
+        const localFromList = charImgByName.get(charName);
+        if (localFromList) return localFromList;
+
+        // 2) If we only have an external URL (older docs), rebuild as local using the filename
+        const f = fileFromUrl(fallbackMaybeExternal);
+        return f ? `${characterImgLocation}/${f}` : fallbackMaybeExternal;
+    };
+
+    const forceLocalFruitImg = (fruitId) => `${fruitImgLocation}/${fruitId}.webp`;
+    // ---------------------------------------------------------------------------
 
     async function createTodayFightIfMissing(fruits, characters) {
         const id = todayIdUTC();
@@ -93,18 +115,18 @@ export default function DailyFight() {
             createdAt: serverTimestamp(),
             left: {
                 charName: left.user,
-                charImg: left.userImage,
+                charImg: left.userImage,       // already local from characters.js
                 fruitId: left.fruitId,
                 fruitName: left.fruit,
-                fruitImg: left.fruitImg,
+                fruitImg: left.fruitImg,       // already local from getRandomCombo
                 power: left.fruitPower,
             },
             right: {
                 charName: right.user,
-                charImg: right.userImage,
+                charImg: right.userImage,      // already local
                 fruitId: right.fruitId,
                 fruitName: right.fruit,
-                fruitImg: right.fruitImg,
+                fruitImg: right.fruitImg,      // already local
                 power: right.fruitPower,
             },
         };
@@ -112,7 +134,6 @@ export default function DailyFight() {
         await setDoc(ref, payload); // creates the doc
         return payload;
     }
-
 
     function listenVoteCounts(fightId, setCounts) {
         const votesCol = collection(db, "fights", fightId, "votes");
@@ -137,7 +158,6 @@ export default function DailyFight() {
         });
     }
 
-
     async function handleVote(side) {
         const fightId = currentDate;
         const userId = auth.currentUser?.uid;
@@ -156,11 +176,8 @@ export default function DailyFight() {
         });
 
         setUserVoted(true)
-
-
         localStorage.setItem(`voted-${fightId}`, side);
     }
-
 
     let [leftOption, setLeftOption] = useState({
         user: '',
@@ -182,10 +199,7 @@ export default function DailyFight() {
         votes: ''
     })
 
-
     function goToPreviousFight() {
-
-
         const prev = new Date(currentDate);
         prev.setUTCDate(prev.getUTCDate() - 1);
         const prevDate = prev.toISOString().slice(0, 10);
@@ -201,8 +215,6 @@ export default function DailyFight() {
         setUserVoted(false);
     }
 
-
-
     useEffect(() => {
         async function loadFruits() {
             try {
@@ -214,10 +226,6 @@ export default function DailyFight() {
         }
         loadFruits();
     }, []);
-
-
-
-
 
     useEffect(() => {
         if (!allFruits) return;
@@ -231,25 +239,33 @@ export default function DailyFight() {
             setUserVoted(!!existing.exists());
         });
 
-
         const ref = doc(db, "fights", currentDate);
         const unsubFight = onSnapshot(ref, (snap) => {
             if (!snap.exists()) return;
             const data = snap.data();
+
+            // Force local images regardless of what old docs contain
+            const leftCharImg = forceLocalCharImg(data.left.charName, data.left.charImg);
+            const rightCharImg = forceLocalCharImg(data.right.charName, data.right.charImg);
+
+            const leftFruitImg = forceLocalFruitImg(data.left.fruitId);   // <-- use fruitId
+            const rightFruitImg = forceLocalFruitImg(data.right.fruitId); // <-- use fruitId
+
             setLeftOption({
                 user: data.left.charName,
-                userImage: data.left.charImg,
+                userImage: leftCharImg,
                 fruit: data.left.fruitName,
                 fruitId: data.left.fruitId,
-                fruitImg: data.left.fruitImg,
+                fruitImg: leftFruitImg,
                 fruitPower: data.left.power,
             });
+
             setRightOption({
                 user: data.right.charName,
-                userImage: data.right.charImg,
+                userImage: rightCharImg,
                 fruit: data.right.fruitName,
                 fruitId: data.right.fruitId,
-                fruitImg: data.right.fruitImg,
+                fruitImg: rightFruitImg,
                 fruitPower: data.right.power,
             });
         });
@@ -268,18 +284,12 @@ export default function DailyFight() {
         };
     }, [allFruits, currentDate]);
 
-
-
-
-
     function getRandomCharacter(chars, excludeNames = new Set()) {
         const pool = (chars || []).filter(c => c.power >= 74 && !excludeNames.has(c.name));
-        if (pool.length === 0) return null; // or throw if you prefer to fail loudly
+        if (pool.length === 0) return null;
         const randIndex = Math.floor(Math.random() * pool.length);
         return pool[randIndex];
     }
-
-
 
     function getRandomFruit(fruits, excludeIds = new Set()) {
         const pool = (fruits || []).filter(f => !excludeIds.has(f.id));
@@ -287,7 +297,6 @@ export default function DailyFight() {
         const randIndex = Math.floor(Math.random() * pool.length);
         return pool[randIndex];
     }
-
 
     function getRandomCombo(fruits, chars, { excludeFruitIds = new Set(), excludeCharNames = new Set() } = {}) {
         const randFruit = getRandomFruit(fruits, excludeFruitIds);
@@ -297,19 +306,17 @@ export default function DailyFight() {
 
         return {
             user: randUser.name,
-            userImage: randUser.img,
+            userImage: randUser.img,                             // already local
             fruit: randFruit.name,
             fruitPower: randFruit.power,
             fruitId: randFruit.id,
-            fruitImg: randFruit.img.fruit,
+            fruitImg: `${fruitImgLocation}/${randFruit.id}.webp`,// local by id
             voter: ''
         };
     }
 
-
     return (
         <>
-
             <Seo
                 title="Daily One Piece Matchup – Vote Your Winner in Today's 1v1 Battle!"
                 description="Who wins today's One Piece 1v1 fight? Vote between two random characters and their Devil Fruits. New battles every day — join the fight and see which side wins!"
@@ -317,7 +324,6 @@ export default function DailyFight() {
             />
 
             <Header headerShown={false} />
-
 
             <div className="mainFull">
                 <div className={styles.dailyFightWrapper}>
@@ -355,7 +361,7 @@ export default function DailyFight() {
                                     {leftOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={leftOption.fruitImg || 'https://i.ibb.co/TMrCn9cd/unkown-fruit.webp'} alt={`Image of the ${leftOption.fruit}`} />
+                            <img className={styles.fruitImage} src={leftOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${leftOption.fruit}`} />
                         </div>
 
                         <div className={styles.vsWrapper}>vs</div>
@@ -373,7 +379,7 @@ export default function DailyFight() {
                                     {rightOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={rightOption.fruitImg || 'https://i.ibb.co/TMrCn9cd/unkown-fruit.webp'} alt={`Image of the ${rightOption.fruit}`} />
+                            <img className={styles.fruitImage} src={rightOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${rightOption.fruit}`} />
                         </div>
 
                     </div>

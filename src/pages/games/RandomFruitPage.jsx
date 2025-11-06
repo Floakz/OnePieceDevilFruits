@@ -19,6 +19,7 @@ export default function RandomFruitPage() {
 
     const [isLoading, setIsLoading] = useState(false);
 
+    const fruitImgLocation = '/images/fruits';
 
     useEffect(() => {
         (async () => setAllFruits(await fetchAllFruitsOnce()))();
@@ -174,7 +175,7 @@ export default function RandomFruitPage() {
                             {pick ? (
                                 <>
                                     <h3>The seas whisper your name… <br />the {pick.name} has chosen you. </h3>
-                                    <img src={pick.img.fruit} alt={pick.name} />
+                                    <img src={`${fruitImgLocation}/${pick.id}.webp` ?? pick.img?.user} alt={pick.name} />
                                     <p className={styles.aboutText}>{pick.about}</p>
                                 </>
                             ) : (

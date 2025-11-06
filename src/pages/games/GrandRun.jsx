@@ -17,6 +17,9 @@ export default function GrandRun() {
     const [discardedFruits, setDiscardedFruits] = useState(0);
     const intervalRef = useRef(null);
 
+    const fruitImgLocation = '/images/fruits';
+    const characterImgLocation = '/images/characters';
+
     const bountyTiers = [
         { min: 0, max: 300, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
         { min: 301, max: 420, ranking: 9, label: "Bounty Hunter", bounty: "50,000", message: 'Grandma is impressed, Marines not so much' },
@@ -26,8 +29,8 @@ export default function GrandRun() {
         { min: 619, max: 711, ranking: 5, label: "Supernova", bounty: "100,000,000", message: 'Cipher Pol puts you on the “keep an eye” list' },
         { min: 712, max: 804, ranking: 4, label: "Warlord", bounty: "250,000,000", message: 'They tried to recruit you but you’re too chaotic' },
         { min: 805, max: 897, ranking: 3, label: "Local Emperor", bounty: "500,000,000", message: 'Half an ocean bends the knee' },
-        { min: 898, max: 930, ranking: 2, label: "Yonkou", bounty: "1,500,000,000", message: 'World Government pretends not to panic' },
-        { min: 931, max: 1284, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
+        { min: 898, max: 950, ranking: 2, label: "Yonkou", bounty: "1,500,000,000", message: 'World Government pretends not to panic' },
+        { min: 951, max: 1284, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
     ];
 
     useEffect(() => {
@@ -166,7 +169,7 @@ export default function GrandRun() {
                         {crew.map((crewmate, idx) =>
                             <div key={idx} onClick={gameStep === 1 && !crewmate.used ? () => addMemberToCrew(crewmate, idx) : undefined} className={`${crewmate.used ? styles.activeMember : styles.emptyCard} ${styles.crewCard}`} style={{ backgroundImage: `url('${crewmate.img}') ` }}>
                                 {gameStep === 1 && <span>{crewmate.name}</span>}
-                                {gameStep !== 1 ? crewmate.fruit ? <div className={styles.fruitBoxWrapper} style={{ backgroundImage: `url('${crewmate.fruit.img.fruit}')` }}></div> : <div onClick={!crewmate.fruit ? () => addFruit(crewmate, idx) : undefined} className={`${styles.fruitBoxWrapper} ${styles.fruitBoxHover}`}></div> : null}
+                                {gameStep !== 1 ? crewmate.fruit ? <div className={styles.fruitBoxWrapper} style={{ backgroundImage: `url('${`${fruitImgLocation}/${crewmate.fruit.id}.webp` ?? crewmate.fruit.img?.fruit}')` }}></div> : <div onClick={!crewmate.fruit ? () => addFruit(crewmate, idx) : undefined} className={`${styles.fruitBoxWrapper} ${styles.fruitBoxHover}`}></div> : null}
                             </div>
                         )}
                     </div>
@@ -180,11 +183,11 @@ export default function GrandRun() {
                             </div>
                             <div className={styles.optionFruitWrapper}>
                                 {fruitDrafted?.img?.fruit && (
-                                    <img src={fruitDrafted.img.fruit} alt="image of a devil fruit" />
+                                    <img src={`${fruitImgLocation}/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.fruit} alt="image of a devil fruit" />
                                 )}
                                 <div>
                                     {fruitDrafted?.img?.user && (
-                                        <img src={fruitDrafted.img.user} alt="image of a devil fruit user" />
+                                        <img src={`${characterImgLocation}/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.user} alt="image of a devil fruit user" />
                                     )}
 
                                     <p>previous user</p>
