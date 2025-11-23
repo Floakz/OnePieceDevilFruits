@@ -1,15 +1,23 @@
 import { useNavigate } from 'react-router-dom';
 import './fruitcardstyle.css';
 
-export default function FruitCard(props) {
-    const fruitImgLocation = '/images/fruits';
-    const characterImgLocation = '/images/characters';
 
-    const characterSrc = `${characterImgLocation}/${props.id}.webp` ?? props.img?.user;
-    const fruitSrc = `${fruitImgLocation}/${props.id}.webp` ?? props.img?.fruit;
+export default function FruitCard(props) {
+
+    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
+
+    const cdnFruit = CDN_BASE ? `${CDN_BASE}/fruits/${props.id}.webp` : null;
+    const cdnCharacter = CDN_BASE ? `${CDN_BASE}/characters/${props.id}.webp` : null;
+
+
+    const localFruit = `/images/fruits/${props.id}.webp`;
+    const localCharacter = `/images/characters/${props.id}.webp`;
+
+
+    const fruitSrc = cdnFruit || localFruit;
+    const characterSrc = cdnCharacter || localCharacter;
 
     const navigate = useNavigate();
-
 
     const fallbackFruit = 'https://i.postimg.cc/Sxp09zGS/unkown.png';
 
@@ -26,7 +34,7 @@ export default function FruitCard(props) {
                         src={fruitSrc}
                         alt={`${props.name} picture`}
                         onError={(e) => {
-                            e.currentTarget.onerror = null; // prevent loop
+                            e.currentTarget.onerror = null;
                             e.currentTarget.src = fallbackFruit;
                         }}
                     />

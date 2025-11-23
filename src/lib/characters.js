@@ -1,5 +1,5 @@
-
-const imgLocation = '/images/nonFruitCharacters'
+const CDN_BASE = import.meta.env.VITE_CDN_BASE;
+const imgLocation = `${CDN_BASE}/nonFruitCharacters/`
 
 
 const characters = [

@@ -12,15 +12,13 @@ export default function ExpandedFruit() {
     const { id } = useParams();
     const navigate = useNavigate();
 
+    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
+
     const [shownImageCarro, setShownImageCarro] = useState(0);
     const [fruitInfo, setFruitInfo] = useState(null);
     const [otherFruits, setOtherFruits] = useState();
     const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'notfound' | 'error'
     const [imageLoaded, setImageLoaded] = useState(false);
-
-    const fruitImgLocation = '/images/fruits';
-    const characterImgLocation = '/images/characters';
-
 
     const imgs = useMemo(() => getFruitImages(String(id)), [id]);
 
@@ -115,7 +113,7 @@ export default function ExpandedFruit() {
                         <img
                             loading="lazy"
                             className='fruitImg'
-                            src={`${fruitImgLocation}/${fruitInfo.id}.webp` ?? fruitInfo.img?.fruit}
+                            src={`${CDN_BASE}/fruits/${fruitInfo.id}.webp` ?? fruitInfo.img?.fruit}
                             alt={`${fruitInfo.name} picture`}
                         />
                         <h1 className={styles.pageTitle}>{fruitInfo.name}</h1>
@@ -140,7 +138,7 @@ export default function ExpandedFruit() {
                                 <img
                                     loading="lazy"
                                     className={styles.userImg}
-                                    src={`${characterImgLocation}/${fruitInfo.id}.webp` ?? fruitInfo.img?.user}
+                                    src={`${CDN_BASE}/characters/${fruitInfo.id}.webp` ?? fruitInfo.img?.user}
                                     alt={`${fruitInfo.user} picture`}
                                 />
                             </div>
@@ -292,10 +290,10 @@ export default function ExpandedFruit() {
                                         onClick={() => { navigate(`/fruit/${fruit.id}`); window.scrollTo(0, 0); }}
                                         className={styles.otherFruitsSingle}
                                         style={{
-                                            backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${`${characterImgLocation}/${fruit.id}.webp` ?? fruitInfo.img?.user})`
+                                            backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${`${CDN_BASE}/characters/${fruit.id}.webp` ?? fruitInfo.img?.user})`
                                         }}
                                     >
-                                        <img loading="lazy" className={styles.otherfruitImg} src={`${fruitImgLocation}/${fruit.id}.webp` ?? fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
+                                        <img loading="lazy" className={styles.otherfruitImg} src={`${CDN_BASE}/fruits/${fruit.id}.webp` ?? fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
                                         <h2>{fruit.name}</h2>
                                     </div>
                                 );

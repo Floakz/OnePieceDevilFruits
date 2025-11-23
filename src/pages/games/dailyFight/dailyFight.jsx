@@ -16,6 +16,9 @@ export default function DailyFight() {
     const today = todayIdUTC()
     const [currentDate, setCurrentDate] = useState(todayIdUTC());
 
+
+    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
+
     let [allFruits, setAllFruits] = useState()
     let [voteCount, setVoteCount] = useState({ left: 0, leftPct: 0, right: 0, rightPct: 0 });
     let [userVoted, setUserVoted] = useState(false);
@@ -23,9 +26,6 @@ export default function DailyFight() {
     function todayIdUTC() {
         return new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
     }
-
-    const fruitImgLocation = '/images/fruits';
-    const characterImgLocation = '/images/nonFruitCharacters'; // NOTE: matches your characters.js imgLocation
 
     // ---- Helpers to guarantee local images (works for both old & new fights) ----
     const charImgByName = useMemo(() => {
@@ -45,10 +45,10 @@ export default function DailyFight() {
 
         // 2) If we only have an external URL (older docs), rebuild as local using the filename
         const f = fileFromUrl(fallbackMaybeExternal);
-        return f ? `${characterImgLocation}/${f}` : fallbackMaybeExternal;
+        return f ? `${CDN_BASE}/nonFruitCharacters/${f}` : fallbackMaybeExternal;
     };
 
-    const forceLocalFruitImg = (fruitId) => `${fruitImgLocation}/${fruitId}.webp`;
+    const forceLocalFruitImg = (fruitId) => `${CDN_BASE}/fruits/${fruitId}.webp`;
     // ---------------------------------------------------------------------------
 
     async function createTodayFightIfMissing(fruits, characters) {
@@ -310,7 +310,7 @@ export default function DailyFight() {
             fruit: randFruit.name,
             fruitPower: randFruit.power,
             fruitId: randFruit.id,
-            fruitImg: `${fruitImgLocation}/${randFruit.id}.webp`,// local by id
+            fruitImg: `${CDN_BASE}/fruits/${randFruit.id}.webp`,// local by id
             voter: ''
         };
     }

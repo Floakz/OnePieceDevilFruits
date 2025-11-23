@@ -17,8 +17,8 @@ export default function GrandRun() {
     const [discardedFruits, setDiscardedFruits] = useState(0);
     const intervalRef = useRef(null);
 
-    const fruitImgLocation = '/images/fruits';
-    const characterImgLocation = '/images/characters';
+    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
+
 
     const bountyTiers = [
         { min: 0, max: 300, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
@@ -169,7 +169,7 @@ export default function GrandRun() {
                         {crew.map((crewmate, idx) =>
                             <div key={idx} onClick={gameStep === 1 && !crewmate.used ? () => addMemberToCrew(crewmate, idx) : undefined} className={`${crewmate.used ? styles.activeMember : styles.emptyCard} ${styles.crewCard}`} style={{ backgroundImage: `url('${crewmate.img}') ` }}>
                                 {gameStep === 1 && <span>{crewmate.name}</span>}
-                                {gameStep !== 1 ? crewmate.fruit ? <div className={styles.fruitBoxWrapper} style={{ backgroundImage: `url('${`${fruitImgLocation}/${crewmate.fruit.id}.webp` ?? crewmate.fruit.img?.fruit}')` }}></div> : <div onClick={!crewmate.fruit ? () => addFruit(crewmate, idx) : undefined} className={`${styles.fruitBoxWrapper} ${styles.fruitBoxHover}`}></div> : null}
+                                {gameStep !== 1 ? crewmate.fruit ? <div className={styles.fruitBoxWrapper} style={{ backgroundImage: `url('${`${CDN_BASE}/fruits/${crewmate.fruit.id}.webp` ?? crewmate.fruit.img?.fruit}')` }}></div> : <div onClick={!crewmate.fruit ? () => addFruit(crewmate, idx) : undefined} className={`${styles.fruitBoxWrapper} ${styles.fruitBoxHover}`}></div> : null}
                             </div>
                         )}
                     </div>
@@ -183,11 +183,11 @@ export default function GrandRun() {
                             </div>
                             <div className={styles.optionFruitWrapper}>
                                 {fruitDrafted?.img?.fruit && (
-                                    <img src={`${fruitImgLocation}/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.fruit} alt="image of a devil fruit" />
+                                    <img src={`${CDN_BASE}/fruits/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.fruit} alt="image of a devil fruit" />
                                 )}
                                 <div>
                                     {fruitDrafted?.img?.user && (
-                                        <img src={`${characterImgLocation}/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.user} alt="image of a devil fruit user" />
+                                        <img src={`${CDN_BASE}/characters/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.user} alt="image of a devil fruit user" />
                                     )}
 
                                     <p>previous user</p>
