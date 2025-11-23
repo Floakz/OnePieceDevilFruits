@@ -113,6 +113,7 @@ export default function ExpandedFruit() {
                 <div className={styles.pageDetailWrapper}>
                     <div className={styles.titleWrapper}>
                         <img
+                            loading="lazy"
                             className='fruitImg'
                             src={`${fruitImgLocation}/${fruitInfo.id}.webp` ?? fruitInfo.img?.fruit}
                             alt={`${fruitInfo.name} picture`}
@@ -137,6 +138,7 @@ export default function ExpandedFruit() {
 
                             <div className={styles.imgBox}>
                                 <img
+                                    loading="lazy"
                                     className={styles.userImg}
                                     src={`${characterImgLocation}/${fruitInfo.id}.webp` ?? fruitInfo.img?.user}
                                     alt={`${fruitInfo.user} picture`}
@@ -293,7 +295,7 @@ export default function ExpandedFruit() {
                                             backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${`${characterImgLocation}/${fruit.id}.webp` ?? fruitInfo.img?.user})`
                                         }}
                                     >
-                                        <img className={styles.otherfruitImg} src={`${fruitImgLocation}/${fruit.id}.webp` ?? fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
+                                        <img loading="lazy" className={styles.otherfruitImg} src={`${fruitImgLocation}/${fruit.id}.webp` ?? fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
                                         <h2>{fruit.name}</h2>
                                     </div>
                                 );

@@ -97,8 +97,8 @@ export default function FruitBattle() {
                         <div className={styles.fruitLineWrapper}>
                             {enemyCrew.map((f, idx) => (
                                 <div key={idx} className={`${styles.fruitWrapper} ${styles.enemy}`}>
-                                    <img className={styles.userImg} src={`${characterImgLocation}/${f.id}.webp` ?? f.img?.user} alt={`image of ${f.user} fruit`} />
-                                    <img src={`${fruitImgLocation}/${f.id}.webp` ?? f.img?.fruit} alt={`image of ${f.name} fruit`} />
+                                    <img loading="lazy" className={styles.userImg} src={`${characterImgLocation}/${f.id}.webp` ?? f.img?.user} alt={`image of ${f.user} fruit`} />
+                                    <img loading="lazy" src={`${fruitImgLocation}/${f.id}.webp` ?? f.img?.fruit} alt={`image of ${f.name} fruit`} />
                                     <span className={styles.fruitNameCard}>{f.name}</span>
                                 </div>
                             ))}
@@ -111,8 +111,8 @@ export default function FruitBattle() {
                             {allyCrew.map((f, idx) =>
                                 f ? (
                                     <div key={idx} className={`${styles.fruitWrapper} ${styles.ally}`}>
-                                        <img className={styles.userImg} src={`${characterImgLocation}/${f.id}.webp` ?? f.img?.user} alt={`image of ${f.user} fruit`} />
-                                        <img src={`${fruitImgLocation}/${f.id}.webp` ?? f.img?.fruit} alt={`image of ${f.name} fruit`} />
+                                        <img loading="lazy" className={styles.userImg} src={`${characterImgLocation}/${f.id}.webp` ?? f.img?.user} alt={`image of ${f.user} fruit`} />
+                                        <img loading="lazy" src={`${fruitImgLocation}/${f.id}.webp` ?? f.img?.fruit} alt={`image of ${f.name} fruit`} />
                                         <span className={styles.fruitNameCard}>{f.name}</span>
                                     </div>
                                 ) : (
