@@ -39,6 +39,36 @@ const communityFruits = [
         type: 'Logia',
         submitedBy: 'LickTz'
     },
+    {
+        about: 'Allows energy to be converted directly into beams that forcefully speed you forward.',
+        img: {
+            fruit: "https://postimg.cc/56pkdyGT",
+        },
+        name: 'Discharge-Discharge fruit',
+        power: 50,
+        type: 'Paramecia',
+        submitedBy: 'teddygk9'
+    },
+    {
+        about: 'Allows you to make bubbles around you representing your own physical limit, and pop through them, temporarily boosting you. Overuse leads to physical impacts.',
+        img: {
+            fruit: "https://postimg.cc/56pkdyGT",
+        },
+        name: 'Bubble-Bubble fruit',
+        power: 81,
+        type: 'Paramecia',
+        submitedBy: 'teddygk9'
+    },
+    {
+        about: 'Allows you to gamble with someone. one gets a boost, the other, a punishment. This may be settled through any game or activity that both parties agree on, and the boost and punishment are relative to the power of the players.',
+        img: {
+            fruit: "https://postimg.cc/56pkdyGT",
+        },
+        name: 'Gamble-Gamble fruit',
+        power: 74,
+        type: 'Paramecia',
+        submitedBy: 'teddygk9'
+    },
 
 ]
 
