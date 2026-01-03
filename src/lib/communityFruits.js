@@ -47,7 +47,7 @@ const communityFruits = [
         name: 'Discharge-Discharge fruit',
         power: 50,
         type: 'Paramecia',
-        submitedBy: 'teddygk9'
+        submitedBy: 'SunnyGod0'
     },
     {
         about: 'Allows you to make bubbles around you representing your own physical limit, and pop through them, temporarily boosting you. Overuse leads to physical impacts.',
@@ -57,7 +57,7 @@ const communityFruits = [
         name: 'Bubble-Bubble fruit',
         power: 81,
         type: 'Paramecia',
-        submitedBy: 'teddygk9'
+        submitedBy: 'SunnyGod0'
     },
     {
         about: 'Allows you to gamble with someone. one gets a boost, the other, a punishment. This may be settled through any game or activity that both parties agree on, and the boost and punishment are relative to the power of the players.',
@@ -67,7 +67,7 @@ const communityFruits = [
         name: 'Gamble-Gamble fruit',
         power: 74,
         type: 'Paramecia',
-        submitedBy: 'teddygk9'
+        submitedBy: 'SunnyGod0'
     },
 
 ]
