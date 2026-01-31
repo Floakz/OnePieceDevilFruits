@@ -64,6 +64,56 @@
     flex-direction: column;
 }
 
+.discordButton {
+    position: fixed;
+    line-height: 1em;
+    bottom: 40px;
+    left: 40px;
+    display: flex;
+    align-items: center;
+    /* Added: centers icon and text vertically */
+    gap: 20px;
+    width: fit-content;
+    padding: 20px 30px;
+    border-radius: 100px;
+    background-color: black;
+    color: white;
+    /* Added: ensures text is visible */
+    z-index: 999999999999999999;
+    border: 1px solid gray;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.discordButton:hover {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+/* Style the tooltip text */
+.discordButton span {
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    /* Prevents text from wrapping */
+}
+
+/* Optional: Add animation */
+.discordButton span {
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
 @media (max-width: 850px) {
 
