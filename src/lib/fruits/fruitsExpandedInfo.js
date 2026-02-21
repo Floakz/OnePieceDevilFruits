@@ -3994,6 +3994,32 @@ const fruitsExpandedInfo = [
             'https://i.ibb.co/d4w8hbrS/Golem-Gunyo-Gunyo.webp'
         ]
     },
+    {
+        "id": "8380b385-072f-442f-9432-aacc3e164c52",
+        "name": "Mini-Mini Fruit",
+        "firstAppearance": "Episode 575",
+        "abilities": [
+            "A Paramecia fruit that allows the user to shrink their body down to as small as 5mm in height without reducing their physical strength in any way. The user becomes a Mini Human, able to freely shift between their miniaturized form and their original size, or any scale in between. Clothes and equipped items shrink and grow alongside the user."
+        ],
+        "techniques": [],
+        "strengths": [
+            "User retains 100% of their original physical strength regardless of how small they become",
+            "Can shrink to 5mm, making the user virtually undetectable and near-impossible to hit",
+            "Equipped items and clothing change size to match the user",
+            "Allows the user to infiltrate tight spaces, slip inside an enemy's body and expand to deal massive internal damage",
+            "Especially devastating for giants, who retain giant-level strength in a tiny form"
+        ],
+        "weaknesses": [
+            "Standard Devil Fruit weaknesses: seawater and Seastone negate the power",
+            "Permanently alters the user's default size to roughly the height of two human hands — reverting to this form if powers are negated",
+            "If the user becomes overly excited, body proportions can become disproportionate",
+            "The fruit does not reduce the user's appetite — they must still consume food suited to their original size"
+        ],
+        "ratings": { "attack": 55, "defense": 60, "utility": 88 },
+        "trivia": [],
+        "images": [
+        ]
+    },
 ]
 
 
