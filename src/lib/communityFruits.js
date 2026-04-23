@@ -69,6 +69,26 @@ const communityFruits = [
         type: 'Paramecia',
         submitedBy: 'SunnyGod0'
     },
+    {
+        about: 'This fruit allows the user to create, control, and transform into water. The user can manipulate water in various ways, such as forming waves, creating high-pressure water attacks, and turning their body into water to avoid physical damage. They can also absorb nearby water sources to increase their power and manipulate water-based substances, including blood and other moisture within living organisms.',
+        img: {
+            fruit: "https://postimg.cc/56pkdyGT",
+        },
+        name: 'Water-Water Fruit',
+        power: 96,
+        type: 'Logia',
+        submitedBy: 'RoroHudzy'
+    },
+    {
+        about: 'This fruit allows the user to create and enforce rules that reality must follow within a certain range. The user can impose conditions such as restricting movement, altering gravity, or preventing attacks for a short period of time. These rules apply to everything within the affected area, including the user himself who also must follow them. With enough mastery, the user can layer multiple rules at once, effectively turning the battlefield into a controlled environment where they dictate what is possible and what is not.',
+        img: {
+            fruit: "https://postimg.cc/56pkdyGT",
+        },
+        name: 'Rule-Rule Fruit',
+        power: 84,
+        type: 'Paramecia',
+        submitedBy: 'RoroHudzy'
+    },
 
 ]
 

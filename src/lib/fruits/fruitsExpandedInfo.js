@@ -4020,6 +4020,33 @@ const fruitsExpandedInfo = [
         "images": [
         ]
     },
+    {
+        "id": "9f83e24c-99f5-48cb-9e11-cd84a0119bbb",
+        "name": "Luck-Luck Fruit",
+        "firstAppearance": "One Piece Film: Gold",
+        "abilities": [
+            "A Paramecia fruit that allows the user to steal luck from others through physical touch, making the user extraordinarily lucky while the victim becomes extremely unlucky , The stolen luck accumulates over time, and once enough has been stockpiled, the user becomes nearly invincible attacks miss, environmental chaos aids them, and even mundane objects like coins can trigger devastating chain reactions against opponents"
+        ],
+        "techniques": [],
+        "strengths": [
+            "Near-invincibility when luck is fully stockpiled, attacks routinely miss or backfire",
+            "Passive and discreet activation, victims rarely notice the touch in time",
+            "Can affect multiple targets to accumulate luck rapidly",
+            "Even the weakest thrown objects become dangerous weapons through probability manipulation",
+            "Extremely versatile in a crowd or casino-style environment with many available targets"
+        ],
+        "weaknesses": [
+            "Luck is a finite resource, once depleted, the user is left completely unprotected",
+            "The user may not notice when their stockpile runs out, leading to overconfidence",
+            "Requires physical contact to steal luck, making range a limitation",
+            "Opponents who are already inherently unlucky or who exploit the luck mechanic directly can neutralize the power",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": { "attack": 45, "defense": 70, "utility": 85 },
+        "trivia": [],
+        "images": [
+        ]
+    },
 ]
 
 

@@ -1888,5 +1888,19 @@
             "fruit": "https://i.ibb.co/TDpmScK8/8380b385-072f-442f-9432-aacc3e164c52.webp",
             "user": "https://i.ibb.co/B27JhLXk/8380b385-072f-442f-9432-aacc3e164c52.webp"
         }
+    },
+    {
+        "id": "9f83e24c-99f5-48cb-9e11-cd84a0119bbb",
+        "previousUser": "Unknown",
+        "name": "Luck-Luck Fruit",
+        "type": "Paramecia",
+        "user": "Baccarat",
+        "power": 62,
+        "rarity": 3,
+        "about": "A Paramecia fruit that lets the user steal luck from others with a simple touch, stockpiling it until fortune bends entirely in their favor. The more luck drained, the closer the user gets to being untouchable — attacks miss, chaos follows their enemies, and even a coin toss becomes a weapon. A gambler's dream, and everyone else's nightmare.",
+        "img": {
+            "fruit": "https://i.ibb.co/CdqzcLb/luckluckfruit.webp",
+            "user": "https://i.ibb.co/KxgpsQcG/Baccarat.webp"
+        }
     }
 ]
