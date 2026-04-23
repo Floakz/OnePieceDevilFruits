@@ -210,13 +210,13 @@ export default function Header({ headerShown, headerTitle }) {
                                 Daily Fight
                             </NavLink>
 
-
+                            {/* 
                             <NavLink
                                 to="/treasure-chest"
                                 className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
                             >
                                 Treasure Chest
-                            </NavLink>
+                            </NavLink> */}
 
 
                         </div>
@@ -292,13 +292,13 @@ export default function Header({ headerShown, headerTitle }) {
                                 Daily Fight
                             </NavLink>
 
-                            <NavLink
+                            {/* <NavLink
                                 to="/treasure-chest"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
                             >
                                 Treasure Chest
-                            </NavLink>
+                            </NavLink> */}
 
                         </div>}
                         <div onClick={() => setIsMobileMenuOpen(prev => !prev)} className={styles.mobileMenuButton}>
