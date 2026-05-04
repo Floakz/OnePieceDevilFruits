@@ -80,7 +80,8 @@ h1 {
 }
 
 .mainFull {
-    width: 90vw;
+    width: 80vw;
+    max-width: 1440px;
     min-height: 30vh;
     margin: auto;
 }
@@ -134,10 +135,11 @@ h1 {
 }
 
 main {
-    width: 90vw;
+    width: 80vw;
+    max-width: 1600px;
     margin: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     column-gap: 20px;
     row-gap: 60px;
