@@ -4069,10 +4069,33 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 40, "defense": 55, "utility": 72 },
         "trivia": [],
-        "images": [
-            'https://i.ibb.co/X9phQ16/Smiley-Come-o-Doce.webp',
-            'https://i.ibb.co/MxW4kHvH/164e6137abe2926c3a0eb0aa549d55a6.webp'
-        ]
+        "images": []
+    },
+    {
+        "id": "c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27",
+        "name": "Ride-Ride Fruit",
+        "firstAppearance": "Episode 1128",
+        "abilities": [
+            "A Paramecia fruit that grants the user total control over anything they physically ride, whether mechanical, animal, or human. The takeover is absolute, it bypasses the target's own will, any external command hierarchy, and even the built-in authority structures of advanced technology like Pacifista units. The control range can also extend to targets within reach of the user's Haki, without needing direct physical mounting."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Can override the command hierarchy of even Pacifista Mark III units, some of the most advanced weapons in the world",
+            "Works on virtually any target, mechanical constructs, Sea Beast Weapons, and living beings alike",
+            "Haki proficiency extends the ability's reach beyond direct physical contact",
+            "Extremely difficult to anticipate or counter, as the user does not need to physically overpower their mount",
+            "A small, unassuming user body makes the fruit synergize perfectly, Bluegrass's compact size makes her easy to miss until she's already in the saddle"
+        ],
+        "weaknesses": [
+            "Seemingly limited to controlling a single target at a time, requiring the user to physically mount it",
+            "The user remains exposed to outside attacks regardless of how powerful their mount is",
+            "Sufficiently strong Haki from the target may resist or reduce the effect",
+            "Losing physical contact with the target likely ends the control",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": { "attack": 55, "defense": 40, "utility": 92 },
+        "trivia": [],
+        "images": ['https://cd-opf.pages.dev/fruitUsage/c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27/1.webp']
     }
 ]
 

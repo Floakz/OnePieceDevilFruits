@@ -1911,10 +1911,24 @@
         "user": "Unknown",
         "power": 43,
         "rarity": 2,
-        "about": "A Zoan fruit that allows the user to transform into an axolotl hybrid or a full axolotl at will. Originally consumed by Smiley, a mass of condensed H2S gas brought to life by Caesar Clown the fruit granted it mobility and sentience. After Smiley's death on Punk Hazard, the fruit reincarnated into a nearby apple, swirl-patterned and unclaimed, drifting back into the world.",
+        "about": "A Zoan fruit that allows the user to transform into an axolotl hybrid or a full axolotl at will. Originally consumed by Smiley, a mass of condensed H2S gas brought to life by Caesar Clown.",
         "img": {
             "fruit": "https://i.ibb.co/P7DXB3M/a3f1c892-d47e-4b2a-91f3-7e5d60a8bc14.webp",
             "user": "https://i.ibb.co/bRQ2qxn2/Smiley-Anime-Infobox.webp"
+        }
+    },
+    {
+        "id": "c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27",
+        "previousUser": "Unknown",
+        "name": "Ride-Ride Fruit",
+        "type": "Paramecia",
+        "user": "Bluegrass",
+        "power": 71,
+        "rarity": 4,
+        "about": "A Paramecia fruit that lets the user take full control of anything they ride — vehicle, beast, or living person — overriding all other commands regardless of the target's own will. A small old woman riding a giant Pacifista like a horse, steering it against its own chain of command, is all the proof you need.",
+        "img": {
+            "fruit": "https://i.postimg.cc/jSvkJZ23/c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27.webp",
+            "user": "https://i.postimg.cc/cCNWCXkp/Bluegrass-Anime-Infobox.webp"
         }
     }
 ]
