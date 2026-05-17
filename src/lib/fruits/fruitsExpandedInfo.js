@@ -4095,7 +4095,7 @@ const fruitsExpandedInfo = [
         ],
         "ratings": { "attack": 55, "defense": 40, "utility": 92 },
         "trivia": [],
-        "images": ['https://cd-opf.pages.dev/fruitUsage/c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27/1.webp']
+        "images": []
     }
 ]
 
