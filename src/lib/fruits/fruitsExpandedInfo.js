@@ -4047,6 +4047,33 @@ const fruitsExpandedInfo = [
         "images": [
         ]
     },
+    {
+        "id": "a3f1c892-d47e-4b2a-91f3-7e5d60a8bc14",
+        "name": "Sala-Sala Fruit, Axolotl Model",
+        "firstAppearance": "Episode 594",
+        "abilities": [
+            "A Zoan fruit that grants the user the ability to transform into a full axolotl or an axolotl hybrid at will, bestowing the physical traits of the species including enhanced mobility, amphibious adaptation, and a greatly enlarged body capable of dwarfing humans several times over. When fed to a non-living substance, as Caesar Clown did with condensed H2S gas, the fruit can bring inanimate matter to life and grant it sentience, mobility, and independent thought even across separated fragments of the main body."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Grants full Zoan transformation between human, hybrid, and full axolotl forms",
+            "Capable of achieving gigantic size in full beast form, far beyond typical human scale",
+            "Sentience and independent reaction are preserved even in separated fragments of the user's body",
+            "When used on non-living matter, it can animate and give life to otherwise inert substances",
+            "Hybrid form provides enhanced physical capability suited to combat and situational adaptation"
+        ],
+        "weaknesses": [
+            "No confirmed direct combat techniques were demonstrated by its only known user",
+            "Ironically, despite axolotls being fully aquatic animals, the fruit carries the standard Devil Fruit sea-water weakness",
+            "Combat potential remains unknown",
+        ],
+        "ratings": { "attack": 40, "defense": 55, "utility": 72 },
+        "trivia": [],
+        "images": [
+            'https://i.ibb.co/X9phQ16/Smiley-Come-o-Doce.webp',
+            'https://i.ibb.co/MxW4kHvH/164e6137abe2926c3a0eb0aa549d55a6.webp'
+        ]
+    }
 ]
 
 

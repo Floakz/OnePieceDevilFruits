@@ -1902,5 +1902,19 @@
             "fruit": "https://i.ibb.co/CdqzcLb/luckluckfruit.webp",
             "user": "https://i.ibb.co/KxgpsQcG/Baccarat.webp"
         }
+    },
+    {
+        "id": "a3f1c892-d47e-4b2a-91f3-7e5d60a8bc14",
+        "previousUser": "Smiley",
+        "name": "Sala-Sala Fruit: Axolotl Model",
+        "type": "Zoan",
+        "user": "Unknown",
+        "power": 43,
+        "rarity": 2,
+        "about": "A Zoan fruit that allows the user to transform into an axolotl hybrid or a full axolotl at will. Originally consumed by Smiley, a mass of condensed H2S gas brought to life by Caesar Clown the fruit granted it mobility and sentience. After Smiley's death on Punk Hazard, the fruit reincarnated into a nearby apple, swirl-patterned and unclaimed, drifting back into the world.",
+        "img": {
+            "fruit": "https://i.ibb.co/P7DXB3M/a3f1c892-d47e-4b2a-91f3-7e5d60a8bc14.webp",
+            "user": "https://i.ibb.co/bRQ2qxn2/Smiley-Anime-Infobox.webp"
+        }
     }
 ]

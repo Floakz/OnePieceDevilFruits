@@ -118,7 +118,7 @@ export default function Header({ headerShown, headerTitle }) {
                     <div className="navSection">
                         <img
                             onClick={() => navigate('/')}
-                            src="https://i.ibb.co/7xzkFDts/OPDV-COM-LOGO.png"
+                            src="https://cd-opf.pages.dev/branding/opdvlogo.webp"
                             alt="Onepiecedevilfruits.com logo"
                         />
 
