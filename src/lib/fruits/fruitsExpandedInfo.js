@@ -4096,6 +4096,31 @@ const fruitsExpandedInfo = [
         "ratings": { "attack": 55, "defense": 40, "utility": 92 },
         "trivia": [],
         "images": []
+    },
+    {
+        "id": "e3a19d74-bf82-4c6f-a051-7d3e2f905b18",
+        "name": "Dino-Dino Fruit, Model: Triceratops",
+        "firstAppearance": "Episode 1012",
+        "abilities": [
+            "An Ancient Zoan fruit that grants the user the ability to shift between three forms at will: human, a towering full triceratops that outscales large mechs, and a human-triceratops hybrid. The hybrid form retains the user's dexterity while adding three sharp horns and the fruit's signature trick, rapidly spinning the neck frill like a rotor to achieve sustained flight and boost attack power on divebombs."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Beast form is massive enough to tower over 13-meter-tall robots, giving immense raw power and reach",
+            "Three pointed horns are devastating piercing weapons capable of skewering large targets",
+            "Triceratops hide grants exceptional durability, allowing the user to tank explosive and artillery-grade hits",
+            "The rotating neck frill enables flight in hybrid form, making the user a far more unpredictable and mobile threat than their bulk suggests",
+            "Ancient Zoan physiology provides a passive boost to strength, speed, and endurance across all forms"
+        ],
+        "weaknesses": [
+            "The user's belly is a notable weak point, as the underside lacks the hardened hide of the rest of the body",
+            "The sheer mass of the beast and hybrid forms can make the user slower to react in close, fast-paced exchanges",
+            "Flight via frill rotation requires sustained spinning, making it interruptible if the frill is struck or restrained",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": { "attack": 70, "defense": 78, "utility": 40 },
+        "trivia": [],
+        "images": []
     }
 ]
 
