@@ -15,6 +15,9 @@ import PageNotFound from "../pages/error/pageNotFound.jsx";
 import GrandRun from "../pages/games/GrandRun.jsx";
 import DailyFight from "../pages/games/dailyFight/dailyFight.jsx";
 
+import Quizzes from "../pages/games/quizzes/Quizzes.jsx";
+import ExpandedQuizz from "../pages/games/quizzes/expandedQuizz.jsx";
+
 import Store from "../pages/store/store.jsx";
 
 import ScrollToTop from "../Components/ScrollToTop.jsx";
@@ -80,6 +83,10 @@ export default function AppRoutes() {
                 <Route path="/fruit-battle" element={<FruitBattlePage />} />
                 <Route path="/grand-run" element={<GrandRun />} />
                 <Route path="/daily-fight" element={<DailyFight />} />
+
+                {/* Quizzes */}
+                <Route path="/quizzes" element={<Quizzes />} />
+                <Route path="/quizzes/:id" element={<ExpandedQuizz />} />
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />
