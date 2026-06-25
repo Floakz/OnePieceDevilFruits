@@ -1,0 +1,153 @@
+{
+    "id": "764720eb-378c-42f2-a74a-aaf84be87b04",
+    "title": "Devil Fruit Deep Lore: Expert Edition",
+    "description": "Only the most dedicated fans will ace this one. Obscure fruits, forgotten users, and hidden details.",
+    "difficulty": 5,
+    "topic": "Niche & Deep Lore",
+    "image": "https://static.wikia.nocookie.net/onepiece/images/9/92/Devil_Fruit_Infobox.png/revision/latest?cb=20240421115906",
+    "questions": [
+        {
+            "question": "What was the name Luffy's Gum-Gum Fruit was secretly known as, revealed to be a Mythical Zoan?",
+            "options": [
+                "Human-Human Fruit, Model: Sun God Nika",
+                "God-God Fruit, Model: Nika",
+                "Warrior-Warrior Fruit, Model: Nika",
+                "Rubber-Rubber Fruit, True Form: Nika"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/0/06/Nika_Anime_Infobox.png/revision/latest?cb=20240407153515&path-prefix=pt",
+            "correctAnswer": 0
+        },
+        {
+            "question": "Who originally possessed the Swim-Swim Fruit (Sui Sui no Mi) before Senor Pink obtained it?",
+            "options": [
+                "Corazon",
+                "Buffalo",
+                "A member of Doflamingo's previous crew",
+                "It is not stated who had it before"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/9/9d/Sui_Sui_no_Mi_Infobox.png/revision/latest?cb=20240630232023",
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the name of Sengoku's Devil Fruit, and what does it allow him to transform into?",
+            "options": [
+                "Human-Human Fruit, Model: Daibutsu - Golden Buddha",
+                "God-God Fruit - Model: Buddha",
+                "Holy-Holy Fruit - Divine giant",
+                "Zoan-type - Colossal monk"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/4/45/Hito_Hito_no_Mi%2C_Model_Daibutsu_Infobox.png/revision/latest/scale-to-width-down/1200?cb=20240813213645",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What unique trait does the Tori Tori no Mi, Model: Phoenix (Marco's fruit) grant beyond flight?",
+            "options": [
+                "Immunity to all Devil Fruit powers",
+                "Regenerative flames that can heal wounds",
+                "The ability to teleport short distances",
+                "The power to revive other people from death"
+            ],
+            "image": "https://static.wikia.nocookie.net/seaoffools/images/5/55/Marco%27s_Pheonix_Form.png/revision/latest?cb=20151115140133",
+            "correctAnswer": 1
+        },
+        {
+            "question": "The Fish-Fish Fruit, Model: Azure Dragon is which type of Devil Fruit, and who ate it?",
+            "options": [
+                "Ancient Zoan, Kaidou",
+                "Mythical Zoan, Kaidou",
+                "Mythical Zoan, Big Mom",
+                "Logia, Shanks"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/f/f9/Uo_Uo_no_Mi%2C_Model_Seiryu_Infobox.png/revision/latest?cb=20211204205430",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What does the Memo-Memo Fruit (Memo Memo no Mi) allow its user to do?",
+            "options": [
+                "Erase their own memory to resist mind-reading",
+                "Physically extract, edit, and reinsert people's memories like film strips",
+                "Copy the memories of anyone they touch",
+                "Implant false memories into enemies"
+            ],
+            "image": "https://cdn2.cdnstep.com/k7Di1eR91r1UneRY9cQC/13-1.png",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which Devil Fruit user can drain liquids from living beings?",
+            "options": [
+                "Corazon",
+                "Señor Pink",
+                "Charlotte Smoothie",
+                "Charlotte Daifuku"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/8/86/Siblings_Subdue_Strawhats.png/revision/latest?cb=20180624112134",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is special about the Jacket-Jacket Fruit (Jake Jake no Mi) eaten by Kelly Funk?",
+            "options": [
+                "The user can transform into a full suit of armor worn by others",
+                "The user can become any article of clothing",
+                "The user can become a jacket worn by another person, controlling them",
+                "It allows the user to zip into and hijack another person's body"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/9/97/Kelly_and_Bobby_Combo_After_Colosseum.png/revision/latest?cb=20240727181529&path-prefix=pt",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was the name of the Marine scientist who created artificial Devil Fruits, and what was his first replica of?",
+            "options": [
+                "Vegapunk, Fish-Fish Fruit, Model: Azure Dragon",
+                "Caesar Clown, Sala-Sala Fruit, Model: Axolotl",
+                "Caesar Clown, Gas-Gas Fruit ",
+                "Dr. Indigo, Tremor-Tremor Fruit"
+            ],
+            "image": "https://i.namu.wiki/i/_rSG_pcLJXyayK_uaWfBQFucXBwEUN6CC3ewOfyLvjwRzjyv-8MQjsQlC5ieOuFvAz0Iou_tNDd6D_S9lScdKQ.webp",
+            "correctAnswer": 0
+        },
+        {
+            "question": "The Hana Hana no Mi (Flower-Flower Fruit) has a unique pain mechanic. What is it?",
+            "options": [
+                "Any damage dealt to bloomed body parts is reflected back at the attacker",
+                "Any damage dealt to bloomed body parts is felt by the user's main body",
+                "The user cannot feel pain in their main body while blooms are active",
+                "Bloomed limbs are indestructible but the main body becomes vulnerable"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/c/cd/Veinte_Fleur_Calendula.png/revision/latest?cb=20230806202924",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the name of the fruit eaten by Kozuki Toki that allowed her to send people forward in time?",
+            "options": [
+                "Time-Time Fruit",
+                "Warp-Warp Fruit",
+                "Future-Future Fruit",
+                "Drift-Drift Fruit"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/6/6b/Toki_Toki_no_Mi_Infobox.png/revision/latest?cb=20211006015134&path-prefix=pt",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What can happen to a Zoan user who pushes their fruit's awakening without strong willpower?",
+            "options": [
+                "They permanently lose their human form",
+                "The animal personality takes over and the human mind is suppressed",
+                "Their power becomes permanently weaker",
+                "They enter an unawakened berserk state"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/9/95/Neko_Neko_no_Mi_Model_Leopard_Awakened_Form.png/revision/latest/scale-to-width-down/985?cb=20250825045536&path-prefix=pt",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is unique about how Kaido's Fish-Fish Fruit, Mythical Zoan: Azure Dragon was obtained by him?",
+            "options": [
+                "He stole it from a World Noble",
+                "It was delivered to him by Rocks D. Xebec",
+                "It was given to him by Big Mom",
+                "Shanks' crew stole it from Kaido and it was later returned"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/2/2b/Uo_Uo_no_Mi%2C_Model_Seiryu_Beast_Form.png/revision/latest?cb=20191208070737",
+            "correctAnswer": 2
+        }
+    ]
+}

@@ -11,7 +11,7 @@ export default function ExpandedQuizz() {
     const { id } = useParams();
     const Quizz = quizzes.find((quiz) => quiz.id === id);
 
-
+    const imgUrl = 'https://cd-opf.pages.dev/quizzes/'
 
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const [score, setScore] = useState(0);
@@ -95,7 +95,7 @@ export default function ExpandedQuizz() {
                     <div className={styles.quizContentWrapper}>
                         {!showResults ? <>
                             <div className={styles.questionContentWrapper}>
-                                <img className={styles.questionImage} src={currentQuestion?.image} alt={Quizz?.title} />
+                                <img className={styles.questionImage} src={`${imgUrl}${Quizz.id}/${currentQuestionIndex + 1}.webp`} alt={Quizz?.title} />
                                 <div className={styles.questionWrapper}>
                                     <h2>{currentQuestion?.question}</h2>
 
@@ -119,18 +119,20 @@ export default function ExpandedQuizz() {
 
                             :
 
-                            <div>
+                            <div className={`${styles.questionContentWrapper} ${styles.finalDiv}`}>
                                 <h2>Quiz Completed!</h2>
-                                <p>Your Score: {score} / {Quizz?.questions.length}</p>
-                                <button onClick={() => {
-                                    setCurrentQuestionIndex(0);
-                                    setScore(0);
-                                    setShowResults(false);
-                                    setPercentage(1);
-                                    setSelectedAnswer(null);
-                                    setIsAnswered(false);
+                                <p className={styles.finalScore}>Your Score: {score} / {Quizz?.questions.length}</p>
+                                <button
+                                    className={styles.retakeButton}
+                                    onClick={() => {
+                                        setCurrentQuestionIndex(0);
+                                        setScore(0);
+                                        setShowResults(false);
+                                        setPercentage(1);
+                                        setSelectedAnswer(null);
+                                        setIsAnswered(false);
 
-                                }}>Retake Quiz</button>
+                                    }}>Retake Quiz</button>
                             </div>}
 
                     </div>

@@ -22,6 +22,7 @@ export default function ExpandedFruit() {
 
     const imgs = useMemo(() => getFruitImages(String(id)), [id]);
 
+
     const finalImgs = useMemo(() => {
         if (imgs && imgs.length > 0) return imgs;
         if (fruitInfo?.images && fruitInfo.images.length > 0) return fruitInfo.images;

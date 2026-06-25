@@ -11,6 +11,8 @@ export default function Quizzes() {
 
     const navigate = useNavigate();
 
+    const imgUrl = 'https://cd-opf.pages.dev/quizzes/'
+
     return (
         <>
 
@@ -31,12 +33,13 @@ export default function Quizzes() {
                     <div className={styles.fullQuizzGrid}>
                         {quizzes.map((quiz) => (
                             <div
-                                style={{ backgroundImage: `url(${quiz.image})` }}
+                                style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)` }}
                                 onClick={() => navigate(`/quizzes/${quiz.id}`)}
                                 key={quiz.id}
                                 className={styles.quizCard}>
                                 <h2>{quiz.title}</h2>
                                 <p>{quiz.description}</p>
+                                <p className={styles.difficulty}>Difficulty level: {quiz.difficulty} / 5</p>
                             </div>
                         ))}
                     </div>

@@ -74,8 +74,16 @@
 
 .quizCard>p {
     max-width: 60%;
-    font-size: 1.1em;
+    font-size: 0.9em;
     line-height: 1em;
+}
+
+
+.difficulty {
+    font-size: 0.9em;
+    line-height: 1em;
+    color: rgb(255, 213, 0);
+    font-weight: bold;
 }
 
 
@@ -111,6 +119,7 @@
 
 .questionImage {
     width: 45%;
+    min-width: 45%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
@@ -122,6 +131,34 @@
     justify-content: space-around;
     width: 100%;
     gap: 2em;
+}
+
+
+.finalDiv {
+    flex-direction: column;
+}
+
+
+.finalScore {
+    font-size: 3em;
+    line-height: 1em;
+    font-weight: bold;
+}
+
+.retakeButton {
+    background-color: rgb(255, 213, 0);
+    color: black;
+    border: none;
+    padding: 1em 2em;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.retakeButton:hover {
+    background-color: rgb(255, 166, 0);
 }
 
 

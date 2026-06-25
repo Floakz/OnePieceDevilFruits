@@ -1,0 +1,175 @@
+{
+    "id": "03e28920-38df-4e95-b755-3c3f9555e8ac",
+    "title": "Devil Fruit Powers: The Basics",
+    "description": "Test your knowledge of the most iconic Devil Fruit powers in One Piece!",
+    "difficulty": 1,
+    "topic": "Devil Fruit Powers & Abilities",
+    "image": "https://static0.thegamerimages.com/wordpress/wp-content/uploads/2024/03/one-piece-most-powerful-devil-fruits-feature.jpg?w=1600&h=1200&fit=crop",
+    "questions": [
+        {
+            "question": "What power does the Gum-Gum Fruit give its user?",
+            "options": [
+                "The ability to control fire",
+                "The ability to stretch like rubber",
+                "The ability to turn invisible",
+                "The ability to fly"
+            ],
+            "image": "https://static0.cbrimages.com/wordpress/wp-content/uploads/2023/01/one-piece-gum-gum-fruit.jpg?w=1200&h=900&fit=crop",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What does the Flame-Flame Fruit allow its user to do?",
+            "options": [
+                "Cook food instantly",
+                "Only create fire",
+                "Create and become fire",
+                "Harden skin like to high temperatures"
+            ],
+            "image": "https://static.wikia.nocookie.net/fairy-one-piece-tail-universe/images/0/03/Flame_Mera_Cursed_Fruit_Anime_Infobox.png/revision/latest?cb=20140122222502",
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which Devil Fruit gives the user the ability to control darkness and pull things with gravity-like suction?",
+            "options": [
+                "Tremor-Tremor Fruit",
+                "Glint-Glint Fruit",
+                "Dark-Dark Fruit",
+                "Shadow-Shadow Fruit"
+            ],
+            "image": "https://static.wikia.nocookie.net/evil/images/a/a7/Dark-Dark_Fruit.png/revision/latest?cb=20220801180636",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What does Smoker Fruit allow him to transform into?",
+            "options": [
+                "Mist",
+                "Smoke",
+                "Snow",
+                "Gas"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/4/49/Smoker_Flying.png/revision/latest?cb=20240307140415",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What power does the Chop-Chop Fruit grant?",
+            "options": [
+                "Splitting one's body into pieces that can move independently",
+                "Creating sharp blades from thin air",
+                "Cutting through anything without a sword",
+                "Turning into a giant axe"
+            ],
+            "image": "https://static.wikia.nocookie.net/fairy-one-piece-tail-universe/images/6/69/Chop_Chop_Fruit_Anime_Infobox.png/revision/latest?cb=20131009072251",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What does the Sand-Sand Fruit allow its user to do?",
+            "options": [
+                "Create sandstorms",
+                "Turn into and control sand",
+                "Absorb moisture from things and people",
+                "All previous options are correct"
+            ],
+            "image": "https://static.wikia.nocookie.net/devil-fruit/images/6/64/Suna_Suna_no_Mi.png/revision/latest?cb=20130216190543",
+            "correctAnswer": 3
+        },
+        {
+            "question": "What power does the Ice-Ice Fruit give its user?",
+            "options": [
+                "Resistance to all cold temperatures",
+                "The ability to freeze time",
+                "The ability to create and become ice",
+                "The ability to walk on water"
+            ],
+            "image": "https://static.wikia.nocookie.net/one-piece-stream/images/8/80/EgnEQrfXsAIggy0.jpg/revision/latest?cb=20230505092242",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What does the Rumble-Rumble Fruit grant its user?",
+            "options": [
+                "Control over earthquakes",
+                "Control over lightning",
+                "The ability to create shockwaves",
+                "Immunity to electricity"
+            ],
+            "image": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2021/06/Enel.jpg?q=70&fit=crop&w=825&dpr=1",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the type of the Magma-Magma Fruit?",
+            "options": [
+                "Paramecia",
+                "Logia",
+                "Zoan",
+                "Mythical"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/b/bd/Shanks_Saves_Koby_From_Sakazuki.png/revision/latest?cb=20211009151708",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Who ate the Hollow-Hollow Fruit?",
+            "options": [
+                "Brook",
+                "Sugar",
+                "Perona",
+                "Absalom"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/1/14/Horo_Horo_no_Mi_Infobox.png/revision/latest/thumbnail/width/360/height/360?cb=20250826143910",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What does the Paw-Paw Fruit allow its user to do?",
+            "options": [
+                "Transform their hands into giant paws at will",
+                "Repel anything they touch at extreme speed",
+                "Walk on any surface including ceilings",
+                "Absorb kinetic energy from attacks"
+            ],
+            "image": "https://static.wikia.nocookie.net/fairy-one-piece-tail-universe/images/0/04/Paw_Paw_Fruit_Anime_Infobox.png/revision/latest/scale-to-width-down/1200?cb=20140608141515",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What power does the Flower-Flower Fruit grant?",
+            "options": [
+                "Growing flowers that release poison",
+                "Blooming copies of body parts from any surface",
+                "Controlling nature and plant life",
+                "Camouflaging into any background"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/f/f8/Mil_Fleur_Hanagasa.png/revision/latest?cb=20161221100051",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What can Katakuri control?",
+            "options": [
+                "Mud",
+                "Slime",
+                "Mochi",
+                "Wax"
+            ],
+            "image": "https://seakoff.com/cdn/shop/articles/katakuri-from-one-piece-the-formidable-sweet-commanders-height-powers-and-background-821541.webp?v=1778807171",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What power does the Swim-Swim Fruit grant?",
+            "options": [
+                "Breathing underwater indefinitely",
+                "Moving through solid surfaces as if swimming",
+                "Controlling ocean currents",
+                "Becoming immune to the weakness Devil Fruit users have in the sea"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/4/48/Senor_Pink_Anime_Infobox.png/revision/latest?cb=20240727222649&path-prefix=pt",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What does the Soul-Soul Fruit allow Big Mom to do?",
+            "options": [
+                "Read the minds of others",
+                "Steal years of life from people and grant life to objects",
+                "Control people like puppets",
+                "Resurrect the dead"
+            ],
+            "image": "https://static.wikia.nocookie.net/onepiece/images/9/9d/Soru_Soru_no_Mi_Infobox.png/revision/latest?cb=20230113122808",
+            "correctAnswer": 1
+        }
+    ]
+}

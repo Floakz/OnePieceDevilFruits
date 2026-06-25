@@ -202,12 +202,15 @@ export default function Header({ headerShown, headerTitle }) {
                                 GRAND RUN
                             </NavLink>
 
-                            <NavLink
-                                to="/quizzes"
-                                className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                            >
-                                QUIZZES
-                            </NavLink>
+                            {/* <div className={styles.menuOptionWrapper}>
+                                <NavLink
+                                    to="/quizzes"
+                                    className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
+                                >
+                                    QUIZZES
+                                </NavLink>
+                                <div className={styles.newMenuItem}>NEW</div>
+                            </div> */}
 
 
 
