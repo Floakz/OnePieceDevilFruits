@@ -33,16 +33,29 @@ export default function Quizzes() {
                     <div className={styles.fullQuizzGrid}>
                         {quizzes.map((quiz) => (
                             <div
-                                style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)` }}
                                 onClick={() => navigate(`/quizzes/${quiz.id}`)}
                                 key={quiz.id}
                                 className={styles.quizCard}>
-                                <h2>{quiz.title}</h2>
-                                <p>{quiz.description}</p>
-                                <p className={styles.difficulty}>Difficulty level: {quiz.difficulty} / 5</p>
+
+                                <div
+                                    style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)`, height: '50%', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '10px 10px 0 0' }}
+
+                                ></div>
+                                <div>  <h2>{quiz.title}</h2>
+                                    <p>{quiz.description}</p></div>
                             </div>
                         ))}
+
+
+
+
+
+
+
                     </div>
+
+
+
 
                 </div>
 

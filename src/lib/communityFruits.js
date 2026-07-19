@@ -118,7 +118,17 @@ const communityFruits = [
         power: 79,
         type: 'Paramecia',
         submitedBy: 'FreedomNo3991'
-    }
+    },
+    {
+        about: 'A Mythical Zoan fruit granting transformation into a colossal King Gorilla, with hybrid and full-beast forms. Beyond immense strength and durability, the user roar can rally and command primates within earshot, though beasts of strong will, or those protected by Haki, can resist the call. A fruit of raw physical dominance whose true potential shines in jungles and beast-filled lands.',
+        img: {
+            fruit: "",
+        },
+        name: 'Monkey-Monkey Fruit, Model: King Gorilla',
+        power: 80,
+        type: 'Mythical Zoan',
+        submitedBy: 'Zarco'
+    },
 
 ]
 

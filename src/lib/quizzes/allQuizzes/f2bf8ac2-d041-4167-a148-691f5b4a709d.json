@@ -1,0 +1,230 @@
+{
+    "id": "f2bf8ac2-d041-4167-a148-691f5b4a709d",
+    "title": "Deep Lore",
+    "description": "Only the most dedicated fans will ace this one. Obscure fruits, forgotten users, and hidden details.",
+    "difficulty": 5,
+    "topic": "Deep Lore",
+    "image": "https://static.wikia.nocookie.net/onepiece/images/9/92/Devil_Fruit_Infobox.png/revision/latest?cb=20240421115906",
+    "questions": [
+        {
+            "question": "How long before the main story did the Void Century take place?",
+            "options": [
+                "1000 to 900 years ago",
+                "900 to 800 years ago",
+                "800 to 700 years ago",
+                "700 to 600 years ago"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "How many Ancient Weapons exist?",
+            "options": [
+                "2",
+                "3",
+                "4",
+                "5"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "How many kingdoms formed the alliance that defeated the Great Kingdom?",
+            "options": [
+                "12",
+                "16",
+                "20",
+                "24"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is the name of Rocks D. Xebec's sword?",
+            "options": [
+                "Nemesis",
+                "Eclipse",
+                "Kogarashi",
+                "Oto"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was the name of the Rocks Pirates' ship?",
+            "options": [
+                "The Davy Fury",
+                "The Rocks' Fury",
+                "The Black Xebec",
+                "The Hachinosu"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "How many years before the main story did the God Valley Incident happen?",
+            "options": [
+                "34",
+                "36",
+                "38",
+                "40"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is Imu's full name?",
+            "options": [
+                "Figarland Imu",
+                "Nefertari Imu",
+                "Nerona Imu",
+                "Davy D. Imu"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "Which queen was among the twenty founders of the World Government but never became a Celestial Dragon?",
+            "options": [
+                "Nefertari D. Lily",
+                "Nerona Sphinx",
+                "Kozuki Toki",
+                "Figarland Magnolia"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "Whose name did Imu call Rocks by when confronting him at God Valley?",
+            "options": [
+                "Joy Boy",
+                "Davy Jones",
+                "Nika",
+                "Xebec"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Where did Joy Boy's tied Supreme King Haki remain preserved for centuries?",
+            "options": [
+                "Inside the Empty Throne",
+                "Inside the iron giant Emet",
+                "Inside Zunesha",
+                "Inside the Road Poneglyphs"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "How often is a Mermaid Princess with the power of Poseidon born?",
+            "options": [
+                "Once every generation",
+                "Once every few decades",
+                "Once every few centuries",
+                "Only once in history"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "How many years ahead of the rest of the world is Vegapunk's science said to be?",
+            "options": [
+                "100",
+                "300",
+                "500",
+                "900"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is the name of Shanks' twin brother?",
+            "options": [
+                "Figarland Garling",
+                "Figarland Shamrock",
+                "Figarland Clover",
+                "Figarland Sommers"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is the name of Shanks' mother?",
+            "options": [
+                "Camellia",
+                "Magnolia",
+                "Dahlia",
+                "Azalea"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Who gave Kaido his Devil Fruit at God Valley?",
+            "options": [
+                "Rocks D. Xebec",
+                "Whitebeard",
+                "Big Mom",
+                "Shiki"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "Who dealt the killing blow to Rocks D. Xebec after his demon transformation ended?",
+            "options": [
+                "Gol D. Roger",
+                "Monkey D. Garp",
+                "Figarland Garling",
+                "Imu"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What did King Harald do at Marineford after the God Valley Incident?",
+            "options": [
+                "He declared war on the World Government",
+                "He ripped out his horns and begged to serve the World Government",
+                "He surrendered Elbaph's Poneglyph",
+                "He challenged Garp to a duel"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Which Elder did Imu kill after the failure at Egghead?",
+            "options": [
+                "Marcus Mars",
+                "Topman Warcury",
+                "Ethanbaron V. Nusjuro",
+                "Jaygarcia Saturn"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "Gecko Moria's full name was recently confirmed to be:",
+            "options": [
+                "Shimotsuki Moria",
+                "Kouzuki Moria",
+                "Kurozumi Moria",
+                "Amatsuki Moria"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Who was the previous user of the Jiki Jiki no Mi (Magnet-Magnet Fruit) before Eustass Kid?",
+            "options": [
+                "Captain John of the Rocks Pirates",
+                "Gill Bastar",
+                "Ganzui",
+                "Scopper Gaban"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        }
+    ]
+}

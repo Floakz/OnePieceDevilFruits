@@ -202,7 +202,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 GRAND RUN
                             </NavLink>
 
-                            {/* <div className={styles.menuOptionWrapper}>
+                            <div className={styles.menuOptionWrapper}>
                                 <NavLink
                                     to="/quizzes"
                                     className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
@@ -210,7 +210,7 @@ export default function Header({ headerShown, headerTitle }) {
                                     QUIZZES
                                 </NavLink>
                                 <div className={styles.newMenuItem}>NEW</div>
-                            </div> */}
+                            </div>
 
 
 
@@ -285,6 +285,18 @@ export default function Header({ headerShown, headerTitle }) {
                             >
                                 FRUIT FINDER
                             </NavLink>
+
+
+                            <NavLink
+                                to="/quizzes"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
+                            >
+                                QUIZZES
+                            </NavLink>
+
+
+
 
 
                             <NavLink

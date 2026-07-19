@@ -1,0 +1,230 @@
+{
+    "id": "74b11ae2-480c-4b8f-8662-2fba25d41a26",
+    "title": "Starting Bounties",
+    "description": "Are you aware of the starting bounties for some of the characters?",
+    "difficulty": 5,
+    "topic": "Bounties",
+    "image": "https://static.wikia.nocookie.net/onepiece/images/9/92/Devil_Fruit_Infobox.png/revision/latest?cb=20240421115906",
+    "questions": [
+        {
+            "question": "What was Monkey D. Luffy's first bounty?",
+            "options": [
+                "10,000,000",
+                "30,000,000",
+                "50,000,000",
+                "100,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Roronoa Zoro's first bounty?",
+            "options": [
+                "30,000,000",
+                "42,000,000",
+                "60,000,000",
+                "77,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Sanji's first bounty (the infamous badly-drawn 'Only Alive' poster)?",
+            "options": [
+                "66,000,000",
+                "70,000,000",
+                "77,000,000",
+                "88,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Nami's first bounty?",
+            "options": [
+                "10,000,000",
+                "16,000,000",
+                "25,000,000",
+                "33,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Nico Robin's first bounty, issued when she was only 8 years old?",
+            "options": [
+                "33,000,000",
+                "50,000,000",
+                "79,000,000",
+                "80,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Tony Tony Chopper's first bounty?",
+            "options": [
+                "50",
+                "500",
+                "5,000",
+                "50,000"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What was Brook's first bounty, earned back in his Rumbar Pirates days?",
+            "options": [
+                "33,000,000",
+                "38,000,000",
+                "44,000,000",
+                "83,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What was Jewelry Bonney's first known bounty (Sabaody era)?",
+            "options": [
+                "108,000,000",
+                "120,000,000",
+                "140,000,000",
+                "162,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Scratchmen Apoo's first known bounty (Sabaody era)?",
+            "options": [
+                "180,000,000",
+                "198,000,000",
+                "200,000,000",
+                "222,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Trafalgar Law's first known bounty (Sabaody era)?",
+            "options": [
+                "190,000,000",
+                "198,000,000",
+                "200,000,000",
+                "220,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Eustass Kid's first known bounty, the highest of the eleven Supernovas at Sabaody?",
+            "options": [
+                "300,000,000",
+                "310,000,000",
+                "315,000,000",
+                "340,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Urouge's first known bounty (Sabaody era)?",
+            "options": [
+                "88,000,000",
+                "108,000,000",
+                "118,000,000",
+                "138,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Basil Hawkins' first known bounty (Sabaody era)?",
+            "options": [
+                "222,000,000",
+                "233,000,000",
+                "249,000,000",
+                "255,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What was Kaido's first bounty, earned as a young escapee before joining the Rocks Pirates?",
+            "options": [
+                "50,000,000",
+                "70,000,000",
+                "96,000,000",
+                "100,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "At the time of the God Valley Incident, Charlotte Linlin (Big Mom) already had a bounty of at least:",
+            "options": [
+                "100,000,000",
+                "250,000,000",
+                "500,000,000",
+                "1,000,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is Rocks D. Xebec's confirmed bounty?",
+            "options": [
+                "5,000,000,000",
+                "5,564,800,000",
+                "6,000,000,000",
+                "It has never been revealed"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the highest known bounty in history, belonging to Gol D. Roger?",
+            "options": [
+                "5,046,000,000",
+                "5,564,800,000",
+                "5,600,000,000",
+                "6,048,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Buggy the Clown's bounty when Luffy first defeated him in the East Blue?",
+            "options": [
+                "10,000,000",
+                "15,000,000",
+                "20,000,000",
+                "30,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Crocodile's bounty, frozen ever since he became a Warlord?",
+            "options": [
+                "80,000,000",
+                "81,000,000",
+                "88,000,000",
+                "99,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was Jinbe's first bounty, from before he became a Warlord?",
+            "options": [
+                "76,000,000",
+                "250,000,000",
+                "438,000,000",
+                "88,000,000"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        }
+    ]
+}

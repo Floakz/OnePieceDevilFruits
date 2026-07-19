@@ -120,19 +120,28 @@ export default function ExpandedQuizz() {
                             :
 
                             <div className={`${styles.questionContentWrapper} ${styles.finalDiv}`}>
-                                <h2>Quiz Completed!</h2>
-                                <p className={styles.finalScore}>Your Score: {score} / {Quizz?.questions.length}</p>
-                                <button
-                                    className={styles.retakeButton}
-                                    onClick={() => {
-                                        setCurrentQuestionIndex(0);
-                                        setScore(0);
-                                        setShowResults(false);
-                                        setPercentage(1);
-                                        setSelectedAnswer(null);
-                                        setIsAnswered(false);
+                                <div className={styles.finalScoreWrapper}>
+                                    <div>
+                                        <img className={styles.QuizzfinalImage} src={'https://cd-opf.pages.dev/quizzes/misc/vegapunk-quizz-finalImage.webp'} alt={Quizz?.title} />
+                                    </div>
+                                    <div>
+                                        <h2>Quiz Completed!</h2>
 
-                                    }}>Retake Quiz</button>
+                                        <p className={styles.finalScore}>Your Score: <br /> {score} / {Quizz?.questions.length}</p>
+
+                                        <button
+                                            className={styles.retakeButton}
+                                            onClick={() => {
+                                                setCurrentQuestionIndex(0);
+                                                setScore(0);
+                                                setShowResults(false);
+                                                setPercentage(1);
+                                                setSelectedAnswer(null);
+                                                setIsAnswered(false);
+
+                                            }}>Retake Quiz</button>
+                                    </div>
+                                </div>
                             </div>}
 
                     </div>
@@ -141,7 +150,7 @@ export default function ExpandedQuizz() {
 
 
                 </div>
-            </div>
+            </div >
             <Footer />
         </>
     );
