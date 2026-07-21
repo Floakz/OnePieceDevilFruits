@@ -83,7 +83,7 @@
     flex-direction: column;
 }
 
-.discordButton {
+.kofiButton {
     position: fixed;
     line-height: 1em;
     bottom: 40px;
@@ -104,13 +104,13 @@
     transition: all 0.2s ease-in-out;
 }
 
-.discordButton:hover {
+.kofiButton:hover {
     background-color: rgb(255, 255, 255);
     color: black;
 }
 
 /* Style the tooltip text */
-.discordButton span {
+.kofiButton span {
     font-size: 14px;
     font-weight: 500;
     white-space: nowrap;
@@ -118,7 +118,7 @@
 }
 
 /* Optional: Add animation */
-.discordButton span {
+.kofiButton span {
     animation: fadeIn 0.2s ease-in-out;
 }
 
@@ -181,7 +181,7 @@
         display: flex;
     }
 
-    .discordButton {
+    .kofiButton {
         padding: 15px 30px;
         border-radius: 8px;
         left: 20px;
