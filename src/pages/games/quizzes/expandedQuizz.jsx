@@ -5,11 +5,13 @@ import Seo from "../../../Components/Seo";
 import styles from './Quizzes.module.css';
 import { useParams } from "react-router-dom";
 import { quizzes } from "../../../utils/quizzes";
+import { useNavigate } from "react-router-dom";
 
 export default function ExpandedQuizz() {
 
     const { id } = useParams();
     const Quizz = quizzes.find((quiz) => quiz.id === id);
+
 
     const imgUrl = 'https://cd-opf.pages.dev/quizzes/'
 
@@ -17,6 +19,9 @@ export default function ExpandedQuizz() {
     const [score, setScore] = useState(0);
     const [showResults, setShowResults] = useState(false);
     const [percentage, setPercentage] = useState(1);
+    const navigate = useNavigate();
+
+    const [quizzState, setQuizzState] = useState(0)
 
     // NEW state
     const [selectedAnswer, setSelectedAnswer] = useState(null); // index clicked
@@ -30,6 +35,16 @@ export default function ExpandedQuizz() {
     }, []);
 
     const currentQuestion = Quizz?.questions[currentQuestionIndex];
+
+
+    const otherQuizzes = quizzes.filter((quiz) => quiz.id !== id).slice(0, 3);
+
+    const handleStartQuiz = (id) => {
+        setQuizzState(0);
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        navigate(`/quizzes/${id}`);
+    }
 
     const handleOptionClick = (index) => {
         if (isAnswered) return;
@@ -76,6 +91,18 @@ export default function ExpandedQuizz() {
         return styles.option;
     };
 
+    useEffect(() => {
+        setQuizzState(0);
+        setCurrentQuestionIndex(0);
+        setScore(0);
+        setShowResults(false);
+        setPercentage(1);
+        setSelectedAnswer(null);
+        setIsAnswered(false);
+
+        clearTimeout(timeoutRef.current);
+    }, [id]);
+
     return (
         <>
             <Seo
@@ -92,59 +119,96 @@ export default function ExpandedQuizz() {
                         <h1>{Quizz?.title}</h1>
                     </div>
 
-                    <div className={styles.quizContentWrapper}>
-                        {!showResults ? <>
-                            <div className={styles.questionContentWrapper}>
-                                <img className={styles.questionImage} src={`${imgUrl}${Quizz.id}/${currentQuestionIndex + 1}.webp`} alt={Quizz?.title} />
-                                <div className={styles.questionWrapper}>
-                                    <h2>{currentQuestion?.question}</h2>
 
-                                    <div className={styles.optionsWrapper}>
-                                        {currentQuestion?.options.map((option, index) => (
-                                            <div
-                                                key={index}
-                                                className={getOptionClassName(index)}
-                                                onClick={() => handleOptionClick(index)}
-                                            >
-                                                {option}
-                                            </div>
-                                        ))}
-                                    </div>
+
+                    <div className={styles.quizContentWrapper}>
+
+                        {quizzState === 0 &&
+
+                            <div className={styles.questionContentWrapper}>
+                                <img className={styles.quizIntroImage} src={`${imgUrl}${Quizz.id}/cover.webp`} alt={Quizz?.title} />
+                                <div className={styles.quizIntroTextWrapper}>
+                                    <h2>{Quizz?.title}</h2>
+                                    <p>{Quizz?.description}</p>
+                                    <button className={styles.startButton} onClick={() => setQuizzState(1)}>Start Quiz</button>
                                 </div>
                             </div>
-                            <div className={styles.progressBar}>
-                                <div style={{ width: `${percentage}%` }}></div>
-                                <div></div>
-                            </div></>
 
-                            :
+                        }
 
-                            <div className={`${styles.questionContentWrapper} ${styles.finalDiv}`}>
-                                <div className={styles.finalScoreWrapper}>
-                                    <div>
-                                        <img className={styles.QuizzfinalImage} src={'https://cd-opf.pages.dev/quizzes/misc/vegapunk-quizz-finalImage.webp'} alt={Quizz?.title} />
-                                    </div>
-                                    <div>
-                                        <h2>Quiz Completed!</h2>
+                        {quizzState === 1 ?
 
-                                        <p className={styles.finalScore}>Your Score: <br /> {score} / {Quizz?.questions.length}</p>
+                            (!showResults ? <>
+                                <div className={styles.questionContentWrapper}>
+                                    <img className={styles.questionImage} src={`${imgUrl}${Quizz.id}/${currentQuestionIndex + 1}.webp`} alt={Quizz?.title} />
+                                    <div className={styles.questionWrapper}>
+                                        <h2>{currentQuestion?.question}</h2>
 
-                                        <button
-                                            className={styles.retakeButton}
-                                            onClick={() => {
-                                                setCurrentQuestionIndex(0);
-                                                setScore(0);
-                                                setShowResults(false);
-                                                setPercentage(1);
-                                                setSelectedAnswer(null);
-                                                setIsAnswered(false);
-
-                                            }}>Retake Quiz</button>
+                                        <div className={styles.optionsWrapper}>
+                                            {currentQuestion?.options.map((option, index) => (
+                                                <div
+                                                    key={index}
+                                                    className={getOptionClassName(index)}
+                                                    onClick={() => handleOptionClick(index)}
+                                                >
+                                                    {option}
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>}
+                                <div className={styles.progressBar}>
+                                    <div style={{ width: `${percentage}%` }}></div>
+                                    <div></div>
+                                </div></>
+
+                                :
+
+                                <div className={`${styles.questionContentWrapper} ${styles.finalDiv}`}>
+                                    <div className={styles.finalScoreWrapper}>
+                                        <div>
+                                            <img className={styles.QuizzfinalImage} src={'https://cd-opf.pages.dev/quizzes/misc/vegapunk-quizz-finalImage.webp'} alt={Quizz?.title} />
+                                        </div>
+                                        <div>
+                                            <h2>Quiz Completed!</h2>
+
+                                            <p className={styles.finalScore}>Your Score: <br /> {score} / {Quizz?.questions.length}</p>
+
+                                            <button
+                                                className={styles.retakeButton}
+                                                onClick={() => {
+                                                    setCurrentQuestionIndex(0);
+                                                    setScore(0);
+                                                    setShowResults(false);
+                                                    setPercentage(1);
+                                                    setSelectedAnswer(null);
+                                                    setIsAnswered(false);
+                                                    setQuizzState(0);
+                                                }}>Retake Quiz</button>
+                                        </div>
+                                    </div>
+                                </div>) : null
+                        }
 
                     </div>
+
+                    <div className={styles.otherQuizzSuggestionsWrapper}>
+                        <h4>Other quizzes</h4>
+                        <div className={styles.otherQuizzList}>
+                            {otherQuizzes.map((quiz) => (
+                                <div
+                                    key={quiz.id}
+                                    className={styles.otherQuizzItem}
+                                    style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)` }}
+                                    onClick={() => (quiz.id ? handleStartQuiz(quiz.id) : null)}
+
+                                >
+                                    <p>{quiz.title}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
 
 
 
