@@ -5,6 +5,7 @@ import FruitCard from "../../Components/FruitCard.jsx";
 import Header from "../../Components/header/Header.jsx";
 import Seo from '../../Components/Seo.jsx'
 import Footer from "../../Components/footer/footer.jsx";
+import LatestSection from "../../Components/header/latestSection/latestSection.jsx";
 
 const PAGE_SIZE = 12;
 
@@ -42,6 +43,8 @@ export default function AllFruitsPage() {
                 canonical="https://onepiecedevilfruits.com/"
             />
             <Header headerShown={true} />
+            <LatestSection />
+
             <main>
 
                 {/* Section to improve SEO reach and assitive tech friendly */}
