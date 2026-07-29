@@ -4121,6 +4121,34 @@ const fruitsExpandedInfo = [
         "ratings": { "attack": 70, "defense": 78, "utility": 40 },
         "trivia": [],
         "images": []
+    },
+    {
+        "id": "f7c8a3d2-5b9e-4f1a-8c6d-2e7f9a3b1c4d",
+        "name": "Dragon-Dragon Fruit, Model: Nidhöggr",
+        "firstAppearance": "Episode 1160",
+        "abilities": [
+            "A Mythical Zoan fruit that grants the user the ability to transform into a hybrid or full version of Nidhöggr, a legendary dragon of Norse mythology. The beast form is a massive four-legged dragon that is said to be the largest in the world, large enough to blot out the sun with its wingspan. The user gains immense physical strength capable of overpowering even immortal beings, the ability to fly, and can launch concentrated blasts of lightning from their mouth. The size of the transformation scales with the user's original size, meaning a giant user like Loki can achieve truly colossal proportions."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Beast form is among the largest transformations in the world, capable of dwarfing entire Elbaph villages and comparable in size to Sea Kings",
+            "Immense physical strength that can overpower and maul even immortal warriors with ease",
+            "Ability to fly adds significant mobility and tactical advantage",
+            "Lightning breath attacks are devastating and can pulverize groups of giants in a single blast",
+            "Size of the transformation scales with the user, making it especially powerful when used by a giant or ancient giant",
+        ],
+        "weaknesses": [
+            "Extreme size can be impractical when fighting a single human-sized opponent, making it difficult to track and hit smaller targets",
+            "Rubber-based abilities provide insulation and immunity against the fruit's lightning attacks",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 90,
+            "defense": 85,
+            "utility": 75
+        },
+        "trivia": [],
+        "images": []
     }
 ]
 
