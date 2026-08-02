@@ -21,16 +21,16 @@ export default function GrandRun() {
 
 
     const bountyTiers = [
-        { min: 0, max: 300, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
-        { min: 301, max: 420, ranking: 9, label: "Bounty Hunter", bounty: "50,000", message: 'Grandma is impressed, Marines not so much' },
-        { min: 421, max: 500, ranking: 8, label: "Pirate", bounty: "250,000", message: 'Famous for breaking bar stools' },
-        { min: 501, max: 545, ranking: 7, label: "Rising Star", bounty: "1,000,000", message: 'Tiny headline in the morning paper' },
-        { min: 546, max: 618, ranking: 6, label: "New Generation", bounty: "20,000,000", message: 'Marines start to sweat' },
-        { min: 619, max: 711, ranking: 5, label: "Supernova", bounty: "100,000,000", message: 'Cipher Pol puts you on the “keep an eye” list' },
-        { min: 712, max: 804, ranking: 4, label: "Warlord", bounty: "250,000,000", message: 'They tried to recruit you but you’re too chaotic' },
-        { min: 805, max: 897, ranking: 3, label: "Local Emperor", bounty: "500,000,000", message: 'Half an ocean bends the knee' },
-        { min: 898, max: 950, ranking: 2, label: "Yonkou", bounty: "1,500,000,000", message: 'World Government pretends not to panic' },
-        { min: 951, max: Infinity, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
+        { min: 0, max: 439, ranking: 10, label: "Sailor", bounty: "5,000", message: 'Barely covers Garp’s coffee' },
+        { min: 440, max: 573, ranking: 9, label: "Bounty Hunter", bounty: "50,000", message: 'Grandma is impressed, Marines not so much' },
+        { min: 574, max: 623, ranking: 8, label: "Pirate", bounty: "250,000", message: 'Famous for breaking bar stools' },
+        { min: 624, max: 661, ranking: 7, label: "Rising Star", bounty: "1,000,000", message: 'Tiny headline in the morning paper' },
+        { min: 662, max: 694, ranking: 6, label: "New Generation", bounty: "20,000,000", message: 'Marines start to sweat' },
+        { min: 695, max: 728, ranking: 5, label: "Supernova", bounty: "100,000,000", message: 'Cipher Pol puts you on the “keep an eye” list' },
+        { min: 729, max: 766, ranking: 4, label: "Warlord", bounty: "250,000,000", message: 'They tried to recruit you but you’re too chaotic' },
+        { min: 767, max: 815, ranking: 3, label: "Local Emperor", bounty: "500,000,000", message: 'Half an ocean bends the knee' },
+        { min: 816, max: 921, ranking: 2, label: "Yonkou", bounty: "1,500,000,000", message: 'World Government pretends not to panic' },
+        { min: 922, max: Infinity, ranking: 1, label: "Pirate King", bounty: "5,000,000,000", message: 'Wanted dead or alive, preferably alive for the photo' }
     ];
 
     useEffect(() => {
