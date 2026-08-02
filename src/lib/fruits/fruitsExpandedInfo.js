@@ -4149,6 +4149,61 @@ const fruitsExpandedInfo = [
         },
         "trivia": [],
         "images": []
+    },
+    {
+        "id": "9e2a4f6b-1d8c-4a3e-b7f5-6c8d1a9e3f2b",
+        "name": "Sickle-Sickle Fruit",
+        "firstAppearance": "Episode 56",
+        "abilities": [
+            "A Paramecia fruit that permanently lengthens and sharpens the user's nails into razor-like claws. Swiping these nails releases concentrated blades of wind sharp enough to cleave through bedrock, and the claws themselves can be used for direct slashing in close combat."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Wind blades are sharp enough to cut through bedrock and are compared to a Famous Blade in cutting power",
+            "Can be used for both ranged slashing and close-quarters combat",
+            "Techniques allow for both rapid single strikes and overwhelming multi-hit barrages",
+            "No inherent counter beyond simply enduring or evading the attacks"
+        ],
+        "weaknesses": [
+            "Cutting power, while sharp, was shrugged off by a durable enough opponent",
+            "User must keep their nails filed and maintained to stay effective",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 33,
+            "defense": 10,
+            "utility": 15
+        },
+        "trivia": [],
+        "images": []
+    },
+    {
+        "id": "3d7f8a1c-6e2b-4c9d-a5f1-8b3e6c9d2f4a",
+        "name": "Vision-Vision Fruit",
+        "firstAppearance": "One Piece Live Attraction: Phantom",
+        "abilities": [
+            "A non-canon Paramecia fruit that lets the user 'phantomize' any picture they touch, generating a fully interactive illusion of the depicted object or person. These phantoms can affect their surroundings just as the real subject would, and will carry over any abilities or unusual traits the original possesses, even if the user has no knowledge of them. Normally the illusion takes a moment to form, but with practice the user can make the process functionally instantaneous."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Can conjure fully interactive phantoms of virtually anyone or anything, limited only by available pictures to touch",
+            "Phantoms inherit the real abilities of their subject, allowing recreation of powerful fighters or useful effects",
+            "Highly versatile for both deception in combat and support outside of it",
+            "With enough mastery, illusions can be summoned nearly instantly rather than requiring a delay"
+        ],
+        "weaknesses": [
+            "Requires physical contact with a picture of the subject to create its phantom",
+            "If the user is coerced or manipulated, phantoms can be created against their will",
+            "Illusions summoned without practice take time to form, creating a window of vulnerability",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 30,
+            "defense": 25,
+            "utility": 80
+        },
+        "trivia": [],
+        "images": []
     }
 ]
 

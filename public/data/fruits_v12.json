@@ -1958,5 +1958,33 @@
             "fruit": "https://i.postimg.cc/VkJFfjQ5/f7c8a3d2-5b9e-4f1a-8c6d-2e7f9a3b1c4d.webp",
             "user": "https://i.postimg.cc/HshQhVJS/Loki-Anime-Infobox.webp"
         }
+    },
+    {
+        "id": "9e2a4f6b-1d8c-4a3e-b7f5-6c8d1a9e3f2b",
+        "previousUser": null,
+        "name": "Sickle-Sickle Fruit",
+        "type": "Paramecia",
+        "user": "Eric",
+        "power": 18,
+        "rarity": 1,
+        "about": "A Paramecia-type Devil Fruit that permanently lengthens and sharpens the user's nails into claw-like blades. The user can swipe these nails to unleash razor-sharp gusts of wind capable of slicing through solid rock.",
+        "img": {
+            "fruit": "",
+            "user": ""
+        }
+    },
+    {
+        "id": "3d7f8a1c-6e2b-4c9d-a5f1-8b3e6c9d2f4a",
+        "previousUser": null,
+        "name": "Vision-Vision Fruit",
+        "type": "Paramecia",
+        "user": "Ann",
+        "power": 45,
+        "rarity": 3,
+        "about": "A non-canon Paramecia-type Devil Fruit that allows the user to 'phantomize,' creating illusory, interactive projections of any picture they touch. The phantoms retain the abilities and quirks of whatever they depict, whether or not the user is even aware of them.",
+        "img": {
+            "fruit": "",
+            "user": ""
+        }
     }
 ]
