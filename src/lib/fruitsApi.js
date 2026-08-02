@@ -13,7 +13,7 @@ const STATIC_URL = '/data/fruits_v12.json'; // your single full file
 
 // ---- CACHE CONFIG ----
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const CACHE_KEY = 'fruits_cache_v12'; // bump version when file changes
+const CACHE_KEY = 'fruits_cache_v13'; // bump version when file changes
 
 function readCache(key) {
     try {
