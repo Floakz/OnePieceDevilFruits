@@ -10,7 +10,7 @@ import CommunityFruits from "../pages/fruits/community/CommunityFruits.jsx";
 import ExpandedFruit from "../pages/fruits/expanded/ExpandedFruit.jsx";
 
 import RandomFruitPage from "../pages/games/RandomFruitPage.jsx";
-import FruitBattlePage from "../pages/games/FruitBattlePage.jsx";
+import CrewWars from "../pages/games/CrewWars.jsx";
 import PageNotFound from "../pages/error/pageNotFound.jsx";
 import GrandRun from "../pages/games/GrandRun.jsx";
 import DailyFight from "../pages/games/dailyFight/dailyFight.jsx";
@@ -80,7 +80,7 @@ export default function AppRoutes() {
 
                 {/* Jogos */}
                 <Route path="/random-fruit" element={<RandomFruitPage />} />
-                <Route path="/fruit-battle" element={<FruitBattlePage />} />
+                <Route path="/crew-wars" element={<CrewWars />} />
                 <Route path="/grand-run" element={<GrandRun />} />
                 <Route path="/daily-fight" element={<DailyFight />} />
 
