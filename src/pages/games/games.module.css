@@ -412,6 +412,276 @@
     background-color: rgb(255, 204, 0);
 }
 
+.crewWarsIntro {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.crewWarsFinalTittleSmall {
+    font-size: 2em;
+    line-height: 0.8em;
+    text-transform: uppercase;
+    color: rgb(251, 251, 251);
+    margin-bottom: 0;
+}
+
+.crewWarsFinalTittleBig {
+    font-size: 7em;
+    line-height: 0.8em;
+    text-transform: uppercase;
+    color: rgb(251, 251, 251);
+    margin-bottom: 0;
+}
+
+
+.crewWarsEndScreen {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    margin-left: auto;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+.crewWarsEndScreen>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.crewWarsFinalpowerLevel {
+    font-size: 1.2em;
+    font-weight: 600;
+    background-color: rgb(255, 221, 0);
+    padding: 5px 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    color: black;
+}
+
+.withBackground {
+    background-image: url('https://cd-opf.pages.dev/crewWars/intro-bg.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.crewWarsIntro>p {
+    margin-bottom: 40px;
+    font-weight: 600;
+}
+
+.crewWarsTitle {
+    font-size: 8em;
+    line-height: 0.8em;
+    text-transform: uppercase;
+    color: rgb(251, 251, 251);
+    margin-bottom: 0;
+}
+
+
+.crewWarsGameWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+
+
+.crewGridItem img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+
+.verticalTitleText {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+
+.cardGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+
+
+.cardItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+.pickOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    mix-blend-mode: hue;
+    z-index: 1;
+}
+
+.itemLabel {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cardItem:hover>.cardImageWrapper img {
+    transform: scale(1.02);
+}
+
+
+
+/* --- IMAGE AREA --- */
+.cardImageWrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 12;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #1e1e1e;
+    margin-bottom: 10px;
+}
+
+.cardImageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cardImageWrapper::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+
+
+/* --- LABEL TEXT --- */
+.cardLabel {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+/* --- POWER BAR CONTAINER --- */
+.scoreBarContainer {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    height: 680px;
+    /* Total fixed height of the bar */
+}
+
+/* The background (Dark blue emptiness above the fill) */
+.powerBarTrack {
+    width: 50px;
+    height: 100%;
+    background-color: #06173d;
+    /* Dark blue background */
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.8);
+}
+
+/* The moving colored bar (Gradient lives here) */
+.powerBarFill {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--fill-percent) * 1%);
+    background: linear-gradient(to top,
+            #88ffff 0%,
+            #44ffaa 20%,
+            #aaff00 40%,
+            #ffcc00 60%,
+            #ff8800 75%,
+            #ff4444 88%,
+            #ff00ff 100%);
+    border-radius: 5px;
+    transition: height 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* --- LABELS ON THE RIGHT --- */
+.powerLabels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 5px 0;
+}
+
+.powerLabels span {
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    text-transform: uppercase;
+    text-align: left;
+    line-height: 1.2;
+}
+
 @media (max-width: 850px) {
 
 
@@ -525,6 +795,142 @@
 
     .optionFruitWrapper>div {
         right: 8%;
+    }
+
+    .crewWarsIntro {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .crewWarsIntro>p {
+        margin-bottom: 40px;
+        font-weight: 600;
+    }
+
+    .crewWarsTitle {
+        font-size: 4em;
+        line-height: 0.8em;
+        text-transform: uppercase;
+        color: rgb(251, 251, 251);
+        margin-bottom: 0;
+    }
+
+    .withBackground {
+        background-size: cover;
+        background-position: 10% 150px;
+        background-repeat: no-repeat;
+    }
+
+    /* Crew Wars pick screen — stack everything vertically */
+    .crewWarsGameWrapper {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Vertical title reads badly on narrow screens */
+    .verticalTitleText {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 1em;
+        text-align: center;
+    }
+
+    /* 2 cards per row, tighter spacing */
+    .cardGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0px;
+        max-width: 100%;
+    }
+
+    .itemLabel,
+    .cardLabel {
+        font-size: 10px;
+    }
+
+    /* Power bar becomes a horizontal strip under the cards */
+    .scoreBarContainer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        height: auto;
+        width: 100%;
+    }
+
+    .powerBarTrack {
+        width: 100%;
+        height: 28px;
+    }
+
+    .powerBarFill {
+        bottom: 0;
+        left: 0;
+        top: auto;
+        width: calc(var(--fill-percent) * 1%);
+        height: 100%;
+        background: linear-gradient(to right,
+                #88ffff 0%,
+                #44ffaa 20%,
+                #aaff00 40%,
+                #ffcc00 60%,
+                #ff8800 75%,
+                #ff4444 88%,
+                #ff00ff 100%);
+    }
+
+    .powerLabels {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        height: auto;
+        gap: 4px 10px;
+    }
+
+    .powerLabels span {
+        font-size: 8px;
+        text-align: center;
+    }
+
+    /* End screen titles were sized for desktop */
+    .crewWarsFinalTittleBig {
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+    .crewWarsFinalTittleSmall {
+        font-size: 1.4em;
+    }
+
+    .crewWarsEndScreen {
+        gap: 30px;
+    }
+
+    .cardImageWrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 20;
+        border-radius: 16px;
+        overflow: hidden;
+        background-color: #1e1e1e;
+        background-image: linear-gradient(135deg, #1e1e1e, #2a2a3a);
+        margin-bottom: 10px;
+    }
+
+    .cardImageWrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+        display: block;
+        transition: transform 0.4s ease-in-out;
+        /* Hide the broken-image icon/alt text if src fails to load */
+        color: transparent;
+        font-size: 0;
+    }
+
+    .crewWarsFinalpowerLevel {
+        text-align: center;
     }
 
 }
