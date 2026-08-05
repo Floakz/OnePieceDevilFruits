@@ -68,7 +68,7 @@ const gameWarsData = {
         },
         {
             "name": "Brook",
-            "power": 90,
+            "power": 92,
             "img": `${imgLocation}/Brook-Anime-Pre-Timeskip-Infobox.webp`
         },
         {
@@ -812,7 +812,7 @@ const gameWarsData = {
         },
         {
             "name": "WhitebeardPirates",
-            "power": 95,
+            "power": 91,
             "img": `${CDN_BASE}/crews/Bscap0010.webp`
         },
         {
@@ -875,12 +875,12 @@ const gameWarsData = {
 
         {
             "name": "Lunarian",
-            "power": 92,
+            "power": 93,
             "img": `${CDN_BASE}/races/one-piece-lunarians.webp`
         },
         {
             "name": "Buccaneer",
-            "power": 91,
+            "power": 92,
             "img": `${CDN_BASE}/races/Buccaneers_Infobox.webp`
         }
     ]

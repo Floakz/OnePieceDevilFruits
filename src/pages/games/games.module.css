@@ -431,6 +431,7 @@
 }
 
 .crewWarsFinalTittleBig {
+    text-align: center;
     font-size: 7em;
     line-height: 0.8em;
     text-transform: uppercase;
@@ -680,6 +681,18 @@
     text-transform: uppercase;
     text-align: left;
     line-height: 1.2;
+}
+
+.powerLabels {
+    position: relative;
+    height: 100%;
+    width: 120px;
+}
+
+.powerLabels span {
+    position: absolute;
+    transform: translateY(50%);
+    left: 0;
 }
 
 @media (max-width: 850px) {

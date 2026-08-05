@@ -107,15 +107,28 @@ export default function CrewWars() {
     if (powerPercentage < 0) powerPercentage = 0;
 
     function getCrewRank(power) {
-        if (power >= 900) return "RULERS OF THE WORLD";
-        if (power >= 800) return "PIRATE KING";
-        if (power >= 650) return "YONKO CREW";
-        if (power >= 450) return "WARLORD AFFILIATED";
-        if (power >= 350) return "SUPER NOVA'S";
-        if (power >= 250) return "GRAND LINE";
-        if (power >= 100) return "PIRATE CREW";
+        if (power >= 840) return "RULERS OF THE WORLD";
+        if (power >= 790) return "PIRATE KING";
+        if (power >= 750) return "YONKO CREW";
+        if (power >= 600) return "WARLORD AFFILIATED";
+        if (power >= 450) return "SUPER NOVA'S";
+        if (power >= 300) return "GRAND LINE";
+        if (power >= 170) return "PIRATE CREW";
         return "GANG";
     }
+
+    const POWER_CAP = 900;
+
+    const ranks = [
+        { label: "RULERS OF THE WORLD", power: 840 },
+        { label: "PIRATE KING", power: 790 },
+        { label: "YONKO CREW", power: 750 },
+        { label: "WARLORD AFFILIATED", power: 600 },
+        { label: "SUPER NOVA'S", power: 400 },
+        { label: "GRAND LINE", power: 300 },
+        { label: "PIRATE CREW", power: 170 },
+        { label: "GANG", power: 0 },
+    ];
 
     // Cleanup timeouts on unmount
     useEffect(() => {
@@ -169,7 +182,7 @@ export default function CrewWars() {
                                         <div
                                             key={key}
                                             className={`${styles.cardItem} ${isPicked ? styles.pickedCard : ''}`}
-                                            onClick={() => pickCharacter(key, tempChar)}
+                                            onClick={() => !isPicked && pickCharacter(key, itemData)}
                                         >
                                             <div
                                                 style={{
@@ -207,15 +220,20 @@ export default function CrewWars() {
 
                                 {/* The Labels on the Right */}
                                 <div className={styles.powerLabels}>
-                                    <span>RULERS OF<br /> THE WORLD</span>
-                                    <span>PIRATE <br /> KING</span>
-                                    <span>YONKO <br /> CREW</span>
-                                    <span>WARLORD <br /> AFFILIATED</span>
-                                    <span>SUPER<br /> NOVA'S</span>
-                                    <span>GRAND <br />LINE</span>
-                                    <span>PIRATE <br />CREW</span>
-                                    <span>GANG</span>
+                                    {ranks.map(rank => (
+                                        <span
+                                            key={rank.label}
+                                            style={{
+                                                bottom: `${(rank.power / POWER_CAP) * 100}%`
+                                            }}
+                                        >
+                                            {rank.label}
+                                        </span>
+                                    ))}
                                 </div>
+
+
+
                             </div>
 
 
@@ -246,8 +264,8 @@ export default function CrewWars() {
 
 // 6. Helper function to map power (0-99) to your gradient colors
 function getColorByPower(level) {
-    if (level >= 85) return '#ffe600'; // Purple
-    if (level >= 60) return '#ff4d00'; // Yellow
+    if (level >= 92) return '#ffe600'; // Purple
+    if (level >= 70) return '#ff4d00'; // Yellow
     if (level >= 40) return '#00bfff'; // Light Green
     if (level >= 20) return '#263d6f'; // Bright Cyan
     return '#e0eaea'; // Light Blue
