@@ -43,31 +43,44 @@ export default function CrewWars() {
         if (rolling[categoryKey]) return;
 
         // Add selected character to crew
-        setCrewMembers(prev => ({
-            ...prev,
-            [categoryKey]: selectedCharacter
-        }));
-
-        // Trigger the rolling animation for ALL unselected categories
-        const unselectedKeys = dataKeys.filter(key => !crewMembers[key] && key !== categoryKey);
-
-        unselectedKeys.forEach(key => {
-            startRolling(key);
-        });
-
-        // Check if all roles are filled after this pick
         const newCrew = { ...crewMembers, [categoryKey]: selectedCharacter };
-        if (Object.keys(newCrew).length === dataKeys.length) {
-            // Wait 5 seconds for the last rolling animation to finish, then move to state 3
+        setCrewMembers(newCrew);
+
+        // Figure out what's left after this pick
+        const unselectedKeys = dataKeys.filter(key => !newCrew[key]);
+
+        if (unselectedKeys.length === 0) {
+            // This was the final pick — crew is already complete
             const finalTimeout = setTimeout(() => {
                 setGameState(3);
             }, 800);
             timeoutRefs.current.push(finalTimeout);
+            return;
         }
+
+        if (unselectedKeys.length === 1) {
+            // Only one category left — roll it and auto-lock the result in,
+            // no manual click required from the user
+            const lastKey = unselectedKeys[0];
+            startRolling(lastKey, (finalChoice) => {
+                setCrewMembers(prev => ({
+                    ...prev,
+                    [lastKey]: finalChoice
+                }));
+                const finalTimeout = setTimeout(() => {
+                    setGameState(3);
+                }, 2300);
+                timeoutRefs.current.push(finalTimeout);
+            });
+            return;
+        }
+
+        // Otherwise, roll every remaining unselected category as usual
+        unselectedKeys.forEach(key => startRolling(key));
     };
 
     // 4. The Slot Machine Roll Logic
-    const startRolling = (categoryKey) => {
+    const startRolling = (categoryKey, onComplete) => {
         const pool = gameWarsData[categoryKey];
         if (!pool) return;
 
@@ -94,6 +107,9 @@ export default function CrewWars() {
                     [categoryKey]: finalChoice
                 }));
                 setRolling(prev => ({ ...prev, [categoryKey]: false }));
+
+                // Report the final value back, if someone's waiting on it
+                if (onComplete) onComplete(finalChoice);
             }
         }, 300); // Changes every 300ms
     };
