@@ -182,13 +182,13 @@ export default function GrandRun() {
                                 <p className={styles.runAboutFruit}>{fruitDrafted.about}</p>
                             </div>
                             <div className={styles.optionFruitWrapper}>
-                                {fruitDrafted?.img?.fruit && (
+                                {
                                     <img src={`${CDN_BASE}/fruits/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.fruit} alt="image of a devil fruit" />
-                                )}
+                                }
                                 <div>
-                                    {fruitDrafted?.img?.user && (
+                                    {
                                         <img src={`${CDN_BASE}/characters/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.user} alt="image of a devil fruit user" />
-                                    )}
+                                    }
 
                                     <p>previous user</p>
                                 </div>
