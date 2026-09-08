@@ -4204,6 +4204,75 @@ const fruitsExpandedInfo = [
         },
         "trivia": [],
         "images": []
+    },
+    {
+        "id": "9c4e2b7a-1f6d-4a8e-b3c5-7d2a9f1e6c8b",
+        "name": "Smelt-Smelt Fruit",
+        "firstAppearance": "Episode 746",
+        "abilities": [
+            "A non-canon Paramecia fruit that turns the user's body into a living blast furnace, letting them consume metal ore, melt it down internally, and reshape the molten metal into weapons or armor at will. The user can pull solidified metal objects straight from their own body, launch ore in its molten state as a projectile attack, and pour it over opponents to encase them in solid silver. The user is immune to burns from the molten metal and heat they generate, and can also arm allies by producing weapons and firearms for an entire crew."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Can create functional metal weapons and armor on demand, including for allies",
+            "Can encase opponents in solid silver by pouring molten ore over them",
+            "Can launch molten ore as a ranged attack",
+            "Immune to burns from molten metal, hot metal objects, and most forms of heat/fire",
+            "Consuming more ore increases the user's size and power, producing effects compared to a Logia",
+            "As a last resort, can coat the entire body in silver armor for heightened defense and offense"
+        ],
+        "weaknesses": [
+            "Requires a steady internal supply of ore to keep producing weapons; without it, the ability is far more limited",
+            "Weapons created from the fruit revert to molten metal once destroyed",
+            "Overeating ore causes the user to radiate extreme, uncontrolled heat that can melt everything nearby, potentially sinking an entire island",
+            "Shows no particular skill in actually wielding the weapons it creates",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 55,
+            "defense": 50,
+            "utility": 65
+        },
+        "trivia": [
+            "Shares strong similarities with Enel's Goro Goro-adjacent smithing ability and Gild Tesoro's Goru Goru no Mi, including coating enemies in metal, becoming a giant metal figure, and arming allies",
+            "Also parallels the Doru Doru no Mi (wax) and the Ami Ami no Mi/Baku Baku no Mi, since all three require consuming an external material to fully use their power",
+            "Based on the speed at which Bill melts metal, he is implied to generate heat many times hotter than a real blast furnace"
+        ],
+        "images": []
+    },
+    {
+        "id": "a1e5c9d2-4b7f-4e1a-9c6d-2f8b5a3e7d4c",
+        "name": "Roll-Roll Fruit",
+        "firstAppearance": "Episode 747",
+        "abilities": [
+            "A non-canon Paramecia fruit that turns the user's hands and feet into train wheels, letting them roll at high speed and attach to train tracks anywhere. The user can ram opponents by rolling into them, keep rolling on only two wheels while using their free hands to attack, and use the spinning wheels to power other rotating tools like drills. Aveyron pairs this with a storage compartment on his back holding bombs, a drill, and parts to upgrade his own body with an engine and cannons."
+        ],
+        "techniques": [
+            "Bakudan Ame (Rain of Bombs): While rolling on the tracks, pulls a large number of explosives from the back compartment and hurls them forward, raining explosions on the targets ahead",
+            "Hyper Special Express: Pulls cannons, an engine, oil drums, and a silver hammer from the compartment and attaches them to his own chassis, becoming faster and gaining cannon firepower"
+        ],
+        "strengths": [
+            "Can roll at very high speeds for fast movement and ramming attacks",
+            "Wheels attach to train tracks anywhere, granting reliable terrain-based mobility",
+            "Can keep moving on two wheels while using hands freely to attack",
+            "Can power other spinning tools, such as drills, using the wheels",
+            "Combines with a personal arsenal (bombs, drills, upgrade parts) for ranged and heavy-damage options",
+            "Can self-upgrade mid-fight with an engine and cannons for a burst of speed and firepower"
+        ],
+        "weaknesses": [
+            "Very difficult to stop once at high speed, leaving the user vulnerable if an attack misses",
+            "Poor braking means the user can fly off into the air if the track suddenly cuts off",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 50,
+            "defense": 35,
+            "utility": 55
+        },
+        "trivia": [
+            "The wheel-based transformation is similar to the Shari Shari no Mi and Guru Guru no Mi"
+        ],
+        "images": []
     }
 ]
 

@@ -1986,5 +1986,33 @@
             "fruit": "",
             "user": ""
         }
+    },
+    {
+        "id": "9c4e2b7a-1f6d-4a8e-b3c5-7d2a9f1e6c8b",
+        "previousUser": "Lambor Bukini",
+        "name": "Smelt-Smelt Fruit",
+        "type": "Paramecia",
+        "user": "Bill",
+        "power": 58,
+        "rarity": 3,
+        "about": "A non-canon Paramecia-type Devil Fruit that turns the user into a human blast furnace, allowing them to melt down consumed ore and reshape it into weapons, armor, or molten projectiles at will.",
+        "img": {
+            "fruit": "https://i.postimg.cc/SRRhRYKD/9c4e2b7a-1f6d-4a8e-b3c5-7d2a9f1e6c8b.webp",
+            "user": ""
+        }
+    },
+    {
+        "id": "a1e5c9d2-4b7f-4e1a-9c6d-2f8b5a3e7d4c",
+        "previousUser": null,
+        "name": "Roll-Roll Fruit",
+        "type": "Paramecia",
+        "user": "Aveyron",
+        "power": 42,
+        "rarity": 2,
+        "about": "A non-canon Paramecia-type Devil Fruit that turns the user's hands and feet into train wheels, letting them roll at high speed on any track, ram opponents, and power other spinning tools.",
+        "img": {
+            "fruit": "",
+            "user": ""
+        }
     }
 ]

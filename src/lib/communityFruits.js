@@ -129,6 +129,16 @@ const communityFruits = [
         type: 'Mythical Zoan',
         submitedBy: 'Zarco'
     },
+    {
+        about: 'This fruit allows the user to transform any object—regardless of material, from steel and stone to paper and cloth—into small animate soldiers that obey the user\'s commands. Each soldier retains properties tied to its source material, meaning a steel soldier hits far harder and tanks more damage than a paper one, letting the user field armies with wildly different strengths depending on what materials are available on the battlefield. With enough objects to work with, the user can overwhelm opponents through sheer numbers, coordinated tactics, and disposable bodies that shield the user from harm.',
+        img: {
+            fruit: "",
+        },
+        name: 'Army-Army Fruit',
+        power: 60,
+        type: 'Paramecia',
+        submitedBy: 'Oliver L'
+    },
 
 ]
 
