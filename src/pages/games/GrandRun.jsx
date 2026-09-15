@@ -62,7 +62,6 @@ export default function GrandRun() {
         }, delay);
     }
 
-
     function getRandomFruit() {
         const randNum = Math.floor(Math.random() * allFruits.length)
         setFruitDrafted(allFruits[randNum])
@@ -178,7 +177,16 @@ export default function GrandRun() {
                         <div className={styles.fruitSelectorWrapper}>
                             <div>
                                 <span>NEW FRUIT</span>
-                                <h3 className={styles.fruitTitleName}>{fruitDrafted.name}</h3>
+                                <h3>
+                                    <a
+                                        href={`/fruit/${fruitDrafted.id}`}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className={styles.fruitTitleLink}
+                                    >
+                                        {fruitDrafted.name}
+                                    </a>
+                                </h3>
                                 <p className={styles.runAboutFruit}>{fruitDrafted.about}</p>
                             </div>
                             <div className={styles.optionFruitWrapper}>

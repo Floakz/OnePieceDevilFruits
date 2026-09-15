@@ -110,7 +110,7 @@ export default function Header({ headerShown, headerTitle }) {
     const location = useLocation();
 
     const isMiniGamesActive =
-        location.pathname.startsWith("/random-fruit") ||
+        location.pathname.startsWith("/fruit-finder") ||
         location.pathname.startsWith("/fruit-battle");
 
     const isDevilFruitsActive =
@@ -204,7 +204,7 @@ export default function Header({ headerShown, headerTitle }) {
 
                                 <div className={styles.menuItemDropdownWrapper}>
                                     <NavLink
-                                        to="/random-fruit"
+                                        to="/fruit-finder"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -317,7 +317,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/random-fruit"
+                                    to="/fruit-finder"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`

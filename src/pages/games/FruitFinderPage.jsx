@@ -1,5 +1,6 @@
-// pages/games/RandomFruitPage.jsx
+// pages/games/FruitFinderPage.jsx
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Header from "../../Components/header/Header";
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
 import Footer from "../../Components/footer/footer";
@@ -8,7 +9,7 @@ import styles from './games.module.css'
 
 function genRandom(max) { return Math.floor(Math.random() * max); }
 
-export default function RandomFruitPage() {
+export default function FruitFinderPage() {
     const [allFruits, setAllFruits] = useState([]);
     const [loading, setLoading] = useState(false);
     const [fruitIndex, setFruitIndex] = useState(0);
@@ -107,9 +108,6 @@ export default function RandomFruitPage() {
         zoan: Math.round((scores.zoan / total) * 100),
     };
 
-
-
-
     const winner =
         scores.logia >= scores.paramecia && scores.logia >= scores.zoan ? 'Logia' :
             scores.paramecia >= scores.zoan ? 'Paramecia' : 'Zoan';
@@ -125,7 +123,7 @@ export default function RandomFruitPage() {
             <Seo
                 title="Random Devil Fruit Generator – Which Fruit Will You Get?"
                 description="Click to discover your random Devil Fruit! Instantly reveal one of the mysterious One Piece Devil Fruits with user, ability and image."
-                canonical="https://onepiecedevilfruits.com/random-fruit"
+                canonical="https://onepiecedevilfruits.com/fruit-finder"
                 image="https://onepiecedevilfruits.com/assets/random-fruit-preview.jpg"
             />
 
@@ -174,7 +172,11 @@ export default function RandomFruitPage() {
                         <div>
                             {pick ? (
                                 <>
-                                    <h3>The seas whisper your name… <br />the {pick.name} has chosen you. </h3>
+                                    <h3>
+                                        The seas whisper your name…
+                                        <br />
+                                        the <Link to={`/fruit/${pick.id}`} className={styles.fruitNameLink}>{pick.name}</Link> has chosen you.
+                                    </h3>
                                     <img src={`${fruitImgLocation}/${pick.id}.webp` ?? pick.img?.user} alt={pick.name} />
                                     <p className={styles.aboutText}>{pick.about}</p>
                                 </>
