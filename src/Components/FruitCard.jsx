@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import './fruitcardstyle.css';
-
+import { slugify } from '../lib/slugify.js';
 
 export default function FruitCard(props) {
 
@@ -23,7 +23,7 @@ export default function FruitCard(props) {
 
     return (
         <div
-            onClick={() => (props.clickable ? navigate(`/fruit/${props.id}`) : null)}
+            onClick={() => (props.clickable ? navigate(`/fruit/${slugify(props.name)}`) : null)}
             className={`fruitCard-wrapper ${props.clickable ? 'cardClickable' : ''}`}
         >
             <div className='info-wrapper'>
