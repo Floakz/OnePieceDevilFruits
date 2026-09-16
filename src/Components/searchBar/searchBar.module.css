@@ -1,3 +1,34 @@
+.searchBarOutSideWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.randomButton {
+    padding: 10px;
+    border-radius: 50px;
+    background-color: #0aebff;
+    height: 50px;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid rgb(255, 217, 0);
+}
+
+.randomButton:hover {
+    background-color: rgb(255, 217, 0);
+
+}
+
+.randomButton svg {
+    transition: transform 0.4s ease-in-out;
+}
+
+.randomButton:hover svg {
+    transform: rotate(180deg);
+}
+
 .searchBarWrapper {
     position: relative;
     display: flex;
@@ -19,6 +50,8 @@
 }
 
 
+
+
 .searchButton {
     display: flex;
     justify-content: center;
@@ -33,6 +66,12 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+
+.searchButton:hover {
+    background-color: rgb(227, 196, 21);
+}
+
+
 
 
 
