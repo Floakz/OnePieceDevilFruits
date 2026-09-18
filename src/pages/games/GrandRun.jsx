@@ -4,6 +4,8 @@ import Header from "../../Components/header/Header";
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
 import Footer from "../../Components/footer/footer";
 import Seo from "../../Components/Seo";
+import { slugify } from '../../lib/slugify.js';
+
 import styles from './games.module.css'
 import characters from "../../lib/characters";
 
@@ -179,7 +181,7 @@ export default function GrandRun() {
                                 <span>NEW FRUIT</span>
                                 <h3>
                                     <a
-                                        href={`/fruit/${fruitDrafted.id}`}
+                                        href={`/fruit/${ slugify(fruitDrafted.name) }`}
                                         target="_blank"
                                         rel="noreferrer"
                                         className={styles.fruitTitleLink}
