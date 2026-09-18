@@ -89,11 +89,13 @@
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
+    cursor: pointer;
 }
 
 .fruitNameLink:hover {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 10px rgba(255, 231, 48, 0.8);
+    cursor: pointer;
 }
 
 .fruitTitleLink {
@@ -103,11 +105,13 @@
     text-decoration-thickness: 2px;
     text-underline-offset: 4px;
     transition: color 0.2s ease, text-shadow 0.2s ease;
+    cursor: pointer;
 }
 
 .fruitTitleLink:hover {
     color: rgb(255, 255, 255);
     text-shadow: 0 0 10px rgba(255, 231, 48, 0.8);
+    cursor: pointer;
 }
 
 .resultWrapper img {
