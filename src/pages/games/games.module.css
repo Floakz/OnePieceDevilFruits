@@ -82,7 +82,33 @@
     margin: auto;
 }
 
+.fruitNameLink {
+    color: rgb(255, 231, 48);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
 
+.fruitNameLink:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgba(255, 231, 48, 0.8);
+}
+
+.fruitTitleLink {
+    color: rgb(255, 231, 48);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.fruitTitleLink:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 10px rgba(255, 231, 48, 0.8);
+}
 
 .resultWrapper img {
     margin: auto;

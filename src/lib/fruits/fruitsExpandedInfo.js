@@ -4273,6 +4273,46 @@ const fruitsExpandedInfo = [
             "The wheel-based transformation is similar to the Shari Shari no Mi and Guru Guru no Mi"
         ],
         "images": []
+    },
+    {
+        "id": "5c8e2f4a-9b1d-4e6c-a3f7-1d9b6e4c8a2f",
+        "name": "Thorn-Thorn Fruit",
+        "firstAppearance": "Episode 1173",
+        "abilities": [
+            "A Paramecia fruit that turns the user into a Thorn Human, letting them generate and control razor-sharp, iron-hard thorns and thorn-covered vines from their own body or the surrounding environment. The thorns can be adjusted in length, thickness, and shape, used for offense, defense, restraint, or terrain control, and can even be made completely invisible so that unsuspecting victims are lacerated the moment they make contact."
+        ],
+        "techniques": [
+            "Ibarrier (Thorny Wall): Erupts thorned vines from the ground to block an incoming attack, sturdy enough to withstand Haki-infused strikes.",
+            "Ibarush (Thorny Hunt): Summons thick briars that rush forward point-first to skewer an opponent.",
+            "Guren Jigoku (Crimson Lotus Hell): Covers the surrounding ground in a bed of thorns, hindering enemy movement and footing.",
+            "Iba Launcher: Fires a barrage of thorns from gun barrels hidden within the mouths of serpent-shaped brambles."
+        ],
+        "strengths": [
+            "Thorns are razor-sharp and described as hard as iron, capable of piercing flesh instantly and blocking Haki-infused attacks",
+            "Can be rendered completely invisible, creating undetectable traps that injure anyone who makes contact",
+            "Highly versatile: usable for offense, defense, restraint, terrain denial, and even mobility (riding brambles, using vines as grapnels)",
+            "Powerful enough to single-handedly defeat a giant of Jaguar D. Saul's caliber and briefly hold off an elderly Scopper Gaban"
+        ],
+        "weaknesses": [
+            "The thorns have a unique weakness to heat, similar to real plants, and can be burned away",
+            "Despite their iron-like durability, the thorns are not indestructible and can be destroyed by sufficiently powerful attacks",
+            "Effective range is limited; thorns disappear if the user is forced too far away or is incapacitated",
+            "The user is not immune to their own thorns and can be injured by them",
+            "Invisible thorns offer no protection against non-living threats like fire, and multiple entangled victims can injure each other",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 78,
+            "defense": 70,
+            "utility": 72
+        },
+        "trivia": [
+            "Sommers references the proverb 'every rose has its thorn,' twisting it into 'Every loved one has their thorns' to describe his sadistic use of the fruit.",
+            "The invisible thorn ability, combined with Killingham's sleep-inducing fruit, may reference the fairy tale Sleeping Beauty, whose castle was surrounded by a forest of thorns.",
+            "Similar in concept to the Toge Toge no Mi, though that fruit only makes the user's own body spiky, while the Iba Iba no Mi can apply thorns to the user, others, or the environment.",
+            "The iron-like nature of the thorns draws comparison to Ohm's Iron Cloud-based 'Ordeal of Iron,' though Ohm's ability comes from a Milky Dial rather than a Devil Fruit."
+        ],
+        "images": []
     }
 ]
 

@@ -9,7 +9,7 @@ import ZoanFruits from "../pages/fruits/zoan/ZoanFruits.jsx";
 import CommunityFruits from "../pages/fruits/community/CommunityFruits.jsx";
 import ExpandedFruit from "../pages/fruits/expanded/ExpandedFruit.jsx";
 
-import RandomFruitPage from "../pages/games/RandomFruitPage.jsx";
+import FruitFinderPage from "../pages/games/FruitFinderPage.jsx";
 import CrewWars from "../pages/games/CrewWars.jsx";
 import PageNotFound from "../pages/error/pageNotFound.jsx";
 import GrandRun from "../pages/games/GrandRun.jsx";
@@ -79,7 +79,7 @@ export default function AppRoutes() {
                 <Route path="/treasure-chest" element={<Store />} />
 
                 {/* Jogos */}
-                <Route path="/random-fruit" element={<RandomFruitPage />} />
+                <Route path="/fruit-finder" element={<FruitFinderPage />} />
                 <Route path="/crew-wars" element={<CrewWars />} />
                 <Route path="/grand-run" element={<GrandRun />} />
                 <Route path="/daily-fight" element={<DailyFight />} />

@@ -2014,5 +2014,15 @@
             "fruit": "",
             "user": ""
         }
+    },
+    {
+        "id": "5c8e2f4a-9b1d-4e6c-a3f7-1d9b6e4c8a2f",
+        "previousUser": null,
+        "name": "Thorn-Thorn Fruit",
+        "type": "Paramecia",
+        "user": "Shepherd Sommers",
+        "power": 76,
+        "rarity": 3,
+        "about": "A Paramecia-type Devil Fruit that turns the user into a Thorn Human, granting the ability to create and manipulate razor-sharp, iron-hard thorns and thorn-covered vines from their body or nearby surfaces. The thorns can be rendered completely invisible, allowing the user to trap victims in unseen snares that injure anyone who touches them. It was eaten by Shepherd Sommers, a member of the Knights of God who used it to devastating effect during the assault on Elbaph."
     }
 ]
