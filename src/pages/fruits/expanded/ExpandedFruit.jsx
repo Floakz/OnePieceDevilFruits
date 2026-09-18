@@ -2,15 +2,17 @@ import Header from "../../../Components/header/Header";
 import Footer from "../../../Components/footer/footer";
 import { fetchAllFruitsOnce } from "../../../lib/fruitsApi";
 import Seo from "../../../Components/Seo";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import fruitsExpandedInfo from "../../../lib/fruits/fruitsExpandedInfo";
 import styles from './expandedFruit.module.css';
 import { getFruitImages } from "../../../lib/imagesMap";
+import { slugify } from "../../../lib/slugify";
 
 export default function ExpandedFruit() {
     const { id } = useParams();
     const navigate = useNavigate();
+    const location = useLocation();
 
     const CDN_BASE = import.meta.env.VITE_CDN_BASE;
 
@@ -19,8 +21,13 @@ export default function ExpandedFruit() {
     const [otherFruits, setOtherFruits] = useState();
     const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'notfound' | 'error'
     const [imageLoaded, setImageLoaded] = useState(false);
+    const [allFruits, setAllFruits] = useState([]);
+    const [matchedFruit, setMatchedFruit] = useState(null);
 
-    const imgs = useMemo(() => getFruitImages(String(id)), [id]);
+    const imgs = useMemo(() => {
+        if (!matchedFruit) return [];
+        return getFruitImages(String(matchedFruit.id));
+    }, [matchedFruit]);
 
 
     const finalImgs = useMemo(() => {
@@ -39,21 +46,36 @@ export default function ExpandedFruit() {
                 setStatus('loading');
 
                 const allFruits = await fetchAllFruitsOnce();
+                setAllFruits(allFruits);
 
-                const base = allFruits.find(f => String(f.id) === String(id));
-                const extra = fruitsExpandedInfo.find(f => String(f.id) === String(id));
+                const matched = allFruits.find(
+                    f => String(f.id) === String(id) || slugify(f.name) === id
+                );
 
                 if (!active) return;
 
-                if (!base && !extra) {
+                if (!matched) {
                     setFruitInfo(null);
+                    setMatchedFruit(null);
                     setStatus('notfound');
                     return;
                 }
 
-                const merged = { ...(base || {}), ...(extra || {}) };
+                setMatchedFruit(matched);
 
-                const pool = allFruits.filter(f => String(f.id) !== String(id));
+                // Canonicalize right here, using the freshly-resolved match for THIS id.
+                // Doing this inline (rather than in a separate effect keyed off matchedFruit)
+                // avoids a race where a stale matchedFruit from the previous fruit briefly
+                // coexists with the new id and fires a contradicting navigation.
+                if (id !== slugify(matched.name)) {
+                    navigate(`/fruit/${slugify(matched.name)}${location.search}${location.hash}`, { replace: true });
+                    return; // URL change will re-trigger this effect with the corrected id
+                }
+
+                const extra = fruitsExpandedInfo.find(f => String(f.id) === String(matched.id));
+                const merged = { ...matched, ...extra };
+
+                const pool = allFruits.filter(f => String(f.id) !== String(matched.id));
                 const picks = pool.sort(() => Math.random() - 0.5).slice(0, 5);
 
                 setOtherFruits(picks);
@@ -92,7 +114,7 @@ export default function ExpandedFruit() {
         : "Browse Devil Fruits with type, user, stats and images.";
 
     const seoCanonical = isReady
-        ? `${SITE}/fruit/${fruitInfo.id}`
+        ? `${SITE}/fruit/${slugify(fruitInfo.name)}`
         : `${SITE}/fruits`;
 
     return (
@@ -288,7 +310,7 @@ export default function ExpandedFruit() {
                             {otherFruits.map(fruit => {
                                 return (
                                     <div
-                                        onClick={() => { navigate(`/fruit/${fruit.id}`); window.scrollTo(0, 0); }}
+                                        onClick={() => { navigate(`/fruit/${slugify(fruit.name)}`); window.scrollTo(0, 0); }}
                                         className={styles.otherFruitsSingle}
                                         style={{
                                             backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${`${CDN_BASE}/characters/${fruit.id}.webp` ?? fruitInfo.img?.user})`
