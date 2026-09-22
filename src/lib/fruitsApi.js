@@ -9,11 +9,11 @@ import { db } from './firebase';
 const col = collection(db, 'fruits');
 
 // ---------- STATIC DATA (Netlify /public/data) ----------
-const STATIC_URL = '/data/fruits_v12.json'; // your single full file
+const STATIC_URL = '/data/fruits_v13.json'; // your single full file
 
 // ---- CACHE CONFIG ----
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const CACHE_KEY = 'fruits_cache_v14'; // bump version when file changes
+const CACHE_KEY = 'fruits_cache_v15'; // bump version when file changes
 
 function readCache(key) {
     try {

@@ -140,11 +140,37 @@ export default function ExpandedFruit() {
                             alt={`${fruitInfo.name} picture`}
                         />
                         <h1 className={styles.pageTitle}>{fruitInfo.name}</h1>
+                        {(fruitInfo.japaneseName || fruitInfo.romanizedName) && (
+                            <div className={styles.titleNames}>
+                                {fruitInfo.japaneseName && <span lang="ja">{fruitInfo.japaneseName}</span>}
+                                {fruitInfo.romanizedName && <span>{fruitInfo.romanizedName}</span>}
+                            </div>
+                        )}
                     </div>
 
                     <div className={styles.sectionDetailWrapper}>
                         <div className={styles.wrapper1x2}>
                             <div className={styles.InfoWrapper}>
+                                <span className={styles.sectionTitle}>🏷️ Names</span>
+                                <dl className={styles.namesGrid}>
+                                    <div>
+                                        <dt>English</dt>
+                                        <dd>{fruitInfo.name}</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Romanized</dt>
+                                        <dd>{fruitInfo.romanizedName || 'Unknown'}</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Japanese</dt>
+                                        <dd lang="ja">{fruitInfo.japaneseName || 'Unknown'}</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Meaning</dt>
+                                        <dd>{fruitInfo.nameMeaning || 'Unknown'}</dd>
+                                    </div>
+                                </dl>
+
                                 <span className={styles.sectionTitle}>📌 Quick Facts</span>
                                 <div className={styles.gridDiv2x2}>
                                     <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>

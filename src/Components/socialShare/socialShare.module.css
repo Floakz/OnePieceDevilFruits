@@ -1,0 +1,67 @@
+.socialShare {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px auto 0;
+  width: fit-content;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #dfe9ff;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.shareButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(13, 27, 69, 0.9);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+
+.shareButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(255, 219, 55, 0.8);
+  background: rgba(26, 52, 112, 0.95);
+}
+
+.shareButton svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.copyButton {
+  background: rgba(255, 219, 55, 0.16);
+  color: #fdfabb;
+}
+
+@media (max-width: 640px) {
+  .row {
+    gap: 8px;
+  }
+
+  .shareButton {
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+}

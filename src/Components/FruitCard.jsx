@@ -39,6 +39,12 @@ export default function FruitCard(props) {
                         }}
                     />
                     <h2 className='titleFruit'>{props.name}</h2>
+                    {(props.japaneseName || props.romanizedName) && (
+                        <div className='fruitNames' aria-label='Original fruit name'>
+                            {props.japaneseName && <span lang='ja'>{props.japaneseName}</span>}
+                            {props.romanizedName && <span>{props.romanizedName}</span>}
+                        </div>
+                    )}
                 </div>
 
                 <p className='aboutSection'>{props.about}</p>

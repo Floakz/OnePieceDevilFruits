@@ -3,6 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import Header from "../../Components/header/Header";
 import Footer from "../../Components/footer/footer";
 import Seo from "../../Components/Seo";
+import SocialShare from "../../Components/socialShare/SocialShare";
 import styles from "./games.module.css";
 import gameWarsData from "../../lib/gameWarsData";
 
@@ -267,6 +268,10 @@ export default function CrewWars() {
                                 <p className={styles.crewWarsFinalpowerLevel}>Your total power is {totalCrewPower}</p>
                             </div>
                             <button className="getFruitButton" onClick={() => window.location.reload()}>Restart</button>
+                            <SocialShare
+                                title="Crew Wars"
+                                text={`I just built a ${getCrewRank(totalCrewPower)} crew in Crew Wars with ${totalCrewPower} total power!`}
+                            />
                         </div>
                     )}
 
