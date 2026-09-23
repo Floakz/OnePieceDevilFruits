@@ -35,7 +35,7 @@ export default function LogiaFruits() {
                 canonical={canonical}
             />
             <Header headerShown={true} headerTitle="Logia Fruits" />
-            <main>
+            <main id="fruit-list">
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
             <FruitPagination basePath="/logia" currentPage={currentPage} totalPages={totalPages} />

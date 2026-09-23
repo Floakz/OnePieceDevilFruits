@@ -37,7 +37,7 @@ export default function AllFruitsPage() {
             />
             <Header headerShown={true} />
             <LatestSection />
-            <main>
+            <main id="fruit-list">
                 <section className="semanticsSection" aria-labelledby="intro">
                     <h2 id="intro" className="visually-hidden">About this list</h2>
                     <p className="pageIntro">

@@ -35,7 +35,7 @@ export default function ZoanFruits() {
                 canonical={canonical}
             />
             <Header headerShown={true} headerTitle="Zoan Fruits" />
-            <main>
+            <main id="fruit-list">
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
             <FruitPagination basePath="/zoan" currentPage={currentPage} totalPages={totalPages} />

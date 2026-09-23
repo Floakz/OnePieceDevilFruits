@@ -35,7 +35,7 @@ export default function ParameciaFruits() {
                 canonical={canonical}
             />
             <Header headerShown={true} headerTitle="Paramecia Fruits" />
-            <main>
+            <main id="fruit-list">
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
             <FruitPagination basePath="/paramecia" currentPage={currentPage} totalPages={totalPages} />
