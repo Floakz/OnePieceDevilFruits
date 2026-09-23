@@ -4,6 +4,7 @@ import Header from "../../Components/header/Header";
 import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
 import Footer from "../../Components/footer/footer";
 import Seo from "../../Components/Seo";
+import SocialShare from "../../Components/socialShare/SocialShare";
 import { slugify } from '../../lib/slugify.js';
 
 import styles from './games.module.css'
@@ -235,6 +236,10 @@ export default function GrandRun() {
                             <span>{resultMessage.message}</span>
 
                             <button onClick={() => newGame()} className={styles.runTryAgainButton}>try again</button>
+                            <SocialShare
+                                title="Grand Run"
+                                text={`I built my crew in Grand Run and reached ${resultMessage.label} with a bounty of ${resultMessage.bounty} berries!`}
+                            />
                         </div>
 
 

@@ -111,6 +111,7 @@ export default function Header({ headerShown, headerTitle }) {
 
     const isMiniGamesActive =
         location.pathname.startsWith("/fruit-finder") ||
+        location.pathname.startsWith("/crew-wars") ||
         location.pathname.startsWith("/fruit-battle");
 
     const isDevilFruitsActive =

@@ -1,26 +1,23 @@
 // routes/AppRoutes.jsx
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { useEffect, useRef } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import AllFruitsPage from "../pages/fruits/AllFruitsPage.jsx";
-import ParameciaFruits from "../pages/fruits/paramecia/ParameciaFruits.jsx";
-import LogiaFruits from "../pages/fruits/logia/LogiaFruits.jsx";
-import ZoanFruits from "../pages/fruits/zoan/ZoanFruits.jsx";
-import CommunityFruits from "../pages/fruits/community/CommunityFruits.jsx";
-import ExpandedFruit from "../pages/fruits/expanded/ExpandedFruit.jsx";
-
-import FruitFinderPage from "../pages/games/FruitFinderPage.jsx";
-import CrewWars from "../pages/games/CrewWars.jsx";
-import PageNotFound from "../pages/error/pageNotFound.jsx";
-import GrandRun from "../pages/games/GrandRun.jsx";
-import DailyFight from "../pages/games/dailyFight/dailyFight.jsx";
-
-import Quizzes from "../pages/games/quizzes/Quizzes.jsx";
-import ExpandedQuizz from "../pages/games/quizzes/expandedQuizz.jsx";
-
-import Store from "../pages/store/store.jsx";
-
 import ScrollToTop from "../Components/ScrollToTop.jsx";
+
+const ParameciaFruits = lazy(() => import("../pages/fruits/paramecia/ParameciaFruits.jsx"));
+const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
+const ZoanFruits = lazy(() => import("../pages/fruits/zoan/ZoanFruits.jsx"));
+const CommunityFruits = lazy(() => import("../pages/fruits/community/CommunityFruits.jsx"));
+const ExpandedFruit = lazy(() => import("../pages/fruits/expanded/ExpandedFruit.jsx"));
+const FruitFinderPage = lazy(() => import("../pages/games/FruitFinderPage.jsx"));
+const CrewWars = lazy(() => import("../pages/games/CrewWars.jsx"));
+const PageNotFound = lazy(() => import("../pages/error/pageNotFound.jsx"));
+const GrandRun = lazy(() => import("../pages/games/GrandRun.jsx"));
+const DailyFight = lazy(() => import("../pages/games/dailyFight/dailyFight.jsx"));
+const Quizzes = lazy(() => import("../pages/games/quizzes/Quizzes.jsx"));
+const ExpandedQuizz = lazy(() => import("../pages/games/quizzes/expandedQuizz.jsx"));
+const Store = lazy(() => import("../pages/store/store.jsx"));
 
 function ClarityTracker() {
     const location = useLocation();
@@ -38,7 +35,7 @@ function ClarityTracker() {
             if (typeof window !== "undefined" && typeof window.clarity === "function") {
                 try {
                     window.clarity("trackPageview");
-                } catch (_) {
+                } catch {
                     // se a lib ainda estiver a inicializar, ignora
                 } finally {
                     clearInterval(iv);
@@ -61,6 +58,7 @@ export default function AppRoutes() {
         <>
             <ClarityTracker />
             <ScrollToTop />
+            <Suspense fallback={<div className="routeLoader" role="status">Loading…</div>}>
             <Routes>
                 {/* Home = All */}
                 <Route path="/" element={<AllFruitsPage />} />
@@ -94,6 +92,7 @@ export default function AppRoutes() {
                 {/* 404 */}
                 <Route path="*" element={<PageNotFound />} />
             </Routes>
+            </Suspense>
         </>
     );
 }

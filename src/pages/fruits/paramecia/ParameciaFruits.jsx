@@ -1,7 +1,8 @@
-// pages/fruits/AllFruitsPage.jsx
 import { useEffect, useMemo, useState } from "react";
-import { fetchAllFruitsOnce, filterByCategoryLocal, paginateLocal } from "../../../lib/fruitsApi.js";
+import { useSearchParams } from "react-router-dom";
+import { fetchAllFruitsOnce, filterByCategoryLocal } from "../../../lib/fruitsApi.js";
 import FruitCard from "../../../Components/FruitCard.jsx";
+import FruitPagination from "../../../Components/FruitPagination.jsx";
 import Header from "../../../Components/header/Header.jsx";
 import Seo from "../../../Components/Seo.jsx";
 import Footer from "../../../Components/footer/footer.jsx";
@@ -10,48 +11,34 @@ const PAGE_SIZE = 12;
 
 export default function ParameciaFruits() {
     const [all, setAll] = useState([]);
-    const [shown, setShown] = useState(PAGE_SIZE);
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
         (async () => setAll(await fetchAllFruitsOnce()))();
     }, []);
 
     const filtered = useMemo(() => filterByCategoryLocal(all, "Paramecia"), [all]);
-
-
-    useEffect(() => {
-        setShown(PAGE_SIZE);
-    }, [filtered]);
-
-    const visible = useMemo(
-        () => filtered.slice(0, shown),
-        [filtered, shown]
-    );
-
-    const hasMore = shown < filtered.length;
-
-    function loadMore() {
-        setShown(s => Math.min(s + PAGE_SIZE, filtered.length));
-    }
+    const requestedPage = Math.max(1, Number.parseInt(searchParams.get("page") || "1", 10) || 1);
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    const currentPage = Math.min(requestedPage, totalPages);
+    const visible = useMemo(() => {
+        const start = (currentPage - 1) * PAGE_SIZE;
+        return filtered.slice(start, start + PAGE_SIZE);
+    }, [filtered, currentPage]);
+    const canonical = `https://onepiecedevilfruits.com/paramecia${currentPage > 1 ? `?page=${currentPage}` : ""}`;
 
     return (
         <>
             <Seo
-                title="Paramecia Devil Fruits – Complete List & Users"
+                title={`${currentPage > 1 ? `Page ${currentPage} — ` : ""}Paramecia Devil Fruits — Complete List & Users`}
                 description="All Paramecia fruits with users, abilities and images."
-                canonical="https://onepiecedevilfruits.com/paramecia"
+                canonical={canonical}
             />
-
-            <Header headerShown={true} headerTitle={'Paramecia Fruits'} />
-            <main>
-                {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
+            <Header headerShown={true} headerTitle="Paramecia Fruits" />
+            <main id="fruit-list">
+                {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
-            {hasMore && (
-                <button className="loadButton" onClick={loadMore}>
-                    load more
-                </button>
-            )}
-
+            <FruitPagination basePath="/paramecia" currentPage={currentPage} totalPages={totalPages} />
             <Footer />
         </>
     );

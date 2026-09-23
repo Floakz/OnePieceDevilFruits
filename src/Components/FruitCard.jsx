@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './fruitcardstyle.css';
 import { slugify } from '../lib/slugify.js';
 
@@ -17,13 +17,13 @@ export default function FruitCard(props) {
     const fruitSrc = cdnFruit || localFruit;
     const characterSrc = cdnCharacter || localCharacter;
 
-    const navigate = useNavigate();
-
     const fallbackFruit = 'https://i.postimg.cc/Sxp09zGS/unkown.png';
+    const Wrapper = props.clickable ? Link : 'div';
+    const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}` } : {};
 
     return (
-        <div
-            onClick={() => (props.clickable ? navigate(`/fruit/${slugify(props.name)}`) : null)}
+        <Wrapper
+            {...wrapperProps}
             className={`fruitCard-wrapper ${props.clickable ? 'cardClickable' : ''}`}
         >
             <div className='info-wrapper'>
@@ -39,6 +39,12 @@ export default function FruitCard(props) {
                         }}
                     />
                     <h2 className='titleFruit'>{props.name}</h2>
+                    {(props.japaneseName || props.romanizedName) && (
+                        <div className='fruitNames' aria-label='Original fruit name'>
+                            {props.japaneseName && <span lang='ja'>{props.japaneseName}</span>}
+                            {props.romanizedName && <span>{props.romanizedName}</span>}
+                        </div>
+                    )}
                 </div>
 
                 <p className='aboutSection'>{props.about}</p>
@@ -64,6 +70,6 @@ export default function FruitCard(props) {
 
             <img loading="lazy" src={characterSrc} className='userImg' alt={`${props.user} picture`} />
 
-        </div>
+        </Wrapper>
     );
 }

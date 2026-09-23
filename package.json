@@ -5,13 +5,14 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
+        "build": "vite build && node scripts/prerender.mjs",
         "lint": "eslint .",
         "preview": "vite preview"
     },
     "dependencies": {
         "firebase": "^12.1.0",
         "firebase-admin": "^13.5.0",
+        "react-share": "^5.0.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-router": "^7.8.2",

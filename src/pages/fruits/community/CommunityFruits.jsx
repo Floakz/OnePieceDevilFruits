@@ -21,7 +21,7 @@ export default function CommunityFruits() {
             <Seo
                 title="Community Devil Fruits – Fan-Made One Piece Ideas (Submit Yours)"
                 description="Explore community-made Devil Fruits with names, powers, and art. Browse fan creations and submit your own One Piece Devil Fruit idea."
-                canonical="https://onepiecedevilfruits.com/fruits/community"
+                canonical="https://onepiecedevilfruits.com/community"
                 ogTitle="Community Devil Fruits"
                 ogDescription="Fan-made One Piece Devil Fruits. Get inspired and submit yours."
                 ogType="website"

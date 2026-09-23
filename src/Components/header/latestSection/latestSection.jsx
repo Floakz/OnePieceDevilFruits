@@ -1,11 +1,10 @@
 import { useEffect, useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./latestSection.module.css";
 import { fetchAllFruitsOnce } from "../../../lib/fruitsApi.js";
+import { slugify } from "../../../lib/slugify.js";
 
 export default function LatestSection() {
-    const navigate = useNavigate();
-
     const [allFruits, setAllFruits] = useState([]);
     const [displayedFruits, setDisplayedFruits] = useState([]);
 
@@ -54,10 +53,10 @@ export default function LatestSection() {
 
             {displayedFruits.map(fruit => {
                 return (
-                    <div key={fruit.id} onClick={() => navigate(`/fruit/${fruit.id}`)} className={styles.newFruitItem}>
+                    <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.newFruitItem}>
                         <img src={`https://cd-opf.pages.dev/fruits/${fruit.id}.webp`} alt={fruit.name} />
                         <p>{fruit.name}</p>
-                    </div>
+                    </Link>
                 )
             })}
 
