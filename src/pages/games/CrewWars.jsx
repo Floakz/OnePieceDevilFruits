@@ -159,7 +159,7 @@ export default function CrewWars() {
             <Seo
                 title="CrewWars – Build Your Crew & Fight!"
                 description="Choose your crew and try to dominate the world."
-                canonical="https://onepiecedevilfruits.com/fruit-battle"
+                canonical="https://onepiecedevilfruits.com/crew-wars"
                 image="https://onepiecedevilfruits.com/assets/fruit-battle-preview.jpg"
             />
 

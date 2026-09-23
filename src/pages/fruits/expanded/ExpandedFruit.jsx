@@ -2,7 +2,7 @@ import Header from "../../../Components/header/Header";
 import Footer from "../../../Components/footer/footer";
 import { fetchAllFruitsOnce } from "../../../lib/fruitsApi";
 import Seo from "../../../Components/Seo";
-import { useNavigate, useParams, useLocation } from "react-router-dom";
+import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
 import { useEffect, useMemo, useState } from "react";
 import fruitsExpandedInfo from "../../../lib/fruits/fruitsExpandedInfo";
 import styles from './expandedFruit.module.css';
@@ -21,7 +21,6 @@ export default function ExpandedFruit() {
     const [otherFruits, setOtherFruits] = useState();
     const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'notfound' | 'error'
     const [imageLoaded, setImageLoaded] = useState(false);
-    const [allFruits, setAllFruits] = useState([]);
     const [matchedFruit, setMatchedFruit] = useState(null);
 
     const imgs = useMemo(() => {
@@ -46,10 +45,11 @@ export default function ExpandedFruit() {
                 setStatus('loading');
 
                 const allFruits = await fetchAllFruitsOnce();
-                setAllFruits(allFruits);
-
+                const requestedSlug = slugify(id);
                 const matched = allFruits.find(
-                    f => String(f.id) === String(id) || slugify(f.name) === id
+                    f => String(f.id) === String(id)
+                        || slugify(f.name) === requestedSlug
+                        || slugify(f.romanizedName) === requestedSlug
                 );
 
                 if (!active) return;
@@ -88,7 +88,7 @@ export default function ExpandedFruit() {
         })();
 
         return () => { active = false; };
-    }, [id]);
+    }, [id, location.hash, location.search, navigate]);
 
     // if user changes image via arrows
     function updateImageCarro(direction) {
@@ -104,18 +104,46 @@ export default function ExpandedFruit() {
     const isReady = status === "ready" && fruitInfo;
 
     const seoTitle = isReady
-        ? `${fruitInfo.name} — user ${fruitInfo.user || 'unknown'} | One Piece Devil Fruits`
+        ? `${fruitInfo.name}${fruitInfo.romanizedName ? ` (${fruitInfo.romanizedName})` : ''} | One Piece Devil Fruits`
         : "One Piece Devil Fruits — details, users and stats";
 
     const seoDescription = isReady
         ? (fruitInfo.about
-            ? fruitInfo.about.slice(0, 155)
+            ? `${fruitInfo.name}${fruitInfo.romanizedName ? `, also known as ${fruitInfo.romanizedName}` : ''}. ${fruitInfo.about}`.slice(0, 158)
             : `Explore ${fruitInfo.name}${fruitInfo.type ? ` (${fruitInfo.type})` : ''}${fruitInfo.user ? ` used by ${fruitInfo.user}` : ''}. Stats, strengths, weaknesses and images.`)
         : "Browse Devil Fruits with type, user, stats and images.";
 
     const seoCanonical = isReady
         ? `${SITE}/fruit/${slugify(fruitInfo.name)}`
-        : `${SITE}/fruits`;
+        : `${SITE}/`;
+
+    const categoryPath = isReady
+        ? (fruitInfo.type?.includes('Logia') ? '/logia' : fruitInfo.type?.includes('Zoan') ? '/zoan' : '/paramecia')
+        : '/';
+    const seoImage = isReady
+        ? (CDN_BASE ? `${CDN_BASE}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit)
+        : undefined;
+    const seoJsonLd = isReady ? {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
+                    { "@type": "ListItem", position: 2, name: `${fruitInfo.type} Fruits`, item: `${SITE}${categoryPath}` },
+                    { "@type": "ListItem", position: 3, name: fruitInfo.name, item: seoCanonical },
+                ],
+            },
+            {
+                "@type": "WebPage",
+                name: fruitInfo.name,
+                alternateName: [fruitInfo.romanizedName, fruitInfo.japaneseName].filter(Boolean),
+                url: seoCanonical,
+                description: seoDescription,
+                image: seoImage,
+            },
+        ],
+    } : undefined;
 
     return (
         <>
@@ -123,6 +151,10 @@ export default function ExpandedFruit() {
                 title={seoTitle}
                 description={seoDescription}
                 canonical={seoCanonical}
+                image={seoImage}
+                type="article"
+                noindex={status === 'notfound' || status === 'error'}
+                jsonLd={seoJsonLd}
             />
 
             <Header headerShown={false} />
@@ -130,13 +162,20 @@ export default function ExpandedFruit() {
             {status === 'error' && <div className={styles.pageDetailWrapper}><h2>Ups. Something went Wrong</h2></div>}
             {status === 'notfound' && <div className={styles.pageDetailWrapper}><h2>Fruit not found</h2></div>}
 
-            {status === 'ready' && (
+            {status === 'ready' && (    
                 <div className={styles.pageDetailWrapper}>
+                    <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+                        <Link to="/">All fruits</Link>
+                        <span aria-hidden="true">/</span>
+                        <Link to={categoryPath}>{fruitInfo.type}</Link>
+                        <span aria-hidden="true">/</span>
+                        <span aria-current="page">{fruitInfo.name}</span>
+                    </nav>
                     <div className={styles.titleWrapper}>
                         <img
                             loading="lazy"
                             className='fruitImg'
-                            src={`${CDN_BASE}/fruits/${fruitInfo.id}.webp` ?? fruitInfo.img?.fruit}
+                            src={CDN_BASE ? `${CDN_BASE}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit}
                             alt={`${fruitInfo.name} picture`}
                         />
                         <h1 className={styles.pageTitle}>{fruitInfo.name}</h1>
@@ -187,7 +226,7 @@ export default function ExpandedFruit() {
                                 <img
                                     loading="lazy"
                                     className={styles.userImg}
-                                    src={`${CDN_BASE}/characters/${fruitInfo.id}.webp` ?? fruitInfo.img?.user}
+                                    src={CDN_BASE ? `${CDN_BASE}/characters/${fruitInfo.id}.webp` : fruitInfo.img?.user}
                                     alt={`${fruitInfo.user} picture`}
                                 />
                             </div>
@@ -335,16 +374,17 @@ export default function ExpandedFruit() {
                         <div className={styles.otherFruitsWrapper}>
                             {otherFruits.map(fruit => {
                                 return (
-                                    <div
-                                        onClick={() => { navigate(`/fruit/${slugify(fruit.name)}`); window.scrollTo(0, 0); }}
+                                    <Link
+                                        key={fruit.id}
+                                        to={`/fruit/${slugify(fruit.name)}`}
                                         className={styles.otherFruitsSingle}
                                         style={{
-                                            backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${`${CDN_BASE}/characters/${fruit.id}.webp` ?? fruitInfo.img?.user})`
+                                            backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${CDN_BASE ? `${CDN_BASE}/characters/${fruit.id}.webp` : fruitInfo.img?.user})`
                                         }}
                                     >
-                                        <img loading="lazy" className={styles.otherfruitImg} src={`${CDN_BASE}/fruits/${fruit.id}.webp` ?? fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
+                                        <img loading="lazy" className={styles.otherfruitImg} src={CDN_BASE ? `${CDN_BASE}/fruits/${fruit.id}.webp` : fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
                                         <h2>{fruit.name}</h2>
-                                    </div>
+                                    </Link>
                                 );
                             })}
                         </div>

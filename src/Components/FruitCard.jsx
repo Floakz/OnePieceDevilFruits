@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './fruitcardstyle.css';
 import { slugify } from '../lib/slugify.js';
 
@@ -17,13 +17,13 @@ export default function FruitCard(props) {
     const fruitSrc = cdnFruit || localFruit;
     const characterSrc = cdnCharacter || localCharacter;
 
-    const navigate = useNavigate();
-
     const fallbackFruit = 'https://i.postimg.cc/Sxp09zGS/unkown.png';
+    const Wrapper = props.clickable ? Link : 'div';
+    const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}` } : {};
 
     return (
-        <div
-            onClick={() => (props.clickable ? navigate(`/fruit/${slugify(props.name)}`) : null)}
+        <Wrapper
+            {...wrapperProps}
             className={`fruitCard-wrapper ${props.clickable ? 'cardClickable' : ''}`}
         >
             <div className='info-wrapper'>
@@ -70,6 +70,6 @@ export default function FruitCard(props) {
 
             <img loading="lazy" src={characterSrc} className='userImg' alt={`${props.user} picture`} />
 
-        </div>
+        </Wrapper>
     );
 }

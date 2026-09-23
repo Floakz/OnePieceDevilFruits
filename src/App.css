@@ -497,3 +497,50 @@ a {
         width: 90%;
     }
 }
+
+.fruitPagination {
+    width: min(90vw, 900px);
+    margin: 30px auto 0;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.fruitPaginationPages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.fruitPagination a,
+.fruitPagination span {
+    display: inline-flex;
+    min-width: 40px;
+    min-height: 40px;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    border: 1px solid #3cc3f8;
+    border-radius: 7px;
+    background: #0a2963;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.fruitPagination span[aria-current="page"] {
+    border-color: #f8de3c;
+    background: #f8de3c;
+    color: #001741;
+}
+
+.routeLoader {
+    min-height: 50vh;
+    display: grid;
+    place-items: center;
+    color: white;
+    font-weight: 700;
+}

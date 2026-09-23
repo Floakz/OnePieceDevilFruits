@@ -45,6 +45,7 @@
     padding: 10px;
     gap: 10px;
     TRANSITION: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 

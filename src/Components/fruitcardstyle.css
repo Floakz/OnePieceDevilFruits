@@ -6,6 +6,8 @@
     height: 100%;
     border-radius: 17px;
     border: 1px solid #1869ff;
+    color: inherit;
+    text-decoration: none;
 }
 
 .cardClickable {
