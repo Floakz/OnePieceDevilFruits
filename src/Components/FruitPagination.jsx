@@ -23,7 +23,7 @@ function scrollToFruitList(event) {
 export default function FruitPagination({ basePath, currentPage, totalPages }) {
     if (totalPages <= 1) return null;
 
-    const maxVisiblePages = 5;
+    const maxVisiblePages = 3;
     let firstVisiblePage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     const lastVisiblePage = Math.min(totalPages, firstVisiblePage + maxVisiblePages - 1);
     firstVisiblePage = Math.max(1, lastVisiblePage - maxVisiblePages + 1);
