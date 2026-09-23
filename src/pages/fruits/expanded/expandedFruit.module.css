@@ -347,6 +347,15 @@
 
 @media (max-width: 850px) {
 
+    .breadcrumbs {
+        flex-wrap: wrap;
+        line-height: 1.6;
+    }
+
+    .titleWrapper {
+        margin-top: 40px;
+    }
+
     .wrapper1x2 {
         flex-direction: column;
     }
