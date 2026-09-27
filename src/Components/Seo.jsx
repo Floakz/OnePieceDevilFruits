@@ -1,36 +1,31 @@
 import { useEffect } from "react";
 
-function setMeta(name, content) {
-    if (!content) return;
-    let el = document.querySelector(`meta[name="${name}"]`);
-    if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("name", name);
-        document.head.appendChild(el);
+function setMeta(attribute, key, content) {
+    let element = document.querySelector(`meta[${attribute}="${key}"]`);
+    if (!content) {
+        element?.remove();
+        return;
     }
-    el.setAttribute("content", content);
-}
-
-function setMetaProperty(property, content) {
-    if (!content) return;
-    let el = document.querySelector(`meta[property="${property}"]`);
-    if (!el) {
-        el = document.createElement("meta");
-        el.setAttribute("property", property);
-        document.head.appendChild(el);
+    if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attribute, key);
+        document.head.appendChild(element);
     }
-    el.setAttribute("content", content);
+    element.setAttribute("content", content);
 }
 
 function setLinkRel(rel, href) {
-    if (!href) return;
-    let el = document.querySelector(`link[rel="${rel}"]`);
-    if (!el) {
-        el = document.createElement("link");
-        el.setAttribute("rel", rel);
-        document.head.appendChild(el);
+    let element = document.querySelector(`link[rel="${rel}"]`);
+    if (!href) {
+        element?.remove();
+        return;
     }
-    el.setAttribute("href", href);
+    if (!element) {
+        element = document.createElement("link");
+        element.setAttribute("rel", rel);
+        document.head.appendChild(element);
+    }
+    element.setAttribute("href", href);
 }
 
 export default function Seo({
@@ -38,27 +33,39 @@ export default function Seo({
     description,
     canonical,
     image,
+    type = "website",
     noindex = false,
+    jsonLd,
 }) {
     useEffect(() => {
         if (title) document.title = title;
-        setMeta("description", description);
+        setMeta("name", "description", description);
         setLinkRel("canonical", canonical);
 
-        // Open Graph / Twitter básico
-        setMetaProperty("og:title", title);
-        setMetaProperty("og:description", description);
-        setMetaProperty("og:url", canonical);
-        setMetaProperty("og:type", "website");
-        setMetaProperty("og:image", image);
-        setMeta("twitter:card", image ? "summary_large_image" : "summary");
-        setMeta("twitter:title", title);
-        setMeta("twitter:description", description);
-        if (image) setMeta("twitter:image", image);
+        setMeta("property", "og:title", title);
+        setMeta("property", "og:description", description);
+        setMeta("property", "og:url", canonical);
+        setMeta("property", "og:type", type);
+        setMeta("property", "og:image", image);
+        setMeta("name", "twitter:card", image ? "summary_large_image" : "summary");
+        setMeta("name", "twitter:title", title);
+        setMeta("name", "twitter:description", description);
+        setMeta("name", "twitter:image", image);
+        setMeta("name", "robots", noindex ? "noindex,follow" : null);
 
-        // noindex opcional
-        if (noindex) setMeta("robots", "noindex");
-    }, [title, description, canonical, image, noindex]);
+        let structuredData = document.getElementById("page-json-ld");
+        if (!jsonLd) {
+            structuredData?.remove();
+        } else {
+            if (!structuredData) {
+                structuredData = document.createElement("script");
+                structuredData.id = "page-json-ld";
+                structuredData.type = "application/ld+json";
+                document.head.appendChild(structuredData);
+            }
+            structuredData.textContent = JSON.stringify(jsonLd);
+        }
+    }, [title, description, canonical, image, type, noindex, jsonLd]);
 
-    return null; // não renderiza nada
+    return null;
 }

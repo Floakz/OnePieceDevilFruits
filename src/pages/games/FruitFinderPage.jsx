@@ -6,6 +6,7 @@ import { fetchAllFruitsOnce } from "../../lib/fruitsApi";
 import { slugify } from '../../lib/slugify.js';
 import Footer from "../../Components/footer/footer";
 import Seo from "../../Components/Seo";
+import SocialShare from "../../Components/socialShare/SocialShare";
 import styles from "./games.module.css";
 
 function genRandom(max) {
@@ -244,6 +245,12 @@ export default function FruitFinderPage() {
             <button className="getFruitButton" onClick={startQuizz}>
               Try again
             </button>
+            {pick && (
+              <SocialShare
+                title="Fruit Finder"
+                text={`I just pulled ${pick.name} in the Fruit Finder quiz! ${pick.type} type, ${pick.user ? `used by ${pick.user}` : 'mysterious power'} — what did you get?`}
+              />
+            )}
           </div>
         )}
 

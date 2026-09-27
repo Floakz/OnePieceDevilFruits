@@ -1,9 +1,10 @@
-// pages/fruits/AllFruitsPage.jsx
 import { useEffect, useMemo, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { fetchAllFruitsOnce, filterByCategoryLocal } from "../../lib/fruitsApi.js";
 import FruitCard from "../../Components/FruitCard.jsx";
+import FruitPagination from "../../Components/FruitPagination.jsx";
 import Header from "../../Components/header/Header.jsx";
-import Seo from '../../Components/Seo.jsx'
+import Seo from "../../Components/Seo.jsx";
 import Footer from "../../Components/footer/footer.jsx";
 import LatestSection from "../../Components/header/latestSection/latestSection.jsx";
 
@@ -11,43 +12,32 @@ const PAGE_SIZE = 12;
 
 export default function AllFruitsPage() {
     const [all, setAll] = useState([]);
-    const [shown, setShown] = useState(PAGE_SIZE);
+    const [searchParams] = useSearchParams();
 
     useEffect(() => {
         (async () => setAll(await fetchAllFruitsOnce()))();
     }, []);
 
     const filtered = useMemo(() => filterByCategoryLocal(all, "all"), [all]);
-
-
-    useEffect(() => {
-        setShown(PAGE_SIZE);
-    }, [filtered]);
-
-    const visible = useMemo(
-        () => filtered.slice(0, shown),
-        [filtered, shown]
-    );
-
-    const hasMore = shown < filtered.length;
-
-    function loadMore() {
-        setShown(s => Math.min(s + PAGE_SIZE, filtered.length));
-    }
+    const requestedPage = Math.max(1, Number.parseInt(searchParams.get("page") || "1", 10) || 1);
+    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+    const currentPage = Math.min(requestedPage, totalPages);
+    const visible = useMemo(() => {
+        const start = (currentPage - 1) * PAGE_SIZE;
+        return filtered.slice(start, start + PAGE_SIZE);
+    }, [filtered, currentPage]);
+    const canonical = `https://onepiecedevilfruits.com/${currentPage > 1 ? `?page=${currentPage}` : ""}`;
 
     return (
         <>
             <Seo
-                title="All Devil Fruits – Complete List, Types, Users & Powers"
+                title={`${currentPage > 1 ? `Page ${currentPage} — ` : ""}All Devil Fruits — Complete List, Types, Users & Powers`}
                 description="Explore every Devil Fruit in One Piece: Paramecia, Zoan and Logia. See users, abilities, first appearances and more. Updated regularly."
-                canonical="https://onepiecedevilfruits.com/"
+                canonical={canonical}
             />
             <Header headerShown={true} />
             <LatestSection />
-
-            <main>
-
-                {/* Section to improve SEO reach and assitive tech friendly */}
+            <main id="fruit-list">
                 <section className="semanticsSection" aria-labelledby="intro">
                     <h2 id="intro" className="visually-hidden">About this list</h2>
                     <p className="pageIntro">
@@ -55,15 +45,9 @@ export default function AllFruitsPage() {
                         discover users, abilities and first appearances, and dive into each fruit’s page.
                     </p>
                 </section>
-
-                {visible.map(f => <FruitCard key={f.id} {...f} clickable={true} />)}
+                {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
-            {hasMore && (
-                <button className="loadButton" onClick={loadMore}>
-                    load more
-                </button>
-            )}
-
+            <FruitPagination basePath="/" currentPage={currentPage} totalPages={totalPages} />
             <Footer />
         </>
     );

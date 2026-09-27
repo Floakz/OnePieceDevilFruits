@@ -1,19 +1,22 @@
 // src/lib/fruitsApi.js
-import {
-    collection, doc, setDoc, getDocs, getDoc,
-    query, orderBy, limit, addDoc, updateDoc, deleteDoc,
-    startAfter, where
-} from 'firebase/firestore';
-import { db } from './firebase';
+let firestoreContextPromise;
 
-const col = collection(db, 'fruits');
+async function getFirestoreContext() {
+    if (!firestoreContextPromise) {
+        firestoreContextPromise = Promise.all([
+            import('firebase/firestore'),
+            import('./firebase'),
+        ]).then(([firestore, { db }]) => ({ ...firestore, db }));
+    }
+    return firestoreContextPromise;
+}
 
 // ---------- STATIC DATA (Netlify /public/data) ----------
-const STATIC_URL = '/data/fruits_v12.json'; // your single full file
+const STATIC_URL = '/data/fruits_v13.json'; // your single full file
 
 // ---- CACHE CONFIG ----
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const CACHE_KEY = 'fruits_cache_v14'; // bump version when file changes
+const CACHE_KEY = 'fruits_cache_v15'; // bump version when file changes
 
 function readCache(key) {
     try {
@@ -29,7 +32,9 @@ function readCache(key) {
 function writeCache(key, data) {
     try {
         localStorage.setItem(key, JSON.stringify({ ts: Date.now(), data }));
-    } catch { }
+    } catch {
+        // A private browsing quota error should not block the catalog.
+    }
 }
 
 // ---- STATIC FETCH (preferred) ----
@@ -52,6 +57,7 @@ export async function fetchAllFruitsOnce() {
     try {
         return await fetchStatic();
     } catch {
+        const { collection, getDocs, db } = await getFirestoreContext();
         const snap = await getDocs(collection(db, 'fruits'));
         const all = snap.docs.map(d => ({ id: d.id, ...d.data() }));
         writeCache(CACHE_KEY, all);
@@ -71,6 +77,8 @@ export async function listFruits({ limitTo = 100 } = {}) {
         const sorted = [...all].sort((a, b) => a.name.localeCompare(b.name));
         return sorted.slice(0, limitTo);
     } catch {
+        const { collection, query, orderBy, limit, getDocs, db } = await getFirestoreContext();
+        const col = collection(db, 'fruits');
         const q = query(col, orderBy('name'), limit(limitTo));
         const snap = await getDocs(q);
         return snap.docs.map(d => ({ id: d.id, ...d.data() }));
@@ -83,8 +91,11 @@ export async function getFruit(id) {
         const all = await fetchAllFruitsOnce();
         const found = all.find(f => f.id === id);
         if (found) return found;
-    } catch { }
-    const d = await getDoc(doc(col, id));
+    } catch {
+        // Continue to the Firestore fallback below.
+    }
+    const { collection, doc, getDoc, db } = await getFirestoreContext();
+    const d = await getDoc(doc(collection(db, 'fruits'), id));
     return d.exists() ? { id: d.id, ...d.data() } : null;
 }
 
@@ -111,10 +122,22 @@ export async function getRandomFruits(count = 40) {
 }
 
 // Writes remain in Firestore (for dynamic features)
-export async function createFruit(data) { return await addDoc(col, data); }
-export async function upsertFruit(id, data) { return await setDoc(doc(col, id), data, { merge: true }); }
-export async function updateFruit(id, data) { return await updateDoc(doc(col, id), data); }
-export async function removeFruit(id) { return await deleteDoc(doc(col, id)); }
+export async function createFruit(data) {
+    const { collection, addDoc, db } = await getFirestoreContext();
+    return addDoc(collection(db, 'fruits'), data);
+}
+export async function upsertFruit(id, data) {
+    const { collection, doc, setDoc, db } = await getFirestoreContext();
+    return setDoc(doc(collection(db, 'fruits'), id), data, { merge: true });
+}
+export async function updateFruit(id, data) {
+    const { collection, doc, updateDoc, db } = await getFirestoreContext();
+    return updateDoc(doc(collection(db, 'fruits'), id), data);
+}
+export async function removeFruit(id) {
+    const { collection, doc, deleteDoc, db } = await getFirestoreContext();
+    return deleteDoc(doc(collection(db, 'fruits'), id));
+}
 
 // ----------------- LOCAL HELPERS -----------------
 export function filterByCategoryLocal(all, category = 'all') {

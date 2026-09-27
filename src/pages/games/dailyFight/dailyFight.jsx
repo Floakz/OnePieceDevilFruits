@@ -9,6 +9,7 @@ import { doc, getDoc, setDoc, onSnapshot, serverTimestamp, collection } from "fi
 import { db, auth } from '../../../lib/firebase'
 import { onAuthStateChanged } from "firebase/auth";
 import Seo from '../../../Components/Seo'
+import SocialShare from '../../../Components/socialShare/SocialShare'
 
 export default function DailyFight() {
     const navigate = useNavigate()
@@ -399,8 +400,12 @@ export default function DailyFight() {
                                 </button>
                             )}
                             {currentDate !== "2025-10-11" && <button onClick={goToPreviousFight} className={styles.previouButton}>Vote on previous fight</button>}
-                        </div>
+                        </div>                     
                     </div>
+                       <SocialShare
+                            title="Daily Fight"
+                            text={`I’m watching ${leftOption.user} vs ${rightOption.user} in Daily Fight — who wins today?`}
+                        />
                 </div>
             </div>
             <Footer />

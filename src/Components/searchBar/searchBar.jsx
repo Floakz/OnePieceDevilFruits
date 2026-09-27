@@ -33,7 +33,8 @@ export default function SearchBar() {
         const q = normalize(query);
         if (!q) return [];
         return allFruits
-            .filter(f => normalize(f.name).includes(q))
+            .filter(f => [f.name, f.romanizedName, f.japaneseName]
+                .some(name => normalize(name).includes(q)))
             .slice(0, 10);
     }, [query, allFruits]);
 
@@ -59,7 +60,7 @@ export default function SearchBar() {
                 <input
                     type="search"
                     className={styles.inputBar}
-                    placeholder="ex: Dark-Dark Fruit"
+                    placeholder="ex: Dark-Dark Fruit or Yami Yami no Mi"
                     autoComplete="off"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}      // <- controlled
@@ -90,7 +91,7 @@ export default function SearchBar() {
                                     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 717 766">
                                         <path d="m541 517l176 176l-72 73l-184-185c-45 25-97 39-151 39C139 620 0 481 0 310S139 0 310 0s311 139 311 310c0 80-31 153-80 207zM103 310c0 115 92 207 207 207s207-92 207-207s-92-207-207-207s-207 92-207 207z"></path>
                                     </svg>
-                                    <span>{fruit.name}</span>
+                                    <span>{fruit.name}{fruit.romanizedName ? ` · ${fruit.romanizedName}` : ''}</span>
                                 </div>
                             ))
                         )}
