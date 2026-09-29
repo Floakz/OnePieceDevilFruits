@@ -30,7 +30,7 @@ const cleanDescription = (value = "") => {
     return `${normalized.slice(0, 155).replace(/\s+\S*$/, "")}…`;
 };
 
-const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v13.json"), "utf8"));
+const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v14.json"), "utf8"));
 const shell = await readFile(path.join(DIST, "index.html"), "utf8");
 
 function jsonLd(value) {
