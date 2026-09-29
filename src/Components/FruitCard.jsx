@@ -67,8 +67,9 @@ export default function FruitCard(props) {
                 </div>
             </div>
 
-
-            <img loading="lazy" src={characterSrc} className='userImg' alt={`${props.user} picture`} />
+            {props.img.fruit !== "noImg" && (
+                <img loading="lazy" src={characterSrc} className='userImg' alt={`${props.user} picture`} />
+            )}
 
         </Wrapper>
     );

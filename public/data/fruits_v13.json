@@ -2459,5 +2459,18 @@
         "power": 76,
         "rarity": 3,
         "about": "A Paramecia-type Devil Fruit that turns the user into a Thorn Human, granting the ability to create and manipulate razor-sharp, iron-hard thorns and thorn-covered vines from their body or nearby surfaces. The thorns can be rendered completely invisible, allowing the user to trap victims in unseen snares that injure anyone who touches them. It was eaten by Shepherd Sommers, a member of the Knights of God who used it to devastating effect during the assault on Elbaph."
+    },
+    {
+        "id": "7d3f9a2c-6b1e-4c8d-a5f7-3e9c2b6d4a1f",
+        "previousUser": null,
+        "name": "Dragon-Dragon Fruit, Model: Kirin",
+        "romanizedName": "Ryu Ryu no Mi, Model: Kirin",
+        "japaneseName": "リュウリュウの実 モデル麒麟",
+        "nameMeaning": "Dragon, Kirin/Qilin",
+        "type": "Mythical Zoan",
+        "user": "Rimoshifu Killingham",
+        "power": 88,
+        "rarity": 5,
+        "about": "A Mythical Zoan-type Devil Fruit that grants the power to transform into a qilin, a mythical Chinese chimera with draconic and giraffe-like features, or a centaur-like hybrid form. The transformation grants the user flight via flaming clouds beneath their hooves, the ability to put others to sleep at range, and the power to pull dreams from a sleeping target's mind and manifest them into physical reality, whether harmless objects or monstrous living nightmares. It was eaten by Rimoshifu Killingham, a member of the Knights of God."
     }
 ]

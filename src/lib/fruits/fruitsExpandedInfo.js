@@ -4313,6 +4313,48 @@ const fruitsExpandedInfo = [
             "The iron-like nature of the thorns draws comparison to Ohm's Iron Cloud-based 'Ordeal of Iron,' though Ohm's ability comes from a Milky Dial rather than a Devil Fruit."
         ],
         "images": []
+    },
+    {
+        "id": "7d3f9a2c-6b1e-4c8d-a5f7-3e9c2b6d4a1f",
+        "name": "Dragon-Dragon Fruit, Model: Kirin",
+        "firstAppearance": "Episode 1170",
+        "abilities": [
+            "A Mythical Zoan fruit that grants the power to transform into a qilin, a legendary Chinese chimera with a draconic head, elongated neck, and hooved body, or a centaur-like human-beast hybrid. The hybrid form allows flight by creating flaming clouds to tread on. The fruit's signature power lets the user put others to sleep at range with ringed energy beams, then pull objects or beings straight out of the sleeping target's dreams and manifest them into physical reality, ranging from mundane food and furniture to monstrous, nightmarish creatures capable of independent action."
+        ],
+        "techniques": [
+            "Min'ei-ka (Making Sleep-Sick): Induces a state resembling sleep paralysis in a target, leaving their body immobile while they remain conscious.",
+            "Nightmare Holes: Opens dark, circular portals on the ground that allow manifested dream monsters (MMA) to emerge continuously from the collective nightmares of an island's population.",
+            "MMA Summoning: Pulls monstrous, fear-based entities directly from a sleeping target's dream cloud, which can act semi-autonomously and be revived indefinitely on command."
+        ],
+        "strengths": [
+            "Can incapacitate targets at long range without them ever noticing the user, even affecting multiple people simultaneously",
+            "Manifested dream creatures (MMA) are functionally immortal, lacking any concept of death and able to be revived at will once destroyed",
+            "Extremely versatile utility: can create food, objects, or monstrous soldiers, and synergizes well with allies' abilities for complex tactics",
+            "Awakened qilin-headed form grants enough physical strength to overpower and suplex a full-grown giant warrior with ease",
+            "Flight via flaming clouds adds strong mobility in the hybrid form"
+        ],
+        "weaknesses": [
+            "There appears to be a time limit on how long targets can be kept asleep",
+            "Manifested MMA monsters can be defeated through sufficiently strong physical attacks, though they can be revived afterward",
+            "Defeating the user causes all their summoned MMA to vanish permanently",
+            "A dream creature's strength is limited by the dreamer's own imagination and familiarity with what they fear",
+            "Dream-manifested food is satisfying and tastes real but provides no actual nutritional sustenance",
+            "Reckless use risks manifesting the user's own worst fears, though they retain control over the result",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 84,
+            "defense": 72,
+            "utility": 91
+        },
+        "trivia": [
+            "The qilin, often called the 'Chinese unicorn' in the West, is a mythical chimera combining a hooved body with a horned, dragon-scaled head, and has a long historical association with giraffes in East Asian culture.",
+            "Killingham's design closely resembles the kirin on the logo of Kirin beer, a Japanese brand Eiichiro Oda has said he enjoys.",
+            "His dream-manifesting ability may be inspired by a real 2012 Kirin beer marketing campaign that invited customers to submit their dreams to potentially be made real.",
+            "This is the first known Zoan whose 'X Human' identifier, Dream-Manifesting Human, doesn't reference the animal the fruit is based on.",
+            "The fruit shares thematic similarities with the game-exclusive Nemu Nemu no Mi and the movie-original Uta Uta no Mi in its sleep-inducing power, and with the Fude Fude no Mi in its ability to manifest objects into reality."
+        ],
+        "images": []
     }
 ]
 
