@@ -242,7 +242,6 @@ export default function Header({ headerShown, headerTitle }) {
                                 >
                                     QUIZZES
                                 </NavLink>
-                                <div className={styles.newMenuItem}>NEW</div>
                             </div>
 
                             <NavLink

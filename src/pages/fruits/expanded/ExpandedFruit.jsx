@@ -216,6 +216,8 @@ export default function ExpandedFruit() {
                                     <p>User: <span>{fruitInfo.user}</span></p>
                                     <p>First Appearance: <span>{fruitInfo.firstAppearance || 'Unkown'} </span></p>
                                     <p>Previous User: <span>{fruitInfo.previousUser || 'Unkown'}</span></p>
+                                    <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not awakened'}</span></p>
+                                    <p>Canon status: <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
                                 </div>
 
                                 <span className={styles.sectionTitle}>🌪️ About</span>
