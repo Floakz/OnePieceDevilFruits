@@ -1,0 +1,147 @@
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 80vw;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 80px;
+    align-items: start;
+    padding: 40px 40px;
+    border-radius: 20px;
+    background: #14449E;
+    background: linear-gradient(90deg, rgba(20, 68, 158, 1) 0%, rgb(8, 47, 118) 50%, rgb(8, 37, 117) 100%);
+    border: 1px solid #09d6f0;
+    margin-bottom: 100px;
+}
+
+.titleColumn {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 150px;
+    width: 250px;
+}
+
+.title {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #F8DE3C;
+    line-height: 1.15;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.imageWrapper {
+    position: absolute;
+    left: -100px;
+    bottom: -200px;
+    width: 350px;
+    height: 350px;
+    pointer-events: none;
+}
+
+.typeImage {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    transform: rotate(20deg);
+    /* NEW */
+    filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.35));
+}
+
+.imageWrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 560px;
+    height: 560px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle,
+            #d1d5fa 0%,
+            #5966c8 40%,
+            #8892d900 70%);
+    filter: blur(20px);
+    z-index: 0;
+}
+
+
+
+.factsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    row-gap: 20px;
+}
+
+.factRow {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.factIcon {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    margin-top: 2px;
+}
+
+.factText {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    font-weight: 5700;
+    color: #ffffff;
+}
+
+.factHighlight {
+    color: #F8DE3C;
+}
+
+
+/* ---- Responsive ---- */
+
+@media (max-width: 1300px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .imageWrapper {
+        display: none;
+    }
+
+    .titleColumn {
+        min-height: auto;
+    }
+
+    .title {
+        text-align: center;
+        white-space: normal;
+    }
+}
+
+@media (max-width: 860px) {
+    .wrapper {
+        padding: 28px 24px;
+    }
+
+    .factsGrid {
+        grid-template-columns: 1fr;
+        row-gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 2rem;
+    }
+}

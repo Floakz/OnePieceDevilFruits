@@ -6,6 +6,7 @@ import FruitPagination from "../../../Components/FruitPagination.jsx";
 import Header from "../../../Components/header/Header.jsx";
 import Seo from "../../../Components/Seo.jsx";
 import Footer from "../../../Components/footer/footer.jsx";
+import DevilFruitTypeIntro from "../../../Components/DevilFruitTypeIntro/DevilFruitTypeIntro.jsx";
 
 const PAGE_SIZE = 12;
 
@@ -35,6 +36,19 @@ export default function ZoanFruits() {
                 canonical={canonical}
             />
             <Header headerShown={true} headerTitle="Zoan Fruits" />
+            <DevilFruitTypeIntro
+                title="Zoan Fruits"
+                image="https://cd-opf.pages.dev/fruits/566d7c09-6866-4455-b85b-d3a05609c671.webp"
+                imageAlt="Illustration of a Zoan-type Devil Fruit"
+                facts={[
+                    { highlight: "Grants the power to transform into an animal,", text: " in full, hybrid, or human form" },
+                    { text: "The only type that provides a passive boost to strength, speed, and endurance even outside of combat" },
+                    { text: "Divided into three rarity tiers: Common, Ancient, and Mythical Zoan" },
+                    { text: "The hybrid form is usually considered the most versatile, balancing human intellect with animal power" },
+                    { text: "The only Devil Fruit type that can currently be artificially replicated" },
+                    { text: "Mythical Zoans grant the powers of legendary or divine creatures, such as dragons and phoenixes" },
+                ]}
+            />
             <main id="fruit-list">
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>

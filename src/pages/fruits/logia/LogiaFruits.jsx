@@ -6,6 +6,7 @@ import FruitPagination from "../../../Components/FruitPagination.jsx";
 import Header from "../../../Components/header/Header.jsx";
 import Seo from "../../../Components/Seo.jsx";
 import Footer from "../../../Components/footer/footer.jsx";
+import DevilFruitTypeIntro from "../../../Components/DevilFruitTypeIntro/DevilFruitTypeIntro.jsx";
 
 const PAGE_SIZE = 12;
 
@@ -35,6 +36,19 @@ export default function LogiaFruits() {
                 canonical={canonical}
             />
             <Header headerShown={true} headerTitle="Logia Fruits" />
+            <DevilFruitTypeIntro
+                title="Logia Fruits"
+                image="https://cd-opf.pages.dev/fruits/488246a5-5153-416d-bdb7-a1aafc252f57.webp"
+                imageAlt="Illustration of a Logia-type Devil Fruit"
+                facts={[
+                    { highlight: "Grants the power to create, control, and transform into a natural element,", text: " such as fire, ice, or lightning" },
+                    { text: "Considered the rarest and most powerful type due to near-total physical intangibility" },
+                    { text: "Users can typically only be harmed by Haki, other Logia-based elements, or specific environmental weaknesses" },
+                    { text: "Allows near god-like control over an entire environment, from weather to terrain" },
+                    { text: "Only a handful of Logia users have ever been shown in the series" },
+                    { text: "Many Logia abilities double as instant transportation, such as becoming lightning, light, or smoke" },
+                ]}
+            />
             <main id="fruit-list">
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
