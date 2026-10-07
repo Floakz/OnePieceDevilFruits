@@ -2,7 +2,7 @@ import styles from './devilFruitTypeIntro.module.css';
 
 export default function DevilFruitTypeIntro({ title, image, imageAlt = '', facts = [] }) {
 
-    const iconSrc = '/public/images/bulletPointIcon.webp'
+    const iconSrc = '/images/bulletPointIcon.webp'
 
     return (
         <div className={styles.wrapper}>
