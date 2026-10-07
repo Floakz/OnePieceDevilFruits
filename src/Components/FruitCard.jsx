@@ -20,6 +20,10 @@ export default function FruitCard(props) {
     const fallbackFruit = 'https://i.postimg.cc/Sxp09zGS/unkown.png';
     const Wrapper = props.clickable ? Link : 'div';
     const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}` } : {};
+    const about = props.about || '';
+    const displayedAbout = about.length > 215
+        ? `${about.slice(0, 212).trimEnd()}...`
+        : about;
 
     return (
         <Wrapper
@@ -47,7 +51,7 @@ export default function FruitCard(props) {
                     )}
                 </div>
 
-                <p className='aboutSection'>{props.about}</p>
+                <p className='aboutSection'>{displayedAbout}</p>
 
                 <div className='fruitTags'>
                     <div>

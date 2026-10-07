@@ -75,8 +75,8 @@
 
 .gridDiv2x2 {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: auto;
     margin-top: 20px;
     text-align: left;
     width: 100%;
@@ -157,6 +157,8 @@
 .gridDiv2x2 p {
     color: rgb(134, 172, 203);
     font-size: 0.9em;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .gridDiv2x2 span {
@@ -164,7 +166,6 @@
     font-weight: 700;
     font-size: 1em;
 }
-
 
 .spanTag {
     padding: 2px 5px;
@@ -368,6 +369,10 @@
 
     .namesGrid {
         grid-template-columns: 1fr;
+    }
+
+    .gridDiv2x2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
 

@@ -23,6 +23,7 @@ export default function DailyFight() {
     let [allFruits, setAllFruits] = useState()
     let [voteCount, setVoteCount] = useState({ left: 0, leftPct: 0, right: 0, rightPct: 0 });
     let [userVoted, setUserVoted] = useState(false);
+    let [votedSide, setVotedSide] = useState(null);
 
     function todayIdUTC() {
         return new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
@@ -177,6 +178,7 @@ export default function DailyFight() {
         });
 
         setUserVoted(true)
+        setVotedSide(side)
         localStorage.setItem(`voted-${fightId}`, side);
     }
 
@@ -214,6 +216,7 @@ export default function DailyFight() {
 
         setCurrentDate(prevDate);
         setUserVoted(false);
+        setVotedSide(null);
     }
 
     useEffect(() => {
@@ -229,15 +232,22 @@ export default function DailyFight() {
     }, []);
 
     useEffect(() => {
+        setUserVoted(false);
+        setVotedSide(null);
         if (!allFruits) return;
 
         const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
-            if (!user) { setUserVoted(false); return; }
+            if (!user) {
+                setUserVoted(false);
+                setVotedSide(null);
+                return;
+            }
 
             const voteRef = doc(db, "fights", currentDate, "votes", user.uid);
             const existing = await getDoc(voteRef);
 
             setUserVoted(!!existing.exists());
+            setVotedSide(existing.exists() ? existing.data().side : null);
         });
 
         const ref = doc(db, "fights", currentDate);
@@ -338,12 +348,14 @@ export default function DailyFight() {
 
                         {userVoted && <div className={styles.resulWrapperOverlay}>
                             <div className={styles.LeftresultsWrapper}>
-                                <div className={styles.LeftresultsBar}>
+                                <div className={`${styles.LeftresultsBar} ${votedSide === "left" ? styles.votedResultsBar : votedSide === "right" ? styles.unselectedResultsBar : ""}`}>
+                                    {votedSide === "left" && <span className={styles.yourVote}>Your vote</span>}
                                     {voteCount.leftPct}%
                                 </div>
                             </div>
                             <div className={styles.RightresultsWrapper}>
-                                <div className={styles.RightresultsBar}>
+                                <div className={`${styles.RightresultsBar} ${votedSide === "right" ? styles.votedResultsBar : votedSide === "left" ? styles.unselectedResultsBar : ""}`}>
+                                    {votedSide === "right" && <span className={styles.yourVote}>Your vote</span>}
                                     {voteCount.rightPct}%
                                 </div>
                             </div>
