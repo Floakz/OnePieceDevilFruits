@@ -2763,8 +2763,8 @@
         "rarity": 5,
         "about": "A Mythical Zoan-type Devil Fruit that grants the power to transform into a qilin, a mythical Chinese chimera with draconic and giraffe-like features, or a centaur-like hybrid form. The transformation grants the user flight via flaming clouds beneath their hooves, the ability to put others to sleep at range, and the power to pull dreams from a sleeping target's mind and manifest them into physical reality, whether harmless objects or monstrous living nightmares. It was eaten by Rimoshifu Killingham, a member of the Knights of God.",
         "img": {
-            "fruit": "noImg",
-            "user": "noImg"
+            "fruit": "",
+            "user": ""
         },
         "isAwakened": false,
         "isCanon": true
@@ -2782,8 +2782,8 @@
         "rarity": 3,
         "about": "A Paramecia-type Devil Fruit that turns the user into an Arrow Human, granting the ability to generate and control tangible, nearly indestructible arrows that can pierce, bind, and redirect motion. The arrows can be combined into constructs like lances, enormous gauntlets, or even a flyable bird, and can add momentum to the user's strikes or force targets along a set path.",
         "img": {
-            "fruit": "noImg",
-            "user": "noImg"
+            "fruit": "",
+            "user": ""
         },
         "isAwakened": false,
         "isCanon": true
