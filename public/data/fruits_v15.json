@@ -2762,6 +2762,10 @@
         "power": 88,
         "rarity": 5,
         "about": "A Mythical Zoan-type Devil Fruit that grants the power to transform into a qilin, a mythical Chinese chimera with draconic and giraffe-like features, or a centaur-like hybrid form. The transformation grants the user flight via flaming clouds beneath their hooves, the ability to put others to sleep at range, and the power to pull dreams from a sleeping target's mind and manifest them into physical reality, whether harmless objects or monstrous living nightmares. It was eaten by Rimoshifu Killingham, a member of the Knights of God.",
+        "img": {
+            "fruit": "noImg",
+            "user": "noImg"
+        },
         "isAwakened": false,
         "isCanon": true
     }
