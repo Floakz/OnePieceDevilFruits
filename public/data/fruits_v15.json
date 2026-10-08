@@ -2768,5 +2768,24 @@
         },
         "isAwakened": false,
         "isCanon": true
+    },
+    {
+        "id": "b4e8a1d6-3c7f-4e29-9a5b-8d1f6c2e7a30",
+        "previousUser": null,
+        "name": "Arrow-Arrow Fruit",
+        "romanizedName": "Aro Aro no Mi",
+        "japaneseName": "アロアロの実",
+        "nameMeaning": "Arrow",
+        "type": "Paramecia",
+        "user": "Manmayer Gunko",
+        "power": 74,
+        "rarity": 3,
+        "about": "A Paramecia-type Devil Fruit that turns the user into an Arrow Human, granting the ability to generate and control tangible, nearly indestructible arrows that can pierce, bind, and redirect motion. The arrows can be combined into constructs like lances, enormous gauntlets, or even a flyable bird, and can add momentum to the user's strikes or force targets along a set path.",
+        "img": {
+            "fruit": "noImg",
+            "user": "noImg"
+        },
+        "isAwakened": false,
+        "isCanon": true
     }
 ]

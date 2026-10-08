@@ -4355,6 +4355,36 @@ const fruitsExpandedInfo = [
             "The fruit shares thematic similarities with the game-exclusive Nemu Nemu no Mi and the movie-original Uta Uta no Mi in its sleep-inducing power, and with the Fude Fude no Mi in its ability to manifest objects into reality."
         ],
         "images": []
+    },
+    {
+        "id": "b4e8a1d6-3c7f-4e29-9a5b-8d1f6c2e7a30",
+        "name": "Arrow-Arrow Fruit",
+        "firstAppearance": "Episode 1165",
+        "abilities": [
+            "A Paramecia fruit that turns the user into an Arrow Human, letting them generate arrow-shaped strips from their body that resemble floating bandages. The user detaches these arrows with a chopping motion and steers them telekinetically through hand gestures. The arrows are tangible yet nearly indestructible, and outside force cannot move them, so only the user can change their direction. Beyond direct attacks, they manipulate motion itself: arrows can add velocity and momentum to the user's strikes, redirect incoming attacks back at their source, and form paths that carry anyone on them in a set direction."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Arrows are tangible but nearly indestructible, and only the user can alter their direction",
+            "Versatile offense: piercing projectiles fired like gunfire, stakes that pin opponents to the ground, and constricting bindings that can cripple or suffocate a target",
+            "Bound targets can be carried around by telekinesis, with their size and weight doing little to slow the arrows down",
+            "Arrows can be combined into lances, enormous gauntlets and boots, or a flyable bird-shaped platform for transport",
+        ],
+        "weaknesses": [
+            "Most techniques must be telegraphed through arrows beforehand, giving opponents a chance to predict and react",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 74,
+            "defense": 62,
+            "utility": 82
+        },
+        "trivia": [
+            "The name comes from 'aro', the Japanese pronunciation of the English word 'arrow'.",
+            "The VIZ manga renders the user's 'X Human' title as 'Arrow-Woman' instead of Arrow Human.",
+            "During the plan to take the Walrus School students hostage, Gunko combined her power with Sommers' Thorn-Thorn Fruit and Killingham's Kirin fruit: Killingham put the children to sleep, Gunko's arrows guided them toward a ship, and Sommers' invisible thorns kept anyone from stopping them."
+        ],
+        "images": []
     }
 ]
 
