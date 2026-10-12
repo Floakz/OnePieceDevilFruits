@@ -84,7 +84,7 @@ export default function AppRoutes() {
 
                 {/* Quizzes */}
                 <Route path="/quizzes" element={<Quizzes />} />
-                <Route path="/quizzes/:id" element={<ExpandedQuizz />} />
+                <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

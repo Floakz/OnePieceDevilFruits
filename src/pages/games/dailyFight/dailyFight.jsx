@@ -350,14 +350,23 @@ export default function DailyFight() {
                             <div className={styles.LeftresultsWrapper}>
                                 <div className={`${styles.LeftresultsBar} ${votedSide === "left" ? styles.votedResultsBar : votedSide === "right" ? styles.unselectedResultsBar : ""}`}>
                                     {votedSide === "left" && <span className={styles.yourVote}>Your vote</span>}
-                                    {voteCount.leftPct}%
+                                    <div className={styles.resultValue}>
+                                        <span>{voteCount.leftPct}%</span>
+                                        <span className={styles.resultVoteCount}>{voteCount.left} {voteCount.left === 1 ? "vote" : "votes"}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.RightresultsWrapper}>
                                 <div className={`${styles.RightresultsBar} ${votedSide === "right" ? styles.votedResultsBar : votedSide === "left" ? styles.unselectedResultsBar : ""}`}>
                                     {votedSide === "right" && <span className={styles.yourVote}>Your vote</span>}
-                                    {voteCount.rightPct}%
+                                    <div className={styles.resultValue}>
+                                        <span>{voteCount.rightPct}%</span>
+                                        <span className={styles.resultVoteCount}>{voteCount.right} {voteCount.right === 1 ? "vote" : "votes"}</span>
+                                    </div>
                                 </div>
+                            </div>
+                            <div className={styles.totalVoteCount}>
+                                {voteCount.left + voteCount.right} total {voteCount.left + voteCount.right === 1 ? "vote" : "votes"}
                             </div>
                         </div>}
 

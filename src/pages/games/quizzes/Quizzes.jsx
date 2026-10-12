@@ -1,16 +1,12 @@
 // pages/games/Quizzes.jsx
-import { useEffect, useState, useRef } from "react";
 import Header from "../../../Components/header/Header";
 import Footer from "../../../Components/footer/footer";
 import Seo from "../../../Components/Seo";
 import styles from './Quizzes.module.css';
 import { quizzes } from "../../../utils/quizzes";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Quizzes() {
-
-    const navigate = useNavigate();
-
     const imgUrl = 'https://cd-opf.pages.dev/quizzes/'
 
     return (
@@ -32,8 +28,8 @@ export default function Quizzes() {
 
                     <div className={styles.fullQuizzGrid}>
                         {quizzes.map((quiz) => (
-                            <div
-                                onClick={() => navigate(`/quizzes/${quiz.id}`)}
+                            <Link
+                                to={`/quizzes/${quiz.slug}`}
                                 key={quiz.id}
                                 className={styles.quizCard}>
 
@@ -41,9 +37,16 @@ export default function Quizzes() {
                                     style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)`, height: '50%', width: '100%', backgroundSize: 'cover', backgroundPosition: 'center', borderRadius: '10px 10px 0 0' }}
 
                                 ></div>
-                                <div>  <h2>{quiz.title}</h2>
-                                    <p>{quiz.description}</p></div>
-                            </div>
+                                <div>
+                                    <h2>{quiz.title}</h2>
+                                    <p>{quiz.description}</p>
+                                    <p className={styles.quizMeta}>
+                                        <span>{quiz.questions.length} {quiz.questions.length === 1 ? "question" : "questions"}</span>
+                                        <span aria-hidden="true">•</span>
+                                        <span>Difficulty: {quiz.difficulty}/5</span>
+                                    </p>
+                                </div>
+                            </Link>
                         ))}
 
 

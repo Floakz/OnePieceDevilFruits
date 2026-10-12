@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -31,6 +31,11 @@ const cleanDescription = (value = "") => {
 };
 
 const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v15.json"), "utf8"));
+const quizDirectory = path.join(ROOT, "src", "lib", "quizzes", "allQuizzes");
+const quizFiles = (await readdir(quizDirectory)).filter((file) => file.endsWith(".json"));
+const quizData = await Promise.all(
+    quizFiles.map(async (file) => JSON.parse(await readFile(path.join(quizDirectory, file), "utf8")))
+);
 const shell = await readFile(path.join(DIST, "index.html"), "utf8");
 
 function jsonLd(value) {
@@ -173,13 +178,42 @@ for (const [route, heading, description] of utilityPages) {
     await writeRoute(route, renderDocument({ title: `${heading} | One Piece Devil Fruits`, description, canonical, structuredData }, content));
 }
 
-const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`)];
+for (const quiz of quizData) {
+    const slug = slugify(quiz.title);
+    const route = `/quizzes/${slug}`;
+    const canonical = `${SITE}${route}`;
+    const image = `${CDN}/quizzes/${quiz.id}/cover.webp`;
+    const title = `${quiz.title} | One Piece Quizzes`;
+    const description = cleanDescription(quiz.description);
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@graph": [
+            breadcrumb([
+                { name: "Home", path: "/" },
+                { name: "One Piece Quizzes", path: "/quizzes" },
+                { name: quiz.title, path: route },
+            ]),
+            { "@type": "WebPage", name: quiz.title, url: canonical, description, image },
+        ],
+    };
+    const content = `${prerenderStyle}<main class="prerender-detail"><nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/quizzes">One Piece Quizzes</a> / <span>${escapeHtml(quiz.title)}</span></nav><article><img src="${image}" alt="${escapeHtml(quiz.title)}" width="640" height="360"><h1>${escapeHtml(quiz.title)}</h1><p>${escapeHtml(description)}</p></article></main>`;
+    await writeRoute(route, renderDocument({ title, description, canonical, image, type: "article", structuredData }, content));
+}
+
+const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`), ...quizData.map((quiz) => `/quizzes/${slugify(quiz.title)}`)];
 const fruitByRoute = new Map(fruitData.map((fruit) => [`/fruit/${slugify(fruit.name)}`, fruit]));
+const quizByRoute = new Map(quizData.map((quiz) => [`/quizzes/${slugify(quiz.title)}`, quiz]));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${sitemapUrls.map((route) => {
     const fruit = fruitByRoute.get(route);
-    return `  <url><loc>${escapeXml(`${SITE}${route}`)}</loc>${fruit ? `<image:image><image:loc>${escapeXml(`${CDN}/fruits/${fruit.id}.webp`)}</image:loc><image:title>${escapeXml(fruit.name)}</image:title></image:image>` : ""}</url>`;
+    const quiz = quizByRoute.get(route);
+    const imageEntry = fruit
+        ? `<image:image><image:loc>${escapeXml(`${CDN}/fruits/${fruit.id}.webp`)}</image:loc><image:title>${escapeXml(fruit.name)}</image:title></image:image>`
+        : quiz
+            ? `<image:image><image:loc>${escapeXml(`${CDN}/quizzes/${quiz.id}/cover.webp`)}</image:loc><image:title>${escapeXml(quiz.title)}</image:title></image:image>`
+            : "";
+    return `  <url><loc>${escapeXml(`${SITE}${route}`)}</loc>${imageEntry}</url>`;
 }).join("\n")}
 </urlset>\n`;
 await writeFile(path.join(DIST, "sitemap.xml"), sitemap, "utf8");
@@ -191,6 +225,9 @@ for (const fruit of fruitData) {
     redirects.set(`/fruit/${fruit.id}`, canonical);
     const romanized = slugify(fruit.romanizedName);
     if (romanized && romanized !== slugify(fruit.name)) redirects.set(`/fruit/${romanized}`, canonical);
+}
+for (const quiz of quizData) {
+    redirects.set(`/quizzes/${quiz.id}`, `/quizzes/${slugify(quiz.title)}`);
 }
 const redirectLines = [
     "/fruits / 301",
@@ -204,4 +241,4 @@ await writeFile(path.join(DIST, "_redirects"), `${redirectLines.join("\n")}\n`, 
 const notFoundContent = `${prerenderStyle}<main class="prerender-page"><h1>Page not found</h1><p>The page you requested does not exist.</p><p><a href="/">Browse all Devil Fruits</a></p></main>`;
 await writeFile(path.join(DIST, "404.html"), renderDocument({ title: "Page Not Found | One Piece Devil Fruits", description: "The requested page could not be found.", canonical: `${SITE}/404`, noindex: true }, notFoundContent), "utf8");
 
-console.log(`Prerendered ${fruitData.length} fruit pages and ${listingPages.length + utilityPages.length} index pages.`);
+console.log(`Prerendered ${fruitData.length} fruit pages, ${quizData.length} quiz pages and ${listingPages.length + utilityPages.length} index pages.`);
