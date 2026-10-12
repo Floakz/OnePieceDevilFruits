@@ -167,6 +167,19 @@
     font-size: 1em;
 }
 
+.gridDiv2x2 .arcLink {
+    color: #f8de3c;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(248, 222, 60, 0.45);
+    text-underline-offset: 3px;
+}
+
+.gridDiv2x2 .arcLink:hover,
+.gridDiv2x2 .arcLink:focus-visible {
+    color: #ffffff;
+}
+
 .spanTag {
     padding: 2px 5px;
     margin-left: 5px;

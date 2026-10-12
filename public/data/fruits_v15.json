@@ -16,7 +16,8 @@
         "rarity": 1,
         "about": "A Paramecia fruit that lets the user create chewy dango from their cheeks. These sweet dumplings carry a strange charm, taming wild animals and even part-animal beings with a single bite. Cute to look at, dangerous in effect.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "03b1c5ed-d71d-45ee-8853-84dc7aad7ae8",
@@ -35,7 +36,8 @@
         },
         "about": "A Paramecia fruit that lets the user conjure nearly unbreakable barriers at will. These invisible walls can shield, trap, or smash opponents, turning the eater into a true Barrier Human. Simple power, brutal results.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "04586c2e-4407-46d1-986b-96b38a2fe264",
@@ -54,7 +56,8 @@
         },
         "about": "A Paramecia fruit that allows the user to release a mighty genie from their own body. This living spirit can fight, defend, and grant devastating attacks, turning the eater into a walking magic lamp.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "09569647-1e01-41c9-b6d1-2d4fb62b54d8",
@@ -73,7 +76,8 @@
         },
         "about": "A Paramecia fruit that grants the power to leap forward through time. The user can propel themselves or others into the future, skipping danger entirely while leaving the present behind.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "0b8f22e3-2841-4e2e-a330-cef2746b4490",
@@ -92,7 +96,8 @@
         },
         "about": "An Ancient Zoan fruit that lets the user shift between a towering brachiosaurus hybrid and a full colossal dinosaur. With immense strength, crushing weight, and a neck that reaches the heavens, this power turns its eater into a living relic of prehistoric might.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "0c454f3d-1ca0-4b22-a631-5de7dd1f8b4b",
@@ -111,7 +116,8 @@
         },
         "about": "A Logia fruit that grants total mastery over sand. The user can create, control, and even become swirling grains of desert, slicing foes with razor winds or draining all moisture in reach, embodying the relentless power of a Sand Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "0cb67738-3d08-4038-9895-37701cafab51",
@@ -130,7 +136,8 @@
         "rarity": 1,
         "about": "A Paramecia fruit that lets the user fuse their body with others, blending minds, limbs, and abilities into a single chaotic form. Each merge creates unpredictable combinations, making the eater a living patchwork of power.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "124f8eea-223f-4de1-a6e3-5c727179a5a6",
@@ -149,7 +156,8 @@
         "type": "Paramecia",
         "user": "Van Augur",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "12708145-c2bd-480f-be4a-74aaa4f8f8ea",
@@ -168,7 +176,8 @@
         },
         "about": "A Paramecia fruit that creates a spherical “Room” where the user can cut, swap, and rearrange anything—bodies, objects, even themselves—without causing harm. Inside this domain they become a surgeon of reality, a true Free-Modification Human.",
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "187e7b71-39b6-491a-b052-90ac350a2643",
@@ -187,7 +196,8 @@
         },
         "about": "A Zoan fruit that grants the power to shift into a human or a human hybrid at will. Whether beast or object, the eater gains human form, mind, and surprising strength, embodying the essence of humanity itself.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Drum Island"
     },
     {
         "id": "1a96a89c-39dd-4076-a4a7-d72fbf90dd43",
@@ -206,7 +216,8 @@
         },
         "about": "A Zoan fruit that lets the user take the form of a soaring albatross or a swift bird-human hybrid. With unmatched wingspan and endless stamina, the eater commands the skies with ocean-crossing speed.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "1b73363a-5490-4abc-aa86-e528a3f10d23",
@@ -225,7 +236,8 @@
         "rarity": 1,
         "about": "A Paramecia fruit that lets the user whip up and control endless cream. Smooth or deadly thick, this sweet weapon can smother foes, trap targets, or harden into barriers, turning the eater into a true Cream Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "1c853f73-073f-4bae-be90-901ce31c9ca5",
@@ -244,7 +256,8 @@
         },
         "about": "A Paramecia fruit that lets the user copy anyone they touch, perfectly mimicking their appearance and voice. With a single tap they can become a flawless double, making the eater a master of disguise and the ultimate Imitating Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "2422873d-5104-4b79-bb48-a64e7fda415c",
@@ -263,7 +276,8 @@
         },
         "about": "A Paramecia fruit that allows the user to produce healing liquid from their own body—tears, sweat, or even blood. A single drop can mend wounds or cure injuries, turning the eater into a living fountain of recovery.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "25c7ba78-4e3c-40f1-9bef-2b9e2af8dbd4",
@@ -282,7 +296,8 @@
         "rarity": 1,
         "about": "A Paramecia fruit that lets the user age anything they touch, speeding it to ripeness or rot. From instant maturity to sudden decay, this power grants total control over the flow of time in whatever they handle.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "27264f75-a52c-4e6b-9bc0-0e8736284228",
@@ -301,7 +316,8 @@
         },
         "about": "A Logia fruit that grants control over pure lightning. The user can generate storms, travel as electricity, and strike with instant, devastating force, earning the title of Lightning Human—one of the rare powers deemed nearly invincible.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Skypiea"
     },
     {
         "id": "2742128e-2699-4211-9c71-7bfcd584a371",
@@ -320,7 +336,8 @@
         },
         "about": "An Ancient Zoan fruit that lets the user become a ferocious allosaurus or a powerful dino-human hybrid. With savage jaws, crushing strength, and predatory speed, this power revives the deadly hunter of a lost age.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "291a5934-0eab-4691-9fd8-a64b41624c09",
@@ -339,7 +356,8 @@
         },
         "about": "A Zoan fruit that allows the user to transform into a sturdy turtle or a turtle-human hybrid at will. Its power grants a near-impenetrable shell and patient endurance, making the eater a living fortress.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Fish-Man Island"
     },
     {
         "id": "2bbd9b25-5ce1-46a1-99c4-f0a2f913f557",
@@ -358,7 +376,8 @@
         },
         "about": "A Mythical Zoan fruit that grants the power to become a hybrid or full form of the legendary wolf deity. The user gains divine strength, keen senses, and an icy presence worthy of a sacred guardian of the mountains.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "2d65532f-1068-4d5c-ba8a-a4babdd27ec0",
@@ -377,7 +396,8 @@
         },
         "about": "A Paramecia fruit that lets the user conjure clothing and accessories from almost anything, from leaves to stones. By picturing the design in their mind, they can dress themselves or others instantly, becoming a living fashion workshop.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "2d8d7116-a89f-4cbf-9893-6e1156045a7e",
@@ -396,7 +416,8 @@
         },
         "about": "A Paramecia fruit that allows the user to open doors through any surface, even their own body. From a hand-sized hatch to a full-body gateway, these passages stay open to anyone until sealed, making the eater a true Door Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Water 7"
     },
     {
         "id": "2e586e6d-aa53-4600-8210-aba727e82b7a",
@@ -415,7 +436,8 @@
         },
         "about": "A Zoan fruit that lets the user shift into a mole or a mole-human hybrid at will. With powerful claws and an instinct for tunneling, the eater becomes a stealthy Mole Human, able to dig and strike from beneath the earth.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "2edc9c8c-3638-42f9-b10f-036edd5cef5d",
@@ -434,7 +456,8 @@
         "power": 98,
         "about": "A Mythical Zoan fruit that grants the power to become a mighty Azure Dragon in full or hybrid form. Counted among the strongest of all Devil Fruits and once prized as a World Noble treasure, it bestows colossal strength, storm-breathing fury, and the majesty of a living legend.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "306f5af1-9c4d-4c3f-88c2-79dec50f93c9",
@@ -453,7 +476,8 @@
         },
         "about": "A Paramecia fruit that allows the user to transform into a living jacket that others can wear. Once donned, the wearer’s body becomes the user’s to control, turning the eater into a sneaky and unpredictable Jacket Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "3455ae44-758e-40b5-9866-ae39f81121de",
@@ -472,7 +496,8 @@
         "user": "Vegapunk",
         "about": "A Paramecia fruit that lets the user’s brain grow without limit, storing endless knowledge and memories. This boundless intellect turns the eater into a true Brains Human, capable of mastering any skill or secret.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "34d9afbd-a50a-4879-9422-401c7735bf5b",
@@ -491,7 +516,8 @@
         "power": 95,
         "about": "A Logia fruit that grants the power to create, control, and become ice. The user can freeze oceans, shape icy weapons, and turn their own body into living frost, earning the title of Freezing Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Long Ring Long Land"
     },
     {
         "id": "36bf8750-7186-48b0-92e2-fccf726aa1a4",
@@ -510,7 +536,8 @@
             "user": "https://i.ibb.co/Q3dWHVM8/Foxy-Anime-Pre-Timeskip-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Long Ring Long Land"
     },
     {
         "id": "3a970a68-15dd-456c-98df-6d4ec2effad7",
@@ -529,7 +556,8 @@
         },
         "about": "A Paramecia fruit that lets the user transform objects into edible food at will. From weapons to walls, anything touched can become a feast, turning the eater into a walking banquet of endless possibilities.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "3b24d864-ae46-4146-a1f7-6380076a0534",
@@ -548,7 +576,8 @@
             "user": "https://i.ibb.co/zWWxkg0Q/Senor-Pink-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "3e6cecd7-2a21-4429-a0ea-472655935312",
@@ -567,7 +596,8 @@
             "user": "https://i.ibb.co/Jj4TZTRd/Donquixote-Doflamingo-Anime-Infobox.webp"
         },
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "3e70324a-3104-45fc-a4aa-7fc6c317fcf3",
@@ -586,7 +616,8 @@
             "user": "https://i.ibb.co/1JnQTGBZ/Chaka-Anime-Infobox.webp"
         },
         "isAwakened": null,
-        "isCanon": null
+        "isCanon": null,
+        "debutArc": "Arabasta"
     },
     {
         "id": "3e8cf042-7e01-47ea-a3db-81bdb3b904df",
@@ -605,7 +636,8 @@
         "type": "Paramecia",
         "user": "Doc Q",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "3f719c1c-2dbe-4480-bcfc-5a6b660d068b",
@@ -624,7 +656,8 @@
         "type": "Paramecia",
         "user": "Avalo Pizarro",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "4144b2d1-c577-473f-b61c-2daec88aac73",
@@ -643,7 +676,8 @@
         },
         "about": "A Zoan fruit that allows the user to become a playful tanuki or a tanuki-human hybrid at will. With nimble movements and natural trickster charm, the eater gains the sly adaptability of this legendary raccoon-dog.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "416a57b4-f1a4-41ce-85f8-f31761b2b17f",
@@ -662,7 +696,8 @@
         "rarity": 3,
         "about": "An Ancient Zoan fruit that lets the user transform into a Rosamygale grauvogeli, an extinct giant spider, or a human-spider hybrid. This power grants venomous fangs, powerful webs, and the eerie hunting skills of a prehistoric predator.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "42b0f3ff-8dea-4a66-bcff-d4801f87a60e",
@@ -681,7 +716,8 @@
         },
         "about": "A Paramecia fruit that turns the user’s body into living steel blades. Limbs can fold into swords or launch slicing attacks, making the eater a walking arsenal and a deadly Full-Body Bladed Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "43dfb53e-510b-48eb-aa9e-77bbc03e0e0a",
@@ -700,7 +736,8 @@
         },
         "about": "A Paramecia fruit that gives the user the power to corrode metal with a touch. Weapons, armor, and machines crumble to rust in seconds, turning the eater into a relentless Rust Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Post-Enies Lobby"
     },
     {
         "id": "446ad5e8-ae7c-4f9d-b6a8-44d4f7e88ff1",
@@ -719,7 +756,8 @@
         },
         "about": "A Paramecia fruit that lets the user rouse hidden strength in others. With a word or a touch, they can ignite courage and draw out latent power, turning ordinary allies into fearless fighters.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Levely"
     },
     {
         "id": "47f53322-9283-429e-8410-9c303159c041",
@@ -738,7 +776,8 @@
         "rarity": 4,
         "about": "A Logia fruit that grants control over soot. The user can generate thick clouds of black dust, shape it into weapons, or dissolve into drifting ash, becoming a stealthy and suffocating Soot Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Post-War"
     },
     {
         "id": "488246a5-5153-416d-bdb7-a1aafc252f57",
@@ -757,7 +796,8 @@
         },
         "about": "A Logia fruit that grants the power to create, control, and become pure darkness. Its gravity-like pull can swallow attacks, crush foes, and drag everything into a black void, earning it the title of Darkness Human and the most feared ability among all Devil Fruits.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Post-Enies Lobby"
     },
     {
         "id": "48a16313-828e-4ae5-b0d3-522a47fad3fd",
@@ -776,7 +816,8 @@
         },
         "about": "An Ancient Zoan fruit that lets the user transform into a saber-toothed tiger or a fierce tiger-human hybrid at will. With massive fangs, explosive speed, and primal strength, the eater becomes a predator from the age of giants.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "48dfcd51-08fd-45ea-b5d7-33912aac00bd",
@@ -795,7 +836,8 @@
         },
         "about": "A Paramecia fruit that allows the user to wash and hang people or objects as if they were laundry. Victims are scrubbed clean and left hanging, weakened and helpless, making the eater a playful yet dangerous Laundry Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "4a4af37d-bd12-4366-9f51-a4cfb7cef101",
@@ -814,7 +856,8 @@
         },
         "about": "A Paramecia fruit that lets the user create and control soap and bubbles that cleanse more than dirt. These slick suds can wash away strength and abilities, turning the eater into a deceptively dangerous Soap Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "4d196de2-9830-4ced-bd48-1633972d9de9",
@@ -833,7 +876,8 @@
         },
         "about": "A Paramecia fruit that allows the user to merge with and control stone. They can shape walls, create weapons, or move through solid rock itself, becoming a formidable Stone Assimilation Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "4f1a1050-5eb8-4ec7-b8f6-8628cf19d34f",
@@ -852,7 +896,8 @@
         "type": "Paramecia",
         "user": "Sanjuan Wolf",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "4f1b1298-3fc0-495b-9345-9112d1daa4b2",
@@ -871,7 +916,8 @@
         },
         "about": "A Mythical Zoan fruit that grants the power to become a nine-tailed fox. The user can shift into a full fox or a cunning hybrid, gaining illusionary tricks and supernatural charm worthy of legend.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "5214641d-1bbf-4440-b3ce-7c85d1e758aa",
@@ -890,7 +936,8 @@
         },
         "about": "A Zoan fruit that gives the user the body of an egg. When the shell is cracked, they regenerate into a stronger form each time, gradually taking on more chicken-like traits and hatching new power with every break.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "52eb0032-1919-4198-9da8-54df0eb61804",
@@ -909,7 +956,8 @@
         },
         "about": "A Paramecia fruit that allows the user to shift their body weight anywhere between 1 and 10,000 kilograms without changing their size. This power grants crushing force or feather-light agility at will.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whisky Peak"
     },
     {
         "id": "566d7c09-6866-4455-b85b-d3a05609c671",
@@ -928,7 +976,8 @@
         "previousUser": "Joy Boy",
         "about": "Once believed to be a simple Paramecia granting a rubber body, this Mythical Zoan: Model Nika holds a far greater secret. It transforms its user into the legendary Sun God, giving them not just elasticity, but the power of freedom itself, to fight, to move, and to smile without limits.",
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Romance Dawn"
     },
     {
         "id": "575c590d-f740-445a-ac87-4778953eea3e",
@@ -947,7 +996,8 @@
         },
         "about": "A Zoan fruit that lets the user transform into a king cobra or a cobra-human hybrid at will. This power grants deadly fangs, swift strikes, and the ability to produce and spit potent venom, making the eater a living serpent of lethal precision.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Amazon Lily"
     },
     {
         "id": "58056cae-2074-4f51-b3d9-2f0183650396",
@@ -966,7 +1016,8 @@
         },
         "about": "A Mythical Zoan fruit that allows the user to transform into a towering golden Buddha. This form grants immense size, overwhelming strength, and a radiant shockwave power worthy of divine force.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "58b34368-c259-4b42-9a18-f3387b440e08",
@@ -985,7 +1036,8 @@
             "user": "https://i.ibb.co/CrSKLvh/Vander-Decken-IX-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Fish-Man Island"
     },
     {
         "id": "5ae785ae-edd9-436e-ae59-cea5cd6ede18",
@@ -1004,7 +1056,8 @@
         },
         "about": "A Paramecia fruit that empowers the user’s soul to return after death. This second life unlocks a range of spirit-based abilities, making the eater a true Reviving Human with power over the realm between life and afterlife.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Thriller Bark"
     },
     {
         "id": "5c0847a6-6f5c-4976-801c-872e2b6b29ca",
@@ -1023,7 +1076,8 @@
         },
         "about": "A Paramecia fruit that grants control over books. The user can command pages to fly, trap foes within stories, or wield tomes as weapons, becoming a cunning and dangerous Book Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "5d3bff23-ad5b-49d0-bebf-7a7fd34ae17a",
@@ -1042,7 +1096,8 @@
         },
         "about": "Paramecia fruit that allows the user to produce powerful hormones capable of reshaping the body. With a single injection they can change appearance, gender, or physical condition, making the eater a versatile Hormone Controlling Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Impel Down"
     },
     {
         "id": "5e05b819-8698-4e3e-a56a-90d14517a694",
@@ -1061,7 +1116,8 @@
             "user": "https://i.ibb.co/YFWxjCJv/what-are-your-thoughts-on-kurozumi-orochi-would-you-v0-mbipeyp18nnd1.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "5e9f6018-f711-4f0e-8a8d-f10924a7f2f9",
@@ -1080,7 +1136,8 @@
         },
         "about": "A Paramecia fruit that allows the user to transform people or objects into living abstract art. With a touch, reality twists into surreal shapes and colors, making the eater a true Art Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "5eaf9ec7-2079-4ec3-8f31-3b6b37dc037a",
@@ -1099,7 +1156,8 @@
         },
         "about": "A Paramecia fruit that grants the power to create and control candy. The user can mold syrup into weapons or traps, sealing foes in sticky sweetness and becoming a dangerously deceptive Candy Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "5f07dd73-36ad-40f5-b38b-488d55a53908",
@@ -1118,7 +1176,8 @@
             "fruit": "https://i.ibb.co/vvvmjqvq/Gira-Gira-no-Mi.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "5f0e9472-ea27-4a59-a343-6196a352c27d",
@@ -1137,7 +1196,8 @@
         },
         "about": "A Paramecia fruit that lets the user turn their limbs into powerful springs. This ability gives explosive bouncing speed and devastating recoil attacks, making the eater a relentless Spring Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Jaya"
     },
     {
         "id": "5ff126e1-a851-4209-b1f7-0045dd779336",
@@ -1156,7 +1216,8 @@
         },
         "about": "A Paramecia fruit that lets the user produce and shape endless streams of candle wax. This wax can harden into armor, weapons, or traps, turning the eater into a versatile and dangerous Candle Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Little Garden"
     },
     {
         "id": "64f8a634-b44b-4937-8bdb-94a135372056",
@@ -1175,7 +1236,8 @@
         },
         "about": "A Paramecia fruit that allows the user to form pockets anywhere on their body. These living compartments can store items of any size, turning the eater into a walking vault of limitless storage.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "66399f13-ab58-43e0-ad8d-5793068b5e8b",
@@ -1194,7 +1256,8 @@
             "user": "https://i.ibb.co/pjwbNPRC/Kaku-Anime-Pre-Timeskip-Infobox.webp"
         },
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "674fb365-cefe-479b-8578-9854c22f91a9",
@@ -1213,7 +1276,8 @@
         },
         "about": "A Paramecia fruit that grants control over age itself. The user can age people or objects forward or backward at will, making the eater a formidable Age Manipulation Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "677f28c4-858d-47c0-ba56-f835f785f2ab",
@@ -1232,7 +1296,8 @@
         },
         "about": "A Paramecia fruit that lets the user create and control biscuits at will. These crunchy constructs can form shields, weapons, or entire armies, making the eater a crafty and durable Biscuit Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "68f5d3b9-6c32-4e54-bdb0-a14a59467942",
@@ -1251,7 +1316,8 @@
         },
         "about": "A Zoan fruit that allows the user to transform into a dachshund or a dachshund-human hybrid at will. This power grants sharp senses, surprising speed, and the loyal tenacity of the long-bodied hound.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "6a3ec262-9076-470a-ab62-f9fa857793b3",
@@ -1270,7 +1336,8 @@
             "user": "https://i.ibb.co/4Bwb65n/Very-Good-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "6d764087-9053-49aa-9634-8c4ad169f39b",
@@ -1289,7 +1356,8 @@
             "user": "https://i.ibb.co/cXb5rg2n/Jack-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "6fec0f58-d375-4979-b193-6a9dd77cde92",
@@ -1308,7 +1376,8 @@
             "user": "https://i.ibb.co/tpqmdqRk/Magellan-Anime-Pre-Timeskip-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Impel Down"
     },
     {
         "id": "704c8868-a280-4015-8c9e-a1314ce55518",
@@ -1327,7 +1396,8 @@
             "user": "https://i.ibb.co/j9WHm1ZV/Donquixote-Rosinante-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "72c37a8f-6077-4603-bed3-42cf6dd732da",
@@ -1346,7 +1416,8 @@
         },
         "about": "A Logia fruit that grants the power to create, control, and become light. The user can move at light speed and bounce across reflective surfaces, making them a dazzlingly fast and unstoppable Light Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "74d84e97-88df-41eb-ae99-6ed20dfc15f1",
@@ -1365,7 +1436,8 @@
             "fruit": "https://i.ibb.co/nFSYdX2/Phoenix-Fruit.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "779186d4-bfeb-4f81-983e-1ce2c3c8f3ea",
@@ -1384,7 +1456,8 @@
             "user": "https://i.ibb.co/VWN7tfcb/Machvise-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "7793d8c6-005b-41b6-94eb-d45c260ef71c",
@@ -1403,7 +1476,8 @@
             "fruit": "https://i.ibb.co/yFL7BKGp/monchi-fruit.webp"
         },
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "7891d9ff-5621-415d-90e5-07429ab84e1a",
@@ -1422,7 +1496,8 @@
             "user": "https://i.ibb.co/wZBPqLBz/Wapol-Anime-Post-Timeskip-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Drum Island"
     },
     {
         "id": "7982c730-2937-4a9d-9371-cc22f1c90a52",
@@ -1441,7 +1516,8 @@
         },
         "about": "A Logia fruit that grants the power to create, control, and become magma. The user can unleash searing heat and molten destruction, embodying the unstoppable force of a Magma Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "7bb1c20b-fe30-4344-822c-0aa016408bce",
@@ -1460,7 +1536,8 @@
         },
         "about": "A Paramecia fruit that allows the user to create and control straw imbued with damage-redirecting properties. This power lets the eater weave traps, shields, and deadly constructs, turning simple straw into a weapon of cunning defense.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "7e5063c3-429c-4bba-bfbe-f09968c901c0",
@@ -1479,7 +1556,8 @@
         },
         "about": "A Paramecia fruit that allows the user to turn living beings into toys and erase all memories of their existence. As a twisted bonus, the eater also gains eternal youth, making this power both playful and terrifying.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "7ec9e5ec-8b23-482d-9e15-2712445622ba",
@@ -1498,7 +1576,8 @@
         },
         "about": "A Paramecia fruit that gives the user the power to stitch or un-stitch anything as if reality were fabric. From mending wounds to tearing objects apart, this ability makes the eater a master of seamless creation and undoing.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "80a9b2ad-0669-4063-92db-e49fc1ac1e29",
@@ -1517,7 +1596,8 @@
         },
         "about": "A Logia fruit that grants the power to create, control, and become snow. The user can summon blizzards, sculpt icy landscapes, and vanish into drifting flakes, becoming a graceful yet deadly Snow Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "82bb0e96-11f4-41ab-bcc3-766e449b7903",
@@ -1536,7 +1616,8 @@
         },
         "about": "A Paramecia fruit that allows the user to detonate any part of their body—limbs, hair, even a sneeze. Each blast leaves them unharmed, turning the eater into a living arsenal and a fearsome Bomb Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whisky Peak"
     },
     {
         "id": "85cbd3c9-dd95-44a5-9a44-970919c80ef4",
@@ -1555,7 +1636,8 @@
         },
         "about": "A Paramecia fruit that makes the user’s body perfectly smooth and slippery. Attacks and objects slide off harmlessly, and any excess fat simply slips away, leaving the eater slim, slick, and nearly untouchable.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Loguetown"
     },
     {
         "id": "874f56a5-ca00-46ac-9458-c6339c41c459",
@@ -1574,7 +1656,8 @@
         "rarity": 1,
         "about": "A Paramecia fruit that lets the user wring liquid out of anything—living or not—and absorb it into themselves or their weapons. This draining power makes the eater a dangerous and unstoppable Dehydration Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "8d4c1aa7-e798-412b-85c7-2e7302970c9a",
@@ -1593,7 +1676,8 @@
         },
         "about": "A Paramecia fruit that grants the power to generate magnetic forces and command metal. The user can pull, repel, and reshape metallic objects at will, wielding magnetic might as a living magnet master.",
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "93620d09-4531-4026-b7a9-40aa4bac80f1",
@@ -1612,7 +1696,8 @@
         "about": "A Paramecia fruit that allows the user to generate massive vibrations and quakes. Its earth-shattering power can crack seas, topple islands, and threaten the world itself, earning the eater the fearsome title of Tremor Human.",
         "user": "Marshall D. Teach",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Marineford"
     },
     {
         "id": "93e3a3b9-ac96-41bc-a098-7a12283c3ca5",
@@ -1631,7 +1716,8 @@
         },
         "about": "A Paramecia fruit that grants the power of invisibility. The user can render themselves and anything they touch unseen, turning the eater into a stealthy and elusive Clear Human.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Thriller Bark"
     },
     {
         "id": "93e9dfa7-40d9-405d-bba0-37da07d0254c",
@@ -1650,7 +1736,8 @@
             "fruit": "https://i.ibb.co/NnVzBGSZ/strong-strong-fruit.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "9611ddc5-980c-4cca-8cfd-02a981f8a8b0",
@@ -1669,7 +1756,8 @@
         },
         "about": "A Paramecia fruit that allows the user to levitate themselves and lift non-living objects into the air. With this floating power, the eater can glide, hurl debris, and command the skies with ease.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Little East Blue (Non-canon)"
     },
     {
         "id": "9a29b4d8-d5aa-4ea6-bc7e-6b57b54da74b",
@@ -1688,7 +1776,8 @@
             "user": "https://i.ibb.co/tptyQXhH/Bian-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "9a6812d5-e9cb-4721-a381-3e3dd58d348b",
@@ -1707,7 +1796,8 @@
         "type": "Paramecia (unconfirmed)",
         "user": "Prince Grus",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "9d062568-5641-44d2-a550-e00443282a53",
@@ -1726,7 +1816,8 @@
         },
         "about": "An Ancient Zoan fruit that allows the user to transform into a spinosaurus or a spinosaurus-human hybrid at will. This power grants massive strength, a sail-like back for aquatic agility, and the ferocity of a primeval apex predator.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "a1fdacfb-3924-4aeb-b973-819207bed1b8",
@@ -1745,7 +1836,8 @@
             "user": "https://i.ibb.co/V6ybDTr/Morley-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Levely"
     },
     {
         "id": "a207bfb2-00be-49a9-9653-34e08d8af057",
@@ -1764,7 +1856,8 @@
         },
         "about": "A Paramecia fruit that grants control over souls. The user can extract life spans, animate objects with fragments of spirit, and command living homies, making them a true master of souls.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Fish-Man Island"
     },
     {
         "id": "a3c643da-69e8-4ad3-bedb-7fa6a42b86dd",
@@ -1783,7 +1876,8 @@
         "japaneseName": "ヌマヌマの実",
         "nameMeaning": "Swamp",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Return to Sabaody"
     },
     {
         "id": "a7bc5584-ca5e-48aa-8fef-ab6dedb935da",
@@ -1802,7 +1896,8 @@
             "user": "https://i.ibb.co/1t0TX8JC/Baby-5-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "a90cf2bf-bd90-4fac-ae0f-cf33b9949b3d",
@@ -1821,7 +1916,8 @@
             "user": "https://i.ibb.co/KpFrjSpx/Charlotte-Oven-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "ad19a434-a616-477f-8e7f-b6296acb276d",
@@ -1840,7 +1936,8 @@
             "user": "https://i.ibb.co/Wv2Zsn1W/Diamante-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "af3cce82-03b5-47b5-8943-a5e8ac5f69e3",
@@ -1859,7 +1956,8 @@
         },
         "about": "A quirky Paramecia-type fruit that lets its user produce and manipulate limitless butter, coating surfaces in slippery slicks, shaping creamy constructs, and turning any battlefield into a greasy, golden trap of their own making.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "aff9b6c2-49b4-4e46-b30c-a26aecd0f156",
@@ -1878,7 +1976,8 @@
             "user": "https://i.ibb.co/WpDHHznS/Issho-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "b0c79594-e20a-4fc7-990e-f8d11d64473c",
@@ -1897,7 +1996,8 @@
             "user": "https://i.ibb.co/d49bxW9G/Hina-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "b19d720c-6991-4445-872b-3580a019c394",
@@ -1916,7 +2016,8 @@
         "user": "Bartholomew Kuma",
         "about": "A mysterious Paramecia-type fruit that manifests paw pads on the user’s palms, granting the power to repel anything they touch—be it enemies, objects, pain, or even the very air—sending targets hurtling away at blinding speed or deflecting attacks with effortless force.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Thriller Bark"
     },
     {
         "id": "b7225b59-d0ad-41d6-87b9-7af9887b43da",
@@ -1935,7 +2036,8 @@
         },
         "about": "A bewitching Paramecia-type fruit that weaponizes love itself, allowing the user to turn anyone overcome by desire or adoration into lifeless stone statues with a single enchanting glance or seductive gesture.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Amazon Lily"
     },
     {
         "id": "b7a64514-0ee0-4cae-8905-71db75fd23f9",
@@ -1954,7 +2056,8 @@
             "user": "https://i.ibb.co/PGC6rnrd/Zala-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "b9028226-e1d6-4332-81cb-630227c88e08",
@@ -1973,7 +2076,8 @@
         },
         "about": "A rare Mythical Zoan-type fruit that grants the power to become an enormous monk-like yokai, letting the user shift between human, hybrid, and full oni priest forms to wield supernatural strength and an eerie, otherworldly presence.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "bdd6eafe-3186-4448-b32d-1a2a8ac4f7f0",
@@ -1992,7 +2096,8 @@
         },
         "about": "A crafty Paramecia-type fruit that lets its user morph their body into giant scissors, slicing through metal, stone, or even entire ships as effortlessly as cutting a sheet of paper.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Impel Down"
     },
     {
         "id": "be06e960-fff8-4625-ba8a-3353262f5719",
@@ -2011,7 +2116,8 @@
         },
         "about": "A volatile Logia-type fruit that allows its user to generate, manipulate, and become gas itself, drifting through the air, suffocating foes, or igniting explosive mixtures with deadly precision.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "bfa3a75e-25a1-4462-b964-cc5a93864a33",
@@ -2030,7 +2136,8 @@
         },
         "about": "A fierce Ancient Zoan-type fruit that empowers its user to become a mighty pteranodon or a towering hybrid, granting powerful wings for high-speed flight and devastating aerial attacks from the prehistoric skies.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "c2bf5737-535a-4037-a348-5ef97fe8ce6b",
@@ -2049,7 +2156,8 @@
         },
         "about": "A spooky Paramecia-type fruit that lets its user summon eerie, floating ghosts capable of passing through walls, exploding on contact, or draining the willpower of anyone unlucky enough to face their chilling touch.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Thriller Bark"
     },
     {
         "id": "c40cd64d-f137-4ba2-b717-768a10bc5771",
@@ -2068,7 +2176,8 @@
             "user": "https://i.ibb.co/rGsbk11x/Jabra-Anime-Pre-Timeskip-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "c462d6ed-9894-40f6-baaf-97fbf26df2b6",
@@ -2087,7 +2196,8 @@
         },
         "about": "A resonant Paramecia-type fruit that lets its user turn body parts into musical instruments, unleashing soundwaves that can shatter objects, disorient foes, or manipulate emotions with devastating symphonies of noise.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "c73a54d2-4024-41ac-a2ce-e178901daec7",
@@ -2106,7 +2216,8 @@
         },
         "about": "A versatile Paramecia-type fruit that enables its user to conjure and command mystical scrolls capable of sealing objects, unleashing stored attacks, or bringing drawn creations to life with a flick of the wrist.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Zou"
     },
     {
         "id": "cbc8ff69-2426-41c1-8144-bbf8ad11493f",
@@ -2125,7 +2236,8 @@
         "rarity": 2,
         "about": "A remarkable Paramecia-type fruit that lets its user bloom extra limbs or entire body parts from any surface, summoning hands, eyes, or even full duplicates surrounded by swirling petal-like flares to overwhelm foes or perform impossible feats.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whisky Peak"
     },
     {
         "id": "d16638d1-7d68-488c-8fef-07b8b14d6869",
@@ -2144,7 +2256,8 @@
         },
         "about": "A zany Paramecia-type fruit that grants the user the ability to spin their arms, legs, or even entire body like high-speed wheels, turning every charge or kick into a whirling burst of unstoppable momentum.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "d6e38a32-8746-4550-b349-8f149e3568b8",
@@ -2163,7 +2276,8 @@
         },
         "about": "A sturdy Zoan-type fruit that lets its user become a rhinoceros beetle or a fearsome hybrid, gaining strength, armored durability, and the ability to launch horned charges.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "d787a3dc-58e7-493a-a957-35832211b014",
@@ -2182,7 +2296,8 @@
         },
         "about": "A curious Paramecia-type fruit that allows its user to extract memories as tangible strips of film, editing, erasing, or rewriting the past of others like a living reel of human experience.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "d8443a3c-1413-4c59-8f49-fd379307f774",
@@ -2201,7 +2316,8 @@
             "user": "https://i.ibb.co/CTGGhrx/Trebol-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "db872681-57fc-40e0-9666-beea21ba23a5",
@@ -2220,7 +2336,8 @@
         },
         "about": "A chaotic Paramecia-type fruit that allows its user to separate their body into independent floating pieces, freely controlling each part in midair while remaining completely immune to slashing attacks.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Orange Town"
     },
     {
         "id": "db98e40b-2313-4acd-82e2-599f6694f100",
@@ -2239,7 +2356,8 @@
         "about": "A blazing Logia-type fruit that grants its user total mastery over fire, allowing them to generate searing flames, hurl blazing projectiles, and become a living inferno immune to the very heat they unleash.",
         "user": "Sabo",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "e334692a-8ae3-449c-a61e-df45b8876e38",
@@ -2258,7 +2376,8 @@
         },
         "about": "A fierce Zoan-type fruit that grants the power to become a full leopard or a lethal leopard-human hybrid, unleashing explosive speed, razor claws, and predatory strength for lightning-fast attacks.",
         "isAwakened": true,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Water 7"
     },
     {
         "id": "e69de64b-ebf0-44fd-8eeb-36b8de6cdfcf",
@@ -2277,7 +2396,8 @@
         },
         "about": "A dazzling Paramecia-type fruit that enables its user to conjure mirrors capable of reflecting attacks, bending light, or copying appearances, turning any confrontation into a maze of deceptive reflections.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Whole Cake Island"
     },
     {
         "id": "e7711afb-1d99-44c5-9125-d8fc965e6fdc",
@@ -2296,7 +2416,8 @@
         },
         "about": "A drifting Logia-type fruit that grants the power to create, manipulate, and become smoke itself, allowing the user to suffocate foes, obscure vision, and glide through the air as an untouchable haze.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Loguetown"
     },
     {
         "id": "e8c164dd-0863-4a0d-bd03-3a056ef31b9c",
@@ -2315,7 +2436,8 @@
         },
         "about": "A grand Paramecia-type fruit that turns its user into a living fortress, complete with towering walls, hidden chambers, and the ability to house allies or trap enemies inside their own colossal castle body.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Sabaody Archipelago"
     },
     {
         "id": "e8f68a37-2da5-4660-b0cf-67dee06b1983",
@@ -2334,7 +2456,8 @@
         },
         "about": "A sturdy Zoan-type fruit that allows its user to become a full horse or a powerful horse-human hybrid, gaining explosive speed, tireless endurance, and charging strength fit for a battlefield stampede.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Skypiea"
     },
     {
         "id": "f112d87f-4810-4c75-9d5d-a88f60f8bd74",
@@ -2353,7 +2476,8 @@
         },
         "about": "A volatile Paramecia-type fruit that lets its user inflate and rupture their own body or any non-living object they touch, triggering powerful explosions that shred enemies and terrain alike with puncturing blasts.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "f174fa3c-6486-49e0-9650-d19692fc15c1",
@@ -2372,7 +2496,8 @@
         },
         "about": "A piercing Paramecia-type fruit that grants the user x-ray vision and the ability to read minds, seeing through walls, lies, and even the deepest thoughts of others with unsettling clarity.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "f219231d-eecd-492a-a8f9-b3f491d6bc0b",
@@ -2391,7 +2516,8 @@
         "type": "Paramecia",
         "user": "Vasco Shot",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Egghead"
     },
     {
         "id": "f338b67f-4239-4bd7-8eef-0e75d06843da",
@@ -2410,7 +2536,8 @@
         },
         "about": "A constricting Zoan-type fruit that allows its user to become a massive anaconda or a muscular hybrid, delivering bone-crushing coils, lightning-fast strikes, and a predator’s relentless grip.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Amazon Lily"
     },
     {
         "id": "f377c5a7-1a05-4bc4-8c8a-3b356ae5250b",
@@ -2429,7 +2556,8 @@
         "user": "Aramaki",
         "about": "A vibrant Logia-type fruit that lets its user generate, command, and become living vegetation, sprouting towering trees, twisting vines, and sprawling forests to entangle enemies or reshape the battlefield in an instant.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "f483ef8b-474e-406d-8c47-d55e4c714b73",
@@ -2448,7 +2576,8 @@
             "user": "https://i.ibb.co/Kp86hWqN/Gecko-Moria-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Thriller Bark"
     },
     {
         "id": "f4b17f70-5793-469e-b8b5-7426dd80ff1b",
@@ -2467,7 +2596,8 @@
             "user": "https://i.ibb.co/7ddQ4Z7T/Pell-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Arabasta"
     },
     {
         "id": "f608df14-a72e-4292-83c0-30b7a90cdd60",
@@ -2486,7 +2616,8 @@
             "user": "https://i.ibb.co/G3sPtpVw/Buffalo-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "f87f2740-cfbe-4d48-b399-e2fbf9f405f9",
@@ -2505,7 +2636,8 @@
             "user": "https://i.ibb.co/vCXytwYb/Dalton-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Drum Island"
     },
     {
         "id": "f9d2f630-bb40-49e7-9f05-b239c76f2aa6",
@@ -2524,7 +2656,8 @@
             "user": "https://i.ibb.co/S7XsLBrt/Zou-Zou-no-Mi-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Enies Lobby"
     },
     {
         "id": "fe1e3ad4-2a92-422a-84e6-f4754aeacc51",
@@ -2543,7 +2676,8 @@
             "user": "https://i.ibb.co/Qjj76kp0/Kanjuro-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Dressrosa"
     },
     {
         "id": "8380b385-072f-442f-9432-aacc3e164c52",
@@ -2562,7 +2696,8 @@
             "user": "https://i.ibb.co/B27JhLXk/8380b385-072f-442f-9432-aacc3e164c52.webp"
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "Z's Ambition (Non-canon)"
     },
     {
         "id": "9f83e24c-99f5-48cb-9e11-cd84a0119bbb",
@@ -2581,7 +2716,8 @@
             "user": "https://i.ibb.co/KxgpsQcG/Baccarat.webp"
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "One Piece Film: Gold (Movie)"
     },
     {
         "id": "a3f1c892-d47e-4b2a-91f3-7e5d60a8bc14",
@@ -2600,7 +2736,8 @@
             "user": "https://i.ibb.co/bRQ2qxn2/Smiley-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Punk Hazard"
     },
     {
         "id": "c2e7a831-5f04-4d9b-b3e8-1a09f6c84d27",
@@ -2619,7 +2756,8 @@
             "user": "https://i.postimg.cc/cCNWCXkp/Bluegrass-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "Egghead"
     },
     {
         "id": "e3a19d74-bf82-4c6f-a051-7d3e2f905b18",
@@ -2638,7 +2776,8 @@
             "user": "https://i.postimg.cc/RZCJgmrf/e3a19d74-bf82-4c6f-a051-7d3e2f905b18.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Wano Country"
     },
     {
         "id": "f7c8a3d2-5b9e-4f1a-8c6d-2e7f9a3b1c4d",
@@ -2657,7 +2796,8 @@
             "user": "https://i.postimg.cc/HshQhVJS/Loki-Anime-Infobox.webp"
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Elbaf"
     },
     {
         "id": "9e2a4f6b-1d8c-4a3e-b7f5-6c8d1a9e3f2b",
@@ -2676,7 +2816,8 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "Warship Island (Non-canon)"
     },
     {
         "id": "3d7f8a1c-6e2b-4c9d-a5f1-8b3e6c9d2f4a",
@@ -2695,7 +2836,8 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "One Piece Live Attraction: Phantom"
     },
     {
         "id": "9c4e2b7a-1f6d-4a8e-b3c5-7d2a9f1e6c8b",
@@ -2714,7 +2856,8 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "Silver Mine (Non-canon)"
     },
     {
         "id": "a1e5c9d2-4b7f-4e1a-9c6d-2f8b5a3e7d4c",
@@ -2733,7 +2876,8 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": false
+        "isCanon": false,
+        "debutArc": "Silver Mine (Non-canon)"
     },
     {
         "id": "5c8e2f4a-9b1d-4e6c-a3f7-1d9b6e4c8a2f",
@@ -2748,7 +2892,8 @@
         "rarity": 3,
         "about": "A Paramecia-type Devil Fruit that turns the user into a Thorn Human, granting the ability to create and manipulate razor-sharp, iron-hard thorns and thorn-covered vines from their body or nearby surfaces. The thorns can be rendered completely invisible, allowing the user to trap victims in unseen snares that injure anyone who touches them. It was eaten by Shepherd Sommers, a member of the Knights of God who used it to devastating effect during the assault on Elbaph.",
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Elbaf"
     },
     {
         "id": "7d3f9a2c-6b1e-4c8d-a5f7-3e9c2b6d4a1f",
@@ -2767,7 +2912,8 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Elbaf"
     },
     {
         "id": "b4e8a1d6-3c7f-4e29-9a5b-8d1f6c2e7a30",
@@ -2786,6 +2932,7 @@
             "user": ""
         },
         "isAwakened": false,
-        "isCanon": true
+        "isCanon": true,
+        "debutArc": "Elbaf"
     }
 ]

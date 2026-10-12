@@ -214,6 +214,7 @@ export default function ExpandedFruit() {
                                 <div className={styles.gridDiv2x2}>
                                     <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
                                     <p>User: <span>{fruitInfo.user}</span></p>
+                                    <p>Debut Arc: <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc || '')}`}>{fruitInfo.debutArc || 'Unknown'}</Link></p>
                                     <p>First Appearance: <span>{fruitInfo.firstAppearance || 'Unkown'} </span></p>
                                     <p>Previous User: <span>{fruitInfo.previousUser || 'Unkown'}</span></p>
                                     <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not awakened'}</span></p>
