@@ -4385,6 +4385,41 @@ const fruitsExpandedInfo = [
             "During the plan to take the Walrus School students hostage, Gunko combined her power with Sommers' Thorn-Thorn Fruit and Killingham's Kirin fruit: Killingham put the children to sleep, Gunko's arrows guided them toward a ship, and Sommers' invisible thorns kept anyone from stopping them."
         ],
         "images": []
+    },
+    {
+        "id": "d2a7f4b9-8e13-4c60-b5a2-1f9c3e7d6a48",
+        "name": "Whisper-Whisper Fruit",
+        "firstAppearance": "Episode 54",
+        "abilities": [
+            "An anime-only Paramecia fruit that lets the user understand the heart of an animal, effectively allowing them to speak with animals telepathically. The power appears to work on virtually any creature, including Sea Kings, and the user has been shown conversing with a dragon friend and learning of incoming weather from seagulls. By earning animals' trust, the user can be warned of danger well before it arrives."
+        ],
+        "techniques": [],
+        "strengths": [
+            "Allows telepathic two-way communication with animals, including Sea Kings",
+            "Animals can warn the user of incoming danger, such as approaching Sea Kings or strong winds, before anyone else notices",
+            "Excellent for scouting, navigation, and early warning when traveling at sea",
+            "Allows the user to build friendships and trust with creatures that others could not communicate with"
+        ],
+        "weaknesses": [
+            "Has virtually no direct offensive or defensive uses",
+            "Only works on animals, offering no help against human opponents",
+            "Relies on animals being willing to share information, so it depends on earning their trust",
+            "Standard Devil Fruit weaknesses: seawater and Seastone"
+        ],
+        "ratings": {
+            "attack": 0,
+            "defense": 10,
+            "utility": 55
+        },
+        "trivia": [
+            "Hiso hiso means 'whisperingly' in Japanese, a reference to the voice the user hears from animals.",
+            "In the Funimation adaptations it is called the Whisper-Whisper Fruit, and in the Odex dub it is called the Fruit of Whisper.",
+            "It is one of the few Paramecia with virtually no direct offensive uses.",
+            "Animals seem unusually positively inclined toward Apis, with several birds seeking her out to warn her of danger. It is unclear whether this is an aspect of the fruit or of Apis herself.",
+            "The ability to hear the Voice of All Things can also let people communicate with animals, similar to how this fruit works.",
+            "Tony Tony Chopper has a similar ability, but only because he is a reindeer who gained human intelligence from the Hito Hito no Mi, and he can only understand animals when they actually speak."
+        ],
+        "images": []
     }
 ]
 
