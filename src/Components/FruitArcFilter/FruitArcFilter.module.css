@@ -1,8 +1,9 @@
 .filterPanel {
-    width: 80vw;
-    max-width: 1440px;
-    margin: 50px auto 100px;
-    padding: 24px;
+    position: relative;
+    width: 90vw;
+    max-width: 1600px;
+    margin: 0 auto 100px;
+    padding: 20px 50px 20px 20px;
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
     align-items: center;
@@ -13,6 +14,58 @@
         radial-gradient(circle at 0 0, rgba(24, 105, 255, 0.2), transparent 44%),
         #011a48;
     box-shadow: 0 18px 40px rgba(0, 7, 30, 0.22);
+}
+
+.filterPanelClosed {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 1600px;
+    margin: 0 auto 100px;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 36px;
+    border: 1px solid #f8de3c;
+    color: #ffffff;
+    border-radius: 17px;
+    background: #0a3179;
+    box-shadow: 0 18px 40px rgba(0, 7, 30, 0.22);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.filterClosedTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    font-size: 0.9rem;
+    line-height: 1em
+}
+
+.filterClosedTitle p {
+    max-width: 560px;
+    color: #9bb7ea;
+    font-size: 0.9rem;
+    line-height: 1em;
+}
+
+.filterPanelClosed:hover {
+    background: #1347a7;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.closeButton:hover {
+    color: #f8de3c;
 }
 
 .filterCopy {
