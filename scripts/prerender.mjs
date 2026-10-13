@@ -129,6 +129,13 @@ for (const page of listingPages) {
     const structuredData = {
         "@context": "https://schema.org",
         "@graph": [
+            ...(page.route === "/" ? [{
+                "@type": "WebSite",
+                "@id": `${SITE}/#website`,
+                url: `${SITE}/`,
+                name: "One Piece Devil Fruits",
+                alternateName: "onepiecedevilfruits.com",
+            }] : []),
             breadcrumb([{ name: "Home", path: "/" }, ...(page.route === "/" ? [] : [{ name: page.label, path: page.route }])]),
             { "@type": "CollectionPage", name: page.label, url: canonical, description: page.description, mainEntity: { "@type": "ItemList", numberOfItems: fruits.length, itemListElement: fruits.map((fruit, index) => ({ "@type": "ListItem", position: index + 1, url: `${SITE}/fruit/${slugify(fruit.name)}`, name: fruit.name })) } },
         ],
