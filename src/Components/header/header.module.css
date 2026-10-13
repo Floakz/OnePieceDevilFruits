@@ -102,6 +102,7 @@
     border: 1px solid gray;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .kofiButton:hover {
@@ -134,24 +135,26 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .fullPageMenu {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
-        padding: 40px;
+        padding: 40px 40px 100px;
         position: fixed;
         inset: 0;
         top: 0;
         right: 0;
         z-index: 9999999999;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         background-color: #ffcd07;
-        touch-action: none;
-        -webkit-overflow-scrolling: auto;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
     }
 
     .mobileMenuButton {
@@ -166,6 +169,8 @@
         background-color: #ffcd07;
         color: #022668;
         border-radius: 7px;
+        border: 0;
+        cursor: pointer;
     }
 
     .dropdownItem {
@@ -181,12 +186,72 @@
         display: flex;
     }
 
-    .kofiButton {
-        padding: 15px 30px;
-        border-radius: 8px;
-        left: 20px;
-        bottom: 20px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    .mobileKofiLink {
+        width: min(100%, 430px);
+        margin: auto auto 0;
+        padding: 12px 14px;
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) 22px;
+        align-items: center;
+        gap: 12px;
+        border: 2px solid #022668;
+        border-radius: 14px;
+        background: #022668;
+        color: #ffffff;
+        text-align: left;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(2, 38, 104, 0.2);
+    }
+
+    .mobileKofiLink:hover,
+    .mobileKofiLink:focus-visible {
+        outline: 3px solid rgba(2, 38, 104, 0.25);
+        outline-offset: 3px;
+        background: #0a3b91;
+    }
+
+    .mobileKofiIcon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #ffffff;
+    }
+
+    .mobileKofiIcon img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+    }
+
+    .mobileKofiCopy {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .mobileKofiCopy strong {
+        color: #ffffff;
+        font-size: 0.92rem;
+        line-height: 1.2;
+    }
+
+    .mobileKofiCopy small {
+        color: #bcd2ff;
+        font-size: 0.72rem;
+        line-height: 1.25;
+    }
+
+    .mobileKofiLink>svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: #f8de3c;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
 }

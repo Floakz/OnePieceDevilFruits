@@ -265,7 +265,7 @@ export default function Header({ headerShown, headerTitle }) {
                 ) : (
                     <>
                         {isMobileMenuOpen && (
-                            <div className={styles.fullPageMenu}>
+                            <div id="mobile-navigation" className={styles.fullPageMenu}>
                                 <NavLink
                                     to="/"
                                     onClick={() => setIsMobileMenuOpen(false)}
@@ -356,6 +356,25 @@ export default function Header({ headerShown, headerTitle }) {
                                     Daily Fight
                                 </NavLink>
 
+                                <a
+                                    href={supportUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.mobileKofiLink}
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                    <span className={styles.mobileKofiIcon}>
+                                        <img src={kofiSymbol} alt="" />
+                                    </span>
+                                    <span className={styles.mobileKofiCopy}>
+                                        <strong>Support the project</strong>
+                                        <small>Buy us a coffee on Ko-fi</small>
+                                    </span>
+                                    <svg aria-hidden="true" viewBox="0 0 20 20">
+                                        <path d="M4 10h12m-5-5 5 5-5 5" />
+                                    </svg>
+                                </a>
+
                                 {/* <NavLink
                                 to="/treasure-chest"
                                 onClick={() => setIsMobileMenuOpen(false)}
@@ -365,12 +384,16 @@ export default function Header({ headerShown, headerTitle }) {
                             </NavLink> */}
                             </div>
                         )}
-                        <div
+                        <button
+                            type="button"
                             onClick={() => setIsMobileMenuOpen((prev) => !prev)}
                             className={styles.mobileMenuButton}
+                            aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+                            aria-expanded={isMobileMenuOpen}
+                            aria-controls="mobile-navigation"
                         >
                             {isMobileMenuOpen ? closeIcon : menuIcon}
-                        </div>
+                        </button>
                     </>
                 )}
 
@@ -392,24 +415,24 @@ export default function Header({ headerShown, headerTitle }) {
                     </>
                 )}
 
-                <div
-                    onClick={(e) => {
-                        e.preventDefault();
-                        window.open(supportUrl, "_blank", "noopener,noreferrer");
-                    }}
-                    onMouseOver={() => setKofiTag(true)}
-                    onMouseOut={() => setKofiTag(false)}
-                    className={styles.kofiButton}
-                >
-                    <div>
+                {width > 900 && (
+                    <a
+                        href={supportUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onMouseOver={() => setKofiTag(true)}
+                        onMouseOut={() => setKofiTag(false)}
+                        className={styles.kofiButton}
+                        aria-label="Support us on Ko-fi"
+                    >
                         <img
                             src={kofiSymbol}
-                            alt="Ko-fi"
+                            alt=""
                             style={{ width: 20, height: 20, objectFit: "contain" }}
                         />
-                    </div>
-                    {kofiTag && <span>Support us on Ko-fi</span>}
-                </div>
+                        {kofiTag && <span>Support us on Ko-fi</span>}
+                    </a>
+                )}
             </nav>
         </>
     );

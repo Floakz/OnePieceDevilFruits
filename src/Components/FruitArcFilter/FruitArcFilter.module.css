@@ -1,283 +1,282 @@
 .filterPanel {
-    position: relative;
     width: 90vw;
     max-width: 1600px;
-    margin: 0 auto 100px;
-    padding: 20px 50px 20px 20px;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.8fr);
-    align-items: center;
-    gap: 36px;
-    border: 1px solid #1869ff;
-    border-radius: 17px;
+    margin: 18px auto 34px;
+    padding: 15px 18px 17px;
+    border: 1px solid rgba(60, 195, 248, 0.7);
+    border-radius: 15px;
     background:
-        radial-gradient(circle at 0 0, rgba(24, 105, 255, 0.2), transparent 44%),
+        radial-gradient(circle at 0 0, rgba(24, 105, 255, 0.2), transparent 48%),
         #011a48;
-    box-shadow: 0 18px 40px rgba(0, 7, 30, 0.22);
+    box-shadow: 0 14px 34px rgba(0, 7, 30, 0.2);
 }
 
-.filterPanelClosed {
+.panelHeader {
+    margin-bottom: 12px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-    width: 90vw;
-    max-width: 1600px;
-    margin: 0 auto 100px;
-    padding: 10px 20px;
-    align-items: center;
-    gap: 36px;
-    border: 1px solid #f8de3c;
-    color: #ffffff;
-    border-radius: 17px;
-    background: #0a3179;
-    box-shadow: 0 18px 40px rgba(0, 7, 30, 0.22);
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+    gap: 18px;
 }
 
-.filterClosedTitle {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    font-size: 0.9rem;
-    line-height: 1em
-}
-
-.filterClosedTitle p {
-    max-width: 560px;
-    color: #9bb7ea;
-    font-size: 0.9rem;
-    line-height: 1em;
-}
-
-.filterPanelClosed:hover {
-    background: #1347a7;
-}
-
-.closeButton {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-.closeButton:hover {
-    color: #f8de3c;
-}
-
-.filterCopy {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.eyebrow {
-    color: #f8de3c;
-    font-size: 0.72rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.filterCopy h2 {
-    color: #ffffff;
-    font-size: clamp(1.35rem, 2.5vw, 2rem);
-    line-height: 1.15;
-}
-
-.filterCopy p {
-    max-width: 560px;
-    color: #9bb7ea;
-    font-size: 0.9rem;
-    line-height: 1.55;
-}
-
-.filterControls {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.controlLabel {
-    color: #ffffff;
-    font-size: 0.76rem;
-    font-weight: 800;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-}
-
-.selectRow {
-    display: flex;
-    align-items: stretch;
-    gap: 10px;
-}
-
-.selectWrapper {
-    position: relative;
-    flex: 1;
+.titleGroup {
     min-width: 0;
-}
-
-.selectTrigger {
-    min-height: 48px;
-    padding: 10px 14px;
-    display: grid;
-    grid-template-columns: 20px minmax(0, 1fr) 18px;
+    display: flex;
     align-items: center;
-    gap: 10px;
-    border: 1px solid #3cc3f8;
-    border-radius: 9px;
-    outline: none;
-    background-color: #071f50;
-    color: #ffffff;
-    font-size: 0.88rem;
-    font-weight: 700;
-    cursor: pointer;
-    list-style: none;
+    gap: 11px;
 }
 
-.selectTrigger::-webkit-details-marker {
-    display: none;
+.routeIcon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(248, 222, 60, 0.65);
+    border-radius: 50%;
+    background: rgba(248, 222, 60, 0.08);
+    color: #f8de3c;
 }
 
-.selectTrigger span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.leadingIcon,
-.chevron {
-    width: 20px;
-    height: 20px;
+.routeIcon svg {
+    width: 21px;
+    height: 21px;
     fill: none;
-    stroke-width: 1.8;
+    stroke: currentColor;
+    stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
 }
 
-.leadingIcon {
-    stroke: #f8de3c;
+.titleCopy {
+    min-width: 0;
 }
 
-.chevron {
-    width: 18px;
-    height: 18px;
-    stroke: #ffffff;
-    transition: transform 0.2s ease;
+.titleCopy h2 {
+    color: #ffffff;
+    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    line-height: 1.15;
 }
 
-.selectWrapper[open] .chevron {
-    transform: rotate(180deg);
+.titleCopy p {
+    margin-top: 3px;
+    color: #9bb7ea;
+    font-size: 0.76rem;
+    line-height: 1.35;
 }
 
-.selectTrigger:focus-visible,
-.selectWrapper[open] .selectTrigger {
-    border-color: #f8de3c;
-    box-shadow: 0 0 0 3px rgba(248, 222, 60, 0.2);
-}
-
-.optionsList {
-    position: absolute;
-    top: calc(100% + 8px);
-    right: 0;
-    left: 0;
-    z-index: 50;
-    max-height: min(360px, 55vh);
-    padding: 6px;
-    overflow-y: auto;
-    border: 1px solid #3cc3f8;
-    border-radius: 10px;
-    background: #04183f;
-    box-shadow: 0 18px 36px rgba(0, 7, 30, 0.48);
-    scrollbar-color: #3cc3f8 #071f50;
-}
-
-.optionsList button {
-    width: 100%;
-    min-height: 42px;
-    padding: 8px 10px;
+.resultSummary {
+    flex: 0 0 auto;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    border: 0;
-    border-radius: 7px;
+    gap: 10px;
+    color: #b8caeb;
+    font-size: 0.78rem;
+    white-space: nowrap;
+}
+
+.resultSummary strong {
+    color: #ffffff;
+    font-size: 0.95rem;
+}
+
+.resultSummary button {
+    padding: 5px 9px;
+    border: 1px solid rgba(248, 222, 60, 0.75);
+    border-radius: 999px;
     background: transparent;
-    color: #dbe7ff;
+    color: #f8de3c;
     font: inherit;
-    text-align: left;
+    font-weight: 800;
     cursor: pointer;
 }
 
-.optionsList button:hover,
-.optionsList button:focus-visible,
-.optionsList .selectedOption {
+.resultSummary button:hover,
+.resultSummary button:focus-visible {
+    outline: none;
+    background: #f8de3c;
+    color: #001741;
+}
+
+.timelineShell {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr) 34px;
+    align-items: center;
+    gap: 8px;
+}
+
+.scrollButton {
+    width: 34px;
+    height: 38px;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(60, 195, 248, 0.55);
+    border-radius: 9px;
+    background: #08265c;
+    color: #ffffff;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.scrollButton svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.scrollButton:hover:not(:disabled),
+.scrollButton:focus-visible:not(:disabled) {
+    border-color: #f8de3c;
+    outline: none;
+    background: #0c3777;
+    color: #f8de3c;
+}
+
+.scrollButton:disabled {
+    opacity: 0.28;
+    cursor: default;
+}
+
+.arcTrack {
+    min-width: 0;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+}
+
+.arcTrack::-webkit-scrollbar {
+    display: none;
+}
+
+.arcChip {
+    min-height: 38px;
+    padding: 7px 9px 7px 12px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    scroll-snap-align: start;
+    border: 1px solid rgba(155, 183, 234, 0.38);
+    border-radius: 9px;
+    background: rgba(7, 31, 80, 0.9);
+    color: #dbe7ff;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 750;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+}
+
+.arcChip:hover,
+.arcChip:focus-visible {
+    border-color: #3cc3f8;
     outline: none;
     background: #0c3777;
     color: #ffffff;
 }
 
-.optionsList .selectedOption {
-    box-shadow: inset 3px 0 #f8de3c;
-}
-
-.optionsList strong {
-    min-width: 28px;
-    padding: 3px 7px;
+.arcChip strong {
+    min-width: 23px;
+    padding: 3px 6px;
     border-radius: 999px;
     background: rgba(60, 195, 248, 0.14);
     color: #9ee6ff;
-    font-size: 0.72rem;
+    font-size: 0.67rem;
+    line-height: 1.2;
     text-align: center;
 }
 
-.selectRow button {
-    min-height: 48px;
-    padding: 0 16px;
-    border: 1px solid #f8de3c;
-    border-radius: 9px;
-    background: transparent;
-    color: #f8de3c;
-    font-weight: 800;
-    cursor: pointer;
-    transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-.selectRow button:hover,
-.selectRow button:focus-visible {
-    background-color: #f8de3c;
+.activeChip,
+.activeChip:hover,
+.activeChip:focus-visible {
+    border-color: #f8de3c;
+    background: #f8de3c;
     color: #001741;
+    box-shadow: 0 4px 15px rgba(248, 222, 60, 0.16);
 }
 
-.resultCount {
-    min-height: 20px;
-    color: #9bb7ea;
-    font-size: 0.78rem;
-    line-height: 1.4;
-}
-
-.resultCount strong {
-    color: #ffffff;
+.activeChip strong {
+    background: rgba(0, 23, 65, 0.13);
+    color: #001741;
 }
 
 @media (max-width: 850px) {
     .filterPanel {
         width: 90vw;
-        margin-top: 30px;
-        padding: 20px;
-        grid-template-columns: 1fr;
-        gap: 22px;
+        margin: 12px auto 24px;
+        padding: 12px;
+        border-radius: 13px;
     }
 
-    .selectRow {
-        flex-direction: column;
+    .panelHeader {
+        margin-bottom: 10px;
+        gap: 10px;
     }
 
-    .selectRow button {
-        width: 100%;
+    .routeIcon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .titleCopy h2 {
+        font-size: 0.98rem;
+    }
+
+    .titleCopy p {
+        display: none;
+    }
+
+    .resultSummary {
+        gap: 6px;
+        font-size: 0.72rem;
+    }
+
+    .resultSummary strong {
+        font-size: 0.82rem;
+    }
+
+    .resultSummary button {
+        padding: 4px 7px;
+        font-size: 0.68rem;
+    }
+
+    .timelineShell {
+        display: block;
+    }
+
+    .scrollButton {
+        display: none;
+    }
+
+    .arcTrack {
+        scroll-padding-inline: 0;
+    }
+
+    .arcChip {
+        min-height: 36px;
+        padding: 6px 8px 6px 10px;
+        font-size: 0.74rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .arcTrack {
+        scroll-behavior: auto;
+    }
+
+    .arcChip,
+    .scrollButton {
+        transition: none;
     }
 }
