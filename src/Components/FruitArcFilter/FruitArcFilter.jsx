@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
 import { getFruitArcOptions } from "../../lib/fruitArcs.js";
 import styles from "./FruitArcFilter.module.css";
+import { ABILITY_TAGS, FILTER_DEFAULTS, SORT_OPTIONS } from '../../lib/fruitDiscovery.js';
 
-export default function FruitArcFilter({ fruits, selectedArc, resultCount, onChange }) {
+export default function FruitArcFilter({ fruits, selectedArc, resultCount, onChange, filters, onFilterChange, clearFilters }) {
     const titleId = useId();
     const trackRef = useRef(null);
     const [scrollState, setScrollState] = useState({ canGoBack: false, canGoForward: false });
     const options = useMemo(() => getFruitArcOptions(fruits), [fruits]);
-    const hasSelection = selectedArc && selectedArc !== "all";
+    const hasSelection = filters ? Object.entries(filters).some(([key, value]) => value !== FILTER_DEFAULTS[key]) : selectedArc && selectedArc !== "all";
 
     const updateScrollState = useCallback(() => {
         const track = trackRef.current;
@@ -69,8 +70,8 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                         </svg>
                     </span>
                     <div className={styles.titleCopy}>
-                        <h2 id={titleId}>Explore by debut arc</h2>
-                        <p>Follow the Grand Line and choose where a fruit first appeared.</p>
+                        <h2 id={titleId}>Find your fruit</h2>
+                        <p>Pick a debut arc, then narrow things down.</p>
                     </div>
                 </div>
 
@@ -79,8 +80,8 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                         <strong>{resultCount}</strong> {resultCount === 1 ? "fruit" : "fruits"}
                     </p>
                     {hasSelection && (
-                        <button type="button" onClick={() => onChange("all")}>
-                            Clear
+                        <button type="button" onClick={clearFilters || (() => onChange("all"))}>
+                            Reset
                         </button>
                     )}
                 </div>
@@ -107,8 +108,8 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                 >
                     <button
                         type="button"
-                        className={`${styles.arcChip} ${!hasSelection ? styles.activeChip : ""}`}
-                        aria-pressed={!hasSelection}
+                        className={`${styles.arcChip} ${selectedArc === 'all' ? styles.activeChip : ""}`}
+                        aria-pressed={selectedArc === 'all'}
                         onClick={() => onChange("all")}
                     >
                         <span>All arcs</span>
@@ -145,6 +146,35 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                     </svg>
                 </button>
             </div>
+            {filters && <div className={styles.extraFilters}>
+                <label>Canon status
+                    <select value={filters.canon} onChange={event => onFilterChange('canon', event.target.value)}>
+                        <option value="all">All fruits</option><option value="canon">Canon</option><option value="non-canon">Non-canon</option><option value="unknown">Unknown</option>
+                    </select>
+                </label>
+                <label>Awakening
+                    <select value={filters.awakening} onChange={event => onFilterChange('awakening', event.target.value)}>
+                        <option value="all">Any status</option><option value="awakened">Awakened</option><option value="not-confirmed">Not confirmed</option><option value="unknown">Unknown</option>
+                    </select>
+                </label>
+                {fruits.some(fruit => fruit.type?.includes('Zoan')) && <label>Zoan subtype
+                    <select value={filters.subtype} onChange={event => onFilterChange('subtype', event.target.value)}>
+                        <option value="all">All subtypes</option><option value="Zoan">Regular Zoan</option><option value="Ancient Zoan">Ancient Zoan</option><option value="Mythical Zoan">Mythical Zoan</option><option value="Artificial Zoan">Artificial Zoan</option>
+                    </select>
+                </label>}
+                <label>Ability
+                    <select value={filters.ability} onChange={event => onFilterChange('ability', event.target.value)}>
+                        <option value="all">Any ability</option>
+                        {ABILITY_TAGS.map(tag => <option key={tag.id} value={tag.id}>{tag.label}</option>)}
+                    </select>
+                </label>
+                <label>Sort by
+                    <select value={filters.sort} onChange={event => onFilterChange('sort', event.target.value)}>
+                        {SORT_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
+                    </select>
+                </label>
+            </div>}
+            {filters?.sort.startsWith('debut') && <p className={styles.filterNote}>Debut order follows the arc timeline. Fruits in the same arc are listed A–Z.</p>}
         </section>
     );
 }

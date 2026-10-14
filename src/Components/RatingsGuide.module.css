@@ -1,0 +1,9 @@
+.guide { width: 100%; border: 1px solid #24528c; border-radius: 10px; background: #011a48; color: #9bb7ea; font-size: .82rem; text-align: left; }
+.guide summary { padding: 14px 18px; color: #f8de3c; cursor: pointer; font-weight: 600; }
+.guide summary:focus-visible { outline: 2px solid #f8de3c; outline-offset: 3px; border-radius: 10px; }
+.compact { width: 90vw; max-width: 1600px; margin: -35px auto 55px; }
+.copy { padding: 0 18px 18px; line-height: 1.7; }
+.copy dl { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 18px; margin: 18px 0; }
+.copy dt { color: #fff; font-weight: 600; margin-bottom: 4px; }
+.copy dd { margin: 0; }
+@media (max-width: 850px) { .compact { margin: 0 auto 55px; } }

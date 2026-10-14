@@ -1,3 +1,4 @@
+import FruitImage from '../FruitImage.jsx';
 import styles from './devilFruitTypeIntro.module.css';
 
 export default function DevilFruitTypeIntro({ title, image, imageAlt = '', facts = [] }) {
@@ -10,7 +11,7 @@ export default function DevilFruitTypeIntro({ title, image, imageAlt = '', facts
                 <h2 className={styles.title}>{title}</h2>
                 {image && (
                     <div className={styles.imageWrapper}>
-                        <img className={styles.typeImage} src={image} alt={imageAlt} loading="lazy" />
+                        <FruitImage className={styles.typeImage} src={image} alt={imageAlt} loading="lazy" />
                     </div>
                 )}
             </div>

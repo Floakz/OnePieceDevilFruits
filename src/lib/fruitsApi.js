@@ -1,5 +1,6 @@
 // src/lib/fruitsApi.js
 let firestoreContextPromise;
+let fruitsRequest;
 
 async function getFirestoreContext() {
     if (!firestoreContextPromise) {
@@ -23,7 +24,7 @@ function readCache(key) {
         const raw = localStorage.getItem(key);
         if (!raw) return null;
         const { ts, data } = JSON.parse(raw);
-        if (Date.now() - ts > TTL_MS) return null; // expired
+        if (!Number.isFinite(ts) || Date.now() - ts > TTL_MS || !Array.isArray(data)) return null;
         return data;
     } catch {
         return null;
@@ -45,6 +46,7 @@ async function fetchStatic() {
     const res = await fetch(STATIC_URL, { cache: 'force-cache' });
     if (!res.ok) throw new Error(`Static fetch failed: ${res.status}`);
     const data = await res.json();
+    if (!Array.isArray(data)) throw new Error('Invalid fruit data');
 
     writeCache(CACHE_KEY, data);
     return data;
@@ -53,7 +55,7 @@ async function fetchStatic() {
 // ---------- PUBLIC API ----------
 
 // Prefer static file; fallback to Firestore only if static fails
-export async function fetchAllFruitsOnce() {
+async function fetchFruits() {
     try {
         return await fetchStatic();
     } catch {
@@ -63,6 +65,13 @@ export async function fetchAllFruitsOnce() {
         writeCache(CACHE_KEY, all);
         return all;
     }
+}
+
+// The header, catalog and latest strip can mount together. Share their request,
+// but release it after completion so a failed load can always be retried.
+export function fetchAllFruitsOnce() {
+    if (!fruitsRequest) fruitsRequest = fetchFruits().finally(() => { fruitsRequest = undefined; });
+    return fruitsRequest;
 }
 
 export async function refreshFruitsCache() {

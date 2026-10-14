@@ -1,3 +1,4 @@
+import FruitImage from '../../../Components/FruitImage.jsx';
 import styles from './dailyFight.module.css'
 import Header from '../../../Components/header/Header'
 import Footer from '../../../Components/footer/footer'
@@ -383,7 +384,7 @@ export default function DailyFight() {
                                     {leftOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={leftOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${leftOption.fruit}`} />
+                            <FruitImage className={styles.fruitImage} fruit={{ id: leftOption.fruitId, name: leftOption.fruit }} src={leftOption.fruitImg} alt={`Image of the ${leftOption.fruit}`} />
                         </div>
 
                         <div className={styles.vsWrapper}>vs</div>
@@ -401,7 +402,7 @@ export default function DailyFight() {
                                     {rightOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={rightOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${rightOption.fruit}`} />
+                            <FruitImage className={styles.fruitImage} fruit={{ id: rightOption.fruitId, name: rightOption.fruit }} src={rightOption.fruitImg} alt={`Image of the ${rightOption.fruit}`} />
                         </div>
 
                     </div>

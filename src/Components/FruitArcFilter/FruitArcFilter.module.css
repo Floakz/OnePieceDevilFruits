@@ -11,6 +11,29 @@
     box-shadow: 0 14px 34px rgba(0, 7, 30, 0.2);
 }
 
+.extraFilters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #24528c;
+}
+
+.extraFilters label { display: grid; gap: 6px; color: #9bb7ea; font-size: .75rem; }
+.extraFilters select {
+    width: 100%; min-width: 0; min-height: 42px; padding: 8px 10px;
+    border: 1px solid #24528c; border-radius: 8px;
+    background: #001335; color: #fff; font: inherit; font-size: .8rem; cursor: pointer;
+}
+.extraFilters select:focus-visible { outline: 2px solid #f8de3c; outline-offset: 3px; }
+.filterNote { margin-top: 12px; color: #9bb7ea; font-size: .75rem; }
+
+@media (max-width: 500px) {
+    .extraFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .extraFilters label:last-child { grid-column: 1 / -1; }
+}
+
 .panelHeader {
     margin-bottom: 12px;
     display: flex;

@@ -1,3 +1,4 @@
+import FruitImage from '../../Components/FruitImage.jsx';
 // pages/games/FruitFinderPage.jsx
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -23,7 +24,7 @@ export default function FruitFinderPage() {
   const [isStarted, setIsStarted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fruitImgLocation = "/images/fruits";
+
 
   useEffect(() => {
     (async () => setAllFruits(await fetchAllFruitsOnce()))();
@@ -230,12 +231,7 @@ export default function FruitFinderPage() {
                       { " " + pick.name}
                     </Link> has chosen you.
                   </h3>
-                  <img
-                    src={
-                      `${fruitImgLocation}/${pick.id}.webp` ?? pick.img?.user
-                    }
-                    alt={pick.name}
-                  />
+                  <FruitImage fruit={pick} alt={pick.name} />
                   <p className={styles.aboutText}>{pick.about}</p>
                 </>
               ) : (

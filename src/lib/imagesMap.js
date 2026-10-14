@@ -1,7 +1,8 @@
 // Eagerly import every webp inside src/assets/powerDisplays/<id>/<n>.webp
 const modules = import.meta.glob('/src/assets/powerDisplays/*/*.webp', {
     eager: true,
-    as: 'url',
+    query: '?url',
+    import: 'default',
 });
 
 // Build { [id]: [{ n, url }, ...] } and sort numerically (1,2,3…)

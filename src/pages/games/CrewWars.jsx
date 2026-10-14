@@ -1,3 +1,4 @@
+import FruitImage from '../../Components/FruitImage.jsx';
 // pages/games/CrewWars.jsx
 import { useEffect, useState, useRef } from "react";
 import Header from "../../Components/header/Header";
@@ -213,7 +214,7 @@ export default function CrewWars() {
                                                 <p className={styles.itemLabel}>
                                                     {itemData?.name}
                                                 </p>
-                                                <img src={itemData?.img} alt={itemData?.name || label} />
+                                                <FruitImage kind="character" src={itemData?.img} alt={itemData?.name || label} />
 
                                             </div>
 

@@ -1,3 +1,4 @@
+import FruitImage from '../../Components/FruitImage.jsx';
 // pages/games/FruitBattlePage.jsx
 import { useEffect, useState, useRef } from "react";
 import Header from "../../Components/header/Header";
@@ -194,11 +195,11 @@ export default function GrandRun() {
                             </div>
                             <div className={styles.optionFruitWrapper}>
                                 {
-                                    <img src={`${CDN_BASE}/fruits/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.fruit} alt="image of a devil fruit" />
+                                    <FruitImage fruit={fruitDrafted} alt={fruitDrafted.name} />
                                 }
                                 <div>
                                     {
-                                        <img src={`${CDN_BASE}/characters/${fruitDrafted.id}.webp` ?? fruitDrafted.img?.user} alt="image of a devil fruit user" />
+                                        <FruitImage fruit={fruitDrafted} kind="character" alt={fruitDrafted.user} />
                                     }
 
                                     <p>previous user</p>
