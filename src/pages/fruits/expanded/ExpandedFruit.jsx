@@ -98,7 +98,7 @@ export default function ExpandedFruit() {
                     {fruitInfo.romanizedName && <span>{fruitInfo.romanizedName}</span>}
                 </div>}
                 <div className={styles.shortIntro}><h2>What does this fruit do?</h2><p>{summary || 'We haven’t added a description for this fruit yet.'}</p></div>
-                {tags.length > 0 && <ul className={styles.abilityTags} aria-label="Ability tags">{tags.map(tag => <li key={tag.id}><Link to={`/?ability=${tag.id}`}>{tag.label}</Link></li>)}</ul>}
+                {tags.length > 0 && <ul className={styles.abilityTags} aria-label="Ability tags">{tags.map(tag => <li key={tag.id}><Link to={`/?ability=${tag.id}#fruit-filters`}>{tag.label}</Link></li>)}</ul>}
             </div>
             <nav className={styles.jumpLinks} aria-label="On this page">
                 {sections.map(([target, label]) => <a key={target} href={`#${target}`}>{label}</a>)}
@@ -110,7 +110,7 @@ export default function ExpandedFruit() {
                         <div className={styles.gridDiv2x2}>
                             <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
                             <p>User: <span>{fruitInfo.user || 'Unknown'}</span></p>
-                            <p>Debut arc: {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
+                            <p>Debut arc: {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}#fruit-filters`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
                             <p>First appearance: <span>{fruitInfo.firstAppearance || 'Unknown'}</span></p>
                             <p>Previous user: <span>{fruitInfo.previousUser || 'Unknown'}</span></p>
                             <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>

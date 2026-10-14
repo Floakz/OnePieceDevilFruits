@@ -110,6 +110,7 @@ export default function Header({ headerShown, headerTitle }) {
     const location = useLocation();
 
     const isMiniGamesActive =
+        location.pathname === "/blind-ranking" ||
         location.pathname.startsWith("/fruit-finder") ||
         location.pathname.startsWith("/crew-wars") ||
         location.pathname.startsWith("/fruit-battle");
@@ -201,7 +202,7 @@ export default function Header({ headerShown, headerTitle }) {
                             <div
                                 className={`menuOption ${isMiniGamesActive ? "isActive" : ""} ${styles.OptionWrapper}`}
                             >
-                                <span>Pirate Games {arrowDownIco}</span>
+                                <span tabIndex={0}>Pirate Games <span className={styles.newBadge}>NEW</span> {arrowDownIco}</span>
 
                                 <div className={styles.menuItemDropdownWrapper}>
                                     <NavLink
@@ -211,6 +212,10 @@ export default function Header({ headerShown, headerTitle }) {
                                         }
                                     >
                                         FRUIT FINDER
+                                    </NavLink>
+
+                                    <NavLink to="/blind-ranking" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                        BLIND RANKING <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
 
                                     <NavLink
@@ -316,15 +321,24 @@ export default function Header({ headerShown, headerTitle }) {
                                     COMMUNITY
                                 </NavLink>
 
-                                <NavLink
-                                    to="/fruit-finder"
-                                    onClick={() => setIsMobileMenuOpen(false)}
-                                    className={({ isActive }) =>
-                                        ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
-                                    }
-                                >
-                                    FRUIT FINDER
-                                </NavLink>
+                                <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
+                                    <div className={styles.mobileGamesHeading}>Pirate Games <span className={styles.newBadge}>NEW</span></div>
+                                    <NavLink
+                                        to="/fruit-finder"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                        className={({ isActive }) =>
+                                            ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
+                                        }
+                                    >
+                                        FRUIT FINDER
+                                    </NavLink>
+                                    <NavLink to="/blind-ranking" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                        BLIND RANKING <span className={styles.newBadge}>NEW</span>
+                                    </NavLink>
+                                    <NavLink to="/crew-wars" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                        CREW WARS
+                                    </NavLink>
+                                </div>
 
                                 <NavLink
                                     to="/quizzes"
@@ -393,6 +407,7 @@ export default function Header({ headerShown, headerTitle }) {
                             aria-controls="mobile-navigation"
                         >
                             {isMobileMenuOpen ? closeIcon : menuIcon}
+                            {!isMobileMenuOpen && <span className={`${styles.newBadge} ${styles.menuNewBadge}`}>NEW</span>}
                         </button>
                     </>
                 )}

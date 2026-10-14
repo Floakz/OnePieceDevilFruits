@@ -78,9 +78,31 @@
     background: transparent;
 }
 
-.OptionWrapper:hover>.menuItemDropdownWrapper {
+.OptionWrapper:hover>.menuItemDropdownWrapper,
+.OptionWrapper:focus-within>.menuItemDropdownWrapper {
     display: flex;
     flex-direction: column;
+}
+
+.newBadge {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background: #14ffeb;
+    color: #022668;
+    font-size: 0.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    vertical-align: middle;
+}
+
+.newGameLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .kofiButton {
@@ -179,6 +201,35 @@
         text-align: center;
         padding: 10px;
         border-radius: 10px;
+    }
+
+    .menuNewBadge {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        padding: 4px 5px;
+    }
+
+    .mobileGameLinks {
+        display: grid;
+        gap: 10px;
+        padding: 16px 0;
+        border-block: 1px solid rgba(2, 38, 104, 0.2);
+    }
+
+    .mobileGamesHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #022668;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .newGameLink {
+        justify-content: center;
     }
 
     .OptionWrapper:hover>.menuItemDropdownWrapper,

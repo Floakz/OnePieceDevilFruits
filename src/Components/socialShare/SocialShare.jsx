@@ -27,9 +27,7 @@ export default function SocialShare({
     const value = `${shareText} ${shareUrl}`;
 
     try {
-      if (navigator.clipboard) {
-        await navigator.clipboard.writeText(value);
-      }
+      await navigator.clipboard.writeText(value);
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1500);
     } catch (error) {
@@ -44,6 +42,8 @@ export default function SocialShare({
         text: shareText,
         url: shareUrl,
       }).catch(() => {});
+    } else {
+      handleCopyLink();
     }
   };
 
@@ -70,7 +70,7 @@ export default function SocialShare({
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 5v14M5 12h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <span>Share</span>
+          <span>{copied ? 'Copied!' : 'Share'}</span>
         </button>
       </div>
     </div>

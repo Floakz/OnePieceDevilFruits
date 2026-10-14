@@ -1,14 +1,23 @@
 import { useCallback, useEffect, useId, useMemo, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { getFruitArcOptions } from "../../lib/fruitArcs.js";
 import styles from "./FruitArcFilter.module.css";
 import { ABILITY_TAGS, FILTER_DEFAULTS, SORT_OPTIONS } from '../../lib/fruitDiscovery.js';
 
 export default function FruitArcFilter({ fruits, selectedArc, resultCount, onChange, filters, onFilterChange, clearFilters }) {
     const titleId = useId();
+    const { hash } = useLocation();
+    const panelRef = useRef(null);
     const trackRef = useRef(null);
     const [scrollState, setScrollState] = useState({ canGoBack: false, canGoForward: false });
     const options = useMemo(() => getFruitArcOptions(fruits), [fruits]);
     const hasSelection = filters ? Object.entries(filters).some(([key, value]) => value !== FILTER_DEFAULTS[key]) : selectedArc && selectedArc !== "all";
+
+    useEffect(() => {
+        if (hash !== '#fruit-filters') return;
+        const frame = requestAnimationFrame(() => panelRef.current?.scrollIntoView({ block: 'start', behavior: 'instant' }));
+        return () => cancelAnimationFrame(frame);
+    }, [hash, fruits.length]);
 
     const updateScrollState = useCallback(() => {
         const track = trackRef.current;
@@ -60,7 +69,7 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
     }
 
     return (
-        <section className={styles.filterPanel} aria-labelledby={titleId}>
+        <section id="fruit-filters" ref={panelRef} className={styles.filterPanel} aria-labelledby={titleId}>
             <div className={styles.panelHeader}>
                 <div className={styles.titleGroup}>
                     <span className={styles.routeIcon} aria-hidden="true">
