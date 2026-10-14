@@ -20,6 +20,7 @@ export default function useFruitCatalog(category) {
     function onFilterChange(key, value) {
         setParams(previous => {
             const next = new URLSearchParams(previous);
+            next.delete('subtype');
             if (value === FILTER_DEFAULTS[key]) next.delete(key);
             else next.set(key, value);
             next.delete('page');
@@ -30,6 +31,7 @@ export default function useFruitCatalog(category) {
         setParams(previous => {
             const next = new URLSearchParams(previous);
             Object.keys(FILTER_DEFAULTS).forEach(key => next.delete(key));
+            next.delete('subtype');
             next.delete('page');
             return next;
         });

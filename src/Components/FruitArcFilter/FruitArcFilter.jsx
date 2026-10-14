@@ -157,11 +157,6 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                         <option value="all">Any status</option><option value="awakened">Awakened</option><option value="not-confirmed">Not confirmed</option><option value="unknown">Unknown</option>
                     </select>
                 </label>
-                {fruits.some(fruit => fruit.type?.includes('Zoan')) && <label>Zoan subtype
-                    <select value={filters.subtype} onChange={event => onFilterChange('subtype', event.target.value)}>
-                        <option value="all">All subtypes</option><option value="Zoan">Regular Zoan</option><option value="Ancient Zoan">Ancient Zoan</option><option value="Mythical Zoan">Mythical Zoan</option><option value="Artificial Zoan">Artificial Zoan</option>
-                    </select>
-                </label>}
                 <label>Ability
                     <select value={filters.ability} onChange={event => onFilterChange('ability', event.target.value)}>
                         <option value="all">Any ability</option>

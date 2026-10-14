@@ -15,7 +15,7 @@ test('all filters combine without silently dropping the arc or status', () => {
         { id: '4', name: 'Bird-Bird Fruit, Model: Phoenix', type: 'Mythical Zoan', debutArc: 'Marineford', isCanon: false, isAwakened: true },
         { id: '5', name: 'Bird-Bird Fruit, Model: Phoenix', type: 'Mythical Zoan', debutArc: 'Marineford', isCanon: true, isAwakened: false },
     ];
-    assert.deepEqual(filterAndSortFruits(fruits, filter({ arc: 'Marineford', canon: 'canon', awakening: 'awakened', subtype: 'Mythical Zoan', ability: 'flight' })).map(fruit => fruit.id), ['1']);
+    assert.deepEqual(filterAndSortFruits(fruits, filter({ arc: 'Marineford', canon: 'canon', awakening: 'awakened', ability: 'flight' })).map(fruit => fruit.id), ['2', '1']);
     assert.equal(fruits.length, 5);
 });
 
@@ -31,7 +31,8 @@ test('unknown statuses are distinct from explicitly false values', () => {
 
 test('unknown URL values fall back safely and valid combinations round-trip', () => {
     assert.deepEqual(readDiscoveryFilters(new URLSearchParams('canon=banana&ability=water&sort=invalid&page=-8')), FILTER_DEFAULTS);
-    const selected = filter({ arc: 'Wano Country', canon: 'canon', awakening: 'awakened', subtype: 'Mythical Zoan', ability: 'flight', sort: 'debut-desc' });
+    assert.deepEqual(readDiscoveryFilters(new URLSearchParams('subtype=Mythical+Zoan')), FILTER_DEFAULTS);
+    const selected = filter({ arc: 'Wano Country', canon: 'canon', awakening: 'awakened', ability: 'flight', sort: 'debut-desc' });
     assert.deepEqual(readDiscoveryFilters(new URLSearchParams(selected)), selected);
 });
 

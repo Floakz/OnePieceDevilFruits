@@ -155,6 +155,7 @@ export default function ExpandedFruit() {
             {otherFruits.length > 0 && <section className={styles.sectionWrapper} aria-labelledby="related-title">
                 <h2 id="related-title" className={styles.sectionTitle}>Worth a look next</h2>
                 <div className={styles.otherFruitsWrapper}>{otherFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.otherFruitsSingle}>
+                    <FruitImage fruit={fruit} kind="character" loading="lazy" className={styles.relatedCharacter} alt="" aria-hidden="true" />
                     <FruitImage fruit={fruit} loading="lazy" className={styles.otherfruitImg} />
                     <h3>{fruit.name}</h3><p className={styles.relatedReason}>{fruit.reason}</p>
                 </Link>)}</div>

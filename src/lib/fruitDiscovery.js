@@ -44,13 +44,12 @@ export const SORT_OPTIONS = [
     ['debut-asc', 'Debut: earliest first'], ['debut-desc', 'Debut: latest first'],
 ];
 
-export const FILTER_DEFAULTS = { arc: 'all', canon: 'all', awakening: 'all', subtype: 'all', ability: 'all', sort: 'name-asc' };
+export const FILTER_DEFAULTS = { arc: 'all', canon: 'all', awakening: 'all', ability: 'all', sort: 'name-asc' };
 
 export function readDiscoveryFilters(params) {
     const valid = {
         arc: FRUIT_ARC_ORDER, canon: ['canon', 'non-canon', 'unknown'],
         awakening: ['awakened', 'not-confirmed', 'unknown'],
-        subtype: ['Zoan', 'Ancient Zoan', 'Mythical Zoan', 'Artificial Zoan'],
         ability: ABILITY_TAGS.map(tag => tag.id), sort: SORT_OPTIONS.map(([value]) => value),
     };
     return Object.fromEntries(Object.entries(FILTER_DEFAULTS).map(([key, fallback]) => {
@@ -68,7 +67,6 @@ export function filterAndSortFruits(fruits, filters) {
         (filters.arc === 'all' || fruit.debutArc === filters.arc)
         && matchesStatus(fruit.isCanon, filters.canon, 'canon', 'non-canon')
         && matchesStatus(fruit.isAwakened, filters.awakening, 'awakened', 'not-confirmed')
-        && (filters.subtype === 'all' || fruit.type === filters.subtype)
         && (filters.ability === 'all' || getAbilityTags(fruit).some(tag => tag.id === filters.ability))
     );
     const byName = (a, b) => a.name.localeCompare(b.name) || String(a.id).localeCompare(String(b.id));

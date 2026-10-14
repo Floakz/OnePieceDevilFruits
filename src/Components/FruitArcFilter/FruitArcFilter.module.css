@@ -31,7 +31,6 @@
 
 @media (max-width: 500px) {
     .extraFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .extraFilters label:last-child { grid-column: 1 / -1; }
 }
 
 .panelHeader {
