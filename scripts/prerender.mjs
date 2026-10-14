@@ -2,6 +2,7 @@ import { mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { BLIND_RANKING_PAGE } from '../src/lib/blindRanking.js';
+import { FINDER_PAGE } from '../src/lib/fruitFinder.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -171,7 +172,7 @@ for (const fruit of fruitData) {
 
 const utilityPages = [
     ["/community", "Community Devil Fruits", "Discover original Devil Fruits submitted by the One Piece fan community."],
-    ["/fruit-finder", "Devil Fruit Finder", "Answer a few questions to discover which One Piece Devil Fruit best matches you."],
+    ["/fruit-finder", "Devil Fruit Finder", FINDER_PAGE.description],
     ["/crew-wars", "Crew Wars", "Build your One Piece crew and test it in Crew Wars."],
     [BLIND_RANKING_PAGE.path, "Devil Fruit Blind Ranking", BLIND_RANKING_PAGE.description],
     ["/grand-run", "Grand Run", "Play Grand Run and test your One Piece knowledge and reflexes."],
@@ -182,9 +183,10 @@ const utilityPages = [
 
 for (const [route, heading, description] of utilityPages) {
     const canonical = `${SITE}${route}`;
-    const structuredData = route === BLIND_RANKING_PAGE.path ? BLIND_RANKING_PAGE.jsonLd : { "@context": "https://schema.org", "@graph": [breadcrumb([{ name: "Home", path: "/" }, { name: heading, path: route }]), { "@type": "WebPage", name: heading, url: canonical, description }] };
+    const page = route === BLIND_RANKING_PAGE.path ? BLIND_RANKING_PAGE : route === '/fruit-finder' ? FINDER_PAGE : null;
+    const structuredData = page?.jsonLd || { "@context": "https://schema.org", "@graph": [breadcrumb([{ name: "Home", path: "/" }, { name: heading, path: route }]), { "@type": "WebPage", name: heading, url: canonical, description }] };
     const content = `${prerenderStyle}<main class="prerender-page"><nav aria-label="Breadcrumb"><a href="/">Home</a> / <span>${escapeHtml(heading)}</span></nav><h1>${escapeHtml(heading)}</h1><p>${escapeHtml(description)}</p></main>`;
-    await writeRoute(route, renderDocument({ title: route === BLIND_RANKING_PAGE.path ? BLIND_RANKING_PAGE.title : `${heading} | One Piece Devil Fruits`, description, canonical, structuredData }, content));
+    await writeRoute(route, renderDocument({ title: page?.title || `${heading} | One Piece Devil Fruits`, description, canonical, structuredData }, content));
 }
 
 for (const quiz of quizData) {

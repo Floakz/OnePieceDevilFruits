@@ -97,12 +97,9 @@ export default function ExpandedFruit() {
                     {fruitInfo.japaneseName && <span lang="ja">{fruitInfo.japaneseName}</span>}
                     {fruitInfo.romanizedName && <span>{fruitInfo.romanizedName}</span>}
                 </div>}
-                <div className={styles.shortIntro}><h2>What does this fruit do?</h2><p>{summary || 'We haven’t added a description for this fruit yet.'}</p></div>
                 {tags.length > 0 && <ul className={styles.abilityTags} aria-label="Ability tags">{tags.map(tag => <li key={tag.id}><Link to={`/?ability=${tag.id}#fruit-filters`}>{tag.label}</Link></li>)}</ul>}
             </div>
-            <nav className={styles.jumpLinks} aria-label="On this page">
-                {sections.map(([target, label]) => <a key={target} href={`#${target}`}>{label}</a>)}
-            </nav>
+           
             <section id="fruit-facts" tabIndex={-1} className={styles.sectionDetailWrapper} aria-labelledby="facts-title">
                 <div className={styles.wrapper1x2}>
                     <div className={styles.InfoWrapper}>

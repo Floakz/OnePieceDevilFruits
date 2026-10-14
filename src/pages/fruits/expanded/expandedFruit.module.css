@@ -471,7 +471,7 @@
 /* Detail-page additions keep the same palette and leave room for long names. */
 .pageDetailWrapper { padding-bottom: 40px; }
 .pageDetailWrapper section[id] { scroll-margin-top: 90px; }
-.titleWrapper { margin-bottom: 0; }
+.titleWrapper { margin-bottom: 30px; }
 .shortIntro { max-width: 720px; margin: 24px auto 0; line-height: 1.7; }
 .shortIntro h2 { color: #f8de3c; font-size: .8rem; font-weight: 600; margin-bottom: 8px; }
 .shortIntro p { color: #b9cef3; font-size: .9rem; }
