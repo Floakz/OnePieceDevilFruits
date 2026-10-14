@@ -33,7 +33,6 @@ export default function AllFruitsPage() {
                 onFilterChange={onFilterChange}
                 clearFilters={clearFilters}
             />
-            <RatingsGuide compact />
             <main id="fruit-list" aria-busy={status === 'loading'}>
                 <CatalogState status={status} empty={!filtered.length} retry={retry} clearFilters={clearFilters} />
                 <section className="semanticsSection" aria-labelledby="intro">

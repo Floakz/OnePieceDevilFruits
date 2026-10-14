@@ -27,6 +27,15 @@
     background: #001335; color: #fff; font: inherit; font-size: .8rem; cursor: pointer;
 }
 .extraFilters select:focus-visible { outline: 2px solid #f8de3c; outline-offset: 3px; }
+.extraFilters select.selectedFilter {
+    background: #f8de3c;
+    border-color: #f8de3c;
+    color: #001741;
+    color-scheme: light;
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(248, 222, 60, .16);
+}
+.extraFilters select option { background: #001335; color: #fff; }
 .filterNote { margin-top: 12px; color: #9bb7ea; font-size: .75rem; }
 
 @media (max-width: 500px) {

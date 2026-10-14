@@ -148,23 +148,23 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
             </div>
             {filters && <div className={styles.extraFilters}>
                 <label>Canon status
-                    <select value={filters.canon} onChange={event => onFilterChange('canon', event.target.value)}>
+                    <select className={filters.canon !== FILTER_DEFAULTS.canon ? styles.selectedFilter : undefined} value={filters.canon} onChange={event => onFilterChange('canon', event.target.value)}>
                         <option value="all">All fruits</option><option value="canon">Canon</option><option value="non-canon">Non-canon</option><option value="unknown">Unknown</option>
                     </select>
                 </label>
                 <label>Awakening
-                    <select value={filters.awakening} onChange={event => onFilterChange('awakening', event.target.value)}>
+                    <select className={filters.awakening !== FILTER_DEFAULTS.awakening ? styles.selectedFilter : undefined} value={filters.awakening} onChange={event => onFilterChange('awakening', event.target.value)}>
                         <option value="all">Any status</option><option value="awakened">Awakened</option><option value="not-confirmed">Not confirmed</option><option value="unknown">Unknown</option>
                     </select>
                 </label>
                 <label>Ability
-                    <select value={filters.ability} onChange={event => onFilterChange('ability', event.target.value)}>
+                    <select className={filters.ability !== FILTER_DEFAULTS.ability ? styles.selectedFilter : undefined} value={filters.ability} onChange={event => onFilterChange('ability', event.target.value)}>
                         <option value="all">Any ability</option>
                         {ABILITY_TAGS.map(tag => <option key={tag.id} value={tag.id}>{tag.label}</option>)}
                     </select>
                 </label>
                 <label>Sort by
-                    <select value={filters.sort} onChange={event => onFilterChange('sort', event.target.value)}>
+                    <select className={filters.sort !== FILTER_DEFAULTS.sort ? styles.selectedFilter : undefined} value={filters.sort} onChange={event => onFilterChange('sort', event.target.value)}>
                         {SORT_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
                     </select>
                 </label>

@@ -45,7 +45,6 @@ export default function ZoanFruits() {
                 onFilterChange={onFilterChange}
                 clearFilters={clearFilters}
             />
-            <RatingsGuide compact />
             <main id="fruit-list" aria-busy={status === 'loading'}>
                 <CatalogState status={status} empty={!filtered.length} retry={retry} clearFilters={clearFilters} />
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
