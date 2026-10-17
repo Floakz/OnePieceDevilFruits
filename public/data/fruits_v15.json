@@ -2934,5 +2934,25 @@
         "isAwakened": false,
         "isCanon": true,
         "debutArc": "Elbaf"
+    },
+    {
+        "id": "d2a7f4b9-8e13-4c60-b5a2-1f9c3e7d6a48",
+        "previousUser": null,
+        "name": "Whisper-Whisper Fruit",
+        "romanizedName": "Hiso Hiso no Mi",
+        "japaneseName": "ヒソヒソの実",
+        "nameMeaning": "Whisperingly",
+        "type": "Paramecia",
+        "user": "Apis",
+        "power": 15,
+        "rarity": 1,
+        "about": "An anime-only Paramecia-type Devil Fruit that lets the user understand the hearts of animals, allowing them to communicate telepathically with any creature. By earning animals' trust, the user can be warned of danger before it arrives, and the power even extends to Sea Kings. It has virtually no direct offensive use. It was eaten by Apis, a young woman who used it to warn the Straw Hats of an incoming storm wind and escape the pursuing Marines.",
+        "img": {
+            "fruit": "",
+            "user": ""
+        },
+        "isAwakened": false,
+        "isCanon": false,
+        "debutArc": "Warship Island (Non-canon)"
     }
 ]
