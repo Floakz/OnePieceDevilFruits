@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { ABILITY_TAGS, FILTER_DEFAULTS, filterAndSortFruits, getAbilityTags, getRelatedFruits, readDiscoveryFilters } from '../src/lib/fruitDiscovery.js';
 
-const catalog = JSON.parse(readFileSync(new URL('../public/data/fruits_v15.json', import.meta.url), 'utf8'));
+const catalog = JSON.parse(readFileSync(new URL('../public/data/fruits_v16.json', import.meta.url), 'utf8'));
 const find = name => catalog.find(fruit => fruit.name.startsWith(name));
 const filter = changes => ({ ...FILTER_DEFAULTS, ...changes });
 

@@ -32,7 +32,7 @@ const cleanDescription = (value = "") => {
     return `${normalized.slice(0, 155).replace(/\s+\S*$/, "")}…`;
 };
 
-const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v15.json"), "utf8"));
+const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v16.json"), "utf8"));
 const quizDirectory = path.join(ROOT, "src", "lib", "quizzes", "allQuizzes");
 const quizFiles = (await readdir(quizDirectory)).filter((file) => file.endsWith(".json"));
 const quizData = await Promise.all(

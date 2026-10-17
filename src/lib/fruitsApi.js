@@ -13,11 +13,11 @@ async function getFirestoreContext() {
 }
 
 // ---------- STATIC DATA (Netlify /public/data) ----------
-const STATIC_URL = '/data/fruits_v15.json'; // your single full file
+const STATIC_URL = '/data/fruits_v16.json'; // your single full file
 
 // ---- CACHE CONFIG ----
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
-const CACHE_KEY = 'fruits_cache_v18'; // bump version when file changes
+const CACHE_KEY = `fruits_cache:${STATIC_URL}`; // isolate caches per catalog version
 
 function readCache(key) {
     try {

@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import fruitsExpandedInfo from "../src/lib/fruits/fruitsExpandedInfo.js";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const FRUITS_PATH = path.join(ROOT, "public", "data", "fruits_v15.json");
+const FRUITS_PATH = path.join(ROOT, "public", "data", "fruits_v16.json");
 
 const episodeRanges = [
     [1, 3, "Romance Dawn"],

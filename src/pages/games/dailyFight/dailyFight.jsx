@@ -353,7 +353,6 @@ export default function DailyFight() {
                                     {votedSide === "left" && <span className={styles.yourVote}>Your vote</span>}
                                     <div className={styles.resultValue}>
                                         <span>{voteCount.leftPct}%</span>
-                                        <span className={styles.resultVoteCount}>{voteCount.left} {voteCount.left === 1 ? "vote" : "votes"}</span>
                                     </div>
                                 </div>
                             </div>
@@ -362,13 +361,9 @@ export default function DailyFight() {
                                     {votedSide === "right" && <span className={styles.yourVote}>Your vote</span>}
                                     <div className={styles.resultValue}>
                                         <span>{voteCount.rightPct}%</span>
-                                        <span className={styles.resultVoteCount}>{voteCount.right} {voteCount.right === 1 ? "vote" : "votes"}</span>
                                     </div>
                                 </div>
-                            </div>
-                            <div className={styles.totalVoteCount}>
-                                {voteCount.left + voteCount.right} total {voteCount.left + voteCount.right === 1 ? "vote" : "votes"}
-                            </div>
+                            </div>                         
                         </div>}
 
                         <div onClick={() => handleVote("left")} style={{ backgroundImage: `url(${leftOption.userImage})` }} className={styles.leftOptionWrapper}>

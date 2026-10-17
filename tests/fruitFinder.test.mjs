@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { FINDER_QUESTIONS, FINDER_QUESTION_COUNT, FINDER_DEFAULT_QUESTION_IDS, INITIAL_FINDER_STATE, createFinderRun, finderAnswersComplete, finderReducer, findFruitMatches, getFinderCandidates, getFinderQuestion, pickFinderMatch, restoreFinderState } from '../src/lib/fruitFinder.js';
 
-const catalog = JSON.parse(readFileSync(new URL('../public/data/fruits_v15.json', import.meta.url), 'utf8'));
+const catalog = JSON.parse(readFileSync(new URL('../public/data/fruits_v16.json', import.meta.url), 'utf8'));
 const responses = changes => ({ goal: 'travel', approach: 'escape', everyday: 'practical', escape: 'shortcut', form: 'open', priority: 'utility', drawback: 'setup', canon: 'all', ...changes });
 const makeRun = () => ({ ...createFinderRun({ random: () => 0 }), questionIds: [...FINDER_DEFAULT_QUESTION_IDS], resultRoll: .42 });
 const start = () => finderReducer(INITIAL_FINDER_STATE, { type: 'START', run: makeRun() });
