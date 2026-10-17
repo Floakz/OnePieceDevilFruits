@@ -202,7 +202,7 @@ export default function Header({ headerShown, headerTitle }) {
                             <div
                                 className={`menuOption ${isMiniGamesActive ? "isActive" : ""} ${styles.OptionWrapper}`}
                             >
-                                <span tabIndex={0}>Pirate Games <span className={styles.newBadge}>NEW</span> {arrowDownIco}</span>
+                                <span tabIndex={0}>Pirate Games {arrowDownIco}<span className={styles.newMenuItem}>NEW</span></span>
 
                                 <div className={styles.menuItemDropdownWrapper}>
                                     <NavLink

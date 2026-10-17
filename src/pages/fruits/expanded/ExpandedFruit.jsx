@@ -5,7 +5,7 @@ import FruitImage from '../../../Components/FruitImage.jsx';
 import RatingsGuide from '../../../Components/RatingsGuide.jsx';
 import useFruits from '../../../hooks/useFruits.js';
 import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
-import { useEffect, useMemo } from 'react';
+import { createElement, useEffect, useMemo } from 'react';
 import fruitsExpandedInfo from '../../../lib/fruits/fruitsExpandedInfo';
 import styles from './expandedFruit.module.css';
 import { getFruitImages } from '../../../lib/imagesMap';
@@ -27,6 +27,10 @@ function Score({ label, value }) {
 function DetailList({ items, empty }) {
     return items?.length ? <ul className={styles.detailList}>{items.map((text, index) => <li key={index}>{text}</li>)}</ul>
         : <p className={styles.muted}>{empty}</p>;
+}
+
+function SectionTitle({ id, as: heading = 'h2', emoji, children }) {
+    return createElement(heading, { id, className: styles.sectionTitle }, <span aria-hidden="true">{emoji}</span>, ' ', children);
 }
 
 export default function ExpandedFruit() {
@@ -75,7 +79,6 @@ export default function ExpandedFruit() {
             { '@type': 'WebPage', name: fruitInfo.name, alternateName: [fruitInfo.romanizedName, fruitInfo.japaneseName].filter(Boolean), url: canonical, description: summary, image: seoImage },
         ],
     } : undefined;
-    const sections = [['fruit-facts', 'Facts'], ['fruit-abilities', 'Abilities'], ['fruit-strengths', 'Strengths'], ['fruit-weaknesses', 'Weaknesses'], ['fruit-stats', 'Stats'], ...(finalImgs.length ? [['fruit-gallery', 'Gallery']] : [])];
 
     return <>
         <Seo title={title} description={fruitInfo?.about?.slice(0, 158) || 'Browse Devil Fruits with type, user, stats and images.'}
@@ -103,7 +106,7 @@ export default function ExpandedFruit() {
             <section id="fruit-facts" tabIndex={-1} className={styles.sectionDetailWrapper} aria-labelledby="facts-title">
                 <div className={styles.wrapper1x2}>
                     <div className={styles.InfoWrapper}>
-                        <h2 id="facts-title" className={styles.sectionTitle}>Quick facts</h2>
+                        <SectionTitle id="facts-title" emoji="📌">Quick facts</SectionTitle>
                         <div className={styles.gridDiv2x2}>
                             <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
                             <p>User: <span>{fruitInfo.user || 'Unknown'}</span></p>
@@ -113,7 +116,7 @@ export default function ExpandedFruit() {
                             <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>
                             <p>Canon status: <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
                         </div>
-                        <h3 className={styles.sectionTitle}>Names</h3>
+                        <SectionTitle as="h3" emoji="🏷️">Names</SectionTitle>
                         <dl className={styles.namesGrid}>
                             <div><dt>English</dt><dd>{fruitInfo.name}</dd></div>
                             <div><dt>Romanized</dt><dd>{fruitInfo.romanizedName || 'Unknown'}</dd></div>
@@ -125,18 +128,18 @@ export default function ExpandedFruit() {
                 </div>
             </section>
             <section id="fruit-abilities" tabIndex={-1} className={styles.sectionWrapper} aria-labelledby="abilities-title">
-                <h2 id="abilities-title" className={styles.sectionTitle}>Abilities</h2>
+                <SectionTitle id="abilities-title" emoji="🌪️">Abilities</SectionTitle>
                 <DetailList items={fruitInfo.abilities?.length ? fruitInfo.abilities : fruitInfo.about ? [fruitInfo.about] : []} empty="We haven’t added the abilities yet." />
-                {fruitInfo.techniques?.length > 0 && <><h3 className={styles.sectionTitle}>Named techniques</h3><DetailList items={fruitInfo.techniques} /></>}
+                {fruitInfo.techniques?.length > 0 && <><SectionTitle as="h3" emoji="⚔️">Named techniques</SectionTitle><DetailList items={fruitInfo.techniques} /></>}
             </section>
             <div className={styles.sectionWrapper}>
                 <div className={styles.wrapper1x3}>
-                    <section id="fruit-strengths" tabIndex={-1} aria-labelledby="strengths-title"><h2 id="strengths-title" className={styles.sectionTitle}>Strengths</h2><DetailList items={fruitInfo.strengths} empty="We haven’t added the strengths yet." /></section>
-                    <section id="fruit-weaknesses" tabIndex={-1} aria-labelledby="weaknesses-title"><h2 id="weaknesses-title" className={styles.sectionTitle}>Weaknesses</h2><DetailList items={fruitInfo.weaknesses} empty="We haven’t added the weaknesses yet." /></section>
+                    <section id="fruit-strengths" tabIndex={-1} aria-labelledby="strengths-title"><SectionTitle id="strengths-title" emoji="🛡️">Strengths</SectionTitle><DetailList items={fruitInfo.strengths} empty="We haven’t added the strengths yet." /></section>
+                    <section id="fruit-weaknesses" tabIndex={-1} aria-labelledby="weaknesses-title"><SectionTitle id="weaknesses-title" emoji="⚠️">Weaknesses</SectionTitle><DetailList items={fruitInfo.weaknesses} empty="We haven’t added the weaknesses yet." /></section>
                 </div>
             </div>
             <section id="fruit-stats" tabIndex={-1} className={`${styles.sectionWrapper} ${styles.sectionOutline}`} aria-labelledby="stats-title">
-                <div className={styles.statsHeading}><h2 id="stats-title" className={styles.sectionTitle}>Stats</h2><span className={styles.editorialLabel}>Editorial scores</span></div>
+                <div className={styles.statsHeading}><SectionTitle id="stats-title" emoji="📊">Stats</SectionTitle><span className={styles.editorialLabel}>Editorial scores</span></div>
                 <div className={styles.wrapper4x4}>
                     <Score label="Attack" value={fruitInfo.ratings?.attack} /><Score label="Defense" value={fruitInfo.ratings?.defense} />
                     <Score label="Utility" value={fruitInfo.ratings?.utility} /><Score label="Power" value={fruitInfo.power} />
@@ -147,10 +150,10 @@ export default function ExpandedFruit() {
                 <RatingsGuide />
             </section>
             {finalImgs.length > 0 && <section id="fruit-gallery" tabIndex={-1} className={styles.sectionWrapper} aria-labelledby="gallery-title">
-                <h2 id="gallery-title" className={styles.sectionTitle}>Gallery</h2><FruitGallery key={fruitInfo.id} images={finalImgs} fruit={fruitInfo} />
+                <SectionTitle id="gallery-title" emoji="🖼️">Gallery</SectionTitle><FruitGallery key={fruitInfo.id} images={finalImgs} fruit={fruitInfo} />
             </section>}
             {otherFruits.length > 0 && <section className={styles.sectionWrapper} aria-labelledby="related-title">
-                <h2 id="related-title" className={styles.sectionTitle}>Worth a look next</h2>
+                <SectionTitle id="related-title" emoji="✨">Worth a look next</SectionTitle>
                 <div className={styles.otherFruitsWrapper}>{otherFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.otherFruitsSingle}>
                     <FruitImage fruit={fruit} kind="character" loading="lazy" className={styles.relatedCharacter} alt="" aria-hidden="true" />
                     <FruitImage fruit={fruit} loading="lazy" className={styles.otherfruitImg} />
