@@ -1,4 +1,7 @@
 /* NEW DESIGN */
+.catalogState { grid-column: 1 / -1; width: 100%; padding: 40px 20px; text-align: center; color: #9bb7ea; }
+.catalogState button { margin-top: 15px; padding: 10px 18px; border: 1px solid #f8de3c; border-radius: 8px; background: #f8de3c; color: #001741; font: inherit; font-weight: 600; cursor: pointer; }
+.catalogState button:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
 
 * {
@@ -135,7 +138,7 @@ h1 {
 }
 
 main {
-    width: 80vw;
+    width: 90vw;
     max-width: 1600px;
     margin: auto;
     display: grid;

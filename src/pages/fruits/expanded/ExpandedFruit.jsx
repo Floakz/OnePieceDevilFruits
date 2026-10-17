@@ -1,399 +1,163 @@
-import Header from "../../../Components/header/Header";
-import Footer from "../../../Components/footer/footer";
-import { fetchAllFruitsOnce } from "../../../lib/fruitsApi";
-import Seo from "../../../Components/Seo";
-import { Link, useNavigate, useParams, useLocation } from "react-router-dom";
-import { useEffect, useMemo, useState } from "react";
-import fruitsExpandedInfo from "../../../lib/fruits/fruitsExpandedInfo";
+import Header from '../../../Components/header/Header';
+import Footer from '../../../Components/footer/footer';
+import Seo from '../../../Components/Seo';
+import FruitImage from '../../../Components/FruitImage.jsx';
+import RatingsGuide from '../../../Components/RatingsGuide.jsx';
+import useFruits from '../../../hooks/useFruits.js';
+import { Link, useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useEffect, useMemo } from 'react';
+import fruitsExpandedInfo from '../../../lib/fruits/fruitsExpandedInfo';
 import styles from './expandedFruit.module.css';
-import { getFruitImages } from "../../../lib/imagesMap";
-import { slugify } from "../../../lib/slugify";
+import { getFruitImages } from '../../../lib/imagesMap';
+import { slugify } from '../../../lib/slugify';
+import { getAbilityTags, getRelatedFruits } from '../../../lib/fruitDiscovery.js';
+import FruitGallery from './FruitGallery.jsx';
+
+const extraById = new Map(fruitsExpandedInfo.map(fruit => [String(fruit.id), fruit]));
+const SITE = 'https://onepiecedevilfruits.com';
+
+function Score({ label, value }) {
+    const known = Number.isFinite(value);
+    return <div className={styles.statWrapper}>
+        <div className={styles.statCopyWrapper}><p>{label}</p><p>{known ? `${value}/100` : 'Not rated'}</p></div>
+        <div className={styles.statBarWrapper} aria-hidden="true"><div /><div style={{ width: `${known ? Math.max(0, Math.min(100, value)) : 0}%` }} /></div>
+    </div>;
+}
+
+function DetailList({ items, empty }) {
+    return items?.length ? <ul className={styles.detailList}>{items.map((text, index) => <li key={index}>{text}</li>)}</ul>
+        : <p className={styles.muted}>{empty}</p>;
+}
 
 export default function ExpandedFruit() {
     const { id } = useParams();
     const navigate = useNavigate();
     const location = useLocation();
-
-    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
-
-    const [shownImageCarro, setShownImageCarro] = useState(0);
-    const [fruitInfo, setFruitInfo] = useState(null);
-    const [otherFruits, setOtherFruits] = useState();
-    const [status, setStatus] = useState('loading'); // 'loading' | 'ready' | 'notfound' | 'error'
-    const [imageLoaded, setImageLoaded] = useState(false);
-    const [matchedFruit, setMatchedFruit] = useState(null);
-
-    const imgs = useMemo(() => {
-        if (!matchedFruit) return [];
-        return getFruitImages(String(matchedFruit.id));
-    }, [matchedFruit]);
-
-
+    const { fruits, status, retry } = useFruits();
+    const matchedFruit = useMemo(() => fruits.find(fruit => String(fruit.id) === id
+        || slugify(fruit.name) === slugify(id) || slugify(fruit.romanizedName) === slugify(id)), [fruits, id]);
+    const fruitInfo = useMemo(() => matchedFruit ? { ...matchedFruit, ...extraById.get(String(matchedFruit.id)) } : null, [matchedFruit]);
+    const otherFruits = useMemo(() => fruitInfo ? getRelatedFruits(fruitInfo, fruits) : [], [fruitInfo, fruits]);
     const finalImgs = useMemo(() => {
-        if (imgs && imgs.length > 0) return imgs;
-        if (fruitInfo?.images && fruitInfo.images.length > 0) return fruitInfo.images;
-        return [];
-    }, [imgs, fruitInfo]);
+        if (!fruitInfo) return [];
+        const local = getFruitImages(String(fruitInfo.id));
+        return local.length ? local : (fruitInfo.images || []);
+    }, [fruitInfo]);
 
     useEffect(() => {
-        let active = true;
+        if (matchedFruit && id !== slugify(matchedFruit.name)) {
+            navigate({ pathname: `/fruit/${slugify(matchedFruit.name)}`, search: location.search, hash: location.hash }, { replace: true });
+        }
+    }, [matchedFruit, id, navigate, location.search, location.hash]);
 
-        (async () => {
-            try {
-                setShownImageCarro(0);
-                setImageLoaded(false);
-                setStatus('loading');
+    // A section link can also be opened directly or shared with someone else.
+    useEffect(() => {
+        if (status !== 'ready' || !fruitInfo || !location.hash) return;
+        const frame = requestAnimationFrame(() => document.getElementById(location.hash.slice(1))?.scrollIntoView({ block: 'start' }));
+        return () => cancelAnimationFrame(frame);
+    }, [status, fruitInfo, location.hash]);
 
-                const allFruits = await fetchAllFruitsOnce();
-                const requestedSlug = slugify(id);
-                const matched = allFruits.find(
-                    f => String(f.id) === String(id)
-                        || slugify(f.name) === requestedSlug
-                        || slugify(f.romanizedName) === requestedSlug
-                );
-
-                if (!active) return;
-
-                if (!matched) {
-                    setFruitInfo(null);
-                    setMatchedFruit(null);
-                    setStatus('notfound');
-                    return;
-                }
-
-                setMatchedFruit(matched);
-
-                // Canonicalize right here, using the freshly-resolved match for THIS id.
-                // Doing this inline (rather than in a separate effect keyed off matchedFruit)
-                // avoids a race where a stale matchedFruit from the previous fruit briefly
-                // coexists with the new id and fires a contradicting navigation.
-                if (id !== slugify(matched.name)) {
-                    navigate(`/fruit/${slugify(matched.name)}${location.search}${location.hash}`, { replace: true });
-                    return; // URL change will re-trigger this effect with the corrected id
-                }
-
-                const extra = fruitsExpandedInfo.find(f => String(f.id) === String(matched.id));
-                const merged = { ...matched, ...extra };
-
-                const pool = allFruits.filter(f => String(f.id) !== String(matched.id));
-                const picks = pool.sort(() => Math.random() - 0.5).slice(0, 5);
-
-                setOtherFruits(picks);
-                setFruitInfo(merged);
-                setStatus('ready');
-            } catch (err) {
-                console.error('Error finding the fruit', err);
-                if (active) setStatus('error');
-            }
-        })();
-
-        return () => { active = false; };
-    }, [id, location.hash, location.search, navigate]);
-
-    // if user changes image via arrows
-    function updateImageCarro(direction) {
-        setImageLoaded(false); // reset loader for the next image
-        setShownImageCarro(prev => {
-            if (direction === 'next') return Math.min(prev + 1, (imgs.length - 1));
-            if (direction === 'back') return Math.max(prev - 1, 0);
-            return prev;
-        });
-    }
-
-    const SITE = "https://onepiecedevilfruits.com";
-    const isReady = status === "ready" && fruitInfo;
-
-    const seoTitle = isReady
-        ? `${fruitInfo.name}${fruitInfo.romanizedName ? ` (${fruitInfo.romanizedName})` : ''} | One Piece Devil Fruits`
-        : "One Piece Devil Fruits — details, users and stats";
-
-    const seoDescription = isReady
-        ? (fruitInfo.about
-            ? `${fruitInfo.name}${fruitInfo.romanizedName ? `, also known as ${fruitInfo.romanizedName}` : ''}. ${fruitInfo.about}`.slice(0, 158)
-            : `Explore ${fruitInfo.name}${fruitInfo.type ? ` (${fruitInfo.type})` : ''}${fruitInfo.user ? ` used by ${fruitInfo.user}` : ''}. Stats, strengths, weaknesses and images.`)
-        : "Browse Devil Fruits with type, user, stats and images.";
-
-    const seoCanonical = isReady
-        ? `${SITE}/fruit/${slugify(fruitInfo.name)}`
-        : `${SITE}/`;
-
-    const categoryPath = isReady
-        ? (fruitInfo.type?.includes('Logia') ? '/logia' : fruitInfo.type?.includes('Zoan') ? '/zoan' : '/paramecia')
-        : '/';
-    const seoImage = isReady
-        ? (CDN_BASE ? `${CDN_BASE}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit)
-        : undefined;
-    const seoJsonLd = isReady ? {
-        "@context": "https://schema.org",
-        "@graph": [
-            {
-                "@type": "BreadcrumbList",
-                itemListElement: [
-                    { "@type": "ListItem", position: 1, name: "Home", item: `${SITE}/` },
-                    { "@type": "ListItem", position: 2, name: `${fruitInfo.type} Fruits`, item: `${SITE}${categoryPath}` },
-                    { "@type": "ListItem", position: 3, name: fruitInfo.name, item: seoCanonical },
-                ],
-            },
-            {
-                "@type": "WebPage",
-                name: fruitInfo.name,
-                alternateName: [fruitInfo.romanizedName, fruitInfo.japaneseName].filter(Boolean),
-                url: seoCanonical,
-                description: seoDescription,
-                image: seoImage,
-            },
+    const isReady = status === 'ready' && fruitInfo;
+    const categoryPath = fruitInfo?.type?.includes('Logia') ? '/logia' : fruitInfo?.type?.includes('Zoan') ? '/zoan' : '/paramecia';
+    const title = isReady ? `${fruitInfo.name}${fruitInfo.romanizedName ? ` (${fruitInfo.romanizedName})` : ''} | One Piece Devil Fruits` : 'One Piece Devil Fruits — details, users and stats';
+    const canonical = isReady ? `${SITE}/fruit/${slugify(fruitInfo.name)}` : `${SITE}/`;
+    const summary = fruitInfo ? (fruitInfo.abilities?.[0] || fruitInfo.about || '').split(/(?<=[.!?])\s+/)[0] : '';
+    const tags = fruitInfo ? getAbilityTags(fruitInfo) : [];
+    const cdn = import.meta.env.VITE_CDN_BASE;
+    const seoImage = fruitInfo ? (cdn ? `${cdn}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit) : undefined;
+    const jsonLd = isReady ? {
+        '@context': 'https://schema.org', '@graph': [
+            { '@type': 'BreadcrumbList', itemListElement: [
+                { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+                { '@type': 'ListItem', position: 2, name: `${fruitInfo.type} Fruits`, item: `${SITE}${categoryPath}` },
+                { '@type': 'ListItem', position: 3, name: fruitInfo.name, item: canonical },
+            ] },
+            { '@type': 'WebPage', name: fruitInfo.name, alternateName: [fruitInfo.romanizedName, fruitInfo.japaneseName].filter(Boolean), url: canonical, description: summary, image: seoImage },
         ],
     } : undefined;
+    const sections = [['fruit-facts', 'Facts'], ['fruit-abilities', 'Abilities'], ['fruit-strengths', 'Strengths'], ['fruit-weaknesses', 'Weaknesses'], ['fruit-stats', 'Stats'], ...(finalImgs.length ? [['fruit-gallery', 'Gallery']] : [])];
 
-    return (
-        <>
-            <Seo
-                title={seoTitle}
-                description={seoDescription}
-                canonical={seoCanonical}
-                image={seoImage}
-                type="article"
-                noindex={status === 'notfound' || status === 'error'}
-                jsonLd={seoJsonLd}
-            />
-
-            <Header headerShown={false} />
-            {status === 'loading' && <div className={styles.pageDetailWrapper}><h2>Loading… 🏴‍☠️</h2></div>}
-            {status === 'error' && <div className={styles.pageDetailWrapper}><h2>Ups. Something went Wrong</h2></div>}
-            {status === 'notfound' && <div className={styles.pageDetailWrapper}><h2>Fruit not found</h2></div>}
-
-            {status === 'ready' && (    
-                <div className={styles.pageDetailWrapper}>
-                    <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-                        <Link to="/">All fruits</Link>
-                        <span aria-hidden="true">/</span>
-                        <Link to={categoryPath}>{fruitInfo.type}</Link>
-                        <span aria-hidden="true">/</span>
-                        <span aria-current="page">{fruitInfo.name}</span>
-                    </nav>
-                    <div className={styles.titleWrapper}>
-                        <img
-                            loading="lazy"
-                            className='fruitImg'
-                            src={CDN_BASE ? `${CDN_BASE}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit}
-                            alt={`${fruitInfo.name} picture`}
-                        />
-                        <h1 className={styles.pageTitle}>{fruitInfo.name}</h1>
-                        {(fruitInfo.japaneseName || fruitInfo.romanizedName) && (
-                            <div className={styles.titleNames}>
-                                {fruitInfo.japaneseName && <span lang="ja">{fruitInfo.japaneseName}</span>}
-                                {fruitInfo.romanizedName && <span>{fruitInfo.romanizedName}</span>}
-                            </div>
-                        )}
+    return <>
+        <Seo title={title} description={fruitInfo?.about?.slice(0, 158) || 'Browse Devil Fruits with type, user, stats and images.'}
+            canonical={canonical} image={seoImage} type="article" noindex={status === 'error' || (status === 'ready' && !fruitInfo)} jsonLd={jsonLd} />
+        <Header headerShown={false} />
+        {status === 'loading' && <div className={styles.pageDetailWrapper} role="status"><p>Loading this fruit…</p></div>}
+        {status === 'error' && <div className={styles.pageDetailWrapper}><div className="catalogState" role="alert">
+            <p>This fruit couldn’t load. Give it another try.</p><button type="button" onClick={retry}>Try again</button>
+        </div></div>}
+        {status === 'ready' && !fruitInfo && <div className={styles.pageDetailWrapper}><h1 className={styles.notFoundTitle}>Fruit not found</h1><Link to="/">Back to all fruits</Link></div>}
+        {isReady && <main className={styles.pageDetailWrapper}>
+            <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+                <Link to="/">All fruits</Link><span aria-hidden="true">/</span><Link to={categoryPath}>{fruitInfo.type}</Link><span aria-hidden="true">/</span><span aria-current="page">{fruitInfo.name}</span>
+            </nav>
+            <div className={styles.titleWrapper}>
+                <FruitImage fruit={fruitInfo} className="fruitImg" alt={`${fruitInfo.name} picture`} />
+                <h1 className={styles.pageTitle}>{fruitInfo.name}</h1>
+                {(fruitInfo.japaneseName || fruitInfo.romanizedName) && <div className={styles.titleNames}>
+                    {fruitInfo.japaneseName && <span lang="ja">{fruitInfo.japaneseName}</span>}
+                    {fruitInfo.romanizedName && <span>{fruitInfo.romanizedName}</span>}
+                </div>}
+                {tags.length > 0 && <ul className={styles.abilityTags} aria-label="Ability tags">{tags.map(tag => <li key={tag.id}><Link to={`/?ability=${tag.id}#fruit-filters`}>{tag.label}</Link></li>)}</ul>}
+            </div>
+           
+            <section id="fruit-facts" tabIndex={-1} className={styles.sectionDetailWrapper} aria-labelledby="facts-title">
+                <div className={styles.wrapper1x2}>
+                    <div className={styles.InfoWrapper}>
+                        <h2 id="facts-title" className={styles.sectionTitle}>Quick facts</h2>
+                        <div className={styles.gridDiv2x2}>
+                            <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
+                            <p>User: <span>{fruitInfo.user || 'Unknown'}</span></p>
+                            <p>Debut arc: {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}#fruit-filters`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
+                            <p>First appearance: <span>{fruitInfo.firstAppearance || 'Unknown'}</span></p>
+                            <p>Previous user: <span>{fruitInfo.previousUser || 'Unknown'}</span></p>
+                            <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>
+                            <p>Canon status: <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
+                        </div>
+                        <h3 className={styles.sectionTitle}>Names</h3>
+                        <dl className={styles.namesGrid}>
+                            <div><dt>English</dt><dd>{fruitInfo.name}</dd></div>
+                            <div><dt>Romanized</dt><dd>{fruitInfo.romanizedName || 'Unknown'}</dd></div>
+                            <div><dt>Japanese</dt><dd lang="ja">{fruitInfo.japaneseName || 'Unknown'}</dd></div>
+                            <div><dt>Meaning</dt><dd>{fruitInfo.nameMeaning || 'Unknown'}</dd></div>
+                        </dl>
                     </div>
-
-                    <div className={styles.sectionDetailWrapper}>
-                        <div className={styles.wrapper1x2}>
-                            <div className={styles.InfoWrapper}>
-                                <span className={styles.sectionTitle}>🏷️ Names</span>
-                                <dl className={styles.namesGrid}>
-                                    <div>
-                                        <dt>English</dt>
-                                        <dd>{fruitInfo.name}</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Romanized</dt>
-                                        <dd>{fruitInfo.romanizedName || 'Unknown'}</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Japanese</dt>
-                                        <dd lang="ja">{fruitInfo.japaneseName || 'Unknown'}</dd>
-                                    </div>
-                                    <div>
-                                        <dt>Meaning</dt>
-                                        <dd>{fruitInfo.nameMeaning || 'Unknown'}</dd>
-                                    </div>
-                                </dl>
-
-                                <span className={styles.sectionTitle}>📌 Quick Facts</span>
-                                <div className={styles.gridDiv2x2}>
-                                    <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
-                                    <p>User: <span>{fruitInfo.user}</span></p>
-                                    <p>First Appearance: <span>{fruitInfo.firstAppearance || 'Unkown'} </span></p>
-                                    <p>Previous User: <span>{fruitInfo.previousUser || 'Unkown'}</span></p>
-                                    <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not awakened'}</span></p>
-                                    <p>Canon status: <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
-                                </div>
-
-                                <span className={styles.sectionTitle}>🌪️ About</span>
-                                <p className={styles.text}>{fruitInfo.about}</p>
-                            </div>
-
-                            <div className={styles.imgBox}>
-                                <img
-                                    loading="lazy"
-                                    className={styles.userImg}
-                                    src={CDN_BASE ? `${CDN_BASE}/characters/${fruitInfo.id}.webp` : fruitInfo.img?.user}
-                                    alt={`${fruitInfo.user} picture`}
-                                />
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={styles.sectionWrapper}>
-                        <div className={styles.wrapper1x3}>
-                            <div>
-                                <span className={styles.sectionTitle}>🛡️ Strengths</span>
-                                {fruitInfo.strengths.map((ablt, idx) => (
-                                    <>
-                                        <p className={styles.text}>✓ {ablt}</p>
-                                        {idx === fruitInfo.strengths.length - 1 ? null : <br />}
-                                    </>
-                                ))}
-                            </div>
-
-                            <div>
-                                <span className={styles.sectionTitle}>⚠️ Weaknesses</span>
-                                {fruitInfo.weaknesses.map((ablt, idx) => (
-                                    <>
-                                        <p className={styles.text}>✘ {ablt}</p>
-                                        {idx === fruitInfo.weaknesses.length - 1 ? null : <br />}
-                                    </>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className={`${styles.sectionWrapper} ${styles.sectionOutline}`}>
-                        <span className={styles.sectionTitle}>📊 Stats</span>
-                        <div className={styles.spacer20px}></div>
-
-                        <div className={styles.wrapper4x4}>
-                            <div className={styles.statWrapper}>
-                                <div className={styles.statCopyWrapper}>
-                                    <p>Attack</p>
-                                    <p>{fruitInfo.ratings.attack}/100</p>
-                                </div>
-                                <div className={styles.statBarWrapper}>
-                                    <div></div>
-                                    <div style={{ width: `${fruitInfo?.ratings?.attack ?? 0}%` }} />
-                                </div>
-                            </div>
-
-                            <div className={styles.statWrapper}>
-                                <div className={styles.statCopyWrapper}>
-                                    <p>Utility</p>
-                                    <p>{fruitInfo.ratings.utility}/100</p>
-                                </div>
-                                <div className={styles.statBarWrapper}>
-                                    <div></div>
-                                    <div style={{ width: `${fruitInfo?.ratings?.utility ?? 0}%` }} />
-                                </div>
-                            </div>
-
-                            <div className={styles.statWrapper}>
-                                <div className={styles.statCopyWrapper}>
-                                    <p>Defense</p>
-                                    <p>{fruitInfo.ratings.defense}/100</p>
-                                </div>
-                                <div className={styles.statBarWrapper}>
-                                    <div></div>
-                                    <div style={{ width: `${fruitInfo?.ratings?.defense ?? 0}%` }} />
-                                </div>
-                            </div>
-
-                            <div className={styles.statWrapper}>
-                                <div className={styles.statCopyWrapper}>
-                                    <p>Rarity</p>
-                                    <div className={styles.rarityStarWrapper}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fruitInfo.rarity >= 1 ? 'yellow' : '#4d78a5'} className="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fruitInfo.rarity >= 2 ? 'yellow' : '#4d78a5'} className="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fruitInfo.rarity >= 3 ? 'yellow' : '#4d78a5'} className="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fruitInfo.rarity >= 4 ? 'yellow' : '#4d78a5'} className="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill={fruitInfo.rarity >= 5 ? 'yellow' : '#4d78a5'} className="bi bi-star-fill" viewBox="0 0 16 16">
-                                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* ----- UPDATED CAROUSEL (uses local imgs) ----- */}
-                    {finalImgs.length > 0 && (
-                        <div className={styles.sectionWrapper}>
-                            <div className={styles.carrosselWrapper}>
-                                <div className={styles.carroComands}>
-                                    {!imageLoaded ? (
-                                        <div className={styles.loader}></div>
-                                    ) : (
-                                        <>
-                                            {shownImageCarro === 0 ? <div></div> : (
-                                                <svg
-                                                    onClick={() => updateImageCarro('back')}
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="16" height="16" fill="currentColor"
-                                                    className="bi bi-arrow-left-short" viewBox="0 0 16 16">
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"
-                                                    />
-                                                </svg>
-                                            )}
-                                            {shownImageCarro === finalImgs.length - 1 ? <div></div> : (
-                                                <svg
-                                                    onClick={() => updateImageCarro('next')}
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                                    width="16" height="16" fill="currentColor"
-                                                    className="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                                                    <path
-                                                        fillRule="evenodd"
-                                                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"
-                                                    />
-                                                </svg>
-                                            )}
-                                        </>
-                                    )}
-                                </div>
-
-                                <img
-                                    className={styles.carrosselImg}
-                                    src={imgs[shownImageCarro]}
-                                    onLoad={() => setImageLoaded(true)}
-                                    onError={() => setImageLoaded(true)} // avoid infinite spinner if a file is missing
-                                    alt={`example of ${fruitInfo.name}`}
-                                    loading="lazy"
-                                />
-                            </div>
-                        </div>
-                    )}
-
-                    <div className={styles.sectionWrapper}>
-                        <span className={styles.sectionTitle}>✨ Other fruits you might like</span>
-                        <div className={styles.otherFruitsWrapper}>
-                            {otherFruits.map(fruit => {
-                                return (
-                                    <Link
-                                        key={fruit.id}
-                                        to={`/fruit/${slugify(fruit.name)}`}
-                                        className={styles.otherFruitsSingle}
-                                        style={{
-                                            backgroundImage: `linear-gradient(rgba(8,18,60,0.60), rgba(8,18,60,0.90)), url(${CDN_BASE ? `${CDN_BASE}/characters/${fruit.id}.webp` : fruitInfo.img?.user})`
-                                        }}
-                                    >
-                                        <img loading="lazy" className={styles.otherfruitImg} src={CDN_BASE ? `${CDN_BASE}/fruits/${fruit.id}.webp` : fruitInfo.img?.fruit} alt={`${fruit.name} picture`} />
-                                        <h2>{fruit.name}</h2>
-                                    </Link>
-                                );
-                            })}
-                        </div>
+                    <div className={styles.imgBox}><FruitImage fruit={fruitInfo} kind="character" className={styles.userImg} loading="lazy" /></div>
+                </div>
+            </section>
+            <section id="fruit-abilities" tabIndex={-1} className={styles.sectionWrapper} aria-labelledby="abilities-title">
+                <h2 id="abilities-title" className={styles.sectionTitle}>Abilities</h2>
+                <DetailList items={fruitInfo.abilities?.length ? fruitInfo.abilities : fruitInfo.about ? [fruitInfo.about] : []} empty="We haven’t added the abilities yet." />
+                {fruitInfo.techniques?.length > 0 && <><h3 className={styles.sectionTitle}>Named techniques</h3><DetailList items={fruitInfo.techniques} /></>}
+            </section>
+            <div className={styles.sectionWrapper}>
+                <div className={styles.wrapper1x3}>
+                    <section id="fruit-strengths" tabIndex={-1} aria-labelledby="strengths-title"><h2 id="strengths-title" className={styles.sectionTitle}>Strengths</h2><DetailList items={fruitInfo.strengths} empty="We haven’t added the strengths yet." /></section>
+                    <section id="fruit-weaknesses" tabIndex={-1} aria-labelledby="weaknesses-title"><h2 id="weaknesses-title" className={styles.sectionTitle}>Weaknesses</h2><DetailList items={fruitInfo.weaknesses} empty="We haven’t added the weaknesses yet." /></section>
+                </div>
+            </div>
+            <section id="fruit-stats" tabIndex={-1} className={`${styles.sectionWrapper} ${styles.sectionOutline}`} aria-labelledby="stats-title">
+                <div className={styles.statsHeading}><h2 id="stats-title" className={styles.sectionTitle}>Stats</h2><span className={styles.editorialLabel}>Editorial scores</span></div>
+                <div className={styles.wrapper4x4}>
+                    <Score label="Attack" value={fruitInfo.ratings?.attack} /><Score label="Defense" value={fruitInfo.ratings?.defense} />
+                    <Score label="Utility" value={fruitInfo.ratings?.utility} /><Score label="Power" value={fruitInfo.power} />
+                    <div className={styles.statWrapper}><div className={styles.statCopyWrapper}><p>Rarity</p><p>{Number.isFinite(fruitInfo.rarity) ? `${fruitInfo.rarity}/5` : 'Not rated'}</p></div>
+                        <div className={styles.rarityStarWrapper} aria-hidden="true">{[1, 2, 3, 4, 5].map(star => <span key={star} style={{ color: fruitInfo.rarity >= star ? '#f8de3c' : '#4d78a5' }}>★</span>)}</div>
                     </div>
                 </div>
-            )}
-            <Footer />
-        </>
-    );
+                <RatingsGuide />
+            </section>
+            {finalImgs.length > 0 && <section id="fruit-gallery" tabIndex={-1} className={styles.sectionWrapper} aria-labelledby="gallery-title">
+                <h2 id="gallery-title" className={styles.sectionTitle}>Gallery</h2><FruitGallery key={fruitInfo.id} images={finalImgs} fruit={fruitInfo} />
+            </section>}
+            {otherFruits.length > 0 && <section className={styles.sectionWrapper} aria-labelledby="related-title">
+                <h2 id="related-title" className={styles.sectionTitle}>Worth a look next</h2>
+                <div className={styles.otherFruitsWrapper}>{otherFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.otherFruitsSingle}>
+                    <FruitImage fruit={fruit} kind="character" loading="lazy" className={styles.relatedCharacter} alt="" aria-hidden="true" />
+                    <FruitImage fruit={fruit} loading="lazy" className={styles.otherfruitImg} />
+                    <h3>{fruit.name}</h3><p className={styles.relatedReason}>{fruit.reason}</p>
+                </Link>)}</div>
+            </section>}
+        </main>}
+        <Footer />
+    </>;
 }

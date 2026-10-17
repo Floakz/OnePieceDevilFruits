@@ -78,9 +78,31 @@
     background: transparent;
 }
 
-.OptionWrapper:hover>.menuItemDropdownWrapper {
+.OptionWrapper:hover>.menuItemDropdownWrapper,
+.OptionWrapper:focus-within>.menuItemDropdownWrapper {
     display: flex;
     flex-direction: column;
+}
+
+.newBadge {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 3px 5px;
+    border-radius: 3px;
+    background: #14ffeb;
+    color: #022668;
+    font-size: 0.6rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.03em;
+    vertical-align: middle;
+}
+
+.newGameLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
 }
 
 .kofiButton {
@@ -102,6 +124,7 @@
     border: 1px solid gray;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    text-decoration: none;
 }
 
 .kofiButton:hover {
@@ -134,24 +157,26 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (max-width: 900px) {
 
     .fullPageMenu {
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
         gap: 10px;
-        padding: 40px;
+        padding: 40px 40px 100px;
         position: fixed;
         inset: 0;
         top: 0;
         right: 0;
         z-index: 9999999999;
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
         background-color: #ffcd07;
-        touch-action: none;
-        -webkit-overflow-scrolling: auto;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        touch-action: pan-y;
+        -webkit-overflow-scrolling: touch;
     }
 
     .mobileMenuButton {
@@ -166,6 +191,8 @@
         background-color: #ffcd07;
         color: #022668;
         border-radius: 7px;
+        border: 0;
+        cursor: pointer;
     }
 
     .dropdownItem {
@@ -176,17 +203,106 @@
         border-radius: 10px;
     }
 
+    .menuNewBadge {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        padding: 4px 5px;
+    }
+
+    .mobileGameLinks {
+        display: grid;
+        gap: 10px;
+        padding: 16px 0;
+        border-block: 1px solid rgba(2, 38, 104, 0.2);
+    }
+
+    .mobileGamesHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        color: #022668;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .newGameLink {
+        justify-content: center;
+    }
+
     .OptionWrapper:hover>.menuItemDropdownWrapper,
     .OptionWrapper:focus-within>.menuItemDropdownWrapper {
         display: flex;
     }
 
-    .kofiButton {
-        padding: 15px 30px;
-        border-radius: 8px;
-        left: 20px;
-        bottom: 20px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+    .mobileKofiLink {
+        width: min(100%, 430px);
+        margin: auto auto 0;
+        padding: 12px 14px;
+        display: grid;
+        grid-template-columns: 42px minmax(0, 1fr) 22px;
+        align-items: center;
+        gap: 12px;
+        border: 2px solid #022668;
+        border-radius: 14px;
+        background: #022668;
+        color: #ffffff;
+        text-align: left;
+        text-decoration: none;
+        box-shadow: 0 10px 25px rgba(2, 38, 104, 0.2);
+    }
+
+    .mobileKofiLink:hover,
+    .mobileKofiLink:focus-visible {
+        outline: 3px solid rgba(2, 38, 104, 0.25);
+        outline-offset: 3px;
+        background: #0a3b91;
+    }
+
+    .mobileKofiIcon {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: #ffffff;
+    }
+
+    .mobileKofiIcon img {
+        width: 22px;
+        height: 22px;
+        object-fit: contain;
+    }
+
+    .mobileKofiCopy {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .mobileKofiCopy strong {
+        color: #ffffff;
+        font-size: 0.92rem;
+        line-height: 1.2;
+    }
+
+    .mobileKofiCopy small {
+        color: #bcd2ff;
+        font-size: 0.72rem;
+        line-height: 1.25;
+    }
+
+    .mobileKofiLink>svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: #f8de3c;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
 }

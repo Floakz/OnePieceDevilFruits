@@ -3,14 +3,13 @@ import Header from "../../../Components/header/Header";
 import Footer from "../../../Components/footer/footer";
 import Seo from "../../../Components/Seo";
 import styles from './Quizzes.module.css';
-import { useParams } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { quizzes } from "../../../utils/quizzes";
-import { useNavigate } from "react-router-dom";
 
 export default function ExpandedQuizz() {
 
-    const { id } = useParams();
-    const Quizz = quizzes.find((quiz) => quiz.id === id);
+    const { slug } = useParams();
+    const Quizz = quizzes.find((quiz) => quiz.slug === slug || quiz.id === slug);
 
 
     const imgUrl = 'https://cd-opf.pages.dev/quizzes/'
@@ -20,6 +19,7 @@ export default function ExpandedQuizz() {
     const [showResults, setShowResults] = useState(false);
     const [percentage, setPercentage] = useState(1);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const [quizzState, setQuizzState] = useState(0)
 
@@ -37,14 +37,7 @@ export default function ExpandedQuizz() {
     const currentQuestion = Quizz?.questions[currentQuestionIndex];
 
 
-    const otherQuizzes = quizzes.filter((quiz) => quiz.id !== id).slice(0, 3);
-
-    const handleStartQuiz = (id) => {
-        setQuizzState(0);
-        setCurrentQuestionIndex(0);
-        setScore(0);
-        navigate(`/quizzes/${id}`);
-    }
+    const otherQuizzes = quizzes.filter((quiz) => quiz.id !== Quizz?.id).slice(0, 3);
 
     const handleOptionClick = (index) => {
         if (isAnswered) return;
@@ -92,6 +85,11 @@ export default function ExpandedQuizz() {
     };
 
     useEffect(() => {
+        if (Quizz && slug !== Quizz.slug) {
+            navigate(`/quizzes/${Quizz.slug}${location.search}${location.hash}`, { replace: true });
+            return;
+        }
+
         setQuizzState(0);
         setCurrentQuestionIndex(0);
         setScore(0);
@@ -101,14 +99,33 @@ export default function ExpandedQuizz() {
         setIsAnswered(false);
 
         clearTimeout(timeoutRef.current);
-    }, [id]);
+    }, [Quizz, location.hash, location.search, navigate, slug]);
+
+    if (!Quizz) {
+        return (
+            <>
+                <Seo
+                    title="Quiz not found | One Piece Devil Fruits"
+                    description="The requested One Piece quiz could not be found."
+                    canonical="https://onepiecedevilfruits.com/quizzes"
+                />
+                <Header headerShown={false} />
+                <div className="mainFull">
+                    <div className={styles.quizzesPageWrapper}>
+                        <div className={styles.titleWrapper}><h1>Quiz not found</h1></div>
+                    </div>
+                </div>
+                <Footer />
+            </>
+        );
+    }
 
     return (
         <>
             <Seo
-                title="OnePiece Quizzes"
-                description="Test your knowledge of the One Piece universe and One Piece DevilFruits with our fun quizzes!"
-                canonical="https://onepiecedevilfruits.com/quizzes"
+                title={`${Quizz.title} | One Piece Quizzes`}
+                description={Quizz.description}
+                canonical={`https://onepiecedevilfruits.com/quizzes/${Quizz.slug}`}
             />
 
             <Header headerShown={false} />
@@ -196,15 +213,14 @@ export default function ExpandedQuizz() {
                         <h4>Other quizzes</h4>
                         <div className={styles.otherQuizzList}>
                             {otherQuizzes.map((quiz) => (
-                                <div
+                                <Link
+                                    to={`/quizzes/${quiz.slug}`}
                                     key={quiz.id}
                                     className={styles.otherQuizzItem}
                                     style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)` }}
-                                    onClick={() => (quiz.id ? handleStartQuiz(quiz.id) : null)}
-
                                 >
                                     <p>{quiz.title}</p>
-                                </div>
+                                </Link>
                             ))}
                         </div>
                     </div>

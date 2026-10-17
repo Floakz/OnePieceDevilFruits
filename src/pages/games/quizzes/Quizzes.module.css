@@ -41,6 +41,8 @@
     border: 1px solid rgb(255, 213, 0);
     background-size: cover;
     transition: all 0.3s ease-in-out;
+    color: inherit;
+    text-decoration: none;
 }
 
 .quizCard>div:nth-of-type(2) {
@@ -89,9 +91,14 @@
 }
 
 
-.difficulty {
-    font-size: 0.9em;
-    line-height: 1em;
+.quizMeta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    margin-top: auto;
+    font-size: 0.85em;
+    line-height: 1.2em;
     color: rgb(255, 213, 0);
     font-weight: bold;
 }
@@ -333,6 +340,8 @@
     display: flex;
     justify-content: center;
     font-size: 1.2em;
+    color: inherit;
+    text-decoration: none;
 }
 
 .otherQuizzItem::after {

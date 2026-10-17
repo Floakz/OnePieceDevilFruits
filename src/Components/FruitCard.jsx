@@ -1,23 +1,10 @@
 import { Link } from 'react-router-dom';
 import './fruitcardstyle.css';
 import { slugify } from '../lib/slugify.js';
+import FruitImage from './FruitImage.jsx';
 
 export default function FruitCard(props) {
 
-    const CDN_BASE = import.meta.env.VITE_CDN_BASE;
-
-    const cdnFruit = CDN_BASE ? `${CDN_BASE}/fruits/${props.id}.webp` : null;
-    const cdnCharacter = CDN_BASE ? `${CDN_BASE}/characters/${props.id}.webp` : null;
-
-
-    const localFruit = `/images/fruits/${props.id}.webp`;
-    const localCharacter = `/images/characters/${props.id}.webp`;
-
-
-    const fruitSrc = cdnFruit || localFruit;
-    const characterSrc = cdnCharacter || localCharacter;
-
-    const fallbackFruit = 'https://i.postimg.cc/Sxp09zGS/unkown.png';
     const Wrapper = props.clickable ? Link : 'div';
     const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}` } : {};
     const about = props.about || '';
@@ -32,15 +19,11 @@ export default function FruitCard(props) {
         >
             <div className='info-wrapper'>
                 <div>
-                    <img
+                    <FruitImage
+                        fruit={props}
                         loading="lazy"
                         className='fruitImg'
-                        src={fruitSrc}
                         alt={`${props.name} picture`}
-                        onError={(e) => {
-                            e.currentTarget.onerror = null;
-                            e.currentTarget.src = fallbackFruit;
-                        }}
                     />
                     <h2 className='titleFruit'>{props.name}</h2>
                     {(props.japaneseName || props.romanizedName) && (
@@ -66,13 +49,13 @@ export default function FruitCard(props) {
                     </div>
                     <div>
                         <svg className='icons' width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 24 24"><path fill="none" stroke="#ffffff" strokeMiterlimit="10" strokeWidth="1.5" d="M7.997 15.999a3.54 3.54 0 0 1 .014 4.992l-5.006-5.006a3.54 3.54 0 0 1 5.006 0ZM23 1 8 16m-2.5 2.5L1 23m0-5 2-2m18.01-.002-5 5a3.54 3.54 0 0 1 .007-4.985 3.54 3.54 0 0 1 5.007 0ZM16 16 1 1m22 22-4.5-4.5M23 18l-2-2" /></svg>
-                        <p className='tag'>{props.power}</p>
+                        <p className='tag' title="The site's own overall power estimate">Power {props.power ?? '—'}/100</p>
                     </div>
                 </div>
             </div>
 
             {props.img?.fruit !== "noImg" && (
-                <img loading="lazy" src={characterSrc} className='userImg' alt={`${props.user} picture`} />
+                <FruitImage fruit={props} kind="character" loading="lazy" className='userImg' alt={`${props.user || props.submitedBy || 'Unknown user'} picture`} />
             )}
 
         </Wrapper>

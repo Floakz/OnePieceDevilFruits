@@ -1,32 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router-dom";
-import { fetchAllFruitsOnce, filterByCategoryLocal } from "../../../lib/fruitsApi.js";
+import useFruitCatalog from '../../../hooks/useFruitCatalog.js';
+import CatalogState from '../../../Components/CatalogState.jsx';
+import RatingsGuide from '../../../Components/RatingsGuide.jsx';
 import FruitCard from "../../../Components/FruitCard.jsx";
 import FruitPagination from "../../../Components/FruitPagination.jsx";
 import Header from "../../../Components/header/Header.jsx";
 import Seo from "../../../Components/Seo.jsx";
 import Footer from "../../../Components/footer/footer.jsx";
 import DevilFruitTypeIntro from "../../../Components/DevilFruitTypeIntro/DevilFruitTypeIntro.jsx";
+import FruitArcFilter from "../../../Components/FruitArcFilter/FruitArcFilter.jsx";
 
-const PAGE_SIZE = 12;
 
 export default function ZoanFruits() {
-    const [all, setAll] = useState([]);
-    const [searchParams] = useSearchParams();
-
-    useEffect(() => {
-        (async () => setAll(await fetchAllFruitsOnce()))();
-    }, []);
-
-    const filtered = useMemo(() => filterByCategoryLocal(all, "Zoan"), [all]);
-    const requestedPage = Math.max(1, Number.parseInt(searchParams.get("page") || "1", 10) || 1);
-    const totalPages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-    const currentPage = Math.min(requestedPage, totalPages);
-    const visible = useMemo(() => {
-        const start = (currentPage - 1) * PAGE_SIZE;
-        return filtered.slice(start, start + PAGE_SIZE);
-    }, [filtered, currentPage]);
-    const canonical = `https://onepiecedevilfruits.com/zoan${currentPage > 1 ? `?page=${currentPage}` : ""}`;
+    const { categoryFruits, filtered, visible, totalPages, currentPage, filters, queryParams, onFilterChange, clearFilters, status, retry } = useFruitCatalog('Zoan');
+    const selectedArc = filters.arc;
+    const canonical = `https://onepiecedevilfruits.com/zoan${currentPage > 1 ? `?page=${currentPage}` : ''}`;
 
     return (
         <>
@@ -49,10 +36,25 @@ export default function ZoanFruits() {
                     { text: "Mythical Zoans grant the powers of legendary or divine creatures, such as dragons and phoenixes" },
                 ]}
             />
-            <main id="fruit-list">
+            <FruitArcFilter
+                fruits={categoryFruits}
+                selectedArc={selectedArc}
+                resultCount={filtered.length}
+                onChange={arc => onFilterChange('arc', arc)}
+                filters={filters}
+                onFilterChange={onFilterChange}
+                clearFilters={clearFilters}
+            />
+            <main id="fruit-list" aria-busy={status === 'loading'}>
+                <CatalogState status={status} empty={!filtered.length} retry={retry} clearFilters={clearFilters} />
                 {visible.map(fruit => <FruitCard key={fruit.id} {...fruit} clickable={true} />)}
             </main>
-            <FruitPagination basePath="/zoan" currentPage={currentPage} totalPages={totalPages} />
+            <FruitPagination
+                basePath="/zoan"
+                currentPage={currentPage}
+                totalPages={totalPages}
+                queryParams={queryParams}
+            />
             <Footer />
         </>
     );

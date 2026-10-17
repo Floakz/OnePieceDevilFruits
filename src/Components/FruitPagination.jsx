@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 
-function pageUrl(basePath, page) {
-    return page === 1 ? basePath : `${basePath}?page=${page}`;
+function pageUrl(basePath, page, queryParams = {}) {
+    const params = new URLSearchParams(queryParams);
+    if (page > 1) params.set("page", String(page));
+    else params.delete("page");
+
+    const query = params.toString();
+    return query ? `${basePath}?${query}` : basePath;
 }
 
 function scrollToFruitList(event) {
@@ -20,7 +25,7 @@ function scrollToFruitList(event) {
     }, 0);
 }
 
-export default function FruitPagination({ basePath, currentPage, totalPages }) {
+export default function FruitPagination({ basePath, currentPage, totalPages, queryParams }) {
     if (totalPages <= 1) return null;
 
     const maxVisiblePages = 3;
@@ -36,17 +41,17 @@ export default function FruitPagination({ basePath, currentPage, totalPages }) {
     return (
         <nav className="fruitPagination" aria-label="Fruit list pages">
             {currentPage > 1 && (
-                <Link to={pageUrl(basePath, currentPage - 1)} rel="prev" aria-label="Previous page" onClick={scrollToFruitList}>Previous</Link>
+                <Link to={pageUrl(basePath, currentPage - 1, queryParams)} rel="prev" aria-label="Previous page" onClick={scrollToFruitList}>Previous</Link>
             )}
             <div className="fruitPaginationPages">
                 {pages.map(page => (
                     page === currentPage
                         ? <span key={page} aria-current="page">{page}</span>
-                        : <Link key={page} to={pageUrl(basePath, page)} aria-label={`Page ${page}`} onClick={scrollToFruitList}>{page}</Link>
+                        : <Link key={page} to={pageUrl(basePath, page, queryParams)} aria-label={`Page ${page}`} onClick={scrollToFruitList}>{page}</Link>
                 ))}
             </div>
             {currentPage < totalPages && (
-                <Link to={pageUrl(basePath, currentPage + 1)} rel="next" aria-label="Next page" onClick={scrollToFruitList}>Next</Link>
+                <Link to={pageUrl(basePath, currentPage + 1, queryParams)} rel="next" aria-label="Next page" onClick={scrollToFruitList}>Next</Link>
             )}
         </nav>
     );

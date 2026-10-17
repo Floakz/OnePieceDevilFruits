@@ -12,6 +12,7 @@ const CommunityFruits = lazy(() => import("../pages/fruits/community/CommunityFr
 const ExpandedFruit = lazy(() => import("../pages/fruits/expanded/ExpandedFruit.jsx"));
 const FruitFinderPage = lazy(() => import("../pages/games/FruitFinderPage.jsx"));
 const CrewWars = lazy(() => import("../pages/games/CrewWars.jsx"));
+const BlindRanking = lazy(() => import("../pages/games/BlindRanking.jsx"));
 const PageNotFound = lazy(() => import("../pages/error/pageNotFound.jsx"));
 const GrandRun = lazy(() => import("../pages/games/GrandRun.jsx"));
 const DailyFight = lazy(() => import("../pages/games/dailyFight/dailyFight.jsx"));
@@ -79,12 +80,14 @@ export default function AppRoutes() {
                 {/* Jogos */}
                 <Route path="/fruit-finder" element={<FruitFinderPage />} />
                 <Route path="/crew-wars" element={<CrewWars />} />
+                <Route path="/blind-ranking" element={<BlindRanking />} />
+                <Route path="/game" element={<Navigate to="/blind-ranking" replace />} />
                 <Route path="/grand-run" element={<GrandRun />} />
                 <Route path="/daily-fight" element={<DailyFight />} />
 
                 {/* Quizzes */}
                 <Route path="/quizzes" element={<Quizzes />} />
-                <Route path="/quizzes/:id" element={<ExpandedQuizz />} />
+                <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

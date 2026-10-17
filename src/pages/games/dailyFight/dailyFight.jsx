@@ -1,3 +1,4 @@
+import FruitImage from '../../../Components/FruitImage.jsx';
 import styles from './dailyFight.module.css'
 import Header from '../../../Components/header/Header'
 import Footer from '../../../Components/footer/footer'
@@ -350,15 +351,19 @@ export default function DailyFight() {
                             <div className={styles.LeftresultsWrapper}>
                                 <div className={`${styles.LeftresultsBar} ${votedSide === "left" ? styles.votedResultsBar : votedSide === "right" ? styles.unselectedResultsBar : ""}`}>
                                     {votedSide === "left" && <span className={styles.yourVote}>Your vote</span>}
-                                    {voteCount.leftPct}%
+                                    <div className={styles.resultValue}>
+                                        <span>{voteCount.leftPct}%</span>
+                                    </div>
                                 </div>
                             </div>
                             <div className={styles.RightresultsWrapper}>
                                 <div className={`${styles.RightresultsBar} ${votedSide === "right" ? styles.votedResultsBar : votedSide === "left" ? styles.unselectedResultsBar : ""}`}>
                                     {votedSide === "right" && <span className={styles.yourVote}>Your vote</span>}
-                                    {voteCount.rightPct}%
+                                    <div className={styles.resultValue}>
+                                        <span>{voteCount.rightPct}%</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </div>                         
                         </div>}
 
                         <div onClick={() => handleVote("left")} style={{ backgroundImage: `url(${leftOption.userImage})` }} className={styles.leftOptionWrapper}>
@@ -374,7 +379,7 @@ export default function DailyFight() {
                                     {leftOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={leftOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${leftOption.fruit}`} />
+                            <FruitImage className={styles.fruitImage} fruit={{ id: leftOption.fruitId, name: leftOption.fruit }} src={leftOption.fruitImg} alt={`Image of the ${leftOption.fruit}`} />
                         </div>
 
                         <div className={styles.vsWrapper}>vs</div>
@@ -392,7 +397,7 @@ export default function DailyFight() {
                                     {rightOption.fruit}
                                 </span>
                             </h5>
-                            <img className={styles.fruitImage} src={rightOption.fruitImg || '/images/fruits/unkown-fruit.webp'} alt={`Image of the ${rightOption.fruit}`} />
+                            <FruitImage className={styles.fruitImage} fruit={{ id: rightOption.fruitId, name: rightOption.fruit }} src={rightOption.fruitImg} alt={`Image of the ${rightOption.fruit}`} />
                         </div>
 
                     </div>

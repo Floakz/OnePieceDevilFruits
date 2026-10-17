@@ -206,7 +206,7 @@ const fruitsExpandedInfo = [
     {
         "id": "0cb67738-3d08-4038-9895-37701cafab51",
         "name": "Pile-Pile Fruit",
-        "firstAppearance": "Episode 543",
+        "firstAppearance": "Episode 875",
         "abilities": [
             "A Paramecia fruit that lets the user fuse their body with others, blending minds, limbs, and abilities into a single chaotic form",
             "Each merge creates unpredictable combinations, making the eater a living patchwork of power"
@@ -449,7 +449,7 @@ const fruitsExpandedInfo = [
     {
         "id": "25c7ba78-4e3c-40f1-9bef-2b9e2af8dbd4",
         "name": "Ripe-Ripe Fruit",
-        "firstAppearance": "Episode 713",
+        "firstAppearance": "Episode 916",
         "abilities": [
             "A Paramecia fruit that lets the user age anything they touch, speeding it to ripeness or rot",
             "From instant maturity to sudden decay, this power grants total control over the flow of time in whatever they handle"
@@ -519,7 +519,7 @@ const fruitsExpandedInfo = [
     {
         "id": "2742128e-2699-4211-9c71-7bfcd584a371",
         "name": "Dragon-Dragon Fruit, Allosaurus Model",
-        "firstAppearance": "Episode 878",
+        "firstAppearance": "Episode 402",
         "abilities": [
             "An Ancient Zoan fruit that lets the user become a ferocious allosaurus or a powerful dino-human hybrid",
             "With savage jaws, crushing strength, and predatory speed, this power revives the deadly hunter of a lost age"
@@ -756,7 +756,7 @@ const fruitsExpandedInfo = [
     {
         "id": "306f5af1-9c4d-4c3f-88c2-79dec50f93c9",
         "name": "Jacket-Jacket Fruit",
-        "firstAppearance": "Episode 626",
+        "firstAppearance": "Episode 645",
         "abilities": [
             "A Paramecia fruit that allows the user to transform into a living jacket that others can wear",
             "Once donned, the wearer’s body becomes the user’s to control, turning the eater into a sneaky and unpredictable Jacket Human"
@@ -1151,7 +1151,7 @@ const fruitsExpandedInfo = [
     {
         "id": "47f53322-9283-429e-8410-9c303159c041",
         "name": "Soot-Soot Fruit",
-        "firstAppearance": "Episode 820",
+        "firstAppearance": "Episode 510",
         "abilities": [
             "A Logia fruit that grants control over soot",
             "The user can generate thick clouds of black dust, shape it into weapons, or dissolve into drifting ash, becoming a stealthy and suffocating Soot Human"
@@ -1248,7 +1248,7 @@ const fruitsExpandedInfo = [
     {
         "id": "48dfcd51-08fd-45ea-b5d7-33912aac00bd",
         "name": "Wash-Wash Fruit",
-        "firstAppearance": "Episode 653",
+        "firstAppearance": "Episode 465",
         "abilities": [
             "A Paramecia fruit that allows the user to wash and hang people or objects as if they were laundry",
             "Victims are scrubbed clean and left hanging, weakened and helpless, making the eater a playful yet dangerous Laundry Human"
@@ -3417,7 +3417,7 @@ const fruitsExpandedInfo = [
     {
         "id": "e69de64b-ebf0-44fd-8eeb-36b8de6cdfcf",
         "name": "Mirror-Mirror Fruit",
-        "firstAppearance": "Episode 782",
+        "firstAppearance": "Episode 790",
         "abilities": [
             "A dazzling Paramecia-type fruit that enables its user to conjure mirrors capable of reflecting attacks, bending light, or copying appearances, turning any confrontation into a maze of deceptive reflections"
         ],
@@ -3781,7 +3781,7 @@ const fruitsExpandedInfo = [
     {
         "id": "fe1e3ad4-2a92-422a-84e6-f4754aeacc51",
         "name": "Brush-Brush Fruit",
-        "firstAppearance": "Episode 541",
+        "firstAppearance": "Episode 691",
         "abilities": [
             "A creative Paramecia-type fruit that lets its user produce magical ink and bring their brushstrokes to life, transforming painted images into tangible, three-dimensional creations limited only by their imagination"
         ],
