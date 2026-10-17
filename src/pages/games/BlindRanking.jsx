@@ -8,7 +8,7 @@ import FruitImage from '../../Components/FruitImage.jsx';
 import CatalogState from '../../Components/CatalogState.jsx';
 import SocialShare from '../../Components/socialShare/SocialShare.jsx';
 import useFruits from '../../hooks/useFruits.js';
-import { BLIND_RANKING_PAGE, createRankingRound, rankingReducer, restoreRankingRound, rankingShareText, RANKING_SCENARIOS, RANKS, ROUND_STORAGE_KEY } from '../../lib/blindRanking.js';
+import { BLIND_RANKING_PAGE, createRankingRound, rankingReducer, rankingShareText, RANKING_SCENARIOS, RANKS } from '../../lib/blindRanking.js';
 import styles from './BlindRanking.module.css';
 
 function GameIcon({ name, ...props }) {
@@ -29,8 +29,6 @@ function rankAtPoint(board, x, y) {
 export default function BlindRanking() {
     const { fruits, status, retry } = useFruits();
     const [round, dispatch] = useReducer(rankingReducer, null);
-    const [hydrated, setHydrated] = useState(false);
-    const initialized = useRef(false);
     const [drag, setDrag] = useState(null);
     const dragPoint = useRef(null);
     const [hoverRank, setHoverRank] = useState(null);
@@ -50,24 +48,6 @@ export default function BlindRanking() {
     useEffect(() => {
         if (current) drawButtonRef.current?.focus({ preventScroll: true });
     }, [current]);
-
-    useEffect(() => {
-        if (status !== 'ready' || initialized.current) return;
-        initialized.current = true;
-        try {
-            const saved = restoreRankingRound(JSON.parse(localStorage.getItem(ROUND_STORAGE_KEY)), fruits);
-            if (saved) dispatch({ type: 'SET_ROUND', round: saved });
-        } catch { /* A browser without storage can still play. */ }
-        setHydrated(true);
-    }, [fruits, status]);
-
-    useEffect(() => {
-        if (!hydrated) return;
-        try {
-            if (round) localStorage.setItem(ROUND_STORAGE_KEY, JSON.stringify(round));
-            else localStorage.removeItem(ROUND_STORAGE_KEY);
-        } catch { /* Saving is optional. */ }
-    }, [round, hydrated]);
 
     useEffect(() => {
         if (!isDragging) return;
@@ -163,7 +143,7 @@ export default function BlindRanking() {
         <Header headerShown={false} />
         <main className={styles.page}>
             {round && <div className={styles.pageHeading}><h1>Blind <span>Ranking</span></h1><p>{placedCount} / 10 placed</p></div>}
-            {(status !== 'ready' || !hydrated) ? <CatalogState status={status === 'error' ? 'error' : 'loading'} retry={retry} />
+            {status !== 'ready' ? <CatalogState status={status} retry={retry} />
                 : byId.size < 11 ? <div className="catalogState" role="alert"><p>We need a few more fruits to start a round.</p><button type="button" onClick={retry}>Try loading again</button></div>
                     : !round ? <>
                         <div className={styles.intro}>
@@ -180,54 +160,53 @@ export default function BlindRanking() {
                         <section className={styles.scenarioStrip} aria-label="This round’s scenario">
                             <span className={styles.scenarioLabel}>Scenario</span><div><h2>{scenario.label}</h2><p>{scenario.story}</p></div>
                         </section>
-                        <div className={styles.gameLayout}>
-                            <aside className={styles.currentPanel}>
-                                {current ? <>
-                                    <div className={styles.currentCard}>
-                                        <div className={styles.drawHeading}>Fruit {placedCount + 1} of 10</div>
-                                        <button type="button" className={`${styles.fruitDragArea} ${isDragging ? styles.draggingSource : ''}`}
-                                            ref={drawButtonRef}
-                                            aria-label={`Drag ${current.name} to a rank, or choose an empty slot`}
-                                            onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={cancelDrag} onLostPointerCapture={cancelDrag} onClick={focusSlots}
-                                            onKeyDown={event => { if (event.key === 'Escape') cancelDrag(); }}>
-                                            <FruitImage key={`character-${current.id}`} fruit={current} kind="character" className={styles.drawCharacter} alt="" aria-hidden="true" draggable={false} />
-                                            <FruitImage key={current.id} fruit={current} className={styles.drawFruit} draggable={false} />
-                                            <span className={styles.dragHint}><GameIcon name="drag" />Drag to a slot</span>
-                                        </button>
-                                        <div className={styles.fruitCopy} key={current.id}><span className={styles.typeTag}>{current.type}</span><h2>{current.name}</h2>
-                                            <p className={styles.fruitDescription}>{(current.about || 'What would you do with this power?').split(/(?<=[.!?])\s+/)[0]}</p>
-                                        </div>
+                        <div className={`${styles.gameLayout} ${complete ? styles.completedLayout : ''}`}>
+                            {!complete && <aside className={styles.currentPanel}>
+                                <div className={styles.currentCard}>
+                                    <div className={styles.drawHeading}>Fruit {placedCount + 1} of 10</div>
+                                    <button type="button" className={`${styles.fruitDragArea} ${isDragging ? styles.draggingSource : ''}`}
+                                        ref={drawButtonRef}
+                                        aria-label={`Drag ${current.name} to a rank, or choose an empty slot`}
+                                        onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={cancelDrag} onLostPointerCapture={cancelDrag} onClick={focusSlots}
+                                        onKeyDown={event => { if (event.key === 'Escape') cancelDrag(); }}>
+                                        <FruitImage key={`character-${current.id}`} fruit={current} kind="character" className={styles.drawCharacter} alt="" aria-hidden="true" draggable={false} />
+                                        <FruitImage key={current.id} fruit={current} className={styles.drawFruit} draggable={false} />
+                                        <span className={styles.dragHint}><GameIcon name="drag" />Drag to a slot</span>
+                                    </button>
+                                    <div className={styles.fruitCopy} key={current.id}><span className={styles.typeTag}>{current.type}</span><h2>{current.name}</h2>
+                                        <p className={styles.fruitDescription}>{(current.about || 'What would you do with this power?').split(/(?<=[.!?])\s+/)[0]}</p>
                                     </div>
-                                    <button type="button" className={styles.rerollButton} disabled={!round.rerollsLeft} onClick={reroll}><GameIcon name="shuffle" />{round.rerollsLeft ? 'Reroll · 1 left' : 'Reroll used'}</button>
-                                    <p className={styles.controlHint}>Drag the fruit or tap a number to place it.</p>
-                                    <p className={styles.smallRule}>Basic control. No awakening. No extra powers.</p>
-                                </> : <section className={styles.finishedCard} aria-labelledby="finished-title">
-                                    <h2 id="finished-title">Your final ranking</h2>
-                                    <div className={styles.topPick}><span>Your best fit</span><FruitImage fruit={byId.get(round.slots[0])} /><strong>{byId.get(round.slots[0])?.name}</strong></div>
-                                    <button type="button" className={styles.primaryButton} onClick={copyRanking}>Copy ranking</button>
-                                    <button type="button" className={styles.secondaryButton} onClick={startRound}>Play again</button>
-                                    <SocialShare
-                                        className={styles.shareOptions}
-                                        title={`My Devil Fruit blind ranking: ${scenario.label} — ${byId.get(round.slots[0])?.name} at #1`}
-                                        text={rankingShareText(round, fruits, { includeUrl: false })}
-                                        url={BLIND_RANKING_PAGE.url}
-                                    />
-                                    <p className={styles.copyStatus} role="status">{copyStatus}</p>
-                                </section>}
-                            </aside>
-                            <section className={styles.rankingBoard} aria-labelledby="board-title" ref={boardRef}>
-                                <div className={styles.boardHeading}><h2 id="board-title">Your ranking</h2><span>1 = best fit</span></div>
+                                </div>
+                                <button type="button" className={styles.rerollButton} disabled={!round.rerollsLeft} onClick={reroll}><GameIcon name="shuffle" />{round.rerollsLeft ? 'Reroll · 1 left' : 'Reroll used'}</button>
+                                <p className={styles.controlHint}>Drag the fruit or tap a number to place it.</p>
+                                <p className={styles.smallRule}>Basic control. No awakening. No extra powers.</p>
+                            </aside>}
+                            <section className={styles.rankingBoard} aria-label={complete ? 'Completed ranking' : undefined} aria-labelledby={complete ? undefined : 'board-title'} ref={boardRef}>
+                                {!complete && <div className={styles.boardHeading}><h2 id="board-title">Your ranking</h2><span>1 = best fit</span></div>}
                                 <div className={styles.slots}>{RANKS.map(rank => {
                                     const fruit = byId.get(round.slots[rank - 1]);
-                                    const content = fruit ? <><FruitImage fruit={fruit} className={styles.slotFruit} /><span className={styles.slotName}>{fruit.name}</span><GameIcon name="lock" className={styles.lockIcon} /></>
+                                    const content = fruit ? <><FruitImage fruit={fruit} className={styles.slotFruit} /><span className={styles.slotName}>{fruit.name}</span>{!complete && <GameIcon name="lock" className={styles.lockIcon} />}</>
                                         : <><span className={styles.emptySlotText}>{rank === 1 ? 'Best fit' : rank === 10 ? 'Worst fit' : '—'}</span><span className={styles.slotPlus} aria-hidden="true">+</span></>;
                                     return <div key={rank} data-rank-slot={rank} className={`${styles.slot} ${fruit ? styles.lockedSlot : ''} ${!fruit && hoverRank === rank ? styles.hoverSlot : ''} ${rank === 1 ? styles.bestSlot : ''}`}>
                                         <span className={styles.rankNumber}>{rank}</span>
                                         {fruit ? <div className={styles.slotContents}>{content}</div> : <button type="button" className={styles.slotContents} aria-label={`Rank ${rank}${rank === 1 ? ', best fit' : rank === 10 ? ', worst fit' : ''}: place ${current?.name || 'fruit'}`} onClick={() => placeFruit(rank)}>{content}</button>}
                                     </div>;
                                 })}</div>
-                                <div className={styles.boardFooter}><GameIcon name="lock" /><span>Placed fruits can’t be moved.</span></div>
+                                {!complete && <div className={styles.boardFooter}><GameIcon name="lock" /><span>Placed fruits can’t be moved.</span></div>}
                             </section>
+                            {complete && <div className={styles.finishedActions}>
+                                <div className={styles.resultButtons}>
+                                    <button type="button" className={styles.primaryButton} onClick={copyRanking}>Copy ranking</button>
+                                    <button type="button" className={styles.secondaryButton} onClick={startRound}>Play again</button>
+                                </div>
+                                <SocialShare
+                                    className={styles.shareOptions}
+                                    title={`My Devil Fruit blind ranking: ${scenario.label} — ${byId.get(round.slots[0])?.name} at #1`}
+                                    text={rankingShareText(round, fruits, { includeUrl: false })}
+                                    url={BLIND_RANKING_PAGE.url}
+                                />
+                                <p className={styles.copyStatus} role="status">{copyStatus}</p>
+                            </div>}
                         </div>
                         {complete && <p className={styles.fairPlay}><Link to="/">Browse the fruits</Link></p>}
                     </>}

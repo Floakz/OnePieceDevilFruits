@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createRankingRound, rankingReducer, restoreRankingRound, rankingShareText, RANKING_SCENARIOS } from '../src/lib/blindRanking.js';
+import { createRankingRound, rankingReducer, rankingShareText, RANKING_SCENARIOS } from '../src/lib/blindRanking.js';
 
 const fruits = Array.from({ length: 20 }, (_, index) => ({ id: `fruit-${index}`, name: `Fruit ${index}` }));
 const makeRound = () => createRankingRound(fruits, { random: () => 0 });
@@ -73,41 +73,6 @@ test('the reroll still works on the tenth fruit', () => {
     assert.ok(!round.slots.includes(skipped));
     assert.equal(reroll(round), round);
     assert.equal(place(round, 1), round);
-});
-
-test('refresh restores the same draw, locked ranks, scenario, and reroll allowance', () => {
-    let round = makeRound();
-    round = place(round, 8);
-    round = reroll(round);
-    round = place(round, 3);
-    assert.deepEqual(restoreRankingRound(JSON.parse(JSON.stringify(round)), fruits), round);
-    let completed = makeRound();
-    for (let rank = 10; rank >= 1; rank--) completed = place(completed, rank);
-    assert.deepEqual(restoreRankingRound(completed, fruits), completed);
-});
-
-test('damaged saved rounds cannot duplicate fruits or restore extra rerolls', () => {
-    const round = place(makeRound(), 10);
-    assert.equal(restoreRankingRound(null, fruits), null);
-    assert.equal(restoreRankingRound({ ...round, rerollsLeft: 2 }, fruits), null);
-    assert.equal(restoreRankingRound({ ...round, cursor: 8 }, fruits), null);
-    assert.equal(restoreRankingRound({ ...round, slots: Array(10).fill(round.deck[0]) }, fruits), null);
-    assert.equal(restoreRankingRound({ ...round, deck: Array(11).fill(round.deck[0]) }, fruits), null);
-    assert.equal(restoreRankingRound(round, fruits.filter(fruit => fruit.id !== round.deck[0])), null);
-    const futureSlot = [...round.slots];
-    futureSlot[9] = round.deck[8];
-    assert.equal(restoreRankingRound({ ...round, slots: futureSlot }, fruits), null);
-});
-
-test('older saved rankings keep their best-to-worst order under the new scale', () => {
-    const round = place(place(makeRound(), 10), 3);
-    const legacy = structuredClone(round);
-    delete legacy.version;
-    const restored = restoreRankingRound(legacy, fruits);
-    assert.equal(restored.slots[0], round.slots[9]);
-    assert.equal(restored.slots[7], round.slots[2]);
-    assert.equal(restored.cursor, round.cursor);
-    assert.deepEqual(restoreRankingRound(restored, fruits), restored);
 });
 
 test('a completed share contains every rank and the scenario, without a hidden draw', () => {

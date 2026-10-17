@@ -27,6 +27,7 @@
 .scenarioStrip h2 { font-size: 1.1rem; line-height: 1.4; }
 .scenarioStrip p { max-width: 870px; margin-top: 7px; color: #b9cef3; font-size: .83rem; line-height: 1.7; }
 .gameLayout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: start; gap: 35px; }
+.gameLayout.completedLayout { grid-template-columns: minmax(0, 1fr); max-width: 680px; margin-inline: auto; gap: 24px; }
 .currentPanel { position: sticky; top: 20px; min-width: 0; }
 .currentCard { overflow: hidden; border: 1px solid #24528c; border-radius: 12px; background: #011a48; }
 .drawHeading { padding: 13px 18px; color: #b9cef3; font-size: .72rem; }
@@ -72,14 +73,8 @@ button.slotContents:hover { background: #123b70; }
 .lockIcon { width: 14px; height: 14px; color: #9bb7ea; flex: 0 0 auto; }
 .boardFooter { display: flex; align-items: center; justify-content: center; gap: 7px; padding-top: 14px; color: #9bb7ea; font-size: .7rem; }
 .boardFooter svg { width: 13px; height: 13px; flex: 0 0 auto; }
-.finishedCard { padding: 28px; border: 1px solid #24528c; border-radius: 12px; background: #011a48; text-align: center; }
-.finishedCard h2 { font-size: 1.5rem; line-height: 1.25; }
-.topPick { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 22px 0; margin: 22px 0; border-top: 1px solid #24528c; border-bottom: 1px solid #24528c; }
-.topPick > span { color: #9bb7ea; font-size: .7rem; }
-.topPick img { width: 90px; height: 90px; object-fit: contain; }
-.topPick strong { font-size: 1rem; }
-.finishedCard .primaryButton, .finishedCard .secondaryButton { display: block; width: 100%; }
-.finishedCard .secondaryButton { margin-top: 10px; }
+.finishedActions { min-width: 0; text-align: center; }
+.resultButtons { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 .shareOptions { width: 100%; max-width: 100%; margin-top: 22px; padding-top: 18px; border-top: 1px solid #24528c; }
 .copyStatus { min-height: 25px; margin-top: 15px; color: #9bb7ea; font-size: .75rem; }
 .copyStatus:empty { display: none; }
@@ -140,9 +135,4 @@ button.slotContents:hover { background: #123b70; }
     .slotName { font-size: .62rem; }
     .lockIcon { display: none; }
     .boardFooter { align-items: flex-start; font-size: .6rem; text-align: center; }
-    .finishedCard { padding: 16px 10px; }
-    .finishedCard h2 { font-size: 1.15rem; }
-    .finishedCard .primaryButton, .finishedCard .secondaryButton { padding: 10px 7px; font-size: .65rem; }
-    .topPick strong { font-size: .8rem; overflow-wrap: anywhere; }
-    .topPick img { width: 70px; height: 70px; }
 }

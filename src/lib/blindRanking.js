@@ -1,5 +1,4 @@
 export const RANKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-export const ROUND_STORAGE_KEY = 'blind-ranking-round-v1';
 
 const gameUrl = 'https://onepiecedevilfruits.com/blind-ranking';
 export const BLIND_RANKING_PAGE = {
@@ -46,8 +45,6 @@ export const RANKING_SCENARIOS = [
     },
 ];
 
-const scenarioIds = new Set(RANKING_SCENARIOS.map(scenario => scenario.id));
-
 export function createRankingRound(fruits, { random = Math.random, previousScenarioId } = {}) {
     const scenarios = RANKING_SCENARIOS.filter(scenario => scenario.id !== previousScenarioId);
     const scenarioId = scenarios[Math.floor(random() * scenarios.length)].id;
@@ -57,7 +54,7 @@ export function createRankingRound(fruits, { random = Math.random, previousScena
         const other = Math.floor(random() * (index + 1));
         [deck[index], deck[other]] = [deck[other], deck[index]];
     }
-    return { version: 2, scenarioId, deck: deck.slice(0, 11), cursor: 0, slots: Array(10).fill(null), rerollsLeft: 1, phase: 'playing' };
+    return { scenarioId, deck: deck.slice(0, 11), cursor: 0, slots: Array(10).fill(null), rerollsLeft: 1, phase: 'playing' };
 }
 
 export function rankingReducer(round, action) {
@@ -74,23 +71,6 @@ export function rankingReducer(round, action) {
         return { ...round, slots, cursor: round.cursor + 1, phase: slots.every(Boolean) ? 'complete' : 'playing' };
     }
     return round;
-}
-
-export function restoreRankingRound(saved, fruits) {
-    if (!saved || (saved.version !== undefined && saved.version !== 2) || !scenarioIds.has(saved.scenarioId) || !Array.isArray(saved.deck) || saved.deck.length !== 11
-        || new Set(saved.deck).size !== 11 || !Array.isArray(saved.slots) || saved.slots.length !== 10
-        || ![0, 1].includes(saved.rerollsLeft) || !Number.isInteger(saved.cursor)) return null;
-    const ids = new Set(fruits.map(fruit => String(fruit.id)));
-    if (!saved.deck.every(id => typeof id === 'string' && ids.has(id))) return null;
-    if (!saved.slots.every(id => id === null || (typeof id === 'string' && ids.has(id)))) return null;
-    const placed = saved.slots.filter(Boolean);
-    if (new Set(placed).size !== placed.length || saved.cursor !== placed.length + (1 - saved.rerollsLeft)
-        || saved.cursor > 11 || !placed.every(id => saved.deck.slice(0, saved.cursor).includes(id))) return null;
-    return {
-        version: 2, scenarioId: saved.scenarioId, deck: saved.deck, cursor: saved.cursor,
-        slots: saved.version === 2 ? saved.slots : [...saved.slots].reverse(),
-        rerollsLeft: saved.rerollsLeft, phase: placed.length === 10 ? 'complete' : 'playing',
-    };
 }
 
 export function rankingShareText(round, fruits, { includeUrl = true } = {}) {
