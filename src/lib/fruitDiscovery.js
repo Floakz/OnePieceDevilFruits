@@ -10,7 +10,7 @@ export const ABILITY_TAGS = [
     { id: 'binding', label: 'Binding & trapping', names: ['String-String', 'Bind-Bind', 'Sew-Sew', 'Wax-Wax', 'Lick-Lick', 'Stick-Stick', 'Thorn-Thorn', 'Book-Book', 'Swamp-Swamp'] },
     { id: 'creation', label: 'Creation', names: ['Garb-Garb', 'Cook-Cook', 'Bis-Bis', 'Wax-Wax', 'Lick-Lick', 'Arms-Arms', 'Brush-Brush', 'Glorp-Glorp', 'Smelt-Smelt', 'Cream-Cream', 'Butter-Butter', 'String-String', 'Munch-Munch', 'Straw-Straw'] },
     { id: 'body', label: 'Body alteration', names: ['Gum-Gum', 'Chop-Chop', 'Dice-Dice', 'Spike-Spike', 'Flower-Flower', 'Berry-Berry', 'Smooth-Smooth', 'Ripple-Ripple', 'Jacket-Jacket', 'Clone-Clone', 'Mochi-Mochi', 'Wheel-Wheel', 'Roll-Roll', 'Pile-Pile', 'Munch-Munch', 'Tone-Tone'] },
-    { id: 'mind', label: 'Mind & senses', names: ['Memo-Memo', 'Glare-Glare', 'Brain-Brain', 'Hollow-Hollow', 'Love-Love', 'Millet-Millet', 'Vision-Vision', 'Dragon-Dragon Fruit, Model: Kirin', 'Hobby-Hobby', 'Ride-Ride'] },
+    { id: 'mind', label: 'Mind & senses', names: ['Memo-Memo', 'Glare-Glare', 'Brain-Brain', 'Hollow-Hollow', 'Love-Love', 'Millet-Millet', 'Vision-Vision', 'Dragon-Dragon Fruit, Model: Kirin', 'Hobby-Hobby', 'Ride-Ride', 'Whisper-Whisper'] },
     { id: 'size', label: 'Size & weight', names: ['Kilo-Kilo', 'Ton-Ton', 'Huge-Huge', 'Mini-Mini', 'Press-Press'] },
     { id: 'time', label: 'Time & aging', names: ['Time-Time', 'Age-Age', 'Ripe-Ripe', 'Slow-Slow'] },
     { id: 'space', label: 'Space & storage', names: ['Warp-Warp', 'Door-Door', 'Op-Op', 'Mirror-Mirror', 'Pocket-Pocket', 'Castle-Castle', 'Book-Book', 'Scroll-Scroll'] },
