@@ -13,7 +13,8 @@ export default function LatestSection() {
         const container = containerRef.current;
         if (!container) return;
         const observer = new ResizeObserver(([entry]) => {
-            setDisplayedNr(Math.max(1, Math.floor((entry.contentRect.width - 70) / 170)));
+            const isMobile = window.matchMedia('(max-width: 850px)').matches;
+            setDisplayedNr(isMobile ? 7 : Math.max(1, Math.floor((entry.contentRect.width - 70) / 170)));
         });
         observer.observe(container);
         return () => observer.disconnect();
@@ -22,8 +23,10 @@ export default function LatestSection() {
     if (status !== 'ready' || !fruits.length) return null;
     return <div ref={containerRef} className={styles.latestSection}>
         <h3 className={styles.latestLabel}>LATEST ADDED</h3>
-        {displayedFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.newFruitItem}>
-            <FruitImage fruit={fruit} alt={fruit.name} /><p>{fruit.name}</p>
-        </Link>)}
+        <div className={styles.fruitList}>
+            {displayedFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.newFruitItem}>
+                <FruitImage fruit={fruit} alt={fruit.name} /><p>{fruit.name}</p>
+            </Link>)}
+        </div>
     </div>;
 }

@@ -32,6 +32,10 @@
     font-size: 0.9em;
 }
 
+.fruitList {
+    display: contents;
+}
+
 
 .newFruitItem {
     aspect-ratio: 1/1;
@@ -84,4 +88,33 @@
 
 .newFruitItem:hover>p {
     font-size: 0.6em;
+}
+
+@media (max-width: 850px) {
+    .latestLabel {
+        flex-shrink: 0;
+    }
+
+    .fruitList {
+        display: flex;
+        flex: 1;
+        min-width: 0;
+        gap: 20px;
+        overflow-x: auto;
+        padding: 4px 4px 12px;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+        scrollbar-color: #ffee06 #0e3473;
+    }
+
+    .newFruitItem {
+        flex: 0 0 150px;
+        width: 150px;
+        scroll-snap-align: start;
+    }
+
+    .newFruitItem:focus-visible {
+        outline: 2px solid #ffee06;
+        outline-offset: 2px;
+    }
 }
