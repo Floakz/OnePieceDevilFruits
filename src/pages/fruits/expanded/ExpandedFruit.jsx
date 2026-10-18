@@ -71,11 +71,13 @@ export default function ExpandedFruit() {
     const seoImage = fruitInfo ? (cdn ? `${cdn}/fruits/${fruitInfo.id}.webp` : fruitInfo.img?.fruit) : undefined;
     const jsonLd = isReady ? {
         '@context': 'https://schema.org', '@graph': [
-            { '@type': 'BreadcrumbList', itemListElement: [
-                { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
-                { '@type': 'ListItem', position: 2, name: `${fruitInfo.type} Fruits`, item: `${SITE}${categoryPath}` },
-                { '@type': 'ListItem', position: 3, name: fruitInfo.name, item: canonical },
-            ] },
+            {
+                '@type': 'BreadcrumbList', itemListElement: [
+                    { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE}/` },
+                    { '@type': 'ListItem', position: 2, name: `${fruitInfo.type} Fruits`, item: `${SITE}${categoryPath}` },
+                    { '@type': 'ListItem', position: 3, name: fruitInfo.name, item: canonical },
+                ]
+            },
             { '@type': 'WebPage', name: fruitInfo.name, alternateName: [fruitInfo.romanizedName, fruitInfo.japaneseName].filter(Boolean), url: canonical, description: summary, image: seoImage },
         ],
     } : undefined;
@@ -102,19 +104,19 @@ export default function ExpandedFruit() {
                 </div>}
                 {tags.length > 0 && <ul className={styles.abilityTags} aria-label="Ability tags">{tags.map(tag => <li key={tag.id}><Link to={`/?ability=${tag.id}#fruit-filters`}>{tag.label}</Link></li>)}</ul>}
             </div>
-           
+
             <section id="fruit-facts" tabIndex={-1} className={styles.sectionDetailWrapper} aria-labelledby="facts-title">
                 <div className={styles.wrapper1x2}>
                     <div className={styles.InfoWrapper}>
                         <SectionTitle id="facts-title" emoji="📌">Quick facts</SectionTitle>
                         <div className={styles.gridDiv2x2}>
-                            <p>Type: <span className={styles.spanTag}>{fruitInfo.type}</span></p>
-                            <p>User: <span>{fruitInfo.user || 'Unknown'}</span></p>
-                            <p>Debut arc: {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}#fruit-filters`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
-                            <p>First appearance: <span>{fruitInfo.firstAppearance || 'Unknown'}</span></p>
-                            <p>Previous user: <span>{fruitInfo.previousUser || 'Unknown'}</span></p>
-                            <p>Awakening: <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>
-                            <p>Canon status: <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
+                            <p>Type:<br /> <span className={styles.spanTag}>{fruitInfo.type}</span></p>
+                            <p>User:<br /> <span>{fruitInfo.user || 'Unknown'}</span></p>
+                            <p>Debut arc:<br /> {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}#fruit-filters`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
+                            <p>First appearance:<br /> <span>{fruitInfo.firstAppearance || 'Unknown'}</span></p>
+                            <p>Previous user:<br /> <span>{fruitInfo.previousUser || 'Unknown'}</span></p>
+                            <p>Awakening:<br /> <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>
+                            <p>Canon status:<br /> <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
                         </div>
                         <SectionTitle as="h3" emoji="🏷️">Names</SectionTitle>
                         <dl className={styles.namesGrid}>
