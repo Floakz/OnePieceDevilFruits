@@ -50,7 +50,7 @@ export default function ExpandedFruit() {
 
     useEffect(() => {
         if (matchedFruit && id !== slugify(matchedFruit.name)) {
-            navigate({ pathname: `/fruit/${slugify(matchedFruit.name)}`, search: location.search, hash: location.hash }, { replace: true });
+            navigate({ pathname: `/fruit/${slugify(matchedFruit.name)}/`, search: location.search, hash: location.hash }, { replace: true });
         }
     }, [matchedFruit, id, navigate, location.search, location.hash]);
 
@@ -62,7 +62,7 @@ export default function ExpandedFruit() {
     }, [status, fruitInfo, location.hash]);
 
     const isReady = status === 'ready' && fruitInfo;
-    const categoryPath = fruitInfo?.type?.includes('Logia') ? '/logia' : fruitInfo?.type?.includes('Zoan') ? '/zoan' : '/paramecia';
+    const categoryPath = fruitInfo?.type?.includes('Logia') ? '/logia/' : fruitInfo?.type?.includes('Zoan') ? '/zoan/' : '/paramecia/';
     const title = isReady ? `${fruitInfo.name}${fruitInfo.romanizedName ? ` (${fruitInfo.romanizedName})` : ''} | One Piece Devil Fruits` : 'One Piece Devil Fruits — details, users and stats';
     const canonical = isReady ? `${SITE}/fruit/${slugify(fruitInfo.name)}` : `${SITE}/`;
     const summary = fruitInfo ? (fruitInfo.abilities?.[0] || fruitInfo.about || '').split(/(?<=[.!?])\s+/)[0] : '';
@@ -156,7 +156,7 @@ export default function ExpandedFruit() {
             </section>}
             {otherFruits.length > 0 && <section className={styles.sectionWrapper} aria-labelledby="related-title">
                 <SectionTitle id="related-title" emoji="✨">Worth a look next</SectionTitle>
-                <div className={styles.otherFruitsWrapper}>{otherFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.otherFruitsSingle}>
+                <div className={styles.otherFruitsWrapper}>{otherFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}/`} className={styles.otherFruitsSingle}>
                     <FruitImage fruit={fruit} kind="character" loading="lazy" className={styles.relatedCharacter} alt="" aria-hidden="true" />
                     <FruitImage fruit={fruit} loading="lazy" className={styles.otherfruitImg} />
                     <h3>{fruit.name}</h3><p className={styles.relatedReason}>{fruit.reason}</p>

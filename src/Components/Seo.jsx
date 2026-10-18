@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { normalizeStructuredUrls, withTrailingSlash } from '../lib/siteUrls.js';
 
 function setMeta(attribute, key, content) {
     let element = document.querySelector(`meta[${attribute}="${key}"]`);
@@ -38,13 +39,14 @@ export default function Seo({
     jsonLd,
 }) {
     useEffect(() => {
+        const canonicalUrl = withTrailingSlash(canonical);
         if (title) document.title = title;
         setMeta("name", "description", description);
-        setLinkRel("canonical", canonical);
+        setLinkRel("canonical", canonicalUrl);
 
         setMeta("property", "og:title", title);
         setMeta("property", "og:description", description);
-        setMeta("property", "og:url", canonical);
+        setMeta("property", "og:url", canonicalUrl);
         setMeta("property", "og:type", type);
         setMeta("property", "og:image", image);
         setMeta("name", "twitter:card", image ? "summary_large_image" : "summary");
@@ -63,7 +65,7 @@ export default function Seo({
                 structuredData.type = "application/ld+json";
                 document.head.appendChild(structuredData);
             }
-            structuredData.textContent = JSON.stringify(jsonLd);
+            structuredData.textContent = JSON.stringify(normalizeStructuredUrls(jsonLd));
         }
     }, [title, description, canonical, image, type, noindex, jsonLd]);
 

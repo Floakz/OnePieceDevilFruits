@@ -1,6 +1,6 @@
 export const RANKS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const gameUrl = 'https://onepiecedevilfruits.com/blind-ranking';
+const gameUrl = 'https://onepiecedevilfruits.com/blind-ranking/';
 export const BLIND_RANKING_PAGE = {
     path: '/blind-ranking',
     url: gameUrl,

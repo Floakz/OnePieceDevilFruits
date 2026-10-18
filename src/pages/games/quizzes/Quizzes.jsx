@@ -29,7 +29,7 @@ export default function Quizzes() {
                     <div className={styles.fullQuizzGrid}>
                         {quizzes.map((quiz) => (
                             <Link
-                                to={`/quizzes/${quiz.slug}`}
+                                to={`/quizzes/${quiz.slug}/`}
                                 key={quiz.id}
                                 className={styles.quizCard}>
 

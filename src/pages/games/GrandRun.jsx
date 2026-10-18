@@ -183,7 +183,7 @@ export default function GrandRun() {
                                 <span>NEW FRUIT</span>
                                 <h3>
                                     <a
-                                        href={`/fruit/${ slugify(fruitDrafted.name) }`}
+                                        href={`/fruit/${ slugify(fruitDrafted.name) }/`}
                                         target="_blank"
                                         rel="noreferrer"
                                         className={styles.fruitTitleLink}

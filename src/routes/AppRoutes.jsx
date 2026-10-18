@@ -81,7 +81,7 @@ export default function AppRoutes() {
                 <Route path="/fruit-finder" element={<FruitFinderPage />} />
                 <Route path="/crew-wars" element={<CrewWars />} />
                 <Route path="/blind-ranking" element={<BlindRanking />} />
-                <Route path="/game" element={<Navigate to="/blind-ranking" replace />} />
+                <Route path="/game" element={<Navigate to="/blind-ranking/" replace />} />
                 <Route path="/grand-run" element={<GrandRun />} />
                 <Route path="/daily-fight" element={<DailyFight />} />
 

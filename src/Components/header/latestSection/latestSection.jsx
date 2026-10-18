@@ -24,7 +24,7 @@ export default function LatestSection() {
     return <div ref={containerRef} className={styles.latestSection}>
         <h3 className={styles.latestLabel}>LATEST ADDED</h3>
         <div className={styles.fruitList}>
-            {displayedFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}`} className={styles.newFruitItem}>
+            {displayedFruits.map(fruit => <Link key={fruit.id} to={`/fruit/${slugify(fruit.name)}/`} className={styles.newFruitItem}>
                 <FruitImage fruit={fruit} alt={fruit.name} /><p>{fruit.name}</p>
             </Link>)}
         </div>
