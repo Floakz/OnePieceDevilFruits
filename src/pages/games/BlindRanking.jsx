@@ -8,7 +8,7 @@ import FruitImage from '../../Components/FruitImage.jsx';
 import CatalogState from '../../Components/CatalogState.jsx';
 import SocialShare from '../../Components/socialShare/SocialShare.jsx';
 import useFruits from '../../hooks/useFruits.js';
-import { BLIND_RANKING_PAGE, createRankingRound, rankingReducer, rankingShareText, RANKING_SCENARIOS, RANKS } from '../../lib/blindRanking.js';
+import { BLIND_RANKING_PAGE, createRankingRound, getRankingDrawPreviews, rankingReducer, rankingShareText, RANKING_SCENARIOS, RANKS } from '../../lib/blindRanking.js';
 import styles from './BlindRanking.module.css';
 
 function GameIcon({ name, ...props }) {
@@ -29,6 +29,7 @@ function rankAtPoint(board, x, y) {
 export default function BlindRanking() {
     const { fruits, status, retry } = useFruits();
     const [round, dispatch] = useReducer(rankingReducer, null);
+    const [draw, setDraw] = useState(null);
     const [drag, setDrag] = useState(null);
     const dragPoint = useRef(null);
     const [hoverRank, setHoverRank] = useState(null);
@@ -41,13 +42,45 @@ export default function BlindRanking() {
     const scenario = RANKING_SCENARIOS.find(item => item.id === round?.scenarioId);
     const introFruits = useMemo(() => ['Flame-Flame', 'Gum-Gum', 'Op-Op'].map(name => fruits.find(fruit => fruit.name.startsWith(name))).filter(Boolean), [fruits]);
     const current = round?.phase === 'playing' ? byId.get(round.deck[round.cursor]) : null;
+    const deck = round?.deck;
+    const cursor = round?.cursor;
+    const drawMatches = draw?.deck === deck && draw?.cursor === cursor;
+    const isDrawing = Boolean(current && (!drawMatches || !draw.ready));
+    const displayedFruit = isDrawing ? (drawMatches ? draw.preview : null) : current;
     const placedCount = round?.slots.filter(Boolean).length || 0;
     const complete = round?.phase === 'complete';
     const isDragging = Boolean(drag?.moved);
 
     useEffect(() => {
-        if (current) drawButtonRef.current?.focus({ preventScroll: true });
-    }, [current]);
+        if (current && !isDrawing) drawButtonRef.current?.focus({ preventScroll: true });
+    }, [current, isDrawing]);
+
+    useEffect(() => {
+        if (!current) return;
+        const previews = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            ? [] : getRankingDrawPreviews(fruits, deck);
+        const ready = { deck, cursor, preview: null, ready: true };
+        const announceReady = () => setAnnouncement(`${current.name} is ready. Choose an empty slot.`);
+        setDraw(previews.length ? { deck, cursor, preview: previews[0], ready: false } : ready);
+        if (!previews.length) { announceReady(); return; }
+
+        // Warm the image cache while the short shuffle runs.
+        const cdn = import.meta.env.VITE_CDN_BASE;
+        for (const fruit of [...previews, current]) {
+            const image = new Image();
+            image.src = cdn ? `${cdn}/fruits/${fruit.id}.webp` : `/images/fruits/${fruit.id}.webp`;
+        }
+        let delay = 0;
+        const timers = previews.map((_, index) => {
+            delay += 120 + index * 55;
+            return setTimeout(() => {
+                const preview = previews[index + 1];
+                setDraw(preview ? { deck, cursor, preview, ready: false } : ready);
+                if (!preview) announceReady();
+            }, delay);
+        });
+        return () => timers.forEach(clearTimeout);
+    }, [current, fruits, deck, cursor]);
 
     useEffect(() => {
         if (!isDragging) return;
@@ -73,25 +106,25 @@ export default function BlindRanking() {
 
     function startRound() {
         dispatch({ type: 'SET_ROUND', round: createRankingRound(fruits, { previousScenarioId: round?.scenarioId }) });
-        setAnnouncement('First fruit up. Choose a slot.');
+        setAnnouncement('Drawing the first fruit…');
         setCopyStatus('');
         window.scrollTo({ top: 0, behavior: 'instant' });
     }
 
     function placeFruit(rank, fruitId = current?.id) {
-        if (!current || round.slots[rank - 1] || String(current.id) !== String(fruitId)) return;
+        if (!current || isDrawing || round.slots[rank - 1] || String(current.id) !== String(fruitId)) return;
         dispatch({ type: 'PLACE', rank, fruitId: String(fruitId) });
-        setAnnouncement(`${current.name} locked into ${rank}. ${placedCount === 9 ? 'Your ranking is complete.' : 'Next fruit up.'}`);
+        setAnnouncement(`${current.name} locked into ${rank}. ${placedCount === 9 ? 'Your ranking is complete.' : 'Drawing the next fruit…'}`);
     }
 
     function reroll() {
-        if (!current || !round.rerollsLeft) return;
+        if (!current || isDrawing || !round.rerollsLeft) return;
         dispatch({ type: 'REROLL', fruitId: String(current.id) });
         setAnnouncement(`${current.name} skipped. That was your one reroll.`);
     }
 
     function pointerDown(event) {
-        if (!current || event.button !== 0 || !event.isPrimary) return;
+        if (!current || isDrawing || event.button !== 0 || !event.isPrimary) return;
         event.currentTarget.setPointerCapture(event.pointerId);
         suppressClick.current = false;
         const point = { pointerId: event.pointerId, x: event.clientX, y: event.clientY, startX: event.clientX, startY: event.clientY, fruitId: String(current.id), moved: false };
@@ -127,6 +160,7 @@ export default function BlindRanking() {
     function cancelDrag() { dragPoint.current = null; setDrag(null); setHoverRank(null); }
 
     function focusSlots() {
+        if (isDrawing) return;
         if (suppressClick.current) { suppressClick.current = false; return; }
         boardRef.current?.querySelector('button:not(:disabled)')?.focus();
     }
@@ -162,23 +196,24 @@ export default function BlindRanking() {
                         </section>
                         <div className={`${styles.gameLayout} ${complete ? styles.completedLayout : ''}`}>
                             {!complete && <aside className={styles.currentPanel}>
-                                <div className={styles.currentCard}>
+                                <div className={styles.currentCard} aria-busy={isDrawing}>
                                     <div className={styles.drawHeading}>Fruit {placedCount + 1} of 10</div>
                                     <button type="button" className={`${styles.fruitDragArea} ${isDragging ? styles.draggingSource : ''}`}
                                         ref={drawButtonRef}
-                                        aria-label={`Drag ${current.name} to a rank, or choose an empty slot`}
+                                        disabled={isDrawing}
+                                        aria-label={isDrawing ? 'Drawing the next fruit' : `Drag ${current.name} to a rank, or choose an empty slot`}
                                         onPointerDown={pointerDown} onPointerMove={pointerMove} onPointerUp={pointerUp} onPointerCancel={cancelDrag} onLostPointerCapture={cancelDrag} onClick={focusSlots}
                                         onKeyDown={event => { if (event.key === 'Escape') cancelDrag(); }}>
-                                        <FruitImage key={`character-${current.id}`} fruit={current} kind="character" className={styles.drawCharacter} alt="" aria-hidden="true" draggable={false} />
-                                        <FruitImage key={current.id} fruit={current} className={styles.drawFruit} draggable={false} />
-                                        <span className={styles.dragHint}><GameIcon name="drag" />Drag to a slot</span>
+                                        {!isDrawing && <FruitImage key={`character-${current.id}`} fruit={current} kind="character" className={styles.drawCharacter} alt="" aria-hidden="true" draggable={false} />}
+                                        {displayedFruit ? <FruitImage key={displayedFruit.id} fruit={displayedFruit} className={styles.drawFruit} alt={isDrawing ? '' : undefined} aria-hidden={isDrawing || undefined} draggable={false} /> : <span className={styles.drawFruit} />}
+                                        <span className={styles.dragHint}><GameIcon name={isDrawing ? 'shuffle' : 'drag'} />{isDrawing ? 'Shuffling…' : 'Drag to a slot'}</span>
                                     </button>
-                                    <div className={styles.fruitCopy} key={current.id}><span className={styles.typeTag}>{current.type}</span><h2>{current.name}</h2>
-                                        <p className={styles.fruitDescription}>{(current.about || 'What would you do with this power?').split(/(?<=[.!?])\s+/)[0]}</p>
+                                    <div className={styles.fruitCopy} key={displayedFruit?.id} aria-hidden={isDrawing || undefined}><span className={styles.typeTag}>{isDrawing ? 'Drawing a fruit' : current.type}</span><h2>{displayedFruit?.name || 'Shuffling…'}</h2>
+                                        <p className={styles.fruitDescription}>{isDrawing ? 'Which power will you get?' : (current.about || 'What would you do with this power?').split(/(?<=[.!?])\s+/)[0]}</p>
                                     </div>
                                 </div>
-                                <button type="button" className={styles.rerollButton} disabled={!round.rerollsLeft} onClick={reroll}><GameIcon name="shuffle" />{round.rerollsLeft ? 'Reroll · 1 left' : 'Reroll used'}</button>
-                                <p className={styles.controlHint}>Drag the fruit or tap a number to place it.</p>
+                                <button type="button" className={styles.rerollButton} disabled={isDrawing || !round.rerollsLeft} onClick={reroll}><GameIcon name="shuffle" />{round.rerollsLeft ? 'Reroll · 1 left' : 'Reroll used'}</button>
+                                <p className={styles.controlHint}>{isDrawing ? 'Drawing the next fruit…' : 'Drag the fruit or tap a number to place it.'}</p>
                                 <p className={styles.smallRule}>Basic control. No awakening. No extra powers.</p>
                             </aside>}
                             <section className={styles.rankingBoard} aria-label={complete ? 'Completed ranking' : undefined} aria-labelledby={complete ? undefined : 'board-title'} ref={boardRef}>
@@ -189,7 +224,7 @@ export default function BlindRanking() {
                                         : <><span className={styles.emptySlotText}>{rank === 1 ? 'Best fit' : rank === 10 ? 'Worst fit' : '—'}</span><span className={styles.slotPlus} aria-hidden="true">+</span></>;
                                     return <div key={rank} data-rank-slot={rank} className={`${styles.slot} ${fruit ? styles.lockedSlot : ''} ${!fruit && hoverRank === rank ? styles.hoverSlot : ''} ${rank === 1 ? styles.bestSlot : ''}`}>
                                         <span className={styles.rankNumber}>{rank}</span>
-                                        {fruit ? <div className={styles.slotContents}>{content}</div> : <button type="button" className={styles.slotContents} aria-label={`Rank ${rank}${rank === 1 ? ', best fit' : rank === 10 ? ', worst fit' : ''}: place ${current?.name || 'fruit'}`} onClick={() => placeFruit(rank)}>{content}</button>}
+                                        {fruit ? <div className={styles.slotContents}>{content}</div> : <button type="button" className={styles.slotContents} disabled={isDrawing} aria-label={`Rank ${rank}${rank === 1 ? ', best fit' : rank === 10 ? ', worst fit' : ''}: ${isDrawing ? 'drawing the next fruit' : `place ${current?.name || 'fruit'}`}`} onClick={() => placeFruit(rank)}>{content}</button>}
                                     </div>;
                                 })}</div>
                                 {!complete && <div className={styles.boardFooter}><GameIcon name="lock" /><span>Placed fruits can’t be moved.</span></div>}

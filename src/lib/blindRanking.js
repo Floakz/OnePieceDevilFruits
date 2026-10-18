@@ -43,6 +43,78 @@ export const RANKING_SCENARIOS = [
         id: 'stranded', label: 'Stranded crew',
         story: 'Your crew is stuck on an island for a week. You need drinking water, food, shelter, and a way to repair the ship.',
     },
+    {
+        id: 'cave-in', label: 'Mine rescue',
+        story: 'Miners are trapped behind a cave-in. Reach them and get them out without causing another collapse.',
+    },
+    {
+        id: 'archive', label: 'Save the maps',
+        story: 'A fire is spreading through a port’s map archive. Get the workers and the irreplaceable charts out before the building is lost.',
+    },
+    {
+        id: 'prison-break', label: 'Prison break',
+        story: 'Your crewmates are locked inside a stone fort, and you are free outside. Get them out and away before reinforcements arrive.',
+    },
+    {
+        id: 'convoy', label: 'Protect the convoy',
+        story: 'Bandits are attacking wagons carrying medicine to a village. Keep the drivers safe and get the cargo through intact.',
+    },
+    {
+        id: 'ship-duel', label: 'Duel on deck',
+        story: 'An armed pirate has boarded your ship. Win the fight without sinking your own ship or injuring your crewmates.',
+    },
+    {
+        id: 'overboard', label: 'Cargo overboard',
+        story: 'Supply crates are drifting away from your ship. Working from the deck or a lifeboat, recover them before the current carries them out of reach.',
+    },
+    {
+        id: 'ravine', label: 'Across the ravine',
+        story: 'The bridge to a village has collapsed. Get your crew and their heavy supply crates across the deep, dry ravine safely.',
+    },
+    {
+        id: 'summit', label: 'Race to the summit',
+        story: 'Race other pirates to a flag on a rocky mountain peak. Reach it first, with loose slopes and sheer cliffs between you and the top.',
+    },
+    {
+        id: 'night-watch', label: 'Night watch',
+        story: 'Thieves are slipping into a dark warehouse district. Find and stop them while keeping the sleeping residents and stored goods safe.',
+    },
+    {
+        id: 'courier-chase', label: 'Catch the thief',
+        story: 'A thief has taken your crew’s Log Pose and is fleeing through a crowded market. Catch them and recover it without wrecking the stalls.',
+    },
+    {
+        id: 'animals', label: 'Beasts on the loose',
+        story: 'Large animals have escaped into a busy town. Bring them back to their enclosures without hurting them or the townspeople.',
+    },
+    {
+        id: 'jungle-search', label: 'Lost in the jungle',
+        story: 'Two crewmates are missing in a dense jungle. Find them before nightfall and lead everyone back to the ship without getting lost yourself.',
+    },
+    {
+        id: 'frozen-camp', label: 'A freezing night',
+        story: 'Your crew has a tent and a few tools on a freezing island. Keep everyone warm and sheltered until sunrise.',
+    },
+    {
+        id: 'desert', label: 'Desert crossing',
+        story: 'Guide a small caravan between oases in brutal heat. Keep the travellers and pack animals moving, and make the limited drinking water last.',
+    },
+    {
+        id: 'blackout', label: 'Festival blackout',
+        story: 'The lights fail halfway through a crowded night festival. Help people move safely, find separated families, and keep the celebration going.',
+    },
+    {
+        id: 'statue', label: 'Handle with care',
+        story: 'Move a huge, fragile statue from the docks to a hilltop museum. It must arrive in one piece, and the streets are too narrow for a wagon.',
+    },
+    {
+        id: 'harvest', label: 'Beat the rain',
+        story: 'Heavy rain will ruin a village’s ripe crops by evening. Help a handful of farmers harvest the fields and get everything into dry storage.',
+    },
+    {
+        id: 'ruins', label: 'Into the ruins',
+        story: 'Explore an unlit ruin, find a hidden treasure chamber, and bring its contents outside. The old floors and ceilings are dangerously fragile.',
+    },
 ];
 
 export function createRankingRound(fruits, { random = Math.random, previousScenarioId } = {}) {
@@ -55,6 +127,17 @@ export function createRankingRound(fruits, { random = Math.random, previousScena
         [deck[index], deck[other]] = [deck[other], deck[index]];
     }
     return { scenarioId, deck: deck.slice(0, 11), cursor: 0, slots: Array(10).fill(null), rerollsLeft: 1, phase: 'playing' };
+}
+
+// Preview fruits are cosmetic and must not expose the round's hidden deck.
+export function getRankingDrawPreviews(fruits, deck, random = Math.random) {
+    const hidden = new Set(deck);
+    const previews = fruits.filter(fruit => fruit.id && fruit.name && !hidden.has(String(fruit.id)));
+    for (let index = previews.length - 1; index > 0; index--) {
+        const other = Math.floor(random() * (index + 1));
+        [previews[index], previews[other]] = [previews[other], previews[index]];
+    }
+    return previews.slice(0, 4);
 }
 
 export function rankingReducer(round, action) {

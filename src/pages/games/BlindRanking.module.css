@@ -1,8 +1,8 @@
 /* Reserve room for the ranking board even before the round starts. */
-.page { display: block; place-items: normal; width: 90vw; max-width: 1160px; min-height: max(900px, 75svh); margin: 0 auto 70px; color: #fff; }
+.page { display: block; place-items: normal; width: 90vw; max-width: 1160px; margin: 0 auto 70px; color: #fff; }
 .page button { font-family: inherit; cursor: pointer; }
 .page button:focus-visible, .page a:focus-visible { outline: 2px solid #f8de3c; outline-offset: 4px; }
-.intro { display: flex; align-items: center; gap: 45px; padding: 20px 0 45px; min-height: 460px; }
+.intro { display: flex; align-items: center; gap: 45px; padding: 40px; min-height: 460px; border: 1px solid rgb(255, 209, 44); border-radius: 20px; }
 .introCopy { flex: 1; min-width: 0; }
 .intro h1 { font-size: clamp(3.8rem, 8vw, 7rem); line-height: .96; text-transform: uppercase; letter-spacing: -.045em; }
 .intro h1 span { display: block; color: #f8de3c; }
@@ -34,6 +34,7 @@
 .drawHeading { padding: 13px 18px; color: #b9cef3; font-size: .72rem; }
 .fruitDragArea { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 235px; padding: 20px; gap: 20px; border: 0; background: #0b285b; color: #fff; touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab !important; }
 .fruitDragArea::after { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(#011a4866, #011a48e8); pointer-events: none; }
+.fruitDragArea:disabled { cursor: wait !important; }
 .drawCharacter { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; opacity: .65; pointer-events: none; }
 .drawFruit { position: relative; z-index: 2; width: 140px; height: 140px; object-fit: contain; filter: drop-shadow(0 15px 18px #0008); pointer-events: none; }
 .dragHint { position: relative; z-index: 2; display: flex; align-items: center; gap: 7px; color: #f8de3c; font-size: .73rem; }
@@ -59,7 +60,8 @@
 .rankNumber { display: grid; place-items: center; flex: 0 0 54px; background: #0d3165; color: #9bb7ea; font-weight: 700; font-size: 1.2rem; border-right: 1px solid #24528c; font-variant-numeric: tabular-nums; }
 .bestSlot .rankNumber { color: #001741; background: #f8de3c; }
 .slotContents { display: flex; align-items: center; flex: 1; gap: 12px; min-width: 0; padding: 8px 14px; border: 0; background: transparent; color: #fff; text-align: left; }
-button.slotContents:hover { background: #123b70; }
+button.slotContents:hover:not(:disabled) { background: #123b70; }
+button.slotContents:disabled { cursor: wait; }
 .slot:focus-within { outline: 2px solid #f8de3c; outline-offset: -2px; }
 .slotContents:focus-visible { outline: none !important; }
 .emptySlotText { flex: 1; color: #6f92c4; font-size: .76rem; }
@@ -87,6 +89,7 @@ button.slotContents:hover { background: #123b70; }
 .dragGhost span { color: #fff; font-size: .75rem; line-height: 1.4; font-weight: 600; }
 @media (max-width: 800px) {
     .intro { gap: 20px; }
+    .intro h1 { font-size: clamp(3rem, 8vw, 3.8rem); }
     .introArt { height: 280px; }
     .introArt img { height: 200px; }
     .gameLayout { gap: 18px; }
@@ -95,7 +98,7 @@ button.slotContents:hover { background: #123b70; }
 }
 @media (max-width: 550px) {
     .page { width: 94vw; }
-    .intro { flex-direction: column; padding: 10px 0 20px; gap: 10px; }
+    .intro { flex-direction: column; padding: 20px 0; gap: 10px; }
     .introCopy { padding: 0 15px; text-align: center; }
     .intro h1 { font-size: clamp(3.7rem, 17vw, 5.5rem); }
     .introCopy > p { margin: 20px 0; font-size: .85rem; }

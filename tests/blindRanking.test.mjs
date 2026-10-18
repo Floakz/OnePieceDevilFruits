@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createRankingRound, rankingReducer, rankingShareText, RANKING_SCENARIOS } from '../src/lib/blindRanking.js';
+import { createRankingRound, getRankingDrawPreviews, rankingReducer, rankingShareText, RANKING_SCENARIOS } from '../src/lib/blindRanking.js';
 
 const fruits = Array.from({ length: 20 }, (_, index) => ({ id: `fruit-${index}`, name: `Fruit ${index}` }));
 const makeRound = () => createRankingRound(fruits, { random: () => 0 });
@@ -39,6 +39,23 @@ test('a placement locks the chosen slot and reveals exactly one next fruit', () 
     assert.equal(initial.slots[6], null);
     assert.equal(place(next, 7), next);
     assert.equal(next.slots[6], initial.deck[0]);
+});
+
+test('shuffle previews do not reveal the hidden deck or change the actual draw', () => {
+    const round = makeRound();
+    const original = structuredClone({ round, fruits });
+    const previews = getRankingDrawPreviews(fruits, round.deck, () => .4);
+    assert.equal(previews.length, 4);
+    assert.equal(new Set(previews.map(fruit => fruit.id)).size, 4);
+    assert.ok(previews.every(fruit => !round.deck.includes(fruit.id)));
+    assert.deepEqual({ round, fruits }, original);
+    assert.equal(place(round, 1).slots[0], round.deck[0]);
+});
+
+test('small catalogs can skip or shorten the shuffle without exposing future fruits', () => {
+    const deck = fruits.slice(0, 11).map(fruit => fruit.id);
+    assert.deepEqual(getRankingDrawPreviews(fruits.slice(0, 11), deck), []);
+    assert.deepEqual(getRankingDrawPreviews(fruits.slice(0, 12), deck), [fruits[11]]);
 });
 
 test('duplicate pointer or keyboard events cannot place an old fruit twice', () => {

@@ -8,17 +8,12 @@ import FruitImage from '../../Components/FruitImage.jsx';
 import CatalogState from '../../Components/CatalogState.jsx';
 import useFruits from '../../hooks/useFruits.js';
 import { slugify } from '../../lib/slugify.js';
-import { FINDER_PAGE, FINDER_SESSION_KEY, INITIAL_FINDER_STATE, createFinderRun, finderAnswersComplete, finderReducer, findFruitMatches, getFinderCandidates, getFinderQuestion, pickFinderMatch, restoreFinderState } from '../../lib/fruitFinder.js';
+import { FINDER_PAGE, INITIAL_FINDER_STATE, createFinderRun, finderAnswersComplete, finderReducer, findFruitMatches, getFinderCandidates, getFinderQuestion, pickFinderMatch } from '../../lib/fruitFinder.js';
 import styles from './games.module.css';
-
-function readQuizSession() {
-    try { return restoreFinderState(JSON.parse(sessionStorage.getItem(FINDER_SESSION_KEY))) || INITIAL_FINDER_STATE; }
-    catch { return INITIAL_FINDER_STATE; }
-}
 
 export default function FruitFinderPage() {
     const { fruits, status, retry } = useFruits();
-    const [quiz, dispatch] = useReducer(finderReducer, null, readQuizSession);
+    const [quiz, dispatch] = useReducer(finderReducer, INITIAL_FINDER_STATE);
     const questionHeading = useRef(null);
     const reviewPanel = useRef(null);
     const reviewTarget = useRef(null);
@@ -40,19 +35,13 @@ export default function FruitFinderPage() {
     }
 
     useEffect(() => {
-        try { sessionStorage.setItem(FINDER_SESSION_KEY, JSON.stringify(quiz)); }
-        catch { /* The quiz also works when browser storage is unavailable. */ }
-    }, [quiz]);
-
-    useEffect(() => {
         if (status !== 'ready' || quiz.phase === 'intro') return;
         if (quiz.phase === 'review' && reviewTarget.current) {
-            reviewPanel.current?.querySelector(`[data-question-id="${reviewTarget.current}"]`)?.focus();
+            reviewPanel.current?.querySelector(`[data-question-id="${reviewTarget.current}"]`)?.focus({ preventScroll: true });
             reviewTarget.current = null;
             return;
         }
         questionHeading.current?.focus({ preventScroll: true });
-        questionHeading.current?.parentElement.scrollIntoView({ block: 'start', behavior: 'instant' });
     }, [quiz.phase, quiz.questionIndex, quiz.editingQuestionId, status]);
 
     return <>

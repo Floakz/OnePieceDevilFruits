@@ -322,7 +322,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
-                                    <div className={styles.mobileGamesHeading}>Pirate Games <span className={styles.newBadge}>NEW</span></div>
+                                    <div className={styles.mobileGamesHeading}>Pirate Games</div>
                                     <NavLink
                                         to="/fruit-finder"
                                         onClick={() => setIsMobileMenuOpen(false)}
