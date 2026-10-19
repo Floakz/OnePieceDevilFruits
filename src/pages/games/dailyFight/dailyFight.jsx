@@ -373,7 +373,7 @@ export default function DailyFight() {
                                     className={styles.fruitName}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        navigate(`/fruit/${leftOption.fruitId}/`)
+                                        navigate(`/fruit/${leftOption.fruitId}`)
                                     }}
                                 >
                                     {leftOption.fruit}
@@ -391,7 +391,7 @@ export default function DailyFight() {
                                     className={styles.fruitName}
                                     onClick={(e) => {
                                         e.stopPropagation();
-                                        navigate(`/fruit/${rightOption.fruitId}/`)
+                                        navigate(`/fruit/${rightOption.fruitId}`)
                                     }}
                                 >
                                     {rightOption.fruit}

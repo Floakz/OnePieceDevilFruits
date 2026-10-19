@@ -4,7 +4,7 @@ import fruitsExpandedInfo from './fruits/fruitsExpandedInfo.js';
 export const FINDER_PAGE = {
     title: 'Devil Fruit Finder Quiz — Find Your One Piece Power',
     description: 'Answer eight questions from a rotating pool to find a One Piece Devil Fruit that fits you. Matches follow your choices, with variety when several fruits fit closely.',
-    url: 'https://onepiecedevilfruits.com/fruit-finder/',
+    url: 'https://onepiecedevilfruits.com/fruit-finder',
 };
 
 const coreQuestions = [

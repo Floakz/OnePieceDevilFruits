@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { withTrailingSlash } from '../lib/siteUrls.js';
 
 function pageUrl(basePath, page, queryParams = {}) {
     const params = new URLSearchParams(queryParams);
@@ -7,8 +6,7 @@ function pageUrl(basePath, page, queryParams = {}) {
     else params.delete("page");
 
     const query = params.toString();
-    const path = withTrailingSlash(basePath);
-    return query ? `${path}?${query}` : path;
+    return query ? `${basePath}?${query}` : basePath;
 }
 
 function scrollToFruitList(event) {

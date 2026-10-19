@@ -89,14 +89,14 @@ export default function FruitFinderPage() {
                 </div> : pick ? <div className={`${styles.resultWrapper} ${styles.finderResult}`}>
                     <h2 ref={questionHeading} tabIndex={-1}>Your match</h2>
                     <div>
-                        <h3><Link to={`/fruit/${slugify(pick.name)}/`} className={styles.fruitNameLink}>{pick.name}</Link></h3>
+                        <h3><Link to={`/fruit/${slugify(pick.name)}`} className={styles.fruitNameLink}>{pick.name}</Link></h3>
                         <FruitImage fruit={pick} />
                         <p className={styles.aboutText}>{match.summary}</p>
                     </div>
 
                     {alternatives.length > 0 && <div className={styles.closeMatches}>
                         <span>Other close matches</span>
-                        {alternatives.map(other => <Link key={other.fruit.id} className={styles.fruitNameLink} to={`/fruit/${slugify(other.fruit.name)}/`}>{other.fruit.name}</Link>)}
+                        {alternatives.map(other => <Link key={other.fruit.id} className={styles.fruitNameLink} to={`/fruit/${slugify(other.fruit.name)}`}>{other.fruit.name}</Link>)}
                     </div>}
                     <button type="button" className="getFruitButton" onClick={startQuiz}>Try again</button>
                     <div className={styles.finderControls}><button type="button" onClick={() => dispatch({ type: 'REVIEW' })}>Review answers</button></div>

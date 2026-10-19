@@ -32,7 +32,7 @@ export default function SearchBar() {
     function choose(fruit) {
         setOpen(false);
         setActiveIndex(-1);
-        navigate(`/fruit/${slugify(fruit.name)}/`);
+        navigate(`/fruit/${slugify(fruit.name)}`);
     }
     function submit(event) {
         event.preventDefault();

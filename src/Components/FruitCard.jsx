@@ -6,7 +6,7 @@ import FruitImage from './FruitImage.jsx';
 export default function FruitCard(props) {
 
     const Wrapper = props.clickable ? Link : 'div';
-    const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}/` } : {};
+    const wrapperProps = props.clickable ? { to: `/fruit/${slugify(props.name)}` } : {};
     const about = props.about || '';
     const displayedAbout = about.length > 215
         ? `${about.slice(0, 212).trimEnd()}...`

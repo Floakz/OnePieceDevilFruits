@@ -108,16 +108,15 @@ export default function Header({ headerShown, headerTitle }) {
     );
 
     const location = useLocation();
-    const pathname = location.pathname.replace(/\/+$/, '') || '/';
 
     const isMiniGamesActive =
-        pathname === "/blind-ranking" ||
+        location.pathname === "/blind-ranking" ||
         location.pathname.startsWith("/fruit-finder") ||
         location.pathname.startsWith("/crew-wars") ||
         location.pathname.startsWith("/fruit-battle");
 
     const isDevilFruitsActive =
-        pathname === "/" ||
+        location.pathname === "/" ||
         location.pathname.startsWith("/paramecia") ||
         location.pathname.startsWith("/logia") ||
         location.pathname.startsWith("/zoan") ||
@@ -163,7 +162,7 @@ export default function Header({ headerShown, headerTitle }) {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/paramecia/"
+                                        to="/paramecia"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -172,7 +171,7 @@ export default function Header({ headerShown, headerTitle }) {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/logia/"
+                                        to="/logia"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -181,7 +180,7 @@ export default function Header({ headerShown, headerTitle }) {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/zoan/"
+                                        to="/zoan"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -190,7 +189,7 @@ export default function Header({ headerShown, headerTitle }) {
                                     </NavLink>
 
                                     <NavLink
-                                        to="/community/"
+                                        to="/community"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -207,7 +206,7 @@ export default function Header({ headerShown, headerTitle }) {
 
                                 <div className={styles.menuItemDropdownWrapper}>
                                     <NavLink
-                                        to="/fruit-finder/"
+                                        to="/fruit-finder"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -215,12 +214,12 @@ export default function Header({ headerShown, headerTitle }) {
                                         FRUIT FINDER
                                     </NavLink>
 
-                                    <NavLink to="/blind-ranking/" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                    <NavLink to="/blind-ranking" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
                                         BLIND RANKING <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
 
                                     <NavLink
-                                        to="/crew-wars/"
+                                        to="/crew-wars"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
@@ -231,7 +230,7 @@ export default function Header({ headerShown, headerTitle }) {
                             </div>
 
                             <NavLink
-                                to="/grand-run/"
+                                to="/grand-run"
                                 className={({ isActive }) =>
                                     `menuOption ${isActive ? "isActive" : ""}`
                                 }
@@ -241,7 +240,7 @@ export default function Header({ headerShown, headerTitle }) {
 
                             <div className={styles.menuOptionWrapper}>
                                 <NavLink
-                                    to="/quizzes/"
+                                    to="/quizzes"
                                     className={({ isActive }) =>
                                         `menuOption ${isActive ? "isActive" : ""}`
                                     }
@@ -251,7 +250,7 @@ export default function Header({ headerShown, headerTitle }) {
                             </div>
 
                             <NavLink
-                                to="/daily-fight/"
+                                to="/daily-fight"
                                 className={({ isActive }) =>
                                     `menuOption ${isActive ? "isActive" : ""}`
                                 }
@@ -261,7 +260,7 @@ export default function Header({ headerShown, headerTitle }) {
 
                             {/* 
                             <NavLink
-                                to="/treasure-chest/"
+                                to="/treasure-chest"
                                 className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
                             >
                                 Treasure Chest
@@ -283,7 +282,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/paramecia/"
+                                    to="/paramecia"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -293,7 +292,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/logia/"
+                                    to="/logia"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -303,7 +302,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/zoan/"
+                                    to="/zoan"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -313,7 +312,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/community/"
+                                    to="/community"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -325,7 +324,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
                                     <div className={styles.mobileGamesHeading}>Pirate Games</div>
                                     <NavLink
-                                        to="/fruit-finder/"
+                                        to="/fruit-finder"
                                         onClick={() => setIsMobileMenuOpen(false)}
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -333,16 +332,16 @@ export default function Header({ headerShown, headerTitle }) {
                                     >
                                         FRUIT FINDER
                                     </NavLink>
-                                    <NavLink to="/blind-ranking/" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                    <NavLink to="/blind-ranking" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
                                         BLIND RANKING <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
-                                    <NavLink to="/crew-wars/" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                    <NavLink to="/crew-wars" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
                                         CREW WARS
                                     </NavLink>
                                 </div>
 
                                 <NavLink
-                                    to="/quizzes/"
+                                    to="/quizzes"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -352,7 +351,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/grand-run/"
+                                    to="/grand-run"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -362,7 +361,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </NavLink>
 
                                 <NavLink
-                                    to="/daily-fight/"
+                                    to="/daily-fight"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) =>
                                         ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
@@ -391,7 +390,7 @@ export default function Header({ headerShown, headerTitle }) {
                                 </a>
 
                                 {/* <NavLink
-                                to="/treasure-chest/"
+                                to="/treasure-chest"
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
                             >

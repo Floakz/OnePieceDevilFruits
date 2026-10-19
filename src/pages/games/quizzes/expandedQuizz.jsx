@@ -86,7 +86,7 @@ export default function ExpandedQuizz() {
 
     useEffect(() => {
         if (Quizz && slug !== Quizz.slug) {
-            navigate(`/quizzes/${Quizz.slug}/${location.search}${location.hash}`, { replace: true });
+            navigate(`/quizzes/${Quizz.slug}${location.search}${location.hash}`, { replace: true });
             return;
         }
 
@@ -214,7 +214,7 @@ export default function ExpandedQuizz() {
                         <div className={styles.otherQuizzList}>
                             {otherQuizzes.map((quiz) => (
                                 <Link
-                                    to={`/quizzes/${quiz.slug}/`}
+                                    to={`/quizzes/${quiz.slug}`}
                                     key={quiz.id}
                                     className={styles.otherQuizzItem}
                                     style={{ backgroundImage: `url(${imgUrl}${quiz.id}/cover.webp)` }}
