@@ -1,5 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
+import { runInNewContext } from 'node:vm';
+import { build } from 'esbuild';
 import { MAX_GUESSES } from '../src/lib/fruitGuesser.js';
 import { GUESSER_STORAGE_KEY, RECENT_RUN_LIMIT, emptyGuesserProgress, parseGuesserProgress, loadGuesserProgress, saveGuesserProgress,
     canPlayGuesserRun, discardGuesserRun, startGuesserRun, recordGuesserGuess, getGuesserStats } from '../src/lib/fruitGuesserHistory.js';
@@ -12,6 +15,31 @@ function lost(progress) {
     const wrong = fruits.filter(fruit => fruit.id !== progress.currentRun.target.id).slice(0, MAX_GUESSES);
     return wrong.reduce((current, fruit) => guess(current, fruit.id), progress);
 }
+
+test('the production bundle generates game IDs for first-time players and replay without an injected ID', async () => {
+    const { outputFiles } = await build({
+        entryPoints: [fileURLToPath(new URL('../src/lib/fruitGuesserHistory.js', import.meta.url))],
+        bundle: true, format: 'cjs', platform: 'browser', target: 'es2019', minify: true, write: false,
+    });
+    let generated = 0;
+    const crypto = { randomUUID() { assert.equal(this, crypto); return `generated-${++generated}`; } };
+    for (const cryptoApi of [crypto, undefined, {}]) {
+        const context = { module: { exports: {} }, crypto: cryptoApi };
+        runInNewContext(outputFiles[0].text, context);
+        const bundled = context.module.exports;
+        const first = bundled.startGuesserRun(bundled.emptyGuesserProgress(), fruits);
+        const replay = bundled.startGuesserRun(first, fruits);
+        assert.equal(first.currentRun.outcome, 'playing');
+        assert.equal(first.currentRun.guesses.length, 0);
+        assert.equal(first.currentRun.maxGuesses, MAX_GUESSES);
+        assert.equal(typeof first.currentRun.id, 'string');
+        assert.ok(first.currentRun.id.length > 0);
+        assert.notEqual(replay.currentRun.id, first.currentRun.id);
+        assert.notEqual(replay.currentRun.target.id, first.currentRun.target.id);
+        assert.equal(replay.recentRuns.length, 0);
+        if (cryptoApi === crypto) assert.equal(first.currentRun.id, 'generated-1');
+    }
+});
 
 test('leaving and reloading discards an unfinished game without adding history', () => {
     const initial = start();

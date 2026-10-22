@@ -89,7 +89,13 @@ export function discardGuesserRun(progress) {
     return progress.currentRun ? { ...progress, currentRun: null } : progress;
 }
 
-export function startGuesserRun(progress, fruits, { now = Date.now(), id = globalThis.crypto?.randomUUID?.() || `${Date.now()}-${Math.random()}`, random } = {}) {
+function createGuesserRunId() {
+    const cryptoApi = globalThis.crypto;
+    if (cryptoApi && typeof cryptoApi.randomUUID === 'function') return cryptoApi.randomUUID();
+    return `${Date.now()}-${Math.random()}`;
+}
+
+export function startGuesserRun(progress, fruits, { now = Date.now(), id = createGuesserRunId(), random } = {}) {
     const previous = progress.currentRun || progress.recentRuns[0];
     const round = createGuesserRound(fruits, { previousId: previous?.target.id, random });
     if (!round) return progress;
