@@ -12,18 +12,21 @@
     box-shadow: 0 14px 34px rgba(0, 7, 30, 0.2);
 }
 
-.extraFilters {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 12px;
+.filterDisclosure {
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid #24528c;
 }
 
+.extraFilters {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
 .extraFilters label { display: grid; gap: 6px; color: #9bb7ea; font-size: .75rem; }
 .extraFilters select {
-    width: 100%; min-width: 0; min-height: 42px; padding: 8px 10px;
+    width: 100%; min-width: 0; min-height: 44px; padding: 8px 10px;
     border: 1px solid #24528c; border-radius: 8px;
     background: #001335; color: #fff; font: inherit; font-size: .8rem; cursor: pointer;
 }
@@ -38,10 +41,6 @@
 }
 .extraFilters select option { background: #001335; color: #fff; }
 .filterNote { margin-top: 12px; color: #9bb7ea; font-size: .75rem; }
-
-@media (max-width: 500px) {
-    .extraFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
 
 .panelHeader {
     margin-bottom: 12px;
@@ -64,20 +63,12 @@
     flex: 0 0 auto;
     display: grid;
     place-items: center;
-    border: 1px solid rgba(248, 222, 60, 0.65);
-    border-radius: 50%;
-    background: rgba(248, 222, 60, 0.08);
-    color: #f8de3c;
 }
 
-.routeIcon svg {
-    width: 21px;
-    height: 21px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.7;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+.routeIcon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
 }
 
 .titleCopy {
@@ -107,15 +98,16 @@
     white-space: nowrap;
 }
 
-.resultSummary strong {
+.resultCount strong {
     color: #ffffff;
     font-size: 0.95rem;
 }
 
-.resultSummary button {
+.resetButton {
+    min-height: 44px;
     padding: 5px 9px;
     border: 1px solid rgba(248, 222, 60, 0.75);
-    border-radius: 999px;
+    border-radius: 10px;
     background: transparent;
     color: #f8de3c;
     font: inherit;
@@ -123,11 +115,72 @@
     cursor: pointer;
 }
 
-.resultSummary button:hover,
-.resultSummary button:focus-visible {
-    outline: none;
+.resetButton:hover {
     background: #f8de3c;
     color: #001741;
+}
+
+.filtersToggle {
+    min-height: 44px;
+    padding: 9px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 1px solid #38649c;
+    border-radius: 10px;
+    background: #08265c;
+    color: #dbe7ff;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .18s ease, border-color .18s ease;
+}
+
+.filtersToggle:hover,
+.filtersToggle[aria-expanded="true"] {
+    border-color: #3cc3f8;
+    background: #0c3777;
+    color: #ffffff;
+}
+
+.filtersToggle.hasActiveFilters {
+    border-color: #f8de3c;
+    color: #f8de3c;
+}
+
+.filtersToggle:focus-visible,
+.resetButton:focus-visible {
+    outline: 2px solid #f8de3c;
+    outline-offset: 3px;
+}
+
+.filtersToggle svg {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.filterIcon path:last-child { stroke-width: 3; }
+.toggleChevron { transition: transform .18s ease; }
+.filtersToggle[aria-expanded="true"] .toggleChevron { transform: rotate(180deg); }
+
+.activeFilterCount {
+    min-width: 20px;
+    height: 20px;
+    padding: 0 5px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 999px;
+    background: #f8de3c;
+    color: #001741;
+    font-size: .7rem;
+    line-height: 1;
 }
 
 .timelineShell {
@@ -274,14 +327,17 @@
         font-size: 0.72rem;
     }
 
-    .resultSummary strong {
+    .resultCount strong {
         font-size: 0.82rem;
     }
 
-    .resultSummary button {
+    .resetButton {
         padding: 4px 7px;
         font-size: 0.68rem;
     }
+
+    .extraFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .extraFilters select { font-size: 1rem; }
 
     .timelineShell {
         display: block;
@@ -302,13 +358,27 @@
     }
 }
 
+@media (max-width: 600px) {
+    .panelHeader { flex-wrap: wrap; gap: 8px; }
+    .titleGroup { width: 100%; }
+    .resultSummary { width: 100%; gap: 10px; }
+    .resultCount { margin-right: auto; }
+    .filtersToggle { padding-inline: 10px; font-size: .78rem; }
+}
+
+@media (max-width: 380px) {
+    .extraFilters { grid-template-columns: minmax(0, 1fr); }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .arcTrack {
         scroll-behavior: auto;
     }
 
     .arcChip,
-    .scrollButton {
+    .scrollButton,
+    .filtersToggle,
+    .toggleChevron {
         transition: none;
     }
 }

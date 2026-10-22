@@ -1,0 +1,322 @@
+.page { display: block; place-items: normal; width: min(94vw, 1500px); margin: 0 auto; padding: 12px 0; color: #fff; }
+:global(html):has(.page) { background: #022668; }
+.page button, .page input { font-family: inherit; }
+.page button { cursor: pointer; }
+.page button:focus-visible, .page a:focus-visible, .page summary:focus-visible, .tableScroller:focus-visible { outline: 2px solid #f8de3c; outline-offset: 3px; }
+.playingPage { display: flex; flex-direction: column; gap: 10px; height: calc(100dvh - 95px); min-height: 0; }
+.introPage { min-height: calc(100dvh - 95px); display: flex; flex-direction: column; justify-content: center; }
+.hero { width: min(90vw, 1160px); max-width: 100%; min-height: 460px; flex: 0 0 auto; margin: 0 auto; display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr); align-items: center; gap: 48px; padding: 40px; border: 1px solid rgb(255, 209, 44); border-radius: 20px; }
+.heroCopy { grid-column: 2; grid-row: 1; min-width: 0; }
+.eyebrow { margin-bottom: 7px; color: #a5c5f3; font-size: .58rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.hero h1 { margin: 0 0 24px; font-size: clamp(4rem, 8vw, 8rem); font-weight: 700; line-height: .9; letter-spacing: normal; text-align: left; text-transform: uppercase; }
+.hero h1 span { display: block; }
+.hero h1 span { color: #f8de3c; }
+.intro { max-width: 540px; color: #fff; font-size: 1.05rem; font-weight: 500; line-height: 1.65; }
+.introHelp { max-width: 520px; margin-top: 12px; color: #b9cef3; font-size: .9rem; line-height: 1.65; }
+.introActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 22px; margin-top: 24px; }
+.hero .primaryButton { min-height: 52px; padding-inline: 30px; font-size: 1rem; font-weight: 700; box-shadow: none; }
+.hero .secondaryButton { padding-inline: 0; border: 0; background: transparent; color: #b9cef3; font-size: .85rem; text-decoration: underline; text-underline-offset: 4px; }
+.hero .secondaryButton:hover { color: #f8de3c; }
+.introStats { margin-top: 18px; color: #b9cef3; font-size: .8rem; }
+.introStats span { margin-inline: 5px; color: #9fb9df; }
+.secondaryButton { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 1px solid #527bb0; border-radius: 7px; background: #0a2b60; color: #fff; font-size: .75rem; font-weight: 600; }
+.secondaryButton:hover { border-color: #f8de3c; color: #f8de3c; }
+.hero h1:focus, .recordsHeader h1:focus { outline: none; }
+.storageWarning { padding: 9px 12px; border: 1px solid #f8de3c66; border-radius: 7px; color: #f8de3c; background: #011a48; font-size: .7rem; line-height: 1.6; }
+.guessPanel { min-width: 0; }
+.guessCounter { display: grid; justify-items: center; gap: 7px; min-width: 116px; padding: 12px; border: 1px solid #f8de3c; border-radius: 7px; background: #f8de3c; color: #001741; box-shadow: 0 4px 14px #00133740; white-space: nowrap; }
+.guessCounter > span { font-size: .58rem; font-weight: 800; letter-spacing: .045em; text-transform: uppercase; }
+.guessCounter strong { font-size: 2.25rem; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; }
+.guessCounter small { margin-left: 3px; color: #29436c; font-size: .9rem; font-weight: 600; }
+.attemptMeter { display: flex; width: 100%; gap: 4px; }
+.attemptMeter i { flex: 1; height: 4px; border: 1px solid #00174155; border-radius: 1px; background: #0017410d; }
+.attemptMeter .attemptAvailable { border-color: #001741; background: #001741; }
+.playArea { flex: 0 0 auto; display: grid; grid-template-columns: 160px minmax(0, 1fr) auto; align-items: center; gap: 24px; padding: 16px 20px; border: 1px solid #f8de3c; border-radius: 20px; background: #011a48; box-shadow: 0 12px 30px #000b2540; }
+.mysteryPanel { display: grid; justify-items: center; gap: 10px; padding: 12px; border: 1px solid #1869ff; border-radius: 12px; background: #011a48; color: #fff; text-align: center; }
+.mysteryLabel { width: 100%; color: #f8de3c; font-size: .6rem; font-weight: 700; line-height: 1.3; letter-spacing: .06em; text-transform: uppercase; }
+.fruitStage { position: relative; display: grid; place-items: center; width: 132px; height: 132px; border: 1px solid #ffe985; border-radius: 10px; background: #f8de3c; }
+.mysteryFruit { width: 120px; height: 120px; object-fit: contain; }
+.silhouette { filter: brightness(0); user-select: none; pointer-events: none; }
+.imageMessage { position: absolute; max-width: 90px; color: #001741; font-size: .55rem; line-height: 1.3; }
+.mysteryBadge { position: absolute; right: 6px; bottom: 6px; display: grid; place-items: center; width: 22px; height: 22px; border: 1px solid #1869ff; border-radius: 6px; background: #011a48; color: #f8de3c; font-size: .8rem; font-weight: 700; line-height: 1; }
+.mysteryCaption { max-width: 170px; font-size: .65rem; font-weight: 700; line-height: 1.3; }
+.revealedPanel .fruitStage { border-color: #24528c; background: #0a2b60; }
+.revealedPanel .mysteryBadge { border-color: #61c393; background: #104c3c; color: #f3fff8; }
+.playArea .mysteryPanel { justify-self: center; place-content: center; width: 160px; padding: 0; border: 0; background: transparent; gap: 6px; }
+.playArea .mysteryLabel { font-size: .6rem; }
+.playArea .fruitStage { width: 144px; height: 144px; }
+.playArea .mysteryFruit { width: 128px; height: 128px; }
+.playArea .mysteryCaption { display: none; }
+.introPreview { grid-column: 1; grid-row: 1; justify-self: center; }
+.introPreview .mysteryPanel { padding: 0; border: 0; background: transparent; }
+.introPreview .fruitStage { width: 280px; height: 280px; border: 0; }
+.introPreview .mysteryFruit { width: 248px; height: 248px; }
+.introPreview .mysteryLabel, .introPreview .mysteryBadge { display: none; }
+.searchSection { min-width: 0; }
+.searchHeading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+.searchHeading h1 { margin: 0; color: #f8de3c; font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+.searchHeading h1:focus { outline: none; }
+.searchHeading > span { color: #c5d8f6; font-size: .68rem; font-variant-numeric: tabular-nums; }
+.guessForm { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 7px; }
+.inputWrapper { display: flex; align-items: center; min-width: 0; gap: 9px; padding-left: 14px; border: 2px solid #f8de3c; border-radius: 6px; background: #001237; box-shadow: 0 0 0 3px #f8de3c12; }
+.inputWrapper:focus-within { border-color: #fff09a; box-shadow: 0 0 0 3px #f8de3c33; }
+.inputWrapper input { width: 100%; min-width: 0; min-height: 46px; padding: 7px 10px 7px 0; border: 0; outline: none; background: transparent; color: #fff; font-size: 1rem; }
+.inputWrapper input::placeholder { color: #91aaca; }
+.inputWrapper input:disabled { opacity: .5; cursor: wait; }
+.searchIcon { flex: 0 0 auto; width: 17px; height: 17px; fill: none; stroke: #f8de3c; stroke-width: 1.7; }
+.primaryButton { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 48px; padding: 9px 22px; border: 1px solid #f8de3c; border-radius: 7px; background: #f8de3c; color: #001741; box-shadow: 0 4px 14px #00133740; font-size: .85rem; font-weight: 800; text-transform: uppercase; letter-spacing: .035em; white-space: nowrap; }
+.primaryButton:hover:not(:disabled) { background: #ffe96b; }
+.primaryButton:disabled { opacity: .55; cursor: default; box-shadow: none; }
+.primaryButton > span { font-size: 1.15rem; line-height: 1; }
+.searchHelp { margin-top: 5px; color: #9fb9df; font-size: .62rem; }
+.suggestions { position: absolute; z-index: 20; top: calc(100% + 5px); left: 0; right: 0; max-height: min(300px, 48dvh); overflow-y: auto; border: 1px solid #54729b; border-radius: 9px; background: #061e47; box-shadow: 0 8px 18px #0005; }
+.suggestion { display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 8px 12px; border-bottom: 1px solid #294975; cursor: pointer; }
+.suggestion:last-child { border-bottom: 0; }
+.suggestion > span { min-width: 0; }
+.suggestion strong, .suggestion small { display: block; }
+.suggestion strong { font-size: .78rem; font-weight: 500; color: #fff; }
+.suggestion small { margin-top: 2px; color: #a9c1e3; font-size: .62rem; }
+.suggestion .suggestionArrow { margin-left: auto; color: #f8de3c; }
+.suggestion:hover, .activeSuggestion { background: #153b70; }
+.noResults { padding: 14px; font-size: .75rem; color: #bcd1f2; }
+.announcement { min-height: 16px; margin-top: 4px; color: #bcd1f2; font-size: .67rem; line-height: 1.4; }
+.announcement:empty { display: none; }
+.result { display: flex; align-items: center; justify-content: space-between; gap: 15px; }
+.result h1 { margin: 0 0 5px; font-size: 1rem; line-height: 1.3; }
+.result h1:focus { outline: none; }
+.answerLink { color: #f8de3c; font-size: .85rem; text-decoration: underline; text-underline-offset: 3px; }
+.originalName { margin-top: 3px; color: #a9c1e3; font-size: .65rem; }
+.result .primaryButton { flex: 0 0 auto; }
+.history { display: flex; flex: 1 1 auto; flex-direction: column; gap: 8px; min-height: 0; padding: 8px 12px; border: 1px solid #527bb0; border-radius: 12px; background: #031a43; box-shadow: 0 4px 0 #001337, inset 0 1px 0 #89b0ef22; }
+.historyHeader { position: relative; display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 10px; min-height: 28px; padding-bottom: 7px; border-bottom: 1px solid #527bb055; }
+.historyHeader h2 { padding-left: 9px; border-left: 3px solid #f8de3c; font-size: .95rem; font-weight: 800; text-transform: uppercase; letter-spacing: .025em; }
+.historyHeader h2 span { margin-left: 8px; padding: 3px 7px; border: 1px solid #476d9f; border-radius: 5px; background: #0b3065; color: #f8de3c; font-size: .7rem; font-weight: 600; }
+.historyActions { display: flex; align-items: center; gap: 8px; }
+.menuButton { padding: 4px 8px; border: 1px solid #527bb0; border-radius: 5px; background: transparent; color: #bcd1f2; font-size: .65rem; }
+.menuButton:hover:not(:disabled) { border-color: #f8de3c; color: #f8de3c; }
+.menuButton:disabled { opacity: .5; cursor: wait; }
+.clueGuide summary { padding: 4px 8px; border: 1px solid #f8de3c99; border-radius: 5px; background: #f8de3c0d; color: #f8de3c; cursor: pointer; font-size: .65rem; font-weight: 600; }
+.guidePanel { position: absolute; z-index: 30; top: 100%; right: 0; width: min(380px, 88vw); max-height: 50dvh; overflow: auto; padding: 16px; border: 1px solid #54729b; border-radius: 5px; background: #061e47; box-shadow: 0 8px 18px #0005; }
+.guidePanel p { margin-top: 12px; color: #bcd1f2; font-size: .72rem; line-height: 1.7; }
+.legend { display: flex; flex-wrap: wrap; gap: 10px 14px; list-style: none; padding: 0; }
+.legend li { display: flex; align-items: center; gap: 5px; color: #bcd1f2; font-size: .66rem; }
+.legend li > span { display: grid; place-items: center; width: 18px; height: 18px; border: 1px solid; border-radius: 3px; }
+.legend li > b { color: #f8de3c; }
+.correct { background: #165b44; border-color: #61c393; color: #f3fff8; }
+.partial { background: #805d1d; border-color: #e3bc5d; color: #fff9e8; }
+.incorrect { background: #7b2d43; border-color: #de7a93; color: #fff3f6; }
+.unknown { background: #2a476e; border-color: #7898c4; color: #e4edfc; }
+.tableScroller { min-height: 0; overflow: auto; scrollbar-color: #6c89ad #0a295b; scrollbar-width: thin; }
+.comparisonTable { width: 100%; min-width: 1100px; border-collapse: separate; border-spacing: 3px; table-layout: fixed; font-size: .64rem; }
+.comparisonTable th { font-weight: 700; }
+.comparisonTable thead th { height: 32px; padding: 4px; text-align: center; color: #f8de3c; font-size: .6rem; line-height: 1.2; background: #08244f; border: 1px solid #5075a566; border-bottom-color: #c3ad3e; border-radius: 4px; }
+.comparisonTable thead th:first-child { position: sticky; left: 0; z-index: 2; width: 130px; text-align: left; padding-left: 8px; }
+.comparisonTable thead th:nth-child(3) { width: 110px; }
+.comparisonTable thead th:nth-child(4) { width: 100px; }
+.comparisonTable thead th:nth-child(7) { width: 95px; }
+.comparisonTable thead small { display: block; font-size: .5rem; color: #91aaca; font-weight: 400; }
+.guessedFruit { position: sticky; left: 0; z-index: 1; padding: 8px; text-align: left; background: #14396b; border: 1px solid #6084b5; border-radius: 5px; overflow-wrap: anywhere; }
+.guessNumber { display: block; margin-bottom: 4px; color: #91aaca; font-size: .55rem; }
+.clueCell { position: relative; height: 61px; padding: 14px 5px 6px; border-width: 1px; border-style: solid; border-radius: 6px; box-shadow: inset 0 1px 0 #ffffff25, inset 0 -3px 0 #00133733; text-align: center; vertical-align: middle; overflow-wrap: anywhere; }
+.clueMark { position: absolute; top: 3px; right: 4px; display: grid; place-items: center; width: 14px; height: 14px; border-radius: 50%; background: #0003; font-size: .6rem; line-height: 1; }
+.clueValue { font-weight: 600; line-height: 1.35; }
+.clueDirection { display: inline-flex; align-items: center; margin-left: 4px; font-size: 1rem; line-height: 1; vertical-align: middle; }
+.clueDirection small { display: none; }
+.mobileClueLabel { display: none; }
+.pendingClue { border-color: #3c5f8f; background: #102f5b; color: #91aaca; }
+.waitingMark { font-size: 1rem; opacity: .65; }
+.revealClue { animation: turnClue .4s ease-out both; }
+@keyframes turnClue { from { transform: rotateX(80deg); opacity: .3; } to { transform: rotateX(0); opacity: 1; } }
+.guessTabs { display: none; }
+.emptyHistory { display: grid; flex: 1; place-content: center; justify-items: center; gap: 22px; min-height: 140px; padding: 24px 15px; text-align: center; }
+.emptyCopy h3 { font-size: 1rem; font-weight: 800; text-transform: uppercase; }
+.emptyCopy p { margin-top: 7px; color: #a8c1e3; font-size: .7rem; }
+.sampleClues { display: flex; align-items: center; justify-content: center; gap: 10px; padding-block: 8px; }
+.sampleClues > span { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 90px; height: 95px; padding: 8px; border: 1px solid; border-radius: 8px; box-shadow: inset 0 1px 0 #ffffff30, 0 5px 0 #001337, 0 12px 20px #00133755; }
+.sampleClues > span:first-child { transform: rotate(-9deg) translateY(8px); }
+.sampleClues > span:last-child { transform: rotate(9deg) translateY(8px); }
+.sampleClues b { font-size: 2rem; line-height: 1; }
+.sampleClues small { font-size: .52rem; font-weight: 700; line-height: 1.4; text-transform: uppercase; }
+.recordsPage { padding-bottom: 36px; }
+.recordsPanel { width: 100%; max-width: 1050px; margin-inline: auto; padding: 28px; border: 1px solid #f8de3c; border-radius: 20px; background: #011a48; }
+.recordsHeader { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+.recordsHeader h1 { margin: 0; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.1; text-transform: uppercase; letter-spacing: normal; }
+.recordsHeader h1 span { color: #f8de3c; }
+.statsGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.statsGrid > div { padding: 16px; border: 1px solid #24528c; border-radius: 10px; background: #0a2b60; }
+.statsGrid dt { color: #b9cef3; font-size: .63rem; font-weight: 600; text-transform: uppercase; line-height: 1.5; }
+.statsGrid dd { margin-top: 8px; color: #f8de3c; font-size: 2.1rem; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.statsGrid dd small { margin-left: 3px; font-size: 1rem; }
+.statsSummary { margin: 12px 0 24px; color: #9bb7ea; font-size: .72rem; line-height: 1.7; }
+.statsSummary > span { margin-inline: 7px; color: #f8de3c; }
+.recentHeading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
+.recentHeading h2 { font-size: 1rem; text-transform: uppercase; }
+.recentHeading > span { color: #9bb7ea; font-size: .68rem; }
+.runList { display: grid; gap: 8px; }
+.runCard { overflow: hidden; border: 1px solid #24528c; border-radius: 9px; }
+.runCard summary { display: grid; grid-template-columns: 82px minmax(0, 1fr) 55px 14px; align-items: center; gap: 16px; min-height: 76px; padding: 12px 16px; background: #092755; list-style: none; cursor: pointer; }
+.runCard summary::-webkit-details-marker { display: none; }
+.runCard summary:hover, .runCard[open] summary { background: #123465; }
+.runOutcome { padding: 6px 8px; border: 1px solid #5075a5; border-radius: 5px; background: #213b5e; color: #c5d8f6; font-size: .6rem; font-weight: 700; text-align: center; }
+.runOutcome.won { border-color: #61c39388; background: #104c3c; color: #baf4d4; }
+.runOutcome.lost { border-color: #de7a9388; background: #64273b; color: #ffc7d5; }
+.runIdentity { min-width: 0; }
+.runIdentity strong { display: block; font-size: .83rem; line-height: 1.5; overflow-wrap: anywhere; }
+.runIdentity time { display: block; margin-top: 4px; color: #9bb7ea; font-size: .63rem; }
+.runCount { color: #f8de3c; font-size: .9rem; font-weight: 700; text-align: right; font-variant-numeric: tabular-nums; }
+.runCount small { display: block; margin-top: 2px; color: #9bb7ea; font-size: .55rem; font-weight: 400; }
+.expandRun { color: #f8de3c; font-size: 1.1rem; }
+.runCard[open] .expandRun { transform: rotate(180deg); }
+.runDetails { padding: 16px; border-top: 1px solid #24528c; }
+.runDetails h3 { margin-bottom: 12px; color: #9bb7ea; font-size: .7rem; font-weight: 500; }
+.runDetails ol { padding-left: 24px; color: #fff; font-size: .78rem; }
+.runDetails li { padding: 6px 0 6px 4px; overflow-wrap: anywhere; }
+.runDetails li::marker { color: #9bb7ea; }
+.winningGuess { display: inline-block; margin-left: 10px; color: #75cfa3; font-size: .65rem; }
+.runDetails p, .recordsNote { margin-top: 16px; color: #9bb7ea; font-size: .67rem; line-height: 1.8; }
+.recordsFooter { margin-top: 22px; }
+.noSavedGames { padding: 28px 16px; border: 1px dashed #24528c; border-radius: 9px; color: #b9cef3; font-size: .8rem; text-align: center; }
+@media (max-width: 900px) {
+    .playingPage { height: calc(100dvh - 43px); }
+    .introPage { min-height: calc(100dvh - 43px); }
+    .hero { min-height: 400px; grid-template-columns: minmax(180px, .8fr) minmax(0, 1.2fr); gap: 28px; padding: 28px 24px; }
+    .hero h1 { font-size: 8vw; }
+    .introPreview .fruitStage { width: 220px; height: 220px; }
+    .introPreview .mysteryFruit { width: 194px; height: 194px; }
+}
+@media (max-width: 760px) {
+    .page { width: 94vw; padding-block: 10px; }
+    .playingPage { gap: 8px; }
+    .playArea { grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; padding: 12px 14px; }
+    .guessPanel { grid-column: 1 / -1; grid-row: 2; }
+    .guessCounter { grid-column: 2; grid-row: 1; justify-self: center; min-width: 112px; padding: 10px; gap: 7px; margin: 24px 16px 0 0; }
+    .attemptMeter { gap: 3px; }
+    .attemptMeter i { height: 4px; }
+    .playArea .mysteryPanel { grid-column: 1; grid-row: 1; width: 128px; gap: 5px; }
+    .playArea .mysteryLabel { font-size: .5rem; letter-spacing: .025em; }
+    .playArea .fruitStage { width: 108px; height: 108px; border-radius: 7px; }
+    .playArea .mysteryFruit { width: 96px; height: 96px; }
+    .playArea .mysteryBadge { right: 4px; bottom: 4px; width: 20px; height: 20px; border-radius: 4px; font-size: .7rem; }
+    .announcement { margin-top: 4px; }
+    .searchHeading h1 { font-size: .9rem; }
+    .primaryButton { gap: 7px; min-height: 44px; padding-inline: 12px; font-size: .75rem; }
+    .inputWrapper input { min-height: 42px; }
+    .inputWrapper input::placeholder { font-size: .82rem; }
+    .searchIcon, .searchHelp { display: none; }
+    .inputWrapper { padding-left: 9px; }
+    .guessForm > .primaryButton > span { display: none; }
+    .result { align-items: center; gap: 8px; }
+    .result h1 { font-size: .8rem; }
+    .answerLink { font-size: .75rem; }
+    .result .primaryButton { min-height: 40px; padding-block: 6px; }
+    .originalName { display: none; }
+    .history { gap: 6px; padding: 8px; border-radius: 9px; }
+    .historyHeader h2 { font-size: .85rem; }
+    .guessTabs { display: flex; flex: 0 0 auto; gap: 5px; min-width: 0; }
+    .guessTabs button { display: flex; flex: 1 1 0; align-items: center; justify-content: center; gap: 5px; min-width: 0; min-height: 32px; padding: 5px 7px; border: 1px solid #42638e; border-radius: 4px; background: #123465; color: #bcd1f2; font-size: .68rem; font-weight: 700; box-shadow: 0 2px 0 #001337; }
+    .guessTabs button[aria-pressed="true"] { border-color: #ffed8a; color: #001741; background: #f8de3c; box-shadow: 0 2px 0 #a58b18; }
+    .guessTabs button span { display: none; }
+    .guessTabs button:disabled { cursor: default; }
+    .comparisonTable { display: block; min-width: 0; border-spacing: 0; }
+    .comparisonTable caption, .comparisonTable thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+    .comparisonTable tbody { display: block; }
+    .comparisonTable tbody tr { display: none; }
+    .comparisonTable tbody .selectedRow { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5px; }
+    .guessedFruit { position: static; grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; padding: 4px 0 7px; border: 0; border-bottom: 1px solid #365887; border-radius: 0; background: transparent; font-size: .72rem; }
+    .guessNumber { margin: 0; color: #f8de3c; font-size: .58rem; }
+    .clueCell { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 66px; height: auto; padding: 12px 5px 6px; font-size: .63rem; }
+    .mobileClueLabel { display: block; max-width: 100%; margin-bottom: 5px; font-size: .48rem; font-weight: 400; line-height: 1.2; opacity: .85; }
+    .clueDirection { margin: 3px 0 0; font-size: .9rem; }
+    .clueMark { font-size: .55rem; }
+    .clueValue { line-height: 1.3; }
+    .emptyHistory { gap: 18px; padding: 20px 5px; }
+    .sampleClues { gap: 8px; }
+    .sampleClues > span { width: 70px; height: 78px; }
+    .sampleClues b { font-size: 1.7rem; }
+    .sampleClues small { font-size: .45rem; }
+    .emptyCopy h3 { font-size: .85rem; }
+    .emptyCopy p { max-width: 240px; font-size: .62rem; line-height: 1.7; }
+}
+@media (max-width: 600px) {
+    .hero { width: 100%; max-width: 500px; min-height: 0; grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 24px 20px; text-align: center; }
+    .heroCopy { grid-column: 1; grid-row: 2; }
+    .hero h1 { margin-bottom: 18px; font-size: clamp(2.75rem, 12vw, 4rem); text-align: center; }
+    .introPreview { justify-self: center; }
+    .introPreview .fruitStage { width: 130px; height: 130px; }
+    .introPreview .mysteryFruit { width: 114px; height: 114px; }
+    .announcement { font-size: .62rem; }
+    .suggestion strong { font-size: .73rem; }
+    .intro { font-size: .95rem; line-height: 1.55; }
+    .introHelp { margin-top: 10px; font-size: .85rem; }
+    .introActions { justify-content: center; gap: 6px 20px; margin-top: 20px; }
+    .hero .primaryButton { min-height: 48px; padding-inline: 24px; font-size: .9rem; }
+    .hero .secondaryButton { min-height: 36px; padding-block: 6px; font-size: .8rem; }
+    .introStats { margin-top: 14px; font-size: .7rem; }
+    .recordsPanel { padding: 18px 14px; border-radius: 14px; }
+    .recordsHeader { margin-bottom: 18px; padding-top: 10px; gap: 12px; }
+    .recordsHeader .secondaryButton { padding-inline: 12px; font-size: .7rem; }
+    .statsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .statsGrid > div { padding: 12px; }
+    .statsGrid dt { font-size: .55rem; }
+    .statsGrid dd { font-size: 1.7rem; }
+    .statsSummary { margin-bottom: 18px; font-size: .65rem; }
+    .statsSummary > span { margin-inline: 3px; }
+    .runCard summary { grid-template-columns: 64px minmax(0, 1fr) 40px 10px; gap: 8px; padding: 10px; }
+    .runOutcome { padding: 5px 3px; font-size: .5rem; }
+    .runIdentity strong { font-size: .7rem; }
+    .runIdentity time { font-size: .55rem; line-height: 1.5; }
+    .runCount { font-size: .78rem; }
+    .runCount small { font-size: .48rem; }
+    .runDetails { padding: 12px; }
+    .runDetails ol { font-size: .7rem; }
+}
+@media (max-width: 370px) {
+    .hero { gap: 14px; padding: 18px 14px; }
+    .hero h1 { margin-bottom: 14px; }
+    .introPreview .fruitStage { width: 96px; height: 96px; }
+    .introPreview .mysteryFruit { width: 84px; height: 84px; }
+    .intro { font-size: .9rem; }
+    .introHelp { margin-top: 8px; font-size: .8rem; }
+    .introActions { margin-top: 16px; gap: 4px 20px; }
+    .hero .primaryButton { min-height: 44px; }
+    .hero .secondaryButton { min-height: 32px; padding-block: 4px; }
+    .introStats { margin-top: 12px; font-size: .65rem; }
+    .history { padding: 6px; }
+    .historyHeader h2 { font-size: .74rem; padding-left: 6px; }
+    .historyHeader h2 span { margin-left: 5px; padding-inline: 5px; }
+    .clueGuide summary { padding-inline: 6px; font-size: .58rem; }
+    .historyActions { gap: 5px; }
+    .menuButton { padding-inline: 6px; font-size: .58rem; }
+    .comparisonTable tbody .selectedRow { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .clueCell { min-height: 58px; font-size: .6rem; }
+    .mobileClueLabel { margin-bottom: 4px; font-size: .47rem; }
+    .clueDirection { margin-top: 2px; }
+}
+@media (max-height: 760px) and (min-width: 761px) {
+    .page { padding-block: 8px; }
+    .playingPage { gap: 7px; }
+    .playArea { grid-template-columns: 148px minmax(0, 1fr) auto; gap: 20px; padding: 12px 18px; }
+    .eyebrow { margin-bottom: 5px; font-size: .5rem; }
+    .searchHeading h1 { font-size: .95rem; }
+    .inputWrapper input { min-height: 42px; }
+    .primaryButton { min-height: 44px; }
+    .playArea .mysteryPanel { width: 148px; }
+    .playArea .fruitStage { width: 132px; height: 132px; }
+    .playArea .mysteryFruit { width: 118px; height: 118px; }
+    .clueCell { height: 58px; font-size: .6rem; }
+}
+@media (max-height: 700px) and (max-width: 760px) {
+    .page { padding-block: 8px; }
+    .playingPage { gap: 7px; }
+    .playArea { gap: 10px 12px; padding: 10px 12px; }
+    .guessCounter { min-width: 104px; padding: 9px; gap: 6px; margin-right: 12px; }
+    .guessCounter strong { font-size: 2rem; }
+    .playArea .mysteryPanel { width: 112px; }
+    .playArea .fruitStage { width: 92px; height: 92px; }
+    .playArea .mysteryFruit { width: 82px; height: 82px; }
+    .announcement { font-size: .6rem; }
+    .clueCell { min-height: 54px; padding: 10px 4px 4px; }
+    .mobileClueLabel { margin-bottom: 3px; }
+}
+@media (prefers-reduced-motion: reduce) { .revealClue { animation: none; } }
+
