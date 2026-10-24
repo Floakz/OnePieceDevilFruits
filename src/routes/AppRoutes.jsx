@@ -11,6 +11,7 @@ const ZoanFruits = lazy(() => import("../pages/fruits/zoan/ZoanFruits.jsx"));
 const CommunityFruits = lazy(() => import("../pages/fruits/community/CommunityFruits.jsx"));
 const ExpandedFruit = lazy(() => import("../pages/fruits/expanded/ExpandedFruit.jsx"));
 const FruitFinderPage = lazy(() => import("../pages/games/FruitFinderPage.jsx"));
+const FruitGuesser = lazy(() => import("../pages/games/FruitGuesser.jsx"));
 const CrewWars = lazy(() => import("../pages/games/CrewWars.jsx"));
 const BlindRanking = lazy(() => import("../pages/games/BlindRanking.jsx"));
 const PageNotFound = lazy(() => import("../pages/error/pageNotFound.jsx"));
@@ -18,7 +19,6 @@ const GrandRun = lazy(() => import("../pages/games/GrandRun.jsx"));
 const DailyFight = lazy(() => import("../pages/games/dailyFight/dailyFight.jsx"));
 const Quizzes = lazy(() => import("../pages/games/quizzes/Quizzes.jsx"));
 const ExpandedQuizz = lazy(() => import("../pages/games/quizzes/expandedQuizz.jsx"));
-const Store = lazy(() => import("../pages/store/store.jsx"));
 
 function ClarityTracker() {
     const location = useLocation();
@@ -74,11 +74,9 @@ export default function AppRoutes() {
                 <Route path="/fruit/:id" element={<ExpandedFruit />} />
 
 
-                {/* Store */}
-                <Route path="/treasure-chest" element={<Store />} />
-
                 {/* Jogos */}
                 <Route path="/fruit-finder" element={<FruitFinderPage />} />
+                <Route path="/fruit-guesser" element={<FruitGuesser />} />
                 <Route path="/crew-wars" element={<CrewWars />} />
                 <Route path="/blind-ranking" element={<BlindRanking />} />
                 <Route path="/game" element={<Navigate to="/blind-ranking" replace />} />

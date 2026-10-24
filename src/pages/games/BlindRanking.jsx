@@ -176,7 +176,6 @@ export default function BlindRanking() {
         <Seo title={BLIND_RANKING_PAGE.title} description={BLIND_RANKING_PAGE.description} canonical={BLIND_RANKING_PAGE.url} jsonLd={BLIND_RANKING_PAGE.jsonLd} />
         <Header headerShown={false} />
         <main className={styles.page}>
-            {round && <div className={styles.pageHeading}><h1>Blind <span>Ranking</span></h1><p>{placedCount} / 10 placed</p></div>}
             {status !== 'ready' ? <CatalogState status={status} retry={retry} />
                 : byId.size < 11 ? <div className="catalogState" role="alert"><p>We need a few more fruits to start a round.</p><button type="button" onClick={retry}>Try loading again</button></div>
                     : !round ? <>
@@ -217,7 +216,7 @@ export default function BlindRanking() {
                                 <p className={styles.smallRule}>Basic control. No awakening. No extra powers.</p>
                             </aside>}
                             <section className={styles.rankingBoard} aria-label={complete ? 'Completed ranking' : undefined} aria-labelledby={complete ? undefined : 'board-title'} ref={boardRef}>
-                                {!complete && <div className={styles.boardHeading}><h2 id="board-title">Your ranking</h2><span>1 = best fit</span></div>}
+                                {!complete && <div className={styles.boardHeading}><h2 id="board-title">Your ranking</h2><div className={styles.boardMeta}><span>{placedCount} / 10 placed</span><span>1 = best fit</span></div></div>}
                                 <div className={styles.slots}>{RANKS.map(rank => {
                                     const fruit = byId.get(round.slots[rank - 1]);
                                     const content = fruit ? <><FruitImage fruit={fruit} className={styles.slotFruit} /><span className={styles.slotName}>{fruit.name}</span>{!complete && <GameIcon name="lock" className={styles.lockIcon} />}</>

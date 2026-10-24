@@ -60,7 +60,7 @@ function useScrollLock(isLocked) {
     }, [isLocked]);
 }
 
-export default function Header({ headerShown, headerTitle }) {
+export default function Header({ headerShown, headerTitle, compact = false }) {
     let [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     let [kofiTag, setKofiTag] = useState(false);
@@ -112,6 +112,7 @@ export default function Header({ headerShown, headerTitle }) {
     const isMiniGamesActive =
         location.pathname === "/blind-ranking" ||
         location.pathname.startsWith("/fruit-finder") ||
+        location.pathname.startsWith("/fruit-guesser") ||
         location.pathname.startsWith("/crew-wars") ||
         location.pathname.startsWith("/fruit-battle");
 
@@ -136,7 +137,7 @@ export default function Header({ headerShown, headerTitle }) {
                 </small>
             </header>
 
-            <nav>
+            <nav className={compact ? styles.compactNav : undefined}>
                 {width > 900 ? (
                     <div className="navSection">
                         <img
@@ -218,6 +219,10 @@ export default function Header({ headerShown, headerTitle }) {
                                         BLIND RANKING <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
 
+                                    <NavLink to="/fruit-guesser" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                        FRUIT GUESSER <span className={styles.newBadge}>NEW</span>
+                                    </NavLink>
+
                                     <NavLink
                                         to="/crew-wars"
                                         className={({ isActive }) =>
@@ -258,13 +263,6 @@ export default function Header({ headerShown, headerTitle }) {
                                 Daily Fight
                             </NavLink>
 
-                            {/* 
-                            <NavLink
-                                to="/treasure-chest"
-                                className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}
-                            >
-                                Treasure Chest
-                            </NavLink> */}
                         </div>
                     </div>
                 ) : (
@@ -335,6 +333,9 @@ export default function Header({ headerShown, headerTitle }) {
                                     <NavLink to="/blind-ranking" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
                                         BLIND RANKING <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
+                                    <NavLink to="/fruit-guesser" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
+                                        FRUIT GUESSER <span className={styles.newBadge}>NEW</span>
+                                    </NavLink>
                                     <NavLink to="/crew-wars" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
                                         CREW WARS
                                     </NavLink>
@@ -389,13 +390,6 @@ export default function Header({ headerShown, headerTitle }) {
                                     </svg>
                                 </a>
 
-                                {/* <NavLink
-                                to="/treasure-chest"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className={({ isActive }) => ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}
-                            >
-                                Treasure Chest
-                            </NavLink> */}
                             </div>
                         )}
                         <button

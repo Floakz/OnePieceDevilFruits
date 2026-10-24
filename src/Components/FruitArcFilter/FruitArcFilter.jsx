@@ -6,12 +6,17 @@ import { ABILITY_TAGS, FILTER_DEFAULTS, SORT_OPTIONS } from '../../lib/fruitDisc
 
 export default function FruitArcFilter({ fruits, selectedArc, resultCount, onChange, filters, onFilterChange, clearFilters }) {
     const titleId = useId();
+    const extraFiltersId = useId();
     const { hash } = useLocation();
     const panelRef = useRef(null);
     const trackRef = useRef(null);
     const [scrollState, setScrollState] = useState({ canGoBack: false, canGoForward: false });
+    const [filtersOpen, setFiltersOpen] = useState(false);
     const options = useMemo(() => getFruitArcOptions(fruits), [fruits]);
     const hasSelection = filters ? Object.entries(filters).some(([key, value]) => value !== FILTER_DEFAULTS[key]) : selectedArc && selectedArc !== "all";
+    const activeFilterCount = filters
+        ? ['canon', 'awakening', 'ability', 'sort'].filter(key => filters[key] !== FILTER_DEFAULTS[key]).length
+        : 0;
 
     useEffect(() => {
         if (hash !== '#fruit-filters') return;
@@ -73,24 +78,44 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
             <div className={styles.panelHeader}>
                 <div className={styles.titleGroup}>
                     <span className={styles.routeIcon} aria-hidden="true">
-                        <svg viewBox="0 0 24 24">
-                            <circle cx="12" cy="12" r="8" />
-                            <path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z" />
-                        </svg>
+                        <img src="https://i.postimg.cc/7L2N5vFb/FRUIT.png" alt="" width="32" height="32" />
                     </span>
                     <div className={styles.titleCopy}>
-                        <h2 id={titleId}>Find your fruit</h2>
-                        <p>Pick a debut arc, then narrow things down.</p>
+                        <h2 id={titleId}>Choose an arc</h2>
+                        <p>Filter fruits by the arc they debuted in!</p>
                     </div>
                 </div>
 
-                <div className={styles.resultSummary} aria-live="polite">
-                    <p>
+                <div className={styles.resultSummary}>
+                    <p className={styles.resultCount} aria-live="polite" aria-atomic="true">
                         <strong>{resultCount}</strong> {resultCount === 1 ? "fruit" : "fruits"}
                     </p>
                     {hasSelection && (
-                        <button type="button" onClick={clearFilters || (() => onChange("all"))}>
+                        <button className={styles.resetButton} type="button" onClick={clearFilters || (() => onChange("all"))}>
                             Reset
+                        </button>
+                    )}
+                    {filters && (
+                        <button
+                            className={`${styles.filtersToggle} ${activeFilterCount > 0 ? styles.hasActiveFilters : ''}`}
+                            type="button"
+                            aria-expanded={filtersOpen}
+                            aria-controls={extraFiltersId}
+                            onClick={() => setFiltersOpen(open => !open)}
+                        >
+                            <svg className={styles.filterIcon} aria-hidden="true" viewBox="0 0 20 20">
+                                <path d="M3 5h14M3 10h14M3 15h14" />
+                                <path d="M7 3v4m6 1v4m-5 1v4" />
+                            </svg>
+                            <span>Filters</span>
+                            {activeFilterCount > 0 && (
+                                <span className={styles.activeFilterCount}>
+                                    {activeFilterCount}<span className="visually-hidden"> active</span>
+                                </span>
+                            )}
+                            <svg className={styles.toggleChevron} aria-hidden="true" viewBox="0 0 20 20">
+                                <path d="m5 7.5 5 5 5-5" />
+                            </svg>
                         </button>
                     )}
                 </div>
@@ -155,7 +180,8 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                     </svg>
                 </button>
             </div>
-            {filters && <div className={styles.extraFilters}>
+            {filters && <div id={extraFiltersId} className={styles.filterDisclosure} hidden={!filtersOpen}>
+                <div className={styles.extraFilters}>
                 <label>Canon status
                     <select className={filters.canon !== FILTER_DEFAULTS.canon ? styles.selectedFilter : undefined} value={filters.canon} onChange={event => onFilterChange('canon', event.target.value)}>
                         <option value="all">All fruits</option><option value="canon">Canon</option><option value="non-canon">Non-canon</option><option value="unknown">Unknown</option>
@@ -177,8 +203,9 @@ export default function FruitArcFilter({ fruits, selectedArc, resultCount, onCha
                         {SORT_OPTIONS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}
                     </select>
                 </label>
+                </div>
+                {filters.sort.startsWith('debut') && <p className={styles.filterNote}>Debut order follows the arc timeline. Fruits in the same arc are listed A–Z.</p>}
             </div>}
-            {filters?.sort.startsWith('debut') && <p className={styles.filterNote}>Debut order follows the arc timeline. Fruits in the same arc are listed A–Z.</p>}
         </section>
     );
 }
