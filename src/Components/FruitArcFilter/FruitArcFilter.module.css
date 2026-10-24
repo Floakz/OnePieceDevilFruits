@@ -300,40 +300,65 @@
     .filterPanel {
         width: 90vw;
         margin: 12px auto 24px;
-        padding: 12px;
+        padding: 14px;
         border-radius: 13px;
+        background: #011a48;
     }
 
     .panelHeader {
-        margin-bottom: 10px;
+        margin-bottom: 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .titleGroup {
+        align-items: flex-start;
         gap: 10px;
     }
 
     .routeIcon {
         width: 34px;
         height: 34px;
+        margin-top: 1px;
     }
 
     .titleCopy h2 {
-        font-size: 0.98rem;
+        font-size: 1.05rem;
+        line-height: 1.25;
     }
 
     .titleCopy p {
-        display: none;
+        display: block;
+        margin-top: 4px;
+        font-size: .74rem;
+        line-height: 1.45;
     }
 
     .resultSummary {
-        gap: 6px;
-        font-size: 0.72rem;
+        width: 100%;
+        gap: 8px;
+        font-size: .75rem;
+    }
+
+    .resultCount {
+        margin-right: auto;
     }
 
     .resultCount strong {
-        font-size: 0.82rem;
+        font-size: .9rem;
     }
 
     .resetButton {
-        padding: 4px 7px;
-        font-size: 0.68rem;
+        padding: 6px 10px;
+        border-radius: 6px;
+        font-size: .72rem;
+    }
+
+    .filtersToggle {
+        padding-inline: 11px;
+        border-radius: 7px;
+        font-size: .78rem;
     }
 
     .extraFilters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -349,21 +374,32 @@
 
     .arcTrack {
         scroll-padding-inline: 0;
+        padding-bottom: 7px;
+        scrollbar-width: thin;
+        scrollbar-color: #f8de3c #08265c;
+    }
+
+    .arcTrack::-webkit-scrollbar {
+        display: block;
+        height: 4px;
+    }
+
+    .arcTrack::-webkit-scrollbar-track {
+        background: #08265c;
+        border-radius: 4px;
+    }
+
+    .arcTrack::-webkit-scrollbar-thumb {
+        background: #f8de3c;
+        border-radius: 4px;
     }
 
     .arcChip {
-        min-height: 36px;
-        padding: 6px 8px 6px 10px;
-        font-size: 0.74rem;
+        min-height: 44px;
+        padding: 8px 10px;
+        border-radius: 7px;
+        font-size: .76rem;
     }
-}
-
-@media (max-width: 600px) {
-    .panelHeader { flex-wrap: wrap; gap: 8px; }
-    .titleGroup { width: 100%; }
-    .resultSummary { width: 100%; gap: 10px; }
-    .resultCount { margin-right: auto; }
-    .filtersToggle { padding-inline: 10px; font-size: .78rem; }
 }
 
 @media (max-width: 380px) {

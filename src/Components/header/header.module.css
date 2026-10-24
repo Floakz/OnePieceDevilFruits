@@ -318,7 +318,7 @@
 
 @media (max-width: 900px) {
     .compactNav { height: 8px; padding: 0; }
-    .compactNav .mobileMenuButton { top: 52px; right: 12px; bottom: auto; width: 32px; height: 32px; padding: 6px; }
+    .compactNav .mobileMenuButton { top: auto; right: 20px; bottom: 20px; width: 32px; height: 32px; padding: 6px; }
     .compactNav .mobileMenuButton svg { width: 20px; height: 20px; }
     .compactNav .menuNewBadge { display: none; }
 }

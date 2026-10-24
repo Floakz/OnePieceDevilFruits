@@ -217,7 +217,7 @@ function GuesserGame({ fruits, run, onGuess, onPlayAgain, onMenu }) {
                 <Link className={styles.answerLink} to={`/fruit/${slugify(target.name)}`}>{target.name} <span aria-hidden="true">↗</span></Link>
                 {target.romanizedName && <p className={styles.originalName}>{target.romanizedName}</p>}
             </div>
-            <button className={styles.primaryButton} type="button" onClick={playAgain}>Play again <span aria-hidden="true">↻</span></button>
+            <button className={`${styles.primaryButton} ${styles.desktopReplay}`} type="button" onClick={playAgain}>Play again <span aria-hidden="true">↻</span></button>
         </section>}
         <p className={styles.announcement} role="status" aria-atomic="true">{message}</p>
             </div>
@@ -277,6 +277,7 @@ function GuesserGame({ fruits, run, onGuess, onPlayAgain, onMenu }) {
                 <div className={styles.emptyCopy}><h3>Make your first guess.</h3><p>Compare the traits. Follow the clues. Find the fruit.</p></div>
             </div>}
         </section>
+        {complete && <button className={`${styles.primaryButton} ${styles.mobileReplay}`} type="button" onClick={playAgain}>Play again <span aria-hidden="true">↻</span></button>}
     </>;
 }
 
