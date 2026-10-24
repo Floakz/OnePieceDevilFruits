@@ -1,0 +1,175 @@
+{
+    "id": "c7a1e5d2-3b84-4f6a-9d0e-52b8f1a47c93",
+    "title": "Straw Hat Crew",
+    "description": "How well do you know Luffy's crew and their dreams?",
+    "difficulty": 1,
+    "topic": "Straw Hat Pirates",
+    "image": "https://i.postimg.cc/TYCJChxb/straw-hat.webp",
+    "questions": [
+        {
+            "question": "Who was the first member to join Luffy's crew?",
+            "options": [
+                "Nami",
+                "Roronoa Zoro",
+                "Usopp",
+                "Sanji"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What was the name of the Straw Hats' first ship?",
+            "options": [
+                "Going Merry",
+                "Thousand Sunny",
+                "Oro Jackson",
+                "Polar Tang"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "Who built the Thousand Sunny?",
+            "options": [
+                "Iceburg",
+                "Tom",
+                "Franky",
+                "Kokoro"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is Usopp's role on the crew?",
+            "options": [
+                "Navigator",
+                "Doctor",
+                "Cook",
+                "Sniper"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "Which crew member dreams of finding the All Blue?",
+            "options": [
+                "Sanji",
+                "Brook",
+                "Chopper",
+                "Franky"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "On which island did Tony Tony Chopper join the crew?",
+            "options": [
+                "Alabasta",
+                "Drum Island",
+                "Skypiea",
+                "Water 7"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "What is Nami's dream?",
+            "options": [
+                "To become the Pirate King",
+                "To find the All Blue",
+                "To become the world's greatest swordsman",
+                "To draw a complete map of the world"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "What Devil Fruit did Brook eat?",
+            "options": [
+                "Soul-Soul Fruit",
+                "Bone-Bone Fruit",
+                "Revive-Revive Fruit",
+                "Ghost-Ghost Fruit"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "What is Nico Robin's main goal in her search for the true history of the world?",
+            "options": [
+                "To find the blueprints of Pluton",
+                "To read a Rio Poneglyph",
+                "To find the All Blue",
+                "To meet the Pirate King"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Who is the most recent member to officially join the Straw Hat Pirates?",
+            "options": [
+                "Brook",
+                "Franky",
+                "Nico Robin",
+                "Jinbe"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "What is the name of Zoro's three-sword fighting style?",
+            "options": [
+                "Santoryu",
+                "Nitoryu",
+                "Ittoryu",
+                "Shishi Sonson"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        },
+        {
+            "question": "What Devil Fruit did Tony Tony Chopper eat?",
+            "options": [
+                "Beast-Beast Fruit",
+                "Tame-Tame Fruit",
+                "Human-Human Fruit",
+                "Reindeer-Reindeer Fruit"
+            ],
+            "image": "",
+            "correctAnswer": 2
+        },
+        {
+            "question": "In which village did Luffy first meet Usopp?",
+            "options": [
+                "Shells Town",
+                "Syrup Village",
+                "Orange Town",
+                "Cocoyasi Village"
+            ],
+            "image": "",
+            "correctAnswer": 1
+        },
+        {
+            "question": "Who gave the Going Merry to the Straw Hats?",
+            "options": [
+                "Vivi",
+                "Nojiko",
+                "Iceburg",
+                "Kaya"
+            ],
+            "image": "",
+            "correctAnswer": 3
+        },
+        {
+            "question": "Who originally gave Luffy his straw hat?",
+            "options": [
+                "Shanks",
+                "Garp",
+                "Dragon",
+                "Ace"
+            ],
+            "image": "",
+            "correctAnswer": 0
+        }
+    ]
+}
