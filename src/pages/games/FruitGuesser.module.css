@@ -87,6 +87,7 @@
 .answerLink { color: #f8de3c; font-size: .85rem; text-decoration: underline; text-underline-offset: 3px; }
 .originalName { margin-top: 3px; color: #a9c1e3; font-size: .65rem; }
 .result .primaryButton { flex: 0 0 auto; }
+.mobileReplay { display: none; }
 .history { display: flex; flex: 1 1 auto; flex-direction: column; gap: 8px; min-height: 0; padding: 8px 12px; border: 1px solid #527bb0; border-radius: 12px; background: #031a43; box-shadow: 0 4px 0 #001337, inset 0 1px 0 #89b0ef22; }
 .historyHeader { position: relative; display: flex; flex: 0 0 auto; align-items: center; justify-content: space-between; gap: 10px; min-height: 28px; padding-bottom: 7px; border-bottom: 1px solid #527bb055; }
 .historyHeader h2 { padding-left: 9px; border-left: 3px solid #f8de3c; font-size: .95rem; font-weight: 800; text-transform: uppercase; letter-spacing: .025em; }
@@ -187,15 +188,17 @@
 @media (max-width: 760px) {
     .page { width: 94vw; padding-block: 10px; }
     .playingPage { gap: 8px; }
-    .playArea { grid-template-columns: minmax(0, 1fr) auto; gap: 14px 20px; padding: 12px 14px; }
-    .guessPanel { grid-column: 1 / -1; grid-row: 2; }
-    .guessCounter { grid-column: 2; grid-row: 1; justify-self: center; min-width: 112px; padding: 10px; gap: 7px; margin: 24px 16px 0 0; }
-    .attemptMeter { gap: 3px; }
+    .playArea { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 14px; }
+    .guessPanel { grid-column: 1; grid-row: 3; }
+    .guessCounter { grid-column: 1; grid-row: 2; justify-self: center; display: flex; align-items: center; min-width: 0; padding: 6px 12px; gap: 10px; margin: 0; box-shadow: none; }
+    .guessCounter strong { font-size: 1.6rem; }
+    .guessCounter small { font-size: .8rem; }
+    .attemptMeter { width: 84px; gap: 3px; }
     .attemptMeter i { height: 4px; }
-    .playArea .mysteryPanel { grid-column: 1; grid-row: 1; width: 128px; gap: 5px; }
-    .playArea .mysteryLabel { font-size: .5rem; letter-spacing: .025em; }
-    .playArea .fruitStage { width: 108px; height: 108px; border-radius: 7px; }
-    .playArea .mysteryFruit { width: 96px; height: 96px; }
+    .playArea .mysteryPanel { grid-column: 1; grid-row: 1; width: 100%; gap: 7px; }
+    .playArea .mysteryLabel { font-size: .6rem; letter-spacing: .025em; }
+    .playArea .fruitStage { width: 180px; height: 180px; border-radius: 10px; }
+    .playArea .mysteryFruit { width: 160px; height: 160px; }
     .playArea .mysteryBadge { right: 4px; bottom: 4px; width: 20px; height: 20px; border-radius: 4px; font-size: .7rem; }
     .announcement { margin-top: 4px; }
     .searchHeading h1 { font-size: .9rem; }
@@ -205,10 +208,11 @@
     .searchIcon, .searchHelp { display: none; }
     .inputWrapper { padding-left: 9px; }
     .guessForm > .primaryButton > span { display: none; }
-    .result { align-items: center; gap: 8px; }
-    .result h1 { font-size: .8rem; }
-    .answerLink { font-size: .75rem; }
-    .result .primaryButton { min-height: 40px; padding-block: 6px; }
+    .result { justify-content: center; text-align: center; }
+    .result h1 { font-size: .95rem; }
+    .answerLink { font-size: .85rem; }
+    .result .desktopReplay { display: none; }
+    .mobileReplay { display: flex; flex: 0 0 auto; width: calc(100% - 56px); min-height: 48px; }
     .originalName { display: none; }
     .history { gap: 6px; padding: 8px; border-radius: 9px; }
     .historyHeader h2 { font-size: .85rem; }
@@ -308,12 +312,9 @@
 @media (max-height: 700px) and (max-width: 760px) {
     .page { padding-block: 8px; }
     .playingPage { gap: 7px; }
-    .playArea { gap: 10px 12px; padding: 10px 12px; }
-    .guessCounter { min-width: 104px; padding: 9px; gap: 6px; margin-right: 12px; }
-    .guessCounter strong { font-size: 2rem; }
-    .playArea .mysteryPanel { width: 112px; }
-    .playArea .fruitStage { width: 92px; height: 92px; }
-    .playArea .mysteryFruit { width: 82px; height: 82px; }
+    .playArea { gap: 10px; padding: 10px 12px; }
+    .playArea .fruitStage { width: 156px; height: 156px; }
+    .playArea .mysteryFruit { width: 140px; height: 140px; }
     .announcement { font-size: .6rem; }
     .clueCell { min-height: 54px; padding: 10px 4px 4px; }
     .mobileClueLabel { margin-bottom: 3px; }
