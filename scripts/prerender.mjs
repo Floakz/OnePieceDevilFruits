@@ -4,6 +4,9 @@ import { fileURLToPath } from "node:url";
 import { BLIND_RANKING_PAGE } from '../src/lib/blindRanking.js';
 import { FINDER_PAGE } from '../src/lib/fruitFinder.js';
 import { GUESSER_PAGE } from '../src/lib/fruitGuesser.js';
+import { paginateCharacters, characterPageUrl } from '../src/lib/characterCatalog.js';
+import { getCharacterSeo, getCharactersSeo } from '../src/lib/characterSeo.js';
+import { findFruitUserCharacter } from '../src/lib/characterLinks.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -34,6 +37,7 @@ const cleanDescription = (value = "") => {
 };
 
 const fruitData = JSON.parse(await readFile(path.join(ROOT, "public", "data", "fruits_v16.json"), "utf8"));
+const characterData = JSON.parse(await readFile(path.join(ROOT, "src", "data", "characterProfiles.json"), "utf8"));
 const quizDirectory = path.join(ROOT, "src", "lib", "quizzes", "allQuizzes");
 const quizFiles = (await readdir(quizDirectory)).filter((file) => file.endsWith(".json"));
 const quizData = await Promise.all(
@@ -65,7 +69,7 @@ function headTags({ title, description, canonical, image, type = "website", stru
         tags.push(`<meta name="twitter:image" content="${escapeHtml(image)}">`);
     }
     if (noindex) tags.push('<meta name="robots" content="noindex,follow">');
-    if (structuredData) tags.push(`<script type="application/ld+json">${jsonLd(structuredData)}</script>`);
+    if (structuredData) tags.push(`<script id="page-json-ld" data-page-url="${escapeHtml(canonical)}" type="application/ld+json">${jsonLd(structuredData)}</script>`);
     return tags.join("\n    ");
 }
 
@@ -110,6 +114,11 @@ function fruitLinks(items) {
                 ${fruit.romanizedName ? `<span>${escapeHtml(fruit.romanizedName)}</span>` : ""}
             </a>
         </li>`).join("")}</ul>`;
+}
+
+function fruitUserLink(fruitId, name) {
+    const character = findFruitUserCharacter(characterData, fruitId, name);
+    return character ? `<a href="/characters/${character.slug}">${escapeHtml(name)}</a>` : escapeHtml(name || 'Unknown');
 }
 
 const prerenderStyle = `<style>
@@ -167,8 +176,53 @@ for (const fruit of fruitData) {
             { "@type": "WebPage", name: fruit.name, alternateName: [fruit.romanizedName, fruit.japaneseName].filter(Boolean), url: canonical, description, image, about: { "@type": "Thing", name: fruit.name, alternateName: [fruit.romanizedName, fruit.japaneseName].filter(Boolean), description: fruit.about } },
         ],
     };
-    const content = `${prerenderStyle}<main class="prerender-detail"><nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="${categoryPath}">${escapeHtml(fruit.type || "Devil Fruits")}</a> / <span>${escapeHtml(fruit.name)}</span></nav><article><img src="${image}" alt="${escapeHtml(fruit.name)}" width="220" height="200"><h1>${escapeHtml(fruit.name)}</h1>${fruit.japaneseName ? `<p lang="ja">${escapeHtml(fruit.japaneseName)}</p>` : ""}${fruit.romanizedName ? `<p>${escapeHtml(fruit.romanizedName)}</p>` : ""}<h2>About ${escapeHtml(fruit.name)}</h2><p>${escapeHtml(fruit.about || "Details coming soon.")}</p><dl><dt>Type</dt><dd>${escapeHtml(fruit.type || "Unknown")}</dd><dt>User</dt><dd>${escapeHtml(fruit.user || "Unknown")}</dd><dt>Debut arc</dt><dd>${escapeHtml(fruit.debutArc || "Unknown")}</dd><dt>Name meaning</dt><dd>${escapeHtml(fruit.nameMeaning || "Unknown")}</dd></dl></article></main>`;
+    const content = `${prerenderStyle}<main class="prerender-detail"><nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="${categoryPath}">${escapeHtml(fruit.type || "Devil Fruits")}</a> / <span>${escapeHtml(fruit.name)}</span></nav><article><img src="${image}" alt="${escapeHtml(fruit.name)}" width="220" height="200"><h1>${escapeHtml(fruit.name)}</h1>${fruit.japaneseName ? `<p lang="ja">${escapeHtml(fruit.japaneseName)}</p>` : ""}${fruit.romanizedName ? `<p>${escapeHtml(fruit.romanizedName)}</p>` : ""}<h2>About ${escapeHtml(fruit.name)}</h2><p>${escapeHtml(fruit.about || "Details coming soon.")}</p><dl><dt>Type</dt><dd>${escapeHtml(fruit.type || "Unknown")}</dd><dt>User</dt><dd>${fruitUserLink(fruit.id, fruit.user)}</dd><dt>Previous user</dt><dd>${fruitUserLink(fruit.id, fruit.previousUser)}</dd><dt>Debut arc</dt><dd>${escapeHtml(fruit.debutArc || "Unknown")}</dd><dt>Name meaning</dt><dd>${escapeHtml(fruit.nameMeaning || "Unknown")}</dd></dl></article></main>`;
     await writeRoute(route, renderDocument({ title, description, canonical, image, type: "article", structuredData }, content));
+}
+
+const characterRoutes = [];
+const paragraphs = items => items.map(text => `<p>${escapeHtml(text)}</p>`).join('');
+const characterNames = character => `<p lang="ja">${escapeHtml(character.japaneseName)}</p><p>${escapeHtml(character.romanizedName)}</p><p>${escapeHtml(character.alias)}</p>`;
+const characterLinks = items => `<ul class="prerender-fruit-list">${items.map(character => `<li><a href="/characters/${character.slug}"><img src="${character.portrait}" alt="${escapeHtml(character.name)}" width="120" height="160" loading="lazy"><strong>${escapeHtml(character.name)}</strong>${characterNames(character)}</a></li>`).join('')}</ul>`;
+const characterListPages = paginateCharacters(characterData).totalPages;
+for (let page = 1; page <= characterListPages; page++) {
+    const { visible, currentPage, totalPages, rangeStart, rangeEnd } = paginateCharacters(characterData, { page });
+    const route = characterPageUrl(currentPage);
+    characterRoutes.push(route);
+    const seo = getCharactersSeo(currentPage);
+    const firstPage = Math.max(1, Math.min(currentPage - 1, totalPages - 2));
+    const pages = Array.from({ length: Math.min(3, totalPages) }, (_, index) => firstPage + index);
+    const navigation = totalPages > 1 ? `<nav class="fruitPagination" aria-label="Character list pages">
+        ${currentPage > 1 ? `<a href="${characterPageUrl(currentPage - 1)}" rel="prev">Previous</a>` : ''}
+        <div class="fruitPaginationPages">${pages.map(number => number === currentPage ? `<span aria-current="page">${number}</span>` : `<a href="${characterPageUrl(number)}" aria-label="Page ${number}">${number}</a>`).join('')}</div>
+        ${currentPage < totalPages ? `<a href="${characterPageUrl(currentPage + 1)}" rel="next">Next</a>` : ''}
+        </nav>` : '';
+    await writeRoute(route, renderDocument({
+        ...seo, structuredData: seo.jsonLd,
+    }, `${prerenderStyle}<main class="prerender-page"><a href="/">Devil Fruits</a><h1>One Piece Characters</h1><p>Background, abilities, and stories from East Blue to Arabasta.</p><p>${rangeStart}–${rangeEnd} of ${characterData.length} characters</p>${characterLinks(visible)}${navigation}</main>`));
+}
+
+for (const character of characterData) {
+    const route = `/characters/${character.slug}`;
+    characterRoutes.push(route);
+    const seo = getCharacterSeo(character);
+    const related = characterData.filter(other => other.slug !== character.slug && other.group === character.group).slice(0, 3);
+    const facts = [['Group', character.group], ['Role', character.role], ['Debut arc', character.debutArc], ['First appearance', character.firstAppearance], ['Age during Arabasta', character.age], ['Birthday', character.birthday], ['Height', character.height]].filter(([, value]) => value);
+    const content = `${prerenderStyle}<main class="prerender-detail">
+        <a href="/characters">Characters</a><article>
+        <h1>${escapeHtml(character.name)}</h1>${characterNames(character)}
+        <img src="${character.portrait}" alt="${escapeHtml(character.name)}" width="200" height="260">
+        <p>${escapeHtml(character.about)}</p>
+        <h2>Quick facts</h2><dl>${facts.map(([label, value]) => `<dt>${label}</dt><dd>${escapeHtml(value)}</dd>`).join('')}</dl>
+        <section id="background"><h2>Background</h2>${paragraphs(character.background)}</section>
+        <section id="personality"><h2>Personality</h2>${paragraphs(character.personality)}</section>
+        <section id="abilities"><h2>Abilities and fighting style</h2><h3>${escapeHtml(character.fruitName)}</h3>${paragraphs(character.combat)}
+        <a href="/fruit/${slugify(character.fruitName)}">View fruit details</a><p>Fruit pages may include information from later arcs.</p></section>
+        <section id="relationships"><h2>Relationships</h2><dl>${character.relationships.map(relationship => `<dt>${escapeHtml(relationship.name)}</dt><dd>${escapeHtml(relationship.text)}</dd>`).join('')}</dl></section>
+        <h2>Details and trivia</h2><ul>${character.details.map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>
+        <details id="story"><summary>Story spoilers — through the end of Arabasta</summary><h2>${escapeHtml(character.name)}'s story</h2>${paragraphs(character.story)}</details>
+        </article><section><h2>More familiar faces</h2>${characterLinks(related)}</section></main>`;
+    await writeRoute(route, renderDocument({ ...seo, structuredData: seo.jsonLd }, content));
 }
 
 const utilityPages = [
@@ -212,7 +266,7 @@ for (const quiz of quizData) {
     await writeRoute(route, renderDocument({ title, description, canonical, image, type: "article", structuredData }, content));
 }
 
-const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`), ...quizData.map((quiz) => `/quizzes/${slugify(quiz.title)}`)];
+const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...characterRoutes, ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`), ...quizData.map((quiz) => `/quizzes/${slugify(quiz.title)}`)];
 const fruitByRoute = new Map(fruitData.map((fruit) => [`/fruit/${slugify(fruit.name)}`, fruit]));
 const quizByRoute = new Map(quizData.map((quiz) => [`/quizzes/${slugify(quiz.title)}`, quiz]));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -254,4 +308,4 @@ await writeFile(path.join(DIST, "_redirects"), `${redirectLines.join("\n")}\n`, 
 const notFoundContent = `${prerenderStyle}<main class="prerender-page"><h1>Page not found</h1><p>The page you requested does not exist.</p><p><a href="/">Browse all Devil Fruits</a></p></main>`;
 await writeFile(path.join(DIST, "404.html"), renderDocument({ title: "Page Not Found | One Piece Devil Fruits", description: "The requested page could not be found.", canonical: `${SITE}/404`, noindex: true }, notFoundContent), "utf8");
 
-console.log(`Prerendered ${fruitData.length} fruit pages, ${quizData.length} quiz pages and ${listingPages.length + utilityPages.length} index pages.`);
+console.log(`Prerendered ${fruitData.length} fruit pages, ${characterData.length} character pages, ${quizData.length} quiz pages and ${listingPages.length + utilityPages.length + characterListPages} index pages.`);

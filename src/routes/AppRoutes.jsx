@@ -10,6 +10,8 @@ const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
 const ZoanFruits = lazy(() => import("../pages/fruits/zoan/ZoanFruits.jsx"));
 const CommunityFruits = lazy(() => import("../pages/fruits/community/CommunityFruits.jsx"));
 const ExpandedFruit = lazy(() => import("../pages/fruits/expanded/ExpandedFruit.jsx"));
+const CharactersPage = lazy(() => import("../pages/characters/CharactersPage.jsx"));
+const CharacterPage = lazy(() => import("../pages/characters/CharacterPage.jsx"));
 const FruitFinderPage = lazy(() => import("../pages/games/FruitFinderPage.jsx"));
 const FruitGuesser = lazy(() => import("../pages/games/FruitGuesser.jsx"));
 const CrewWars = lazy(() => import("../pages/games/CrewWars.jsx"));
@@ -72,6 +74,9 @@ export default function AppRoutes() {
 
                 {/* Fruit Expanded */}
                 <Route path="/fruit/:id" element={<ExpandedFruit />} />
+                <Route path="/characters" element={<CharactersPage />} />
+                <Route path="/characters/page/:page" element={<CharactersPage />} />
+                <Route path="/characters/:slug" element={<CharacterPage />} />
 
 
                 {/* Jogos */}

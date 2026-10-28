@@ -138,7 +138,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
             </header>
 
             <nav className={compact ? styles.compactNav : undefined}>
-                {width > 900 ? (
+                {width > 1050 ? (
                     <div className="navSection">
                         <img
                             onClick={() => navigate("/")}
@@ -199,6 +199,10 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     </NavLink>
                                 </div>
                             </div>
+
+                            <NavLink to="/characters" className={({ isActive }) => `menuOption ${isActive ? "isActive" : ""}`}>
+                                Characters
+                            </NavLink>
 
                             <div
                                 className={`menuOption ${isMiniGamesActive ? "isActive" : ""} ${styles.OptionWrapper}`}
@@ -319,6 +323,11 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     COMMUNITY
                                 </NavLink>
 
+                                <NavLink to="/characters" onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) => `${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}>
+                                    Characters
+                                </NavLink>
+
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
                                     <div className={styles.mobileGamesHeading}>Pirate Games</div>
                                     <NavLink
@@ -424,7 +433,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                     </>
                 )}
 
-                {width > 900 && (
+                {width > 1050 && (
                     <a
                         href={supportUrl}
                         target="_blank"

@@ -55,7 +55,9 @@ export default function Seo({
 
         let structuredData = document.getElementById("page-json-ld");
         if (!jsonLd) {
-            structuredData?.remove();
+            // Keep matching prerendered data on pages without a client schema.
+            // A route change must never leave the previous page's data behind.
+            if (noindex || structuredData?.dataset.pageUrl !== canonical) structuredData?.remove();
         } else {
             if (!structuredData) {
                 structuredData = document.createElement("script");
@@ -63,6 +65,7 @@ export default function Seo({
                 structuredData.type = "application/ld+json";
                 document.head.appendChild(structuredData);
             }
+            structuredData.dataset.pageUrl = canonical || "";
             structuredData.textContent = JSON.stringify(jsonLd);
         }
     }, [title, description, canonical, image, type, noindex, jsonLd]);

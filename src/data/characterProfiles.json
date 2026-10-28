@@ -1,0 +1,1232 @@
+[
+  {
+    "slug": "monkey-d-luffy",
+    "name": "Monkey D. Luffy",
+    "seoDescription": "Luffy leads the Straw Hat Pirates and fights with a rubber body. Read about his crew, powers, and story from East Blue to Arabasta.",
+    "alias": "Straw Hat Luffy",
+    "group": "Straw Hats",
+    "role": "Captain",
+    "debutArc": "Romance Dawn",
+    "fruitId": "566d7c09-6866-4455-b85b-d3a05609c671",
+    "about": "Luffy is the captain of the Straw Hat Pirates. He wants to find the One Piece and become King of the Pirates. His body has been rubber since he ate the Gum-Gum Fruit as a child.",
+    "story": [
+      "In the East Blue, Luffy builds his crew while fighting captains who control others through fear. He helps free Nami from Arlong, then reaches Loguetown, where Buggy nearly executes him. Smoker's pursuit follows the crew into the Grand Line.",
+      "Crocodile defeats Luffy twice in Arabasta, and other people help him survive both encounters. He learns that moisture lets him strike Crocodile's sand body. In their final fight, even the blood on his hands becomes useful. He defeats Crocodile beneath Alubarna while his crew helps stop the civil war."
+    ],
+    "details": [
+      "He gave himself the scar under his left eye to prove his courage to Shanks.",
+      "He refuses to let the straw hat be treated as an ordinary piece of clothing.",
+      "His first ship with the crew is the Going Merry, a gift from Kaya after the events in Syrup Village."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Monkey_D._Luffy",
+    "fruitName": "Gum-Gum Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Gomu Gomu no Mi",
+    "portrait": "/images/characters/566d7c09-6866-4455-b85b-d3a05609c671.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "モンキー・D（ディー）・ルフィ",
+    "romanizedName": "Monkī Dī Rufi",
+    "firstAppearance": "Chapter 1; Episode 1",
+    "birthday": "May 5th (Children's Day)",
+    "age": "17",
+    "height": "172 cm",
+    "origin": "East Blue (Foosha Village)",
+    "background": [
+      "Luffy grew up in Foosha Village in the East Blue. Shanks and his crew used the village as a base, and Luffy kept asking to sail with them. He thought being brave meant never backing down. Shanks showed him that some fights are worth ignoring, and others are worth risking your life for.",
+      "He ate the Gum-Gum Fruit without knowing what it was. Soon after, Shanks lost an arm saving him from a Sea King. Before leaving the village, Shanks gave Luffy his straw hat. Luffy promised to return it once he had become a great pirate. The hat is the one possession he treats with real care."
+    ],
+    "personality": [
+      "Luffy is blunt, impatient, and usually hungry. He rarely explains himself at length. He pays more attention to what someone does than to their rank, reputation, or past. That is why a pirate hunter, a thief, and a reindeer can all make sense to him as crewmates.",
+      "He can miss an obvious trap, but he often notices when someone is hiding what they want. With Nami and Vivi, he is willing to wait until they ask for help. Once he accepts someone as a friend, he takes their problems seriously, even if the rest of the world does not."
+    ],
+    "combat": [
+      "Luffy uses his rubber body to stretch his reach, build momentum, and send attacks back at an opponent. Gum-Gum Pistol is a stretched punch. Gum-Gum Balloon turns his body into a shield. He often invents attacks during a fight rather than following a set plan.",
+      "Rubber protects him from ordinary punches and bullets, but it does not make him immune to blades, heat, or every kind of impact. He also cannot swim. Against an enemy his fists cannot touch, strength alone is not enough; he has to find another way to fight."
+    ],
+    "relationships": [
+      {
+        "name": "Shanks",
+        "text": "Luffy's example of what a pirate can be. Their promise gives the straw hat its meaning."
+      },
+      {
+        "name": "His crew",
+        "text": "Luffy depends on skills he does not have. Nami navigates, Sanji cooks, and Chopper treats the sick. He does not expect to make the journey alone."
+      },
+      {
+        "name": "Ace and Vivi",
+        "text": "Ace is his older brother. Vivi becomes a close friend during the voyage to Arabasta, where her country's troubles become the crew's problem too."
+      }
+    ]
+  },
+  {
+    "slug": "buggy",
+    "name": "Buggy",
+    "seoDescription": "Buggy the Clown can split his body into floating pieces. Read about his pirate crew, rivalry with Luffy, and Chop-Chop Fruit powers through Arabasta.",
+    "alias": "Buggy the Clown",
+    "group": "Other pirates",
+    "role": "Buggy Pirates captain",
+    "debutArc": "Orange Town",
+    "fruitId": "db872681-57fc-40e0-9666-beea21ba23a5",
+    "about": "Buggy is the captain of the Buggy Pirates. His Chop-Chop Fruit lets his body come apart without injury. He is more interested in treasure than in the freedom Luffy talks about.",
+    "story": [
+      "Buggy occupies Orange Town and fights Luffy, Zoro, and Nami there. His resistance to sword cuts catches Zoro off guard. Luffy eventually leaves most of Buggy's body tied together and sends the remaining pieces flying.",
+      "After being separated from his crew, Buggy makes his way back and forms an alliance with Alvida. In Loguetown, he catches Luffy on the execution platform. A sudden lightning strike destroys the platform before he can kill him. Buggy's revenge is left unfinished."
+    ],
+    "details": [
+      "His nose is real, and he hates people assuming it is part of his costume.",
+      "Nami takes advantage of his scattered body parts during the Orange Town fight.",
+      "He cares far more about a treasure map than the ordinary loot his crew can steal."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Buggy",
+    "fruitName": "Chop-Chop Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Bara Bara no Mi",
+    "portrait": "/images/characters/db872681-57fc-40e0-9666-beea21ba23a5.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "バギー",
+    "romanizedName": "Bagī",
+    "firstAppearance": "Chapter 9; Episode 4",
+    "birthday": "August 8th",
+    "age": "37",
+    "height": "192 cm",
+    "origin": "Grand Line",
+    "background": [
+      "Buggy and Shanks served as apprentices on the same pirate ship. Their arguments started long before either had a crew of his own. Buggy valued treasure and saw Shanks as a constant source of trouble.",
+      "He planned to sell a Devil Fruit and use a stolen map to find treasure underwater. While hiding the fruit in his mouth, he was startled by Shanks and swallowed it. The map fell into the sea. Losing the ability to swim cost him the treasure, and he has blamed Shanks ever since."
+    ],
+    "personality": [
+      "Buggy likes an audience. He gives loud orders, expects praise, and takes insults about his red nose personally. His crew has a circus theme, but he is still a cruel captain who uses cannons and threats against civilians.",
+      "He can be clever when money or survival is involved. The problem is his pride. He gets distracted by revenge and often assumes an opponent is already beaten. His grudge against Luffy becomes almost as important to him as finding treasure."
+    ],
+    "combat": [
+      "The Chop-Chop Fruit lets Buggy separate his body into pieces and control them nearby. A sword can cut through him without causing the usual injury. He can send a hand holding a knife toward someone while keeping his body elsewhere.",
+      "His feet remain on the ground, and the rest of him can only move within a limited range of them. Blunt attacks still hurt. Separated parts can also be captured or tied up. Alongside his fruit, he uses knives, cannons, and his specially made Buggy Balls."
+    ],
+    "relationships": [
+      {
+        "name": "Shanks",
+        "text": "An old shipmate whom Buggy blames for ruining his treasure hunt. Their shared past is a sore point for him."
+      },
+      {
+        "name": "Alvida",
+        "text": "An ally with her own reason to pursue Luffy. She is often calmer than Buggy when his plans begin to fail."
+      },
+      {
+        "name": "Mohji and Cabaji",
+        "text": "Two of his leading crew members. Their animal-taming and acrobatic acts fit the crew's circus theme."
+      }
+    ]
+  },
+  {
+    "slug": "alvida",
+    "name": "Alvida",
+    "seoDescription": "Alvida is a pirate captain whose Smooth-Smooth Fruit makes attacks slide off her skin. Read about her crew, powers, and alliance with Buggy.",
+    "alias": "Iron Mace Alvida",
+    "group": "Other pirates",
+    "role": "Pirate captain",
+    "debutArc": "Romance Dawn",
+    "fruitId": "85cbd3c9-dd95-44a5-9a44-970919c80ef4",
+    "about": "Alvida is a pirate captain from the East Blue and the first captain Luffy fights at sea. She carries a heavy iron mace. Her Smooth-Smooth Fruit makes attacks slide off her skin.",
+    "story": [
+      "Luffy defeats Alvida while helping Koby leave her ship. Koby finally tells her what he thinks of her, knowing that she would normally punish him for it. Luffy's arrival gives him a chance to act on his own wishes.",
+      "Alvida later eats the Smooth-Smooth Fruit and finds Buggy. She appears in Loguetown during his attempt to execute Luffy. When the plan fails, she remains with Buggy's crew rather than ending the pursuit there."
+    ],
+    "details": [
+      "Her ship's name is Miss Love Duck.",
+      "She keeps using her iron mace after her appearance changes.",
+      "She is the first female pirate and the first female Devil Fruit user shown in the series."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Alvida",
+    "fruitName": "Smooth-Smooth Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Sube Sube no Mi",
+    "portrait": "/images/characters/85cbd3c9-dd95-44a5-9a44-970919c80ef4.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "アルビダ",
+    "romanizedName": "Arubida",
+    "firstAppearance": "Chapter 2; Episode 1",
+    "birthday": "March 14th",
+    "age": "25",
+    "height": "198 cm",
+    "origin": "East Blue",
+    "background": [
+      "Alvida commanded the Miss Love Duck before joining forces with Buggy. Koby ended up on her ship by mistake, and she forced him to work as a cabin boy. He stayed because he was afraid of what she would do if he tried to leave.",
+      "She kept her crew obedient through threats and violence. The men were expected to praise her appearance and keep the ship spotless. Her authority depended on everyone agreeing with her, whether they meant it or not."
+    ],
+    "personality": [
+      "Alvida is vain and demanding. She wants admiration as well as obedience. Luffy's refusal to flatter her makes him unusual to her before their fight has even started.",
+      "After gaining her fruit, she speaks more calmly and is less quick to lash out. She is also practical enough to work with Buggy. They share a target, but she does not share all of his impulsive decisions."
+    ],
+    "combat": [
+      "Her iron mace gives her reach and enough force to damage a ship's deck. Before gaining a fruit, she relies on that strength to intimidate people. Luffy's rubber body makes her usual approach ineffective against him.",
+      "The Smooth-Smooth Fruit changes her defense. Blows and falling rubble slide over her skin instead of landing normally. She can also remove her shoes and slide along the ground, using a slope to gather speed. The power changes her appearance, but it does not replace her mace as her main weapon."
+    ],
+    "relationships": [
+      {
+        "name": "Koby",
+        "text": "Her former cabin boy. His decision to speak against her is the first step toward leaving her crew and pursuing a place in the Marines."
+      },
+      {
+        "name": "Buggy",
+        "text": "Her partner in pursuing Luffy. Their alliance brings her into contact with a larger crew and a shared revenge plan."
+      }
+    ]
+  },
+  {
+    "slug": "smoker",
+    "name": "Smoker",
+    "seoDescription": "Smoker is the Marine captain chasing Luffy into the Grand Line. Read about his Smoke-Smoke Fruit, sense of justice, and role in Arabasta.",
+    "alias": "White Chase",
+    "group": "Marines",
+    "role": "Marine officer",
+    "debutArc": "Loguetown",
+    "fruitId": "e7711afb-1d99-44c5-9125-d8fc965e6fdc",
+    "about": "Smoker is the Marine officer in charge of Loguetown when Luffy arrives. His smoke powers make him difficult to fight. He pursues pirates, but he does not trust a title to tell him who is right.",
+    "story": [
+      "Smoker corners Luffy in Loguetown. Dragon's intervention prevents the arrest, and Smoker follows the Straw Hats into the Grand Line. In Arabasta, that pursuit leads him toward Baroque Works and Crocodile's plan.",
+      "He becomes trapped with the Straw Hats in Rain Dinners. Zoro saves him from drowning at Luffy's request, leaving Smoker with a debt to the people he came to arrest. After Crocodile falls, the government credits Smoker and Tashigi. Smoker rejects the false account rather than accept praise for someone else's work."
+    ],
+    "details": [
+      "He is usually seen smoking two cigars at once.",
+      "The end of his jitte is the part that contains Seastone.",
+      "His pursuit of Luffy starts before he knows anything about the Arabasta conspiracy."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Smoker",
+    "fruitName": "Plume-Plume Fruit",
+    "fruitType": "Logia",
+    "fruitRomanizedName": "Moku Moku no Mi",
+    "portrait": "/images/characters/e7711afb-1d99-44c5-9125-d8fc965e6fdc.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "スモーカー",
+    "romanizedName": "Sumōkā",
+    "firstAppearance": "Chapter 97; Episode 48",
+    "birthday": "March 14th",
+    "age": "34",
+    "height": "209 cm",
+    "origin": "Grand Line",
+    "background": [
+      "Smoker was in Loguetown when Gol D. Roger was executed. Years later, he commands the town's Marine base. Pirates passing through on their way to the Grand Line find it difficult to get past him.",
+      "His partner in that work is Tashigi, a swordswoman who takes her duties seriously. Smoker is less concerned with formal manners. He will argue with his superiors if he thinks their orders or their version of events are wrong."
+    ],
+    "personality": [
+      "Smoker is stern, stubborn, and often impatient with other Marines. He judges people through their actions. He can be gentle with a frightened child and hostile to a superior officer in the same town.",
+      "He sees Luffy as a pirate who should be arrested, but Luffy's behavior does not fit neatly with that judgment. This bothers him enough to keep pursuing the crew. He wants to understand what he saw in Loguetown, not simply forget it."
+    ],
+    "combat": [
+      "His Logia fruit lets him create and become smoke. He can extend his reach, surround opponents, and lift himself through the air. Ordinary punches and sword strikes pass through his smoke form.",
+      "He carries a jitte with Seastone in its tip. Contact with that tip weakens Devil Fruit users, giving him a way to restrain people whose powers resist normal weapons. His amphibious vehicle, the Billower Bike, is powered by his smoke. Water remains dangerous to him despite the advantages of his fruit."
+    ],
+    "relationships": [
+      {
+        "name": "Tashigi",
+        "text": "His subordinate and trusted partner. He pushes her to make her own judgments instead of hiding behind the fact that an enemy is stronger."
+      },
+      {
+        "name": "Luffy",
+        "text": "A fugitive Smoker wants to catch. Luffy's willingness to help people, including enemies, complicates their encounters."
+      },
+      {
+        "name": "Hina",
+        "text": "Another Marine officer who knows him well. She is more comfortable with military procedure, though she is used to his stubbornness."
+      }
+    ]
+  },
+  {
+    "slug": "gem",
+    "name": "Gem",
+    "seoName": "Mr. 5 (Gem)",
+    "seoDescription": "Mr. 5, also called Gem, is a Baroque Works agent with explosive powers. Read about his Bomb-Bomb Fruit and partnership with Miss Valentine.",
+    "alias": "Mr. 5",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Whisky Peak",
+    "fruitId": "82bb0e96-11f4-41ab-bcc3-766e449b7903",
+    "about": "Gem works for Baroque Works under the name Mr. 5. He is paired with Miss Valentine. His Bomb-Bomb Fruit turns his body and even his breath into sources of explosions.",
+    "story": [
+      "At Whisky Peak, Mr. 5 reveals that Baroque Works has identified Vivi and Igaram as spies. Zoro intervenes when he attacks Vivi. Luffy and Zoro then defeat Mr. 5 and Miss Valentine while barely interrupting their own argument.",
+      "The pair return on Little Garden to assist Mr. 3's trap. They hurt Karoo while trying to make him call for Vivi. During the later fight, Usopp tricks Mr. 5 with a shot containing hot sauce instead of gunpowder, and Zoro finishes him with a sword attack."
+    ],
+    "details": [
+      "His real name is Gem; Mr. 5 is his work name.",
+      "His revolver is called the Flintlock .44 Caliber 6 Shot.",
+      "His fruit protects him from explosions, including the explosives he eats."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Gem",
+    "fruitName": "Bomb-Bomb fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Bomu Bomu no Mi",
+    "portrait": "/images/characters/82bb0e96-11f4-41ab-bcc3-766e449b7903.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ジェム",
+    "romanizedName": "Jemu",
+    "firstAppearance": "Chapter 110; Episode 65",
+    "birthday": "July 26th",
+    "age": "24",
+    "height": "197 cm",
+    "origin": "South Blue",
+    "background": [
+      "Mr. 5 is an Officer Agent, placing him above most of the organization's ordinary members. Like the other agents, he uses a number in place of his real name while on a mission. He receives orders without knowing the full identity of the man at the top.",
+      "Before his encounters with the Straw Hats, he has a record of successful missions. Being sent to Whisky Peak is supposed to be another job: find the spies inside Baroque Works and kill them before their information can spread."
+    ],
+    "personality": [
+      "He acts as though the outcome of a fight is already decided. His sunglasses, coat, and quiet delivery help maintain that impression. He has less patience than he first appears to, especially when someone mocks him or refuses an order.",
+      "He dismisses friendship as a weakness. That attitude shapes the way he treats Vivi, Karoo, and Usopp. His own partnership with Miss Valentine works well, but he has little respect for loyalty that gets in the way of a mission."
+    ],
+    "combat": [
+      "Any part of his body can cause an explosion without injuring him. He can make an explosive kick, flick explosive mucus from his nose, or fire his breath through a revolver. The last method gives him a ranged attack that is difficult to see coming.",
+      "He can also swallow explosive ammunition safely. That does not make him immune to every substance. His confidence in the fruit leaves openings for opponents who use tricks instead of trying to beat his explosions directly. Miss Valentine can use the force of his blasts to rise into the air."
+    ],
+    "relationships": [
+      {
+        "name": "Miss Valentine",
+        "text": "His assigned partner. Her falling attacks support his explosives, and they carry out the same missions in Whisky Peak and Little Garden."
+      },
+      {
+        "name": "Mr. 3",
+        "text": "A higher-ranked agent who is critical of their failure. Mr. 3 believes planning matters more than the raw force of a Devil Fruit."
+      }
+    ]
+  },
+  {
+    "slug": "mikita",
+    "name": "Mikita",
+    "seoName": "Miss Valentine (Mikita)",
+    "seoDescription": "Miss Valentine, also called Mikita, changes her weight with the Kilo-Kilo Fruit. Read about her fighting style and work with Mr. 5 in Baroque Works.",
+    "alias": "Miss Valentine",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Whisky Peak",
+    "fruitId": "52eb0032-1919-4198-9da8-54df0eb61804",
+    "about": "Mikita is the Baroque Works agent called Miss Valentine. She can change her weight without changing her size. Her usual attack is to float above someone, then become heavy enough to crush them.",
+    "story": [
+      "Miss Valentine comes to Whisky Peak to help eliminate Vivi and Igaram. She tries to crush Zoro, but he avoids the attack. Neither she nor Mr. 5 manages to stop Luffy and Zoro during their fight.",
+      "On Little Garden, she chases Usopp and Karoo while Mr. 3 keeps other members of the group trapped. She pins Usopp and increases her weight to hurt him. Nami and Vivi eventually strike her together and stop her part in the battle."
+    ],
+    "details": [
+      "Her Japanese laugh is written as kyahahaha.",
+      "Her weight range is measured in kilograms in the original story.",
+      "Unlike an attack that makes a giant body, her fruit keeps all that weight within her normal shape."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Mikita",
+    "fruitName": "Kilo-Kilo fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Kiro Kiro no Mi",
+    "portrait": "/images/characters/52eb0032-1919-4198-9da8-54df0eb61804.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ミキータ",
+    "romanizedName": "Mikīta",
+    "firstAppearance": "Chapter 110; Episode 65",
+    "birthday": "February 14th",
+    "age": "22",
+    "height": "177 cm",
+    "origin": "West Blue",
+    "background": [
+      "Miss Valentine is an Officer Agent partnered with Mr. 5. The numbered men in Baroque Works are paired with women using holiday-based names. Her own name follows Valentine's Day, which is also her birthday.",
+      "She travels with a parasol and usually lets Mr. 5 explain their orders. Her light appearance can make her seem less dangerous than her partner. The weight behind her attacks is much greater than her size suggests."
+    ],
+    "personality": [
+      "She laughs easily and rarely acts worried about the person she is fighting. This is confidence rather than kindness. When she has an opponent pinned, she is willing to increase the pressure slowly instead of ending the fight quickly.",
+      "She and Mr. 5 expect their powers to settle most confrontations. Both become frustrated when the Straw Hats treat them as an interruption. Her relaxed manner does not last once a fight stops going her way."
+    ],
+    "combat": [
+      "The Kilo-Kilo Fruit lets her weigh as little as one kilogram or as much as 10,000 kilograms. When she is light, a breeze caught by her parasol can carry her. Changing to her heaviest weight turns that height into an attack.",
+      "She can also pin someone and raise her weight a little at a time. Her body does not grow when she gets heavier. The fruit's usefulness depends on positioning: she needs a target beneath her, and a missed fall leaves her on the ground. Mr. 5's explosions give her another way to gain height."
+    ],
+    "relationships": [
+      {
+        "name": "Mr. 5",
+        "text": "Her regular partner. His explosive attacks and her changes in weight let them attack from different directions."
+      },
+      {
+        "name": "Mr. 3 and Miss Goldenweek",
+        "text": "The pair they join on Little Garden. Their traps are meant to make up for the failed mission at Whisky Peak."
+      }
+    ]
+  },
+  {
+    "slug": "nico-robin",
+    "name": "Nico Robin",
+    "seoDescription": "Nico Robin is an archaeologist known as Miss All Sunday in Baroque Works. Read about her Flower-Flower Fruit, search for history, and role in Arabasta.",
+    "alias": "Miss All Sunday",
+    "group": "Straw Hats",
+    "role": "Archaeologist",
+    "debutArc": "Whisky Peak",
+    "fruitId": "cbc8ff69-2426-41c1-8144-bbf8ad11493f",
+    "about": "Nico Robin is an archaeologist who works with Crocodile as Miss All Sunday. She can read the writing on Poneglyphs. Her Flower-Flower Fruit lets her grow extra body parts on nearby surfaces.",
+    "story": [
+      "Robin appears on the Going Merry after the events at Whisky Peak. She offers a route that would bypass Little Garden, but Luffy refuses it. Later, she pulls him out of the sand after Crocodile leaves him to die near Rainbase.",
+      "In the royal tomb, she reads the Poneglyph for herself and withholds the information Crocodile wants. He turns on her. Luffy defeats him and carries Robin out despite her resistance. At the end of the arc, she appears aboard the Merry and asks to join the crew, saying Luffy has made himself responsible for her survival."
+    ],
+    "details": [
+      "Her codename refers to all Sundays rather than a single holiday.",
+      "Her fruit is named after flowers, but the parts that bloom are parts of her own body.",
+      "She is 28 during Arabasta, older than the Straw Hats traveling with Luffy at that point."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Nico_Robin",
+    "fruitName": "Flower-Flower fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Hana Hana no Mi",
+    "portrait": "/images/characters/cbc8ff69-2426-41c1-8144-bbf8ad11493f.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ニコ・ロビン",
+    "romanizedName": "Niko Robin",
+    "firstAppearance": "Chapter 114; Episode 67",
+    "birthday": "February 6th",
+    "age": "28",
+    "height": "188 cm",
+    "origin": "West Blue",
+    "background": [
+      "Robin reaches Arabasta with knowledge that most people cannot use or understand. Crocodile needs someone who can read a Poneglyph, and she needs access to the records he is searching for. Their partnership rests on that exchange rather than trust.",
+      "As Miss All Sunday, she holds a position above the ordinary Officer Agents. She knows the identity of their leader and handles work connected to Rain Dinners. Her interest in history is separate from the territory and power Crocodile wants. The full reason for that interest is not explained by the end of Arabasta."
+    ],
+    "personality": [
+      "Robin speaks calmly, even when someone points a weapon at her. She often has a dry or unsettling sense of humor. Unlike the louder Baroque Works agents, she rarely needs to raise her voice to make other people uneasy.",
+      "She keeps her intentions private. At times she helps people she is supposed to oppose, without offering much explanation. Her habit of watching before acting makes her difficult for both the Straw Hats and Crocodile to read."
+    ],
+    "combat": [
+      "Her fruit grows copies of her body parts on surfaces within reach of her power. Hands can take weapons away, arms can restrain someone from behind, and extra eyes or ears can help her gather information. She does not need to walk up to an enemy to grab them.",
+      "She often ends a fight by locking joints rather than trading punches. Damage to the parts she grows is also felt by her own body. A large number of extra arms does not mean those arms can safely hold more weight than she can manage."
+    ],
+    "relationships": [
+      {
+        "name": "Crocodile",
+        "text": "Her employer and partner. Each needs something the other can provide, but neither fully trusts the other."
+      },
+      {
+        "name": "Vivi",
+        "text": "Robin knows Vivi has infiltrated Baroque Works. Their early meetings give Vivi good reason to fear her."
+      },
+      {
+        "name": "Luffy",
+        "text": "He does not understand her motives at first. Their encounters in the desert and beneath Alubarna change what she expects from him."
+      }
+    ]
+  },
+  {
+    "slug": "galdino",
+    "name": "Galdino",
+    "seoName": "Mr. 3 (Galdino)",
+    "seoDescription": "Mr. 3, also called Galdino, uses wax traps and careful plans for Baroque Works. Read about his Wax-Wax Fruit and fight against the Straw Hats on Little Garden.",
+    "alias": "Mr. 3",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Little Garden",
+    "fruitId": "5ff126e1-a851-4209-b1f7-0045dd779336",
+    "about": "Galdino is the Baroque Works agent known as Mr. 3. He builds traps and weapons from candle wax. He works with Miss Goldenweek and prefers a prepared trap to a direct fight.",
+    "story": [
+      "On Little Garden, Mr. 3 sabotages the giants' duel and traps Brogy. He captures Zoro, Nami, and Vivi for his wax display. Usopp helps turn the structure into a burning trap of its own, and Luffy defeats Mr. 3 after finding the real man among his wax copies.",
+      "Mr. 3 follows the other agents to Rain Dinners and asks Crocodile for another chance. Crocodile instead drains his moisture and drops him among the Bananawani. Sanji later forces him to create a key so the Straw Hats can escape their cage."
+    ],
+    "details": [
+      "His hair is shaped like a number three and burns like a candle wick.",
+      "The wax is something he produces; his body is not made of it.",
+      "His favorite tea is Earl Grey, fitting his habit of drinking tea while discussing a plan."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Galdino",
+    "fruitName": "Wax-Wax Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Doru Doru no Mi",
+    "portrait": "/images/characters/5ff126e1-a851-4209-b1f7-0045dd779336.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ギャルディーノ",
+    "romanizedName": "Gyarudīno",
+    "firstAppearance": "Chapter 117; Episode 70",
+    "birthday": "March 3rd",
+    "age": "35",
+    "height": "179 cm",
+    "origin": "South Blue",
+    "background": [
+      "Mr. 3 is an Officer Agent from the South Blue. His number places him above Mr. 4, but that does not mean he is physically stronger. Crocodile values his planning and willingness to use cruel methods.",
+      "His partnership with Miss Goldenweek combines two different ways of controlling a fight. He can trap people in wax while she uses painted symbols to affect their behavior. He treats the results as works of art, even when the people inside them are still alive."
+    ],
+    "personality": [
+      "Galdino likes to think of himself as the cleverest person in the room. He looks down on agents who rely on force and takes pride in detailed work. He is patient when he has the advantage and much less composed when someone breaks his plan.",
+      "He is willing to use a victim's friends as bait. He also prefers being protected by a wall, a trap, or a stronger ally. His confidence in his own intelligence does not make him brave when he has to fight at close range."
+    ],
+    "combat": [
+      "The Wax-Wax Fruit lets him make and shape candle wax. Once hardened, it can hold powerful opponents in place. He uses it for restraints, walls, blades, copies of himself, and a large suit of wax armor.",
+      "His Candle Service Set slowly coats trapped people in wax until they become statues. He can also make small objects with careful detail, so the power is useful beyond combat. He remains a normal solid person beneath his creations. Heat and fire can melt the wax, and fast opponents can stop him before a trap is ready."
+    ],
+    "relationships": [
+      {
+        "name": "Miss Goldenweek",
+        "text": "His partner. Her Colors Trap makes his wax traps harder to escape, though her relaxed attitude often annoys him."
+      },
+      {
+        "name": "Crocodile",
+        "text": "His boss, who values results and has little patience for excuses. Mr. 3 knows that failure can cost him more than his rank."
+      },
+      {
+        "name": "Dorry and Brogy",
+        "text": "Targets he chooses for their bounties. He interferes with their duel rather than trying to defeat either giant fairly."
+      }
+    ]
+  },
+  {
+    "slug": "wapol",
+    "name": "Wapol",
+    "seoDescription": "Wapol is Drum Island's selfish king. His Munch-Munch Fruit lets him eat almost anything. Read about his rule, powers, and clash with the Straw Hats.",
+    "alias": "Tin-Plate Wapol",
+    "group": "Other pirates",
+    "role": "Former king of Drum",
+    "debutArc": "Drum Island",
+    "fruitId": "7891d9ff-5621-415d-90e5-07429ab84e1a",
+    "about": "Wapol is the ruler who abandoned Drum Island when it was attacked. He controls access to doctors to keep the population dependent on him. His Munch-Munch Fruit lets him eat almost anything.",
+    "story": [
+      "Wapol encounters the Going Merry while returning to Drum. He begins eating the ship and is quickly thrown off it by Luffy. Once ashore, he expects his old subjects to accept him as king again.",
+      "At the castle, he tries to destroy Hiriluk's flag. Luffy protects it while Chopper explains why it matters. Wapol combines Chess and Kuromarimo into a single fighter, but they are defeated. Luffy then launches Wapol away from the island, ending his attempt to take back the throne."
+    ],
+    "details": [
+      "His personal doctors are known as the Isshi-20.",
+      "His pirate ship, the Bliking, can travel underwater.",
+      "He has a large white mount named Robson, a furry animal called a walkie."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Wapol",
+    "fruitName": "Munch-Munch Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Baku Baku no Mi",
+    "portrait": "/images/characters/7891d9ff-5621-415d-90e5-07429ab84e1a.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ワポル",
+    "romanizedName": "Waporu",
+    "firstAppearance": "Chapter 131; Episode 79",
+    "birthday": "August 9th",
+    "age": "27",
+    "height": "207 cm",
+    "origin": "Grand Line (Drum Kingdom)",
+    "background": [
+      "Wapol inherited Drum's throne from his father. The island was known for its medical knowledge, but he turned that knowledge into a way to control people. He drove away most doctors and kept twenty elite physicians for his own use.",
+      "People who needed treatment had to depend on the king's doctors. Hiriluk and Kureha were among those who continued practicing outside his control. When Blackbeard's pirates attacked Drum, Wapol fled with his followers and became a pirate instead of defending the country."
+    ],
+    "personality": [
+      "Wapol assumes that being king gives him the right to do whatever he wants. He treats land, buildings, and people as possessions. He shows little interest in what happens to the island when he is absent.",
+      "He is greedy and easily angered when someone refuses to obey him. His hunger is literal as well as political: he eats things that do not look like food at all. He is used to his followers cleaning up the damage afterward."
+    ],
+    "combat": [
+      "His fruit lets him swallow weapons and other materials, then use them as parts of his body. Cannons can become his arms, and metal can reinforce him. He can combine things he has eaten rather than simply store them.",
+      "He can even swallow his own body and reshape it. That allows him to squeeze through an opening his usual body would not fit. The fruit gives him many options, but he often uses them carelessly. It also does not stop him from taking a hit before he has finished setting up an attack."
+    ],
+    "relationships": [
+      {
+        "name": "Dalton",
+        "text": "A former guard who stops accepting Wapol's rule. Dalton cares about the people Wapol leaves behind."
+      },
+      {
+        "name": "Chess and Kuromarimo",
+        "text": "His close followers. They travel with him after he leaves Drum and help him try to reclaim the castle."
+      },
+      {
+        "name": "Hiriluk and Chopper",
+        "text": "Hiriluk stands against the fear Wapol uses to rule. Chopper carries that conflict into the fight at the castle."
+      }
+    ]
+  },
+  {
+    "slug": "dalton",
+    "name": "Dalton",
+    "seoDescription": "Dalton is Drum Island's former guard captain and a user of the Ox-Ox Fruit, Model: Bison. Read about his loyalty to the island and bond with Chopper.",
+    "alias": "Drum's protector",
+    "group": "Kingdom allies",
+    "role": "Drum Island guard",
+    "debutArc": "Drum Island",
+    "fruitId": "f87f2740-cfbe-4d48-b399-e2fbf9f405f9",
+    "about": "Dalton is a guard on Drum Island and a former servant of King Wapol. He wants the island's people to have access to care without begging a ruler for it. His Zoan fruit gives him a bison's strength.",
+    "story": [
+      "Dalton allows the Straw Hats ashore after Vivi and Luffy ask for medical help. He tells them about Kureha and the castle. He stays with the villagers while Luffy and Sanji carry Nami toward the mountain.",
+      "When Wapol returns, Dalton tries to stop him. He is badly hurt while protecting others and is then caught in the avalanche. The villagers dig him out. After Wapol's defeat, Drum begins moving away from the old king's rule, with Dalton playing a leading part in that change."
+    ],
+    "details": [
+      "He is the first character introduced with a clearly identified Zoan fruit in the early story.",
+      "His weapon is a spade rather than a sword.",
+      "He remembers seeing Vivi as a child during a royal gathering."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Dalton",
+    "fruitName": "Ox-Ox Fruit",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Ushi Ushi no Mi, Model: Bison",
+    "portrait": "/images/characters/f87f2740-cfbe-4d48-b399-e2fbf9f405f9.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ドルトン",
+    "romanizedName": "Doruton",
+    "firstAppearance": "Chapter 132; Episode 79",
+    "birthday": "June 10th",
+    "age": "33",
+    "height": "218 cm",
+    "origin": "Grand Line (Drum Kingdom)",
+    "background": [
+      "Dalton served in Drum's royal guard before Wapol fled. Being close to the throne let him see how the king treated his subjects. He remained in the country when Wapol left and helped protect the people who were still there.",
+      "He had once hoped that serving the king would let him do some good. Wapol's rule made that harder to believe. Hiriluk's words about a country being sick gave him another way to think about Drum's problems: doctors alone could not fix what the king was doing."
+    ],
+    "personality": [
+      "Dalton is cautious with strangers because the island has already suffered from pirates. He can change his mind when someone gives him a reason. Vivi and Luffy's willingness to set aside their pride matters to him when they ask for help for Nami.",
+      "He takes responsibility for people rather than expecting them to protect him. He is also surprisingly casual in conversation. While giving important directions, he sometimes adds an unrelated fact about a town or the person he is describing."
+    ],
+    "combat": [
+      "His Ox-Ox Fruit, Model: Bison is a Zoan. It lets him shift between a human body, a full bison, and a hybrid form. The animal forms give him the strength and speed to charge through several enemies.",
+      "He also fights with a large spade. He can move quickly despite his size, but he is still vulnerable to ordinary weapons. His habit of shielding other people can leave him open to attacks he would otherwise be able to avoid."
+    ],
+    "relationships": [
+      {
+        "name": "Wapol",
+        "text": "His former ruler. Dalton's sense of duty eventually becomes a reason to oppose Wapol rather than obey him."
+      },
+      {
+        "name": "Hiriluk",
+        "text": "The doctor whose final words deeply affect Dalton's view of the country and its leadership."
+      },
+      {
+        "name": "Vivi and the Straw Hats",
+        "text": "Visitors he first treats as a possible threat. Their need for a doctor gives him a chance to judge them by their behavior."
+      }
+    ]
+  },
+  {
+    "slug": "tony-tony-chopper",
+    "name": "Tony Tony Chopper",
+    "seoDescription": "Chopper is a reindeer doctor who ate the Human-Human Fruit. Read about his life on Drum Island, Rumble Ball forms, and place in the Straw Hat crew.",
+    "alias": "Chopper",
+    "group": "Straw Hats",
+    "role": "Doctor",
+    "debutArc": "Drum Island",
+    "fruitId": "187e7b71-39b6-491a-b052-90ac350a2643",
+    "about": "Chopper is a reindeer and the Straw Hats' doctor. The Human-Human Fruit gave him human thought and speech. He studies medicine because he wants to treat diseases other doctors cannot cure.",
+    "story": [
+      "Chopper mistakes a poisonous mushroom for something that can cure Hiriluk. Hiriluk eats it rather than reject the effort Chopper made to find it. When Hiriluk dies, Chopper stays with Kureha and trains to become a doctor.",
+      "Luffy invites him to sea after the fight with Wapol. Kureha sends him off beneath a display of pink snow that resembles Hiriluk's dream of cherry blossoms. In Arabasta, he fights alongside Usopp against Mr. 4, Miss Merry Christmas, and Lassoo. Their teamwork proves that he has a place in the crew beyond treating injuries."
+    ],
+    "details": [
+      "He is 15 during the Arabasta voyage.",
+      "His blue nose was unusual even before he ate a Devil Fruit.",
+      "The cross on his hat and the medical bag he carries make his work as a doctor part of his usual appearance."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Tony_Tony_Chopper",
+    "fruitName": "Human-Human Fruit",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Hito Hito no Mi",
+    "portrait": "/images/characters/187e7b71-39b6-491a-b052-90ac350a2643.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "トニートニー・チョッパー",
+    "romanizedName": "Tonī Tonī Choppā",
+    "firstAppearance": "Chapter 134; Episode 81",
+    "birthday": "December 24th (Christmas Eve)",
+    "age": "15",
+    "height": "90 cm",
+    "origin": "Grand Line (Drum Island)",
+    "background": [
+      "Chopper was already different from the other reindeer because of his blue nose. Eating a Devil Fruit separated him further. His herd rejected his human traits, while people who saw his larger form mistook him for a monster.",
+      "Dr. Hiriluk took him in and gave him his name. Hiriluk was not a skilled doctor, but he gave Chopper a home and the belief that a person could help heal a whole country. Dr. Kureha later taught Chopper the medical knowledge he needed to turn that belief into work."
+    ],
+    "personality": [
+      "Chopper is shy around strangers and quick to believe a convincing lie. He hides with most of his body still visible and gets embarrassed when people praise him. He usually tries to deny enjoying a compliment while smiling or dancing.",
+      "His behavior changes when someone needs treatment. He can give orders, challenge a patient, and focus on a medical problem despite his fear. He wants to be accepted, but being useful as a doctor matters to him in its own right."
+    ],
+    "combat": [
+      "His usual forms are Walk Point, his reindeer body; Brain Point, his small hybrid body; and Heavy Point, his larger human-like body. His animal background also lets him understand other animals.",
+      "Chopper develops the Rumble Ball to alter his transformations. During its short effect, he can use seven forms, including Guard Point for defense, Jumping Point for movement, and Arm Point for heavy blows. He studies an opponent with Brain Point before choosing which form fits the fight. The medicine's time limit means he cannot keep switching indefinitely."
+    ],
+    "relationships": [
+      {
+        "name": "Hiriluk",
+        "text": "His first family outside the herd. Hiriluk's flag and belief in curing the country's sickness remain central to Chopper's life."
+      },
+      {
+        "name": "Kureha",
+        "text": "His medical teacher. Her treatment of him is rough, but she protects him and takes his training seriously."
+      },
+      {
+        "name": "Luffy and Usopp",
+        "text": "Luffy gives him a place on the crew. Usopp becomes a friend whose stories he often takes far more seriously than he should."
+      }
+    ]
+  },
+  {
+    "slug": "portgas-d-ace",
+    "name": "Portgas D. Ace",
+    "seoDescription": "Portgas D. Ace is Luffy's older brother and a Whitebeard pirate with fire powers. Read about his Flame-Flame Fruit and visit to Arabasta.",
+    "alias": "Fire Fist Ace",
+    "group": "Other pirates",
+    "role": "Whitebeard's second division commander",
+    "debutArc": "Drum Island",
+    "fruitId": "db98e40b-2313-4acd-82e2-599f6694f100",
+    "about": "Ace is Luffy's older brother and the second division commander of the Whitebeard Pirates. The Flame-Flame Fruit lets him become fire. He arrives in Arabasta while searching for a former crewmate.",
+    "story": [
+      "Ace encounters Smoker in a restaurant in Nanohana. Luffy crashes into them while looking for food, then runs off without immediately noticing his brother. Ace follows and protects the Straw Hats from the Marines.",
+      "He briefly visits the Going Merry and asks whether Luffy would join Whitebeard. Luffy refuses because he has his own goal, and Ace accepts the answer. Before leaving, Ace gives him a small piece of paper and tells him to keep it. He clears Baroque Works ships from his path with a Fire Fist attack and continues his search."
+    ],
+    "details": [
+      "He can fall asleep in the middle of eating or talking.",
+      "His small boat uses his Devil Fruit flames for propulsion.",
+      "The full meaning of the paper he gives Luffy is not explained during Arabasta."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Portgas_D._Ace",
+    "fruitName": "Flame-Flame Fruit",
+    "fruitType": "Logia",
+    "fruitRomanizedName": "Mera Mera no Mi",
+    "portrait": "/images/nonFruitCharacters/Portgas-D-Ace-Anime-Infobox.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ポートガス・D（ディー）・エース",
+    "romanizedName": "Pōtogasu Dī Ēsu",
+    "firstAppearance": "Chapter 154; Episode 91",
+    "birthday": "January 1st",
+    "age": "20",
+    "height": "185 cm",
+    "origin": "South Blue (Baterilla)",
+    "background": [
+      "Ace went to sea before Luffy and made a name for himself as a pirate. By the time he appears in Arabasta, he commands a division in Whitebeard's crew. He speaks about his captain with real loyalty rather than treating the position as an ordinary job.",
+      "He is traveling separately from the crew to find Blackbeard. The reason for the search is serious: Blackbeard killed a crewmate and fled. Ace considers bringing him back his responsibility. His visit to Arabasta gives him an unexpected chance to see how Luffy is doing."
+    ],
+    "personality": [
+      "Ace is more polite with strangers than Luffy. He thanks the crew for looking after his brother and can carry a conversation without immediately starting an argument. He still shares Luffy's appetite and tendency to make a scene around food.",
+      "He is confident in his own strength and protective of the people close to him. His relaxed manner does not mean he treats his duties lightly. When he talks about Whitebeard or the search for Blackbeard, it is clear that he has chosen where his loyalty lies."
+    ],
+    "combat": [
+      "His Logia fruit lets him create, control, and become flames. Ordinary attacks can pass through his fire body. His best-known attack, Fire Fist, sends a large mass of flame forward rather than requiring him to strike someone directly.",
+      "He can use smaller flames for movement and to power his boat, the Striker. In Arabasta, he holds off Smoker long enough for the Straw Hats to get away. The encounter shows how difficult it can be for ordinary fighters to deal with either man's Logia power."
+    ],
+    "relationships": [
+      {
+        "name": "Luffy",
+        "text": "His younger brother. Ace is interested in Luffy's crew and pleased to see that he has people beside him."
+      },
+      {
+        "name": "Whitebeard",
+        "text": "His captain. Ace wants to help make Whitebeard King of the Pirates, which is different from Luffy's own ambition."
+      },
+      {
+        "name": "Blackbeard",
+        "text": "The former crewmate he is pursuing. Ace will not simply let the killing of another crew member pass."
+      }
+    ]
+  },
+  {
+    "slug": "crocodile",
+    "name": "Crocodile",
+    "seoDescription": "Crocodile is a Warlord and the secret leader of Baroque Works. Read about his Sand-Sand Fruit, plans for Arabasta, and battles with Luffy.",
+    "alias": "Mr. 0",
+    "group": "Baroque Works",
+    "role": "Baroque Works leader",
+    "debutArc": "Little Garden",
+    "fruitId": "0c454f3d-1ca0-4b22-a631-5de7dd1f8b4b",
+    "about": "Crocodile is one of the Seven Warlords and the secret leader of Baroque Works. Arabasta knows him as a pirate who protects its towns. Behind that reputation, he is planning to take control of the country.",
+    "story": [
+      "Operation Utopia is designed to bring Arabasta's royal army and rebels into a final battle while a bomb destroys those gathered in Alubarna. Crocodile expects to claim the country after the fighting has done his work for him.",
+      "He defeats Luffy in the desert and again at the palace. In the tomb beneath Alubarna, Robin refuses to give him the information he wants, and he attacks her. Luffy returns using blood to wet Crocodile's body and defeats him. Crocodile's public role is exposed, and the Marines take him into custody."
+    ],
+    "details": [
+      "His codename, Mr. 0, marks the top of Baroque Works.",
+      "Rain Dinners houses both his casino and a hidden base.",
+      "He keeps Bananawani, giant crocodile-like animals, beneath the casino."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Crocodile",
+    "fruitName": "Sand-Sand Fruit",
+    "fruitType": "Logia",
+    "fruitRomanizedName": "Suna Suna no Mi",
+    "portrait": "/images/characters/0c454f3d-1ca0-4b22-a631-5de7dd1f8b4b.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "クロコダイル",
+    "romanizedName": "Kurokodairu",
+    "firstAppearance": "Chapter 126; Episode 76",
+    "birthday": "September 5th",
+    "age": "44",
+    "height": "253 cm",
+    "origin": "Grand Line",
+    "background": [
+      "Crocodile's Warlord title gives him a place inside the system that normally hunts pirates. He can act openly as a powerful public figure while Baroque Works operates through codenames. Most of his own agents do not know who Mr. 0 is.",
+      "He runs the Rain Dinners casino in Rainbase and uses Arabasta's drought and political anger to weaken the kingdom. His interest goes beyond becoming its ruler. He believes an ancient weapon called Pluton is connected to the country's buried history."
+    ],
+    "personality": [
+      "Crocodile is patient with a plan and ruthless with anyone he thinks has failed it. He encourages loyalty while treating his agents as replaceable. Even his partnership with Robin depends on what she can do for him.",
+      "He is good at understanding what a crowd wants to hear. That public calm sits beside deep contempt for other people's hopes. He mocks Vivi's belief that everyone can be saved and sees trust as something to exploit. His own confidence makes it difficult for him to accept an opponent who keeps getting back up."
+    ],
+    "combat": [
+      "The Sand-Sand Fruit lets him become sand, create sandstorms, and shape sand into cutting attacks. His right hand can drain moisture from people and objects. In a desert, he has both a suitable environment and an enormous supply of material.",
+      "Moisture stops his body from scattering in the usual way, making him possible to hit. He also carries weapons for a fight that gets past his sand defense. His golden hook hides a poisoned hook, and the arm beneath it has another blade. His knowledge of his fruit makes him dangerous even after an opponent learns one weakness."
+    ],
+    "relationships": [
+      {
+        "name": "Robin",
+        "text": "His partner and translator for the Poneglyph. He needs her knowledge, but he does not share her interest in history for its own sake."
+      },
+      {
+        "name": "Vivi and Cobra",
+        "text": "The royal family he is trying to remove. Their public reputation is one of the main targets of his plan."
+      },
+      {
+        "name": "Luffy",
+        "text": "An intruder Crocodile initially considers beneath him. Luffy's repeated returns become a threat he cannot dismiss."
+      }
+    ]
+  },
+  {
+    "slug": "bentham",
+    "name": "Bentham",
+    "seoName": "Mr. 2 Bon Clay (Bentham)",
+    "seoDescription": "Mr. 2 Bon Clay, also called Bentham, copies faces with the Clone-Clone Fruit. Read about his dance-based fighting style and friendship with the Straw Hats.",
+    "alias": "Mr. 2 Bon Clay",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Little Garden",
+    "fruitId": "1c853f73-073f-4bae-be90-901ce31c9ca5",
+    "about": "Bentham is the Baroque Works agent called Mr. 2 Bon Clay. He combines dancing with martial arts. His Clone-Clone Fruit copies people's appearances, making him useful for jobs that need a disguise.",
+    "story": [
+      "Bon Clay meets the Straw Hats at sea and demonstrates his fruit, accidentally showing them that he can copy King Cobra. Once they learn he is Mr. 2, they mark their arms with an X and cover it with a bandage to tell real crewmates from copies.",
+      "He impersonates Cobra to help turn people against the king, then fights and loses to Sanji in Alubarna. After Baroque Works falls, he helps the Straw Hats escape. His crew disguises itself as Luffy's group and draws Hina's ships away, accepting capture so the Going Merry can leave."
+    ],
+    "details": [
+      "Bon Clay is also written as Bon Kurei in some translations.",
+      "The swans on his outfit fit both his dancing and the shape of his agent number.",
+      "The face-copying power is useful without requiring him to stay close to the original person."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Bentham",
+    "fruitName": "Clone-Clone Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Mane Mane no Mi",
+    "portrait": "/images/characters/1c853f73-073f-4bae-be90-901ce31c9ca5.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ベンサム",
+    "romanizedName": "Bensamu",
+    "firstAppearance": "Chapter 129; Episode 78",
+    "birthday": "August 15th",
+    "age": "30",
+    "height": "238 cm",
+    "origin": "East Blue",
+    "background": [
+      "Bon Clay holds an Officer Agent rank but does not have the usual assigned partner. He follows the Okama Way and treats his dancing, clothes, and fighting style as parts of the same life rather than separate roles.",
+      "His fruit gives Baroque Works a way to make one person appear to be someone else. He can remember faces after touching them and return to those appearances later. That makes him important to a plan built around false reports and public mistrust."
+    ],
+    "personality": [
+      "Bon Clay is loud, emotional, and quick to enjoy another person's company. He can become attached to people before asking who they work for. That is how he gets along with Luffy, Usopp, and Chopper during their first meeting.",
+      "He is also willing to carry out cruel orders as an agent. His friendly side does not erase his part in Baroque Works. The conflict between those loyalties becomes important when a job demands that he fight people he has already come to like."
+    ],
+    "combat": [
+      "The Clone-Clone Fruit copies the appearance and voice of a person whose face he has touched with his right hand. Touching his own face with that hand changes him, while the left hand restores his normal appearance. He can retain several people in his memory.",
+      "A copied body does not give him the target's Devil Fruit power. His martial arts, Okama Kenpo, rely on kicks, balance, and dance movements. He can also use a familiar face to make an opponent hesitate. The disguise itself does not guarantee he can fight as effectively in that person's body."
+    ],
+    "relationships": [
+      {
+        "name": "Luffy and the crew",
+        "text": "People he first befriends without knowing they are his enemies. Their enjoyment of his dancing is completely sincere."
+      },
+      {
+        "name": "Sanji",
+        "text": "His opponent in Alubarna. Sanji has to deal with both his kicking style and his use of Nami's appearance."
+      },
+      {
+        "name": "Hina",
+        "text": "The Marine officer whose blockade stands between the Straw Hats and the open sea at the end of the arc."
+      }
+    ]
+  },
+  {
+    "slug": "daz-bonez",
+    "name": "Daz Bonez",
+    "seoName": "Mr. 1 (Daz Bonez)",
+    "seoDescription": "Mr. 1, also called Daz Bonez, is a Baroque Works agent who turns his body into steel blades. Read about his Dice-Dice Fruit and battle with Zoro.",
+    "alias": "Mr. 1",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Arabasta",
+    "fruitId": "42b0f3ff-8dea-4a66-bcff-d4801f87a60e",
+    "about": "Daz Bonez is Mr. 1, one of Baroque Works' leading agents. He was a bounty hunter before joining the organization. The Dice-Dice Fruit turns his body into steel blades.",
+    "story": [
+      "Mr. 1 attends the meeting beneath Rain Dinners and learns that Crocodile is Mr. 0. He then takes part in Operation Utopia in Alubarna, where he and Miss Doublefinger confront Zoro and Nami.",
+      "He seriously wounds Zoro and repeatedly turns aside his swords. During the fight, Zoro recalls his teacher's lesson about cutting and not cutting. Zoro finally cuts through Daz's steel body. Daz accepts that the swordsman has crossed a limit he could not cross before."
+    ],
+    "details": [
+      "His name is also translated as Daz Bones.",
+      "The large mark on his chest is a form of the Japanese numeral one.",
+      "He does not carry a sword because his own body provides the blades."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Daz_Bonez",
+    "fruitName": "Dice-Dice Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Supa Supa no Mi",
+    "portrait": "/images/characters/42b0f3ff-8dea-4a66-bcff-d4801f87a60e.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ダズ・ボーネス",
+    "romanizedName": "Dazu Bōnesu",
+    "firstAppearance": "Chapter 160; Episode 103",
+    "birthday": "January 1st",
+    "age": "29",
+    "height": "212 cm",
+    "origin": "West Blue",
+    "background": [
+      "Daz comes from the West Blue, where he worked as a bounty hunter. Baroque Works gives him a different kind of work: assassination and missions carried out under a codename. His real name is less important to the agents around him than the rank Mr. 1.",
+      "He is paired with Miss Doublefinger. Their position puts them close to the top of the organization, though even they do not know Mr. 0's identity at first. He is used to facing other fighters and does not need a large display to make himself threatening."
+    ],
+    "personality": [
+      "Daz is quiet and direct. He prefers to settle a confrontation himself rather than wait for a long explanation. He does not get along easily with Bon Clay, whose loud behavior is very different from his own.",
+      "He trusts the protection his body gives him. Against someone using ordinary swords, that confidence has a clear basis. He is still capable of recognizing an opponent's skill when a fight forces him to reconsider what they can do."
+    ],
+    "combat": [
+      "His fruit makes his body hard as steel and lets him create sharp edges from his limbs. Fingers can become claws, arms can become long blades, and the soles of his feet can help him slide along the ground. He combines those changes with martial arts.",
+      "The same body that attacks also protects him. A swordsman who cannot cut steel has very few openings. This is not a Logia defense, though: attacks do not simply pass through him. Once someone can damage steel, he has to rely on movement and skill as well as hardness."
+    ],
+    "relationships": [
+      {
+        "name": "Miss Doublefinger",
+        "text": "His assigned partner. She stops his argument with Bon Clay so the agents can get to their meeting."
+      },
+      {
+        "name": "Crocodile",
+        "text": "The leader he serves as Mr. 1. His work places him among the agents trusted with the final operation in Arabasta."
+      },
+      {
+        "name": "Zoro",
+        "text": "The swordsman whose inability to cut steel becomes the central problem of their fight."
+      }
+    ]
+  },
+  {
+    "slug": "zala",
+    "name": "Zala",
+    "seoName": "Miss Doublefinger (Zala)",
+    "seoDescription": "Miss Doublefinger, also called Zala, grows spikes from her body with the Spike-Spike Fruit. Read about her role in Baroque Works and fight with Nami.",
+    "alias": "Miss Doublefinger",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Arabasta",
+    "fruitId": "b7a64514-0ee0-4cae-8905-71db75fd23f9",
+    "about": "Zala is the Baroque Works agent known as Miss Doublefinger. She runs Spiders Cafe under the name Paula. Her Spike-Spike Fruit lets her grow sharp spikes from almost any part of her body.",
+    "story": [
+      "Miss Doublefinger joins the Officer Agents at Rain Dinners to hear the final plan for Arabasta. In Alubarna, she pursues Nami while Mr. 1 fights Zoro.",
+      "Nami's new Clima-Tact initially seems more like a party trick than a weapon. Miss Doublefinger injures her while she tries to understand it. Nami eventually uses the tool's weather effects and Tornado Tempo to defeat her, winning through improvisation rather than physical strength."
+    ],
+    "details": [
+      "Her real name is Zala, while Paula is the name she uses at the cafe.",
+      "Spikes can grow from her hair as well as from her skin.",
+      "Her agent name refers to New Year's Day, with two raised fingers representing January 1."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Zala",
+    "fruitName": "Spike-Spike Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Toge Toge no Mi",
+    "portrait": "/images/characters/b7a64514-0ee0-4cae-8905-71db75fd23f9.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ザラ",
+    "romanizedName": "Zara",
+    "firstAppearance": "Chapter 155; Episode 103",
+    "birthday": "July 30th",
+    "age": "26",
+    "height": "187 cm",
+    "origin": "Grand Line",
+    "background": [
+      "Spiders Cafe serves as a meeting place for Baroque Works agents. As its owner, Zala has a civilian role alongside her work as an assassin. Her name Paula keeps that side of her life separate from her codename.",
+      "She is partnered with Mr. 1, making their team one of the highest-ranked pairs in the organization. Both can turn their bodies into weapons. His steel blades and her spikes make close combat dangerous even before either of them begins a formal attack."
+    ],
+    "personality": [
+      "Miss Doublefinger usually speaks and moves calmly. She does not copy the loud behavior of some of the other agents. At Spiders Cafe, she is the one who stops Mr. 1 and Bon Clay from letting an argument become a longer fight.",
+      "In battle, that calm can turn into overconfidence. She looks at Nami's lack of obvious fighting experience and expects to have little trouble with her. She is willing to press an injured opponent instead of giving them room to recover."
+    ],
+    "combat": [
+      "She can produce spikes from her hands, feet, hair, and other body parts. They can pierce a target directly or punish someone who tries to grab or strike her. She can also form needles and use them on her own muscles to strengthen her arms.",
+      "The power gives her many attack angles, but she still has to reach her opponent. Nami's weather-based tools create a problem she cannot solve simply by growing more spikes. Her body is also still vulnerable when a trick catches her before she can defend herself."
+    ],
+    "relationships": [
+      {
+        "name": "Mr. 1",
+        "text": "Her partner in Baroque Works. Their teamwork brings them into the same confrontation with Zoro and Nami."
+      },
+      {
+        "name": "Nami",
+        "text": "An opponent she underestimates. The fight makes Nami learn a new weapon while already under pressure."
+      }
+    ]
+  },
+  {
+    "slug": "drophy",
+    "name": "Drophy",
+    "seoName": "Miss Merry Christmas (Drophy)",
+    "seoDescription": "Miss Merry Christmas, also called Drophy, uses mole powers to tunnel beneath her enemies. Read about her work with Mr. 4 and battle in Arabasta.",
+    "alias": "Miss Merry Christmas",
+    "group": "Baroque Works",
+    "role": "Officer agent",
+    "debutArc": "Arabasta",
+    "fruitId": "2e586e6d-aa53-4600-8210-aba727e82b7a",
+    "about": "Drophy is Miss Merry Christmas of Baroque Works. She works with Mr. 4 and his gun-dog, Lassoo. Her Mole-Mole Fruit lets her dig tunnels and attack from beneath the ground.",
+    "story": [
+      "Miss Merry Christmas fights Usopp and Chopper outside Alubarna. She drags Usopp through the tunnels and claims that Luffy is dead. Usopp refuses to accept that his captain's dream can be dismissed, even after taking a severe beating.",
+      "Usopp and Chopper eventually use deception and the layout of the battlefield against the agents. Mr. 4's strength becomes a danger to his own side, and the pair are defeated. It is one of the crew's clearest early wins built on two weaker-looking members working together."
+    ],
+    "details": [
+      "Her birthday is December 25, matching her codename.",
+      "Her hybrid form is small enough to use the tunnels she digs.",
+      "The team uses baseball equipment for attacks, even though its explosives are anything but sporting."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Drophy",
+    "fruitName": "Mole-Mole Fruit",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Mogu Mogu no Mi",
+    "portrait": "/images/characters/2e586e6d-aa53-4600-8210-aba727e82b7a.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ドロフィー",
+    "romanizedName": "Dorofī",
+    "firstAppearance": "Chapter 160; Episode 103",
+    "birthday": "December 25th",
+    "age": "49",
+    "height": "156 cm",
+    "origin": "Grand Line",
+    "background": [
+      "Miss Merry Christmas is an Officer Agent whose team relies on a shared battlefield. She digs the tunnels, Mr. 4 strikes the explosive balls, and Lassoo supplies them. Their abilities make more sense together than any one of them does alone.",
+      "Her lower number does not tell the whole story of the team's strength. Mr. 4 is physically powerful but slow to react. She supplies the orders and movement that keep their attacks going. Her impatience with him is partly a result of that difference in pace."
+    ],
+    "personality": [
+      "Drophy speaks quickly and gets irritated when other people take too long. She often shortens words because even saying a full sentence seems to try her patience. Mr. 4's slow answers make him a frequent target of her complaints.",
+      "She is cruel to opponents she thinks are helpless. She uses insults and threats alongside her physical attacks. That makes her an especially bad match for Usopp when she begins mocking his captain and his belief in the crew."
+    ],
+    "combat": [
+      "The Mole-Mole Fruit gives her a full mole form and a hybrid form with strong digging claws. She can move underground and break through the surface where someone is standing. The tunnels also give her team several routes to use during a fight.",
+      "She can grab a person and drag them through the ground toward Mr. 4's bat. The method is dangerous, but it depends on coordination and on knowing where the other fighters are. Her own tunnel system can work against her if an opponent tricks her about their position."
+    ],
+    "relationships": [
+      {
+        "name": "Mr. 4",
+        "text": "Her partner. She directs their attacks and constantly pushes him to move or answer faster."
+      },
+      {
+        "name": "Lassoo",
+        "text": "The living gun that provides their explosive ammunition. His sneezes keep the team's attack supplied."
+      },
+      {
+        "name": "Usopp and Chopper",
+        "text": "The pair they fight in Alubarna. The battle tests whether their teamwork can survive Drophy's pressure and taunts."
+      }
+    ]
+  },
+  {
+    "slug": "lassoo",
+    "name": "Lassoo",
+    "seoDescription": "Lassoo is Mr. 4's gun, brought to life by a dachshund Devil Fruit. Read about this unusual Baroque Works partner and his explosive baseball attacks.",
+    "alias": "Mr. 4's gun-dog",
+    "group": "Baroque Works",
+    "role": "Mr. 4's weapon",
+    "debutArc": "Arabasta",
+    "fruitId": "68f5d3b9-6c32-4e54-bdb0-a14a59467942",
+    "about": "Lassoo is a gun that gained a dachshund's body after eating a Zoan fruit. He belongs to Mr. 4. He fires explosive balls from his mouth, often while sneezing.",
+    "story": [
+      "Lassoo appears with Mr. 4 and Miss Merry Christmas during their fight with Usopp and Chopper. His ammunition keeps the pair moving as the agents attack from several positions.",
+      "Once Usopp and Chopper begin coordinating their own tricks, the agents lose control of the encounter. Lassoo's part in the battle ends with his team's defeat. Arabasta does not explain how he first became a dog or show the process being repeated."
+    ],
+    "details": [
+      "His fruit model is a dachshund, a short-legged hunting dog.",
+      "He is both a living animal and a usable gun.",
+      "His ammunition is timed to explode, which matters as much as the force of Mr. 4's swing."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Lassoo",
+    "fruitName": "Mutt-Mutt Fruit",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Inu Inu no Mi, Model: Dachshund",
+    "portrait": "/images/characters/68f5d3b9-6c32-4e54-bdb0-a14a59467942.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ラッスー",
+    "romanizedName": "Rassū",
+    "firstAppearance": "Chapter 160; Episode 103",
+    "birthday": "January 4th",
+    "age": "",
+    "height": "",
+    "origin": "",
+    "background": [
+      "Lassoo is unusual even among Devil Fruit users. He was an object before he became an animal. His case introduces the idea that a Zoan fruit can give an inanimate thing a living creature's body and behavior.",
+      "The exact method used to feed him the fruit is not explained in Arabasta. What the crew encounters is the result: a dog that behaves like a pet while still doing the work of a firearm. The story treats both sides of him as real."
+    ],
+    "personality": [
+      "He follows Mr. 4's team like a loyal dog. He does not give speeches or explain a plan; his behavior is shown through reactions, movement, and repeated sneezing. His animal traits remain visible even during a fight.",
+      "That makes him a strange contrast to the agents using him. Mr. 4 and Miss Merry Christmas discuss killing opponents, while Lassoo often looks like a sick pet in the middle of their operation. He is dangerous without needing to understand the plan in the way they do."
+    ],
+    "combat": [
+      "His Dog-Dog Fruit, Model: Dachshund gives him an animal form without removing his function as a gun. He spits or sneezes timed explosive balls that resemble baseballs. Mr. 4 uses his enormous bat to send them toward an opponent.",
+      "The balls can travel through Miss Merry Christmas's tunnels, giving the team attack routes above and below ground. Lassoo is therefore part of a system, not just an independent attacker. An opponent who disrupts the timing or tricks the other agents can make that system much less reliable."
+    ],
+    "relationships": [
+      {
+        "name": "Mr. 4",
+        "text": "His owner and the man who turns his ammunition into long-range attacks with a bat."
+      },
+      {
+        "name": "Miss Merry Christmas",
+        "text": "The team's organizer. Her tunnels give his explosive balls more ways to reach a target."
+      },
+      {
+        "name": "Chopper",
+        "text": "A doctor and animal who finds the idea of a gun with a cold difficult to make sense of."
+      }
+    ]
+  },
+  {
+    "slug": "pell",
+    "name": "Pell",
+    "seoDescription": "Pell is a royal guard who protects Vivi and Arabasta. Read about his Falcon Devil Fruit, loyalty to the kingdom, and role in the battle for Alubarna.",
+    "alias": "Pell the Falcon",
+    "group": "Kingdom allies",
+    "role": "Arabasta royal guard",
+    "debutArc": "Arabasta",
+    "fruitId": "f4b17f70-5793-469e-b8b5-7426dd80ff1b",
+    "about": "Pell is one of Arabasta's two leading royal guards. He serves King Cobra and has watched over Vivi since she was a child. His falcon Zoan gives the guard a fighter who can reach places others cannot.",
+    "story": [
+      "Pell scouts Rainbase and tries to protect Vivi from Baroque Works. Robin defeats him by restraining him with her fruit. He later returns to help as the fighting reaches Alubarna.",
+      "When the crew finds the bomb in the clock tower, stopping its cannon is not enough: it has a timer as well. Pell carries the bomb high above the city so it explodes away from the crowd. The story later shows that he survived, though the people in the capital initially believe he died."
+    ],
+    "details": [
+      "His falcon form can carry another person.",
+      "His facial markings are part of his usual appearance in human form.",
+      "His powers and Chaka's are tied to Arabasta's animal guardians."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Pell",
+    "fruitName": "Tweet-Tweet Fruit",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Tori Tori no Mi, Model: Falcon",
+    "portrait": "/images/characters/f4b17f70-5793-469e-b8b5-7426dd80ff1b.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ペル",
+    "romanizedName": "Peru",
+    "firstAppearance": "Chapter 155; Episode 91",
+    "birthday": "August 23rd",
+    "age": "33",
+    "height": "189 cm",
+    "origin": "Grand Line (Arabasta Kingdom)",
+    "background": [
+      "Pell shares responsibility for the royal guard with Chaka. Their falcon and jackal powers reflect guardian figures associated with Arabasta. Their work includes protecting the royal family, gathering information, and responding to threats across the kingdom.",
+      "His long service makes his relationship with Vivi more personal than a simple assignment. He remembers her childhood and has seen her willingness to rush into danger. His duty is to the people and the family he knows, not only to a palace or a title."
+    ],
+    "personality": [
+      "Pell is usually calm and formal. He takes orders seriously but will explain a practical problem when a plan would put the kingdom at risk. He does not need to agree with every decision to remain loyal to Cobra.",
+      "He can be protective and stern with Vivi because he knows how much danger her choices can involve. At the same time, he understands why she feels responsible for the country. He treats that concern as something real rather than a child's passing wish."
+    ],
+    "combat": [
+      "His bird Zoan lets him use a human body, a falcon body, or a hybrid form. Flight makes him useful for scouting, carrying someone to safety, and approaching an enemy from above. His talons give him a way to attack while airborne.",
+      "Being able to fly is a major advantage in a city or across a wide desert. It does not protect him from every kind of power. An enemy who can restrain his limbs without following him into the air can take away the movement he relies on."
+    ],
+    "relationships": [
+      {
+        "name": "Vivi",
+        "text": "The princess he has protected since childhood. Their shared history explains how much her safety matters to him."
+      },
+      {
+        "name": "Cobra",
+        "text": "The king he serves. Pell is trusted with scouting and with practical advice during the crisis."
+      },
+      {
+        "name": "Chaka",
+        "text": "His fellow commander. They divide work between protecting the capital and checking threats elsewhere."
+      }
+    ]
+  },
+  {
+    "slug": "chaka",
+    "name": "Chaka",
+    "seoDescription": "Chaka is a royal guard who stands beside King Cobra and Vivi. Read about his Jackal Devil Fruit and efforts to protect Arabasta during the civil war.",
+    "alias": "Chaka the Jackal",
+    "group": "Kingdom allies",
+    "role": "Arabasta royal guard",
+    "debutArc": "Arabasta",
+    "fruitId": "3e70324a-3104-45fc-a4aa-7fc6c317fcf3",
+    "about": "Chaka commands Arabasta's royal guards alongside Pell. He is a swordsman with a jackal Zoan. He remains in the capital as the conflict between the rebels and the royal army grows.",
+    "story": [
+      "Chaka learns from Vivi's message that Crocodile is behind the crisis. As the rebel army approaches, he prepares the royal forces and searches for Cobra, who has disappeared from the palace.",
+      "He eventually confronts Crocodile after the Warlord reveals his intentions. Chaka uses his jackal form and sword but cannot overcome the sand defense. He is defeated, while the fight to stop the bomb and end the war continues around the capital."
+    ],
+    "details": [
+      "His full name is simply Chaka.",
+      "His fruit's jackal model distinguishes it from Lassoo's dachshund model.",
+      "He and Pell are both commanders rather than one serving as the other's ordinary subordinate."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Chaka",
+    "fruitName": "Dog-Dog Fruit, Model: Jackal",
+    "fruitType": "Zoan",
+    "fruitRomanizedName": "Inu Inu no Mi, Model: Jackal",
+    "portrait": "/images/characters/3e70324a-3104-45fc-a4aa-7fc6c317fcf3.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "チャカ",
+    "romanizedName": "Chaka",
+    "firstAppearance": "Chapter 155; Episode 91",
+    "birthday": "April 26th",
+    "age": "39",
+    "height": "213 cm",
+    "origin": "Grand Line (Arabasta Kingdom)",
+    "background": [
+      "Chaka's work places him close to King Cobra and the defense of Alubarna. As one of the guard's two commanders, he has to respond to threats while considering what his soldiers and the public believe is happening.",
+      "Arabasta's crisis makes that duty difficult. Reports of the king's behavior seem to clash with the ruler Chaka knows. The army and the rebels are being pushed toward a battle, but acting on bad information could help cause the disaster he is trying to prevent."
+    ],
+    "personality": [
+      "Chaka is serious and direct. He is willing to fight for the country, but he is also expected to hold an army together. His anger at an enemy does not remove the need to think about everyone standing behind him.",
+      "His loyalty to Cobra comes from knowing him, not simply obeying the person with a crown. That matters when Baroque Works uses a copied version of the king to damage his reputation. Chaka has to separate what he sees from what he knows about the man."
+    ],
+    "combat": [
+      "His Dog-Dog Fruit, Model: Jackal lets him take a full jackal form or a hybrid form. The transformation adds animal strength and movement to his existing swordsmanship. He continues using a sword rather than relying only on claws and teeth.",
+      "The fruit does not solve the problem of an enemy who cannot be struck normally. A strong physical attack can still be useless against a Logia body. Chaka's fight with Crocodile shows the gap between defending a city from ordinary attackers and facing a Warlord with a well-practiced power."
+    ],
+    "relationships": [
+      {
+        "name": "Cobra",
+        "text": "His king and the person whose actions he is trying to understand while false reports spread."
+      },
+      {
+        "name": "Vivi",
+        "text": "The princess whose return brings information about the conspiracy and a chance to stop the war."
+      },
+      {
+        "name": "Pell",
+        "text": "His fellow commander. Chaka leads forces in the capital while Pell often handles work that requires flight."
+      }
+    ]
+  },
+  {
+    "slug": "hina",
+    "name": "Hina",
+    "seoDescription": "Hina is a Marine captain who traps enemies with the Bind-Bind Fruit. Read about her powers, ties to Smoker, and pursuit of the Straw Hats after Arabasta.",
+    "alias": "Black Cage Hina",
+    "group": "Marines",
+    "role": "Marine captain",
+    "debutArc": "Arabasta",
+    "fruitId": "b0c79594-e20a-4fc7-990e-f8d11d64473c",
+    "about": "Hina is a Marine captain known as Black Cage Hina. She uses the Bind-Bind Fruit to restrain people with iron. She and Smoker know each other well, though they handle their duties differently.",
+    "story": [
+      "Smoker calls Hina's unit into the Arabasta operation as Baroque Works begins to collapse. Afterward, she forms a blockade to capture the Straw Hats and the remaining agents who are trying to leave.",
+      "Bon Clay's crew disguises itself as the Straw Hats and draws her attention away from the Going Merry. Hina defeats and captures them, but the real crew escapes. When she reports the outcome to Smoker, she notices that he seems pleased by their failure to catch Luffy."
+    ],
+    "details": [
+      "Her first manga appearance is in a cover story, not a main chapter scene.",
+      "Her name can be heard in the way she states her own reactions.",
+      "Her birthday is March 3, the date of Japan's Hinamatsuri festival."
+    ],
+    "source": "https://onepiece.fandom.com/wiki/Hina",
+    "fruitName": "Bind-Bind Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Ori Ori no Mi",
+    "portrait": "/images/characters/b0c79594-e20a-4fc7-990e-f8d11d64473c.webp",
+    "researchedOn": "2026-10-25",
+    "japaneseName": "ヒナ",
+    "romanizedName": "Hina",
+    "firstAppearance": "Chapter 171 (cover); Episode 127",
+    "birthday": "March 3rd",
+    "age": "32",
+    "height": "181 cm",
+    "origin": "West Blue",
+    "background": [
+      "Hina trained in the Marines alongside Smoker. She is more comfortable with rules and military procedure, while he is more openly difficult with his superiors. Their friendship survives that difference, and she is familiar with the trouble his attitude can cause.",
+      "She commands the Black Cage Corps. Her unit is built around trapping ships and stopping people from escaping, which fits the restraining power of her fruit. Fullbody and Jango are among the men serving under her during Arabasta."
+    ],
+    "personality": [
+      "Hina is controlled, strict, and quick to notice when someone is wasting her time. She often refers to herself by name when stating how she feels. The habit gives her dry comments a recognizable rhythm without making her less serious about the job.",
+      "She has more patience for unusual subordinates than her manner first suggests. She accepts Fullbody and Jango into her unit, and she continues dealing with Smoker despite his arguments with authority. Her tolerance has limits when someone tricks her during an operation."
+    ],
+    "combat": [
+      "The Bind-Bind Fruit lets her pass her limbs through someone and leave iron restraints around them. A person can be caught by trying to move past her, so closing the distance is risky even if they expect a normal hand-to-hand fight.",
+      "At sea, her ships use iron spears and a coordinated formation to restrict an enemy vessel's movement. The same idea runs through both methods: take away the opponent's route out before they can use it. Her blockade still depends on correctly identifying which ship she needs to chase."
+    ],
+    "relationships": [
+      {
+        "name": "Smoker",
+        "text": "An old Marine friend. She understands his character well enough to recognize when he quietly approves of an outcome he is supposed to oppose."
+      },
+      {
+        "name": "Fullbody and Jango",
+        "text": "Subordinates who asked to join her unit. Their admiration for her does not stop her from expecting them to work."
+      },
+      {
+        "name": "Bon Clay",
+        "text": "An agent whose disguise power creates a problem her ships and restraints cannot solve through force alone."
+      }
+    ]
+  }
+]
