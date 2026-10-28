@@ -157,7 +157,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .fullPageMenu {
         display: flex;
@@ -316,7 +316,7 @@
     margin-block: 0;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
     .compactNav { height: 8px; padding: 0; }
     .compactNav .mobileMenuButton { top: auto; right: 20px; bottom: 20px; width: 32px; height: 32px; padding: 6px; }
     .compactNav .mobileMenuButton svg { width: 20px; height: 20px; }

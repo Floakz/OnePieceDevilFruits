@@ -1,0 +1,97 @@
+.page { display: block; place-items: normal; width: 90vw; max-width: 1600px; margin: 52px auto 70px; }
+.intro { max-width: 850px; margin: 0 auto 42px; text-align: center; }
+.intro h1 { margin: 20px 0 30px; font-size: clamp(3.5rem, 7vw, 6.25rem); line-height: .95; }
+.intro p { color: #d3e2ff; font-size: 1rem; line-height: 1.7; }
+.intro small { display: block; margin-top: 16px; color: #b9cef3; font-size: .85rem; }
+.filters { display: flex; align-items: flex-end; gap: 18px; padding: 24px; margin: 0 0 95px; border: 1px solid #3876cc; border-radius: 10px; background: #01245f; }
+.search, .groupSelect { display: flex; flex-direction: column; gap: 8px; font-size: .85rem; color: #d3e2ff; font-weight: 600; }
+.search { flex: 1; }
+.groupSelect { width: 230px; }
+.filters input, .filters select { width: 100%; min-height: 46px; padding: 10px 12px; border: 1px solid #4d78a5; border-radius: 7px; color: #fff; background: #011a48; font: inherit; font-size: .9rem; }
+.filters input::placeholder { color: #9bb7ea; }
+.count { margin-bottom: 12px; color: #b9cef3; font-size: .85rem; white-space: nowrap; }
+.clear { min-height: 46px; border: 0; background: none; color: #f8de3c; text-decoration: underline; cursor: pointer; font: inherit; font-size: .85rem; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 20px; row-gap: 85px; }
+.characterCard { min-width: 0; min-height: 410px; }
+.cardInfo { min-width: 0; flex: 1; }
+.characterCard :global(.titleFruit) { font-size: clamp(1.6rem, 2.4vw, 2rem); }
+.characterCard :global(.fruitNames) { font-size: .9rem; line-height: 1.4; }
+.cardAlias { margin-top: 12px; font-size: .85rem; color: #f8de3c; line-height: 1.5; }
+.cardAbout { font-size: .95rem; line-height: 1.75; }
+.cardPortrait { flex-shrink: 0; }
+.cardTags { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.cardTags small { display: block; font-size: .62rem; text-transform: uppercase; color: #9bb7ea; margin-bottom: 6px; }
+.cardTags span { display: block; font-size: .7rem; line-height: 1.4; font-weight: 700; text-transform: uppercase; overflow-wrap: anywhere; }
+.cardTags > div:nth-child(2) span { font-size: .65rem; white-space: nowrap; }
+.empty { padding: 45px 20px; text-align: center; }
+.empty h1 { font-size: 2.5rem; line-height: 1.2; }
+.empty p { color: #b9cef3; margin: 15px 0 20px; }
+.button { display: inline-flex; justify-content: center; align-items: center; gap: 22px; width: fit-content; padding: 12px 20px; border: 1px solid #f8de3c; border-radius: 7px; color: #001741; background: #f8de3c; font: inherit; font-size: .9rem; font-weight: 700; text-decoration: none; cursor: pointer; }
+.button:hover { background: #fff1a1; }
+.page a:focus-visible, .page input:focus-visible, .page select:focus-visible, .page button:focus-visible, .detailPage a:focus-visible, .spoilers summary:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
+.detailPage { place-items: normal; }
+.profileAlias { margin-top: 18px; font-size: 1rem; color: #f8de3c; }
+.overview { color: #d3e2ff; font-size: 1rem; line-height: 1.9; text-align: left; }
+.facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin-top: 24px; text-align: left; }
+.facts > div { min-width: 0; padding: 14px; border-radius: 6px; background: #15479c; border: 1px solid #306ab1; }
+.facts dt { color: #b9cef3; font-size: .75rem; margin-bottom: 5px; }
+.facts dd { margin: 0; font-size: .9rem; font-weight: 600; overflow-wrap: anywhere; }
+.textSection { text-align: left; }
+.textSection > p, .textSection dd, .textSection li, .spoilerBody p { color: #d3e2ff; font-size: 1rem; line-height: 1.9; }
+.textSection > p + p, .spoilerBody p + p { margin-top: 18px; }
+.textSection h2, .spoilerBody h2 { font-size: 1.4rem; }
+.powerPanel { display: flex; align-items: flex-start; gap: 28px; padding: 32px; border: 1px solid #f8de3c; border-radius: 10px; background: rgba(1, 26, 72, .45); }
+.powerPanel > img { width: 110px; height: 110px; object-fit: contain; flex-shrink: 0; }
+.powerPanel .fruitName { color: #fff; font-size: 1.1rem; font-weight: 700; margin-bottom: 20px; }
+.fruitName span { display: block; font-size: .85rem; font-weight: 400; color: #b9cef3; margin-top: 4px; }
+.powerPanel .button { margin-top: 22px; }
+.fruitNote { display: block; margin-top: 14px; color: #b9cef3; font-size: .8rem; }
+.relationships { display: grid; gap: 24px; }
+.relationships > div { border-left: 3px solid #f8de3c; padding-left: 20px; }
+.relationships dt { color: #fff; font-size: 1.05rem; font-weight: 700; margin-bottom: 5px; }
+.relationships dd { margin: 0; }
+.trivia { padding-left: 22px; }
+.trivia li + li { margin-top: 12px; }
+.trivia li::marker { color: #f8de3c; }
+.spoilers { width: 100%; margin-top: 40px; border: 1px solid #f8de3c; border-radius: 10px; background: #011a48; scroll-margin-top: 100px; }
+.spoilers summary { padding: 24px 28px; cursor: pointer; color: #f8de3c; font-size: 1.15rem; font-weight: 700; }
+.spoilers summary small { display: block; margin-top: 6px; margin-left: 22px; color: #b9cef3; font-size: .8rem; font-weight: 400; }
+.spoilers[open] summary { border-bottom: 1px solid #305083; }
+.spoilerBody { padding: 28px; }
+.spoilerBody h2 { margin-bottom: 20px; }
+.relatedGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.relatedCard { overflow: hidden; display: flex; flex-direction: column; border: 1px solid #1869ff; border-radius: 12px; background: #011a48; color: #fff; text-decoration: none; }
+.relatedCard:hover { border-color: #f8de3c; }
+.relatedCard > img { width: 100%; height: 240px; object-fit: cover; object-position: 50% 15%; border-bottom: 1px solid #1869ff; }
+.relatedCard > div { padding: 22px; text-align: center; }
+.relatedCard h3 { font-size: 1.25rem; line-height: 1.2; text-transform: uppercase; margin-bottom: 12px; }
+.relatedCard p { font-size: .9rem; color: #b9cef3; margin-bottom: 8px; }
+.relatedCard span { font-size: .85rem; color: #f8de3c; }
+@media (max-width: 1250px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 850px) {
+    .page { margin-top: 40px; }
+    .filters { flex-wrap: wrap; padding: 20px; gap: 14px; }
+    .search { flex-basis: 100%; }
+    .groupSelect { flex: 1; min-width: 150px; }
+    .count { font-size: .8rem; }
+    .grid { grid-template-columns: 1fr; }
+    .characterCard :global(.titleFruit) { font-size: clamp(1.65rem, 5vw, 2rem); }
+    .cardAbout { font-size: .95rem; }
+    .powerPanel { display: block; padding: 24px; }
+    .powerPanel > img { display: block; margin: 0 auto 24px; }
+    .relatedGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+    .relatedCard > img { height: 200px; }
+    .relatedCard > div { padding: 18px 12px; }
+    .relatedCard h3 { font-size: 1.1rem; }
+}
+@media (max-width: 480px) {
+    .intro h1 { font-size: 3.5rem; }
+    .intro small { font-size: .8rem; }
+    .characterCard :global(.fruitNames) { font-size: .8rem; }
+    .cardTags { gap: 8px; }
+    .cardTags span { font-size: .62rem; }
+    .cardInfo { padding-inline: 15px; }
+    .relatedGrid { grid-template-columns: 1fr; }
+    .relatedCard > img { height: 250px; }
+    .spoilers summary, .spoilerBody { padding: 22px; }
+}

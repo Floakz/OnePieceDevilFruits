@@ -1,8 +1,9 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import characterDataPlugin from './scripts/character-data.mjs'
 
 export default defineConfig({
-    plugins: [react()],
+    plugins: [characterDataPlugin(), react()],
     // server: {
     //     host: true,                       // ouvir em 0.0.0.0
     //     allowedHosts: [
