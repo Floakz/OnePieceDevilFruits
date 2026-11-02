@@ -6,7 +6,7 @@ import CatalogState from '../../Components/CatalogState.jsx';
 import useFruits from '../../hooks/useFruits.js';
 import fruitDetails from '../../lib/fruits/fruitsExpandedInfo.js';
 import { slugify } from '../../lib/slugify.js';
-import { GUESSER_PAGE, MAX_GUESSES, GUESSER_CLUES, CLUE_STATUS, CLUE_SYMBOL, getGuesserCatalog, searchGuesserFruits, normalizeGuesserQuery, compareGuesserFruits, clueDescription } from '../../lib/fruitGuesser.js';
+import { GUESSER_PAGE, GUESSER_PREVIEW_FRUIT_ID, MAX_GUESSES, GUESSER_CLUES, CLUE_STATUS, CLUE_SYMBOL, getGuesserCatalog, searchGuesserFruits, normalizeGuesserQuery, compareGuesserFruits, clueDescription } from '../../lib/fruitGuesser.js';
 import { loadGuesserProgress, saveGuesserProgress, discardGuesserRun, startGuesserRun, recordGuesserGuess, getGuesserStats } from '../../lib/fruitGuesserHistory.js';
 import FruitGuesserRecords from './FruitGuesserRecords.jsx';
 import styles from './FruitGuesser.module.css';
@@ -288,7 +288,7 @@ export default function FruitGuesser() {
     const [storageAvailable, setStorageAvailable] = useState(true);
     const [view, setView] = useState('intro');
     const [runId, setRunId] = useState(null);
-    const previewFruit = catalog.find(fruit => fruit.name === 'Flame-Flame Fruit') || catalog[0];
+    const previewFruit = catalog.find(fruit => fruit.id === GUESSER_PREVIEW_FRUIT_ID) || catalog[0];
     const activeRun = progress.currentRun?.id === runId ? progress.currentRun : progress.recentRuns.find(run => run.id === runId);
     const started = view === 'game' && activeRun;
 

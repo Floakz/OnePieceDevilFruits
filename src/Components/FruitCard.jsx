@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './fruitcardstyle.css';
 import { slugify } from '../lib/slugify.js';
 import FruitImage from './FruitImage.jsx';
+import { GUESSER_PREVIEW_FRUIT_ID } from '../lib/fruitGuesser.js';
 
 export default function FruitCard(props) {
 
@@ -19,12 +20,20 @@ export default function FruitCard(props) {
         >
             <div className='info-wrapper'>
                 <div>
-                    <FruitImage
+                    {props.silhouette ? <span className="fruitSilhouetteFrame">
+                        <FruitImage
+                            fruit={props}
+                            src={`/images/fruits/${GUESSER_PREVIEW_FRUIT_ID}.webp`}
+                            loading="lazy"
+                            className="fruitSilhouette"
+                            alt={`${props.name} silhouette`}
+                        />
+                    </span> : <FruitImage
                         fruit={props}
                         loading="lazy"
-                        className='fruitImg'
+                        className="fruitImg"
                         alt={`${props.name} picture`}
-                    />
+                    />}
                     <h2 className='titleFruit'>{props.name}</h2>
                     {(props.japaneseName || props.romanizedName) && (
                         <div className='fruitNames' aria-label='Original fruit name'>

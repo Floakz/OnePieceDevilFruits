@@ -3,6 +3,7 @@ import { useLocation, useNavigate, useParams, useSearchParams } from 'react-rout
 import Header from '../../Components/header/Header.jsx';
 import Footer from '../../Components/footer/footer.jsx';
 import Seo from '../../Components/Seo.jsx';
+import SearchBar from '../../Components/searchBar/searchBar.jsx';
 import CharacterCard from './CharacterCard.jsx';
 import FruitPagination from '../../Components/FruitPagination.jsx';
 import characterIndex from '../../lib/characterIndex.js';
@@ -17,7 +18,7 @@ export default function CharactersPage() {
     const navigate = useNavigate();
     const query = params.get('q') || '';
     const group = CHARACTER_GROUPS.includes(params.get('group')) ? params.get('group') : 'all';
-    const { visible, total, totalPages, currentPage, rangeStart, rangeEnd } = paginateCharacters(characterIndex, { query, group, page });
+    const { visible, totalPages, currentPage } = paginateCharacters(characterIndex, { query, group, page });
     const pagePath = characterPageUrl(currentPage);
     const queryParams = { ...(query ? { q: query } : {}), ...(group !== 'all' ? { group } : {}) };
 
@@ -39,21 +40,20 @@ export default function CharactersPage() {
             <div className={styles.intro}>
                 <h1>One Piece<br /><span className="colorYellow">Characters</span></h1>
                 <p>Background, abilities, and stories from East Blue to Arabasta.</p>
-                <small>{characterIndex.length} Devil Fruit users. {CHARACTER_SCOPE}</small>
+                <p className={styles.progressNotice}>In progress - Currently added until Arabasta</p>
+                {/* <small>{characterIndex.length} Devil Fruit users. {CHARACTER_SCOPE}</small> */}
             </div>
             <section className={styles.filters} aria-label="Character filters">
-                <label className={styles.search} htmlFor="character-search">Find a character
-                    <input id="character-search" type="search" placeholder="Name, alias, or Devil Fruit…"
-                        value={query} onChange={event => changeFilter('q', event.target.value)} />
-                </label>
-                <label className={styles.groupSelect} htmlFor="character-group">Crew or group
+                <SearchBar mode="characters" query={query} group={group}
+                    onQueryChange={value => changeFilter('q', value)} />
+                {/* <label className={styles.groupSelect} htmlFor="character-group">Crew or group
                     <select id="character-group" value={group} onChange={event => changeFilter('group', event.target.value)}>
                         <option value="all">All groups</option>
                         {CHARACTER_GROUPS.map(group => <option key={group}>{group}</option>)}
                     </select>
                 </label>
-                <p className={styles.count} role="status">{total === 1 ? '1 character' : total ? `${rangeStart}–${rangeEnd} of ${total} characters` : '0 characters'}</p>
-                {(query || group !== 'all') && <button className={styles.clear} type="button" onClick={() => navigate('/characters', { replace: true })}>Clear filters</button>}
+                <p className={styles.count} role="status">{total === 1 ? '1 character' : total ? `${rangeStart}–${rangeEnd} of ${total} characters` : '0 characters'}</p> */}
+                {/* {(query || group !== 'all') && <button className={styles.clear} type="button" onClick={() => navigate('/characters', { replace: true })}>Clear filters</button>} */}
             </section>
             <div id="character-list" className={styles.grid}>
                 {visible.map(profile => <CharacterCard key={profile.slug} profile={profile} />)}

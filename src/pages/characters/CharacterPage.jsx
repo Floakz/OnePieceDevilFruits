@@ -7,10 +7,12 @@ import FruitImage from '../../Components/FruitImage.jsx';
 import CharacterPortrait from './CharacterPortrait.jsx';
 import ProfileContent from './ProfileContent.jsx';
 import characterIndex from '../../lib/characterIndex.js';
+import { getFruitImages } from '../../lib/imagesMap.js';
 import { getCharacterSeo } from '../../lib/characterSeo.js';
 import useCharacterProfile from '../../hooks/useCharacterProfile.js';
 import { slugify } from '../../lib/slugify.js';
 import fruitStyles from '../fruits/expanded/expandedFruit.module.css';
+import FruitGallery from '../fruits/expanded/FruitGallery.jsx';
 import styles from './characters.module.css';
 
 export default function CharacterPage() {
@@ -18,6 +20,7 @@ export default function CharacterPage() {
     const { hash } = useLocation();
     const { entry, profile, status, retry } = useCharacterProfile(slug);
     const related = entry ? characterIndex.filter(other => other.slug !== slug && other.group === entry.group).slice(0, 3) : [];
+    const galleryImages = profile ? getFruitImages(profile.fruitId) : [];
 
     useEffect(() => {
         if (!hash || !profile) return;
@@ -56,21 +59,27 @@ export default function CharacterPage() {
                                     ['Group', profile.group], ['Role', profile.role], ['Debut arc', profile.debutArc],
                                     ['First appearance', profile.firstAppearance], ['Age during Arabasta', profile.age],
                                     ['Birthday', profile.birthday], ['Height', profile.height], ['Devil Fruit', profile.fruitName],
-                                ].filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}
+                                ].filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>
+                                    {label === 'Devil Fruit'
+                                        ? <Link className={styles.fruitFactLink} to={`/fruit/${slugify(profile.fruitName)}`}>{value}</Link>
+                                        : value}
+                                </dd></div>)}
                             </dl>
                         </div>
                         <div className={fruitStyles.imgBox}><CharacterPortrait profile={profile} className={fruitStyles.userImg} /></div>
                     </div>
                 </section>
-               
+
                 <ProfileContent id="background" title="Background" paragraphs={profile.background} />
                 <ProfileContent id="personality" title="Personality" paragraphs={profile.personality} />
                 <section id="abilities" className={`${fruitStyles.sectionWrapper} ${styles.powerPanel}`} aria-labelledby="abilities-title">
-                    <FruitImage fruit={{ id: profile.fruitId, name: profile.fruitName }} loading="lazy" />
-                    <div className={styles.textSection}>
-                        <h2 id="abilities-title" className={fruitStyles.sectionTitle}>Abilities and fighting style</h2>
+                    <FruitImage className={styles.powerPanelImage} fruit={{ id: profile.fruitId, name: profile.fruitName }} loading="lazy" />
+                    <div className={styles.fruitInfo}>
+                        <h2 id="abilities-title" className={fruitStyles.sectionTitle}>Devil Fruit</h2>
                         <p className={styles.fruitName}>{profile.fruitName}<span>{profile.fruitRomanizedName} · {profile.fruitType}</span></p>
-                        {profile.combat.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                        {/* {profile.combat.map(paragraph => <p key={paragraph}>{paragraph}</p>)} */}
+                    </div>
+                    <div className={styles.fruitActions}>
                         <Link className={styles.button} to={`/fruit/${slugify(profile.fruitName)}`}>View fruit details <span aria-hidden="true">→</span></Link>
                         <small className={styles.fruitNote}>Fruit pages may include information from later arcs.</small>
                     </div>
@@ -81,6 +90,10 @@ export default function CharacterPage() {
                         <dt>{relationship.name}</dt><dd>{relationship.text}</dd>
                     </div>)}</dl>
                 </section>
+                {galleryImages.length > 0 && <section className={fruitStyles.sectionWrapper} aria-labelledby="character-gallery-title">
+                    <h2 id="character-gallery-title" className={fruitStyles.sectionTitle}><span aria-hidden="true">🖼️</span> Gallery</h2>
+                    <FruitGallery key={profile.slug} images={galleryImages} fruit={{ name: profile.name }} />
+                </section>}
                 <section className={`${fruitStyles.sectionWrapper} ${styles.textSection}`} aria-labelledby="details-title">
                     <h2 id="details-title" className={fruitStyles.sectionTitle}>Details and trivia</h2>
                     <ul className={styles.trivia}>{profile.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
