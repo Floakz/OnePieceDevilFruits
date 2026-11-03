@@ -21,6 +21,9 @@ const GrandRun = lazy(() => import("../pages/games/GrandRun.jsx"));
 const DailyFight = lazy(() => import("../pages/games/dailyFight/dailyFight.jsx"));
 const Quizzes = lazy(() => import("../pages/games/quizzes/Quizzes.jsx"));
 const ExpandedQuizz = lazy(() => import("../pages/games/quizzes/expandedQuizz.jsx"));
+const PollLanding = lazy(() => import("../pages/poll/PollLanding.jsx"));
+const PollVote = lazy(() => import("../pages/poll/PollVote.jsx"));
+const PollThanks = lazy(() => import("../pages/poll/PollThanks.jsx"));
 
 function ClarityTracker() {
     const location = useLocation();
@@ -91,6 +94,11 @@ export default function AppRoutes() {
                 {/* Quizzes */}
                 <Route path="/quizzes" element={<Quizzes />} />
                 <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
+
+                {/* Community poll */}
+                <Route path="/poll" element={<PollLanding />} />
+                <Route path="/poll/vote" element={<PollVote />} />
+                <Route path="/poll/thanks" element={<PollThanks />} />
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

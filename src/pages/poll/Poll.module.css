@@ -1,0 +1,697 @@
+.pollShell {
+    width: min(1100px, calc(100vw - 32px));
+    max-width: none;
+}
+
+.page {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    margin: 35px auto 70px;
+    color: #fff;
+}
+
+.page button,
+.page input {
+    font: inherit;
+}
+
+.page button {
+    cursor: pointer;
+}
+
+.page button:focus-visible,
+.page a:focus-visible,
+.page input:focus-visible {
+    outline: 2px solid #f8de3c;
+    outline-offset: 3px;
+}
+
+.hero,
+.panel {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid #09d6f0;
+    border-radius: 16px;
+    background: linear-gradient(110deg, #14449e 0%, #082f76 52%, #082575 100%);
+    box-shadow: 0 16px 40px #00102c55;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(210px, .7fr);
+    align-items: center;
+    gap: 30px;
+    min-height: 340px;
+    padding: clamp(24px, 5vw, 56px);
+}
+
+.eyebrow {
+    color: #09d6f0;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-top: 12px;
+    color: #fff;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: .98;
+    letter-spacing: -.04em;
+}
+
+.hero h1 span,
+.sectionTitle,
+.highlight {
+    color: #f8de3c;
+}
+
+.heroCopy {
+    max-width: 650px;
+    margin-top: 20px;
+    color: #d3e2ff;
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+.heroArt {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: 10px;
+}
+
+.heroRank {
+    display: grid;
+    place-content: center;
+    gap: 9px;
+    aspect-ratio: .78;
+    border: 1px solid #09d6f0;
+    border-radius: 12px;
+    background: linear-gradient(160deg, #1953a8, #001741);
+    color: #f8de3c;
+    font-size: clamp(1.7rem, 3vw, 2.8rem);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: 0 14px 20px #00174155;
+}
+
+.heroRank:nth-child(1) {
+    transform: translateY(-18px);
+}
+
+.heroRank:nth-child(2) {
+    transform: translateY(14px);
+}
+
+.heroRank span {
+    color: #b9cef3;
+    font-size: .58rem;
+    letter-spacing: .08em;
+}
+
+.heroActions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.primaryButton,
+.secondaryButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    border: 1px solid #f8de3c;
+    border-radius: 7px;
+    font-size: .8rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.primaryButton {
+    background: #f8de3c;
+    color: #001741;
+}
+
+.primaryButton:hover:not(:disabled) {
+    background: #ffe968;
+    transform: translateY(-1px);
+}
+
+.primaryButton:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+}
+
+.secondaryButton {
+    background: transparent;
+    color: #f8de3c;
+}
+
+.secondaryButton:hover {
+    background: #f8de3c18;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 22px;
+}
+
+.infoCard {
+    padding: 20px;
+    border: 1px solid #24528c;
+    border-radius: 10px;
+    background: #011a48;
+}
+
+.infoCard h2 {
+    margin-bottom: 8px;
+    color: #f8de3c;
+    font-size: .9rem;
+    text-transform: uppercase;
+}
+
+.infoCard p,
+.privacyNote,
+.muted {
+    color: #b9cef3;
+    font-size: .78rem;
+    line-height: 1.75;
+}
+
+.panel {
+    margin-top: 22px;
+    padding: clamp(20px, 4vw, 36px);
+}
+
+.panelHeading {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.panelHeading h1,
+.panelHeading h2 {
+    color: #f8de3c;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.2;
+}
+
+.panelHeading p {
+    margin-top: 7px;
+    color: #b9cef3;
+    font-size: .78rem;
+    line-height: 1.6;
+}
+
+.podium {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.podiumSlot {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #24528c;
+    border-radius: 10px;
+    background: #011a48;
+}
+
+.podiumSlot.firstPlace {
+    border-color: #f8de3c;
+}
+
+.podiumSlot.activeSlot {
+    box-shadow: inset 0 0 0 2px #f8de3c;
+    background: #0a2b61;
+}
+
+.podiumSlot.dropTarget {
+    border-color: #09d6f0;
+    box-shadow: inset 0 0 0 2px #09d6f0;
+    background: #0a376d;
+}
+
+.rankHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.rankNumber {
+    display: grid;
+    place-items: center;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #0d3165;
+    color: #f8de3c;
+    font-weight: 700;
+}
+
+.firstPlace .rankNumber {
+    background: #f8de3c;
+    color: #001741;
+}
+
+.rankHeader h3 {
+    font-size: .82rem;
+    text-transform: uppercase;
+}
+
+.rankHeader p {
+    margin-top: 2px;
+    color: #9bb7ea;
+    font-size: .67rem;
+}
+
+.podiumFruit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 88px;
+    margin-top: 12px;
+}
+
+.podiumImage {
+    flex: 0 0 68px;
+    width: 68px;
+    height: 68px;
+    object-fit: contain;
+}
+
+.podiumFruitDetails {
+    display: grid;
+    min-width: 0;
+    gap: 4px;
+}
+
+.podiumFruitDetails strong {
+    font-size: .8rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.podiumFruitDetails span,
+.emptySlot {
+    color: #9bb7ea;
+    font-size: .68rem;
+    line-height: 1.5;
+}
+
+.emptySlot {
+    display: grid;
+    min-height: 88px;
+    place-items: center;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.slotActions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 12px;
+    margin-top: 8px;
+}
+
+.textButton {
+    padding: 5px 0;
+    border: 0;
+    background: transparent;
+    color: #f8de3c;
+    font-size: .68rem !important;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.textButton:hover {
+    color: #fff;
+}
+
+.pickerControls {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) auto;
+    gap: 14px;
+    margin: 25px 0 14px;
+}
+
+.searchInput {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid #3c6ca5;
+    border-radius: 7px;
+    background: #001741;
+    color: #fff;
+    font-size: .8rem !important;
+}
+
+.searchInput::placeholder {
+    color: #8eacd9;
+}
+
+.filterChips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
+    gap: 7px;
+}
+
+.filterChip {
+    min-height: 40px;
+    padding: 8px 13px;
+    border: 1px solid #3c6ca5;
+    border-radius: 999px;
+    background: transparent;
+    color: #d3e2ff;
+    font-size: .7rem !important;
+}
+
+.filterChip:hover,
+.filterChip.selectedChip {
+    border-color: #f8de3c;
+    background: #f8de3c;
+    color: #001741;
+}
+
+.fruitGrid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.fruitChoice {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    min-height: 170px;
+    padding: 0;
+    border: 1px solid #24528c;
+    border-radius: 9px;
+    background: #082653;
+    color: #fff;
+    text-align: center;
+    transition: border-color .2s ease, background-color .2s ease, transform .2s ease;
+}
+
+.fruitChoice:hover {
+    transform: translateY(-2px);
+    border-color: #09d6f0;
+    background: #10366d;
+}
+
+.fruitChoice.chosenFruit {
+    border-color: #f8de3c;
+    background: #0e326a;
+}
+
+.fruitSelectButton {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    padding: 18px 10px 10px;
+    border: 0;
+    border-radius: inherit;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: center;
+    cursor: pointer;
+}
+
+.fruitSelectButton:disabled {
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+.fruitSelectButton:focus-visible {
+    outline: 2px solid #f8de3c;
+    outline-offset: -3px;
+}
+
+.fruitSelectButton img {
+    width: 88px;
+    height: 88px;
+    margin-bottom: 8px;
+    object-fit: contain;
+}
+
+.fruitSelectButton strong {
+    font-size: .75rem;
+    line-height: 1.4;
+}
+
+.fruitSelectButton > span {
+    margin-top: 5px;
+    color: #9bb7ea;
+    font-size: .64rem;
+}
+
+.fruitDetailsLink {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 25px;
+    height: 25px;
+    border: 1px solid #09d6f0;
+    border-radius: 6px;
+    background: #001741;
+    color: #f8de3c;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.fruitDetailsLink:hover {
+    border-color: #f8de3c;
+    background: #10366d;
+    color: #fff;
+}
+
+.privacyNote {
+    margin-top: 22px;
+    padding: 14px 16px;
+    border-left: 3px solid #09d6f0;
+    background: #00174188;
+}
+
+.privacyNote strong {
+    color: #fff;
+}
+
+.previewNotice {
+    margin-top: 14px;
+    padding: 12px 16px;
+    border: 1px solid #09d6f0;
+    border-radius: 8px;
+    background: #001741;
+    color: #b9cef3;
+    font-size: .75rem;
+    line-height: 1.65;
+}
+
+.stateMessage {
+    margin-top: 12px;
+    color: #b9cef3;
+    font-size: .8rem;
+    line-height: 1.7;
+}
+
+.errorMessage {
+    color: #ffd2d2;
+}
+
+.emptyResults {
+    grid-column: 1 / -1;
+    padding: 30px 12px;
+    color: #9bb7ea;
+    text-align: center;
+    font-size: .8rem;
+}
+
+.confirmationPanel {
+    width: min(460px, calc(100vw - 32px));
+    max-width: none;
+    margin: auto;
+    padding: 24px;
+    border: 1px solid #f8de3c;
+    border-radius: 12px;
+    background: linear-gradient(120deg, #14449e 0%, #082f76 55%, #082575 100%);
+    color: #fff;
+    box-shadow: 0 22px 70px #0009;
+}
+
+.confirmationPanel::backdrop {
+    background: #000a;
+    backdrop-filter: blur(3px);
+}
+
+.confirmationPanel h2 {
+    color: #f8de3c;
+    font-size: 1rem;
+}
+
+.confirmationPanel p {
+    margin-top: 6px;
+    color: #d3e2ff;
+    font-size: .8rem;
+    line-height: 1.6;
+}
+
+.confirmationActions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.submitRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.thankYou {
+    text-align: center;
+}
+
+.thankYou h1 {
+    color: #f8de3c;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+}
+
+.thankYou > p {
+    max-width: 620px;
+    margin: 12px auto 24px;
+    color: #b9cef3;
+    font-size: .85rem;
+    line-height: 1.7;
+}
+
+.thankYou .podium {
+    text-align: left;
+}
+
+.noFruit {
+    color: #b9cef3;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.srOnly {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(170px, .55fr);
+    }
+
+    .fruitGrid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .page {
+        margin-top: 20px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 26px 22px;
+    }
+
+    .heroArt {
+        width: min(100%, 300px);
+        margin: 0 auto;
+    }
+
+    .heroRank {
+        max-height: 135px;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .podium {
+        grid-template-columns: 1fr;
+    }
+
+    .podiumSlot {
+        padding: 14px;
+    }
+
+    .pickerControls {
+        grid-template-columns: 1fr;
+    }
+
+    .filterChips {
+        justify-content: start;
+    }
+
+    .fruitGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .fruitChoice {
+        min-height: 152px;
+    }
+
+    .fruitSelectButton {
+        padding: 18px 7px 8px;
+    }
+
+    .fruitSelectButton img {
+        width: 74px;
+        height: 74px;
+    }
+}
+
+@media (max-width: 360px) {
+    .fruitGrid {
+        grid-template-columns: 1fr;
+    }
+}

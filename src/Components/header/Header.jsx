@@ -113,7 +113,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
         location.pathname === "/blind-ranking" ||
         location.pathname.startsWith("/fruit-finder") ||
         location.pathname.startsWith("/fruit-guesser") ||
-        location.pathname.startsWith("/crew-wars") ||
+        location.pathname.startsWith("/grand-run") ||
         location.pathname.startsWith("/fruit-battle");
 
     const isDevilFruitsActive =
@@ -226,25 +226,28 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     <NavLink to="/fruit-guesser" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
                                         FRUIT GUESSER <span className={styles.newBadge}>NEW</span>
                                     </NavLink>
-
                                     <NavLink
-                                        to="/crew-wars"
+                                        to="/grand-run"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
+
                                     >
-                                        CREW WARS
+                                        GRAND RUN
                                     </NavLink>
+
+
                                 </div>
                             </div>
 
                             <NavLink
-                                to="/grand-run"
+                                to="/crew-wars"
                                 className={({ isActive }) =>
                                     `menuOption ${isActive ? "isActive" : ""}`
                                 }
+
                             >
-                                GRAND RUN
+                                CREW WARS
                             </NavLink>
 
                             <div className={styles.menuOptionWrapper}>
@@ -265,6 +268,13 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                 }
                             >
                                 Daily Fight
+                            </NavLink>
+
+                            <NavLink
+                                to="/poll"
+                                className={({ isActive }) => `${styles.pollNavLink} ${isActive ? styles.pollNavLinkActive : ""}`}
+                            >
+                                COMMUNITY POLL
                             </NavLink>
 
                         </div>
@@ -326,6 +336,14 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                 <NavLink to="/characters" onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) => `${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}>
                                     Characters
+                                </NavLink>
+
+                                <NavLink
+                                    to="/poll"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) => `${styles.pollNavLink} ${styles.mobilePollNavLink} ${isActive ? styles.pollNavLinkActive : ""}`}
+                                >
+                                    COMMUNITY POLL
                                 </NavLink>
 
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
