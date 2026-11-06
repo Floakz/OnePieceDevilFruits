@@ -3,19 +3,122 @@ import styles from './dailyFight.module.css'
 import Header from '../../../Components/header/Header'
 import Footer from '../../../Components/footer/footer'
 import { fetchAllFruitsOnce } from '../../../lib/fruitsApi'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import characters from '../../../lib/characters'
-import { doc, getDoc, setDoc, onSnapshot, serverTimestamp, collection } from "firebase/firestore";
+import { DAILY_FIGHT_START_DATE, fightVotingState, loadFight, readStoredVote, submitFightVote, todayIdUTC, voteCounts, voteStorageKey } from '../../../lib/dailyFightApi';
 import { db, auth } from '../../../lib/firebase'
 import { onAuthStateChanged } from "firebase/auth";
 import Seo from '../../../Components/Seo'
 import SocialShare from '../../../Components/socialShare/SocialShare'
 
+function createFightData(fruits, characters, CDN_BASE) {
+    // Pick left side
+    const left = getRandomCombo(CDN_BASE, fruits, characters);
+    if (!left) throw new Error("Could not pick left side (check pools/filters).");
+
+    // Pick right side with exclusions
+    let right = getRandomCombo(CDN_BASE,
+        fruits,
+        characters,
+        {
+            excludeFruitIds: new Set([left.fruitId]),
+            excludeCharNames: new Set([left.user])
+        }
+    );
+
+    // Safety: relax constraints if pool is too tight
+    if (!right) {
+        // try: different character (fruit may repeat)
+        const tryB = getRandomCombo(CDN_BASE,
+            fruits,
+            characters,
+            { excludeCharNames: new Set([left.user]) }
+        );
+        if (tryB) {
+            right = tryB;
+        } else {
+            // last resort: different fruit (character may repeat)
+            const tryC = getRandomCombo(CDN_BASE,
+                fruits,
+                characters,
+                { excludeFruitIds: new Set([left.fruitId]) }
+            );
+            right = tryC || left; // should almost never happen
+        }
+    }
+
+    // Final guard to ensure uniqueness
+    let attempts = 0;
+    while (attempts < 5 && (right.user === left.user || right.fruitId === left.fruitId)) {
+        right = getRandomCombo(CDN_BASE,
+            fruits,
+            characters,
+            {
+                excludeFruitIds: new Set([left.fruitId]),
+                excludeCharNames: new Set([left.user])
+            }
+        ) || right;
+        attempts++;
+    }
+
+    const payload = {
+        left: {
+            charName: left.user,
+            charImg: left.userImage,       // already local from characters.js
+            fruitId: left.fruitId,
+            fruitName: left.fruit,
+            fruitImg: left.fruitImg,       // already local from getRandomCombo
+            power: left.fruitPower,
+        },
+        right: {
+            charName: right.user,
+            charImg: right.userImage,      // already local
+            fruitId: right.fruitId,
+            fruitName: right.fruit,
+            fruitImg: right.fruitImg,      // already local
+            power: right.fruitPower,
+        },
+    };
+
+    return payload;
+}
+
+function getRandomCharacter(chars, excludeNames = new Set()) {
+    const pool = (chars || []).filter(c => c.power >= 74 && !excludeNames.has(c.name));
+    if (pool.length === 0) return null;
+    const randIndex = Math.floor(Math.random() * pool.length);
+    return pool[randIndex];
+}
+
+function getRandomFruit(fruits, excludeIds = new Set()) {
+    const pool = (fruits || []).filter(f => !excludeIds.has(f.id));
+    if (pool.length === 0) return null;
+    const randIndex = Math.floor(Math.random() * pool.length);
+    return pool[randIndex];
+}
+
+function getRandomCombo(CDN_BASE, fruits, chars, { excludeFruitIds = new Set(), excludeCharNames = new Set() } = {}) {
+    const randFruit = getRandomFruit(fruits, excludeFruitIds);
+    const randUser = getRandomCharacter(chars, excludeCharNames);
+
+    if (!randFruit || !randUser) return null;
+
+    return {
+        user: randUser.name,
+        userImage: randUser.img,                             // already local
+        fruit: randFruit.name,
+        fruitPower: randFruit.power,
+        fruitId: randFruit.id,
+        fruitImg: `${CDN_BASE}/fruits/${randFruit.id}.webp`,// local by id
+        voter: ''
+    };
+}
+
+
 export default function DailyFight() {
     const navigate = useNavigate()
-    const START_DATE = "2025-10-11";
-    const today = todayIdUTC()
+    const [today, setToday] = useState(todayIdUTC);
     const [currentDate, setCurrentDate] = useState(todayIdUTC());
 
 
@@ -25,9 +128,51 @@ export default function DailyFight() {
     let [voteCount, setVoteCount] = useState({ left: 0, leftPct: 0, right: 0, rightPct: 0 });
     let [userVoted, setUserVoted] = useState(false);
     let [votedSide, setVotedSide] = useState(null);
+    const { canVote, showResults } = fightVotingState(currentDate, userVoted, today);
 
-    function todayIdUTC() {
-        return new Date().toISOString().slice(0, 10); // "YYYY-MM-DD"
+    const [isVoting, setIsVoting] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [voteReady, setVoteReady] = useState(false);
+    const [error, setError] = useState('');
+    const activeDate = useRef(currentDate);
+    activeDate.current = currentDate;
+    const voteInFlight = useRef(false);
+
+    async function handleVote(side) {
+        // Recheck the supported date range and the browser's saved choice.
+        if (!fightVotingState(currentDate, userVoted).canVote) {
+            setToday(todayIdUTC());
+            return;
+        }
+        if (!isLoaded || !voteReady || userVoted || voteInFlight.current) return;
+        const fightId = currentDate;
+        voteInFlight.current = true;
+        setIsVoting(true);
+        setError('');
+        let voteSaved = false;
+        try {
+            const savedSide = await submitFightVote(db, fightId, side);
+            voteSaved = true;
+            if (activeDate.current !== fightId) return;
+            setUserVoted(true);
+            setVotedSide(savedSide);
+            const updatedFight = await loadFight(db, fightId);
+            if (!updatedFight) throw new Error("This fight is not available.");
+            const counts = voteCounts(updatedFight.leftVotes, updatedFight.rightVotes);
+            if (activeDate.current === fightId) setVoteCount(counts);
+        } catch (err) {
+            console.error(err);
+            if (activeDate.current === fightId) {
+                setError(voteSaved
+                    ? 'Your vote was saved, but results could not be refreshed. Please reload.'
+                    : err.code === 'permission-denied'
+                        ? 'Firebase denied this vote. The current permissions do not allow fight totals to be updated.'
+                        : 'Could not save your vote. Check your connection and browser storage, then try again.');
+            }
+        } finally {
+            voteInFlight.current = false;
+            setIsVoting(false);
+        }
     }
 
     // ---- Helpers to guarantee local images (works for both old & new fights) ----
@@ -36,152 +181,6 @@ export default function DailyFight() {
         for (const c of characters) map.set(c.name, c.img);
         return map;
     }, []);
-
-    const fileFromUrl = (url) => {
-        try { return new URL(url).pathname.split('/').pop(); } catch { return null; }
-    };
-
-    const forceLocalCharImg = (charName, fallbackMaybeExternal) => {
-        // 1) Prefer the source of truth from your characters list (already local)
-        const localFromList = charImgByName.get(charName);
-        if (localFromList) return localFromList;
-
-        // 2) If we only have an external URL (older docs), rebuild as local using the filename
-        const f = fileFromUrl(fallbackMaybeExternal);
-        return f ? `${CDN_BASE}/nonFruitCharacters/${f}` : fallbackMaybeExternal;
-    };
-
-    const forceLocalFruitImg = (fruitId) => `${CDN_BASE}/fruits/${fruitId}.webp`;
-    // ---------------------------------------------------------------------------
-
-    async function createTodayFightIfMissing(fruits, characters) {
-        const id = todayIdUTC();
-        const ref = doc(db, "fights", id);
-
-        const snap = await getDoc(ref);
-        if (snap.exists()) {
-            // already created earlier today
-            return snap.data();
-        }
-
-        // Pick left side
-        const left = getRandomCombo(fruits, characters);
-        if (!left) throw new Error("Could not pick left side (check pools/filters).");
-
-        // Pick right side with exclusions
-        let right = getRandomCombo(
-            fruits,
-            characters,
-            {
-                excludeFruitIds: new Set([left.fruitId]),
-                excludeCharNames: new Set([left.user])
-            }
-        );
-
-        // Safety: relax constraints if pool is too tight
-        if (!right) {
-            // try: different character (fruit may repeat)
-            const tryB = getRandomCombo(
-                fruits,
-                characters,
-                { excludeCharNames: new Set([left.user]) }
-            );
-            if (tryB) {
-                right = tryB;
-            } else {
-                // last resort: different fruit (character may repeat)
-                const tryC = getRandomCombo(
-                    fruits,
-                    characters,
-                    { excludeFruitIds: new Set([left.fruitId]) }
-                );
-                right = tryC || left; // should almost never happen
-            }
-        }
-
-        // Final guard to ensure uniqueness
-        let attempts = 0;
-        while (attempts < 5 && (right.user === left.user || right.fruitId === left.fruitId)) {
-            right = getRandomCombo(
-                fruits,
-                characters,
-                {
-                    excludeFruitIds: new Set([left.fruitId]),
-                    excludeCharNames: new Set([left.user])
-                }
-            ) || right;
-            attempts++;
-        }
-
-        const payload = {
-            date: id,
-            createdAt: serverTimestamp(),
-            left: {
-                charName: left.user,
-                charImg: left.userImage,       // already local from characters.js
-                fruitId: left.fruitId,
-                fruitName: left.fruit,
-                fruitImg: left.fruitImg,       // already local from getRandomCombo
-                power: left.fruitPower,
-            },
-            right: {
-                charName: right.user,
-                charImg: right.userImage,      // already local
-                fruitId: right.fruitId,
-                fruitName: right.fruit,
-                fruitImg: right.fruitImg,      // already local
-                power: right.fruitPower,
-            },
-        };
-
-        await setDoc(ref, payload); // creates the doc
-        return payload;
-    }
-
-    function listenVoteCounts(fightId, setCounts) {
-        const votesCol = collection(db, "fights", fightId, "votes");
-        return onSnapshot(votesCol, (snap) => {
-            let left = 0, right = 0;
-            snap.forEach(d => {
-                const side = d.data().side;
-                if (side === "left") left++;
-                if (side === "right") right++;
-            });
-
-            const total = left + right;
-            const leftPct = total > 0 ? Math.round((left / total) * 100) : 0;
-            const rightPct = total > 0 ? Math.round((right / total) * 100) : 0;
-
-            setCounts({
-                left,
-                right,
-                leftPct,
-                rightPct
-            });
-        });
-    }
-
-    async function handleVote(side) {
-        const fightId = currentDate;
-        const userId = auth.currentUser?.uid;
-        if (!userId) return console.warn("User not signed in yet.");
-
-        const voteRef = doc(db, "fights", fightId, "votes", userId);
-        const existing = await getDoc(voteRef);
-        if (existing.exists()) {
-            console.log("You already voted today!");
-            return;
-        }
-
-        await setDoc(voteRef, {
-            side,
-            createdAt: serverTimestamp(),
-        });
-
-        setUserVoted(true)
-        setVotedSide(side)
-        localStorage.setItem(`voted-${fightId}`, side);
-    }
 
     let [leftOption, setLeftOption] = useState({
         user: '',
@@ -208,17 +207,22 @@ export default function DailyFight() {
         prev.setUTCDate(prev.getUTCDate() - 1);
         const prevDate = prev.toISOString().slice(0, 10);
 
-        if (prevDate < START_DATE) return;
-
-        if (prevDate < START_DATE) {
-            console.log("No older fights available.");
-            return;
-        }
+        if (prevDate < DAILY_FIGHT_START_DATE) return;
 
         setCurrentDate(prevDate);
         setUserVoted(false);
         setVotedSide(null);
     }
+
+    useEffect(() => {
+        const refreshToday = () => setToday(todayIdUTC());
+        const timer = window.setInterval(refreshToday, 30_000);
+        window.addEventListener('focus', refreshToday);
+        return () => {
+            window.clearInterval(timer);
+            window.removeEventListener('focus', refreshToday);
+        };
+    }, []);
 
     useEffect(() => {
         async function loadFruits() {
@@ -233,99 +237,83 @@ export default function DailyFight() {
     }, []);
 
     useEffect(() => {
+        let cancelled = false;
+        let fightLoadStarted = false;
         setUserVoted(false);
         setVotedSide(null);
+        setVoteReady(false);
+        setIsLoaded(false);
+        setVoteCount(voteCounts(0, 0));
+        setError('');
         if (!allFruits) return;
 
-        const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
-            if (!user) {
-                setUserVoted(false);
-                setVotedSide(null);
-                return;
+        function restoreLocalVote() {
+            try {
+                const side = readStoredVote(currentDate);
+                setUserVoted(!!side);
+                setVotedSide(side);
+                setVoteReady(true);
+            } catch (err) {
+                console.error(err);
+                setVoteReady(false);
+                setError('Browser storage is unavailable. Enable it to vote.');
             }
-
-            const voteRef = doc(db, "fights", currentDate, "votes", user.uid);
-            const existing = await getDoc(voteRef);
-
-            setUserVoted(!!existing.exists());
-            setVotedSide(existing.exists() ? existing.data().side : null);
-        });
-
-        const ref = doc(db, "fights", currentDate);
-        const unsubFight = onSnapshot(ref, (snap) => {
-            if (!snap.exists()) return;
-            const data = snap.data();
-
-            // Force local images regardless of what old docs contain
-            const leftCharImg = forceLocalCharImg(data.left.charName, data.left.charImg);
-            const rightCharImg = forceLocalCharImg(data.right.charName, data.right.charImg);
-
-            const leftFruitImg = forceLocalFruitImg(data.left.fruitId);   // <-- use fruitId
-            const rightFruitImg = forceLocalFruitImg(data.right.fruitId); // <-- use fruitId
-
-            setLeftOption({
-                user: data.left.charName,
-                userImage: leftCharImg,
-                fruit: data.left.fruitName,
-                fruitId: data.left.fruitId,
-                fruitImg: leftFruitImg,
-                fruitPower: data.left.power,
-            });
-
-            setRightOption({
-                user: data.right.charName,
-                userImage: rightCharImg,
-                fruit: data.right.fruitName,
-                fruitId: data.right.fruitId,
-                fruitImg: rightFruitImg,
-                fruitPower: data.right.power,
-            });
-        });
-
-        // Only create if currentDate === today
-        if (currentDate === todayIdUTC()) {
-            createTodayFightIfMissing(allFruits, characters).catch(console.error);
         }
+        restoreLocalVote();
+        const onStorage = (event) => {
+            if (event.key === voteStorageKey(currentDate) || event.key === null) restoreLocalVote();
+        };
+        window.addEventListener('storage', onStorage);
 
-        const stopVotes = listenVoteCounts(currentDate, setVoteCount);
+        // Keep the site's existing anonymous authentication. Vote history is
+        // entirely local: no user vote documents are read or written.
+        const unsubscribeAuth = onAuthStateChanged(auth, (user) => {
+            if (cancelled || !user || fightLoadStarted) return;
+            fightLoadStarted = true;
+            load();
+        });
 
+        async function load() {
+            try {
+                const data = await loadFight(db, currentDate, currentDate === todayIdUTC()
+                    ? () => createFightData(allFruits, characters, CDN_BASE) : null);
+                if (cancelled) return;
+                if (!data) {
+                    setError('No fight is available for this date.');
+                    return;
+                }
+                const option = (side) => {
+                    const entry = data[side];
+                    let charImg = charImgByName.get(entry.charName) || entry.charImg;
+                    if (!charImgByName.has(entry.charName)) {
+                        try {
+                            const file = new URL(charImg).pathname.split('/').pop();
+                            charImg = `${CDN_BASE}/nonFruitCharacters/${file}`;
+                        } catch { /* Already a local image path. */ }
+                    }
+                    return {
+                        user: entry.charName, userImage: charImg,
+                        fruit: entry.fruitName, fruitId: entry.fruitId,
+                        fruitImg: `${CDN_BASE}/fruits/${entry.fruitId}.webp`,
+                        fruitPower: entry.power,
+                    };
+                };
+                setLeftOption(option('left'));
+                setRightOption(option('right'));
+                const counts = voteCounts(data.leftVotes, data.rightVotes);
+                setVoteCount(counts);
+                setIsLoaded(true);
+            } catch (err) {
+                console.error(err);
+                if (!cancelled) setError('Could not load this fight. Please reload to try again.');
+            }
+        }
         return () => {
-            unsubFight();
+            cancelled = true;
             unsubscribeAuth();
-            stopVotes && stopVotes();
+            window.removeEventListener('storage', onStorage);
         };
-    }, [allFruits, currentDate]);
-
-    function getRandomCharacter(chars, excludeNames = new Set()) {
-        const pool = (chars || []).filter(c => c.power >= 74 && !excludeNames.has(c.name));
-        if (pool.length === 0) return null;
-        const randIndex = Math.floor(Math.random() * pool.length);
-        return pool[randIndex];
-    }
-
-    function getRandomFruit(fruits, excludeIds = new Set()) {
-        const pool = (fruits || []).filter(f => !excludeIds.has(f.id));
-        if (pool.length === 0) return null;
-        const randIndex = Math.floor(Math.random() * pool.length);
-        return pool[randIndex];
-    }
-
-    function getRandomCombo(fruits, chars, { excludeFruitIds = new Set(), excludeCharNames = new Set() } = {}) {
-        const randFruit = getRandomFruit(fruits, excludeFruitIds);
-        const randUser = getRandomCharacter(chars, excludeCharNames);
-
-        if (!randFruit || !randUser) return null;
-
-        return {
-            user: randUser.name,
-            userImage: randUser.img,                             // already local
-            fruit: randFruit.name,
-            fruitPower: randFruit.power,
-            fruitId: randFruit.id,
-            fruitImg: `${CDN_BASE}/fruits/${randFruit.id}.webp`,// local by id
-            voter: ''
-        };
-    }
+    }, [allFruits, currentDate, today, CDN_BASE, charImgByName]);
 
     return (
         <>
@@ -345,9 +333,12 @@ export default function DailyFight() {
                         <h4>Who wins in a 1v1?</h4>
                     </div>
 
-                    <div className={styles.fightWrapper}>
+                    {error && <p role="alert">{error}</p>}
+                    {currentDate < today && isLoaded && <p>{canVote ? 'Current results — you can still vote.' : 'Current results:'}</p>}
+                    {isVoting && <p role="status">Saving your vote...</p>}
+                    <div className={styles.fightWrapper} aria-busy={!isLoaded || isVoting}>
 
-                        {userVoted && <div className={styles.resulWrapperOverlay}>
+                        {showResults && isLoaded && <div className={styles.resulWrapperOverlay}>
                             <div className={styles.LeftresultsWrapper}>
                                 <div className={`${styles.LeftresultsBar} ${votedSide === "left" ? styles.votedResultsBar : votedSide === "right" ? styles.unselectedResultsBar : ""}`}>
                                     {votedSide === "left" && <span className={styles.yourVote}>Your vote</span>}
@@ -366,7 +357,7 @@ export default function DailyFight() {
                             </div>                         
                         </div>}
 
-                        <div onClick={() => handleVote("left")} style={{ backgroundImage: `url(${leftOption.userImage})` }} className={styles.leftOptionWrapper}>
+                        <div onClick={canVote ? () => handleVote("left") : undefined} aria-disabled={!canVote} style={{ backgroundImage: `url(${leftOption.userImage})`, cursor: canVote ? 'pointer' : 'default' }} className={styles.leftOptionWrapper}>
                             <h5 className={styles.cardCaption}>
                                 {leftOption.user} with the{" "}
                                 <span
@@ -384,7 +375,7 @@ export default function DailyFight() {
 
                         <div className={styles.vsWrapper}>vs</div>
 
-                        <div onClick={() => handleVote("right")} style={{ backgroundImage: `url(${rightOption.userImage})` }} className={styles.rightOptionWrapper}>
+                        <div onClick={canVote ? () => handleVote("right") : undefined} aria-disabled={!canVote} style={{ backgroundImage: `url(${rightOption.userImage})`, cursor: canVote ? 'pointer' : 'default' }} className={styles.rightOptionWrapper}>
                             <h5 className={styles.cardCaption}>
                                 {rightOption.user} with the{" "}
                                 <span
@@ -413,10 +404,10 @@ export default function DailyFight() {
                                     }}
                                     className={styles.previouButton}
                                 >
-                                    Vote on today
+                                    Back to today
                                 </button>
                             )}
-                            {currentDate !== "2025-10-11" && <button onClick={goToPreviousFight} className={styles.previouButton}>Vote on previous fight</button>}
+                            {currentDate > DAILY_FIGHT_START_DATE && <button onClick={goToPreviousFight} className={styles.previouButton}>View previous fight</button>}
                         </div>                     
                     </div>
                        <SocialShare
