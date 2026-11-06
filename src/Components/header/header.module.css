@@ -98,7 +98,7 @@
     vertical-align: middle;
 }
 
-.newGameLink {
+.newFeatureLink {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -253,7 +253,7 @@
         text-transform: uppercase;
     }
 
-    .newGameLink {
+    .newFeatureLink {
         justify-content: center;
     }
 
