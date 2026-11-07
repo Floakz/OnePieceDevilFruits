@@ -1,0 +1,65 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isToday(fightId) {
+      let parts = fightId.split('-');
+      return fightId.matches('^\\d{4}-\\d{2}-\\d{2}$')
+        && int(parts[0]) == request.time.year()
+        && int(parts[1]) == request.time.month()
+        && int(parts[2]) == request.time.day();
+    }
+
+    function isSupportedFight(fightId) {
+      let parts = fightId.split('-');
+      return fightId.matches('^\\d{4}-\\d{2}-\\d{2}$')
+        && fightId >= '2026-11-07'
+        && timestamp.date(int(parts[0]), int(parts[1]), int(parts[2])) <= request.time.date();
+    }
+
+    // Public, read-only fruits.
+    match /fruits/{fruitId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /fights/{fightId} {
+      // Today's and previous fights remain publicly readable.
+      allow read: if true;
+
+      allow create: if request.auth != null && isToday(fightId)
+        && request.resource.data.keys().hasOnly([
+          'date', 'createdAt', 'left', 'right', 'leftVotes', 'rightVotes'
+        ])
+        && request.resource.data.date == fightId
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.left is map
+        && request.resource.data.right is map
+        && request.resource.data.leftVotes == 0
+        && request.resource.data.rightVotes == 0;
+
+      // Supported past fights stay open; exactly one counter increases by 1.
+      allow update: if request.auth != null && isSupportedFight(fightId) && (
+        (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['leftVotes'])
+          && request.resource.data.leftVotes is int
+          && request.resource.data.leftVotes == resource.data.get('leftVotes', 0) + 1
+        ) || (
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['rightVotes'])
+          && request.resource.data.rightVotes is int
+          && request.resource.data.rightVotes == resource.data.get('rightVotes', 0) + 1
+        )
+      );
+      allow delete: if false;
+    }
+
+    // Legacy records are retained, but all new votes update the fight totals.
+    match /fights/{fightId}/votes/{uid} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
