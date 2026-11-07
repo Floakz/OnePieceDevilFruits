@@ -1,6 +1,6 @@
 # Daily fight vote totals
 
-Daily fights start fresh on **2026-11-06 (UTC)**. The frontend only supports dates on or after `DAILY_FIGHT_START_DATE` in `src/lib/dailyFightApi.js`. Dates before launch are hidden from navigation and rejected before any Firestore request.
+Daily fights start fresh on **2026-11-07 (UTC)**. The frontend only supports dates on or after `DAILY_FIGHT_START_DATE` in `src/lib/dailyFightApi.js`. Dates before launch are hidden from navigation and rejected before any Firestore request.
 
 ## One document per fight
 

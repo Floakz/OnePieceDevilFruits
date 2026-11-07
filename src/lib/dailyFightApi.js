@@ -2,7 +2,7 @@ import {
     doc, getDoc, increment, runTransaction, serverTimestamp, updateDoc,
 } from 'firebase/firestore';
 
-export const DAILY_FIGHT_START_DATE = '2026-11-06';
+export const DAILY_FIGHT_START_DATE = '2026-11-07';
 
 export function todayIdUTC() {
     return new Date().toISOString().slice(0, 10);

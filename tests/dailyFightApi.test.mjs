@@ -21,7 +21,7 @@ function localStorageFixture() {
     };
 }
 
-function fixture(initial = {}, now = '2026-11-06T12:00:00Z') {
+function fixture(initial = {}, now = '2026-11-07T12:00:00Z') {
     const records = new Map(Object.entries(initial));
     const versions = new Map();
     const reads = [];
@@ -89,7 +89,7 @@ function fixture(initial = {}, now = '2026-11-06T12:00:00Z') {
     return { api: context.module.exports, db: {}, records, reads, updates, storage, sdk };
 }
 
-const id = '2026-11-06';
+const id = '2026-11-07';
 const path = `fights/${id}`;
 const matchup = { left: { charName: 'Luffy' }, right: { charName: 'Zoro' } };
 const plain = value => JSON.parse(JSON.stringify(value));
@@ -121,7 +121,7 @@ test('rollout-day matchup starts fresh without reading its old vote records', as
 });
 
 test('dates before rollout are unavailable without any Firebase read or write', async () => {
-    const oldId = '2026-11-05';
+    const oldId = '2026-11-06';
     const oldPath = `fights/${oldId}`;
     const f = fixture({ [oldPath]: matchup });
     assert.equal(await f.api.loadFight(f.db, oldId, () => assert.fail('must not create')), null);
@@ -173,7 +173,7 @@ test('a saved local choice blocks further votes and survives reading it again', 
     assert.equal(f.records.get(path).leftVotes, 4);
     assert.equal(f.records.get(path).rightVotes, 2);
     assert.equal(f.api.readStoredVote(id, f.storage), 'left');
-    assert.equal(f.api.readStoredVote('2026-11-05', f.storage), null);
+    assert.equal(f.api.readStoredVote('2026-11-06', f.storage), null);
     assert.equal(f.updates.length, 1);
 });
 
@@ -249,7 +249,7 @@ test('whole percentages always sum to 100 when there are votes', () => {
 
 test('past fights show results immediately and still accept one browser vote', async () => {
     const totals = { ...matchup, leftVotes: 120, rightVotes: 80 };
-    const f = fixture({ [path]: totals }, '2026-11-07T00:00:00Z');
+    const f = fixture({ [path]: totals }, '2026-11-08T00:00:00Z');
     assert.deepEqual(plain(f.api.fightVotingState(id)), { canVote: true, showResults: true });
     const fight = await f.api.loadFight(f.db, id);
     assert.deepEqual(plain(f.api.voteCounts(fight.leftVotes, fight.rightVotes)), {
@@ -273,8 +273,8 @@ test('today stays voteable with results hidden until the browser votes', () => {
 
 test('a fight stays voteable after midnight and reveals results as history', async () => {
     const totals = { ...matchup, leftVotes: 1, rightVotes: 0 };
-    const before = fixture({ [path]: totals }, '2026-11-06T23:59:59.999Z');
-    const after = fixture({ [path]: totals }, '2026-11-07T00:00:00.000Z');
+    const before = fixture({ [path]: totals }, '2026-11-07T23:59:59.999Z');
+    const after = fixture({ [path]: totals }, '2026-11-08T00:00:00.000Z');
     assert.equal(before.api.fightVotingState(id).canVote, true);
     assert.equal(after.api.fightVotingState(id).canVote, true);
     assert.equal(after.api.fightVotingState(id).showResults, true);
@@ -284,9 +284,9 @@ test('a fight stays voteable after midnight and reveals results as history', asy
 });
 
 test('missing past matchups and future fights are never created', async () => {
-    const f = fixture({}, '2026-11-07T12:00:00Z');
+    const f = fixture({}, '2026-11-08T12:00:00Z');
     assert.equal(await f.api.loadFight(f.db, id, () => assert.fail('must not create past fight')), null);
-    const future = '2026-11-08';
+    const future = '2026-11-09';
     assert.equal(await f.api.loadFight(f.db, future, () => assert.fail('must not create future fight')), null);
     assert.deepEqual(plain(f.api.fightVotingState(future)), { canVote: false, showResults: false });
     await assert.rejects(f.api.submitFightVote(f.db, future, 'left', f.storage), { code: 'fight-unavailable' });
@@ -295,12 +295,12 @@ test('missing past matchups and future fights are never created', async () => {
 });
 
 test('a previous fight and today each get an independent browser vote', async () => {
-    const today = '2026-11-07';
+    const today = '2026-11-08';
     const todayPath = `fights/${today}`;
     const f = fixture({
         [path]: { ...matchup, leftVotes: 0, rightVotes: 0 },
         [todayPath]: { ...matchup, leftVotes: 0, rightVotes: 0 },
-    }, '2026-11-07T12:00:00Z');
+    }, '2026-11-08T12:00:00Z');
     await f.api.submitFightVote(f.db, id, 'left', f.storage);
     await f.api.submitFightVote(f.db, today, 'right', f.storage);
     assert.equal(f.api.readStoredVote(id, f.storage), 'left');
