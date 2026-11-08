@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { fetchAllFruitsOnce } from '../lib/fruitsApi.js';
+import { fetchAllFruitsOnce, fetchAllFruitsStaticOnce } from '../lib/fruitsApi.js';
 
-export default function useFruits() {
+export default function useFruits({ staticOnly = false } = {}) {
     const [fruits, setFruits] = useState([]);
     const [status, setStatus] = useState('loading');
     const [attempt, setAttempt] = useState(0);
@@ -10,12 +10,13 @@ export default function useFruits() {
     useEffect(() => {
         let active = true;
         setStatus('loading');
-        fetchAllFruitsOnce().then(list => {
+        const fetchFruits = staticOnly ? fetchAllFruitsStaticOnce : fetchAllFruitsOnce;
+        fetchFruits().then(list => {
             if (!Array.isArray(list)) throw new Error('Invalid fruit list');
             if (active) { setFruits(list); setStatus('ready'); }
         }).catch(() => { if (active) setStatus('error'); });
         return () => { active = false; };
-    }, [attempt]);
+    }, [attempt, staticOnly]);
 
     return { fruits, status, retry };
 }

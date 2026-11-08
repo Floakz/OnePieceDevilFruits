@@ -4,12 +4,15 @@ import { useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect, useRef } from "react";
 import AllFruitsPage from "../pages/fruits/AllFruitsPage.jsx";
 import ScrollToTop from "../Components/ScrollToTop.jsx";
+import { POLL_ENABLED } from "../lib/pollConfig.js";
 
 const ParameciaFruits = lazy(() => import("../pages/fruits/paramecia/ParameciaFruits.jsx"));
 const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
 const ZoanFruits = lazy(() => import("../pages/fruits/zoan/ZoanFruits.jsx"));
 const CommunityFruits = lazy(() => import("../pages/fruits/community/CommunityFruits.jsx"));
 const ExpandedFruit = lazy(() => import("../pages/fruits/expanded/ExpandedFruit.jsx"));
+const CharactersPage = lazy(() => import("../pages/characters/CharactersPage.jsx"));
+const CharacterPage = lazy(() => import("../pages/characters/CharacterPage.jsx"));
 const FruitFinderPage = lazy(() => import("../pages/games/FruitFinderPage.jsx"));
 const FruitGuesser = lazy(() => import("../pages/games/FruitGuesser.jsx"));
 const CrewWars = lazy(() => import("../pages/games/CrewWars.jsx"));
@@ -19,6 +22,9 @@ const GrandRun = lazy(() => import("../pages/games/GrandRun.jsx"));
 const DailyFight = lazy(() => import("../pages/games/dailyFight/dailyFight.jsx"));
 const Quizzes = lazy(() => import("../pages/games/quizzes/Quizzes.jsx"));
 const ExpandedQuizz = lazy(() => import("../pages/games/quizzes/expandedQuizz.jsx"));
+const PollLanding = lazy(() => import("../pages/poll/PollLanding.jsx"));
+const PollVote = lazy(() => import("../pages/poll/PollVote.jsx"));
+const PollThanks = lazy(() => import("../pages/poll/PollThanks.jsx"));
 
 function ClarityTracker() {
     const location = useLocation();
@@ -72,6 +78,9 @@ export default function AppRoutes() {
 
                 {/* Fruit Expanded */}
                 <Route path="/fruit/:id" element={<ExpandedFruit />} />
+                <Route path="/characters" element={<CharactersPage />} />
+                <Route path="/characters/page/:page" element={<CharactersPage />} />
+                <Route path="/characters/:slug" element={<CharacterPage />} />
 
 
                 {/* Jogos */}
@@ -86,6 +95,17 @@ export default function AppRoutes() {
                 {/* Quizzes */}
                 <Route path="/quizzes" element={<Quizzes />} />
                 <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
+
+                {/* Community poll */}
+                {POLL_ENABLED ? (
+                    <>
+                        <Route path="/poll" element={<PollLanding />} />
+                        <Route path="/poll/vote" element={<PollVote />} />
+                        <Route path="/poll/thanks" element={<PollThanks />} />
+                    </>
+                ) : (
+                    <Route path="/poll/*" element={<Navigate to="/" replace />} />
+                )}
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

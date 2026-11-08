@@ -7,6 +7,7 @@
         "dev": "vite",
         "build": "vite build && node scripts/prerender.mjs",
         "lint": "eslint .",
+        "test:poll-results": "node --test tests/pollResults.test.mjs",
         "preview": "vite preview"
     },
     "dependencies": {

@@ -98,11 +98,36 @@
     vertical-align: middle;
 }
 
-.newGameLink {
+.newFeatureLink {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+}
+
+.pollNavLink {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    padding: 1px 10px;
+    border: 1px solid #f8de3c;
+    border-radius: 5px;
+    background: #f8de3c;
+    color: #001741;
+    font-size: .75em;
+    font-weight: 800;
+    letter-spacing: .03em;
+    line-height: normal;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.pollNavLink:hover,
+.pollNavLinkActive {
+    background: #ffe968;
+    color: #001741;
+    transform: translateY(-1px);
 }
 
 .kofiButton {
@@ -157,7 +182,7 @@
     }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
 
     .fullPageMenu {
         display: flex;
@@ -228,8 +253,15 @@
         text-transform: uppercase;
     }
 
-    .newGameLink {
+    .newFeatureLink {
         justify-content: center;
+    }
+
+    .pollNavLink.mobilePollNavLink {
+        width: min(100%, 430px);
+        min-height: 46px;
+        margin: 4px auto;
+        font-size: .88rem;
     }
 
     .OptionWrapper:hover>.menuItemDropdownWrapper,
@@ -306,6 +338,7 @@
     }
 
 }
+
 .compactNav {
     height: 60px;
     padding: 12px 0;
@@ -313,12 +346,30 @@
 }
 
 .compactNav :global(.navSection) {
-    margin-block: 0;
+    margin: 50px 0 0;
 }
 
-@media (max-width: 900px) {
-    .compactNav { height: 8px; padding: 0; }
-    .compactNav .mobileMenuButton { top: auto; right: 20px; bottom: 20px; width: 32px; height: 32px; padding: 6px; }
-    .compactNav .mobileMenuButton svg { width: 20px; height: 20px; }
-    .compactNav .menuNewBadge { display: none; }
+@media (max-width: 1050px) {
+    .compactNav {
+        height: 8px;
+        padding: 0;
+    }
+
+    .compactNav .mobileMenuButton {
+        top: auto;
+        right: 20px;
+        bottom: 20px;
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+
+    .compactNav .mobileMenuButton svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .compactNav .menuNewBadge {
+        display: none;
+    }
 }

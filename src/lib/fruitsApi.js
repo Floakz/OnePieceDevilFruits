@@ -1,6 +1,7 @@
 // src/lib/fruitsApi.js
 let firestoreContextPromise;
 let fruitsRequest;
+let staticFruitsRequest;
 
 async function getFirestoreContext() {
     if (!firestoreContextPromise) {
@@ -72,6 +73,13 @@ async function fetchFruits() {
 export function fetchAllFruitsOnce() {
     if (!fruitsRequest) fruitsRequest = fetchFruits().finally(() => { fruitsRequest = undefined; });
     return fruitsRequest;
+}
+
+export function fetchAllFruitsStaticOnce() {
+    if (!staticFruitsRequest) {
+        staticFruitsRequest = fetchStatic().finally(() => { staticFruitsRequest = undefined; });
+    }
+    return staticFruitsRequest;
 }
 
 export async function refreshFruitsCache() {

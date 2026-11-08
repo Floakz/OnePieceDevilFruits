@@ -11,6 +11,8 @@ import styles from './expandedFruit.module.css';
 import { getFruitImages } from '../../../lib/imagesMap';
 import { slugify } from '../../../lib/slugify';
 import { getAbilityTags, getRelatedFruits } from '../../../lib/fruitDiscovery.js';
+import characterIndex from '../../../lib/characterIndex.js';
+import { findFruitUserCharacter } from '../../../lib/characterLinks.js';
 import FruitGallery from './FruitGallery.jsx';
 
 const extraById = new Map(fruitsExpandedInfo.map(fruit => [String(fruit.id), fruit]));
@@ -31,6 +33,12 @@ function DetailList({ items, empty }) {
 
 function SectionTitle({ id, as: heading = 'h2', emoji, children }) {
     return createElement(heading, { id, className: styles.sectionTitle }, <span aria-hidden="true">{emoji}</span>, ' ', children);
+}
+
+function FruitUser({ fruitId, name }) {
+    const character = findFruitUserCharacter(characterIndex, fruitId, name);
+    return character ? <Link className={styles.arcLink} to={`/characters/${character.slug}`}>{name}</Link>
+        : <span>{name || 'Unknown'}</span>;
 }
 
 export default function ExpandedFruit() {
@@ -111,10 +119,10 @@ export default function ExpandedFruit() {
                         <SectionTitle id="facts-title" emoji="📌">Quick facts</SectionTitle>
                         <div className={styles.gridDiv2x2}>
                             <p>Type:<br /> <span className={styles.spanTag}>{fruitInfo.type}</span></p>
-                            <p>User:<br /> <span>{fruitInfo.user || 'Unknown'}</span></p>
+                            <p>User:<br /> <FruitUser fruitId={fruitInfo.id} name={fruitInfo.user} /></p>
                             <p>Debut arc:<br /> {fruitInfo.debutArc ? <Link className={styles.arcLink} to={`/?arc=${encodeURIComponent(fruitInfo.debutArc)}#fruit-filters`}>{fruitInfo.debutArc}</Link> : <span>Unknown</span>}</p>
                             <p>First appearance:<br /> <span>{fruitInfo.firstAppearance || 'Unknown'}</span></p>
-                            <p>Previous user:<br /> <span>{fruitInfo.previousUser || 'Unknown'}</span></p>
+                            <p>Previous user:<br /> <FruitUser fruitId={fruitInfo.id} name={fruitInfo.previousUser} /></p>
                             <p>Awakening:<br /> <span>{fruitInfo.isAwakened == null ? 'Unknown' : fruitInfo.isAwakened ? 'Awakened' : 'Not confirmed'}</span></p>
                             <p>Canon status:<br /> <span>{fruitInfo.isCanon == null ? 'Unknown' : fruitInfo.isCanon ? 'Canon' : 'Non-canon'}</span></p>
                         </div>

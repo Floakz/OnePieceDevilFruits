@@ -2,6 +2,8 @@ import { FRUIT_ARC_ORDER } from './fruitArcs.js';
 import { getAbilityTags } from './fruitDiscovery.js';
 
 export const MAX_GUESSES = 7;
+export const GUESSER_PREVIEW_FRUIT_ID = 'db98e40b-2313-4acd-82e2-599f6694f100';
+export const GUESSER_PREVIEW_FRUIT_NAME = 'Flame-Flame Fruit';
 export const GUESSER_PAGE = {
     path: '/fruit-guesser',
     url: 'https://onepiecedevilfruits.com/fruit-guesser',

@@ -5,6 +5,7 @@ import SearchBar from "../searchBar/searchBar";
 import styles from "./header.module.css";
 import { useState, useEffect } from "react";
 import kofiSymbol from "../../assets/kofi_symbol.png";
+import { POLL_ENABLED } from "../../lib/pollConfig.js";
 
 function useViewportWidth() {
     const [w, setW] = useState(() => window.innerWidth);
@@ -113,7 +114,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
         location.pathname === "/blind-ranking" ||
         location.pathname.startsWith("/fruit-finder") ||
         location.pathname.startsWith("/fruit-guesser") ||
-        location.pathname.startsWith("/crew-wars") ||
+        location.pathname.startsWith("/grand-run") ||
         location.pathname.startsWith("/fruit-battle");
 
     const isDevilFruitsActive =
@@ -138,7 +139,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
             </header>
 
             <nav className={compact ? styles.compactNav : undefined}>
-                {width > 900 ? (
+                {width > 1050 ? (
                     <div className="navSection">
                         <img
                             onClick={() => navigate("/")}
@@ -200,10 +201,14 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                 </div>
                             </div>
 
+                            <NavLink to="/characters" className={({ isActive }) => `menuOption ${styles.menuOptionWrapper} ${isActive ? "isActive" : ""}`}>
+                                Characters <span className={styles.newMenuItem}>NEW</span>
+                            </NavLink>
+
                             <div
                                 className={`menuOption ${isMiniGamesActive ? "isActive" : ""} ${styles.OptionWrapper}`}
                             >
-                                <span tabIndex={0}>Pirate Games {arrowDownIco}<span className={styles.newMenuItem}>NEW</span></span>
+                                <span tabIndex={0}>Pirate Games {arrowDownIco}</span>
 
                                 <div className={styles.menuItemDropdownWrapper}>
                                     <NavLink
@@ -215,32 +220,35 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                         FRUIT FINDER
                                     </NavLink>
 
-                                    <NavLink to="/blind-ranking" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
-                                        BLIND RANKING <span className={styles.newBadge}>NEW</span>
+                                    <NavLink to="/blind-ranking" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                        BLIND RANKING
                                     </NavLink>
 
-                                    <NavLink to="/fruit-guesser" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
-                                        FRUIT GUESSER <span className={styles.newBadge}>NEW</span>
+                                    <NavLink to="/fruit-guesser" className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                        FRUIT GUESSER
                                     </NavLink>
-
                                     <NavLink
-                                        to="/crew-wars"
+                                        to="/grand-run"
                                         className={({ isActive }) =>
                                             ` ${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`
                                         }
+
                                     >
-                                        CREW WARS
+                                        GRAND RUN
                                     </NavLink>
+
+
                                 </div>
                             </div>
 
                             <NavLink
-                                to="/grand-run"
+                                to="/crew-wars"
                                 className={({ isActive }) =>
                                     `menuOption ${isActive ? "isActive" : ""}`
                                 }
+
                             >
-                                GRAND RUN
+                                CREW WARS
                             </NavLink>
 
                             <div className={styles.menuOptionWrapper}>
@@ -262,6 +270,13 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                             >
                                 Daily Fight
                             </NavLink>
+
+                            {POLL_ENABLED && <NavLink
+                                to="/poll"
+                                className={({ isActive }) => `${styles.pollNavLink} ${styles.menuOptionWrapper} ${isActive ? styles.pollNavLinkActive : ""}`}
+                            >
+                                COMMUNITY POLL <span className={styles.newMenuItem}>NEW</span>
+                            </NavLink>}
 
                         </div>
                     </div>
@@ -319,6 +334,19 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     COMMUNITY
                                 </NavLink>
 
+                                <NavLink to="/characters" onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) => `${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem} ${styles.newFeatureLink}`}>
+                                    Characters <span className={styles.newBadge}>NEW</span>
+                                </NavLink>
+
+                                {POLL_ENABLED && <NavLink
+                                    to="/poll"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                    className={({ isActive }) => `${styles.pollNavLink} ${styles.mobilePollNavLink} ${styles.newFeatureLink} ${isActive ? styles.pollNavLinkActive : ""}`}
+                                >
+                                    COMMUNITY POLL <span className={styles.newBadge}>NEW</span>
+                                </NavLink>}
+
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
                                     <div className={styles.mobileGamesHeading}>Pirate Games</div>
                                     <NavLink
@@ -330,11 +358,11 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     >
                                         FRUIT FINDER
                                     </NavLink>
-                                    <NavLink to="/blind-ranking" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
-                                        BLIND RANKING <span className={styles.newBadge}>NEW</span>
+                                    <NavLink to="/blind-ranking" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                        BLIND RANKING
                                     </NavLink>
-                                    <NavLink to="/fruit-guesser" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem} ${styles.newGameLink}`}>
-                                        FRUIT GUESSER <span className={styles.newBadge}>NEW</span>
+                                    <NavLink to="/fruit-guesser" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
+                                        FRUIT GUESSER
                                     </NavLink>
                                     <NavLink to="/crew-wars" onClick={() => setIsMobileMenuOpen(false)} className={({ isActive }) => `${isActive ? styles.dropItemActive : ''} ${styles.dropdownItem}`}>
                                         CREW WARS
@@ -424,7 +452,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                     </>
                 )}
 
-                {width > 900 && (
+                {width > 1050 && (
                     <a
                         href={supportUrl}
                         target="_blank"
