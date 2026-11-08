@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import { lazy, Suspense, useEffect, useRef } from "react";
 import AllFruitsPage from "../pages/fruits/AllFruitsPage.jsx";
 import ScrollToTop from "../Components/ScrollToTop.jsx";
+import { POLL_ENABLED } from "../lib/pollConfig.js";
 
 const ParameciaFruits = lazy(() => import("../pages/fruits/paramecia/ParameciaFruits.jsx"));
 const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
@@ -96,9 +97,15 @@ export default function AppRoutes() {
                 <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
 
                 {/* Community poll */}
-                <Route path="/poll" element={<PollLanding />} />
-                <Route path="/poll/vote" element={<PollVote />} />
-                <Route path="/poll/thanks" element={<PollThanks />} />
+                {POLL_ENABLED ? (
+                    <>
+                        <Route path="/poll" element={<PollLanding />} />
+                        <Route path="/poll/vote" element={<PollVote />} />
+                        <Route path="/poll/thanks" element={<PollThanks />} />
+                    </>
+                ) : (
+                    <Route path="/poll/*" element={<Navigate to="/" replace />} />
+                )}
 
                 {/* Redirecionar aliases antigos, se existirem */}
                 <Route path="/fruits" element={<Navigate to="/" replace />} />

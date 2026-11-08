@@ -5,6 +5,7 @@ import SearchBar from "../searchBar/searchBar";
 import styles from "./header.module.css";
 import { useState, useEffect } from "react";
 import kofiSymbol from "../../assets/kofi_symbol.png";
+import { POLL_ENABLED } from "../../lib/pollConfig.js";
 
 function useViewportWidth() {
     const [w, setW] = useState(() => window.innerWidth);
@@ -270,12 +271,12 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                 Daily Fight
                             </NavLink>
 
-                            <NavLink
+                            {POLL_ENABLED && <NavLink
                                 to="/poll"
                                 className={({ isActive }) => `${styles.pollNavLink} ${styles.menuOptionWrapper} ${isActive ? styles.pollNavLinkActive : ""}`}
                             >
                                 COMMUNITY POLL <span className={styles.newMenuItem}>NEW</span>
-                            </NavLink>
+                            </NavLink>}
 
                         </div>
                     </div>
@@ -338,13 +339,13 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                     Characters <span className={styles.newBadge}>NEW</span>
                                 </NavLink>
 
-                                <NavLink
+                                {POLL_ENABLED && <NavLink
                                     to="/poll"
                                     onClick={() => setIsMobileMenuOpen(false)}
                                     className={({ isActive }) => `${styles.pollNavLink} ${styles.mobilePollNavLink} ${styles.newFeatureLink} ${isActive ? styles.pollNavLinkActive : ""}`}
                                 >
                                     COMMUNITY POLL <span className={styles.newBadge}>NEW</span>
-                                </NavLink>
+                                </NavLink>}
 
                                 <div className={styles.mobileGameLinks} role="group" aria-label="Pirate Games">
                                     <div className={styles.mobileGamesHeading}>Pirate Games</div>

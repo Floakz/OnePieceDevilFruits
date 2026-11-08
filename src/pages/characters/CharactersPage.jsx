@@ -38,7 +38,7 @@ export default function CharactersPage() {
         <Header headerShown={false} compact />
         <main className={styles.page}>
             <div className={styles.intro}>
-                <h1>One Piece<br /><span className="colorYellow">Characters</span></h1>
+                <h1>Devil Fruit<br /><span className="colorYellow">Characters</span></h1>
                 <p>Background, abilities and stories!.</p>
                 <p className={styles.progressNotice}>In progress - Currently added until Arabasta</p>
                 {/* <small>{characterIndex.length} Devil Fruit users. {CHARACTER_SCOPE}</small> */}

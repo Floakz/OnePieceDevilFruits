@@ -1,3 +1,6 @@
+// Keep the poll hidden until voting is ready to launch.
+export const POLL_ENABLED = false;
+
 export const POLL_YEAR = 2026;
 export const POLL_OPEN_AT = '2026-11-03T00:00:00.000Z';
 export const POLL_CLOSE_AT = '2027-01-02T00:00:00.000Z';
