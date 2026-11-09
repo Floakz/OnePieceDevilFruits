@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { BLIND_RANKING_PAGE } from '../src/lib/blindRanking.js';
 import { FINDER_PAGE } from '../src/lib/fruitFinder.js';
 import { GUESSER_PAGE } from '../src/lib/fruitGuesser.js';
-import { paginateCharacters, characterPageUrl } from '../src/lib/characterCatalog.js';
+import { paginateCharacters, characterPageUrl, CHARACTER_INTRO, getCharacterStory } from '../src/lib/characterCatalog.js';
 import { getCharacterSeo, getCharactersSeo } from '../src/lib/characterSeo.js';
 import { findFruitUserCharacter } from '../src/lib/characterLinks.js';
 
@@ -182,7 +182,7 @@ for (const fruit of fruitData) {
 
 const characterRoutes = [];
 const paragraphs = items => items.map(text => `<p>${escapeHtml(text)}</p>`).join('');
-const characterNames = character => `<p lang="ja">${escapeHtml(character.japaneseName)}</p><p>${escapeHtml(character.romanizedName)}</p><p>${escapeHtml(character.alias)}</p>`;
+const characterNames = character => `<p lang="ja">${escapeHtml(character.japaneseName)}</p><p>${escapeHtml(character.romanizedName)}</p><p>${escapeHtml(character.alias)}</p>${character.canon === false ? '<p>Non-canon</p>' : ''}`;
 const characterLinks = items => `<ul class="prerender-fruit-list">${items.map(character => `<li><a href="/characters/${character.slug}"><img src="${character.portrait}" alt="${escapeHtml(character.name)}" width="120" height="160" loading="lazy"><strong>${escapeHtml(character.name)}</strong>${characterNames(character)}</a></li>`).join('')}</ul>`;
 const characterListPages = paginateCharacters(characterData).totalPages;
 for (let page = 1; page <= characterListPages; page++) {
@@ -199,13 +199,14 @@ for (let page = 1; page <= characterListPages; page++) {
         </nav>` : '';
     await writeRoute(route, renderDocument({
         ...seo, structuredData: seo.jsonLd,
-    }, `${prerenderStyle}<main class="prerender-page"><a href="/">Devil Fruits</a><h1>One Piece Characters</h1><p>Background, abilities, and stories from East Blue to Arabasta.</p><p>${rangeStart}–${rangeEnd} of ${characterData.length} characters</p>${characterLinks(visible)}${navigation}</main>`));
+    }, `${prerenderStyle}<main class="prerender-page"><a href="/">Devil Fruits</a><h1>One Piece Characters</h1><p>${escapeHtml(CHARACTER_INTRO)}</p><p>${rangeStart}–${rangeEnd} of ${characterData.length} characters</p>${characterLinks(visible)}${navigation}</main>`));
 }
 
 for (const character of characterData) {
     const route = `/characters/${character.slug}`;
     characterRoutes.push(route);
     const seo = getCharacterSeo(character);
+    const story = getCharacterStory(character);
     const related = characterData.filter(other => other.slug !== character.slug && other.group === character.group).slice(0, 3);
     const facts = [['Group', character.group], ['Role', character.role], ['Debut arc', character.debutArc], ['First appearance', character.firstAppearance], ['Age during Arabasta', character.age], ['Birthday', character.birthday], ['Height', character.height]].filter(([, value]) => value);
     const content = `${prerenderStyle}<main class="prerender-detail">
@@ -220,7 +221,7 @@ for (const character of characterData) {
         <a href="/fruit/${slugify(character.fruitName)}">View fruit details</a><p>Fruit pages may include information from later arcs.</p></section>
         <section id="relationships"><h2>Relationships</h2><dl>${character.relationships.map(relationship => `<dt>${escapeHtml(relationship.name)}</dt><dd>${escapeHtml(relationship.text)}</dd>`).join('')}</dl></section>
         <h2>Details and trivia</h2><ul>${character.details.map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>
-        <details id="story"><summary>Story spoilers — through the end of Arabasta</summary><h2>${escapeHtml(character.name)}'s story</h2>${paragraphs(character.story)}</details>
+        <details id="story"><summary>Story spoilers — ${escapeHtml(story.warning)}</summary><h2>${escapeHtml(character.name)}'s story</h2>${story.sections.map(section => `<section><h3>${escapeHtml(section.title)}</h3>${paragraphs(section.paragraphs)}</section>`).join('')}</details>
         </article><section><h2>More familiar faces</h2>${characterLinks(related)}</section></main>`;
     await writeRoute(route, renderDocument({ ...seo, structuredData: seo.jsonLd }, content));
 }

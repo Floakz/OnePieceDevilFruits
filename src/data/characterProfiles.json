@@ -10,7 +10,9 @@
     "fruitId": "566d7c09-6866-4455-b85b-d3a05609c671",
     "about": "Luffy is the captain of the Straw Hat Pirates. He wants to find the One Piece and become King of the Pirates. His body has been rubber since he ate the Gum-Gum Fruit as a child.",
     "story": [
-      "In the East Blue, Luffy builds his crew while fighting captains who control others through fear. He helps free Nami from Arlong, then reaches Loguetown, where Buggy nearly executes him. Smoker's pursuit follows the crew into the Grand Line.",
+      "Luffy grows up in Foosha Village and takes after Shanks, a pirate who loses an arm saving him. Before leaving, Shanks gives Luffy his straw hat and asks him to bring it back when he becomes a great pirate. Years later, Luffy sets out on his own. He frees Koby from Alvida and brings Zoro, Nami, Usopp and Sanji into his crew as he crosses the East Blue.",
+      "Luffy defeats Arlong after Nami finally asks him for help. At Loguetown, Buggy nearly executes him, but lightning strikes the platform and Luffy escapes. The crew crosses Reverse Mountain and meets Laboon, a whale waiting for his old crew. Luffy promises to come back and fight him again.",
+      "The Straw Hats agree to help Vivi save Arabasta. They meet the giants Dorry and Brogy on Little Garden, where Baroque Works tries to turn their duel against them. When Nami falls ill, Luffy carries her and Sanji up a mountain on Drum Island to find a doctor. They leave the island with Chopper.",
       "Crocodile defeats Luffy twice in Arabasta, and other people help him survive both encounters. He learns that moisture lets him strike Crocodile's sand body. In their final fight, even the blood on his hands becomes useful. He defeats Crocodile beneath Alubarna while his crew helps stop the civil war."
     ],
     "details": [
@@ -55,6 +57,51 @@
       {
         "name": "Ace and Vivi",
         "text": "Ace is his older brother. Vivi becomes a close friend during the voyage to Arabasta, where her country's troubles become the crew's problem too."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Jaya and Skypiea",
+        "paragraphs": [
+          "Luffy meets people who laugh at the idea of a sky island. He sails there anyway. In Skypiea, his rubber body lets him fight Enel, whose lightning barely touches him. Luffy rings the golden bell so Mont Blanc Cricket can hear proof that the city his ancestor wrote about was real."
+        ]
+      },
+      {
+        "title": "Water 7, Enies Lobby and Thriller Bark",
+        "paragraphs": [
+          "After beating Foxy at the Davy Back Fight, the crew runs into Admiral Kuzan, who shows Luffy how outmatched he is. The Going Merry can no longer sail safely, and Luffy and Usopp fight over what to do with it. When Robin leaves to protect the crew, Luffy goes after her and has their flag burned at Enies Lobby. He uses Gear 2 and Gear 3 to beat Lucci, and Robin chooses to live. The crew says goodbye to the Merry and leaves aboard the Thousand Sunny. At Thriller Bark, Luffy defeats Moria and gets the stolen shadows back. Zoro secretly takes on Luffy’s pain to save him. Brook joins the crew."
+        ]
+      },
+      {
+        "title": "Sabaody, Impel Down and Marineford",
+        "paragraphs": [
+          "Luffy punches a Celestial Dragon for shooting Hatchan. The Navy closes in, and Kuma sends the crew to separate islands. Luffy lands on Amazon Lily, where Hancock helps him break into Impel Down to rescue Ace. He reaches Marineford and frees Ace, but Akainu kills Ace when he shields Luffy. Jinbe helps Luffy through his grief. Luffy sends the crew a message to wait two years, then trains in Haki with Rayleigh. Flashbacks show how he, Ace and Sabo became brothers as children."
+        ]
+      },
+      {
+        "title": "Fish-Man Island, Punk Hazard and Dressrosa",
+        "paragraphs": [
+          "The crew reunites at Sabaody. Luffy helps stop Hody Jones from taking Fish-Man Island and challenges Big Mom over the island’s future. On Punk Hazard he teams up with Law against Kaido and helps free children held by Caesar Clown. Their plan leads to Dressrosa, where Luffy learns Sabo is alive. He uses Gear 4 to beat Doflamingo, and the fighters who backed him form the Straw Hat Grand Fleet even though he never asked to command it."
+        ]
+      },
+      {
+        "title": "Zou and Whole Cake Island",
+        "paragraphs": [
+          "On Zou, Luffy learns how the Road Poneglyphs point to Laugh Tale. He sets off to bring Sanji back from a marriage arranged by the Vinsmokes and Big Mom. Sanji tries to drive him away, but Luffy waits for him. The wedding falls apart, Brook gets copies of Big Mom’s Poneglyphs, and Luffy learns to see a little into the future while fighting Katakuri. Jinbe helps the crew escape."
+        ]
+      },
+      {
+        "title": "Wano",
+        "paragraphs": [
+          "Luffy is jailed after losing to Kaido. In Udon he learns to push his Haki beyond his body, then joins the raid on Onigashima. When Kaido puts him down again, his fruit awakens. The Five Elders reveal that the Gum-Gum Fruit is really the Human-Human Fruit, Model: Nika. Luffy calls the new form Gear 5 and uses it to beat Kaido. After Wano is freed, the world names him one of the Four Emperors."
+        ]
+      },
+      {
+        "title": "Egghead and Elbaph",
+        "paragraphs": [
+          "On Egghead, Luffy tries to help Vegapunk escape. He fights Lucci again, then Kizaru and the Five Elders. The crew escapes with help from Dorry and Brogy as Vegapunk’s broadcast tells the world it is sinking. On Elbaph, Luffy meets the imprisoned prince Loki. When the Knights of God attack the island and take children hostage, Luffy and Loki fight together. Their battle draws Imu into the open, and the fight for Elbaph is still ongoing.",
+          "The fight with Imu continues as Elbaph tries to get its children to safety. Loki goes down, and Jinbe senses a powerful presence approaching the village. He thinks it might be Luffy, but it feels different. The manga has not yet explained what changed."
+        ]
       }
     ]
   },
@@ -115,6 +162,26 @@
         "name": "Mohji and Cabaji",
         "text": "Two of his leading crew members. Their animal-taming and acrobatic acts fit the crew's circus theme."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Roger’s crew and the search for treasure",
+        "paragraphs": [
+          "Buggy and Shanks were apprentices on Roger’s ship. Buggy accidentally swallowed the fruit he planned to sell, lost his treasure map, and blamed Shanks. Years later, Buggy hunts for Captain John’s treasure with Alvida. A wrong turn into a Marine base gets him sent to Impel Down."
+        ]
+      },
+      {
+        "title": "Impel Down and Marineford",
+        "paragraphs": [
+          "Buggy meets Luffy in prison and helps with the breakout after Luffy hands him Captain John’s treasure mark. At Marineford, the escaped prisoners learn Buggy sailed with Roger and mistake his luck for skill. He plays up the attention and leaves the war with a crew of devoted followers. The World Government makes him a Warlord, and he starts a mercenary business."
+        ]
+      },
+      {
+        "title": "Cross Guild",
+        "paragraphs": [
+          "When the Warlord system ends, Crocodile comes to collect Buggy’s debt and folds his business into Cross Guild. Buggy’s crew prints a poster that makes him look like the leader, and the world names him an Emperor. Crocodile and Mihawk are furious. Even so, Buggy tells their crew he wants to go after the One Piece, forcing his partners to reckon with a goal they never agreed on."
+        ]
+      }
     ]
   },
   {
@@ -169,6 +236,20 @@
       {
         "name": "Buggy",
         "text": "Her partner in pursuing Luffy. Their alliance brings her into contact with a larger crew and a shared revenge plan."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Buggy’s crew and Impel Down",
+        "paragraphs": [
+          "Alvida stays with Buggy’s crew as they look for Captain John’s treasure. She meets Ace when he drops in on their ship during his search for Blackbeard. After Buggy is arrested, his crew asks her to help break him out of Impel Down. Alvida refuses to risk sailing into the prison and later calls them out for abandoning him when they reunite."
+        ]
+      },
+      {
+        "title": "The pirate dispatch business and Cross Guild",
+        "paragraphs": [
+          "Alvida sticks with Buggy as he builds his mercenary business under the protection of his Warlord title. When the title is revoked, the Marines surround their base on Karai Bari. Crocodile wipes out the fleet and takes over the business. Alvida and the others agree to work under him as part of Cross Guild."
+        ]
       }
     ]
   },
@@ -229,6 +310,20 @@
         "name": "Hina",
         "text": "Another Marine officer who knows him well. She is more comfortable with military procedure, though she is used to his stubbornness."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Marineford and G-5",
+        "paragraphs": [
+          "Smoker is at Marineford for Ace’s execution and fights Luffy again before Hancock intervenes. After the war, he asks to move to the G-5 base in the New World so he can keep pursuing the Straw Hats. By the time they meet again, he is a vice admiral and Tashigi is a captain in his unit."
+        ]
+      },
+      {
+        "title": "Punk Hazard and Egghead",
+        "paragraphs": [
+          "Law swaps Smoker and Tashigi’s bodies on Punk Hazard. Smoker learns that Vergo, his own superior, has been working for Doflamingo. He helps Law recover his heart so they can bring Vergo down. Kuzan later stops Doflamingo from killing Smoker. Smoker and Tashigi get the children rescued from Caesar to medical care. During the Egghead incident, he checks in with Tashigi from his bike and learns she is at the Marine hospital."
+        ]
+      }
     ]
   },
   {
@@ -285,6 +380,14 @@
         "name": "Mr. 3",
         "text": "A higher-ranked agent who is critical of their failure. Mr. 3 believes planning matters more than the raw force of a Devil Fruit."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "The Baroque Works rescue",
+        "paragraphs": [
+          "Gem and Miss Valentine join Miss Goldenweek to free their former coworkers. Hina spots them on Kyuka Island, and Gem uses explosions to cover the escape. The group eventually breaks several agents out. Gem leaves the old organization behind and takes a job as a fireman at the new Spiders Cafe."
+        ]
+      }
     ]
   },
   {
@@ -340,6 +443,14 @@
       {
         "name": "Mr. 3 and Miss Goldenweek",
         "text": "The pair they join on Little Garden. Their traps are meant to make up for the failed mission at Whisky Peak."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "The Baroque Works rescue and Egghead",
+        "paragraphs": [
+          "Mikita joins Gem and Miss Goldenweek to break their old coworkers out of prison. Hina catches her on Kyuka Island, and Bon Clay steps in to save her. Mikita helps free several of the other agents and starts over at the new Spiders Cafe. Much later, she listens to Vegapunk’s broadcast with Marianne and Drophy."
+        ]
       }
     ]
   },
@@ -399,6 +510,39 @@
       {
         "name": "Luffy",
         "text": "He does not understand her motives at first. Their encounters in the desert and beneath Alubarna change what she expects from him."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Joining the Straw Hats and finding Skypiea",
+        "paragraphs": [
+          "After joining the crew, Robin follows them to Skypiea. There, she finds a Poneglyph about Poseidon and a message left by Roger. It gives her a new lead: the stones she has been reading can help her piece together the history the World Government erased."
+        ]
+      },
+      {
+        "title": "Ohara, Water 7 and Enies Lobby",
+        "paragraphs": [
+          "Robin grew up among the scholars of Ohara. The World Government destroyed the island for studying the Void Century. Her mother Olvia and the scholars died, and Saul helped Robin get away. At Water 7, Robin gives herself up to CP9 to spare her friends another Buster Call. The Straw Hats come for her anyway. On the bridge at Enies Lobby she finally tells them she wants to live, and they take her home."
+        ]
+      },
+      {
+        "title": "Thriller Bark to the New World",
+        "paragraphs": [
+          "After Thriller Bark, Kuma sends Robin to Tequila Wolf, where prisoners are forced to build a bridge. The Revolutionary Army frees her, and she spends the two-year break with them. Once back with the crew, she reads a Poneglyph on Fish-Man Island and learns more about Joy Boy. In Dressrosa she helps protect Rebecca and helps the dwarves in their fight against Doflamingo. On Zou she reads a Road Poneglyph and learns how the four stones can lead them to Laugh Tale."
+        ]
+      },
+      {
+        "title": "Wano",
+        "paragraphs": [
+          "Robin works undercover in Wano before the raid on Onigashima. Sanji asks her for help when Black Maria captures him, and Robin defeats Black Maria using Demonio Fleur. After the battle she follows Sukiyaki beneath Wano and learns that Pluton lies under the old country, behind the walls that keep it flooded."
+        ]
+      },
+      {
+        "title": "Egghead and Elbaph",
+        "paragraphs": [
+          "Vegapunk tells Robin that the books of Ohara were saved and that Saul survived. After escaping Egghead, she meets Saul again on Elbaph and visits the library that holds the books. Robin fights back when the Knights of God attack the school and threaten the children. The library later seems empty, but Robin and Saul find the books Biblo hid in a secret room.",
+          "Biblo also has a story to tell about a human named Lili who once lived on Elbaph. Chopper translates it for Robin and Saul. It gives Robin another piece of the history she has spent her life looking for."
+        ]
       }
     ]
   },
@@ -460,6 +604,20 @@
         "name": "Dorry and Brogy",
         "text": "Targets he chooses for their bounties. He interferes with their duel rather than trying to defeat either giant fairly."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "The escape from Impel Down",
+        "paragraphs": [
+          "After another run-in with Hina, Galdino ends up in Impel Down. He joins Buggy and Luffy in the breakout, using his wax to make keys and to shield Luffy against Magellan’s poison for a short time."
+        ]
+      },
+      {
+        "title": "Marineford and Buggy’s crew",
+        "paragraphs": [
+          "At Marineford, Galdino makes a wax key that frees Ace from his cuffs. He later joins Buggy and the escaped prisoners and stays with Buggy’s mercenary business. After Crocodile and Mihawk form Cross Guild, Galdino sides with his old boss Crocodile and tells Buggy he was never really loyal to him."
+        ]
+      }
     ]
   },
   {
@@ -518,6 +676,20 @@
       {
         "name": "Hiriluk and Chopper",
         "text": "Hiriluk stands against the fear Wapol uses to rule. Chopper carries that conflict into the fight at the castle."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Exile and a new kingdom",
+        "paragraphs": [
+          "After losing Drum Island, Wapol lives on the street. He uses his fruit to combine pieces of scrap into toys and discovers a new metal, Wapometal. His toy business makes him rich, he marries Kinderella, and the World Government recognizes him as ruler of the Evil Black Drum Kingdom."
+        ]
+      },
+      {
+        "title": "The Levely and Egghead",
+        "paragraphs": [
+          "Wapol attends the Levely and tries to pick on Vivi until Dalton steps in. Later, he spies on Cobra’s meeting with the Five Elders and sees Imu and Cobra’s murder. He flees through the castle walls and accidentally gives Vivi a way out of the room where she is being held. Both go into hiding aboard Morgans’s airship. Wapol is terrified of what will happen if the World Government finds them."
+        ]
       }
     ]
   },
@@ -578,6 +750,20 @@
         "name": "Vivi and the Straw Hats",
         "text": "Visitors he first treats as a possible threat. Their need for a doctor gives him a chance to judge them by their behavior."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "The Sakura Kingdom",
+        "paragraphs": [
+          "After Wapol is driven out, the people elect Dalton as king and the country becomes the Sakura Kingdom. He stays close to Kureha and keeps up with the Straw Hats through their wanted posters and the news."
+        ]
+      },
+      {
+        "title": "The Levely and Egghead",
+        "paragraphs": [
+          "Dalton travels to Mary Geoise with Kureha. He stands up for Vivi when Wapol insults her and talks with Rebecca about Luffy. Back home, he listens to Vegapunk’s broadcast with Kureha and the islanders. The claim that the sea rose 200 meters leaves him stunned."
+        ]
+      }
     ]
   },
   {
@@ -636,6 +822,39 @@
       {
         "name": "Luffy and Usopp",
         "text": "Luffy gives him a place on the crew. Usopp becomes a friend whose stories he often takes far more seriously than he should."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Skypiea, Water 7 and Thriller Bark",
+        "paragraphs": [
+          "Chopper helps fight Enel’s priests in Skypiea and holds his own against Gedatsu. At Enies Lobby, he takes a third Rumble Ball to beat Kumadori. His huge new form wins the fight, but he loses control and puts his friends in danger. On Thriller Bark, he sees how Hogback treats the dead and rejects the doctor he once admired."
+        ]
+      },
+      {
+        "title": "Sabaody and the two-year break",
+        "paragraphs": [
+          "Kuma sends Chopper to Torino Kingdom, where people and giant birds are fighting. Chopper can speak to both sides and helps them settle the conflict. After hearing about Ace’s death and Luffy’s message, he stays to study the island’s medicine so he can better care for the crew."
+        ]
+      },
+      {
+        "title": "Fish-Man Island, Punk Hazard and Whole Cake Island",
+        "paragraphs": [
+          "After the crew reunites, Chopper shows how far his training has taken him. He can now control Monster Point, the form that made him a danger to his friends at Enies Lobby. Chopper helps the children Caesar experimented on and asks the Marines to get them proper treatment. On Zou he works to save the Minks after Jack poisons them. In Big Mom’s territory he teams up with Carrot in the Mirror World, taking advantage of its passages to help his friends move around and escape."
+        ]
+      },
+      {
+        "title": "Wano and Egghead",
+        "paragraphs": [
+          "In Wano, Chopper makes an antidote for Queen’s Ice Oni plague and shares it with enemies as well as allies. He also uses the longer Monster Point that Caesar helped him develop, though it leaves him weak afterward. On Egghead he meets Vegapunk and helps his crew protect their friends as the Marines close in."
+        ]
+      },
+      {
+        "title": "Elbaph",
+        "paragraphs": [
+          "Chopper escapes Road’s model kingdom with the others and later visits Saul’s library with Robin. When the Knights of God attack, he helps the wounded Gaban and discovers a way to restore giants transformed by Imu. He treats injured villagers and reattaches Gerd’s severed fingertips.",
+          "At the Owl Library, Chopper’s ability to speak with animals helps again. He translates Biblo’s account of Lili for Robin and Saul, giving them a clue that no one else there could have understood."
+        ]
       }
     ]
   },
@@ -696,6 +915,26 @@
         "name": "Blackbeard",
         "text": "The former crewmate he is pursuing. Ace will not simply let the killing of another crew member pass."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Roger’s son and Whitebeard’s family",
+        "paragraphs": [
+          "Ace is the son of Gol D. Roger and Portgas D. Rouge. Garp takes him to Dadan, where Ace grows up with Luffy and Sabo. The three swear to be brothers. Ace later sails with the Spade Pirates and sets out to challenge Whitebeard. Whitebeard takes him in, and Ace comes to see him as his father. Ace also visits Wano, where he befriends Tama and meets Yamato."
+        ]
+      },
+      {
+        "title": "The search for Blackbeard",
+        "paragraphs": [
+          "After Teach kills Thatch and leaves the Whitebeard Pirates, Ace goes after him. He crosses paths with Buggy’s crew while looking for leads and eventually finds Teach on Banaro Island. Ace loses the fight, and Teach hands him to the World Government, which plans to execute him at Marineford."
+        ]
+      },
+      {
+        "title": "Marineford and his legacy",
+        "paragraphs": [
+          "Whitebeard’s crew comes to save Ace. Luffy and the other prison escapees join the fight and get his cuffs off. Ace turns back when Akainu insults Whitebeard, then takes a fatal blow meant for Luffy. His death forces Luffy to face how much stronger he and his crew need to become. Shanks arranges for Ace and Whitebeard to be buried. Later, Sabo wins Ace’s fruit in Dressrosa and carries on his brother’s power."
+        ]
+      }
     ]
   },
   {
@@ -754,6 +993,20 @@
       {
         "name": "Luffy",
         "text": "An intruder Crocodile initially considers beneath him. Luffy's repeated returns become a threat he cannot dismiss."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Prison and Marineford",
+        "paragraphs": [
+          "Crocodile stays behind with Daz Bonez when Miss Goldenweek frees the other captured agents. He is transferred to the lowest level of Impel Down. Ivankov helps persuade him to join Luffy’s breakout. At Marineford, Crocodile first goes after Whitebeard, then interferes with Ace’s execution and helps keep the Marines from killing Luffy and Jinbe."
+        ]
+      },
+      {
+        "title": "Cross Guild",
+        "paragraphs": [
+          "Crocodile leaves for the New World with Daz. After the Warlord system is abolished, he brings Mihawk in to form Cross Guild. He takes over Buggy’s business to settle a debt, only for a poster to convince everyone that Buggy is their boss. The group puts bounties on Marines. Crocodile wants money and military power, while Buggy pushes them into the race for the One Piece."
+        ]
       }
     ]
   },
@@ -815,6 +1068,20 @@
         "name": "Hina",
         "text": "The Marine officer whose blockade stands between the Straw Hats and the open sea at the end of the arc."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Hina and Impel Down",
+        "paragraphs": [
+          "Hina captures Bon Clay after his crew covers the Straw Hats’ escape. He breaks out once and returns to help Miss Valentine, but he is caught again and sent to Impel Down. He reunites with Luffy there and carries him to safety after Magellan poisons him. He finds Ivankov, who puts Luffy through a treatment that gives him a chance to live."
+        ]
+      },
+      {
+        "title": "The Gates of Justice",
+        "paragraphs": [
+          "Bon Clay stays behind when the prisoners escape. He copies Magellan’s face and orders the Gates of Justice opened, knowing he’ll have to face the real Magellan. A later manga cover shows that he survived and became the new queen of Newkama Land on Level 5.5."
+        ]
+      }
     ]
   },
   {
@@ -875,6 +1142,20 @@
         "name": "Zoro",
         "text": "The swordsman whose inability to cut steel becomes the central problem of their fight."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Prison and Marineford",
+        "paragraphs": [
+          "Daz is imprisoned after losing to Zoro. He stays with Crocodile when Miss Goldenweek breaks the other agents out, and he is transferred to Impel Down. Crocodile frees him during Luffy’s breakout. At Marineford, Daz briefly holds off Mihawk to protect Luffy, but Mihawk cuts through his steel body."
+        ]
+      },
+      {
+        "title": "Cross Guild",
+        "paragraphs": [
+          "After the war, Daz accepts Crocodile’s invitation to sail to the New World. He helps Crocodile attack the Marines around Buggy’s island after the Warlord system ends. He stays by Crocodile’s side as Buggy’s business becomes part of Cross Guild."
+        ]
+      }
     ]
   },
   {
@@ -930,6 +1211,14 @@
       {
         "name": "Nami",
         "text": "An opponent she underestimates. The fight makes Nami learn a new weapon while already under pressure."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "The new Spiders Cafe",
+        "paragraphs": [
+          "Zala is held at a Marine base with other Baroque Works agents. Miss Goldenweek’s group breaks her out. She and several of the escapees reopen Spiders Cafe and leave their work as officers behind."
+        ]
       }
     ]
   },
@@ -991,6 +1280,14 @@
         "name": "Usopp and Chopper",
         "text": "The pair they fight in Alubarna. The battle tests whether their teamwork can survive Drophy's pressure and taunts."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "The new Spiders Cafe and Egghead",
+        "paragraphs": [
+          "Drophy, Mr. 4 and Lassoo are captured after Arabasta. Miss Goldenweek’s group frees them, and Drophy trades her life as an agent for work at the new Spiders Cafe. During the Egghead incident she is seen listening to Vegapunk’s broadcast alongside Mikita and Marianne."
+        ]
+      }
     ]
   },
   {
@@ -1049,6 +1346,14 @@
       {
         "name": "Chopper",
         "text": "A doctor and animal who finds the idea of a gun with a cold difficult to make sense of."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "The new Spiders Cafe",
+        "paragraphs": [
+          "Lassoo goes to prison with Mr. 4 and Drophy. Miss Goldenweek’s group breaks them out along with several former agents. Lassoo moves to the new Spiders Cafe with them and becomes its mascot."
+        ]
       }
     ]
   },
@@ -1109,6 +1414,20 @@
         "name": "Chaka",
         "text": "His fellow commander. They divide work between protecting the capital and checking threats elsewhere."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Back on guard",
+        "paragraphs": [
+          "Pell survives the bomb and returns to his post. He visits the hot springs opened by Gedatsu and Goro and later learns that Robin has joined the Straw Hats. After the Summit War, he and Chaka report to Cobra that they drove pirates out of Arabasta."
+        ]
+      },
+      {
+        "title": "The Levely and Cobra’s funeral",
+        "paragraphs": [
+          "Pell goes to the Levely with Cobra, Vivi and the royal guards. He and Chaka are made to wait outside Cobra’s meeting with the Five Elders. When Cobra and Vivi vanish, Pell searches for them in falcon form. He returns to Arabasta and helps lay Cobra to rest."
+        ]
+      }
     ]
   },
   {
@@ -1167,6 +1486,20 @@
       {
         "name": "Pell",
         "text": "His fellow commander. Chaka leads forces in the capital while Pell often handles work that requires flight."
+      }
+    ],
+    "laterStory": [
+      {
+        "title": "Protecting Arabasta",
+        "paragraphs": [
+          "Chaka remains one of Cobra’s guards after the civil war. He visits the hot springs opened by Gedatsu and Goro, learns that Robin has joined the Straw Hats, and helps Pell stop another pirate attack."
+        ]
+      },
+      {
+        "title": "The Levely and Cobra’s funeral",
+        "paragraphs": [
+          "Chaka escorts Cobra to the Levely, but he and Pell are kept outside the meeting with the Five Elders. When Cobra goes missing, Chaka confronts a guard at Pangaea Castle and demands to know where his king is. He returns to Arabasta and joins the mourners at Cobra’s funeral."
+        ]
       }
     ]
   },
@@ -1227,6 +1560,125 @@
         "name": "Bon Clay",
         "text": "An agent whose disguise power creates a problem her ships and restraints cannot solve through force alone."
       }
+    ],
+    "laterStory": [
+      {
+        "title": "Baroque Works and Marineford",
+        "paragraphs": [
+          "Hina keeps hunting the former Baroque Works agents after Arabasta. She catches Miss Valentine on Kyuka Island, but Bon Clay interferes and several agents escape. At Marineford she tries to trap Luffy with her iron bars, but he dodges and she catches her own allies."
+        ]
+      },
+      {
+        "title": "The Levely and Egghead",
+        "paragraphs": [
+          "Hina escorts Arabasta’s delegation to the Levely. At Red Port she talks with Garp about the Rocks Pirates after the Marines hear Big Mom contacting Kaido. Later, when Sengoku asks where Garp is, Hina tells him Garp went to Hachinosu with members of SWORD to rescue Koby. She is at New Marineford when Vegapunk warns that the world will sink."
+        ]
+      }
     ]
+  },
+  {
+    "slug": "apis",
+    "name": "Apis",
+    "japaneseName": "アピス",
+    "romanizedName": "Apisu",
+    "alias": "Friend of the dragons",
+    "role": "Warship Island villager",
+    "seoDescription": "Apis is a girl from Warship Island who can speak to animals. Read about the Whisper-Whisper Fruit and her friendship with the dragon Ryu.",
+    "about": "Apis is a girl from Warship Island who can hear what animals are thinking. She uses that gift to care for an old dragon named Ryu. When the Marines come looking for him, she tries to keep his hiding place safe.",
+    "background": [
+      "Apis lives on Warship Island, where the village elders tell stories about dragons and an island lost beneath the sea. She knows those stories mean more than most people realize. Ryu is real, and she has been taking care of him in secret.",
+      "Ryu is too old and weak to find his way home. Apis wants to get him back to the other dragons. The Marines want the same dragon for a very different reason. Their commander, Nelson, believes dragon bones can grant him a longer life."
+    ],
+    "personality": [
+      "Apis has a hard time trusting strangers at first. She has a good reason: every person who learns about Ryu could tell the Marines where to look. Even after the Straw Hats rescue her, she keeps parts of her story to herself.",
+      "She is stubborn when it comes to protecting Ryu. She does not have the strength to fight off a fleet. What she has is the nerve to speak up and the patience to sit with a dragon who cannot explain himself to anyone else."
+    ],
+    "combat": [
+      "The Whisper-Whisper Fruit lets Apis communicate with animals through thought. She can pick up warnings that a person would miss, like an animal sensing a change in the weather. That gives the Straw Hats time to react when a storm is coming.",
+      "The fruit does not make animals obey her. Ryu trusts her because she has cared for him. She needs help from the crew when the danger calls for a ship, a plan or someone who can fight."
+    ],
+    "relationships": [
+      {
+        "name": "Ryu",
+        "text": "The elderly dragon she calls Grandpa Ryu. Keeping him safe and finding his home are the reasons she takes so many risks."
+      },
+      {
+        "name": "The Straw Hats",
+        "text": "They take her aboard after she escapes from the Marines. Luffy agrees to help Ryu, and Nami helps work out where the dragons’ nesting grounds really are."
+      }
+    ],
+    "details": [
+      "Apis appears in the anime’s Warship Island story. She does not appear in the original manga.",
+      "The Whisper-Whisper Fruit works on more than ordinary land animals. Apis can communicate with a dragon, too.",
+      "The village elder Bokuden knows the island’s old stories. Apis is the one who has seen a dragon for herself."
+    ],
+    "story": [
+      "Apis escapes from the Marines and is found at sea by the Straw Hats. They take her home and learn about Ryu. The crew agrees to help the dragon reach his old nesting grounds. A search through a mirage turns up clues, but the real nesting grounds turn out to be on Warship Island itself.",
+      "Nelson’s fleet and Eric close in before Ryu can get away. Ryu dies, but the dragons return and Apis sees a hatchling at the nest. When Luffy offers her a place with the crew, she chooses to stay and watch over the nesting grounds."
+    ],
+    "canon": false,
+    "group": "Non-canon",
+    "debutArc": "Warship Island (Non-canon)",
+    "firstAppearance": "Episode 54",
+    "fruitId": "d2a7f4b9-8e13-4c60-b5a2-1f9c3e7d6a48",
+    "fruitName": "Whisper-Whisper Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Hiso Hiso no Mi",
+    "portrait": "/images/characters/d2a7f4b9-8e13-4c60-b5a2-1f9c3e7d6a48.webp",
+    "source": "https://onepiece.fandom.com/wiki/Apis",
+    "researchedOn": "2026-11-09"
+  },
+  {
+    "slug": "eric",
+    "name": "Eric",
+    "japaneseName": "エリック",
+    "romanizedName": "Erikku",
+    "alias": "Eric the Whirlwind",
+    "role": "Mercenary",
+    "seoName": "Eric the Whirlwind",
+    "seoDescription": "Eric the Whirlwind is a mercenary in the Warship Island arc. Read about his Sickle-Sickle Fruit and why he hunts Apis and the dragon Ryu.",
+    "about": "Eric is a mercenary hired by the Marines to catch Apis and the dragon she is hiding. His Sickle-Sickle Fruit lets him cut people from a distance. He has his own plans for what he finds on Warship Island.",
+    "background": [
+      "Eric works for Nelson Royale, a Marine commander who believes dragon bones can be used to make an elixir. Nelson wants Apis because she knows where to find a living dragon. Eric follows the girl instead of trying to search the island on his own.",
+      "Working with the Marines gives Eric ships and soldiers to help him chase his target. It does not make him loyal to Nelson. The promise of an elixir matters to him more than the job or the man who hired him."
+    ],
+    "personality": [
+      "Eric likes to keep his distance and let other people take the first risks. He is willing to follow orders while they bring him closer to the dragon. Once he thinks he can take what he wants on his own, he stops pretending to care who is in charge.",
+      "He is persistent enough to keep following the Straw Hats after they slip away from the fleet. But his fixation on the dragon also makes him easy to distract when someone offers him a clue."
+    ],
+    "combat": [
+      "Eric swings his hands to send sharp bursts of air toward his target. The Sickle-Sickle Fruit lets him cut without needing to carry a blade. He can hit people who think they are out of reach and threaten the crew even from across the deck.",
+      "His attacks make him dangerous in an open space, but they do not stop the Straw Hats from closing in or slipping out of sight. Against Luffy, being able to attack from far away is not enough to win."
+    ],
+    "relationships": [
+      {
+        "name": "Nelson Royale",
+        "text": "The Marine commander who hires Eric to capture Apis and Ryu. Both want the dragon for themselves, so their deal is never built on trust."
+      },
+      {
+        "name": "Apis and Ryu",
+        "text": "Eric sees the girl as a way to get to the dragon. To Apis, Ryu is a friend worth protecting, and she refuses to hand him over."
+      }
+    ],
+    "details": [
+      "Eric appears in the anime’s Warship Island story and is absent from the original manga.",
+      "His nickname comes from the blades of wind he makes with his fruit.",
+      "His power lets him fight at a distance even though he does not carry a sword."
+    ],
+    "story": [
+      "Eric follows Apis and the Straw Hats as they look for Ryu’s home. He hears them piece together the truth about the nesting grounds and follows them back toward Warship Island. When Nelson’s forces close in, Eric turns on his employer and tries to take the dragons for himself.",
+      "Luffy beats Eric at the nesting grounds. Eric gets aboard the Going Merry for one last attack as the crew reaches Reverse Mountain. Nami tricks him into looking away and sends him overboard. He does not return after that."
+    ],
+    "canon": false,
+    "group": "Non-canon",
+    "debutArc": "Warship Island (Non-canon)",
+    "firstAppearance": "Episode 54",
+    "fruitId": "9e2a4f6b-1d8c-4a3e-b7f5-6c8d1a9e3f2b",
+    "fruitName": "Sickle-Sickle Fruit",
+    "fruitType": "Paramecia",
+    "fruitRomanizedName": "Kama Kama no Mi",
+    "portrait": "/images/characters/9e2a4f6b-1d8c-4a3e-b7f5-6c8d1a9e3f2b.webp",
+    "source": "https://onepiece.fandom.com/wiki/Eric",
+    "researchedOn": "2026-11-09"
   }
 ]

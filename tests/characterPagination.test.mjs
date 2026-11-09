@@ -11,13 +11,12 @@ test('pages contain at most 12 characters with complete, non-overlapping coverag
     const first = paginateCharacters(profiles);
     const last = paginateCharacters(profiles, { page: 2 });
     assert.equal(first.visible.length, CHARACTER_PAGE_SIZE);
-    assert.equal(last.visible.length, 9);
-    assert.deepEqual([first.rangeStart, first.rangeEnd, last.rangeStart, last.rangeEnd], [1, 12, 13, 21]);
+    assert.equal(last.visible.length, 11);
+    assert.deepEqual([first.rangeStart, first.rangeEnd, last.rangeStart, last.rangeEnd], [1, 12, 13, 23]);
     assert.equal(first.totalPages, 2);
     assert.deepEqual([...first.visible, ...last.visible], profiles);
     const larger = [...profiles, ...profiles];
-    assert.equal(paginateCharacters(larger, { page: 4 }).visible.length, 6);
-    assert.equal(larger.length, 42);
+    assert.equal(paginateCharacters(larger, { page: 4 }).visible.length, 10);
 });
 
 test('search and group filters run across the roster before pagination', () => {
@@ -59,7 +58,7 @@ test('the list index excludes biographies while each detail file contains just o
     for (const [position, entry] of index.entries()) {
         assert.equal(entry.name, profiles[position].name);
         assert.equal(entry.about, profiles[position].about);
-        for (const field of ['background', 'personality', 'combat', 'relationships', 'story', 'details']) {
+        for (const field of ['background', 'personality', 'combat', 'relationships', 'story', 'laterStory', 'details']) {
             assert.equal(Object.hasOwn(entry, field), false);
         }
         assert.deepEqual(JSON.parse(assets.get(entry.profilePath)), profiles[position]);

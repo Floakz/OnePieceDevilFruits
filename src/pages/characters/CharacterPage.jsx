@@ -9,6 +9,7 @@ import ProfileContent from './ProfileContent.jsx';
 import characterIndex from '../../lib/characterIndex.js';
 import { getFruitImages } from '../../lib/imagesMap.js';
 import { getCharacterSeo } from '../../lib/characterSeo.js';
+import { getCharacterStory } from '../../lib/characterCatalog.js';
 import useCharacterProfile from '../../hooks/useCharacterProfile.js';
 import { slugify } from '../../lib/slugify.js';
 import fruitStyles from '../fruits/expanded/expandedFruit.module.css';
@@ -19,6 +20,7 @@ export default function CharacterPage() {
     const { slug } = useParams();
     const { hash } = useLocation();
     const { entry, profile, status, retry } = useCharacterProfile(slug);
+    const story = profile && getCharacterStory(profile);
     const related = entry ? characterIndex.filter(other => other.slug !== slug && other.group === entry.group).slice(0, 3) : [];
     const galleryImages = profile ? getFruitImages(profile.fruitId) : [];
 
@@ -99,10 +101,13 @@ export default function CharacterPage() {
                     <ul className={styles.trivia}>{profile.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
                 </section>
                 <details key={slug} id="story" className={styles.spoilers}>
-                    <summary><span>Story spoilers</span><small>Through the end of Arabasta</small></summary>
+                    <summary><span>Story spoilers</span><small>{story.warning}</small></summary>
                     <div className={styles.spoilerBody}>
                         <h2>{profile.name}’s story</h2>
-                        {profile.story.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                        {story.sections.map(section => <section className={styles.storySection} key={section.title}>
+                            <h3>{section.title}</h3>
+                            {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                        </section>)}
                     </div>
                 </details>
                 {related.length > 0 && <section className={`${fruitStyles.sectionWrapper} ${styles.more}`} aria-labelledby="more-characters">

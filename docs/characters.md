@@ -1,20 +1,24 @@
 # Characters
 
 The Characters tab lives at `/characters`, separate from the fruit catalog.
-Its 21 profiles cover canon Devil Fruit users introduced by the end of Arabasta
+Its 23 profiles cover Devil Fruit users introduced by the end of Arabasta
 whose fruits already exist in `public/data/fruits_v16.json`. Ace represents the
 Flame-Flame Fruit in this period, even though the fruit catalog lists Sabo as its
-current user. Non-canon characters and users introduced later are excluded.
+current user. Apis and Eric are labeled non-canon and cover the anime-only
+Warship Island story. Users introduced after Arabasta are excluded.
 
 `src/data/characterProfiles.json` is the curated content source. Profiles have
 Japanese and romanized names, a short card description, background, personality,
-abilities and limitations, relationships, trivia, and a story section. Each has
-roughly 420–540 words. Ages, roles, and fruit classifications use the Arabasta
+abilities and limitations, relationships, trivia, and a story section.
+Ages, roles, and fruit classifications use the Arabasta
 period. Character introductions can precede their fruit's debut: Alvida first
 appears in Romance Dawn, for example.
 
-Plot outcomes are placed in a native `details` section, closed by default and
-labeled as spoilers through Arabasta. Switching profiles resets this disclosure.
+Plot outcomes are placed in a native `details` section, closed by default.
+`story` covers events through Arabasta or Warship Island. The optional
+`laterStory` array contains titled sections with `paragraphs` covering later
+manga events, including cover stories and ongoing arcs where relevant. Keep those
+spoilers out of card and search descriptions. Switching profiles resets the disclosure.
 The same disclosure is present in the prerendered HTML. Source metadata is retained
 for research and is not displayed on the website.
 
@@ -23,8 +27,8 @@ name, original names below it, and portrait beside the text. Detail pages reuse
 the fruit detail layout. Related character cards include local portraits.
 
 The roster is intentionally explicit. Adding fruits to the main catalog does
-not automatically publish new characters. The character routes are lazy loaded,
-so the fruit home page does not load character data.
+not automatically publish new characters. Full biographies load only on their
+character routes.
 
 ## Pagination and loading
 
@@ -65,14 +69,16 @@ character's data cannot stay behind.
 Fruit detail pages link current and previous users to published profiles when
 both the name and fruit match. Names can match the profile's English, Japanese,
 romanized name, or alias. This keeps Sabo's name separate from Ace's profile.
-The fruit home page still does not load the character index.
+No separate link list is needed for new profiles.
 
 ## Research
 
 The user's existing scraper was run on 2026-10-25. All 21 profiles were exported,
 with 47 responses and no section errors. Full articles and available linked tabs
-were used for research and the expanded biographies. Events after Arabasta are
-left out of the authored copy.
+were used for the expanded biographies and later stories. The Warship Island
+profiles use the existing fruit records and episode references. Later manga
+coverage is a summary of each character’s major events, including Elbaph for
+characters still active in that arc.
 
 To refresh research from PowerShell at the website root:
 
