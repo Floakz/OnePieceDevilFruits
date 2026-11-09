@@ -58,8 +58,8 @@ export default function CharacterPage() {
                             <p className={styles.overview}>{profile.about}</p>
                             <dl className={styles.facts}>
                                 {[
-                                    ['Group', profile.group], ['Role', profile.role], ['Debut arc', profile.debutArc],
-                                    ['First appearance', profile.firstAppearance], ['Age during Arabasta', profile.age],
+                                    ['Group', profile.group], ['Early role', profile.role], ['Debut arc', profile.debutArc],
+                                    ['First appearance', profile.firstAppearance],
                                     ['Birthday', profile.birthday], ['Height', profile.height], ['Devil Fruit', profile.fruitName],
                                 ].filter(([, value]) => value).map(([label, value]) => <div key={label}><dt>{label}</dt><dd>
                                     {label === 'Devil Fruit'

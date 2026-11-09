@@ -208,7 +208,7 @@ for (const character of characterData) {
     const seo = getCharacterSeo(character);
     const story = getCharacterStory(character);
     const related = characterData.filter(other => other.slug !== character.slug && other.group === character.group).slice(0, 3);
-    const facts = [['Group', character.group], ['Role', character.role], ['Debut arc', character.debutArc], ['First appearance', character.firstAppearance], ['Age during Arabasta', character.age], ['Birthday', character.birthday], ['Height', character.height]].filter(([, value]) => value);
+    const facts = [['Group', character.group], ['Early role', character.role], ['Debut arc', character.debutArc], ['First appearance', character.firstAppearance], ['Birthday', character.birthday], ['Height', character.height]].filter(([, value]) => value);
     const content = `${prerenderStyle}<main class="prerender-detail">
         <a href="/characters">Characters</a><article>
         <h1>${escapeHtml(character.name)}</h1>${characterNames(character)}

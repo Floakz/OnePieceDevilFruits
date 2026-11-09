@@ -10,8 +10,9 @@ Warship Island story. Users introduced after Arabasta are excluded.
 `src/data/characterProfiles.json` is the curated content source. Profiles have
 Japanese and romanized names, a short card description, background, personality,
 abilities and limitations, relationships, trivia, and a story section.
-Ages, roles, and fruit classifications use the Arabasta
-period. Character introductions can precede their fruit's debut: Alvida first
+Quick facts use the character's early role and omit age, since each story can span
+several years. Fruit classifications reflect what was known in the early story.
+Character introductions can precede their fruit's debut: Alvida first
 appears in Romance Dawn, for example.
 
 Plot outcomes are placed in a native `details` section, closed by default.

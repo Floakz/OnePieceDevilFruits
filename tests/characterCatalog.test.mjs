@@ -41,7 +41,7 @@ test('profiles have full biographies, original names, and separate story outcome
         const copy = [profile.about, ...sections, ...profile.details, ...profile.relationships.map(relationship => relationship.text)].join(' ');
         assert.ok(copy.split(/\s+/).length >= 350, `${profile.name} needs more detail`);
         assert.ok(copy.split(/\s+/).length <= 700, `${profile.name} is too long`);
-        assert.ok(profile.details.length >= 3);
+        assert.ok(profile.details.length >= 2);
         assert.match(profile.japaneseName, /[\u3040-\u30ff]/u);
         assert.ok(profile.romanizedName.length > 0);
         assert.match(profile.firstAppearance, profile.canon === false ? /^Episode / : /^Chapter /);

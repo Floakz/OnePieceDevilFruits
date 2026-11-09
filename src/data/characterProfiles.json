@@ -2,7 +2,7 @@
   {
     "slug": "monkey-d-luffy",
     "name": "Monkey D. Luffy",
-    "seoDescription": "Luffy leads the Straw Hat Pirates and fights with a rubber body. Read about his crew, powers, and story from East Blue to Arabasta.",
+    "seoDescription": "Luffy leads the Straw Hat Pirates and fights with a rubber body. Read about his powers, crew, and journey from the East Blue onward.",
     "alias": "Straw Hat Luffy",
     "group": "Straw Hats",
     "role": "Captain",
@@ -31,8 +31,7 @@
     "romanizedName": "Monkī Dī Rufi",
     "firstAppearance": "Chapter 1; Episode 1",
     "birthday": "May 5th (Children's Day)",
-    "age": "17",
-    "height": "172 cm",
+    "height": "172 cm before the timeskip",
     "origin": "East Blue (Foosha Village)",
     "background": [
       "Shanks and his crew often stopped in Foosha Village, where Luffy grew up. Luffy kept asking to sail with them. When a bandit insults Shanks and he lets it go, Luffy has a hard time seeing why.",
@@ -114,7 +113,7 @@
   {
     "slug": "buggy",
     "name": "Buggy",
-    "seoDescription": "Buggy the Clown can split his body into floating pieces. Read about his pirate crew, rivalry with Luffy, and Chop-Chop Fruit powers through Arabasta.",
+    "seoDescription": "Buggy the Clown can split his body into floating pieces. Read about his Chop-Chop Fruit, rivalry with Luffy, and rise from the East Blue.",
     "alias": "Buggy the Clown",
     "group": "Other pirates",
     "role": "Buggy Pirates captain",
@@ -142,7 +141,6 @@
     "romanizedName": "Bagī",
     "firstAppearance": "Chapter 9; Episode 4",
     "birthday": "August 8th",
-    "age": "37",
     "height": "192 cm",
     "origin": "Grand Line",
     "background": [
@@ -224,7 +222,6 @@
     "romanizedName": "Arubida",
     "firstAppearance": "Chapter 2; Episode 1",
     "birthday": "March 14th",
-    "age": "25",
     "height": "198 cm",
     "origin": "East Blue",
     "background": [
@@ -294,7 +291,6 @@
     "romanizedName": "Sumōkā",
     "firstAppearance": "Chapter 97; Episode 48",
     "birthday": "March 14th",
-    "age": "34",
     "height": "209 cm",
     "origin": "Grand Line",
     "background": [
@@ -371,7 +367,6 @@
     "romanizedName": "Jemu",
     "firstAppearance": "Chapter 110; Episode 65",
     "birthday": "July 26th",
-    "age": "24",
     "height": "197 cm",
     "origin": "South Blue",
     "background": [
@@ -437,7 +432,6 @@
     "romanizedName": "Mikīta",
     "firstAppearance": "Chapter 110; Episode 65",
     "birthday": "February 14th",
-    "age": "22",
     "height": "177 cm",
     "origin": "West Blue",
     "background": [
@@ -488,8 +482,7 @@
     ],
     "details": [
       "Her codename refers to all Sundays rather than a single holiday.",
-      "Her fruit is named after flowers, but the parts that bloom are parts of her own body.",
-      "She is 28 during Arabasta, older than the Straw Hats traveling with Luffy at that point."
+      "Her fruit is named after flowers, but the parts that bloom are parts of her own body."
     ],
     "source": "https://onepiece.fandom.com/wiki/Nico_Robin",
     "fruitName": "Flower-Flower fruit",
@@ -501,7 +494,6 @@
     "romanizedName": "Niko Robin",
     "firstAppearance": "Chapter 114; Episode 67",
     "birthday": "February 6th",
-    "age": "28",
     "height": "188 cm",
     "origin": "West Blue",
     "background": [
@@ -597,7 +589,6 @@
     "romanizedName": "Gyarudīno",
     "firstAppearance": "Chapter 117; Episode 70",
     "birthday": "March 3rd",
-    "age": "35",
     "height": "179 cm",
     "origin": "South Blue",
     "background": [
@@ -671,7 +662,6 @@
     "romanizedName": "Waporu",
     "firstAppearance": "Chapter 131; Episode 79",
     "birthday": "August 9th",
-    "age": "27",
     "height": "207 cm",
     "origin": "Grand Line (Drum Kingdom)",
     "background": [
@@ -747,7 +737,6 @@
     "romanizedName": "Doruton",
     "firstAppearance": "Chapter 132; Episode 79",
     "birthday": "June 10th",
-    "age": "33",
     "height": "218 cm",
     "origin": "Grand Line (Drum Kingdom)",
     "background": [
@@ -806,7 +795,6 @@
       "Luffy invites him to sea after the fight with Wapol. Kureha sends him off beneath a display of pink snow that resembles Hiriluk's dream of cherry blossoms. In Arabasta, he fights alongside Usopp against Mr. 4, Miss Merry Christmas, and Lassoo. Their teamwork proves that he has a place in the crew beyond treating injuries."
     ],
     "details": [
-      "He is 15 during the Arabasta voyage.",
       "His blue nose was unusual even before he ate a Devil Fruit.",
       "The cross on his hat and the medical bag he carries make his work as a doctor part of his usual appearance."
     ],
@@ -820,8 +808,7 @@
     "romanizedName": "Tonī Tonī Choppā",
     "firstAppearance": "Chapter 134; Episode 81",
     "birthday": "December 24th (Christmas Eve)",
-    "age": "15",
-    "height": "90 cm",
+    "height": "90 cm in hybrid form",
     "origin": "Grand Line (Drum Island)",
     "background": [
       "Chopper was already different from the other reindeer because of his blue nose. Eating a Devil Fruit separated him further. His herd rejected his human traits, while people who saw his larger form mistook him for a monster.",
@@ -915,7 +902,6 @@
     "romanizedName": "Pōtogasu Dī Ēsu",
     "firstAppearance": "Chapter 154; Episode 91",
     "birthday": "January 1st",
-    "age": "20",
     "height": "185 cm",
     "origin": "South Blue (Baterilla)",
     "background": [
@@ -995,7 +981,6 @@
     "romanizedName": "Kurokodairu",
     "firstAppearance": "Chapter 126; Episode 76",
     "birthday": "September 5th",
-    "age": "44",
     "height": "253 cm",
     "origin": "Grand Line",
     "background": [
@@ -1072,7 +1057,6 @@
     "romanizedName": "Bensamu",
     "firstAppearance": "Chapter 129; Episode 78",
     "birthday": "August 15th",
-    "age": "30",
     "height": "238 cm",
     "origin": "East Blue",
     "background": [
@@ -1148,7 +1132,6 @@
     "romanizedName": "Dazu Bōnesu",
     "firstAppearance": "Chapter 160; Episode 103",
     "birthday": "January 1st",
-    "age": "29",
     "height": "212 cm",
     "origin": "West Blue",
     "background": [
@@ -1225,7 +1208,6 @@
     "romanizedName": "Zara",
     "firstAppearance": "Chapter 155; Episode 103",
     "birthday": "July 30th",
-    "age": "26",
     "height": "187 cm",
     "origin": "Grand Line",
     "background": [
@@ -1291,7 +1273,6 @@
     "romanizedName": "Dorofī",
     "firstAppearance": "Chapter 160; Episode 103",
     "birthday": "December 25th",
-    "age": "49",
     "height": "156 cm",
     "origin": "Grand Line",
     "background": [
@@ -1361,7 +1342,6 @@
     "romanizedName": "Rassū",
     "firstAppearance": "Chapter 160; Episode 103",
     "birthday": "January 4th",
-    "age": "",
     "height": "",
     "origin": "",
     "background": [
@@ -1430,7 +1410,6 @@
     "romanizedName": "Peru",
     "firstAppearance": "Chapter 155; Episode 91",
     "birthday": "August 23rd",
-    "age": "33",
     "height": "189 cm",
     "origin": "Grand Line (Arabasta Kingdom)",
     "background": [
@@ -1505,7 +1484,6 @@
     "romanizedName": "Chaka",
     "firstAppearance": "Chapter 155; Episode 91",
     "birthday": "April 26th",
-    "age": "39",
     "height": "213 cm",
     "origin": "Grand Line (Arabasta Kingdom)",
     "background": [
@@ -1578,7 +1556,6 @@
     "romanizedName": "Hina",
     "firstAppearance": "Chapter 171 (cover); Episode 127",
     "birthday": "March 3rd",
-    "age": "32",
     "height": "181 cm",
     "origin": "West Blue",
     "background": [
