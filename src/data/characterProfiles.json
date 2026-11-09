@@ -10,7 +10,8 @@
     "fruitId": "566d7c09-6866-4455-b85b-d3a05609c671",
     "about": "Luffy is the captain of the Straw Hat Pirates. He wants to find the One Piece and become King of the Pirates. His body has been rubber since he ate the Gum-Gum Fruit as a child.",
     "story": [
-      "Luffy grows up in Foosha Village and takes after Shanks, a pirate who loses an arm saving him. Before leaving, Shanks gives Luffy his straw hat and asks him to bring it back when he becomes a great pirate. Years later, Luffy sets out on his own. He frees Koby from Alvida and brings Zoro, Nami, Usopp and Sanji into his crew as he crosses the East Blue.",
+      "Luffy leaves Foosha Village on his own. He frees Koby from Alvida, then recruits Zoro, Nami, Usopp and Sanji as he crosses the East Blue.",
+      "On a small island in the East Blue, Luffy meets Gaimon, a former pirate stuck inside a treasure chest. Luffy climbs a cliff to fetch the treasure Gaimon has guarded for years and finds the chests empty. He asks Gaimon to sail with him anyway. Gaimon stays to look after the island’s animals.",
       "Luffy defeats Arlong after Nami finally asks him for help. At Loguetown, Buggy nearly executes him, but lightning strikes the platform and Luffy escapes. The crew crosses Reverse Mountain and meets Laboon, a whale waiting for his old crew. Luffy promises to come back and fight him again.",
       "The Straw Hats agree to help Vivi save Arabasta. They meet the giants Dorry and Brogy on Little Garden, where Baroque Works tries to turn their duel against them. When Nami falls ill, Luffy carries her and Sanji up a mountain on Drum Island to find a doctor. They leave the island with Chopper.",
       "Crocodile defeats Luffy twice in Arabasta, and other people help him survive both encounters. He learns that moisture lets him strike Crocodile's sand body. In their final fight, even the blood on his hands becomes useful. He defeats Crocodile beneath Alubarna while his crew helps stop the civil war."
@@ -34,7 +35,7 @@
     "height": "172 cm",
     "origin": "East Blue (Foosha Village)",
     "background": [
-      "Luffy grew up in Foosha Village in the East Blue. Shanks and his crew used the village as a base, and Luffy kept asking to sail with them. He thought being brave meant never backing down. Shanks showed him that some fights are worth ignoring, and others are worth risking your life for.",
+      "Shanks and his crew often stopped in Foosha Village, where Luffy grew up. Luffy kept asking to sail with them. When a bandit insults Shanks and he lets it go, Luffy has a hard time seeing why.",
       "He ate the Gum-Gum Fruit without knowing what it was. Soon after, Shanks lost an arm saving him from a Sea King. Before leaving the village, Shanks gave Luffy his straw hat. Luffy promised to return it once he had become a great pirate. The hat is the one possession he treats with real care."
     ],
     "personality": [
@@ -57,13 +58,18 @@
       {
         "name": "Ace and Vivi",
         "text": "Ace is his older brother. Vivi becomes a close friend during the voyage to Arabasta, where her country's troubles become the crew's problem too."
+      },
+      {
+        "name": "Makino",
+        "text": "She runs the bar in Foosha Village where Luffy spent time with Shanks and his crew as a kid."
       }
     ],
     "laterStory": [
       {
         "title": "Jaya and Skypiea",
         "paragraphs": [
-          "Luffy meets people who laugh at the idea of a sky island. He sails there anyway. In Skypiea, his rubber body lets him fight Enel, whose lightning barely touches him. Luffy rings the golden bell so Mont Blanc Cricket can hear proof that the city his ancestor wrote about was real."
+          "In Jaya, Bellamy hits Luffy and Zoro in a tavern, and Luffy tells Zoro to leave it alone. Later, Bellamy steals Cricket’s gold. This time Luffy goes after him, knocks him out with one punch, and brings the gold back.",
+          "Luffy meets people in Jaya who laugh at the idea of a sky island. He sails there anyway. In Skypiea, his rubber body lets him fight Enel, whose lightning barely touches him. Luffy rings the golden bell so Mont Blanc Cricket can hear proof that the city his ancestor wrote about was real."
         ]
       },
       {
@@ -116,13 +122,15 @@
     "fruitId": "db872681-57fc-40e0-9666-beea21ba23a5",
     "about": "Buggy is the captain of the Buggy Pirates. His Chop-Chop Fruit lets his body come apart without injury. He is more interested in treasure than in the freedom Luffy talks about.",
     "story": [
-      "Buggy occupies Orange Town and fights Luffy, Zoro, and Nami there. His resistance to sword cuts catches Zoro off guard. Luffy eventually leaves most of Buggy's body tied together and sends the remaining pieces flying.",
+      "Buggy takes over Orange Town. He locks Luffy in a cage and orders Nami to fire a cannon at him to prove she wants to join his crew. She puts out the fuse with her bare hands.",
+      "Buggy’s resistance to sword cuts catches Zoro off guard. Nami ties up the pieces of Buggy he’s left lying around, and Luffy sends what’s left flying.",
       "After being separated from his crew, Buggy makes his way back and forms an alliance with Alvida. In Loguetown, he catches Luffy on the execution platform. A sudden lightning strike destroys the platform before he can kill him. Buggy's revenge is left unfinished."
     ],
     "details": [
       "His nose is real, and he hates people assuming it is part of his costume.",
       "Nami takes advantage of his scattered body parts during the Orange Town fight.",
-      "He cares far more about a treasure map than the ordinary loot his crew can steal."
+      "He cares far more about a treasure map than the ordinary loot his crew can steal.",
+      "Before he had a crew, Buggy fooled his shipmates by pretending to eat a fake Devil Fruit. He meant to sell the real one."
     ],
     "source": "https://onepiece.fandom.com/wiki/Buggy",
     "fruitName": "Chop-Chop Fruit",
@@ -167,7 +175,8 @@
       {
         "title": "Roger’s crew and the search for treasure",
         "paragraphs": [
-          "Buggy and Shanks were apprentices on Roger’s ship. Buggy accidentally swallowed the fruit he planned to sell, lost his treasure map, and blamed Shanks. Years later, Buggy hunts for Captain John’s treasure with Alvida. A wrong turn into a Marine base gets him sent to Impel Down."
+          "Buggy and Shanks were apprentices on Roger’s ship. Buggy got sick just before they sailed for Laugh Tale, and Shanks stayed behind with him. Neither of them saw what Roger found there.",
+          "Years later, Buggy hunts for Captain John’s treasure with Alvida. A wrong turn into a Marine base gets him sent to Impel Down."
         ]
       },
       {
@@ -196,12 +205,14 @@
     "about": "Alvida is a pirate captain from the East Blue and the first captain Luffy fights at sea. She carries a heavy iron mace. Her Smooth-Smooth Fruit makes attacks slide off her skin.",
     "story": [
       "Luffy defeats Alvida while helping Koby leave her ship. Koby finally tells her what he thinks of her, knowing that she would normally punish him for it. Luffy's arrival gives him a chance to act on his own wishes.",
-      "Alvida later eats the Smooth-Smooth Fruit and finds Buggy. She appears in Loguetown during his attempt to execute Luffy. When the plan fails, she remains with Buggy's crew rather than ending the pursuit there."
+      "After eating the Smooth-Smooth Fruit, Alvida finds Buggy stranded at sea. She saves him from a giant crab, then helps him rescue his crew from people who plan to eat them.",
+      "Alvida and Buggy go after Luffy together. She’s in Loguetown when Buggy tries to execute him. When the plan fails, she stays with Buggy’s crew."
     ],
     "details": [
       "Her ship's name is Miss Love Duck.",
       "She keeps using her iron mace after her appearance changes.",
-      "She is the first female pirate and the first female Devil Fruit user shown in the series."
+      "She is the first female pirate and the first female Devil Fruit user shown in the series.",
+      "Her favorite foods include berries, and her favorite drink is berry wine. She likes them because she believes they’re good for her skin."
     ],
     "source": "https://onepiece.fandom.com/wiki/Alvida",
     "fruitName": "Smooth-Smooth Fruit",
@@ -264,6 +275,7 @@
     "fruitId": "e7711afb-1d99-44c5-9125-d8fc965e6fdc",
     "about": "Smoker is the Marine officer in charge of Loguetown when Luffy arrives. His smoke powers make him difficult to fight. He pursues pirates, but he does not trust a title to tell him who is right.",
     "story": [
+      "Watching Buggy on the scaffold, Smoker sees Luffy smile just as he’s about to die. It reminds him of Gol D. Roger’s execution on the same platform. The look stays with him even after the lightning strike lets Luffy escape.",
       "Smoker corners Luffy in Loguetown. Dragon's intervention prevents the arrest, and Smoker follows the Straw Hats into the Grand Line. In Arabasta, that pursuit leads him toward Baroque Works and Crocodile's plan.",
       "He becomes trapped with the Straw Hats in Rain Dinners. Zoro saves him from drowning at Luffy's request, leaving Smoker with a debt to the people he came to arrest. After Crocodile falls, the government credits Smoker and Tashigi. Smoker rejects the false account rather than accept praise for someone else's work."
     ],
@@ -291,7 +303,8 @@
     ],
     "personality": [
       "Smoker is stern, stubborn, and often impatient with other Marines. He judges people through their actions. He can be gentle with a frightened child and hostile to a superior officer in the same town.",
-      "He sees Luffy as a pirate who should be arrested, but Luffy's behavior does not fit neatly with that judgment. This bothers him enough to keep pursuing the crew. He wants to understand what he saw in Loguetown, not simply forget it."
+      "He sees Luffy as a pirate who should be arrested, but Luffy's behavior does not fit neatly with that judgment. This bothers him enough to keep pursuing the crew. He wants to understand what he saw in Loguetown, not simply forget it.",
+      "A little girl in Loguetown spills ice cream on his trousers. Smoker gives her money for more and tells her to get a bigger serving. It’s a rare look at how he treats the people he’s there to protect."
     ],
     "combat": [
       "His Logia fruit lets him create and become smoke. He can extend his reach, surround opponents, and lift himself through the air. Ordinary punches and sword strikes pass through his smoke form.",
@@ -313,8 +326,9 @@
     ],
     "laterStory": [
       {
-        "title": "Marineford and G-5",
+        "title": "Enies Lobby, Marineford and G-5",
         "paragraphs": [
+          "When new wanted posters go out after Enies Lobby, Smoker sees how far the Straw Hats’ name has spread. He tells Tashigi they need more authority to do things their way and vows to catch the crew in the New World.",
           "Smoker is at Marineford for Ace’s execution and fights Luffy again before Hancock intervenes. After the war, he asks to move to the G-5 base in the New World so he can keep pursuing the Straw Hats. By the time they meet again, he is a vice admiral and Tashigi is a captain in his unit."
         ]
       },
@@ -344,7 +358,8 @@
     "details": [
       "His real name is Gem; Mr. 5 is his work name.",
       "His revolver is called the Flintlock .44 Caliber 6 Shot.",
-      "His fruit protects him from explosions, including the explosives he eats."
+      "His fruit protects him from explosions, including the explosives he eats.",
+      "His favorite drink is gunpowder tea. The name comes from the way the tea leaves are rolled into little pellets."
     ],
     "source": "https://onepiece.fandom.com/wiki/Gem",
     "fruitName": "Bomb-Bomb fruit",
@@ -361,7 +376,7 @@
     "origin": "South Blue",
     "background": [
       "Mr. 5 is an Officer Agent, placing him above most of the organization's ordinary members. Like the other agents, he uses a number in place of his real name while on a mission. He receives orders without knowing the full identity of the man at the top.",
-      "Before his encounters with the Straw Hats, he has a record of successful missions. Being sent to Whisky Peak is supposed to be another job: find the spies inside Baroque Works and kill them before their information can spread."
+      "Gem never failed a mission after gaining his powers, until he ran into the Straw Hats. Whisky Peak was supposed to be another job: find the spies inside Baroque Works and kill them before their information could spread."
     ],
     "personality": [
       "He acts as though the outcome of a fight is already decided. His sunglasses, coat, and quiet delivery help maintain that impression. He has less patience than he first appears to, especially when someone mocks him or refuses an order.",
@@ -385,7 +400,8 @@
       {
         "title": "The Baroque Works rescue",
         "paragraphs": [
-          "Gem and Miss Valentine join Miss Goldenweek to free their former coworkers. Hina spots them on Kyuka Island, and Gem uses explosions to cover the escape. The group eventually breaks several agents out. Gem leaves the old organization behind and takes a job as a fireman at the new Spiders Cafe."
+          "Gem and Miss Valentine join Miss Goldenweek to free their former coworkers. Hina spots them on Kyuka Island, and Gem uses explosions to cover the escape. The group eventually breaks several agents out.",
+          "Miss Goldenweek’s paint reveals an old dream of Gem’s: he wanted to be a firefighter. He takes that job at the new Spiders Cafe."
         ]
       }
     ]
@@ -408,7 +424,8 @@
     "details": [
       "Her Japanese laugh is written as kyahahaha.",
       "Her weight range is measured in kilograms in the original story.",
-      "Unlike an attack that makes a giant body, her fruit keeps all that weight within her normal shape."
+      "Unlike an attack that makes a giant body, her fruit keeps all that weight within her normal shape.",
+      "Lemons show up all over her outfit, from the print on her dress to her earrings. Lemon tea is one of her favorites."
     ],
     "source": "https://onepiece.fandom.com/wiki/Mikita",
     "fruitName": "Kilo-Kilo fruit",
@@ -449,7 +466,8 @@
       {
         "title": "The Baroque Works rescue and Egghead",
         "paragraphs": [
-          "Mikita joins Gem and Miss Goldenweek to break their old coworkers out of prison. Hina catches her on Kyuka Island, and Bon Clay steps in to save her. Mikita helps free several of the other agents and starts over at the new Spiders Cafe. Much later, she listens to Vegapunk’s broadcast with Marianne and Drophy."
+          "Mikita joins Gem and Miss Goldenweek to break their old coworkers out of prison. Hina catches her on Kyuka Island, and Bon Clay steps in to save her. Miss Goldenweek’s paint later reveals that Mikita had dreamed of making chocolates.",
+          "After freeing several other agents, Mikita starts over at the new Spiders Cafe. Much later, she listens to Vegapunk’s broadcast with Marianne and Drophy."
         ]
       }
     ]
@@ -466,7 +484,7 @@
     "about": "Nico Robin is an archaeologist who works with Crocodile as Miss All Sunday. She can read the writing on Poneglyphs. Her Flower-Flower Fruit lets her grow extra body parts on nearby surfaces.",
     "story": [
       "Robin appears on the Going Merry after the events at Whisky Peak. She offers a route that would bypass Little Garden, but Luffy refuses it. Later, she pulls him out of the sand after Crocodile leaves him to die near Rainbase.",
-      "In the royal tomb, she reads the Poneglyph for herself and withholds the information Crocodile wants. He turns on her. Luffy defeats him and carries Robin out despite her resistance. At the end of the arc, she appears aboard the Merry and asks to join the crew, saying Luffy has made himself responsible for her survival."
+      "At the tomb, Robin tells Crocodile the stone is a record of the kingdom’s history. It does name Pluton, but she keeps that part to herself. She came to find a record of the world’s lost history, and the stone doesn’t give her the answer she wanted either."
     ],
     "details": [
       "Her codename refers to all Sundays rather than a single holiday.",
@@ -492,7 +510,8 @@
     ],
     "personality": [
       "Robin speaks calmly, even when someone points a weapon at her. She often has a dry or unsettling sense of humor. Unlike the louder Baroque Works agents, she rarely needs to raise her voice to make other people uneasy.",
-      "She keeps her intentions private. At times she helps people she is supposed to oppose, without offering much explanation. Her habit of watching before acting makes her difficult for both the Straw Hats and Crocodile to read."
+      "She keeps her intentions private. At times she helps people she is supposed to oppose, without offering much explanation. Her habit of watching before acting makes her difficult for both the Straw Hats and Crocodile to read.",
+      "Robin likes to guess what could have happened when someone goes missing. Her guesses tend to be grim, and she offers them as calmly as she’d comment on the weather."
     ],
     "combat": [
       "Her fruit grows copies of her body parts on surfaces within reach of her power. Hands can take weapons away, arms can restrain someone from behind, and extra eyes or ears can help her gather information. She does not need to walk up to an enemy to grab them.",
@@ -522,6 +541,7 @@
       {
         "title": "Ohara, Water 7 and Enies Lobby",
         "paragraphs": [
+          "Professor Clover let Robin read in Ohara’s Tree of Knowledge when she was a child. She passed the archaeology exam at eight. Even then, Clover tried to keep her away from the scholars’ secret work because he knew what the World Government would do if it found out.",
           "Robin grew up among the scholars of Ohara. The World Government destroyed the island for studying the Void Century. Her mother Olvia and the scholars died, and Saul helped Robin get away. At Water 7, Robin gives herself up to CP9 to spare her friends another Buster Call. The Straw Hats come for her anyway. On the bridge at Enies Lobby she finally tells them she wants to live, and they take her home."
         ]
       },
@@ -564,7 +584,8 @@
     "details": [
       "His hair is shaped like a number three and burns like a candle wick.",
       "The wax is something he produces; his body is not made of it.",
-      "His favorite tea is Earl Grey, fitting his habit of drinking tea while discussing a plan."
+      "His favorite tea is Earl Grey, fitting his habit of drinking tea while discussing a plan.",
+      "His birthday is March 3. Both the month and day match the number in his codename."
     ],
     "source": "https://onepiece.fandom.com/wiki/Galdino",
     "fruitName": "Wax-Wax Fruit",
@@ -615,7 +636,8 @@
       {
         "title": "Marineford and Buggy’s crew",
         "paragraphs": [
-          "At Marineford, Galdino makes a wax key that frees Ace from his cuffs. He later joins Buggy and the escaped prisoners and stays with Buggy’s mercenary business. After Crocodile and Mihawk form Cross Guild, Galdino sides with his old boss Crocodile and tells Buggy he was never really loyal to him."
+          "Galdino reaches Ace by dressing as one of his executioners. When Kizaru destroys the key Luffy brought, Galdino makes a replacement from wax. He asks Luffy if he would laugh at him for doing it in honor of Bon Clay, who stayed behind at Impel Down. Luffy says he wouldn’t.",
+          "After Marineford, Galdino joins Buggy and the escaped prisoners. He stays with Buggy’s mercenary business. When Crocodile and Mihawk form Cross Guild, Galdino sides with his old boss Crocodile and tells Buggy he was never really loyal to him."
         ]
       }
     ]
@@ -654,7 +676,8 @@
     "origin": "Grand Line (Drum Kingdom)",
     "background": [
       "Wapol inherited Drum's throne from his father. The island was known for its medical knowledge, but he turned that knowledge into a way to control people. He drove away most doctors and kept twenty elite physicians for his own use.",
-      "People who needed treatment had to depend on the king's doctors. Hiriluk and Kureha were among those who continued practicing outside his control. When Blackbeard's pirates attacked Drum, Wapol fled with his followers and became a pirate instead of defending the country."
+      "People who needed treatment had to depend on the king's doctors. Hiriluk and Kureha were among those who continued practicing outside his control. When Blackbeard's pirates attacked Drum, Wapol fled with his followers and became a pirate instead of defending the country.",
+      "At an earlier Levely, Cobra calls Wapol out for ignoring a threat that could affect other countries. Wapol takes his anger out on ten-year-old Vivi. She apologizes after he hits her because she knows starting a fight there could cause trouble for Arabasta."
     ],
     "personality": [
       "Wapol assumes that being king gives him the right to do whatever he wants. He treats land, buildings, and people as possessions. He shows little interest in what happens to the island when he is absent.",
@@ -682,7 +705,7 @@
       {
         "title": "Exile and a new kingdom",
         "paragraphs": [
-          "After losing Drum Island, Wapol lives on the street. He uses his fruit to combine pieces of scrap into toys and discovers a new metal, Wapometal. His toy business makes him rich, he marries Kinderella, and the World Government recognizes him as ruler of the Evil Black Drum Kingdom."
+          "After losing Drum Island, Wapol ends up living under a bridge. He eats whatever scrap he can find and uses his fruit to turn it into toys. The toys sell, and scientists who study them discover a new metal inside. They call it Wapometal. His business makes him rich enough to start over as ruler of the Evil Black Drum Kingdom, with Kinderella as his wife."
         ]
       },
       {
@@ -704,13 +727,15 @@
     "fruitId": "f87f2740-cfbe-4d48-b399-e2fbf9f405f9",
     "about": "Dalton is a guard on Drum Island and a former servant of King Wapol. He wants the island's people to have access to care without begging a ruler for it. His Zoan fruit gives him a bison's strength.",
     "story": [
+      "Years before the Straw Hats arrive, Dalton tries to stop Chopper from throwing his life away after Hiriluk’s death. He tells Chopper to live and carry on the doctor’s work. Dalton turns on Wapol himself and is put in prison. He is freed after Wapol flees the island.",
       "Dalton allows the Straw Hats ashore after Vivi and Luffy ask for medical help. He tells them about Kureha and the castle. He stays with the villagers while Luffy and Sanji carry Nami toward the mountain.",
       "When Wapol returns, Dalton tries to stop him. He is badly hurt while protecting others and is then caught in the avalanche. The villagers dig him out. After Wapol's defeat, Drum begins moving away from the old king's rule, with Dalton playing a leading part in that change."
     ],
     "details": [
       "He is the first character introduced with a clearly identified Zoan fruit in the early story.",
       "His weapon is a spade rather than a sword.",
-      "He remembers seeing Vivi as a child during a royal gathering."
+      "He remembers seeing Vivi as a child during a royal gathering.",
+      "Dalton tells the Straw Hats that Kureha likes pickled plums while giving them directions to find her. He also mentions a good place to go skating while they’re out looking for a doctor."
     ],
     "source": "https://onepiece.fandom.com/wiki/Dalton",
     "fruitName": "Ox-Ox Fruit",
@@ -777,7 +802,7 @@
     "fruitId": "187e7b71-39b6-491a-b052-90ac350a2643",
     "about": "Chopper is a reindeer and the Straw Hats' doctor. The Human-Human Fruit gave him human thought and speech. He studies medicine because he wants to treat diseases other doctors cannot cure.",
     "story": [
-      "Chopper mistakes a poisonous mushroom for something that can cure Hiriluk. Hiriluk eats it rather than reject the effort Chopper made to find it. When Hiriluk dies, Chopper stays with Kureha and trains to become a doctor.",
+      "When Hiriluk falls ill, Chopper finds a drawing of the Amiudake mushroom in a medical book. He sees a skull and crossbones beside it and thinks of Hiriluk’s pirate flag. To him that symbol means hope, so he brings the mushroom back without knowing it’s poisonous. Hiriluk eats it because he knows how hard Chopper worked to find it. After Hiriluk dies, Chopper stays with Kureha to train as a doctor.",
       "Luffy invites him to sea after the fight with Wapol. Kureha sends him off beneath a display of pink snow that resembles Hiriluk's dream of cherry blossoms. In Arabasta, he fights alongside Usopp against Mr. 4, Miss Merry Christmas, and Lassoo. Their teamwork proves that he has a place in the crew beyond treating injuries."
     ],
     "details": [
@@ -804,7 +829,8 @@
     ],
     "personality": [
       "Chopper is shy around strangers and quick to believe a convincing lie. He hides with most of his body still visible and gets embarrassed when people praise him. He usually tries to deny enjoying a compliment while smiling or dancing.",
-      "His behavior changes when someone needs treatment. He can give orders, challenge a patient, and focus on a medical problem despite his fear. He wants to be accepted, but being useful as a doctor matters to him in its own right."
+      "His behavior changes when someone needs treatment. He can give orders, challenge a patient, and focus on a medical problem despite his fear. He wants to be accepted, but being useful as a doctor matters to him in its own right.",
+      "Chopper wants to become a doctor who can treat any illness. It’s a promise he carries forward from Hiriluk, and it shapes how he works. Once someone needs care, it matters very little to him whose side they’re on."
     ],
     "combat": [
       "His usual forms are Walk Point, his reindeer body; Brain Point, his small hybrid body; and Heavy Point, his larger human-like body. His animal background also lets him understand other animals.",
@@ -840,7 +866,8 @@
       {
         "title": "Fish-Man Island, Punk Hazard and Whole Cake Island",
         "paragraphs": [
-          "After the crew reunites, Chopper shows how far his training has taken him. He can now control Monster Point, the form that made him a danger to his friends at Enies Lobby. Chopper helps the children Caesar experimented on and asks the Marines to get them proper treatment. On Zou he works to save the Minks after Jack poisons them. In Big Mom’s territory he teams up with Carrot in the Mirror World, taking advantage of its passages to help his friends move around and escape."
+          "After the crew reunites, Chopper shows how far his training has taken him. He can now control Monster Point, the form that made him a danger to his friends at Enies Lobby. On Punk Hazard, he treats Mocha after she swallows drugged candy to keep the other children from eating it. He asks the Marines to get the children proper care.",
+          "On Zou, Chopper works to save the Minks after Jack poisons them. In Big Mom’s territory, he teams up with Carrot in the Mirror World. They use its passages to help their friends move around and escape."
         ]
       },
       {
@@ -875,7 +902,8 @@
     "details": [
       "He can fall asleep in the middle of eating or talking.",
       "His small boat uses his Devil Fruit flames for propulsion.",
-      "The full meaning of the paper he gives Luffy is not explained during Arabasta."
+      "The full meaning of the paper he gives Luffy is not explained during Arabasta.",
+      "His orange hat has two blue badges, one with a smile and one with a frown."
     ],
     "source": "https://onepiece.fandom.com/wiki/Portgas_D._Ace",
     "fruitName": "Flame-Flame Fruit",
@@ -926,6 +954,7 @@
       {
         "title": "The search for Blackbeard",
         "paragraphs": [
+          "During the search, a girl named Moda rescues Ace from a river in Lulusia. He repays her by sneaking into a Marine base to deliver a letter. The trip helps Moda reunite with her parents.",
           "After Teach kills Thatch and leaves the Whitebeard Pirates, Ace goes after him. He crosses paths with Buggy’s crew while looking for leads and eventually finds Teach on Banaro Island. Ace loses the fight, and Teach hands him to the World Government, which plans to execute him at Marineford."
         ]
       },
@@ -971,7 +1000,8 @@
     "origin": "Grand Line",
     "background": [
       "Crocodile's Warlord title gives him a place inside the system that normally hunts pirates. He can act openly as a powerful public figure while Baroque Works operates through codenames. Most of his own agents do not know who Mr. 0 is.",
-      "He runs the Rain Dinners casino in Rainbase and uses Arabasta's drought and political anger to weaken the kingdom. His interest goes beyond becoming its ruler. He believes an ancient weapon called Pluton is connected to the country's buried history."
+      "He runs the Rain Dinners casino in Rainbase and uses Arabasta's drought and political anger to weaken the kingdom. His interest goes beyond becoming its ruler. He believes an ancient weapon called Pluton is connected to the country's buried history.",
+      "Crocodile builds his reputation by driving pirates out of Arabasta in public. While people cheer him as a hero, Baroque Works has the space to smuggle Dance Powder and make the drought look like the king’s fault."
     ],
     "personality": [
       "Crocodile is patient with a plan and ruthless with anyone he thinks has failed it. He encourages loyalty while treating his agents as replaceable. Even his partnership with Robin depends on what she can do for him.",
@@ -999,7 +1029,8 @@
       {
         "title": "Prison and Marineford",
         "paragraphs": [
-          "Crocodile stays behind with Daz Bonez when Miss Goldenweek frees the other captured agents. He is transferred to the lowest level of Impel Down. Ivankov helps persuade him to join Luffy’s breakout. At Marineford, Crocodile first goes after Whitebeard, then interferes with Ace’s execution and helps keep the Marines from killing Luffy and Jinbe."
+          "Crocodile stays behind with Daz Bonez when Miss Goldenweek frees the other captured agents. He is transferred to the lowest level of Impel Down. Ivankov helps persuade him to join Luffy’s breakout.",
+          "Crocodile lost a fight to Whitebeard years ago. He goes after him again at Marineford, but Luffy gets in the way. Later in the battle, Crocodile interferes with Ace’s execution and helps keep the Marines from killing Luffy and Jinbe."
         ]
       },
       {
@@ -1028,7 +1059,8 @@
     "details": [
       "Bon Clay is also written as Bon Kurei in some translations.",
       "The swans on his outfit fit both his dancing and the shape of his agent number.",
-      "The face-copying power is useful without requiring him to stay close to the original person."
+      "The face-copying power is useful without requiring him to stay close to the original person.",
+      "His two codenames do the work of a full Baroque Works pair. Mr. 2 is the numbered name, and Bon Clay refers to the Obon festival and the end of the year."
     ],
     "source": "https://onepiece.fandom.com/wiki/Bentham",
     "fruitName": "Clone-Clone Fruit",
@@ -1073,7 +1105,8 @@
       {
         "title": "Hina and Impel Down",
         "paragraphs": [
-          "Hina captures Bon Clay after his crew covers the Straw Hats’ escape. He breaks out once and returns to help Miss Valentine, but he is caught again and sent to Impel Down. He reunites with Luffy there and carries him to safety after Magellan poisons him. He finds Ivankov, who puts Luffy through a treatment that gives him a chance to live."
+          "Hina captures Bon Clay after his crew covers the Straw Hats’ escape. He breaks out once and returns to help Miss Valentine, but he is caught again and sent to Impel Down. He reunites with Luffy there and carries him to safety after Magellan poisons him. He finds Ivankov, who puts Luffy through a treatment that gives him a chance to live.",
+          "Bon Clay searches the prison’s frozen level for Ivankov even after a pack of wolves attacks. When Ivankov starts treating Luffy, all Bon Clay can do is wait outside and shout encouragement. Other prisoners join in."
         ]
       },
       {
@@ -1102,7 +1135,8 @@
     "details": [
       "His name is also translated as Daz Bones.",
       "The large mark on his chest is a form of the Japanese numeral one.",
-      "He does not carry a sword because his own body provides the blades."
+      "He does not carry a sword because his own body provides the blades.",
+      "As a bounty hunter in the West Blue, Daz was known as the Killer. His reputation had reached Zoro on the other side of the Red Line."
     ],
     "source": "https://onepiece.fandom.com/wiki/Daz_Bonez",
     "fruitName": "Dice-Dice Fruit",
@@ -1147,7 +1181,8 @@
       {
         "title": "Prison and Marineford",
         "paragraphs": [
-          "Daz is imprisoned after losing to Zoro. He stays with Crocodile when Miss Goldenweek breaks the other agents out, and he is transferred to Impel Down. Crocodile frees him during Luffy’s breakout. At Marineford, Daz briefly holds off Mihawk to protect Luffy, but Mihawk cuts through his steel body."
+          "Daz is imprisoned after losing to Zoro. When Miss Goldenweek comes to break the agents out, her paint shows that Daz once dreamed of being a superhero. That’s a play on Supa Supa no Mi, the Japanese name of his fruit. Daz chooses to stay with Crocodile, and both are transferred to Impel Down.",
+          "Crocodile frees Daz during Luffy’s breakout. At Marineford, Daz briefly holds off Mihawk to protect Luffy, but Mihawk cuts through his steel body."
         ]
       },
       {
@@ -1171,12 +1206,14 @@
     "about": "Zala is the Baroque Works agent known as Miss Doublefinger. She runs Spiders Cafe under the name Paula. Her Spike-Spike Fruit lets her grow sharp spikes from almost any part of her body.",
     "story": [
       "Miss Doublefinger joins the Officer Agents at Rain Dinners to hear the final plan for Arabasta. In Alubarna, she pursues Nami while Mr. 1 fights Zoro.",
+      "The agents ride from Spiders Cafe to Rainbase on Banchi, a giant turtle. The meeting room is underwater, below Crocodile’s casino. That’s where Zala learns the man giving her orders is the same Warlord Arabasta sees as a hero.",
       "Nami's new Clima-Tact initially seems more like a party trick than a weapon. Miss Doublefinger injures her while she tries to understand it. Nami eventually uses the tool's weather effects and Tornado Tempo to defeat her, winning through improvisation rather than physical strength."
     ],
     "details": [
       "Her real name is Zala, while Paula is the name she uses at the cafe.",
       "Spikes can grow from her hair as well as from her skin.",
-      "Her agent name refers to New Year's Day, with two raised fingers representing January 1."
+      "Her agent name refers to New Year's Day, with two raised fingers representing January 1.",
+      "She can grow spikes from the soles of her feet and use them to push off the ground faster."
     ],
     "source": "https://onepiece.fandom.com/wiki/Zala",
     "fruitName": "Spike-Spike Fruit",
@@ -1217,7 +1254,7 @@
       {
         "title": "The new Spiders Cafe",
         "paragraphs": [
-          "Zala is held at a Marine base with other Baroque Works agents. Miss Goldenweek’s group breaks her out. She and several of the escapees reopen Spiders Cafe and leave their work as officers behind."
+          "Zala is held at a Marine base with other Baroque Works agents. Miss Goldenweek’s group breaks her out. Zala and several of the escapees fix up the old Cactus Saloon and turn it into the new Spiders Cafe. She’s back at a cafe counter, this time without the secret job."
         ]
       }
     ]
@@ -1234,13 +1271,15 @@
     "fruitId": "2e586e6d-aa53-4600-8210-aba727e82b7a",
     "about": "Drophy is Miss Merry Christmas of Baroque Works. She works with Mr. 4 and his gun-dog, Lassoo. Her Mole-Mole Fruit lets her dig tunnels and attack from beneath the ground.",
     "story": [
+      "Before the fight, Drophy and Mr. 4 are sent to kidnap Cobra. Holding the real king lets Bon Clay appear in public as Cobra and issue orders that the real man would never give.",
       "Miss Merry Christmas fights Usopp and Chopper outside Alubarna. She drags Usopp through the tunnels and claims that Luffy is dead. Usopp refuses to accept that his captain's dream can be dismissed, even after taking a severe beating.",
-      "Usopp and Chopper eventually use deception and the layout of the battlefield against the agents. Mr. 4's strength becomes a danger to his own side, and the pair are defeated. It is one of the crew's clearest early wins built on two weaker-looking members working together."
+      "Usopp blinds Mr. 4 with smoke. Chopper catches Drophy on his antlers, and Usopp imitates her voice to tell Mr. 4 to swing. Mr. 4 hits his own partner with the bat. It’s the same teamwork that made the agents so dangerous, turned against them."
     ],
     "details": [
       "Her birthday is December 25, matching her codename.",
       "Her hybrid form is small enough to use the tunnels she digs.",
-      "The team uses baseball equipment for attacks, even though its explosives are anything but sporting."
+      "The team uses baseball equipment for attacks, even though its explosives are anything but sporting.",
+      "Drophy is the first woman shown using a Zoan fruit in the series."
     ],
     "source": "https://onepiece.fandom.com/wiki/Drophy",
     "fruitName": "Mole-Mole Fruit",
@@ -1285,7 +1324,8 @@
       {
         "title": "The new Spiders Cafe and Egghead",
         "paragraphs": [
-          "Drophy, Mr. 4 and Lassoo are captured after Arabasta. Miss Goldenweek’s group frees them, and Drophy trades her life as an agent for work at the new Spiders Cafe. During the Egghead incident she is seen listening to Vegapunk’s broadcast alongside Mikita and Marianne."
+          "Drophy, Mr. 4 and Lassoo are captured after Arabasta. Miss Goldenweek’s group frees them, and Drophy trades her life as an agent for work at the new Spiders Cafe. During the Egghead incident she is seen listening to Vegapunk’s broadcast alongside Mikita and Marianne.",
+          "Miss Goldenweek’s paint reveals that Drophy once dreamed of being a princess."
         ]
       }
     ]
@@ -1302,12 +1342,14 @@
     "about": "Lassoo is a gun that gained a dachshund's body after eating a Zoan fruit. He belongs to Mr. 4. He fires explosive balls from his mouth, often while sneezing.",
     "story": [
       "Lassoo appears with Mr. 4 and Miss Merry Christmas during their fight with Usopp and Chopper. His ammunition keeps the pair moving as the agents attack from several positions.",
+      "Chopper tries to pick up one of Lassoo’s baseballs to throw it back, only to find it’s as heavy as a cannonball. Mr. 4 can hit it across the battlefield. It’s why Lassoo’s shots are so much more dangerous with someone there to swing at them.",
       "Once Usopp and Chopper begin coordinating their own tricks, the agents lose control of the encounter. Lassoo's part in the battle ends with his team's defeat. Arabasta does not explain how he first became a dog or show the process being repeated."
     ],
     "details": [
       "His fruit model is a dachshund, a short-legged hunting dog.",
       "He is both a living animal and a usable gun.",
-      "His ammunition is timed to explode, which matters as much as the force of Mr. 4's swing."
+      "His ammunition is timed to explode, which matters as much as the force of Mr. 4's swing.",
+      "Lassoo is the first object with a Devil Fruit power shown in the series. His favorite food is dog food."
     ],
     "source": "https://onepiece.fandom.com/wiki/Lassoo",
     "fruitName": "Mutt-Mutt Fruit",
@@ -1352,7 +1394,8 @@
       {
         "title": "The new Spiders Cafe",
         "paragraphs": [
-          "Lassoo goes to prison with Mr. 4 and Drophy. Miss Goldenweek’s group breaks them out along with several former agents. Lassoo moves to the new Spiders Cafe with them and becomes its mascot."
+          "Lassoo goes to prison with Mr. 4 and Drophy. Miss Goldenweek’s group breaks them out along with several former agents. Lassoo moves to the new Spiders Cafe with them and becomes its mascot.",
+          "Miss Goldenweek’s paint reveals that even Lassoo has a dream: he wants to be a tank. When he turns up at the new cafe, he’s shown in a tank form."
         ]
       }
     ]
@@ -1368,7 +1411,8 @@
     "fruitId": "f4b17f70-5793-469e-b8b5-7426dd80ff1b",
     "about": "Pell is one of Arabasta's two leading royal guards. He serves King Cobra and has watched over Vivi since she was a child. His falcon Zoan gives the guard a fighter who can reach places others cannot.",
     "story": [
-      "Pell scouts Rainbase and tries to protect Vivi from Baroque Works. Robin defeats him by restraining him with her fruit. He later returns to help as the fighting reaches Alubarna.",
+      "Before going to Rainbase, Pell warns Cobra that marching a royal army there would give Crocodile time to see it coming and leave. He scouts ahead alone and finds Vivi being chased by Baroque Works agents.",
+      "Pell flies Vivi to a rooftop. When Robin appears, he tries to fight her off, but she restrains him with her fruit. Pell later returns to help as the fighting reaches Alubarna.",
       "When the crew finds the bomb in the clock tower, stopping its cannon is not enough: it has a timer as well. Pell carries the bomb high above the city so it explodes away from the crowd. The story later shows that he survived, though the people in the capital initially believe he died."
     ],
     "details": [
@@ -1395,7 +1439,8 @@
     ],
     "personality": [
       "Pell is usually calm and formal. He takes orders seriously but will explain a practical problem when a plan would put the kingdom at risk. He does not need to agree with every decision to remain loyal to Cobra.",
-      "He can be protective and stern with Vivi because he knows how much danger her choices can involve. At the same time, he understands why she feels responsible for the country. He treats that concern as something real rather than a child's passing wish."
+      "He can be protective and stern with Vivi because he knows how much danger her choices can involve. At the same time, he understands why she feels responsible for the country. He treats that concern as something real rather than a child's passing wish.",
+      "When Vivi was little, she asked Pell what it meant to be a guardian. He also took her flying. She grew up knowing him as someone she could ask questions and share things with, even when he was on duty."
     ],
     "combat": [
       "His bird Zoan lets him use a human body, a falcon body, or a hybrid form. Flight makes him useful for scouting, carrying someone to safety, and approaching an enemy from above. His talons give him a way to attack while airborne.",
@@ -1441,7 +1486,8 @@
     "fruitId": "3e70324a-3104-45fc-a4aa-7fc6c317fcf3",
     "about": "Chaka commands Arabasta's royal guards alongside Pell. He is a swordsman with a jackal Zoan. He remains in the capital as the conflict between the rebels and the royal army grows.",
     "story": [
-      "Chaka learns from Vivi's message that Crocodile is behind the crisis. As the rebel army approaches, he prepares the royal forces and searches for Cobra, who has disappeared from the palace.",
+      "Vivi’s letter reaches the guards by way of Karoo, and Chaka learns that Crocodile is behind the crisis. As the rebel army approaches, he prepares the royal forces and searches for Cobra, who has disappeared from the palace.",
+      "When reports say Cobra has admitted to stealing Arabasta’s rain, Chaka refuses to believe it was really him. The timing looks bad even to his own soldiers, since the king disappeared around the time of the speech.",
       "He eventually confronts Crocodile after the Warlord reveals his intentions. Chaka uses his jackal form and sword but cannot overcome the sand defense. He is defeated, while the fight to stop the bomb and end the war continues around the capital."
     ],
     "details": [
@@ -1485,7 +1531,7 @@
       },
       {
         "name": "Pell",
-        "text": "His fellow commander. Chaka leads forces in the capital while Pell often handles work that requires flight."
+        "text": "His fellow commander and close friend. Chaka can hold the palace while Pell scouts from the air. When Cobra disappears, Chaka wishes Pell were there to help find him."
       }
     ],
     "laterStory": [
@@ -1514,7 +1560,7 @@
     "fruitId": "b0c79594-e20a-4fc7-990e-f8d11d64473c",
     "about": "Hina is a Marine captain known as Black Cage Hina. She uses the Bind-Bind Fruit to restrain people with iron. She and Smoker know each other well, though they handle their duties differently.",
     "story": [
-      "Smoker calls Hina's unit into the Arabasta operation as Baroque Works begins to collapse. Afterward, she forms a blockade to capture the Straw Hats and the remaining agents who are trying to leave.",
+      "Smoker calls Hina’s unit to the Arabasta coast. Her crew seizes the Full, the ship Baroque Works used to carry Dance Powder and make rain. When rain starts falling over the battlefield, Hina asks Smoker if he used the powder. He tells her he didn’t. She prepares the ship and other evidence for Marine Headquarters.",
       "Bon Clay's crew disguises itself as the Straw Hats and draws her attention away from the Going Merry. Hina defeats and captures them, but the real crew escapes. When she reports the outcome to Smoker, she notices that he seems pleased by their failure to catch Luffy."
     ],
     "details": [
@@ -1537,7 +1583,8 @@
     "origin": "West Blue",
     "background": [
       "Hina trained in the Marines alongside Smoker. She is more comfortable with rules and military procedure, while he is more openly difficult with his superiors. Their friendship survives that difference, and she is familiar with the trouble his attitude can cause.",
-      "She commands the Black Cage Corps. Her unit is built around trapping ships and stopping people from escaping, which fits the restraining power of her fruit. Fullbody and Jango are among the men serving under her during Arabasta."
+      "She commands the Black Cage Corps. Her unit is built around trapping ships and stopping people from escaping, which fits the restraining power of her fruit. Fullbody and Jango are among the men serving under her during Arabasta.",
+      "She first meets Fullbody and Jango after Fullbody gives up his rank to help get Jango cleared at trial. They are about to part ways when they spot Hina. Both decide to sign on with her as ordinary seamen."
     ],
     "personality": [
       "Hina is controlled, strict, and quick to notice when someone is wasting her time. She often refers to herself by name when stating how she feels. The habit gives her dry comments a recognizable rhythm without making her less serious about the job.",
@@ -1605,6 +1652,10 @@
       {
         "name": "The Straw Hats",
         "text": "They take her aboard after she escapes from the Marines. Luffy agrees to help Ryu, and Nami helps work out where the dragons’ nesting grounds really are."
+      },
+      {
+        "name": "Bokuden",
+        "text": "The village elder knows the old story of Lost Island and the dragons. He tells the crew how the people of Warship Island came from a place that sank beneath the sea."
       }
     ],
     "details": [
@@ -1613,7 +1664,8 @@
       "The village elder Bokuden knows the island’s old stories. Apis is the one who has seen a dragon for herself."
     ],
     "story": [
-      "Apis escapes from the Marines and is found at sea by the Straw Hats. They take her home and learn about Ryu. The crew agrees to help the dragon reach his old nesting grounds. A search through a mirage turns up clues, but the real nesting grounds turn out to be on Warship Island itself.",
+      "Apis uses a storm as cover to escape from a Marine ship. Usopp later spots a flock of birds, and Luffy reaches out expecting to catch a fish. He pulls Apis aboard instead. She’s wary when she finds out they’re pirates, but they agree to take her home.",
+      "Back on Warship Island, Apis sneaks food to Ryu’s cave. Luffy and Nami follow her and learn why the Marines want her. Ryu is too weak to walk far, so the crew builds a cart to get him down to the sea. In the ruins on another island, a painting helps Ryu remember where his real nesting grounds are.",
       "Nelson’s fleet and Eric close in before Ryu can get away. Ryu dies, but the dragons return and Apis sees a hatchling at the nest. When Luffy offers her a place with the crew, she chooses to stay and watch over the nesting grounds."
     ],
     "canon": false,
@@ -1663,10 +1715,12 @@
     "details": [
       "Eric appears in the anime’s Warship Island story and is absent from the original manga.",
       "His nickname comes from the blades of wind he makes with his fruit.",
-      "His power lets him fight at a distance even though he does not carry a sword."
+      "His power lets him fight at a distance even though he does not carry a sword.",
+      "In Japanese, Eric shares a voice actor, Ryūsei Nakao, with Caesar Clown and Dr. Indigo."
     ],
     "story": [
-      "Eric follows Apis and the Straw Hats as they look for Ryu’s home. He hears them piece together the truth about the nesting grounds and follows them back toward Warship Island. When Nelson’s forces close in, Eric turns on his employer and tries to take the dragons for himself.",
+      "Eric tails the Going Merry once he sees the Straw Hats leaving with a dragon. He figures their ship will lead him to more dragon bones. Admiral Nelson doesn’t trust Eric to bring the bones back, so he sets out with his fleet too.",
+      "Eric catches up at the ruins where Ryu remembers how to get home. Zoro stays to fight him while Luffy and the others get Ryu away in a cart. Eric later uses a small boat to reach Apis and Ryu during Nelson’s blockade. Once he has them, he turns on the man who hired him.",
       "Luffy beats Eric at the nesting grounds. Eric gets aboard the Going Merry for one last attack as the crew reaches Reverse Mountain. Nami tricks him into looking away and sends him overboard. He does not return after that."
     ],
     "canon": false,
