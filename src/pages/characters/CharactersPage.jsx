@@ -7,7 +7,7 @@ import SearchBar from '../../Components/searchBar/searchBar.jsx';
 import CharacterCard from './CharacterCard.jsx';
 import FruitPagination from '../../Components/FruitPagination.jsx';
 import characterIndex from '../../lib/characterIndex.js';
-import { paginateCharacters, characterPageUrl, CHARACTER_GROUPS, CHARACTER_SCOPE } from '../../lib/characterCatalog.js';
+import { paginateCharacters, characterPageUrl, CHARACTER_GROUPS, CHARACTER_INTRO } from '../../lib/characterCatalog.js';
 import { getCharactersSeo } from '../../lib/characterSeo.js';
 import styles from './characters.module.css';
 
@@ -39,9 +39,8 @@ export default function CharactersPage() {
         <main className={styles.page}>
             <div className={styles.intro}>
                 <h1>Devil Fruit<br /><span className="colorYellow">Characters</span></h1>
-                <p>Background, abilities and stories!.</p>
-                <p className={styles.progressNotice}>In progress - Currently added until Arabasta</p>
-                {/* <small>{characterIndex.length} Devil Fruit users. {CHARACTER_SCOPE}</small> */}
+                <p>Background, abilities, and full stories behind spoiler warnings.</p>
+                <p className={styles.progressNotice}>{CHARACTER_INTRO}</p>
             </div>
             <section className={styles.filters} aria-label="Character filters">
                 <SearchBar mode="characters" query={query} group={group}
