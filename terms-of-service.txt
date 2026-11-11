@@ -1,0 +1,27 @@
+<h1>Terms of Service</h1>
+<p>Last updated: November 10, 2026</p>
+
+<h2>Using the site</h2>
+<p>These terms govern use of <a href="/">onepiecedevilfruits.com</a>. One Piece Devil Fruits is an independent fan website with a Devil Fruit catalog, character profiles, quizzes, games, and Daily Fight voting. Browsing and playing are free. Optional support through Ko-fi is handled separately and is never required to use the site. The <a href="/privacy-policy">Privacy Policy</a> explains how we handle personal data.</p>
+
+<h2>Fair play and acceptable use</h2>
+<p>Play and vote fairly. Do not use bots, scripts, or repeated submissions to manipulate votes or game results. Do not bypass access controls, interfere with the site, or send unlawful material or harmful code. We may block abusive traffic or limit access to protect visitors and keep the site running.</p>
+
+<h2>Game progress and results</h2>
+<p>Some games save progress or results in your browser. Clearing site data, switching browsers or devices, or using private browsing can make that history unavailable. Daily Fight results reflect votes received from visitors. Game rules, matchups, and availability can change as the site develops.</p>
+
+<h2>Fan content and intellectual property</h2>
+<p>One Piece Devil Fruits is an independent, unofficial project run by fans. The One Piece name, characters, artwork, logos, and other franchise material belong to their respective rights holders. Rights in the site's original work belong to its respective creators. Third-party materials and software remain subject to their own terms and licences. See the <a href="/legal-notice">Legal Notice</a> for franchise credits and how to report a rights concern.</p>
+
+<h2>Ads and third-party links</h2>
+<p>The site may display ads through Google AdSense and link to external services, including Ko-fi. Those services set their own terms and privacy practices. If you choose to follow a link or make a payment there, review the terms and choices shown by that service.</p>
+
+<h2>Availability, accuracy, and liability</h2>
+<p>The catalog and games are made for fan reference and entertainment. They can contain errors, spoilers, or details that change as the series continues. Features may be interrupted, changed, or removed. If something looks wrong, you can send us a correction.</p>
+<p>Your rights and remedies under mandatory law apply. These terms do not limit liability that the law prohibits us from limiting.</p>
+
+<h2>Governing law and disputes</h2>
+<p>These terms are governed by Portuguese law, subject to any mandatory protections that apply where you live. If you have a concern, you can contact us first so we can try to resolve it directly. The courts with jurisdiction may hear unresolved disputes. Any right you have to use an authorised consumer mediation or arbitration body remains available. The Portuguese Ministry of Justice lists <a href="https://dgpj.justica.gov.pt/Resolucao-Litigios/Arbitragem/Centros-de-Arbitragem-apoiados">consumer arbitration centres</a>.</p>
+
+<h2>Changes and contact</h2>
+<p>We post changes on this page and update the date above. For questions, corrections, or other requests, email <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a>.</p>

@@ -1,4 +1,6 @@
 import { useState } from "react"
+import { NavLink } from "react-router-dom"
+import { FOOTER_NAVIGATION } from "../../lib/footerNavigation.js"
 
 export default function Footer() {
 
@@ -9,15 +11,25 @@ export default function Footer() {
     </svg>
 
     return (
-        <footer>
-            <h3>ONE PIECE DEVIL FRUITS . com</h3>
+        <footer className="site-footer">
+            <div className="footer-intro">
+                <p className="footer-brand">One Piece Devil Fruits</p>
+                <p className="emailFooter">Anything missing or wrong?<br />
+                    <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a>
+                </p>
+            </div>
 
-            <span className='emailFooter'>
-                Anything missing or wrong?<br /><span> info@onepiecedevilfruits.com</span>
-            </span>
+            <nav className="footer-navigation" aria-label="Footer">
+                {FOOTER_NAVIGATION.map(([heading, links]) => <div key={heading}>
+                    <h2>{heading}</h2>
+                    <ul>
+                        {links.map(([label, path]) => <li key={path}><NavLink to={path} end>{label}</NavLink></li>)}
+                    </ul>
+                </div>)}
+            </nav>
             <div className="footer-button-wrapper">
                 <div className="special-thanks-warpper">
-                    {isThankOpen && <div className="special-thanks-box">
+                    {isThankOpen && <div id="footer-credits" className="special-thanks-box">
                         <h4>Content verification:</h4>
                         <div>
                             <p>{personIcon} Sewwwy</p>
@@ -31,7 +43,7 @@ export default function Footer() {
 
                         </div>
                     </div>}
-                    <span style={{ backgroundColor: isThankOpen ? 'rgba(54, 118, 255, 0.457)' : '' }} onClick={() => setIsThankOpen(prev => !prev)} className='footer-btn'>SPECIAL THANKS</span>
+                    <button type="button" aria-expanded={isThankOpen} aria-controls={isThankOpen ? 'footer-credits' : undefined} onClick={() => setIsThankOpen(prev => !prev)} className="footer-btn">Special thanks</button>
                 </div>
                 <a href='#hero-title'>back to the top</a>
             </div>
