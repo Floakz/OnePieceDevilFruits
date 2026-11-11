@@ -7,6 +7,8 @@ import { GUESSER_PAGE } from '../src/lib/fruitGuesser.js';
 import { paginateCharacters, characterPageUrl } from '../src/lib/characterCatalog.js';
 import { getCharacterSeo, getCharactersSeo } from '../src/lib/characterSeo.js';
 import { findFruitUserCharacter } from '../src/lib/characterLinks.js';
+import { FOOTER_NAVIGATION } from '../src/lib/footerNavigation.js';
+import { LEGAL_DOCUMENTS } from '../src/lib/legalDocuments.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DIST = path.join(ROOT, "dist");
@@ -73,6 +75,12 @@ function headTags({ title, description, canonical, image, type = "website", stru
     return tags.join("\n    ");
 }
 
+const footerNavigation = `<footer class="site-footer"><p class="footer-brand">One Piece Devil Fruits</p>
+    <nav class="footer-navigation" aria-label="Footer">${FOOTER_NAVIGATION.map(([heading, links]) => `
+        <div><h2>${escapeHtml(heading)}</h2><ul>${links.map(([label, route]) =>
+            `<li><a href="${escapeHtml(route)}">${escapeHtml(label)}</a></li>`).join('')}</ul></div>`).join('')}
+    </nav></footer>`;
+
 function renderDocument(metadata, content) {
     const withoutManagedHead = shell
         .replace(/<title>[\s\S]*?<\/title>/i, "")
@@ -83,7 +91,7 @@ function renderDocument(metadata, content) {
 
     return withoutManagedHead
         .replace("</head>", `    ${headTags(metadata)}\n</head>`)
-        .replace('<div id="root"></div>', `<div id="root">${content}</div>`);
+        .replace('<div id="root"></div>', () => `<div id="root">${content}${footerNavigation}</div>`);
 }
 
 async function writeRoute(route, html) {
@@ -244,6 +252,12 @@ for (const [route, heading, description] of utilityPages) {
     await writeRoute(route, renderDocument({ title: page?.title || `${heading} | One Piece Devil Fruits`, description, canonical, structuredData }, content));
 }
 
+const legalPages = Object.values(LEGAL_DOCUMENTS);
+for (const { path: route, seo } of legalPages) {
+    const html = await readFile(path.join(ROOT, `${route.slice(1)}.txt`), 'utf8');
+    await writeRoute(route, renderDocument(seo, `<main class="legal-document">${html}</main>`));
+}
+
 for (const quiz of quizData) {
     const slug = slugify(quiz.title);
     const route = `/quizzes/${slug}`;
@@ -266,7 +280,7 @@ for (const quiz of quizData) {
     await writeRoute(route, renderDocument({ title, description, canonical, image, type: "article", structuredData }, content));
 }
 
-const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...characterRoutes, ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`), ...quizData.map((quiz) => `/quizzes/${slugify(quiz.title)}`)];
+const sitemapUrls = ["/", ...listingPages.slice(1).map((page) => page.route), ...utilityPages.map(([route]) => route), ...legalPages.map(page => page.path), ...characterRoutes, ...fruitData.map((fruit) => `/fruit/${slugify(fruit.name)}`), ...quizData.map((quiz) => `/quizzes/${slugify(quiz.title)}`)];
 const fruitByRoute = new Map(fruitData.map((fruit) => [`/fruit/${slugify(fruit.name)}`, fruit]));
 const quizByRoute = new Map(quizData.map((quiz) => [`/quizzes/${slugify(quiz.title)}`, quiz]));
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
@@ -308,4 +322,4 @@ await writeFile(path.join(DIST, "_redirects"), `${redirectLines.join("\n")}\n`, 
 const notFoundContent = `${prerenderStyle}<main class="prerender-page"><h1>Page not found</h1><p>The page you requested does not exist.</p><p><a href="/">Browse all Devil Fruits</a></p></main>`;
 await writeFile(path.join(DIST, "404.html"), renderDocument({ title: "Page Not Found | One Piece Devil Fruits", description: "The requested page could not be found.", canonical: `${SITE}/404`, noindex: true }, notFoundContent), "utf8");
 
-console.log(`Prerendered ${fruitData.length} fruit pages, ${characterData.length} character pages, ${quizData.length} quiz pages and ${listingPages.length + utilityPages.length + characterListPages} index pages.`);
+console.log(`Prerendered ${fruitData.length} fruit pages, ${characterData.length} character pages, ${quizData.length} quiz pages, ${listingPages.length + utilityPages.length + characterListPages} index pages and ${legalPages.length} legal pages.`);

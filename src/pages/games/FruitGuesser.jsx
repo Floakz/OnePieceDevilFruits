@@ -1,6 +1,7 @@
 import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../Components/header/Header.jsx';
+import Footer from '../../Components/footer/footer.jsx';
 import Seo from '../../Components/Seo.jsx';
 import CatalogState from '../../Components/CatalogState.jsx';
 import useFruits from '../../hooks/useFruits.js';
@@ -320,5 +321,6 @@ export default function FruitGuesser() {
                     : <GuesserIntro fruit={previewFruit} progress={progress} onStart={startGame} onHistory={() => setView('records')} />
                 : <div className="catalogState" role="alert"><p>No fruits are available for this game.</p><button onClick={retry}>Try again</button></div>}
         </main>
+        <Footer />
     </>;
 }

@@ -1,0 +1,43 @@
+<h1>Privacy Policy</h1>
+<p>Last updated: November 10, 2026</p>
+
+<p>This policy explains how One Piece Devil Fruits handles personal data when you visit <a href="/">onepiecedevilfruits.com</a>, play a game, vote, or contact us. The site is an independent fan project run by a group of friends. You can reach the people responsible for the site's use of personal data at <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a>.</p>
+
+<h2 id="personalinfo">Information we use</h2>
+<ul>
+    <li><strong>Visits and technical data.</strong> Our hosting, delivery, and other service providers may receive your IP address, browser and device details, requested pages, and request times. We use this information to deliver the site, fix problems, and protect it from abuse.</li>
+    <li><strong>Games and voting.</strong> Fruit Guesser saves recent results and streaks in your browser. Daily Fight remembers your vote on that browser and adds it to the public totals. Firebase can create an anonymous session with a generated ID to support features such as Daily Fight. Firebase may also process IP addresses and browser details. Playing and voting do not require you to enter a name, email address, or password.</li>
+    <li><strong>Messages and contributions.</strong> If you email us, we receive your email address, message, and anything else you choose to send. We use this information to reply, review corrections and suggestions, and handle privacy or rights requests.</li>
+    <li><strong>Optional support.</strong> If you follow the Ko-fi link and choose to support the site, Ko-fi and its payment providers handle the payment on their own sites. They may share information such as your display name, email address, and payment details with us. We use information we receive to manage your support and keep records where required. See the <a href="https://more.ko-fi.com/privacy">Ko-fi Privacy Policy</a> for details.</li>
+</ul>
+
+<h2 id="cookies">Cookies, browser storage, and advertising</h2>
+<ul>
+    <li><strong>Site features.</strong> Browser storage can hold cached catalog data, game history, a vote marker, and Firebase session data. Clearing site data can remove progress and make some features behave as if you were visiting for the first time. It does not remove a vote already counted in the public totals.</li>
+    <li><strong>Google Analytics.</strong> We use Google Analytics to understand which pages and features people use. It can receive page and referral information, interaction events, browser and device details, and identifiers.</li>
+    <li><strong>Microsoft Clarity.</strong> We use Clarity to see how people navigate the site and where they get stuck. Clarity can collect clicks, scrolling, and other interactions to produce heatmaps and session recordings. See the <a href="https://privacy.microsoft.com/privacystatement">Microsoft Privacy Statement</a>.</li>
+    <li><strong>Google AdSense.</strong> Google and the advertising partners listed in the consent message may use cookies or similar technologies to deliver ads, measure their performance, prevent fraud, and personalise ads depending on your choices and applicable law. See <a href="https://policies.google.com/technologies/partner-sites">how Google uses information from sites that use its services</a>.</li>
+</ul>
+<p>We use AdSense Privacy &amp; messaging to present advertising privacy choices. Where the message appears, you can accept, decline, or manage those choices. Use the <strong>Privacy and cookie settings</strong> link, where shown, to reopen the message and change or withdraw your choices. You can also manage cookies and site data in your browser. <a href="https://myadcenter.google.com/">Google My Ad Center</a> controls ad personalisation in your Google account.</p>
+
+<h2 id="infouse">Why we process personal data</h2>
+<p>Where the GDPR applies, we rely on our legitimate interests in running and securing the site, keeping votes useful, and replying to messages. Non-essential analytics and advertising cookies require consent where applicable. We also process information when necessary to handle optional support you request or to meet a legal obligation.</p>
+
+<h2 id="whoshare">Who receives information</h2>
+<p>Our hosting and content delivery providers help serve the site. Google provides Analytics, AdSense, and <a href="https://firebase.google.com/support/privacy">Firebase</a>. Microsoft provides Clarity. AdSense may share information with the ad partners described in its consent message. Ko-fi and its payment providers handle optional support. We may also disclose information where the law requires it or where necessary to respond to a legal claim.</p>
+
+<h2>International transfers</h2>
+<p>Some providers may process information outside the European Economic Area, including in the United States. Where EU transfer rules apply, providers may rely on a recognised adequacy decision or safeguards such as standard contractual clauses. You can ask us for information about the safeguards used for a particular service. See <a href="https://firebase.google.com/terms/data-processing-terms">Firebase's data processing terms</a> for its transfer arrangements.</p>
+
+<h2 id="inforetain">How long we keep information</h2>
+<p>Game history and vote markers remain in your browser until you or your browser clears them. We keep aggregate Daily Fight totals so past results can be displayed. Firebase session records, analytics data, and advertising data follow the retention settings and limits for those services. We keep messages and related records for as long as needed to handle the request, follow up, or meet legal and recordkeeping requirements.</p>
+
+<h2 id="privacyrights">Your choices and rights</h2>
+<p>Depending on the law that applies, you can ask to access, correct, delete, or receive a copy of your personal data. You can also ask us to restrict certain processing or object to it. You can withdraw consent where we rely on it. Some requests may require enough information to identify the data involved. An aggregate vote total does not tell us which visitor cast a particular vote.</p>
+<p id="contact">Send privacy requests to <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a>. You can also complain to your local data protection authority. In Portugal, that is the <a href="https://www.cnpd.pt/cnpd/atendimento-ao-publico/">Comissão Nacional de Proteção de Dados (CNPD)</a>.</p>
+
+<h2 id="infominors">Children's privacy</h2>
+<p>The site is for a general audience. If you are a minor, ask a parent or guardian before sending personal information to us. If you believe a child has shared personal information with us, please email us so we can review the situation and take appropriate action.</p>
+
+<h2 id="policyupdates">Updates</h2>
+<p>We update this page when our practices change. The date at the top shows when this policy was last revised. See our <a href="/terms-of-service">Terms of Service</a> and <a href="/legal-notice">Legal Notice</a> for more about the site.</p>
