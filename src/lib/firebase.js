@@ -1,7 +1,7 @@
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
-import { getAuth, signInAnonymously } from "firebase/auth";
+import { getAuth, signInAnonymously } from 'firebase/auth';
 
 const firebaseConfig = {
     apiKey: import.meta.env.VITE_FB_API_KEY,
@@ -17,8 +17,19 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-// 3️⃣ Sign in anonymously once (no UI needed)
-signInAnonymously(auth).catch(console.error);
+let signInRequest;
+export async function ensureFirebaseUser() {
+    await auth.authStateReady();
+    if (auth.currentUser) return auth.currentUser;
+
+    signInRequest ??= signInAnonymously(auth)
+        .then(({ user }) => user)
+        .finally(() => { signInRequest = undefined; });
+    return signInRequest;
+}
+
+// Daily Fight also relies on sign-in starting when this module loads.
+ensureFirebaseUser().catch(console.error);
 
 // 4️⃣ Export both so other files can use them
 export { db, auth };

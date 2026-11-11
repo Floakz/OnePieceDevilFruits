@@ -58,6 +58,35 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    match /communityPolls/{year} {
+      // The yearly voting dates are public. Only admins configure them.
+      allow get: if true;
+
+      match /ballots/{uid} {
+        function ownsBallot() {
+          return request.auth != null && request.auth.uid == uid;
+        }
+
+        function isFruitId(id) {
+          return id is string && id.size() > 0 && id.size() <= 128;
+        }
+
+        function isValidBallot() {
+          let vote = request.resource.data;
+          let poll = get(/databases/$(database)/documents/communityPolls/$(year)).data;
+          return request.time >= poll.opensAt && request.time < poll.closesAt
+            && vote.keys().hasOnly(['first', 'second', 'third', 'createdAt'])
+            && vote.createdAt == request.time
+            && isFruitId(vote.first) && isFruitId(vote.second) && isFruitId(vote.third)
+            && vote.first != vote.second && vote.first != vote.third && vote.second != vote.third;
+        }
+
+        // No ballot listing, editing, or deleting from the client.
+        allow get: if ownsBallot();
+        allow create: if ownsBallot() && isValidBallot();
+      }
+    }
+
     match /{document=**} {
       allow read, write: if false;
     }

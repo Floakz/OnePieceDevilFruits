@@ -17,7 +17,6 @@ const closeDate = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(
 export default function PollLanding() {
     const pollState = getPollState();
     const session = usePollSession();
-    const hasVoted = session.ballot || session.localVoted;
 
     return (
         <>
@@ -41,7 +40,7 @@ export default function PollLanding() {
                                     <button type="button" className={styles.primaryButton} onClick={session.retry}>
                                         Retry vote check
                                     </button>
-                                ) : hasVoted ? (
+                                ) : session.ballot ? (
                                     <Link className={styles.primaryButton} to="/poll/thanks">View my vote</Link>
                                 ) : session.status === 'loading' ? (
                                     <button type="button" className={styles.primaryButton} disabled>
@@ -62,7 +61,7 @@ export default function PollLanding() {
                         )}
                         {session.status === 'error' && (
                             <p className={`${styles.stateMessage} ${styles.errorMessage}`} role="alert">
-                                We could not load your local poll state. {session.error?.message || 'Check whether browser storage is enabled, then retry.'}
+                                We could not check your vote. Check your connection and try again.
                             </p>
                         )}
                     </div>
@@ -74,7 +73,7 @@ export default function PollLanding() {
                 </section>
 
                 <p className={styles.previewNotice} role="status">
-                    Local preview: poll votes are saved only in this browser's localStorage. They are not sent to a server and are available only in this browser.
+                    Your vote is saved anonymously. Use the same browser to view your ballot after submitting.
                 </p>
 
                 <section className={styles.infoGrid} aria-label="Poll details">

@@ -5,10 +5,7 @@ import Seo from '../../Components/Seo.jsx';
 import useFruits from '../../hooks/useFruits.js';
 import usePollSession from '../../hooks/usePollSession.js';
 import { slugify } from '../../lib/slugify.js';
-import {
-    createPollBallot,
-    getOwnPollBallot,
-} from '../../lib/pollBallots.js';
+import { createPollBallot } from '../../lib/pollBallots.js';
 import {
     getEligibleFruits,
     getPollState,
@@ -17,7 +14,6 @@ import {
     POLL_OPEN_AT,
     POLL_TYPES,
     POLL_YEAR,
-    setLocalVotedFlag,
 } from '../../lib/pollConfig.js';
 import PollLayout from './PollLayout.jsx';
 import PollPodium from './PollPodium.jsx';
@@ -27,11 +23,15 @@ const filters = ['All', ...POLL_TYPES];
 const dateOptions = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' };
 
 function errorText(error) {
-    return error?.message || 'Your vote could not be saved in this browser. Check local storage and try again.';
+    if (error?.code === 'permission-denied') {
+        return 'Your vote was not accepted. Refresh to check whether voting is still open and try again.';
+    }
+    return 'We could not confirm your vote. Check your connection and try again.';
 }
 
 export default function PollVote() {
     const navigate = useNavigate();
+    const pollState = getPollState();
     const session = usePollSession();
     const { fruits, status: fruitStatus, retry: retryFruits } = useFruits({ staticOnly: true });
     const [slots, setSlots] = useState([null, null, null]);
@@ -43,7 +43,6 @@ export default function PollVote() {
     const [submitting, setSubmitting] = useState(false);
     const [submitError, setSubmitError] = useState('');
     const confirmationDialogRef = useRef(null);
-    const pollState = getPollState();
 
     const eligibleFruits = useMemo(() => getEligibleFruits(fruits), [fruits]);
     const filteredFruits = useMemo(() => {
@@ -57,7 +56,7 @@ export default function PollVote() {
     }, [eligibleFruits, filter, search]);
     const fruitById = useMemo(() => new Map(eligibleFruits.map(fruit => [String(fruit.id), fruit])), [eligibleFruits]);
     const selectedIds = slots.filter(Boolean);
-    const isComplete = slots.every(Boolean);
+    const isComplete = slots.every(id => fruitById.has(id));
     const canSubmit = isComplete
         && !submitting
         && pollState === 'open'
@@ -122,28 +121,15 @@ export default function PollVote() {
     }
 
     async function submitVote() {
-        if (!session.user || !isComplete || pollState !== 'open' || submitting) return;
+        if (!session.user || !canSubmit || getPollState() !== 'open') return;
 
         setSubmitting(true);
         setShowVoteConfirmation(false);
         setSubmitError('');
         try {
             await createPollBallot(session.user.uid, slots);
-            setLocalVotedFlag(true);
             navigate('/poll/thanks', { replace: true });
         } catch (error) {
-            if (error?.code === 'already-exists') {
-                try {
-                    const ballot = await getOwnPollBallot(session.user.uid);
-                    if (ballot) {
-                        setLocalVotedFlag(true);
-                        navigate('/poll/thanks', { replace: true });
-                        return;
-                    }
-                } catch (readError) {
-                    console.error('Could not check the existing local poll ballot after a duplicate submission:', readError);
-                }
-            }
             console.error('Poll ballot submission failed:', error);
             setSubmitError(errorText(error));
         } finally {
@@ -233,7 +219,7 @@ export default function PollVote() {
                     ) : session.status === 'error' ? (
                         <div>
                             <p className={`${styles.stateMessage} ${styles.errorMessage}`} role="alert">
-                                We could not load your local poll state. {session.error?.message || 'Check whether browser storage is enabled, then retry.'}
+                                We could not load the poll. Check your connection and try again.
                             </p>
                             <button type="button" className={styles.secondaryButton} onClick={session.retry}>Retry</button>
                         </div>
@@ -334,9 +320,7 @@ export default function PollVote() {
                             </div>
 
                             <p className={styles.privacyNote}>
-                                <strong>Local preview:</strong> Your three picks and submission time are stored in this browser's
-                                localStorage only. Nothing is sent to Firebase or any server, and the vote is available only in
-                                this browser.
+                                Your ranked picks and submission time are saved anonymously. Only you can view your ballot on the site.
                             </p>
 
                             {submitError && <p className={`${styles.stateMessage} ${styles.errorMessage}`} role="alert">{submitError}</p>}

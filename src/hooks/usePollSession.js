@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { ensurePollUser, getOwnPollBallot } from '../lib/pollBallots.js';
-import { readLocalVotedFlag, setLocalVotedFlag } from '../lib/pollConfig.js';
 
 export default function usePollSession() {
     const [attempt, setAttempt] = useState(0);
@@ -8,8 +7,6 @@ export default function usePollSession() {
         status: 'loading',
         user: null,
         ballot: null,
-        localVoted: readLocalVotedFlag(),
-        error: null,
     }));
 
     useEffect(() => {
@@ -17,7 +14,6 @@ export default function usePollSession() {
         setSession(previous => ({
             ...previous,
             status: 'loading',
-            error: null,
         }));
 
         async function loadSession() {
@@ -25,22 +21,19 @@ export default function usePollSession() {
             const ballot = await getOwnPollBallot(user.uid);
             if (!active) return;
 
-            setLocalVotedFlag(Boolean(ballot));
             setSession({
                 status: 'ready',
                 user,
                 ballot,
-                localVoted: Boolean(ballot),
-                error: null,
             });
         }
 
         loadSession().catch(error => {
             if (!active) return;
+            console.error('Could not check the poll ballot:', error);
             setSession(previous => ({
                 ...previous,
                 status: 'error',
-                error,
             }));
         });
 

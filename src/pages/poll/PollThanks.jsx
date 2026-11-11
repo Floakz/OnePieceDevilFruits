@@ -4,7 +4,6 @@ import Seo from '../../Components/Seo.jsx';
 import useFruits from '../../hooks/useFruits.js';
 import usePollSession from '../../hooks/usePollSession.js';
 import { POLL_YEAR } from '../../lib/pollConfig.js';
-import { resetLocalPollBallot } from '../../lib/pollBallots.js';
 import PollLayout from './PollLayout.jsx';
 import PollPodium from './PollPodium.jsx';
 import styles from './Poll.module.css';
@@ -35,7 +34,7 @@ export default function PollThanks() {
         <>
             <Seo
                 title={`Thanks for Voting - Community Poll ${POLL_YEAR}`}
-                description="Your Devil Fruit poll ballot has been saved in this browser."
+                description="Your Devil Fruit poll ballot has been recorded."
                 canonical="https://onepiecedevilfruits.com/poll/thanks"
                 noindex
             />
@@ -53,7 +52,7 @@ export default function PollThanks() {
                         <>
                             <p className={styles.eyebrow}>{POLL_YEAR} community poll</p>
                             <h1>Thanks for voting!</h1>
-                            <p>Your vote is final and saved in this browser. Results remain hidden until the end-of-year reveal.</p>
+                            <p>Your vote has been recorded and is final. Results remain hidden until the end-of-year reveal.</p>
                             {fruitStatus === 'error' && (
                                 <p className={styles.stateMessage} role="alert">
                                     Some fruit details could not be loaded. <button type="button" className={styles.textButton} onClick={retry}>Retry</button>
@@ -63,16 +62,6 @@ export default function PollThanks() {
                             <div className={styles.heroActions}>
                                 <Link className={styles.primaryButton} to="/">Back to the main site</Link>
                             </div>
-                            <button
-                                type="button"
-                                className={styles.textButton}
-                                onClick={() => {
-                                    resetLocalPollBallot();
-                                    navigate('/poll', { replace: true });
-                                }}
-                            >
-                                Reset local preview vote
-                            </button>
                         </>
                     ) : (
                         <p className={styles.stateMessage} role="status">No ballot found. Returning to the poll...</p>
