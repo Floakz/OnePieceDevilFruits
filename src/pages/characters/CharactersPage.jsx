@@ -39,7 +39,7 @@ export default function CharactersPage() {
         <main className={styles.page}>
             <div className={styles.intro}>
                 <h1>Devil Fruit<br /><span className="colorYellow">Characters</span></h1>
-                <p>Background, abilities, and full stories behind spoiler warnings.</p>
+                <p>Background, abilities, and full character stories.</p>
                 <p className={styles.progressNotice}>{CHARACTER_INTRO}</p>
             </div>
             <section className={styles.filters} aria-label="Character filters">

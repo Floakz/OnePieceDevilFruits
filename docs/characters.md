@@ -15,12 +15,12 @@ several years. Fruit classifications reflect what was known in the early story.
 Character introductions can precede their fruit's debut: Alvida first
 appears in Romance Dawn, for example.
 
-Plot outcomes are placed in a native `details` section, closed by default.
+Character stories are displayed as regular sections with arc headings.
 `story` covers events through Arabasta or Warship Island. The optional
 `laterStory` array contains titled sections with `paragraphs` covering later
-manga events, including cover stories and ongoing arcs where relevant. Keep those
-spoilers out of card and search descriptions. Switching profiles resets the disclosure.
-The same disclosure is present in the prerendered HTML. Source metadata is retained
+manga events, including cover stories and ongoing arcs where relevant.
+The full story is visible in both React and the prerendered HTML.
+Source metadata is retained
 for research and is not displayed on the website.
 
 Cards reuse the fruit card styles, including the floating fruit image, large
@@ -98,8 +98,6 @@ Portraits reuse the site's local art. Some depict later outfits; they have not
 all been replaced with Arabasta-era portraits. Ace uses his own local portrait
 rather than the Flame-Flame Fruit's current-user image. Fandom's image CDN
 returned HTTP 403 during this session, so no new portraits were downloaded.
-
-Fruit links have a short note because the existing fruit pages cover later arcs.
 
 ## Checks
 

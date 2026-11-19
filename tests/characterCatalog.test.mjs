@@ -59,15 +59,16 @@ test('profiles have full biographies, original names, and separate story outcome
     assert.equal(characterProfiles.find(profile => profile.slug === 'monkey-d-luffy').fruitType, 'Paramecia');
 });
 
-test('later manga stories are separate from early profiles and anime-only stories', () => {
+test('character stories include early events and later arcs in reading order', () => {
     for (const profile of characterProfiles) {
         const story = getCharacterStory(profile);
         assert.equal(story.sections[0].paragraphs, profile.story);
+        assert.deepEqual(story.sections.slice(1), profile.laterStory || []);
         if (profile.canon === false) {
-            assert.equal(story.warning, 'Anime-only story');
+            assert.equal(story.sections[0].title, 'Warship Island');
             assert.equal(story.sections.length, 1);
         } else {
-            assert.equal(story.warning, 'Includes later manga spoilers');
+            assert.equal(story.sections[0].title, 'Through Arabasta');
             assert.ok(story.sections.length > 1, profile.slug);
             for (const section of story.sections.slice(1)) {
                 assert.ok(section.title.trim());

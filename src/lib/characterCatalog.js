@@ -1,11 +1,10 @@
-export const CHARACTER_DESCRIPTION = 'Explore One Piece characters introduced from East Blue through Arabasta, with their abilities, Devil Fruits, and full stories behind a spoiler warning.';
+export const CHARACTER_DESCRIPTION = 'Explore One Piece characters introduced from East Blue through Arabasta, with their abilities, Devil Fruits, and stories across the series.';
 export const CHARACTER_INTRO = 'Devil Fruit users introduced from East Blue through Arabasta.';
 export const CHARACTER_GROUPS = ['Straw Hats', 'Baroque Works', 'Marines', 'Kingdom allies', 'Other pirates', 'Non-canon'];
 export const CHARACTER_PAGE_SIZE = 12;
 
 export function getCharacterStory(profile) {
     return {
-        warning: profile.canon === false ? 'Anime-only story' : 'Includes later manga spoilers',
         sections: [
             { title: profile.canon === false ? 'Warship Island' : 'Through Arabasta', paragraphs: profile.story },
             ...(profile.laterStory || []),

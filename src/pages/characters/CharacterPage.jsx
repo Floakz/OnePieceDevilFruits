@@ -83,7 +83,6 @@ export default function CharacterPage() {
                     </div>
                     <div className={styles.fruitActions}>
                         <Link className={styles.button} to={`/fruit/${slugify(profile.fruitName)}`}>View fruit details <span aria-hidden="true">→</span></Link>
-                        <small className={styles.fruitNote}>Fruit pages may include information from later arcs.</small>
                     </div>
                 </section>
                 <section id="relationships" className={`${fruitStyles.sectionWrapper} ${styles.textSection}`} aria-labelledby="relationships-title">
@@ -100,16 +99,13 @@ export default function CharacterPage() {
                     <h2 id="details-title" className={fruitStyles.sectionTitle}>Details and trivia</h2>
                     <ul className={styles.trivia}>{profile.details.map(detail => <li key={detail}>{detail}</li>)}</ul>
                 </section>
-                <details key={slug} id="story" className={styles.spoilers}>
-                    <summary><span>Story spoilers</span><small>{story.warning}</small></summary>
-                    <div className={styles.spoilerBody}>
-                        <h2>{profile.name}’s story</h2>
-                        {story.sections.map(section => <section className={styles.storySection} key={section.title}>
-                            <h3>{section.title}</h3>
-                            {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
-                        </section>)}
-                    </div>
-                </details>
+                <section id="story" className={`${fruitStyles.sectionWrapper} ${styles.textSection}`} aria-labelledby="story-title">
+                    <h2 id="story-title" className={fruitStyles.sectionTitle}>{profile.name}’s story</h2>
+                    {story.sections.map(section => <section className={styles.storySection} key={section.title}>
+                        <h3>{section.title}</h3>
+                        {section.paragraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+                    </section>)}
+                </section>
                 {related.length > 0 && <section className={`${fruitStyles.sectionWrapper} ${styles.more}`} aria-labelledby="more-characters">
                     <h2 id="more-characters" className={fruitStyles.sectionTitle}>More familiar faces</h2>
                     <div className={styles.relatedGrid}>{related.map(other => <Link key={other.slug} to={`/characters/${other.slug}`} className={styles.relatedCard}>

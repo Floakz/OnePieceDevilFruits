@@ -218,10 +218,10 @@ for (const character of characterData) {
         <section id="background"><h2>Background</h2>${paragraphs(character.background)}</section>
         <section id="personality"><h2>Personality</h2>${paragraphs(character.personality)}</section>
         <section id="abilities"><h2>Abilities and fighting style</h2><h3>${escapeHtml(character.fruitName)}</h3>${paragraphs(character.combat)}
-        <a href="/fruit/${slugify(character.fruitName)}">View fruit details</a><p>Fruit pages may include information from later arcs.</p></section>
+        <a href="/fruit/${slugify(character.fruitName)}">View fruit details</a></section>
         <section id="relationships"><h2>Relationships</h2><dl>${character.relationships.map(relationship => `<dt>${escapeHtml(relationship.name)}</dt><dd>${escapeHtml(relationship.text)}</dd>`).join('')}</dl></section>
         <h2>Details and trivia</h2><ul>${character.details.map(detail => `<li>${escapeHtml(detail)}</li>`).join('')}</ul>
-        <details id="story"><summary>Story spoilers — ${escapeHtml(story.warning)}</summary><h2>${escapeHtml(character.name)}'s story</h2>${story.sections.map(section => `<section><h3>${escapeHtml(section.title)}</h3>${paragraphs(section.paragraphs)}</section>`).join('')}</details>
+        <section id="story" aria-labelledby="story-title"><h2 id="story-title">${escapeHtml(character.name)}’s story</h2>${story.sections.map(section => `<section><h3>${escapeHtml(section.title)}</h3>${paragraphs(section.paragraphs)}</section>`).join('')}</section>
         </article><section><h2>More familiar faces</h2>${characterLinks(related)}</section></main>`;
     await writeRoute(route, renderDocument({ ...seo, structuredData: seo.jsonLd }, content));
 }
