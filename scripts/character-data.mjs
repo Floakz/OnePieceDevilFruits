@@ -7,7 +7,7 @@ const sourcePath = fileURLToPath(new URL('../src/data/characterProfiles.json', i
 const virtualId = 'virtual:character-index';
 const resolvedId = `\0${virtualId}`;
 const summaryFields = ['slug', 'name', 'japaneseName', 'romanizedName', 'alias', 'group', 'role', 'debutArc',
-    'fruitId', 'fruitName', 'fruitType', 'fruitRomanizedName', 'about', 'portrait', 'seoName', 'seoDescription'];
+    'fruitId', 'fruitName', 'fruitType', 'fruitRomanizedName', 'about', 'portrait', 'seoName', 'seoDescription', 'canon'];
 
 export function createCharacterAssets(profiles) {
     const index = [];

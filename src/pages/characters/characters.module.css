@@ -208,8 +208,7 @@
 .page input:focus-visible,
 .page select:focus-visible,
 .page button:focus-visible,
-.detailPage a:focus-visible,
-.spoilers summary:focus-visible {
+.detailPage a:focus-visible {
     outline: 3px solid #fff;
     outline-offset: 5px;
 }
@@ -282,19 +281,18 @@
 .textSection>p,
 .textSection dd,
 .textSection li,
-.spoilerBody p {
+.storySection p {
     color: #d3e2ff;
     font-size: 1rem;
     line-height: 1.9;
 }
 
 .textSection>p+p,
-.spoilerBody p+p {
+.storySection p+p {
     margin-top: 18px;
 }
 
-.textSection h2,
-.spoilerBody h2 {
+.textSection h2 {
     font-size: 1.4rem;
 }
 
@@ -348,13 +346,6 @@
     margin-top: 0;
 }
 
-.fruitNote {
-    display: block;
-    margin-top: 14px;
-    color: #b9cef3;
-    font-size: .8rem;
-}
-
 .relationships {
     display: grid;
     gap: 24px;
@@ -388,42 +379,15 @@
     color: #f8de3c;
 }
 
-.spoilers {
-    width: 100%;
-    margin-top: 40px;
-    border: 1px solid #f8de3c;
-    border-radius: 10px;
-    background: #011a48;
-    scroll-margin-top: 100px;
+.storySection + .storySection {
+    margin-top: 28px;
 }
 
-.spoilers summary {
-    padding: 24px 28px;
-    cursor: pointer;
+.storySection h3 {
+    margin-bottom: 10px;
     color: #f8de3c;
-    font-size: 1.15rem;
-    font-weight: 700;
-}
-
-.spoilers summary small {
-    display: block;
-    margin-top: 6px;
-    margin-left: 22px;
-    color: #b9cef3;
-    font-size: .8rem;
-    font-weight: 400;
-}
-
-.spoilers[open] summary {
-    border-bottom: 1px solid #305083;
-}
-
-.spoilerBody {
-    padding: 28px;
-}
-
-.spoilerBody h2 {
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.4;
 }
 
 .relatedGrid {
@@ -601,11 +565,5 @@
     .relatedCard>img {
         height: 250px;
     }
-
-    .spoilers summary,
-    .spoilerBody {
-        padding: 22px;
-    }
-
 
 }
