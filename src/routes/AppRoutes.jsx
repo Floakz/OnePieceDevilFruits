@@ -5,6 +5,7 @@ import { lazy, Suspense, useEffect, useRef } from "react";
 import AllFruitsPage from "../pages/fruits/AllFruitsPage.jsx";
 import ScrollToTop from "../Components/ScrollToTop.jsx";
 import { POLL_ENABLED } from "../lib/pollConfig.js";
+import { LEGAL_DOCUMENTS } from "../lib/legalDocuments.js";
 
 const ParameciaFruits = lazy(() => import("../pages/fruits/paramecia/ParameciaFruits.jsx"));
 const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
@@ -25,6 +26,9 @@ const ExpandedQuizz = lazy(() => import("../pages/games/quizzes/expandedQuizz.js
 const PollLanding = lazy(() => import("../pages/poll/PollLanding.jsx"));
 const PollVote = lazy(() => import("../pages/poll/PollVote.jsx"));
 const PollThanks = lazy(() => import("../pages/poll/PollThanks.jsx"));
+const PrivacyPolicy = lazy(() => import("../pages/legal/PrivacyPolicy.jsx"));
+const TermsOfService = lazy(() => import("../pages/legal/TermsOfService.jsx"));
+const LegalNotice = lazy(() => import("../pages/legal/LegalNotice.jsx"));
 
 function ClarityTracker() {
     const location = useLocation();
@@ -95,6 +99,9 @@ export default function AppRoutes() {
                 {/* Quizzes */}
                 <Route path="/quizzes" element={<Quizzes />} />
                 <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
+                <Route path={LEGAL_DOCUMENTS.privacyPolicy.path} element={<PrivacyPolicy />} />
+                <Route path={LEGAL_DOCUMENTS.termsOfService.path} element={<TermsOfService />} />
+                <Route path={LEGAL_DOCUMENTS.legalNotice.path} element={<LegalNotice />} />
 
                 {/* Community poll */}
                 {POLL_ENABLED ? (

@@ -1,4 +1,4 @@
-.page { display: block; place-items: normal; width: min(94vw, 1500px); margin: 0 auto; padding: 12px 0; color: #fff; }
+.page { display: block; place-items: normal; width: min(94vw, 1500px); margin: 0 auto; padding: 32px 0 12px; color: #fff; }
 :global(html):has(.page) { background: #022668; }
 .page button, .page input { font-family: inherit; }
 .page button { cursor: pointer; }
@@ -186,7 +186,7 @@
     .introPreview .mysteryFruit { width: 194px; height: 194px; }
 }
 @media (max-width: 760px) {
-    .page { width: 94vw; padding-block: 10px; }
+    .page { width: 94vw; padding-bottom: 10px; }
     .playingPage { gap: 8px; }
     .playArea { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 14px; }
     .guessPanel { grid-column: 1; grid-row: 3; }
@@ -297,7 +297,7 @@
     .clueDirection { margin-top: 2px; }
 }
 @media (max-height: 760px) and (min-width: 761px) {
-    .page { padding-block: 8px; }
+    .page { padding-block: 24px 8px; }
     .playingPage { gap: 7px; }
     .playArea { grid-template-columns: 148px minmax(0, 1fr) auto; gap: 20px; padding: 12px 18px; }
     .eyebrow { margin-bottom: 5px; font-size: .5rem; }
@@ -310,7 +310,7 @@
     .clueCell { height: 58px; font-size: .6rem; }
 }
 @media (max-height: 700px) and (max-width: 760px) {
-    .page { padding-block: 8px; }
+    .page { padding-block: 24px 8px; }
     .playingPage { gap: 7px; }
     .playArea { gap: 10px; padding: 10px 12px; }
     .playArea .fruitStage { width: 156px; height: 156px; }

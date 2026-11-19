@@ -1,0 +1,14 @@
+<h1>Legal Notice</h1>
+<p>Last updated: November 10, 2026</p>
+
+<h2>Site operator</h2>
+<p><a href="/">One Piece Devil Fruits</a> is an independent fan project run by a group of friends. It offers a Devil Fruit catalog, character profiles, quizzes, and browser games. Contact us at <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a> for legal, privacy, or general requests.</p>
+
+<h2>One Piece credits</h2>
+<p>One Piece Devil Fruits is an unofficial fan site. The One Piece name, characters, logos, artwork, and other franchise material belong to their respective rights holders. The <a href="https://www.toei-animation.com/copyrights/">official anime credits</a> name Eiichiro Oda, Shueisha, and Toei Animation. Rights in the site's original guides, games, and other original work belong to their respective creators.</p>
+
+<h2>Copyright and trademark requests</h2>
+<p>If you own rights in material on the site or are authorised to act for the rights holder, email <a href="mailto:info@onepiecedevilfruits.com">info@onepiecedevilfruits.com</a>. Include the page URL, a description of the material and the right involved, your relationship to the rights holder, and a way to contact you. We will review the request and take appropriate action.</p>
+
+<h2>Other site policies</h2>
+<p>The <a href="/privacy-policy">Privacy Policy</a> explains our handling of personal data and browser storage. The <a href="/terms-of-service">Terms of Service</a> cover use of the site, applicable law, and disputes.</p>
