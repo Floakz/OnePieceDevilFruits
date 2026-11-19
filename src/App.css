@@ -227,26 +227,6 @@ main {
     text-decoration: underline;
 }
 
-.footer-button-wrapper > a {
-    text-align: center;
-    border: none;
-    padding: 10px 15px;
-    color: rgb(190, 208, 240);
-    background-color: #0a2963;
-    border-radius: 7px;
-    border: 1px solid #3cc3f8;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    font-weight: 700;
-    font-size: 0.8em;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-
-.footer-button-wrapper > a:hover {
-    background-color: #051e4b;
-}
-
 .randomWrapper {
     display: flex;
     flex-direction: column;
@@ -365,67 +345,6 @@ a {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap;
     /* prevent line breaks */
-}
-
-.footer-button-wrapper {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.footer-btn {
-    background: transparent;
-    cursor: pointer;
-    font-weight: 800;
-    padding: 10px 15px;
-    border: 1px solid rgb(99, 99, 251);
-    border-radius: 7px;
-    text-align: center;
-    align-content: center;
-    color: rgb(205, 205, 255);
-    font-size: 0.8em;
-    text-transform: uppercase;
-    transition: all 0.2s ease-in-out;
-}
-
-.footer-btn:hover,
-.footer-btn[aria-expanded='true'] {
-    background-color: rgba(54, 118, 255, 0.457);
-}
-
-
-.special-thanks-warpper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.special-thanks-box {
-    padding: 20px;
-    position: absolute;
-    width: min(300px, 90vw);
-    height: fit-content;
-    bottom: 120%;
-    left: 0;
-    background-color: rgb(0, 13, 56);
-    border: 1px solid rgb(91, 91, 255);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-size: 0.8em;
-}
-
-.special-thanks-box>h4 {
-    color: rgb(91, 91, 255);
-}
-
-.special-thanks-box>div {
-    display: flex;
-    max-width: inherit;
-    flex-wrap: wrap;
-    gap: 10px;
 }
 
 .legal-document {

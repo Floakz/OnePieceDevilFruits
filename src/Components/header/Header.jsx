@@ -202,7 +202,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                             </div>
 
                             <NavLink to="/characters" className={({ isActive }) => `menuOption ${styles.menuOptionWrapper} ${isActive ? "isActive" : ""}`}>
-                                Characters <span className={styles.newMenuItem}>NEW</span>
+                                Characters
                             </NavLink>
 
                             <div
@@ -335,8 +335,8 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                                 </NavLink>
 
                                 <NavLink to="/characters" onClick={() => setIsMobileMenuOpen(false)}
-                                    className={({ isActive }) => `${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem} ${styles.newFeatureLink}`}>
-                                    Characters <span className={styles.newBadge}>NEW</span>
+                                    className={({ isActive }) => `${isActive ? styles.dropItemActive : ""} ${styles.dropdownItem}`}>
+                                    Characters
                                 </NavLink>
 
                                 {POLL_ENABLED && <NavLink
