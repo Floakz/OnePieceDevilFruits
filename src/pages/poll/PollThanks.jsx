@@ -53,7 +53,7 @@ export default function PollThanks() {
                         <>
                             <p className={styles.eyebrow}>{POLL_YEAR} community poll</p>
                             <h1>Thanks for voting!</h1>
-                            <p>Your vote is final and saved in this browser. Results remain hidden until the end-of-year reveal.</p>
+                            <p>Your vote is final and saved in this browser.<br /> Results remain hidden until the end-of-year reveal.</p>
                             {fruitStatus === 'error' && (
                                 <p className={styles.stateMessage} role="alert">
                                     Some fruit details could not be loaded. <button type="button" className={styles.textButton} onClick={retry}>Retry</button>

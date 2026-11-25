@@ -1,5 +1,5 @@
 // Keep the poll hidden until voting is ready to launch.
-export const POLL_ENABLED = false;
+export const POLL_ENABLED = true;
 
 export const POLL_YEAR = 2026;
 export const POLL_OPEN_AT = '2026-11-03T00:00:00.000Z';
@@ -9,6 +9,7 @@ export const POLL_ELIGIBLE_FRUIT_POLICY = 'all-catalog-fruits';
 export const POLL_LOCAL_STORAGE_KEY = `community-poll-${POLL_YEAR}-voted`;
 export const POLL_LOCAL_BALLOT_KEY = `community-poll-${POLL_YEAR}-ballot`;
 export const POLL_LOCAL_VOTER_ID_KEY = `community-poll-${POLL_YEAR}-voter-id`;
+export const POLL_PROMPT_SEEN_KEY = `community-poll-${POLL_YEAR}-prompt-seen`;
 
 export const POLL_TYPES = ['Paramecia', 'Zoan', 'Logia'];
 
@@ -50,5 +51,24 @@ export function setLocalVotedFlag(voted) {
         else window.localStorage.removeItem(POLL_LOCAL_STORAGE_KEY);
     } catch (error) {
         console.warn('Could not update the poll status in local storage:', error);
+    }
+}
+
+export function readPollPromptSeen() {
+    if (typeof window === 'undefined') return false;
+    try {
+        return window.localStorage.getItem(POLL_PROMPT_SEEN_KEY) === 'true';
+    } catch (error) {
+        console.warn('Could not read the poll prompt status from local storage:', error);
+        return false;
+    }
+}
+
+export function setPollPromptSeen() {
+    if (typeof window === 'undefined') return;
+    try {
+        window.localStorage.setItem(POLL_PROMPT_SEEN_KEY, 'true');
+    } catch (error) {
+        console.warn('Could not save the poll prompt status in local storage:', error);
     }
 }

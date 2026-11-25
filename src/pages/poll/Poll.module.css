@@ -38,12 +38,18 @@
 }
 
 .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(210px, .7fr);
-    align-items: center;
-    gap: 30px;
-    min-height: 340px;
-    padding: clamp(24px, 5vw, 56px);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 480px;
+    padding: 34px clamp(24px, 5vw, 56px) 0;
+    text-align: center;
+}
+
+.heroContent {
+    position: relative;
+    z-index: 2;
+    width: 100%;
 }
 
 .eyebrow {
@@ -55,10 +61,11 @@
 }
 
 .hero h1 {
-    margin-top: 12px;
+    max-width: 980px;
+    margin: 28px auto 0;
     color: #fff;
-    font-size: clamp(2.5rem, 6vw, 5rem);
-    line-height: .98;
+    font-size: clamp(2.7rem, 5vw, 4.5rem);
+    line-height: 1.08;
     letter-spacing: -.04em;
 }
 
@@ -77,38 +84,91 @@
 }
 
 .heroArt {
+    position: absolute;
+    z-index: 3;
+    right: 50%;
+    bottom: -75px;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 420px;
+    grid-template-columns: repeat(3, 132px);
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 16px;
+    transform: translateX(50%);
 }
 
 .heroRank {
-    display: grid;
-    place-content: center;
-    gap: 9px;
-    aspect-ratio: .78;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 150px;
+    padding: 42px 12px 22px;
     border: 1px solid #09d6f0;
     border-radius: 12px;
     background: linear-gradient(160deg, #1953a8, #001741);
     color: #f8de3c;
-    font-size: clamp(1.7rem, 3vw, 2.8rem);
     font-weight: 700;
     text-align: center;
     box-shadow: 0 14px 20px #00174155;
 }
 
+.heroRankBackground {
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+    object-position: center top;
+    opacity: .15;
+    pointer-events: none;
+}
+
+.heroRankFruit {
+    position: absolute;
+    z-index: 2;
+    top: -62px;
+    left: 50%;
+    width: 84px;
+    height: 84px;
+    transform: translateX(-50%);
+    object-fit: contain;
+}
+
+.heroRankContent {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .heroRank:nth-child(1) {
-    transform: translateY(-18px);
+    transform: translateY(-10px);
 }
 
 .heroRank:nth-child(2) {
-    transform: translateY(14px);
+    transform: translateY(10px);
+}
+
+.heroRank:nth-child(3) {
+    transform: translateY(-10px);
+}
+
+.heroRank strong {
+    color: #f8de3c;
+    font-size: 2.5rem;
+    line-height: 1;
 }
 
 .heroRank span {
+    margin-top: 14px;
     color: #b9cef3;
-    font-size: .58rem;
+    font-size: .65rem;
     letter-spacing: .08em;
 }
 
@@ -116,8 +176,9 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    margin-top: 26px;
+    margin-top: 22px;
 }
 
 .primaryButton,
@@ -165,7 +226,7 @@
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
-    margin-top: 22px;
+    margin-top: 102px;
 }
 
 .infoCard {
@@ -225,6 +286,8 @@
 }
 
 .podiumSlot {
+    position: relative;
+    overflow: hidden;
     min-width: 0;
     padding: 16px;
     border: 1px solid #24528c;
@@ -232,11 +295,33 @@
     background: #011a48;
 }
 
-.podiumSlot.firstPlace {
-    border-color: #f8de3c;
+.podiumUserBackground {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    opacity: .15;
+    pointer-events: none;
+}
+
+.podiumContent {
+    position: relative;
+    z-index: 1;
+}
+
+.interactiveSlot {
+    cursor: pointer;
+}
+
+.interactiveSlot:focus-visible {
+    outline: 2px solid #09d6f0;
+    outline-offset: 3px;
 }
 
 .podiumSlot.activeSlot {
+    border-color: #f8de3c;
     box-shadow: inset 0 0 0 2px #f8de3c;
     background: #0a2b61;
 }
@@ -463,7 +548,7 @@
     line-height: 1.4;
 }
 
-.fruitSelectButton > span {
+.fruitSelectButton>span {
     margin-top: 5px;
     color: #9bb7ea;
     font-size: .64rem;
@@ -544,6 +629,7 @@
     border-radius: 12px;
     background: linear-gradient(120deg, #14449e 0%, #082f76 55%, #082575 100%);
     color: #fff;
+    text-align: center;
     box-shadow: 0 22px 70px #0009;
 }
 
@@ -567,9 +653,83 @@
 .confirmationActions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 10px;
-    margin-top: 14px;
+    margin-top: 24px;
+}
+
+.pollPrompt {
+    width: min(720px, calc(100vw - 32px));
+    max-width: none;
+    margin: auto;
+    padding: 0;
+    overflow: visible;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    box-shadow: none;
+}
+
+.pollPrompt::backdrop {
+    background: #000a;
+    backdrop-filter: blur(3px);
+}
+
+.pollPromptArtwork {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border: 2px solid #f8de3c;
+    border-radius: 14px;
+    background-image: url('../../assets/pop-poll-onePiece.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 22px 70px #0009;
+}
+
+.pollPromptClose {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid #f8de3c;
+    border-radius: 50%;
+    background: #001741cc;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.65rem;
+    line-height: 1;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.pollPromptClose:hover {
+    border-color: #fff;
+    background: #f8de3c;
+    color: #001741;
+    transform: rotate(90deg);
+}
+
+.pollPromptClose:focus-visible {
+    outline: 2px solid #f8de3c;
+    outline-offset: 3px;
+}
+
+.pollPromptActions {
+    position: absolute;
+    right: 0;
+    bottom: 24px;
+    left: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .submitRow {
@@ -590,7 +750,7 @@
     line-height: 1.1;
 }
 
-.thankYou > p {
+.thankYou>p {
     max-width: 620px;
     margin: 12px auto 24px;
     color: #b9cef3;
@@ -631,26 +791,69 @@
 }
 
 @media (max-width: 680px) {
+    .pollPrompt {
+        width: min(720px, calc(100vw - 32px), calc(100vh - 32px));
+    }
+
+    .pollPromptArtwork {
+        aspect-ratio: 1 / 1;
+    }
+
     .page {
         margin-top: 20px;
     }
 
     .hero {
-        grid-template-columns: 1fr;
-        gap: 4px;
+        min-height: 440px;
         padding: 26px 22px;
     }
 
+    .hero h1 {
+        margin: 26px auto 0;
+        font-size: clamp(2.25rem, 10vw, 3.25rem);
+    }
+
+    .heroActions {
+        margin-top: 18px;
+    }
+
     .heroArt {
-        width: min(100%, 300px);
-        margin: 0 auto;
+        width: 300px;
+        grid-template-columns: repeat(3, 92px);
+        gap: 8px;
+        bottom: -65px;
     }
 
     .heroRank {
-        max-height: 135px;
+        height: 125px;
+        padding: 34px 8px 12px;
+    }
+
+    .heroRank:nth-child(1),
+    .heroRank:nth-child(3) {
+        transform: translateY(-8px);
+    }
+
+    .heroRank:nth-child(2) {
+        transform: translateY(8px);
+    }
+
+    .heroRankFruit {
+        top: -50px;
+        width: 62px;
+        height: 62px;
+    }
+
+    .heroRank strong {
+        font-size: 2rem;
+    }
+
+    .heroRank span {
+        margin-top: 8px;
     }
 
     .infoGrid {
+        margin-top: 90px;
         grid-template-columns: 1fr;
         gap: 10px;
     }

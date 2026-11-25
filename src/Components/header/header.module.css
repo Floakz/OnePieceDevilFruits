@@ -111,10 +111,10 @@
     justify-content: center;
     min-height: 0;
     padding: 1px 10px;
-    border: 1px solid #f8de3c;
+    border: 1px solid #14ffeb;
     border-radius: 5px;
-    background: #f8de3c;
-    color: #001741;
+    background: #14ffeb;
+    color: #001e3b;
     font-size: .75em;
     font-weight: 800;
     letter-spacing: .03em;
@@ -127,7 +127,6 @@
 .pollNavLinkActive {
     background: #ffe968;
     color: #001741;
-    transform: translateY(-1px);
 }
 
 .kofiButton {

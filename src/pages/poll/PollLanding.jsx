@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Seo from '../../Components/Seo.jsx';
+import FruitImage from '../../Components/FruitImage.jsx';
 import usePollSession from '../../hooks/usePollSession.js';
 import {
     POLL_CLOSE_AT,
@@ -13,6 +14,32 @@ import styles from './Poll.module.css';
 const dateOptions = { month: 'long', day: 'numeric', year: 'numeric', timeZone: 'UTC' };
 const openDate = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(POLL_OPEN_AT));
 const closeDate = new Intl.DateTimeFormat('en-US', dateOptions).format(new Date(Date.parse(POLL_CLOSE_AT) - 1));
+const rankArt = [
+    {
+        fruit: 'https://cd-opf.pages.dev/fruits/677f28c4-858d-47c0-ba56-f835f785f2ab.webp',
+        user: {
+            id: '677f28c4-858d-47c0-ba56-f835f785f2ab',
+            img: { user: 'https://i.postimg.cc/FHv6RTWt/Charlotte-Cracker-Anime-Infobox.webp' },
+        },
+        points: '3 PTS',
+    },
+    {
+        fruit: 'https://cd-opf.pages.dev/fruits/5d3bff23-ad5b-49d0-bebf-7a7fd34ae17a.webp',
+        user: {
+            id: '5d3bff23-ad5b-49d0-bebf-7a7fd34ae17a',
+            img: { user: 'https://i.postimg.cc/qv1P1vs3/Emporio-Ivankov.jpg' },
+        },
+        points: '2 PTS',
+    },
+    {
+        fruit: 'https://cd-opf.pages.dev/fruits/b19d720c-6991-4445-872b-3580a019c394.webp',
+        user: {
+            id: 'b19d720c-6991-4445-872b-3580a019c394',
+            img: { user: 'https://i.ibb.co/SwLmCk32/548202.webp' },
+        },
+        points: '1 PT',
+    },
+];
 
 export default function PollLanding() {
     const pollState = getPollState();
@@ -28,13 +55,9 @@ export default function PollLanding() {
             />
             <PollLayout>
                 <section className={styles.hero}>
-                    <div>
-                        <p className={styles.eyebrow}>The {POLL_YEAR} community poll</p>
-                        <h1>Community's <span>Favorite</span> Devil Fruits</h1>
-                        <p className={styles.heroCopy}>
-                            Choose the three Devil Fruits you love most. Rank them carefully:
-                            your first choice earns the most points, and every vote is final.
-                        </p>
+                    <div className={styles.heroContent}>
+                        <p className={styles.eyebrow}>The <span style={{ color: '#f8de3c' }}>{POLL_YEAR}</span> community poll</p>
+                        <h1>Community's <span>Favorite</span><br />Devil Fruits</h1>
                         {pollState === 'open' && (
                             <div className={styles.heroActions}>
                                 {session.status === 'error' ? (
@@ -67,15 +90,24 @@ export default function PollLanding() {
                         )}
                     </div>
                     <div className={styles.heroArt} aria-hidden="true">
-                        <div className={styles.heroRank}>01<span>3 PTS</span></div>
-                        <div className={styles.heroRank}>02<span>2 PTS</span></div>
-                        <div className={styles.heroRank}>03<span>1 PT</span></div>
+                        {rankArt.map(({ fruit, user, points }, index) => (
+                            <div className={styles.heroRank} key={fruit}>
+                                <FruitImage
+                                    fruit={user}
+                                    kind="character"
+                                    className={styles.heroRankBackground}
+                                    alt=""
+                                    aria-hidden="true"
+                                />
+                                <img className={styles.heroRankFruit} src={fruit} alt="" />
+                                <div className={styles.heroRankContent}>
+                                    <strong>{`0${index + 1}`}</strong>
+                                    <span>{points}</span>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </section>
-
-                <p className={styles.previewNotice} role="status">
-                    Local preview: poll votes are saved only in this browser's localStorage. They are not sent to a server and are available only in this browser.
-                </p>
 
                 <section className={styles.infoGrid} aria-label="Poll details">
                     <article className={styles.infoCard}>

@@ -202,7 +202,7 @@ export default function Header({ headerShown, headerTitle, compact = false }) {
                             </div>
 
                             <NavLink to="/characters" className={({ isActive }) => `menuOption ${styles.menuOptionWrapper} ${isActive ? "isActive" : ""}`}>
-                                Characters <span className={styles.newMenuItem}>NEW</span>
+                                Characters
                             </NavLink>
 
                             <div

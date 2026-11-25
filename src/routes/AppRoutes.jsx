@@ -5,6 +5,7 @@ import { lazy, Suspense, useEffect, useRef } from "react";
 import AllFruitsPage from "../pages/fruits/AllFruitsPage.jsx";
 import ScrollToTop from "../Components/ScrollToTop.jsx";
 import { POLL_ENABLED } from "../lib/pollConfig.js";
+import PollPrompt from "../pages/poll/PollPrompt.jsx";
 
 const ParameciaFruits = lazy(() => import("../pages/fruits/paramecia/ParameciaFruits.jsx"));
 const LogiaFruits = lazy(() => import("../pages/fruits/logia/LogiaFruits.jsx"));
@@ -65,54 +66,55 @@ export default function AppRoutes() {
         <>
             <ClarityTracker />
             <ScrollToTop />
+            {POLL_ENABLED && <PollPrompt />}
             <Suspense fallback={<div className="routeLoader" role="status">Loading…</div>}>
-            <Routes>
-                {/* Home = All */}
-                <Route path="/" element={<AllFruitsPage />} />
+                <Routes>
+                    {/* Home = All */}
+                    <Route path="/" element={<AllFruitsPage />} />
 
-                {/* Categorias */}
-                <Route path="/paramecia" element={<ParameciaFruits />} />
-                <Route path="/logia" element={<LogiaFruits />} />
-                <Route path="/zoan" element={<ZoanFruits />} />
-                <Route path="/community" element={<CommunityFruits />} />
+                    {/* Categorias */}
+                    <Route path="/paramecia" element={<ParameciaFruits />} />
+                    <Route path="/logia" element={<LogiaFruits />} />
+                    <Route path="/zoan" element={<ZoanFruits />} />
+                    <Route path="/community" element={<CommunityFruits />} />
 
-                {/* Fruit Expanded */}
-                <Route path="/fruit/:id" element={<ExpandedFruit />} />
-                <Route path="/characters" element={<CharactersPage />} />
-                <Route path="/characters/page/:page" element={<CharactersPage />} />
-                <Route path="/characters/:slug" element={<CharacterPage />} />
+                    {/* Fruit Expanded */}
+                    <Route path="/fruit/:id" element={<ExpandedFruit />} />
+                    <Route path="/characters" element={<CharactersPage />} />
+                    <Route path="/characters/page/:page" element={<CharactersPage />} />
+                    <Route path="/characters/:slug" element={<CharacterPage />} />
 
 
-                {/* Jogos */}
-                <Route path="/fruit-finder" element={<FruitFinderPage />} />
-                <Route path="/fruit-guesser" element={<FruitGuesser />} />
-                <Route path="/crew-wars" element={<CrewWars />} />
-                <Route path="/blind-ranking" element={<BlindRanking />} />
-                <Route path="/game" element={<Navigate to="/blind-ranking" replace />} />
-                <Route path="/grand-run" element={<GrandRun />} />
-                <Route path="/daily-fight" element={<DailyFight />} />
+                    {/* Jogos */}
+                    <Route path="/fruit-finder" element={<FruitFinderPage />} />
+                    <Route path="/fruit-guesser" element={<FruitGuesser />} />
+                    <Route path="/crew-wars" element={<CrewWars />} />
+                    <Route path="/blind-ranking" element={<BlindRanking />} />
+                    <Route path="/game" element={<Navigate to="/blind-ranking" replace />} />
+                    <Route path="/grand-run" element={<GrandRun />} />
+                    <Route path="/daily-fight" element={<DailyFight />} />
 
-                {/* Quizzes */}
-                <Route path="/quizzes" element={<Quizzes />} />
-                <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
+                    {/* Quizzes */}
+                    <Route path="/quizzes" element={<Quizzes />} />
+                    <Route path="/quizzes/:slug" element={<ExpandedQuizz />} />
 
-                {/* Community poll */}
-                {POLL_ENABLED ? (
-                    <>
-                        <Route path="/poll" element={<PollLanding />} />
-                        <Route path="/poll/vote" element={<PollVote />} />
-                        <Route path="/poll/thanks" element={<PollThanks />} />
-                    </>
-                ) : (
-                    <Route path="/poll/*" element={<Navigate to="/" replace />} />
-                )}
+                    {/* Community poll */}
+                    {POLL_ENABLED ? (
+                        <>
+                            <Route path="/poll" element={<PollLanding />} />
+                            <Route path="/poll/vote" element={<PollVote />} />
+                            <Route path="/poll/thanks" element={<PollThanks />} />
+                        </>
+                    ) : (
+                        <Route path="/poll/*" element={<Navigate to="/" replace />} />
+                    )}
 
-                {/* Redirecionar aliases antigos, se existirem */}
-                <Route path="/fruits" element={<Navigate to="/" replace />} />
+                    {/* Redirecionar aliases antigos, se existirem */}
+                    <Route path="/fruits" element={<Navigate to="/" replace />} />
 
-                {/* 404 */}
-                <Route path="*" element={<PageNotFound />} />
-            </Routes>
+                    {/* 404 */}
+                    <Route path="*" element={<PageNotFound />} />
+                </Routes>
             </Suspense>
         </>
     );
